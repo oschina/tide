@@ -6,8 +6,15 @@
 
 ```shell
 cd wysiwyg-editor
+
+# 安装依赖
 pnpm i
-pnpm start
+
+# 构建 packages
+pnpm build
+
+# 运行 demo 方便开发
+pnpm demo
 ```
 
 ## 构建
