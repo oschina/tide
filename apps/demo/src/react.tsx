@@ -10,29 +10,29 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 
 // custom extensions
-import CodeBlock from "extensions-code-block";
-import "extensions-code-block/dist/cjs/index.css";
+import CodeBlock from "@test-pkgs/extensions-code-block";
+import "@test-pkgs/extensions-code-block/dist/cjs/index.css";
 
 function App() {
-  const editor = useEditor({
-    extensions: [Document, Paragraph, Text, Blockquote, CodeBlock],
-    content: `
+    const editor = useEditor({
+        extensions: [Document, Paragraph, Text, Blockquote, CodeBlock],
+        content: `
       <blockquote>
         Nothing is impossible, the word itself says “I’m possible!”
       </blockquote>
       <p>Audrey Hepburn</p>
     `,
-  });
+    });
 
-  if (!editor) {
-    return null;
-  }
+    if (!editor) {
+        return null;
+    }
 
-  return (
-    <div className="editor-demo">
-      <EditorContent editor={editor} />
+    return (
+        <div className="editor-demo">
+        <EditorContent editor={editor} />
     </div>
-  );
+);
 }
 
 ReactDom.render(<App />, document.getElementById("app"));

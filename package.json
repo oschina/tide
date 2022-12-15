@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "demo": "pnpm --filter demo dev",
+    "dev": "turbo run dev --parallel --filter=./packages/*",
+    "build": "turbo run build --filter=./packages/*",
     "lint": "turbo run lint",
+    "clear": "turbo run clear",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

@@ -1,14 +1,22 @@
 {
-  "name": "starter-kit",
+  "name": "@test-pkgs/editor",
   "version": "0.0.0",
-  "main": "./src/index.tsx",
-  "types": "./src/index.tsx",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/cjs/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "TIMING=1 eslint \"**/*.ts\""
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
   },
   "devDependencies": {
     "@types/react": "^16.14.0",
+    "@types/react-dom": "^16.9.14",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "eslint": "^7.32.0",
@@ -51,9 +59,11 @@
     "@tiptap/suggestion": "^2.0.0-beta.204",
     "tippy.js": "^6.3.7",
     "tiptap-markdown": "^0.6.0",
-    "browser-fs-access": "^0.31.1"
+    "browser-fs-access": "^0.31.1",
+    "@test-pkgs/extensions-code-block": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^16.14.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   }
 }

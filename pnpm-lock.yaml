@@ -40,6 +40,8 @@ importers:
 
   apps/demo:
     specifiers:
+      '@test-pkgs/editor': workspace:*
+      '@test-pkgs/extensions-code-block': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
       '@tiptap/extension-bold': ^2.0.0-beta.204
@@ -78,7 +80,7 @@ importers:
       browser-fs-access: ^0.31.1
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
-      extensions-code-block: workspace:*
+      fast-glob: ^3.2.12
       react: ^16.14.0
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
@@ -87,6 +89,8 @@ importers:
       typescript: ^4.9.3
       vite: ^4.0.0
     dependencies:
+      '@test-pkgs/editor': link:../../packages/editor
+      '@test-pkgs/extensions-code-block': link:../../packages/extensions-code-block
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bold': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
@@ -120,7 +124,6 @@ importers:
       '@tiptap/react': 2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
       '@tiptap/suggestion': 2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
       browser-fs-access: 0.31.1
-      extensions-code-block: link:../../packages/extensions-code-block
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
@@ -131,57 +134,14 @@ importers:
       '@vitejs/plugin-react': 3.0.0_vite@4.0.1
       eslint: 7.32.0
       eslint-config-custom: link:../../packages/eslint-config-custom
+      fast-glob: 3.2.12
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.3
       vite: 4.0.1
 
-  packages/eslint-config-custom:
+  packages/editor:
     specifiers:
-      '@typescript-eslint/eslint-plugin': ^5.30.7
-      '@typescript-eslint/parser': ^5.30.7
-      eslint-config-prettier: ^8.5.0
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 5.44.0_fnsv2sbzcckq65bwfk7a5xwslu
-      '@typescript-eslint/parser': 5.44.0_hsf322ms6xhhd4b5ne6lb74y4a
-      eslint-config-prettier: 8.5.0_eslint@8.28.0
-
-  packages/extensions-code-block:
-    specifiers:
-      '@tiptap/core': ^2.0.0-beta.204
-      '@tiptap/extension-code': ^2.0.0-beta.204
-      '@tiptap/extension-code-block': ^2.0.0-beta.207
-      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
-      '@types/react': ^16.14.0
-      classnames: ^2.2.6
-      copy-to-clipboard: ^3.3.3
-      eslint: ^7.32.0
-      eslint-config-custom: workspace:*
-      lowlight: ^2.8.0
-      react: ^16.14.0
-      react-dom: ^16.14.0
-      tsconfig: workspace:*
-      typescript: ^4.5.2
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/extension-code': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
-      '@tiptap/extension-code-block': 2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
-      '@tiptap/extension-code-block-lowlight': 2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm
-      '@tiptap/react': 2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
-      classnames: 2.3.2
-      copy-to-clipboard: 3.3.3
-      lowlight: 2.8.0
-    devDependencies:
-      '@types/react': 16.14.34
-      eslint: 7.32.0
-      eslint-config-custom: link:../eslint-config-custom
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-      tsconfig: link:../tsconfig
-      typescript: 4.9.3
-
-  packages/starter-kit:
-    specifiers:
+      '@test-pkgs/extensions-code-block': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
       '@tiptap/extension-bold': ^2.0.0-beta.204
@@ -215,6 +175,7 @@ importers:
       '@tiptap/react': ^2.0.0-beta.204
       '@tiptap/suggestion': ^2.0.0-beta.204
       '@types/react': ^16.14.0
+      '@types/react-dom': ^16.9.14
       browser-fs-access: ^0.31.1
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
@@ -225,6 +186,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/extensions-code-block': link:../extensions-code-block
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bold': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
@@ -262,10 +224,54 @@ importers:
       tiptap-markdown: 0.6.0_zaxalbiy7gmbdjkog4yp5bucvq
     devDependencies:
       '@types/react': 16.14.34
+      '@types/react-dom': 16.9.17
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
+      tsconfig: link:../tsconfig
+      typescript: 4.9.3
+
+  packages/eslint-config-custom:
+    specifiers:
+      '@typescript-eslint/eslint-plugin': ^5.30.7
+      '@typescript-eslint/parser': ^5.30.7
+      eslint-config-prettier: ^8.5.0
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.44.0_fnsv2sbzcckq65bwfk7a5xwslu
+      '@typescript-eslint/parser': 5.44.0_hsf322ms6xhhd4b5ne6lb74y4a
+      eslint-config-prettier: 8.5.0_eslint@8.28.0
+
+  packages/extensions-code-block:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.204
+      '@tiptap/extension-code': ^2.0.0-beta.204
+      '@tiptap/extension-code-block': ^2.0.0-beta.207
+      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.204
+      '@tiptap/react': ^2.0.0-beta.204
+      '@types/react': ^16.14.0
+      classnames: ^2.2.6
+      copy-to-clipboard: ^3.3.3
+      eslint-config-custom: workspace:*
+      lowlight: ^2.8.0
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-code': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
+      '@tiptap/extension-code-block': 2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
+      '@tiptap/extension-code-block-lowlight': 2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm
+      '@tiptap/react': 2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
+      classnames: 2.3.2
+      copy-to-clipboard: 3.3.3
+      lowlight: 2.8.0
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+    devDependencies:
+      '@types/react': 16.14.34
+      eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 
