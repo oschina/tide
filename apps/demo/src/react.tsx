@@ -1,7 +1,7 @@
 import "./style.css";
 
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom";
 
 import { EditorContent, useEditor } from "@tiptap/react";
 import Blockquote from "@tiptap/extension-blockquote";
@@ -11,28 +11,30 @@ import Text from "@tiptap/extension-text";
 
 // custom extensions
 import CodeBlock from "@test-pkgs/extensions-code-block";
-import "@test-pkgs/extensions-code-block/dist/cjs/index.css";
+import ImageBlock, { uploadImage } from "@test-pkgs/extension-image";
+import Uploader from "@test-pkgs/extension-uploader";
 
 function App() {
-    const editor = useEditor({
-        extensions: [Document, Paragraph, Text, Blockquote, CodeBlock],
-        content: `
+  const editor = useEditor({
+    extensions: [Document, Paragraph, Text, Blockquote, CodeBlock, ImageBlock, Uploader],
+    content: `
       <blockquote>
         Nothing is impossible, the word itself says “I’m possible!”
       </blockquote>
       <p>Audrey Hepburn</p>
     `,
-    });
+  });
 
-    if (!editor) {
-        return null;
-    }
+  if (!editor) {
+      return null;
+  }
 
-    return (
-        <div className="editor-demo">
-        <EditorContent editor={editor} />
+  return (
+    <div className="editor-demo">
+      <button onClick={() => uploadImage(editor)}>image</button>
+      <EditorContent editor={editor} />
     </div>
-);
+  );
 }
 
-ReactDom.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));

@@ -7,7 +7,7 @@
     ],
     "module": "ESNext",
     "target": "ES6",
-    "jsx": "react-jsx",
+    "jsx": "react-jsx"
   },
   "files": [
     "./type.d.ts"

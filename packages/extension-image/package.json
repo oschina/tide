@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/extensions-code-block",
+  "name": "@test-pkgs/extension-image",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,24 +15,18 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@tiptap/extension-code": "^2.0.0-beta.204",
-    "@tiptap/extension-code-block": "^2.0.0-beta.204",
-    "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.204",
-    "copy-to-clipboard": "^3.3.3",
-    "classnames": "^2.2.6"
+    "@test-pkgs/extension-uploader": "workspace:*",
+    "@tiptap/extension-image": "^2.0.0-beta.204",
+    "browser-fs-access": "^0.31.1"
   },
   "devDependencies": {
-    "@types/react": "^16.14.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
+    "tslib": "^2.4.1",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "lowlight": "^2.8.0",
-    "@tiptap/react": "^2.0.0-beta.204",
-    "@tiptap/core": "^2.0.0-beta.204",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "@tiptap/core": "^2.0.0-beta.204"
   },
   "sideEffects": false
 }
