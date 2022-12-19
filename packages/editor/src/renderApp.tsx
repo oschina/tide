@@ -5,7 +5,7 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Blockquote from "@tiptap/extension-blockquote";
 
-import CodeBlock from "@test-pkgs/extensions-code-block";
+import CodeBlock from "@test-pkgs/extension-code-block";
 
 const defaultExtensions = [Document, Paragraph, Text, Blockquote, CodeBlock];
 

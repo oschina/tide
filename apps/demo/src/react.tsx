@@ -11,7 +11,7 @@ import Text from "@tiptap/extension-text";
 
 // custom extensions
 import LinkBlock, { LinkBubbleMenu } from "@test-pkgs/extension-link";
-import CodeBlock from "@test-pkgs/extensions-code-block";
+import CodeBlock from "@test-pkgs/extension-code-block";
 import ImageBlock, { uploadImage } from "@test-pkgs/extension-image";
 import Uploader from "@test-pkgs/extension-uploader";
 

@@ -43,17 +43,15 @@ importers:
   apps/demo:
     specifiers:
       '@test-pkgs/editor': workspace:*
+      '@test-pkgs/extension-code-block': workspace:*
       '@test-pkgs/extension-image': workspace:*
       '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
-      '@test-pkgs/extensions-code-block': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
       '@tiptap/extension-bold': ^2.0.0-beta.204
       '@tiptap/extension-bullet-list': ^2.0.0-beta.204
       '@tiptap/extension-code': ^2.0.0-beta.204
-      '@tiptap/extension-code-block': ^2.0.0-beta.204
-      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.204
       '@tiptap/extension-document': ^2.0.0-beta.204
       '@tiptap/extension-dropcursor': ^2.0.0-beta.204
       '@tiptap/extension-gapcursor': ^2.0.0-beta.204
@@ -93,17 +91,15 @@ importers:
       vite: ^4.0.0
     dependencies:
       '@test-pkgs/editor': link:../../packages/editor
+      '@test-pkgs/extension-code-block': link:../../packages/extension-code-block
       '@test-pkgs/extension-image': link:../../packages/extension-image
       '@test-pkgs/extension-link': link:../../packages/extension-link
       '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
-      '@test-pkgs/extensions-code-block': link:../../packages/extensions-code-block
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bold': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bullet-list': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-code': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
-      '@tiptap/extension-code-block': registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
-      '@tiptap/extension-code-block-lowlight': 2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm
       '@tiptap/extension-document': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-dropcursor': 2.0.0-beta.207_f6ymlstlqnbe25kwidwikb5vpm
       '@tiptap/extension-gapcursor': 2.0.0-beta.207_br6hqheey6ejjagph7ojoq7gg4
@@ -145,14 +141,12 @@ importers:
 
   packages/editor:
     specifiers:
-      '@test-pkgs/extensions-code-block': workspace:*
+      '@test-pkgs/extension-code-block': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
       '@tiptap/extension-bold': ^2.0.0-beta.204
       '@tiptap/extension-bullet-list': ^2.0.0-beta.204
       '@tiptap/extension-code': ^2.0.0-beta.204
-      '@tiptap/extension-code-block': ^2.0.0-beta.204
-      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.204
       '@tiptap/extension-document': ^2.0.0-beta.204
       '@tiptap/extension-dropcursor': ^2.0.0-beta.204
       '@tiptap/extension-gapcursor': ^2.0.0-beta.204
@@ -190,14 +184,12 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/extensions-code-block': link:../extensions-code-block
+      '@test-pkgs/extension-code-block': link:../extension-code-block
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bold': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bullet-list': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-code': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
-      '@tiptap/extension-code-block': registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
-      '@tiptap/extension-code-block-lowlight': 2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm
       '@tiptap/extension-document': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-dropcursor': 2.0.0-beta.207_f6ymlstlqnbe25kwidwikb5vpm
       '@tiptap/extension-gapcursor': 2.0.0-beta.207_br6hqheey6ejjagph7ojoq7gg4
@@ -275,6 +267,39 @@ importers:
       tslib: registry.npmmirror.com/tslib/2.4.1
       typescript: registry.npmmirror.com/typescript/4.9.3
 
+  packages/extension-code-block:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.204
+      '@tiptap/extension-code': ^2.0.0-beta.204
+      '@tiptap/extension-code-block': ^2.0.0-beta.204
+      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.204
+      '@tiptap/react': ^2.0.0-beta.204
+      '@types/react': ^16.14.0
+      classnames: ^2.2.6
+      copy-to-clipboard: ^3.3.3
+      eslint-config-custom: workspace:*
+      lowlight: ^2.8.0
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-code': registry.npmmirror.com/@tiptap/extension-code/2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
+      '@tiptap/extension-code-block': registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
+      '@tiptap/extension-code-block-lowlight': registry.npmmirror.com/@tiptap/extension-code-block-lowlight/2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm
+      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
+      classnames: registry.npmmirror.com/classnames/2.3.2
+      copy-to-clipboard: registry.npmmirror.com/copy-to-clipboard/3.3.3
+      lowlight: registry.npmmirror.com/lowlight/2.8.0
+      react: registry.npmmirror.com/react/16.14.0
+      react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
+    devDependencies:
+      '@types/react': registry.npmmirror.com/@types/react/16.14.34
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      typescript: registry.npmmirror.com/typescript/4.9.3
+
   packages/extension-image:
     specifiers:
       '@test-pkgs/extension-uploader': workspace:*
@@ -339,39 +364,6 @@ importers:
       tsconfig: link:../tsconfig
       tslib: registry.npmmirror.com/tslib/2.4.1
       typescript: registry.npmmirror.com/typescript/4.9.3
-
-  packages/extensions-code-block:
-    specifiers:
-      '@tiptap/core': ^2.0.0-beta.204
-      '@tiptap/extension-code': ^2.0.0-beta.204
-      '@tiptap/extension-code-block': ^2.0.0-beta.204
-      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
-      '@types/react': ^16.14.0
-      classnames: ^2.2.6
-      copy-to-clipboard: ^3.3.3
-      eslint-config-custom: workspace:*
-      lowlight: ^2.8.0
-      react: ^16.14.0
-      react-dom: ^16.14.0
-      tsconfig: workspace:*
-      typescript: ^4.5.2
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/extension-code': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
-      '@tiptap/extension-code-block': registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
-      '@tiptap/extension-code-block-lowlight': 2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm
-      '@tiptap/react': 2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
-      classnames: 2.3.2
-      copy-to-clipboard: 3.3.3
-      lowlight: 2.8.0
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-    devDependencies:
-      '@types/react': 16.14.34
-      eslint-config-custom: link:../eslint-config-custom
-      tsconfig: link:../tsconfig
-      typescript: 4.9.3
 
   packages/tsconfig:
     specifiers: {}
@@ -822,22 +814,6 @@ packages:
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
     dev: false
 
-  /@tiptap/extension-code-block-lowlight/2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm:
-    resolution: {integrity: sha512-ksdDrjXLSPuUbcSdeS8LfWfytEwrDz0vb6e6q2u5ReumfLuJta4SCy4PUSbQCo7QGZsF42O53hIlMbPDyWbvZQ==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.193
-      '@tiptap/extension-code-block': ^2.0.0-beta.193
-      prosemirror-model: ^1.18.1
-      prosemirror-state: ^1.4.1
-      prosemirror-view: ^1.28.2
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/extension-code-block': registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
-      prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
-      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
-      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
-    dev: false
-
   /@tiptap/extension-code/2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34:
     resolution: {integrity: sha512-s6p+HQRHlAxWlbMwTdYBNTeO7HtGkz+vCgVnS0xipnObiT+nqa4AH2LYmfr4EcPOQYVi9BDgefJoBDcGNGnyaA==}
     peerDependencies:
@@ -1129,12 +1105,6 @@ packages:
       '@types/node': 18.11.15
     dev: true
 
-  /@types/hast/2.3.4:
-    resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
-    dependencies:
-      '@types/unist': 2.0.6
-    dev: false
-
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: false
@@ -1192,10 +1162,6 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
-    dev: false
-
-  /@types/unist/2.0.6:
-    resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
 
   /@typescript-eslint/eslint-plugin/5.44.0_fnsv2sbzcckq65bwfk7a5xwslu:
@@ -1529,10 +1495,6 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
-
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -1600,12 +1562,6 @@ packages:
     dependencies:
       is-what: 3.14.1
     dev: true
-
-  /copy-to-clipboard/3.3.3:
-    resolution: {integrity: sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==}
-    dependencies:
-      toggle-selection: 1.0.6
-    dev: false
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -2082,12 +2038,6 @@ packages:
     dependencies:
       reusify: 1.0.4
 
-  /fault/2.0.1:
-    resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==}
-    dependencies:
-      format: 0.2.2
-    dev: false
-
   /file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -2137,11 +2087,6 @@ packages:
   /flatted/3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
-
-  /format/0.2.2:
-    resolution: {integrity: sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==}
-    engines: {node: '>=0.4.x'}
-    dev: false
 
   /fs-extra/10.1.0:
     resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
@@ -2264,11 +2209,6 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
-
-  /highlight.js/11.7.0:
-    resolution: {integrity: sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==}
-    engines: {node: '>=12.0.0'}
-    dev: false
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -2575,14 +2515,6 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: registry.npmmirror.com/js-tokens/4.0.0
-
-  /lowlight/2.8.0:
-    resolution: {integrity: sha512-WeExw1IKEkel9ZcYwzpvcFzORIB0IlleTcxJYoEuUgHASuYe/OBYbV6ym/AetG7unNVCBU/SXpgTgs2nT93mhg==}
-    dependencies:
-      '@types/hast': 2.3.4
-      fault: 2.0.1
-      highlight.js: 11.7.0
-    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
@@ -3301,35 +3233,15 @@ packages:
     resolution: {integrity: sha512-s7iaTLiX+qO5z8kF2NcMmy2T7mIlxzkS4Sp3vTKSYChPtbMpg6YxFkU0Y06rUg2WtKlvBu7v1bXzlGBkfjUWAA==}
     dependencies:
       markdown-it: 13.0.1
-      prosemirror-model: 1.18.3
-    dev: false
-
-  /prosemirror-model/1.18.3:
-    resolution: {integrity: sha512-yUVejauEY3F1r7PDy4UJKEGeIU+KFc71JQl5sNvG66CLVdKXRjhWpBW6KMeduGsmGOsw85f6EGrs6QxIKOVILA==}
-    dependencies:
-      orderedmap: registry.npmmirror.com/orderedmap/2.0.0
-    dev: false
-
-  /prosemirror-state/1.4.2:
-    resolution: {integrity: sha512-puuzLD2mz/oTdfgd8msFbe0A42j5eNudKAAPDB0+QJRw8cO1ygjLmhLrg9RvDpf87Dkd6D4t93qdef00KKNacQ==}
-    dependencies:
-      prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
-      prosemirror-transform: registry.npmmirror.com/prosemirror-transform/1.7.0
-      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
-    dev: false
-
-  /prosemirror-transform/1.7.0:
-    resolution: {integrity: sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==}
-    dependencies:
       prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
     dev: false
 
   /prosemirror-view/1.29.1:
     resolution: {integrity: sha512-OhujVZSDsh0l0PyHNdfaBj6DBkbhYaCfbaxmTeFrMKd/eWS+G6IC+OAbmR9IsLC8Se1HSbphMaXnsXjupHL3UQ==}
     dependencies:
-      prosemirror-model: 1.18.3
-      prosemirror-state: 1.4.2
-      prosemirror-transform: 1.7.0
+      prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+      prosemirror-transform: registry.npmmirror.com/prosemirror-transform/1.7.0
     dev: false
 
   /prr/1.0.1:
@@ -3812,10 +3724,6 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
-
-  /toggle-selection/1.0.6:
-    resolution: {integrity: sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==}
-    dev: false
 
   /tsutils/3.21.0_typescript@4.9.3:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -4359,6 +4267,25 @@ packages:
       tippy.js: registry.npmmirror.com/tippy.js/6.3.7
     dev: false
 
+  registry.npmmirror.com/@tiptap/extension-code-block-lowlight/2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm:
+    resolution: {integrity: sha512-ksdDrjXLSPuUbcSdeS8LfWfytEwrDz0vb6e6q2u5ReumfLuJta4SCy4PUSbQCo7QGZsF42O53hIlMbPDyWbvZQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-code-block-lowlight/-/extension-code-block-lowlight-2.0.0-beta.207.tgz}
+    id: registry.npmmirror.com/@tiptap/extension-code-block-lowlight/2.0.0-beta.207
+    name: '@tiptap/extension-code-block-lowlight'
+    version: 2.0.0-beta.207
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+      '@tiptap/extension-code-block': ^2.0.0-beta.193
+      prosemirror-model: ^1.18.1
+      prosemirror-state: ^1.4.1
+      prosemirror-view: ^1.28.2
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-code-block': registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
+      prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
+    dev: false
+
   registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q:
     resolution: {integrity: sha512-iaDar6AoXA8I/IDOsUb5F7uCJwt24UQT6TvSElBosZrwnwvJOkQjfmWfA/7gZPI77JaSepJOHr2gYBs/LhWoVw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-code-block/-/extension-code-block-2.0.0-beta.207.tgz}
     id: registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207
@@ -4368,8 +4295,19 @@ packages:
       '@tiptap/core': ^2.0.0-beta.193
       prosemirror-state: ^1.4.1
     dependencies:
-      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+    dev: false
+
+  registry.npmmirror.com/@tiptap/extension-code/2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34:
+    resolution: {integrity: sha512-s6p+HQRHlAxWlbMwTdYBNTeO7HtGkz+vCgVnS0xipnObiT+nqa4AH2LYmfr4EcPOQYVi9BDgefJoBDcGNGnyaA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-code/-/extension-code-2.0.0-beta.207.tgz}
+    id: registry.npmmirror.com/@tiptap/extension-code/2.0.0-beta.207
+    name: '@tiptap/extension-code'
+    version: 2.0.0-beta.207
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
     dev: false
 
   registry.npmmirror.com/@tiptap/extension-floating-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi:
@@ -4447,6 +4385,14 @@ packages:
       - prosemirror-state
     dev: false
 
+  registry.npmmirror.com/@types/hast/2.3.4:
+    resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/hast/-/hast-2.3.4.tgz}
+    name: '@types/hast'
+    version: 2.3.4
+    dependencies:
+      '@types/unist': registry.npmmirror.com/@types/unist/2.0.6
+    dev: false
+
   registry.npmmirror.com/@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/prop-types/-/prop-types-15.7.5.tgz}
     name: '@types/prop-types'
@@ -4468,6 +4414,12 @@ packages:
     name: '@types/scheduler'
     version: 0.16.2
     dev: true
+
+  registry.npmmirror.com/@types/unist/2.0.6:
+    resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/unist/-/unist-2.0.6.tgz}
+    name: '@types/unist'
+    version: 2.0.6
+    dev: false
 
   registry.npmmirror.com/acorn-jsx/5.3.2_acorn@8.8.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz}
@@ -4559,6 +4511,12 @@ packages:
       supports-color: registry.npmmirror.com/supports-color/7.2.0
     dev: false
 
+  registry.npmmirror.com/classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/classnames/-/classnames-2.3.2.tgz}
+    name: classnames
+    version: 2.3.2
+    dev: false
+
   registry.npmmirror.com/color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/color-convert/-/color-convert-2.0.1.tgz}
     name: color-convert
@@ -4578,6 +4536,14 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz}
     name: concat-map
     version: 0.0.1
+    dev: false
+
+  registry.npmmirror.com/copy-to-clipboard/3.3.3:
+    resolution: {integrity: sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/copy-to-clipboard/-/copy-to-clipboard-3.3.3.tgz}
+    name: copy-to-clipboard
+    version: 3.3.3
+    dependencies:
+      toggle-selection: registry.npmmirror.com/toggle-selection/1.0.6
     dev: false
 
   registry.npmmirror.com/cross-spawn/7.0.3:
@@ -4800,6 +4766,14 @@ packages:
       reusify: registry.npmmirror.com/reusify/1.0.4
     dev: false
 
+  registry.npmmirror.com/fault/2.0.1:
+    resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fault/-/fault-2.0.1.tgz}
+    name: fault
+    version: 2.0.1
+    dependencies:
+      format: registry.npmmirror.com/format/0.2.2
+    dev: false
+
   registry.npmmirror.com/file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/file-entry-cache/-/file-entry-cache-6.0.1.tgz}
     name: file-entry-cache
@@ -4833,6 +4807,13 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/flatted/-/flatted-3.2.7.tgz}
     name: flatted
     version: 3.2.7
+    dev: false
+
+  registry.npmmirror.com/format/0.2.2:
+    resolution: {integrity: sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/format/-/format-0.2.2.tgz}
+    name: format
+    version: 0.2.2
+    engines: {node: '>=0.4.x'}
     dev: false
 
   registry.npmmirror.com/fs.realpath/1.0.0:
@@ -4900,6 +4881,13 @@ packages:
     name: has-flag
     version: 4.0.0
     engines: {node: '>=8'}
+    dev: false
+
+  registry.npmmirror.com/highlight.js/11.7.0:
+    resolution: {integrity: sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/highlight.js/-/highlight.js-11.7.0.tgz}
+    name: highlight.js
+    version: 11.7.0
+    engines: {node: '>=12.0.0'}
     dev: false
 
   registry.npmmirror.com/ignore/5.2.0:
@@ -5056,6 +5044,16 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: registry.npmmirror.com/js-tokens/4.0.0
+
+  registry.npmmirror.com/lowlight/2.8.0:
+    resolution: {integrity: sha512-WeExw1IKEkel9ZcYwzpvcFzORIB0IlleTcxJYoEuUgHASuYe/OBYbV6ym/AetG7unNVCBU/SXpgTgs2nT93mhg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lowlight/-/lowlight-2.8.0.tgz}
+    name: lowlight
+    version: 2.8.0
+    dependencies:
+      '@types/hast': registry.npmmirror.com/@types/hast/2.3.4
+      fault: registry.npmmirror.com/fault/2.0.1
+      highlight.js: registry.npmmirror.com/highlight.js/11.7.0
+    dev: false
 
   registry.npmmirror.com/make-dir/2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/make-dir/-/make-dir-2.1.0.tgz}
@@ -5509,6 +5507,12 @@ packages:
     version: 6.3.7
     dependencies:
       '@popperjs/core': registry.npmmirror.com/@popperjs/core/2.11.6
+    dev: false
+
+  registry.npmmirror.com/toggle-selection/1.0.6:
+    resolution: {integrity: sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/toggle-selection/-/toggle-selection-1.0.6.tgz}
+    name: toggle-selection
+    version: 1.0.6
     dev: false
 
   registry.npmmirror.com/tslib/1.14.1:
