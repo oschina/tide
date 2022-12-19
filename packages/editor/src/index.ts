@@ -1,4 +1,4 @@
-import { renderApp } from "./renderApp";
+import { renderApp } from './renderApp';
 
 const createEditor = ({
   el,

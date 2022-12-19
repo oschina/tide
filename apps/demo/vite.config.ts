@@ -1,12 +1,12 @@
-import { defineConfig } from "vite";
-import fg from "fast-glob";
-import { resolve } from "path";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import fg from 'fast-glob';
+import { resolve } from 'path';
+import react from '@vitejs/plugin-react';
 
 const alias = [
   ...fg
-    .sync("../../packages/*", { onlyDirectories: true })
-    .map((name) => name.replace("../../packages/", ""))
+    .sync('../../packages/*', { onlyDirectories: true })
+    .map((name) => name.replace('../../packages/', ''))
     .map((name) => {
       return {
         find: `@test-pkgs/${name}`,

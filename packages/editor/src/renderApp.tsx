@@ -1,11 +1,11 @@
-import { EditorContent, useEditor } from "@tiptap/react";
-import ReactDom from "react-dom";
-import Document from "@tiptap/extension-document";
-import Paragraph from "@tiptap/extension-paragraph";
-import Text from "@tiptap/extension-text";
-import Blockquote from "@tiptap/extension-blockquote";
+import { EditorContent, useEditor } from '@tiptap/react';
+import ReactDom from 'react-dom';
+import Document from '@tiptap/extension-document';
+import Paragraph from '@tiptap/extension-paragraph';
+import Text from '@tiptap/extension-text';
+import Blockquote from '@tiptap/extension-blockquote';
 
-import CodeBlock from "@test-pkgs/extension-code-block";
+import CodeBlock from '@test-pkgs/extension-code-block';
 
 const defaultExtensions = [Document, Paragraph, Text, Blockquote, CodeBlock];
 
@@ -13,7 +13,7 @@ export function renderApp(opts: { el: HTMLElement; content?: string }) {
   function App() {
     const editor = useEditor({
       extensions: defaultExtensions,
-      content: opts.content || "",
+      content: opts.content || '',
     });
 
     if (!editor) {
