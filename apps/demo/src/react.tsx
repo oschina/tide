@@ -10,14 +10,20 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 
 // custom extensions
-import LinkBlock, { LinkBubbleMenu } from "@test-pkgs/extension-link";
-import CodeBlock from "@test-pkgs/extension-code-block";
-import ImageBlock, { uploadImage } from "@test-pkgs/extension-image";
+import Link, { LinkBubbleMenu } from "@test-pkgs/extension-link";
+import Image, { uploadImage } from "@test-pkgs/extension-image";
 import Uploader from "@test-pkgs/extension-uploader";
+import CodeBlock from "@test-pkgs/extension-code-block";
+import Emoji, { suggestion as emojiSuggestion} from "@test-pkgs/extension-emoji";
 
 function App() {
   const editor = useEditor({
-    extensions: [Document, Paragraph, Text, LinkBlock, Blockquote, CodeBlock, ImageBlock, Uploader],
+    extensions: [Document, Paragraph, Text, Link, Image, Uploader, Blockquote, CodeBlock,
+      Emoji.configure({
+        enableEmoticons: true,
+        forceFallbackImages: false,
+        suggestion: emojiSuggestion,
+      }),],
     content: `
       <blockquote>
         Nothing is impossible, the word itself says “I’m possible!”

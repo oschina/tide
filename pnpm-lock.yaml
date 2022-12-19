@@ -44,6 +44,7 @@ importers:
     specifiers:
       '@test-pkgs/editor': workspace:*
       '@test-pkgs/extension-code-block': workspace:*
+      '@test-pkgs/extension-emoji': workspace:*
       '@test-pkgs/extension-image': workspace:*
       '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
@@ -92,6 +93,7 @@ importers:
     dependencies:
       '@test-pkgs/editor': link:../../packages/editor
       '@test-pkgs/extension-code-block': link:../../packages/extension-code-block
+      '@test-pkgs/extension-emoji': link:../../packages/extension-emoji
       '@test-pkgs/extension-image': link:../../packages/extension-image
       '@test-pkgs/extension-link': link:../../packages/extension-link
       '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
@@ -298,6 +300,43 @@ importers:
       '@types/react': registry.npmmirror.com/@types/react/16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
+      typescript: registry.npmmirror.com/typescript/4.9.3
+
+  packages/extension-emoji:
+    specifiers:
+      '@test-pkgs/extension-bubble-menu': workspace:*
+      '@tiptap/core': ^2.0.0-beta.204
+      '@tiptap/react': ^2.0.0-beta.204
+      '@tiptap/suggestion': ^2.0.0-beta.204
+      '@types/react': ^16.14.0
+      classnames: ^2.2.6
+      emoji-regex: ^10.2.1
+      eslint-config-custom: workspace:*
+      prosemirror-state: ^1.4.2
+      prosemirror-transform: ^1.7.0
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tippy.js: ^6.3.7
+      tsconfig: workspace:*
+      tslib: ^2.4.1
+      typescript: ^4.5.2
+    dependencies:
+      '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
+      '@tiptap/suggestion': registry.npmmirror.com/@tiptap/suggestion/2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
+      classnames: registry.npmmirror.com/classnames/2.3.2
+      emoji-regex: registry.npmmirror.com/emoji-regex/10.2.1
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+      prosemirror-transform: registry.npmmirror.com/prosemirror-transform/1.7.0
+      react: registry.npmmirror.com/react/16.14.0
+      react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
+      tippy.js: registry.npmmirror.com/tippy.js/6.3.7
+    devDependencies:
+      '@types/react': registry.npmmirror.com/@types/react/16.14.34
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      tslib: registry.npmmirror.com/tslib/2.4.1
       typescript: registry.npmmirror.com/typescript/4.9.3
 
   packages/extension-image:
@@ -4385,6 +4424,23 @@ packages:
       - prosemirror-state
     dev: false
 
+  registry.npmmirror.com/@tiptap/suggestion/2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe:
+    resolution: {integrity: sha512-E5YisIR8IjA3JSSt97OmP7n0QYygtl3fEeBt12E377mcdXrRrdW7ajAurrHeb9VFp1TFOzxzxFYa/TWGaWeBNw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/suggestion/-/suggestion-2.0.0-beta.207.tgz}
+    id: registry.npmmirror.com/@tiptap/suggestion/2.0.0-beta.207
+    name: '@tiptap/suggestion'
+    version: 2.0.0-beta.207
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+      prosemirror-model: ^1.18.1
+      prosemirror-state: ^1.4.1
+      prosemirror-view: ^1.28.2
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
+    dev: false
+
   registry.npmmirror.com/@types/hast/2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/hast/-/hast-2.3.4.tgz}
     name: '@types/hast'
@@ -4590,6 +4646,12 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       esutils: registry.npmmirror.com/esutils/2.0.3
+    dev: false
+
+  registry.npmmirror.com/emoji-regex/10.2.1:
+    resolution: {integrity: sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/emoji-regex/-/emoji-regex-10.2.1.tgz}
+    name: emoji-regex
+    version: 10.2.1
     dev: false
 
   registry.npmmirror.com/errno/0.1.8:
