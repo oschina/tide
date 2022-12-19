@@ -49,7 +49,9 @@ importers:
       '@test-pkgs/extension-emoji': workspace:*
       '@test-pkgs/extension-image': workspace:*
       '@test-pkgs/extension-link': workspace:*
+      '@test-pkgs/extension-markdown': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
+      '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
@@ -88,7 +90,6 @@ importers:
       react: ^16.14.0
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
-      tiptap-markdown: ^0.6.0
       tsconfig: workspace:*
       typescript: ^4.9.3
       vite: ^4.0.0
@@ -98,7 +99,9 @@ importers:
       '@test-pkgs/extension-emoji': link:../../packages/extension-emoji
       '@test-pkgs/extension-image': link:../../packages/extension-image
       '@test-pkgs/extension-link': link:../../packages/extension-link
+      '@test-pkgs/extension-markdown': link:../../packages/extension-markdown
       '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
+      '@test-pkgs/markdown': link:../../packages/markdown
       '@test-pkgs/react': link:../../packages/react
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
@@ -131,7 +134,6 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
-      tiptap-markdown: 0.6.0_zaxalbiy7gmbdjkog4yp5bucvq
     devDependencies:
       '@types/react': 16.14.34
       '@types/react-dom': 16.9.17
@@ -146,6 +148,7 @@ importers:
   packages/editor:
     specifiers:
       '@test-pkgs/extension-code-block': workspace:*
+      '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
@@ -184,11 +187,11 @@ importers:
       react: ^16.14.0
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
-      tiptap-markdown: ^0.6.0
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/extension-code-block': link:../extension-code-block
+      '@test-pkgs/markdown': link:../markdown
       '@test-pkgs/react': link:../react
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
@@ -221,7 +224,6 @@ importers:
       '@tiptap/suggestion': 2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
       browser-fs-access: 0.31.1
       tippy.js: 6.3.7
-      tiptap-markdown: 0.6.0_zaxalbiy7gmbdjkog4yp5bucvq
     devDependencies:
       '@types/react': 16.14.34
       '@types/react-dom': 16.9.17
@@ -388,6 +390,25 @@ importers:
       tsconfig: link:../tsconfig
       tslib: registry.npmmirror.com/tslib/2.4.1
       typescript: registry.npmmirror.com/typescript/4.9.3
+
+  packages/extension-markdown:
+    specifiers:
+      '@test-pkgs/markdown': workspace:*
+      '@tiptap/core': ^2.0.0-beta.204
+      eslint-config-custom: workspace:*
+      prosemirror-model: ^1.18.3
+      prosemirror-state: ^1.4.2
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@test-pkgs/markdown': link:../markdown
+      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      prosemirror-model: 1.18.3
+      prosemirror-state: 1.4.2
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      typescript: 4.9.3
 
   packages/extension-uploader:
     specifiers:

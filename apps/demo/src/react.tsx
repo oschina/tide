@@ -3,7 +3,12 @@ import './style.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { EditorContent, useEditor } from '@test-pkgs/react';
+import { Editor, EditorContent, useEditor } from '@test-pkgs/react';
+import {
+  MarkdownEditor,
+  MarkdownEditorOptions,
+  createMarkdownEditor,
+} from '@test-pkgs/markdown';
 import Blockquote from '@tiptap/extension-blockquote';
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
@@ -17,31 +22,46 @@ import CodeBlock from '@test-pkgs/extension-code-block';
 import Emoji, {
   suggestion as emojiSuggestion,
 } from '@test-pkgs/extension-emoji';
+import { Markdown } from '@test-pkgs/extension-markdown';
+
+const MarkdownEditorClass = createMarkdownEditor(Editor);
 
 function App() {
-  const editor = useEditor({
-    extensions: [
-      Document,
-      Paragraph,
-      Text,
-      Link,
-      Image,
-      Uploader,
-      Blockquote,
-      CodeBlock,
-      Emoji.configure({
-        enableEmoticons: true,
-        forceFallbackImages: false,
-        suggestion: emojiSuggestion,
-      }),
-    ],
-    content: `
+  const editor = useEditor<MarkdownEditor, MarkdownEditorOptions>(
+    MarkdownEditorClass,
+    {
+      markdown: {
+        linkify: true,
+        breaks: true,
+        tightLists: true,
+      },
+      extensions: [
+        Document,
+        Paragraph,
+        Text,
+        Link,
+        Image,
+        Uploader,
+        Blockquote,
+        CodeBlock,
+        Emoji.configure({
+          enableEmoticons: true,
+          forceFallbackImages: false,
+          suggestion: emojiSuggestion,
+        }),
+        Markdown.configure({
+          paste: true,
+          copy: false,
+        }),
+      ],
+      content: `
       <blockquote>
         Nothing is impossible, the word itself says “I’m possible!”
       </blockquote>
       <p>Audrey Hepburn</p>
     `,
-  });
+    }
+  );
 
   if (!editor) {
     return null;
@@ -56,7 +76,7 @@ function App() {
       >
         link
       </button>
-      <EditorContent editor={editor}>
+      <EditorContent editor={editor as unknown as Editor}>
         {editor && <LinkBubbleMenu editor={editor} />}
       </EditorContent>
     </div>
