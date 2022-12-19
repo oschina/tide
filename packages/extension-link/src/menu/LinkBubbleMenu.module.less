@@ -1,0 +1,33 @@
+.link-bubble-menu {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px -2px rgba(9, 30, 66, 0.25),
+    0px 0px 1px 0px rgba(9, 30, 66, 0.31);
+
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  max-width: 280px;
+  font-size: 14px;
+
+  .link {
+    flex: 1;
+    min-width: 0;
+    margin: 0 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  button {
+    font-size: 12px;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

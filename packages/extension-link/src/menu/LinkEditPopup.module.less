@@ -1,0 +1,38 @@
+.link-edit-popup {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px -2px rgba(9, 30, 66, 0.25),
+    0px 0px 1px 0px rgba(9, 30, 66, 0.31);
+
+  padding: 8px;
+  min-width: 280px;
+  font-size: 14px;
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    span {
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  button {
+    font-size: 12px;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -9,6 +9,6 @@ export const Image = TImage.extend<ImageOptions>({
   name: 'image',
 
   allowGapCursor() {
-    return this.options.inline ? false : true;
+    return !this.options.inline;
   },
 });

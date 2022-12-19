@@ -10,13 +10,14 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 
 // custom extensions
+import LinkBlock, { LinkBubbleMenu } from "@test-pkgs/extension-link";
 import CodeBlock from "@test-pkgs/extensions-code-block";
 import ImageBlock, { uploadImage } from "@test-pkgs/extension-image";
 import Uploader from "@test-pkgs/extension-uploader";
 
 function App() {
   const editor = useEditor({
-    extensions: [Document, Paragraph, Text, Blockquote, CodeBlock, ImageBlock, Uploader],
+    extensions: [Document, Paragraph, Text, LinkBlock, Blockquote, CodeBlock, ImageBlock, Uploader],
     content: `
       <blockquote>
         Nothing is impossible, the word itself says “I’m possible!”
@@ -32,7 +33,13 @@ function App() {
   return (
     <div className="editor-demo">
       <button onClick={() => uploadImage(editor)}>image</button>
-      <EditorContent editor={editor} />
+      <button
+        onClick={() => editor?.chain().focus().toggleLink({ href: '' }).run()}
+        className={editor.isActive('link') ? 'is-active' : ''}
+      >
+        link
+      </button>
+      <EditorContent editor={editor}>{editor && <LinkBubbleMenu editor={editor} />}</EditorContent>
     </div>
   );
 }

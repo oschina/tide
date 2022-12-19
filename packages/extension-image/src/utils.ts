@@ -1,21 +1,21 @@
 import { fileOpen } from 'browser-fs-access';
+import { Image as ImageExtension } from './image';
 import type { Editor, JSONContent } from '@tiptap/core';
 import type { UploaderStorage } from '@test-pkgs/extension-uploader';
-import { Image as ImageExtension } from './image';
 
 export type ImageSize = { width: number; height: number; aspectRatio: number };
 
 export function getImageNaturalSize(url: string): Promise<ImageSize> {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.onload = function () {
+    img.onload = () => {
       resolve({
         width: img.naturalWidth,
         height: img.naturalHeight,
         aspectRatio: img.naturalWidth / img.naturalHeight,
       });
     };
-    img.onerror = function (err) {
+    img.onerror = (err) => {
       reject(err);
     };
     img.src = url;

@@ -44,6 +44,7 @@ importers:
     specifiers:
       '@test-pkgs/editor': workspace:*
       '@test-pkgs/extension-image': workspace:*
+      '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
       '@test-pkgs/extensions-code-block': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
@@ -62,7 +63,6 @@ importers:
       '@tiptap/extension-horizontal-rule': ^2.0.0-beta.204
       '@tiptap/extension-image': ^2.0.0-beta.204
       '@tiptap/extension-italic': ^2.0.0-beta.204
-      '@tiptap/extension-link': ^2.0.0-beta.204
       '@tiptap/extension-list-item': ^2.0.0-beta.204
       '@tiptap/extension-mention': ^2.0.0-beta.204
       '@tiptap/extension-ordered-list': ^2.0.0-beta.204
@@ -94,6 +94,7 @@ importers:
     dependencies:
       '@test-pkgs/editor': link:../../packages/editor
       '@test-pkgs/extension-image': link:../../packages/extension-image
+      '@test-pkgs/extension-link': link:../../packages/extension-link
       '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
       '@test-pkgs/extensions-code-block': link:../../packages/extensions-code-block
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
@@ -112,7 +113,6 @@ importers:
       '@tiptap/extension-horizontal-rule': 2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
       '@tiptap/extension-image': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-italic': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
-      '@tiptap/extension-link': 2.0.0-beta.207_lidbw2jqaij4esjqu3ga4pao7y
       '@tiptap/extension-list-item': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-mention': 2.0.0-beta.207_gsipuqtqkxbcabskenwasm3r4q
       '@tiptap/extension-ordered-list': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
@@ -246,6 +246,35 @@ importers:
       '@typescript-eslint/parser': 5.44.0_hsf322ms6xhhd4b5ne6lb74y4a
       eslint-config-prettier: 8.5.0_eslint@8.28.0
 
+  packages/extension-bubble-menu:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.204
+      '@tiptap/react': ^2.0.0-beta.204
+      '@types/react': ^16.14.0
+      eslint-config-custom: workspace:*
+      prosemirror-model: ^1.18.3
+      prosemirror-state: ^1.4.2
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tippy.js: ^6.3.7
+      tsconfig: workspace:*
+      tslib: ^2.4.1
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
+      prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+      react: registry.npmmirror.com/react/16.14.0
+      react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
+      tippy.js: registry.npmmirror.com/tippy.js/6.3.7
+    devDependencies:
+      '@types/react': registry.npmmirror.com/@types/react/16.14.34
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      tslib: registry.npmmirror.com/tslib/2.4.1
+      typescript: registry.npmmirror.com/typescript/4.9.3
+
   packages/extension-image:
     specifiers:
       '@test-pkgs/extension-uploader': workspace:*
@@ -262,6 +291,33 @@ importers:
       '@tiptap/extension-image': registry.npmmirror.com/@tiptap/extension-image/2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       browser-fs-access: registry.npmmirror.com/browser-fs-access/0.31.1
     devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      tslib: registry.npmmirror.com/tslib/2.4.1
+      typescript: registry.npmmirror.com/typescript/4.9.3
+
+  packages/extension-link:
+    specifiers:
+      '@test-pkgs/extension-bubble-menu': workspace:*
+      '@tiptap/core': ^2.0.0-beta.204
+      '@tiptap/extension-link': ^2.0.0-beta.204
+      '@tiptap/react': ^2.0.0-beta.204
+      '@types/react': ^16.14.0
+      eslint-config-custom: workspace:*
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tsconfig: workspace:*
+      tslib: ^2.4.1
+      typescript: ^4.5.2
+    dependencies:
+      '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-link': registry.npmmirror.com/@tiptap/extension-link/2.0.0-beta.207_lidbw2jqaij4esjqu3ga4pao7y
+      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
+      react: registry.npmmirror.com/react/16.14.0
+      react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
+    devDependencies:
+      '@types/react': registry.npmmirror.com/@types/react/16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: registry.npmmirror.com/tslib/2.4.1
@@ -1291,7 +1347,7 @@ packages:
     resolution: {integrity: sha512-Zaw58gQxjQceJqhqybJi1oUDaORT8i2GTgwICPs8v/X/Pkx35FXQba69ldHVg5pQZ6YLKpROXgyHvBaCJOFXiA==}
     dependencies:
       pkg-dir: 5.0.0
-      tslib: 2.4.1
+      tslib: registry.npmmirror.com/tslib/2.4.1
       upath2: 3.1.19
     dev: true
 
@@ -2419,7 +2475,7 @@ packages:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.4.1
+      tslib: registry.npmmirror.com/tslib/2.4.1
     optionalDependencies:
       errno: registry.npmmirror.com/errno/0.1.8
       graceful-fs: registry.npmmirror.com/graceful-fs/4.2.10
@@ -2770,7 +2826,7 @@ packages:
   /path-is-network-drive/1.0.20:
     resolution: {integrity: sha512-p5wCWlRB4+ggzxWshqHH9aF3kAuVu295NaENXmVhThbZPJQBeJdxZTP6CIoUR+kWHDUW56S9YcaO1gXnc/BOxw==}
     dependencies:
-      tslib: 2.4.1
+      tslib: registry.npmmirror.com/tslib/2.4.1
     dev: true
 
   /path-key/3.1.1:
@@ -2785,7 +2841,7 @@ packages:
   /path-strip-sep/1.0.17:
     resolution: {integrity: sha512-+2zIC2fNgdilgV7pTrktY6oOxxZUo9x5zJYfTzxsGze5kSGDDwhA5/0WlBn+sUyv/WuuyYn3OfM+Ue5nhdQUgA==}
     dependencies:
-      tslib: 2.4.1
+      tslib: registry.npmmirror.com/tslib/2.4.1
     dev: true
 
   /path-type/3.0.0:
@@ -3462,7 +3518,7 @@ packages:
       fs-extra: 10.1.0
       resolve: 1.22.1
       rollup: 2.79.1
-      tslib: 2.4.1
+      tslib: registry.npmmirror.com/tslib/2.4.1
       typescript: registry.npmmirror.com/typescript/4.9.3
     dev: true
 
@@ -3761,21 +3817,13 @@ packages:
     resolution: {integrity: sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==}
     dev: false
 
-  /tslib/1.14.1:
-    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: false
-
-  /tslib/2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
-    dev: true
-
   /tsutils/3.21.0_typescript@4.9.3:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
-      tslib: 1.14.1
+      tslib: registry.npmmirror.com/tslib/1.14.1
       typescript: registry.npmmirror.com/typescript/4.9.3
     dev: false
 
@@ -3812,7 +3860,7 @@ packages:
       '@types/node': 18.11.15
       path-is-network-drive: 1.0.20
       path-strip-sep: 1.0.17
-      tslib: 2.4.1
+      tslib: registry.npmmirror.com/tslib/2.4.1
     dev: true
 
   /update-browserslist-db/1.0.10_browserslist@4.21.4:
@@ -4265,6 +4313,12 @@ packages:
       fastq: registry.npmmirror.com/fastq/1.13.0
     dev: false
 
+  registry.npmmirror.com/@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@popperjs/core/-/core-2.11.6.tgz}
+    name: '@popperjs/core'
+    version: 2.11.6
+    dev: false
+
   registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay:
     resolution: {integrity: sha512-mhXuTgVnZ4HuXhfz9vDUlcpklfQ7Iqeh3PcpT5avmV8Az8Oyxsb54IEdTer2sJrIAZc3YS2cxBG1vH0sMqwndw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/core/-/core-2.0.0-beta.207.tgz}
     id: registry.npmmirror.com/@tiptap/core/2.0.0-beta.207
@@ -4288,6 +4342,23 @@ packages:
       prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
     dev: false
 
+  registry.npmmirror.com/@tiptap/extension-bubble-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi:
+    resolution: {integrity: sha512-Lo+mO71CJaWAvDuPmxGCGS6XGyH6gt2hTVkGAQKR3PRmctnutBvaJF/BOY5wb20/wtkK39UHVc75enn0svdYmg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-bubble-menu/-/extension-bubble-menu-2.0.0-beta.207.tgz}
+    id: registry.npmmirror.com/@tiptap/extension-bubble-menu/2.0.0-beta.207
+    name: '@tiptap/extension-bubble-menu'
+    version: 2.0.0-beta.207
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+      prosemirror-state: ^1.4.1
+      prosemirror-view: ^1.28.2
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      lodash: registry.npmmirror.com/lodash/4.17.21
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
+      tippy.js: registry.npmmirror.com/tippy.js/6.3.7
+    dev: false
+
   registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q:
     resolution: {integrity: sha512-iaDar6AoXA8I/IDOsUb5F7uCJwt24UQT6TvSElBosZrwnwvJOkQjfmWfA/7gZPI77JaSepJOHr2gYBs/LhWoVw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-code-block/-/extension-code-block-2.0.0-beta.207.tgz}
     id: registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207
@@ -4301,6 +4372,22 @@ packages:
       prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
     dev: false
 
+  registry.npmmirror.com/@tiptap/extension-floating-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi:
+    resolution: {integrity: sha512-yWg5kt3SnxnVzQYFtmxoS0tX5gF1tIXDV0mO3LN/vJ5VryqmXNO3soqTJASzCv/Kmgbr7ijBtsBn+Da3Au0Hvw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-floating-menu/-/extension-floating-menu-2.0.0-beta.207.tgz}
+    id: registry.npmmirror.com/@tiptap/extension-floating-menu/2.0.0-beta.207
+    name: '@tiptap/extension-floating-menu'
+    version: 2.0.0-beta.207
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+      prosemirror-state: ^1.4.1
+      prosemirror-view: ^1.28.2
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
+      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
+      tippy.js: registry.npmmirror.com/tippy.js/6.3.7
+    dev: false
+
   registry.npmmirror.com/@tiptap/extension-image/2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34:
     resolution: {integrity: sha512-fAr9A2z0VQGfLZuBR0yZpvizkQggmJE8rGH4UUgVzMCBiXpiKqLID0dT+bKQU5K1rQmP1CHpn+t0NcbZ37735g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-image/-/extension-image-2.0.0-beta.207.tgz}
     id: registry.npmmirror.com/@tiptap/extension-image/2.0.0-beta.207
@@ -4310,6 +4397,22 @@ packages:
       '@tiptap/core': ^2.0.0-beta.193
     dependencies:
       '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+    dev: false
+
+  registry.npmmirror.com/@tiptap/extension-link/2.0.0-beta.207_lidbw2jqaij4esjqu3ga4pao7y:
+    resolution: {integrity: sha512-LKGHf+ij7pJguL5Tdl8pPYZalAC7a0UDWhh2Fc/4WrdD4KC4X8eiW5QEVxO54v1gz8oOfcAtkKgyIIv1CjNgFA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-link/-/extension-link-2.0.0-beta.207.tgz}
+    id: registry.npmmirror.com/@tiptap/extension-link/2.0.0-beta.207
+    name: '@tiptap/extension-link'
+    version: 2.0.0-beta.207
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+      prosemirror-model: ^1.18.1
+      prosemirror-state: ^1.4.1
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      linkifyjs: registry.npmmirror.com/linkifyjs/3.0.5
+      prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
+      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
     dev: false
 
   registry.npmmirror.com/@tiptap/prosemirror-tables/1.1.3:
@@ -4323,6 +4426,48 @@ packages:
       prosemirror-transform: registry.npmmirror.com/prosemirror-transform/1.7.0
       prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
     dev: false
+
+  registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq:
+    resolution: {integrity: sha512-s+IrUdLJhY7YYmwjq4reDgZbX7TmTanQaL5C0AJZI70bnV+U2+9uoz2OYxSUOOJ3hPFNgcRMYlYPOvWcoVPmbA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/react/-/react-2.0.0-beta.207.tgz}
+    id: registry.npmmirror.com/@tiptap/react/2.0.0-beta.207
+    name: '@tiptap/react'
+    version: 2.0.0-beta.207
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-bubble-menu': registry.npmmirror.com/@tiptap/extension-bubble-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi
+      '@tiptap/extension-floating-menu': registry.npmmirror.com/@tiptap/extension-floating-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi
+      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
+      react: registry.npmmirror.com/react/16.14.0
+      react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
+    transitivePeerDependencies:
+      - prosemirror-state
+    dev: false
+
+  registry.npmmirror.com/@types/prop-types/15.7.5:
+    resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/prop-types/-/prop-types-15.7.5.tgz}
+    name: '@types/prop-types'
+    version: 15.7.5
+    dev: true
+
+  registry.npmmirror.com/@types/react/16.14.34:
+    resolution: {integrity: sha512-b99nWeGGReLh6aKBppghVqp93dFJtgtDOzc8NXM6hewD8PQ2zZG5kBLgbx+VJr7Q7WBMjHxaIl3dwpwwPIUgyA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/react/-/react-16.14.34.tgz}
+    name: '@types/react'
+    version: 16.14.34
+    dependencies:
+      '@types/prop-types': registry.npmmirror.com/@types/prop-types/15.7.5
+      '@types/scheduler': registry.npmmirror.com/@types/scheduler/0.16.2
+      csstype: registry.npmmirror.com/csstype/3.1.1
+    dev: true
+
+  registry.npmmirror.com/@types/scheduler/0.16.2:
+    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/scheduler/-/scheduler-0.16.2.tgz}
+    name: '@types/scheduler'
+    version: 0.16.2
+    dev: true
 
   registry.npmmirror.com/acorn-jsx/5.3.2_acorn@8.8.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz}
@@ -4445,6 +4590,12 @@ packages:
       shebang-command: registry.npmmirror.com/shebang-command/2.0.0
       which: registry.npmmirror.com/which/2.0.2
     dev: false
+
+  registry.npmmirror.com/csstype/3.1.1:
+    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/csstype/-/csstype-3.1.1.tgz}
+    name: csstype
+    version: 3.1.1
+    dev: true
 
   registry.npmmirror.com/debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/debug/-/debug-4.3.4.tgz}
@@ -4871,6 +5022,12 @@ packages:
       type-check: registry.npmmirror.com/type-check/0.4.0
     dev: false
 
+  registry.npmmirror.com/linkifyjs/3.0.5:
+    resolution: {integrity: sha512-1Y9XQH65eQKA9p2xtk+zxvnTeQBG7rdAXSkUG97DmuI/Xhji9uaUzaWxRj6rf9YC0v8KKHkxav7tnLX82Sz5Fg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/linkifyjs/-/linkifyjs-3.0.5.tgz}
+    name: linkifyjs
+    version: 3.0.5
+    dev: false
+
   registry.npmmirror.com/locate-path/6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/locate-path/-/locate-path-6.0.0.tgz}
     name: locate-path
@@ -4884,6 +5041,12 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash.merge/-/lodash.merge-4.6.2.tgz}
     name: lodash.merge
     version: 4.6.2
+    dev: false
+
+  registry.npmmirror.com/lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
+    name: lodash
+    version: 4.17.21
     dev: false
 
   registry.npmmirror.com/loose-envify/1.4.0:
@@ -5075,6 +5238,16 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
+  registry.npmmirror.com/prop-types/15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/prop-types/-/prop-types-15.8.1.tgz}
+    name: prop-types
+    version: 15.8.1
+    dependencies:
+      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
+      object-assign: registry.npmmirror.com/object-assign/4.1.1
+      react-is: registry.npmmirror.com/react-is/16.13.1
+    dev: false
+
   registry.npmmirror.com/prosemirror-commands/1.5.0:
     resolution: {integrity: sha512-zL0Fxbj3fh71GPNHn5YdYgYGX2aU2XLecZYk2ekEF0oOD259HcXtM+96VjPVi5o3h4sGUdDfEEhGiREXW6U+4A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/prosemirror-commands/-/prosemirror-commands-1.5.0.tgz}
     name: prosemirror-commands
@@ -5184,6 +5357,38 @@ packages:
     version: 1.2.3
     dev: false
 
+  registry.npmmirror.com/react-dom/16.14.0_react@16.14.0:
+    resolution: {integrity: sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-dom/-/react-dom-16.14.0.tgz}
+    id: registry.npmmirror.com/react-dom/16.14.0
+    name: react-dom
+    version: 16.14.0
+    peerDependencies:
+      react: ^16.14.0
+    dependencies:
+      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
+      object-assign: registry.npmmirror.com/object-assign/4.1.1
+      prop-types: registry.npmmirror.com/prop-types/15.8.1
+      react: registry.npmmirror.com/react/16.14.0
+      scheduler: registry.npmmirror.com/scheduler/0.19.1
+    dev: false
+
+  registry.npmmirror.com/react-is/16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz}
+    name: react-is
+    version: 16.13.1
+    dev: false
+
+  registry.npmmirror.com/react/16.14.0:
+    resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react/-/react-16.14.0.tgz}
+    name: react
+    version: 16.14.0
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
+      object-assign: registry.npmmirror.com/object-assign/4.1.1
+      prop-types: registry.npmmirror.com/prop-types/15.8.1
+    dev: false
+
   registry.npmmirror.com/regexpp/3.2.0:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/regexpp/-/regexpp-3.2.0.tgz}
     name: regexpp
@@ -5226,6 +5431,15 @@ packages:
     version: 1.2.0
     dependencies:
       queue-microtask: registry.npmmirror.com/queue-microtask/1.2.3
+    dev: false
+
+  registry.npmmirror.com/scheduler/0.19.1:
+    resolution: {integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/scheduler/-/scheduler-0.19.1.tgz}
+    name: scheduler
+    version: 0.19.1
+    dependencies:
+      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
+      object-assign: registry.npmmirror.com/object-assign/4.1.1
     dev: false
 
   registry.npmmirror.com/shebang-command/2.0.0:
@@ -5287,6 +5501,20 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/text-table/-/text-table-0.2.0.tgz}
     name: text-table
     version: 0.2.0
+    dev: false
+
+  registry.npmmirror.com/tippy.js/6.3.7:
+    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tippy.js/-/tippy.js-6.3.7.tgz}
+    name: tippy.js
+    version: 6.3.7
+    dependencies:
+      '@popperjs/core': registry.npmmirror.com/@popperjs/core/2.11.6
+    dev: false
+
+  registry.npmmirror.com/tslib/1.14.1:
+    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-1.14.1.tgz}
+    name: tslib
+    version: 1.14.1
     dev: false
 
   registry.npmmirror.com/tslib/2.4.1:

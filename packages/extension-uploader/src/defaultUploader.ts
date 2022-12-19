@@ -20,8 +20,6 @@ export const readFileAsBase64 = (
     reader.readAsDataURL(file);
   });
 
-export const defaultUploader: UploaderFn = async (files) => {
-  return Promise.all(
-    files.filter((file) => !!file).map((file) => readFileAsBase64(file))
-  );
-};
+export const defaultUploader: UploaderFn = async (files) => Promise.all(
+  files.filter((file) => !!file).map((file) => readFileAsBase64(file))
+);

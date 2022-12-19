@@ -3,14 +3,14 @@ import { Extension } from '@tiptap/core';
 import type { JSONContent } from '@tiptap/core';
 import { defaultUploader } from './defaultUploader';
 
-export type UploaderFn = (files: File[]) => Promise<
-  {
-    name: string;
-    size: number;
-    url: string;
-    type: string;
-  }[]
->;
+export type UploadResult = {
+  name: string;
+  size: number;
+  url: string;
+  type: string;
+};
+
+export type UploaderFn = (files: File[]) => Promise<UploadResult[]>;
 
 export type UploaderOptions = {
   uploader: UploaderFn;
