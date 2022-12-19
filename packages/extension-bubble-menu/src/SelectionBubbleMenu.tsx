@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  BubbleMenu,
   getMarkRange,
   getMarkType,
   isNodeSelection,
   posToDOMRect,
-} from '@tiptap/react';
+} from '@tiptap/core';
+import { BubbleMenu } from '@test-pkgs/react';
 import type { Props as TippyOptions } from 'tippy.js';
-import type { BubbleMenuProps } from '@tiptap/react';
+import type { BubbleMenuProps } from '@test-pkgs/react';
 import type { PluginKey } from 'prosemirror-state';
 import type { MarkType } from 'prosemirror-model';
 

@@ -6,7 +6,7 @@ import {
   isMarkActive,
   posToDOMRect,
 } from '@tiptap/core';
-import { ReactRenderer } from '@tiptap/react';
+import { ReactRenderer } from '@test-pkgs/react';
 import { showBubbleMenu } from '@test-pkgs/extension-bubble-menu';
 import styles from './LinkEditPopup.module.less';
 

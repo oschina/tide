@@ -3,7 +3,7 @@ import './style.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { EditorContent, useEditor } from '@tiptap/react';
+import { EditorContent, useEditor } from '@test-pkgs/react';
 import Blockquote from '@tiptap/extension-blockquote';
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';

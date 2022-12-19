@@ -15,7 +15,6 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@tiptap/react": "^2.0.0-beta.204",
     "prosemirror-model": "^1.18.3",
     "prosemirror-state": "^1.4.2",
     "tippy.js": "^6.3.7"
@@ -29,7 +28,7 @@
   },
   "peerDependencies": {
     "@tiptap/core": "^2.0.0-beta.204",
-    "@tiptap/react": "^2.0.0-beta.204",
+    "@test-pkgs/react": "workspace:*",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },

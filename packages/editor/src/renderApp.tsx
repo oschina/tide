@@ -1,5 +1,6 @@
-import { EditorContent, useEditor } from '@tiptap/react';
 import ReactDom from 'react-dom';
+import { Editor, EditorContent, useEditor } from '@test-pkgs/react';
+
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
 import Text from '@tiptap/extension-text';
@@ -11,7 +12,7 @@ const defaultExtensions = [Document, Paragraph, Text, Blockquote, CodeBlock];
 
 export function renderApp(opts: { el: HTMLElement; content?: string }) {
   function App() {
-    const editor = useEditor({
+    const editor = useEditor(Editor, {
       extensions: defaultExtensions,
       content: opts.content || '',
     });

@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import React, { useMemo, useRef } from 'react';
-import { NodeViewContent, NodeViewProps, NodeViewWrapper } from '@tiptap/react';
 import copy from 'copy-to-clipboard';
+import type { NodeViewProps } from '@tiptap/core';
+import { NodeViewContent, NodeViewWrapper } from '@test-pkgs/react';
 import styles from './CodeBlockNodeView.module.less';
 
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({

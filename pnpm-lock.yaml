@@ -50,6 +50,7 @@ importers:
       '@test-pkgs/extension-image': workspace:*
       '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
+      '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
       '@tiptap/extension-bold': ^2.0.0-beta.204
@@ -77,7 +78,6 @@ importers:
       '@tiptap/extension-task-item': ^2.0.0-beta.204
       '@tiptap/extension-task-list': ^2.0.0-beta.204
       '@tiptap/extension-text': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
       '@tiptap/suggestion': ^2.0.0-beta.204
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
@@ -99,6 +99,7 @@ importers:
       '@test-pkgs/extension-image': link:../../packages/extension-image
       '@test-pkgs/extension-link': link:../../packages/extension-link
       '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
+      '@test-pkgs/react': link:../../packages/react
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bold': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
@@ -126,7 +127,6 @@ importers:
       '@tiptap/extension-task-item': 2.0.0-beta.207_zaxalbiy7gmbdjkog4yp5bucvq
       '@tiptap/extension-task-list': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-text': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
-      '@tiptap/react': 2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
       '@tiptap/suggestion': 2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -146,6 +146,7 @@ importers:
   packages/editor:
     specifiers:
       '@test-pkgs/extension-code-block': workspace:*
+      '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-blockquote': ^2.0.0-beta.204
       '@tiptap/extension-bold': ^2.0.0-beta.204
@@ -174,7 +175,6 @@ importers:
       '@tiptap/extension-task-item': ^2.0.0-beta.204
       '@tiptap/extension-task-list': ^2.0.0-beta.204
       '@tiptap/extension-text': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
       '@tiptap/suggestion': ^2.0.0-beta.204
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
@@ -189,6 +189,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/extension-code-block': link:../extension-code-block
+      '@test-pkgs/react': link:../react
       '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-bold': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
@@ -217,7 +218,6 @@ importers:
       '@tiptap/extension-task-item': 2.0.0-beta.207_zaxalbiy7gmbdjkog4yp5bucvq
       '@tiptap/extension-task-list': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-text': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
-      '@tiptap/react': 2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
       '@tiptap/suggestion': 2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
       browser-fs-access: 0.31.1
       tippy.js: 6.3.7
@@ -244,8 +244,8 @@ importers:
 
   packages/extension-bubble-menu:
     specifiers:
+      '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
       '@types/react': ^16.14.0
       eslint-config-custom: workspace:*
       prosemirror-model: ^1.18.3
@@ -257,8 +257,8 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/react': link:../react
       '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
       prosemirror-model: registry.npmmirror.com/prosemirror-model/1.18.3
       prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
       react: registry.npmmirror.com/react/16.14.0
@@ -273,11 +273,11 @@ importers:
 
   packages/extension-code-block:
     specifiers:
+      '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-code': ^2.0.0-beta.204
       '@tiptap/extension-code-block': ^2.0.0-beta.204
       '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       copy-to-clipboard: ^3.3.3
@@ -288,11 +288,11 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/react': link:../react
       '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-code': registry.npmmirror.com/@tiptap/extension-code/2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-code-block': registry.npmmirror.com/@tiptap/extension-code-block/2.0.0-beta.207_2q6aqrumhsodjzm7sfdyzv3x4q
       '@tiptap/extension-code-block-lowlight': registry.npmmirror.com/@tiptap/extension-code-block-lowlight/2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm
-      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
       classnames: registry.npmmirror.com/classnames/2.3.2
       copy-to-clipboard: registry.npmmirror.com/copy-to-clipboard/3.3.3
       lowlight: registry.npmmirror.com/lowlight/2.8.0
@@ -307,8 +307,8 @@ importers:
   packages/extension-emoji:
     specifiers:
       '@test-pkgs/extension-bubble-menu': workspace:*
+      '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
       '@tiptap/suggestion': ^2.0.0-beta.204
       '@types/react': ^16.14.0
       classnames: ^2.2.6
@@ -324,8 +324,8 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
+      '@test-pkgs/react': link:../react
       '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
       '@tiptap/suggestion': registry.npmmirror.com/@tiptap/suggestion/2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
       classnames: registry.npmmirror.com/classnames/2.3.2
       emoji-regex: registry.npmmirror.com/emoji-regex/10.2.1
@@ -365,9 +365,9 @@ importers:
   packages/extension-link:
     specifiers:
       '@test-pkgs/extension-bubble-menu': workspace:*
+      '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.204
       '@tiptap/extension-link': ^2.0.0-beta.204
-      '@tiptap/react': ^2.0.0-beta.204
       '@types/react': ^16.14.0
       eslint-config-custom: workspace:*
       react: ^16.14.0
@@ -377,9 +377,9 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
+      '@test-pkgs/react': link:../react
       '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-link': registry.npmmirror.com/@tiptap/extension-link/2.0.0-beta.207_lidbw2jqaij4esjqu3ga4pao7y
-      '@tiptap/react': registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
       react: registry.npmmirror.com/react/16.14.0
       react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
     devDependencies:
@@ -424,6 +424,27 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       markdown-it: 13.0.1
       prosemirror-markdown: 1.10.1
+      tsconfig: link:../tsconfig
+      typescript: 4.9.3
+
+  packages/react:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.204
+      '@tiptap/react': ^2.0.0-beta.204
+      '@types/react': ^16.14.0
+      eslint-config-custom: workspace:*
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/react': 2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+    devDependencies:
+      '@types/react': 16.14.34
+      eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 
@@ -608,7 +629,7 @@ packages:
     dependencies:
       '@babel/helper-validator-identifier': 7.19.1
       chalk: 2.4.2
-      js-tokens: registry.npmmirror.com/js-tokens/4.0.0
+      js-tokens: 4.0.0
     dev: true
 
   /@babel/parser/7.20.5:
@@ -2778,6 +2799,9 @@ packages:
     resolution: {integrity: sha512-dyBIzQBDkCqCu+0upx25Y2jGdbTGxE9fshMsCdK0ViOongpV+n5tXRcZY9v7CaVQ79AGS9KA1KHtojxiM7aXSQ==}
     dev: false
 
+  /js-tokens/4.0.0:
+    resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+
   /js-yaml/3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
     hasBin: true
@@ -3662,8 +3686,8 @@ packages:
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
-      object-assign: registry.npmmirror.com/object-assign/4.1.1
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
       react-is: 16.13.1
 
   /prosemirror-commands/1.5.0:
@@ -4002,8 +4026,8 @@ packages:
   /scheduler/0.19.1:
     resolution: {integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==}
     dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
-      object-assign: registry.npmmirror.com/object-assign/4.1.1
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
 
   /semver/5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
@@ -4487,23 +4511,6 @@ packages:
       prosemirror-view: 1.29.1
     dev: false
 
-  registry.npmmirror.com/@tiptap/extension-bubble-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi:
-    resolution: {integrity: sha512-Lo+mO71CJaWAvDuPmxGCGS6XGyH6gt2hTVkGAQKR3PRmctnutBvaJF/BOY5wb20/wtkK39UHVc75enn0svdYmg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-bubble-menu/-/extension-bubble-menu-2.0.0-beta.207.tgz}
-    id: registry.npmmirror.com/@tiptap/extension-bubble-menu/2.0.0-beta.207
-    name: '@tiptap/extension-bubble-menu'
-    version: 2.0.0-beta.207
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.193
-      prosemirror-state: ^1.4.1
-      prosemirror-view: ^1.28.2
-    dependencies:
-      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      lodash: registry.npmmirror.com/lodash/4.17.21
-      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
-      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
-      tippy.js: registry.npmmirror.com/tippy.js/6.3.7
-    dev: false
-
   registry.npmmirror.com/@tiptap/extension-code-block-lowlight/2.0.0-beta.207_yv3qcrb4e3ekhik7zk6cizzpzm:
     resolution: {integrity: sha512-ksdDrjXLSPuUbcSdeS8LfWfytEwrDz0vb6e6q2u5ReumfLuJta4SCy4PUSbQCo7QGZsF42O53hIlMbPDyWbvZQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-code-block-lowlight/-/extension-code-block-lowlight-2.0.0-beta.207.tgz}
     id: registry.npmmirror.com/@tiptap/extension-code-block-lowlight/2.0.0-beta.207
@@ -4547,22 +4554,6 @@ packages:
       '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
     dev: false
 
-  registry.npmmirror.com/@tiptap/extension-floating-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi:
-    resolution: {integrity: sha512-yWg5kt3SnxnVzQYFtmxoS0tX5gF1tIXDV0mO3LN/vJ5VryqmXNO3soqTJASzCv/Kmgbr7ijBtsBn+Da3Au0Hvw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-floating-menu/-/extension-floating-menu-2.0.0-beta.207.tgz}
-    id: registry.npmmirror.com/@tiptap/extension-floating-menu/2.0.0-beta.207
-    name: '@tiptap/extension-floating-menu'
-    version: 2.0.0-beta.207
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.193
-      prosemirror-state: ^1.4.1
-      prosemirror-view: ^1.28.2
-    dependencies:
-      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      prosemirror-state: registry.npmmirror.com/prosemirror-state/1.4.2
-      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
-      tippy.js: registry.npmmirror.com/tippy.js/6.3.7
-    dev: false
-
   registry.npmmirror.com/@tiptap/extension-image/2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34:
     resolution: {integrity: sha512-fAr9A2z0VQGfLZuBR0yZpvizkQggmJE8rGH4UUgVzMCBiXpiKqLID0dT+bKQU5K1rQmP1CHpn+t0NcbZ37735g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/extension-image/-/extension-image-2.0.0-beta.207.tgz}
     id: registry.npmmirror.com/@tiptap/extension-image/2.0.0-beta.207
@@ -4588,26 +4579,6 @@ packages:
       linkifyjs: registry.npmmirror.com/linkifyjs/3.0.5
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
-    dev: false
-
-  registry.npmmirror.com/@tiptap/react/2.0.0-beta.207_mtdj3otobowrxmqgug3lvwm6rq:
-    resolution: {integrity: sha512-s+IrUdLJhY7YYmwjq4reDgZbX7TmTanQaL5C0AJZI70bnV+U2+9uoz2OYxSUOOJ3hPFNgcRMYlYPOvWcoVPmbA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tiptap/react/-/react-2.0.0-beta.207.tgz}
-    id: registry.npmmirror.com/@tiptap/react/2.0.0-beta.207
-    name: '@tiptap/react'
-    version: 2.0.0-beta.207
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.193
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@tiptap/core': registry.npmmirror.com/@tiptap/core/2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/extension-bubble-menu': registry.npmmirror.com/@tiptap/extension-bubble-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi
-      '@tiptap/extension-floating-menu': registry.npmmirror.com/@tiptap/extension-floating-menu/2.0.0-beta.207_dfhvzagva6bbjkc77qos6jndfi
-      prosemirror-view: registry.npmmirror.com/prosemirror-view/1.29.1
-      react: registry.npmmirror.com/react/16.14.0
-      react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
-    transitivePeerDependencies:
-      - prosemirror-state
     dev: false
 
   registry.npmmirror.com/@tiptap/suggestion/2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe:
@@ -4735,19 +4706,14 @@ packages:
     version: 3.0.5
     dev: false
 
-  registry.npmmirror.com/lodash/4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
-    name: lodash
-    version: 4.17.21
-    dev: false
-
   registry.npmmirror.com/loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/loose-envify/-/loose-envify-1.4.0.tgz}
     name: loose-envify
     version: 1.4.0
     hasBin: true
     dependencies:
-      js-tokens: registry.npmmirror.com/js-tokens/4.0.0
+      js-tokens: 4.0.0
+    dev: false
 
   registry.npmmirror.com/lowlight/2.8.0:
     resolution: {integrity: sha512-WeExw1IKEkel9ZcYwzpvcFzORIB0IlleTcxJYoEuUgHASuYe/OBYbV6ym/AetG7unNVCBU/SXpgTgs2nT93mhg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lowlight/-/lowlight-2.8.0.tgz}
@@ -4773,6 +4739,7 @@ packages:
     name: object-assign
     version: 4.1.1
     engines: {node: '>=0.10.0'}
+    dev: false
 
   registry.npmmirror.com/orderedmap/2.0.0:
     resolution: {integrity: sha512-buf4PoAMlh45b8a8gsGy/X6w279TSqkyAS0C0wdTSJwFSU+ljQFJON5I8NfjLHoCXwpSROIo2wr0g33T+kQshQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/orderedmap/-/orderedmap-2.0.0.tgz}
@@ -4785,9 +4752,9 @@ packages:
     name: prop-types
     version: 15.8.1
     dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
-      object-assign: registry.npmmirror.com/object-assign/4.1.1
-      react-is: registry.npmmirror.com/react-is/16.13.1
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
     dev: false
 
   registry.npmmirror.com/prosemirror-model/1.18.3:
@@ -4841,12 +4808,6 @@ packages:
       scheduler: registry.npmmirror.com/scheduler/0.19.1
     dev: false
 
-  registry.npmmirror.com/react-is/16.13.1:
-    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz}
-    name: react-is
-    version: 16.13.1
-    dev: false
-
   registry.npmmirror.com/react/16.14.0:
     resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react/-/react-16.14.0.tgz}
     name: react
@@ -4863,8 +4824,8 @@ packages:
     name: scheduler
     version: 0.19.1
     dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
-      object-assign: registry.npmmirror.com/object-assign/4.1.1
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
     dev: false
 
   registry.npmmirror.com/source-map/0.6.1:

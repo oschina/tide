@@ -29,7 +29,7 @@
   },
   "peerDependencies": {
     "lowlight": "^2.8.0",
-    "@tiptap/react": "^2.0.0-beta.204",
+    "@test-pkgs/react": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.204",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"

@@ -2,8 +2,8 @@ import {
   CodeBlockLowlight,
   CodeBlockLowlightOptions,
 } from '@tiptap/extension-code-block-lowlight';
-import { ReactNodeViewRenderer } from '@tiptap/react';
 import { lowlight } from 'lowlight/lib/all';
+import { ReactNodeViewRenderer } from '@test-pkgs/react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
 
 export type CodeBlockOptions = CodeBlockLowlightOptions;

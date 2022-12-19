@@ -1,10 +1,10 @@
-import { ReactRenderer } from '@tiptap/react';
+import tippy, { Instance as TippyInstance } from 'tippy.js';
 import {
   SuggestionKeyDownProps,
   SuggestionOptions,
   SuggestionProps,
 } from '@tiptap/suggestion';
-import tippy, { Instance as TippyInstance } from 'tippy.js';
+import { ReactRenderer } from '@test-pkgs/react';
 import { EmojiItem } from './emoji';
 import { EmojiList } from './EmojiList';
 
