@@ -17,7 +17,9 @@
   "dependencies": {
     "@test-pkgs/extension-uploader": "workspace:*",
     "@tiptap/extension-image": "^2.0.0-beta.204",
-    "browser-fs-access": "^0.31.1"
+    "browser-fs-access": "^0.31.1",
+    "@test-pkgs/react": "workspace:*",
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
@@ -26,7 +28,12 @@
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.204"
+    "@tiptap/core": "^2.0.0-beta.204",
+    "react": "^16.14.0",
+    "prosemirror-commands": "^1.1.4",
+    "prosemirror-model": "^1.11.0",
+    "prosemirror-state": "^1.3.3",
+    "prosemirror-view": "^1.15.5"
   },
   "sideEffects": false
 }
