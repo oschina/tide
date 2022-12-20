@@ -1,6 +1,6 @@
-import './style.css';
+import './style.less';
 
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import { Editor, EditorContent, useEditor } from '@test-pkgs/react';
@@ -23,6 +23,7 @@ import Emoji, {
   suggestion as emojiSuggestion,
 } from '@test-pkgs/extension-emoji';
 import { Markdown } from '@test-pkgs/extension-markdown';
+import DevtoolPanel from './components/DevtoolPanel';
 
 const MarkdownEditorClass = createMarkdownEditor(Editor);
 
@@ -68,17 +69,24 @@ function App() {
   }
 
   return (
-    <div className="editor-demo">
-      <button onClick={() => uploadImage(editor)}>image</button>
-      <button
-        onClick={() => editor?.chain().focus().toggleLink({ href: '' }).run()}
-        className={editor.isActive('link') ? 'is-active' : ''}
-      >
-        link
-      </button>
-      <EditorContent editor={editor as unknown as Editor}>
-        {editor && <LinkBubbleMenu editor={editor} />}
-      </EditorContent>
+    <div className="demo">
+      <div className="demo-editor">
+        <div className="demo-menu">
+          <button onClick={() => uploadImage(editor)}>image</button>
+          <button
+            onClick={() =>
+              editor?.chain().focus().toggleLink({ href: '' }).run()
+            }
+            className={editor.isActive('link') ? 'is-active' : ''}
+          >
+            link
+          </button>
+        </div>
+        <EditorContent editor={editor as unknown as Editor}>
+          {editor && <LinkBubbleMenu editor={editor} />}
+        </EditorContent>
+      </div>
+      <DevtoolPanel editor={editor} />
     </div>
   );
 }
