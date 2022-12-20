@@ -19,7 +19,8 @@
     "@tiptap/extension-code-block": "^2.0.0-beta.204",
     "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.204",
     "copy-to-clipboard": "^3.3.3",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "@test-pkgs/react": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^16.14.0",
@@ -29,7 +30,6 @@
   },
   "peerDependencies": {
     "lowlight": "^2.8.0",
-    "@test-pkgs/react": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.204",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
