@@ -1,9 +1,7 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core';
 import type { Node } from 'prosemirror-model';
-import type {
-  MarkdownEditor as CoreMarkdownEditor,
-  MarkdownExtension,
-} from 'tiptap-markdown';
+import { MarkdownEditor as CoreMarkdownEditor } from 'tiptap-markdown';
+import type { MarkdownExtension } from 'tiptap-markdown';
 
 export type {
   MarkdownEditorOptions,
@@ -11,7 +9,7 @@ export type {
   MarkdownExtensionOptions,
 } from 'tiptap-markdown';
 
-export interface MarkdownEditor extends CoreMarkdownEditor {
+export declare class MarkdownEditor extends CoreMarkdownEditor {
   markdownExtensions: MarkdownExtension[];
 
   /**

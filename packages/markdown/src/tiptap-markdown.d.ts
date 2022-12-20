@@ -1,9 +1,9 @@
-import { Editor, EditorOptions, Node, Mark } from '@tiptap/core';
-import { MarkdownSerializerState } from 'prosemirror-markdown';
-import * as Prosemirror from 'prosemirror-model';
-import * as MarkdownIt from 'markdown-it';
-
 declare module 'tiptap-markdown' {
+  import { Editor, EditorOptions, Node, Mark } from '@tiptap/core';
+  import { MarkdownSerializerState } from 'prosemirror-markdown';
+  import * as Prosemirror from 'prosemirror-model';
+  import * as MarkdownIt from 'markdown-it';
+
   export type MarkdownEditorOptions = EditorOptions & {
     markdown?: {
       html?: boolean;
