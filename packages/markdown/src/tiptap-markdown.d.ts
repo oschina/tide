@@ -73,7 +73,7 @@ declare module 'tiptap-markdown' {
     /**
      * Get the document as markdown
      */
-    getMarkdown(doc?: Prosemirror.Node): string;
+    getMarkdown(): string;
   }
 
   export function createMarkdownEditor(
