@@ -54,6 +54,7 @@ importers:
       '@test-pkgs/extension-image': workspace:*
       '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-markdown': workspace:*
+      '@test-pkgs/extension-mention': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
       '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
@@ -88,9 +89,12 @@ importers:
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
       '@vitejs/plugin-react': ^3.0.0
+      classnames: ^2.2.6
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       fast-glob: ^3.2.12
+      lodash: ^4.17.21
+      prosemirror-state: ^1.4.2
       react: ^16.14.0
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
@@ -104,6 +108,7 @@ importers:
       '@test-pkgs/extension-image': link:../../packages/extension-image
       '@test-pkgs/extension-link': link:../../packages/extension-link
       '@test-pkgs/extension-markdown': link:../../packages/extension-markdown
+      '@test-pkgs/extension-mention': link:../../packages/extension-mention
       '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
       '@test-pkgs/markdown': link:../../packages/markdown
       '@test-pkgs/react': link:../../packages/react
@@ -135,6 +140,9 @@ importers:
       '@tiptap/extension-task-list': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/extension-text': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/suggestion': 2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
+      classnames: 2.3.2
+      lodash: 4.17.21
+      prosemirror-state: 1.4.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
@@ -441,6 +449,7 @@ importers:
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
       tsconfig: workspace:*
+      tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/react': link:../react
@@ -455,6 +464,7 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
+      tslib: 2.4.1
       typescript: 4.9.3
 
   packages/extension-uploader:
@@ -4129,7 +4139,7 @@ packages:
       prosemirror-model: 1.18.3
 
   /prosemirror-model/1.18.3:
-    resolution: {integrity: sha512-yUVejauEY3F1r7PDy4UJKEGeIU+KFc71JQl5sNvG66CLVdKXRjhWpBW6KMeduGsmGOsw85f6EGrs6QxIKOVILA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/prosemirror-model/-/prosemirror-model-1.18.3.tgz}
+    resolution: {integrity: sha512-yUVejauEY3F1r7PDy4UJKEGeIU+KFc71JQl5sNvG66CLVdKXRjhWpBW6KMeduGsmGOsw85f6EGrs6QxIKOVILA==}
     dependencies:
       orderedmap: 2.0.0
 
@@ -4142,7 +4152,7 @@ packages:
     dev: false
 
   /prosemirror-state/1.4.2:
-    resolution: {integrity: sha512-puuzLD2mz/oTdfgd8msFbe0A42j5eNudKAAPDB0+QJRw8cO1ygjLmhLrg9RvDpf87Dkd6D4t93qdef00KKNacQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/prosemirror-state/-/prosemirror-state-1.4.2.tgz}
+    resolution: {integrity: sha512-puuzLD2mz/oTdfgd8msFbe0A42j5eNudKAAPDB0+QJRw8cO1ygjLmhLrg9RvDpf87Dkd6D4t93qdef00KKNacQ==}
     dependencies:
       prosemirror-model: 1.18.3
       prosemirror-transform: 1.7.0
@@ -4150,7 +4160,7 @@ packages:
     dev: false
 
   /prosemirror-transform/1.7.0:
-    resolution: {integrity: sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/prosemirror-transform/-/prosemirror-transform-1.7.0.tgz}
+    resolution: {integrity: sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==}
     dependencies:
       prosemirror-model: 1.18.3
     dev: false
@@ -4718,11 +4728,11 @@ packages:
     dev: false
 
   /tslib/1.14.1:
-    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/tslib/-/tslib-1.14.1.tgz}
+    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: false
 
   /tslib/2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/tslib/-/tslib-2.4.1.tgz}
+    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
     dev: true
 
   /tsutils/3.21.0_typescript@4.9.3:

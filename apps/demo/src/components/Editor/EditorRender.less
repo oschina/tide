@@ -1,0 +1,58 @@
+.ge-editor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border: 1px solid #DADEE3;
+
+  &--fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1800;
+    width: 100%;
+    height: 100%;
+  }
+
+  & &__menu-bar {
+    flex-shrink: 0;
+    border-bottom: 1px solid #DADEE3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+
+    .divider {
+      display: inline-block;
+      margin: 0 4px;
+      width: 0;
+      height: 24px;
+      vertical-align: middle;
+      border-right: 1px dashed #DADEE3;
+    }
+
+    button {
+      margin: 2px;
+
+      &.is-active {
+        color: #fff;
+        background-color: #2C7EF8;
+      }
+    }
+  }
+
+  & &__editor-content {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    position: relative;
+
+    .ProseMirror {
+      min-height: 100%;
+      padding: 24px;
+    }
+  }
+}

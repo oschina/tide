@@ -1,5 +1,7 @@
-@import '@gitee/uikit/style/variables';
-@import '@gitee/uikit/style/functions/mixins';
+@theme-color: #2c7ef8;
+@text-muted-color: #909aaa;
+@background-color: #fff;
+@background-hover-color: #f5f6f8;
 
 .items {
   position: relative;
@@ -8,11 +10,6 @@
   border-radius: 4px;
   box-shadow: 0 4px 8px -2px rgba(9, 30, 66, 0.25),
     0px 0px 1px 0px rgba(9, 30, 66, 0.31);
-
-  #theme-dark({
-    background: @background-secondary-color;
-    box-shadow: 0 0 0 1px @dark-border-color;
-  });
 }
 
 .item {
@@ -36,9 +33,7 @@
     background-color: @background-hover-color;
 
     .label {
-      #theme({
-        color: @themeColor;
-      });
+      color: @theme-color;
     }
   }
 }

@@ -1,92 +1,98 @@
 import './style.less';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
-
-import { Editor, EditorContent, useEditor } from '@test-pkgs/react';
-import {
-  MarkdownEditor,
-  MarkdownEditorOptions,
-  createMarkdownEditor,
-} from '@test-pkgs/markdown';
-import Blockquote from '@tiptap/extension-blockquote';
-import Document from '@tiptap/extension-document';
-import Paragraph from '@tiptap/extension-paragraph';
-import Text from '@tiptap/extension-text';
-
-// custom extensions
-import Link, { LinkBubbleMenu } from '@test-pkgs/extension-link';
-import Image, { uploadImage } from '@test-pkgs/extension-image';
-import Uploader from '@test-pkgs/extension-uploader';
-import CodeBlock from '@test-pkgs/extension-code-block';
-import Emoji, {
-  suggestion as emojiSuggestion,
-} from '@test-pkgs/extension-emoji';
-import { Markdown } from '@test-pkgs/extension-markdown';
+import { MarkdownEditor } from '@test-pkgs/markdown';
 import DevtoolPanel from './components/DevtoolPanel';
-
-const MarkdownEditorClass = createMarkdownEditor(Editor);
+import {
+  EditorRender,
+  EditorRenderProps,
+} from './components/Editor/EditorRender';
 
 function App() {
-  const editor = useEditor<MarkdownEditor, MarkdownEditorOptions>(
-    MarkdownEditorClass,
-    {
-      markdown: {
-        linkify: true,
-        breaks: true,
-        tightLists: true,
-      },
-      extensions: [
-        Document,
-        Paragraph,
-        Text,
-        Link,
-        Image,
-        Uploader,
-        Blockquote,
-        CodeBlock,
-        Emoji.configure({
-          enableEmoticons: true,
-          forceFallbackImages: false,
-          suggestion: emojiSuggestion,
-        }),
-        Markdown.configure({
-          paste: true,
-          copy: false,
-        }),
-      ],
-      content: `
-      <blockquote>
-        Nothing is impossible, the word itself says “I’m possible!”
-      </blockquote>
-      <p>Audrey Hepburn</p>
-    `,
-    }
-  );
+  const [ready, setReady] = useState(false);
+  const [output, setOutput] = useState('json');
+  const [editable, setEditable] = useState(true);
+  const [content, setContent] = useState<EditorRenderProps['value']>(null);
+  const [textareaContent, setTextareaContent] = useState('');
 
-  if (!editor) {
-    return null;
-  }
+  const editorRef = useRef<MarkdownEditor | null>(null);
+  const editor = editorRef.current;
+
+  const updateTextareaContent = (editorInstance?: MarkdownEditor) => {
+    const e = editorInstance || editor;
+    if (!e) {
+      return;
+    }
+    switch (output) {
+      case 'html':
+        setTextareaContent(e.getHTML() || '');
+        break;
+      case 'json':
+        setTextareaContent(JSON.stringify(e.getJSON(), null, 2));
+        break;
+      case 'markdown':
+        setTextareaContent(e.getMarkdown() || '');
+        break;
+    }
+  };
+
+  useEffect(() => {
+    if (editor && ready) {
+      updateTextareaContent();
+    }
+  }, [output, ready, editor]);
 
   return (
     <div className="demo">
-      <div className="demo-editor">
-        <div className="demo-menu">
-          <button onClick={() => uploadImage(editor)}>image</button>
-          <button
-            onClick={() =>
-              editor?.chain().focus().toggleLink({ href: '' }).run()
-            }
-            className={editor.isActive('link') ? 'is-active' : ''}
-          >
-            link
-          </button>
-        </div>
-        <EditorContent editor={editor as unknown as Editor}>
-          {editor && <LinkBubbleMenu editor={editor} />}
-        </EditorContent>
+      <div className="demo-header">
+        <input
+          type="checkbox"
+          id="editable"
+          name="editable"
+          checked={editable}
+          onChange={(e) => setEditable(e.target.checked)}
+        />
+        <label htmlFor="editable">editable</label>
       </div>
-      <DevtoolPanel editor={editor} />
+      <div className="demo-main">
+        <div className="demo-editor-wrapper">
+          <EditorRender
+            ref={editorRef}
+            value={content}
+            readOnly={!editable}
+            onChange={(value, e) => {
+              setContent(value);
+              updateTextareaContent(e);
+            }}
+            onReady={(e) => {
+              setReady(true);
+              updateTextareaContent(e);
+            }}
+          />
+        </div>
+        <div className="demo-devtool-wrapper">
+          <DevtoolPanel
+            tab={output}
+            onTabChange={setOutput}
+            content={textareaContent}
+            onContentChange={(newValue) => {
+              // update textarea content
+              setTextareaContent(newValue);
+              // update editor content
+              let newContent = newValue;
+              if (output === 'json') {
+                try {
+                  newContent = JSON.parse(newValue);
+                } catch (err) {
+                  console.error(err);
+                }
+              }
+              setContent(newContent);
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 }
