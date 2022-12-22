@@ -22,17 +22,7 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(CodeBlockNodeView, {
-      update: ({ oldNode, newNode, updateProps }) => {
-        // TODO: isEditable 变化不会触发 update
-        console.log('oldNode', oldNode.attrs, 'newNode', newNode.attrs);
-        if (oldNode.attrs.language !== newNode.attrs.language) {
-          updateProps();
-          return true;
-        }
-        return false;
-      },
-    });
+    return ReactNodeViewRenderer(CodeBlockNodeView);
   },
 
   addKeyboardShortcuts() {

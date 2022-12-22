@@ -32,6 +32,10 @@ export const Link = TLink.extend<LinkOptions>({
     };
   },
 
+  parseHTML() {
+    return [{ tag: 'a[href]:not([href *= "javascript:" i]):not([data-type])' }];
+  },
+
   addCommands() {
     return {
       ...this.parent?.(),

@@ -1,0 +1,36 @@
+{
+  "name": "@test-pkgs/extension-mention",
+  "version": "0.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/cjs/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
+  },
+  "dependencies": {
+    "@tiptap/extension-mention": "^2.0.0-beta.204",
+    "@tiptap/suggestion": "^2.0.0-beta.204",
+    "classnames": "^2.2.6",
+    "tippy.js": "^6.3.7",
+    "@test-pkgs/react": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^16.14.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.0-beta.204",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "sideEffects": false
+}
