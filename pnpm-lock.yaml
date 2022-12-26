@@ -55,6 +55,7 @@ importers:
       '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-markdown': workspace:*
       '@test-pkgs/extension-mention': workspace:*
+      '@test-pkgs/extension-task-item': workspace:^0.0.0
       '@test-pkgs/extension-uploader': workspace:*
       '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
@@ -109,6 +110,7 @@ importers:
       '@test-pkgs/extension-link': link:../../packages/extension-link
       '@test-pkgs/extension-markdown': link:../../packages/extension-markdown
       '@test-pkgs/extension-mention': link:../../packages/extension-mention
+      '@test-pkgs/extension-task-item': link:../../packages/extension-task-item
       '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
       '@test-pkgs/markdown': link:../../packages/markdown
       '@test-pkgs/react': link:../../packages/react
@@ -465,6 +467,21 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: 2.4.1
+      typescript: 4.9.3
+
+  packages/extension-task-item:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.204
+      eslint-config-custom: workspace:*
+      prosemirror-model: ^1.18.3
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.207_rd5pjtxohzfgv2zee3iufpqkay
+      prosemirror-model: 1.18.3
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/extension-uploader:

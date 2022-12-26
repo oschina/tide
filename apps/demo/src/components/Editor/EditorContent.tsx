@@ -20,7 +20,6 @@ import { BulletList } from '@tiptap/extension-bullet-list';
 import { OrderedList } from '@tiptap/extension-ordered-list';
 import { ListItem } from '@tiptap/extension-list-item';
 import { TaskList } from '@tiptap/extension-task-list';
-import { TaskItem } from '@tiptap/extension-task-item';
 import { Table } from '@tiptap/extension-table';
 import { TableRow } from '@tiptap/extension-table-row';
 import { TableCell } from '@tiptap/extension-table-cell';
@@ -33,6 +32,7 @@ import { History } from '@tiptap/extension-history';
 import { Dropcursor } from '@tiptap/extension-dropcursor';
 import { Gapcursor } from '@tiptap/extension-gapcursor';
 // import { Placeholder } from '@tiptap/extension-placeholder';
+import { TaskItem } from '@test-pkgs/extension-task-item';
 import { Link } from '@test-pkgs/extension-link';
 import { Image } from '@test-pkgs/extension-image';
 import { CodeBlock } from '@test-pkgs/extension-code-block';
@@ -126,6 +126,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           TaskList,
           TaskItem.configure({
             nested: true,
+            onReadOnlyChecked: () => true,
           }),
           Table.configure({
             resizable: true,

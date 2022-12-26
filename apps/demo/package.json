@@ -18,6 +18,7 @@
     "@test-pkgs/extension-link": "workspace:*",
     "@test-pkgs/extension-markdown": "workspace:*",
     "@test-pkgs/extension-mention": "workspace:*",
+    "@test-pkgs/extension-task-item": "workspace:*",
     "@test-pkgs/extension-uploader": "workspace:*",
     "@test-pkgs/markdown": "workspace:*",
     "@test-pkgs/react": "workspace:*",
