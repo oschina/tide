@@ -180,6 +180,7 @@ export const Emoji = Node.create<EmojiOptions, EmojiStorage>({
               draggable: 'false',
               loading: 'lazy',
               align: 'absmiddle',
+              class: 'emoji',
             },
           ]
         : emoji.emoji,
