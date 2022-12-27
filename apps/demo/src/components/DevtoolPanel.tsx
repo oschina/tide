@@ -12,8 +12,8 @@ const DevtoolPanel = ({
   onContentChange: (textarea: string) => void;
 }) => {
   return (
-    <div className="demo-devtool">
-      <div className="demo-devtool-tab">
+    <div className="devtool">
+      <div className="tab">
         <label>
           <input
             type="radio"
@@ -48,7 +48,7 @@ const DevtoolPanel = ({
 
       {tab === 'json' && (
         <textarea
-          className="demo-devtool-content-json"
+          className="json"
           value={content}
           onChange={(e) => onContentChange(e.target.value)}
         />
@@ -56,7 +56,7 @@ const DevtoolPanel = ({
 
       {(tab === 'html' || tab === 'markdown') && (
         <textarea
-          className="demo-devtool-content-html"
+          className="html"
           value={content}
           onChange={(e) => onContentChange(e.target.value)}
         />

@@ -150,6 +150,13 @@ const MenuBar: React.FC<MenuBarProps> = ({
       <span className="divider" />
 
       <button
+        onClick={() => editor?.chain().focus().toggleLink({ href: '' }).run()}
+        className={editor.isActive('link') ? 'is-active' : ''}
+      >
+        link
+      </button>
+
+      <button
         onClick={() => uploadImage(editor)}
         className={editor.isActive('image') ? 'is-active' : ''}
       >

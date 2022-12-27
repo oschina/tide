@@ -84,6 +84,10 @@
       line-height: 1.42857143;
     }
 
+    div.react-renderer {
+      margin: 0 0 10px;
+    }
+
     ul,
     ol {
       padding: 0 0 0 2em;
@@ -146,6 +150,11 @@
       word-wrap: normal;
       box-sizing: border-box;
 
+      &.soft-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
       code {
         display: block;
         box-sizing: border-box;
@@ -156,10 +165,11 @@
         font-size: 100%;
         line-height: inherit;
         min-width: min-content;
+        white-space: inherit !important;
       }
     }
 
-    img {
+    img:not(.emoji) {
       display: block;
       border: 2px solid @border-color;
       background-color: #fff;
@@ -199,7 +209,6 @@
       border-collapse: collapse;
       table-layout: fixed;
       width: 100%;
-      margin: 0;
       overflow: hidden;
 
       td,
@@ -247,6 +256,10 @@
 
     .tableWrapper {
       overflow-x: auto;
+
+      table {
+        margin: 0;
+      }
     }
 
     &.resize-cursor {
@@ -285,7 +298,7 @@
       border-radius: 1em;
       border: 1px solid transparent;
       padding: 1px 0.3em 1px 0.23em;
-      cursor: default;
+      text-decoration: none;
       font-size: 1em;
       line-height: 1.125em;
       color: @mention-text-color;

@@ -1,7 +1,32 @@
+@import 'highlight.js/styles/default.css';
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
+}
+
+body {
+  color: #2e405e;
+  background: #f5f6f8;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Roboto, PingFang SC, Noto Sans SC, Microsoft YaHei UI, Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #2c7ef8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0053d1;
+}
+
+a:active {
+  text-decoration: underline;
 }
 
 #app {
@@ -49,10 +74,15 @@ html, body {
     overflow: hidden;
   }
 
-  .demo-devtool {
+  .devtool {
     flex: 1;
     display: flex;
     flex-direction: column;
+
+    .tab {
+      padding: 8px;
+      border-bottom: 1px solid #DADEE3;
+    }
 
     textarea {
       flex: 1;
@@ -61,24 +91,18 @@ html, body {
       margin: 0;
       padding: 8px 16px;
       font-size: 14px;
-      line-height: 1.2;
+      line-height: 1.3;
+      word-break: keep-all;
+      outline: none;
     }
 
-    .demo-devtool-content-json {
-      background: #f5f6f8;
+    .json {
       white-space: pre;
-      word-break: keep-all;
-      font-size: 14px;
-      line-height: 1.3;
       overflow-x: auto;
     }
 
-    .demo-devtool-content-html {
-      background: #f5f6f8;
+    .html {
       white-space: pre-wrap;
-      word-break: keep-all;
-      font-size: 14px;
-      line-height: 1.3;
     }
   }
 }

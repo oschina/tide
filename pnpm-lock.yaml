@@ -55,7 +55,7 @@ importers:
       '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-markdown': workspace:*
       '@test-pkgs/extension-mention': workspace:*
-      '@test-pkgs/extension-task-item': workspace:^0.0.0
+      '@test-pkgs/extension-task-item': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
       '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
@@ -94,6 +94,7 @@ importers:
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       fast-glob: ^3.2.12
+      highlight.js: ^11.7.0
       lodash: ^4.17.21
       prosemirror-state: ^1.4.2
       react: ^16.14.0
@@ -143,6 +144,7 @@ importers:
       '@tiptap/extension-text': 2.0.0-beta.207_xzobyxekojg7s63egj2c4mbq34
       '@tiptap/suggestion': 2.0.0-beta.207_nkfksf3ehgnl37drbbsnihlqhe
       classnames: 2.3.2
+      highlight.js: 11.7.0
       lodash: 4.17.21
       prosemirror-state: 1.4.2
       react: 16.14.0

@@ -59,6 +59,7 @@ export type EditorContentProps = {
   value?: Content | undefined;
   autoFocus?: boolean;
   readOnly?: boolean;
+  readOnlyEmptyView?: React.ReactNode;
   children?: React.ReactNode;
   onChange?: (doc: JSONContent, editor: MarkdownEditor) => void;
   onFocus?: () => void;
@@ -78,6 +79,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
       value: inputValue,
       autoFocus,
       readOnly,
+      readOnlyEmptyView,
       children,
       onChange,
       onFocus,
@@ -284,9 +286,15 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
 
     useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
 
+    const fullClassName = classNames('ge-editor__editor-content', className);
+
+    if (editor && editor.isEmpty && !editor.isEditable) {
+      return <div className={fullClassName}>{readOnlyEmptyView || null}</div>;
+    }
+
     return (
       <TEditorContent
-        className={classNames('ge-editor__editor-content', className)}
+        className={fullClassName}
         style={style}
         editor={editor as unknown as TEditor}
       >
