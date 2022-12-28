@@ -3,9 +3,14 @@
 @border-color: #dadee3;
 @text-color: #2e405e;
 @text-muted-color: #909aaa;
-@table-cell-selected-color: rgba(179, 212, 255, 0.3);
-@table-th-bg-color: #f1f3f5;
-@table-column-resize-handle-color: #2c7ef8;
+
+@table-border-color: #c1c7d0;
+@table-header-bg-color: #f1f3f5;
+@table-selected-border-color: @theme-color;
+@table-selected-cell-bg-color: #e8f2ff;
+@table-selected-control-bg-color: #5096ff;
+@table-column-resize-handle-color: @theme-color;
+
 @mention-text-color: #4c5d7a;
 @mention-bg-color: #f1f3f5;
 @mention-selected-bg-color: rgba(179, 212, 255, 0.3);
@@ -204,21 +209,57 @@
     }
 
     /* Table-specific styling */
+    .tableWrapper {
+      position: relative;
+      margin: 20px 0;
+
+      &.has-focus {
+        .scrollWrapper {
+          margin-top: -20px;
+        }
+      }
+
+      table {
+        margin: 0;
+      }
+    }
+
+    .scrollWrapper {
+      overflow-y: hidden;
+      overflow-x: auto;
+      padding-left: 28px;
+      padding-top: 28px;
+      padding-bottom: 8px;
+      margin-left: -28px;
+      margin-top: -20px;
+      margin-bottom: -8px;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      transition: border 250ms ease-in-out 0s;
+    }
+
     table {
+      width: 100%;
       border-spacing: 0;
       border-collapse: collapse;
-      table-layout: fixed;
-      width: 100%;
-      overflow: hidden;
+      border-radius: 4px;
+      overflow: auto;
+
+      box-sizing: border-box;
+
+      * {
+        box-sizing: border-box;
+      }
 
       td,
       th {
         min-width: 1em;
         border: 1px solid @border-color;
         padding: 6px 8px;
+        position: relative;
         vertical-align: top;
         box-sizing: border-box;
-        position: relative;
+        text-align: left;
 
         > * {
           margin-bottom: 0;
@@ -227,39 +268,207 @@
 
       th {
         font-weight: 600;
-        text-align: left;
-        background-color: @table-th-bg-color;
+        background-color: @table-header-bg-color;
       }
 
-      .selectedCell:after {
-        z-index: 2;
-        position: absolute;
-        content: '';
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: @table-cell-selected-color;
-        pointer-events: none;
+      .selectedCell {
+        position: relative;
+        border: 1px solid @table-selected-border-color;
+        background-color: @table-selected-cell-bg-color;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          right: 0;
+          bottom: 0;
+          z-index: 2;
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+          box-sizing: content-box;
+          pointer-events: none;
+          border: 1px solid @table-selected-border-color;
+        }
       }
 
-      .column-resize-handle {
+      .grip-column {
         position: absolute;
-        right: -1px;
-        top: 0;
-        bottom: -2px;
-        width: 2px;
-        background-color: @table-column-resize-handle-color;
-        pointer-events: none;
+        top: -12px;
+        left: -1px;
+        width: 100%;
+
+        font-size: 0;
+
+        > span {
+          position: absolute;
+          top: -18px;
+          left: 100%;
+          transform: translateX(-8px);
+
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 100%;
+          bottom: 4px;
+          transform: translateX(-1px);
+
+          width: 4px;
+          height: 4px;
+          background-color: @table-border-color;
+          border-radius: 50%;
+          display: block;
+        }
+
+        &::after {
+          box-sizing: content-box;
+          content: '';
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 10px;
+          background: @table-header-bg-color;
+          border: 1px solid @table-border-color;
+          display: block;
+        }
+
+        &:hover {
+          font-size: 14px;
+          color: @table-selected-border-color;
+
+          &::before {
+            display: none;
+          }
+
+          &::after {
+            z-index: 1;
+            background: @table-selected-control-bg-color;
+            border-color: @table-selected-border-color;
+          }
+        }
+
+        &.last::after {
+          border-top-right-radius: 3px;
+        }
+
+        &.selected::after {
+          z-index: 1;
+          background: @table-selected-control-bg-color;
+          border-color: @table-selected-border-color;
+        }
+      }
+
+      .grip-row {
+        position: absolute;
+        left: -12px;
+        top: -1px;
+        height: 100%;
+        font-size: 0;
+
+        > span {
+          transform: translateY(8px);
+          position: absolute;
+          left: -16px;
+          bottom: 4px;
+
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -10px;
+          bottom: -2px;
+          width: 4px;
+          height: 4px;
+          background-color: @table-border-color;
+          border-radius: 50%;
+          display: block;
+        }
+
+        &::after {
+          box-sizing: content-box;
+          content: '';
+          cursor: pointer;
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 10px;
+          background: @table-header-bg-color;
+          border: 1px solid @table-border-color;
+          display: block;
+        }
+
+        &:hover {
+          font-size: 14px;
+          color: @table-selected-border-color;
+
+          &::before {
+            display: none;
+          }
+
+          &::after {
+            z-index: 1;
+            background: @table-selected-control-bg-color;
+            border-color: @table-selected-border-color;
+          }
+        }
+
+        &.last::after {
+          border-bottom-left-radius: 3px;
+        }
+
+        &.selected::after {
+          z-index: 1;
+          background: @table-selected-control-bg-color;
+          border-color: @table-selected-border-color;
+        }
+      }
+
+      .grip-table {
+        &::after {
+          box-sizing: content-box;
+          content: '';
+          cursor: pointer;
+          position: absolute;
+          top: -12px;
+          left: -12px;
+          display: block;
+          background: @table-header-bg-color;
+          width: 10px;
+          height: 10px;
+          border: 1px solid @table-border-color;
+          border-top-left-radius: 3px;
+        }
+
+        &:hover::after,
+        &.selected::after {
+          z-index: 1;
+          background: @table-selected-control-bg-color;
+          border-color: @table-selected-border-color;
+        }
       }
     }
 
-    .tableWrapper {
-      overflow-x: auto;
-
-      table {
-        margin: 0;
-      }
+    .column-resize-handle {
+      position: absolute;
+      top: 0;
+      right: -1px;
+      bottom: -2px;
+      width: 2px;
+      pointer-events: none;
+      background-color: @table-column-resize-handle-color;
     }
 
     &.resize-cursor {
