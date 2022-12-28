@@ -15,8 +15,8 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@tiptap/extension-link": "^2.0.0-beta.204",
-    "@test-pkgs/extension-bubble-menu": "workspace:*"
+    "@test-pkgs/extension-bubble-menu": "workspace:*",
+    "@tiptap/extension-link": "^2.0.0-beta.209"
   },
   "devDependencies": {
     "@types/react": "^16.14.0",
@@ -27,7 +27,7 @@
   },
   "peerDependencies": {
     "@test-pkgs/react": "workspace:*",
-    "@tiptap/core": "^2.0.0-beta.204",
+    "@tiptap/core": "^2.0.0-beta.209",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },

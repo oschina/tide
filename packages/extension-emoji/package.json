@@ -16,11 +16,9 @@
   },
   "dependencies": {
     "@test-pkgs/extension-bubble-menu": "workspace:*",
-    "@tiptap/suggestion": "^2.0.0-beta.204",
+    "@tiptap/suggestion": "^2.0.0-beta.209",
     "classnames": "^2.2.6",
     "emoji-regex": "^10.2.1",
-    "prosemirror-state": "^1.4.2",
-    "prosemirror-transform": "^1.7.0",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
@@ -31,8 +29,10 @@
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.204",
     "@test-pkgs/react": "workspace:*",
+    "@tiptap/core": "^2.0.0-beta.209",
+    "prosemirror-state": "^1.4.2",
+    "prosemirror-transform": "^1.7.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },

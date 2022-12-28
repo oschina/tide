@@ -14,16 +14,14 @@
     "lint": "TIMING=1 eslint \"**/*.ts\"",
     "clear": "rm -rf dist"
   },
-  "dependencies": {
-    "prosemirror-model": "^1.18.3"
-  },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.204"
+    "@tiptap/core": "^2.0.0-beta.209",
+    "prosemirror-model": "^1.18.3"
   },
   "sideEffects": false
 }
