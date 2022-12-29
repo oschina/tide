@@ -89,7 +89,7 @@
       line-height: 1.42857143;
     }
 
-    div.react-renderer {
+    .react-renderer {
       margin: 0 0 10px;
     }
 
@@ -254,14 +254,17 @@
       td,
       th {
         min-width: 1em;
-        border: 1px solid @border-color;
+        border: 1px solid @table-border-color;
         padding: 6px 8px;
         position: relative;
         vertical-align: top;
         box-sizing: border-box;
         text-align: left;
+        word-wrap: break-word;
+        word-break: break-all;
 
-        > * {
+        > *,
+        > .react-renderer {
           margin-bottom: 0;
         }
       }
@@ -298,18 +301,20 @@
         top: -12px;
         left: -1px;
         width: 100%;
-
         font-size: 0;
 
         > span {
           position: absolute;
-          top: -18px;
+          top: -16px;
           left: 100%;
-          transform: translateX(-8px);
+          transform: translateX(-7px);
 
           display: inline-block;
           width: 16px;
           height: 16px;
+          line-height: 16px;
+          text-align: center;
+          cursor: pointer;
         }
 
         &::before {
@@ -374,14 +379,17 @@
         font-size: 0;
 
         > span {
-          transform: translateY(8px);
+          transform: translateY(9px);
           position: absolute;
           left: -16px;
-          bottom: 4px;
+          bottom: 0;
 
           display: inline-block;
           width: 16px;
           height: 16px;
+          line-height: 16px;
+          text-align: center;
+          cursor: pointer;
         }
 
         &::before {
@@ -465,7 +473,7 @@
       position: absolute;
       top: 0;
       right: -1px;
-      bottom: -2px;
+      bottom: -1px;
       width: 2px;
       pointer-events: none;
       background-color: @table-column-resize-handle-color;

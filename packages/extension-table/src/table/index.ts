@@ -4,8 +4,23 @@ import {
 } from '@tiptap/extension-table';
 import { tableEditing } from '@tiptap/prosemirror-tables';
 import { columnResizing } from './columnresizing';
+import { TableView } from './TableView';
 
 export const Table = TTable.extend<TTableOptions>({
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  addOptions() {
+    return {
+      HTMLAttributes: {},
+      resizable: false,
+      handleWidth: 5,
+      cellMinWidth: 48,
+      View: TableView,
+      lastColumnResizable: true,
+      allowTableNodeSelection: false,
+    };
+  },
+
   addProseMirrorPlugins() {
     const isResizable = this.options.resizable && this.editor.isEditable;
     return [

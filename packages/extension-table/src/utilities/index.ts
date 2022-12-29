@@ -210,6 +210,8 @@ const select =
         const $head = tr.doc.resolve(head);
         const $anchor = tr.doc.resolve(anchor);
 
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         return tr.setSelection(new CellSelection($anchor, $head));
       }
     }
@@ -230,6 +232,8 @@ export const selectTable = (tr: Transaction) => {
       const $head = tr.doc.resolve(head);
       const $anchor = tr.doc.resolve(anchor);
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       return tr.setSelection(new CellSelection($anchor, $head));
     }
   }

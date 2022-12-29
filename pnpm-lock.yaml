@@ -507,6 +507,7 @@ importers:
       eslint-config-custom: workspace:*
       prosemirror-model: ^1.18.3
       prosemirror-state: ^1.4.2
+      prosemirror-transform: ^1.7.0
       prosemirror-view: ^1.29.1
       react: ^16.14.0
       react-dom: ^16.14.0
@@ -519,14 +520,15 @@ importers:
       '@tiptap/extension-table-header': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-table-row': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/prosemirror-tables': 1.1.4_qifc5sj34wizlbsbgz4xon75ea
-      prosemirror-model: 1.18.3
-      prosemirror-state: 1.4.2
-      prosemirror-view: 1.29.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     devDependencies:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
+      prosemirror-model: 1.18.3
+      prosemirror-state: 1.4.2
+      prosemirror-transform: 1.7.0
+      prosemirror-view: 1.29.1
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 
@@ -4245,13 +4247,11 @@ packages:
       prosemirror-model: 1.18.3
       prosemirror-transform: 1.7.0
       prosemirror-view: 1.29.1
-    dev: false
 
   /prosemirror-transform/1.7.0:
     resolution: {integrity: sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==}
     dependencies:
       prosemirror-model: 1.18.3
-    dev: false
 
   /prosemirror-view/1.29.1:
     resolution: {integrity: sha512-OhujVZSDsh0l0PyHNdfaBj6DBkbhYaCfbaxmTeFrMKd/eWS+G6IC+OAbmR9IsLC8Se1HSbphMaXnsXjupHL3UQ==}
@@ -4259,7 +4259,6 @@ packages:
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
       prosemirror-transform: 1.7.0
-    dev: false
 
   /prr/1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}

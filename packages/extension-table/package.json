@@ -23,6 +23,10 @@
   "devDependencies": {
     "@types/react": "^16.14.0",
     "eslint-config-custom": "workspace:*",
+    "prosemirror-model": "^1.18.3",
+    "prosemirror-state": "^1.4.2",
+    "prosemirror-transform": "^1.7.0",
+    "prosemirror-view": "^1.29.1",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },

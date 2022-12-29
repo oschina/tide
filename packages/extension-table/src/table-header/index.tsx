@@ -10,6 +10,35 @@ import { addColumnAfter } from '@tiptap/prosemirror-tables';
 import { getCellsInRow, isColumnSelected, selectColumn } from '../utilities';
 
 export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
+  addAttributes() {
+    return {
+      colspan: {
+        default: 1,
+        parseHTML: (element) => {
+          const colspan = element.getAttribute('colspan');
+          const value = colspan ? parseInt(colspan, 10) : 1;
+          return value;
+        },
+      },
+      rowspan: {
+        default: 1,
+        parseHTML: (element) => {
+          const rowspan = element.getAttribute('rowspan');
+          const value = rowspan ? parseInt(rowspan, 10) : 1;
+          return value;
+        },
+      },
+      colwidth: {
+        default: [100],
+        parseHTML: (element) => {
+          const colwidth = element.getAttribute('colwidth');
+          const value = colwidth ? [parseInt(colwidth, 10)] : null;
+          return value;
+        },
+      },
+    };
+  },
+
   addStorage() {
     return {
       clearCallbacks: [],
@@ -25,7 +54,7 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
     const { isEditable } = this.editor;
     return [
       new Plugin({
-        key: new PluginKey('table-header-control'),
+        key: new PluginKey('tableHeaderControl'),
         props: {
           decorations: (state) => {
             if (!isEditable) {
@@ -53,21 +82,20 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
                     }
                     const grip = document.createElement('a');
                     grip.className = className;
-                    ReactDOM.render(<span>+</span>, grip);
+                    ReactDOM.render(<span className="add">+</span>, grip);
                     this.storage.clearCallbacks.push(() => {
                       ReactDOM.unmountComponentAtNode(grip);
                     });
                     grip.addEventListener('mousedown', (event) => {
                       event.preventDefault();
                       event.stopImmediatePropagation();
+                      this.editor.view.dispatch(
+                        selectColumn(index)(this.editor.state.tr)
+                      );
                       if (event.target !== grip) {
                         addColumnAfter(
                           this.editor.state,
                           this.editor.view.dispatch
-                        );
-                      } else {
-                        this.editor.view.dispatch(
-                          selectColumn(index)(this.editor.state.tr)
                         );
                       }
                     });

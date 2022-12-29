@@ -6,7 +6,7 @@ import {
 } from '@tiptap/extension-table-cell';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
-import { addRowAfter } from '@tiptap/prosemirror-tables';
+import { addRowAfter, addRow } from '@tiptap/prosemirror-tables';
 import {
   getCellsInColumn,
   isRowSelected,
@@ -16,6 +16,35 @@ import {
 } from '../utilities';
 
 export const TableCell = TTableCell.extend<TTableCellOptions>({
+  addAttributes() {
+    return {
+      colspan: {
+        default: 1,
+        parseHTML: (element) => {
+          const colspan = element.getAttribute('colspan');
+          const value = colspan ? parseInt(colspan, 10) : 1;
+          return value;
+        },
+      },
+      rowspan: {
+        default: 1,
+        parseHTML: (element) => {
+          const rowspan = element.getAttribute('rowspan');
+          const value = rowspan ? parseInt(rowspan, 10) : 1;
+          return value;
+        },
+      },
+      colwidth: {
+        default: [100],
+        parseHTML: (element) => {
+          const colwidth = element.getAttribute('colwidth');
+          const value = colwidth ? [parseInt(colwidth, 10)] : null;
+          return value;
+        },
+      },
+    };
+  },
+
   addStorage() {
     return {
       clearCallbacks: [],
@@ -31,7 +60,7 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
     const { isEditable } = this.editor;
     return [
       new Plugin({
-        key: new PluginKey('table-cell-control'),
+        key: new PluginKey('tableCellControl'),
         props: {
           decorations: (state) => {
             if (!isEditable) {
@@ -81,7 +110,7 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                       className += ' last';
                     }
                     const grip = document.createElement('a');
-                    ReactDOM.render(<span>+</span>, grip);
+                    ReactDOM.render(<span className="add">+</span>, grip);
                     this.storage.clearCallbacks.push(() => {
                       ReactDOM.unmountComponentAtNode(grip);
                     });
@@ -91,14 +120,13 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                       (event) => {
                         event.preventDefault();
                         event.stopImmediatePropagation();
+                        this.editor.view.dispatch(
+                          selectRow(index)(this.editor.state.tr)
+                        );
                         if (event.target !== grip) {
                           addRowAfter(
                             this.editor.state,
                             this.editor.view.dispatch
-                          );
-                        } else {
-                          this.editor.view.dispatch(
-                            selectRow(index)(this.editor.state.tr)
                           );
                         }
                       },
