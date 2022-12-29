@@ -12,6 +12,7 @@ import type { JSONContent } from '@tiptap/core';
 import { Document } from '@tiptap/extension-document';
 import { Paragraph } from '@tiptap/extension-paragraph';
 import { Text } from '@tiptap/extension-text';
+import { TextAlign } from '@tiptap/extension-text-align';
 import { Heading } from '@tiptap/extension-heading';
 import { Blockquote } from '@tiptap/extension-blockquote';
 import { HardBreak } from '@tiptap/extension-hard-break';
@@ -120,6 +121,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           Document,
           Paragraph,
           Text,
+          TextAlign.configure({
+            types: ['heading', 'paragraph'],
+          }),
           Heading,
           Blockquote,
           HardBreak,

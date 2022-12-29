@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import MenuBar from './MenuBar';
 import EditorContent, { EditorContentProps } from './EditorContent';
 import { LinkBubbleMenu } from '@test-pkgs/extension-link';
+import { TableCellBubbleMenu } from '@test-pkgs/extension-table';
 import { MarkdownEditor } from '@test-pkgs/markdown';
 import './EditorRender.less';
 
@@ -65,6 +66,7 @@ export const EditorRender = forwardRef<MarkdownEditor, EditorRenderProps>(
           {...editorContentProps}
         >
           {editor && <LinkBubbleMenu editor={editor} />}
+          {editor && <TableCellBubbleMenu editor={editor} />}
         </EditorContent>
       </div>
     );

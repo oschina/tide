@@ -80,6 +80,7 @@ importers:
       '@tiptap/extension-strike': ^2.0.0-beta.209
       '@tiptap/extension-task-list': ^2.0.0-beta.209
       '@tiptap/extension-text': ^2.0.0-beta.209
+      '@tiptap/extension-text-align': 2.0.0-beta.209
       '@types/lodash': ^4.14.191
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
@@ -139,6 +140,7 @@ importers:
       '@tiptap/extension-strike': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-task-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-text': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
+      '@tiptap/extension-text-align': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       classnames: 2.3.2
       highlight.js: 11.7.0
       lodash: 4.17.21
@@ -395,6 +397,7 @@ importers:
       prosemirror-commands: ^1.1.4
       prosemirror-model: ^1.11.0
       prosemirror-state: ^1.3.3
+      prosemirror-transform: ^1.7.0
       prosemirror-view: ^1.15.5
       react: ^16.14.0
       tsconfig: workspace:*
@@ -414,6 +417,7 @@ importers:
       react: 16.14.0
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
+      prosemirror-transform: 1.7.0
       tsconfig: link:../tsconfig
       tslib: 2.4.1
       typescript: 4.9.3
@@ -497,6 +501,7 @@ importers:
 
   packages/extension-table:
     specifiers:
+      '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-table': ^2.0.0-beta.209
       '@tiptap/extension-table-cell': ^2.0.0-beta.209
@@ -511,9 +516,11 @@ importers:
       prosemirror-view: ^1.29.1
       react: ^16.14.0
       react-dom: ^16.14.0
+      tippy.js: ^6.3.7
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/react': link:../react
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-table': 2.0.0-beta.209_rzq3d64dvyh4nxe2glmegnqyxq
       '@tiptap/extension-table-cell': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
@@ -522,6 +529,7 @@ importers:
       '@tiptap/prosemirror-tables': 1.1.4_qifc5sj34wizlbsbgz4xon75ea
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
+      tippy.js: 6.3.7
     devDependencies:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
@@ -1586,6 +1594,14 @@ packages:
 
   /@tiptap/extension-task-list/2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua:
     resolution: {integrity: sha512-LlskBKQcWMEXw3gDhl0E1SRV2gqwthwQuqVFvJ207FKZpnPiREhlGYkBJtC2YtfsmbRQOKxcjNQCgKtgOXAlUg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+    dev: false
+
+  /@tiptap/extension-text-align/2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua:
+    resolution: {integrity: sha512-PbCYNkhxi0oR1N6PgRnG8JoaSJXOvgF8gpEW1RzG8VJNCJPLrhR9/pryHfkszD55XGc4o1F5L+CryRsBJeqsIw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.193
     dependencies:
