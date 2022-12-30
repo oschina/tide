@@ -248,7 +248,7 @@ importers:
       '@tiptap/extension-paragraph': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-placeholder': 2.0.0-beta.209_nv3r55gosyqqywjqk2ljir6ei4
       '@tiptap/extension-strike': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
-      '@tiptap/extension-table': 2.0.0-beta.209_rzq3d64dvyh4nxe2glmegnqyxq
+      '@tiptap/extension-table': 2.0.0-beta.209_qwlqc545lyutxx43tpl3h3kmgq
       '@tiptap/extension-table-cell': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-table-header': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-table-row': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
@@ -387,10 +387,12 @@ importers:
 
   packages/extension-image:
     specifiers:
+      '@test-pkgs/extension-bubble-menu': workspace:*
       '@test-pkgs/extension-uploader': workspace:*
       '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-image': ^2.0.0-beta.209
+      '@types/react': ^16.14.0
       browser-fs-access: ^0.31.1
       classnames: ^2.2.6
       eslint-config-custom: workspace:*
@@ -404,6 +406,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
       '@test-pkgs/extension-uploader': link:../extension-uploader
       '@test-pkgs/react': link:../react
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
@@ -416,6 +419,7 @@ importers:
       prosemirror-view: 1.29.1
       react: 16.14.0
     devDependencies:
+      '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       prosemirror-transform: 1.7.0
       tsconfig: link:../tsconfig
@@ -522,11 +526,11 @@ importers:
     dependencies:
       '@test-pkgs/react': link:../react
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/extension-table': 2.0.0-beta.209_rzq3d64dvyh4nxe2glmegnqyxq
+      '@tiptap/extension-table': 2.0.0-beta.209_qwlqc545lyutxx43tpl3h3kmgq
       '@tiptap/extension-table-cell': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-table-header': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-table-row': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
-      '@tiptap/prosemirror-tables': 1.1.4_qifc5sj34wizlbsbgz4xon75ea
+      '@tiptap/prosemirror-tables': 1.1.3
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
@@ -1566,7 +1570,7 @@ packages:
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
     dev: false
 
-  /@tiptap/extension-table/2.0.0-beta.209_rzq3d64dvyh4nxe2glmegnqyxq:
+  /@tiptap/extension-table/2.0.0-beta.209_qwlqc545lyutxx43tpl3h3kmgq:
     resolution: {integrity: sha512-vyaVrH4rY+2S+qHGLn7CeDYDM/dyKx52jfmnNCN7wn9GMDsRrxqdFrQjtw0eDkGZyymIM7pEHf2h8kSNBxH2+Q==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.193
@@ -1576,7 +1580,7 @@ packages:
       prosemirror-view: ^1.28.2
     dependencies:
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/prosemirror-tables': 1.1.4_qifc5sj34wizlbsbgz4xon75ea
+      '@tiptap/prosemirror-tables': 1.1.3
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
       prosemirror-view: 1.29.1
@@ -1627,14 +1631,8 @@ packages:
       zeed-dom: 0.9.26
     dev: false
 
-  /@tiptap/prosemirror-tables/1.1.4_qifc5sj34wizlbsbgz4xon75ea:
-    resolution: {integrity: sha512-O2XnDhZV7xTHSFxMMl8Ei3UVeCxuMlbGYZ+J2QG8CzkK8mxDpBa66kFr5DdyAhvdi1ptpcH9u7/GMwItQpN4sA==}
-    peerDependencies:
-      prosemirror-keymap: ^1.1.2
-      prosemirror-model: ^1.8.1
-      prosemirror-state: ^1.3.1
-      prosemirror-transform: ^1.2.1
-      prosemirror-view: ^1.13.3
+  /@tiptap/prosemirror-tables/1.1.3:
+    resolution: {integrity: sha512-Pp7Iyup+kxniDGEvFHX+BRw3et9vys83NVqk6B+PbVAztq64QyX/mY+vzcpFmOsF9/th+Po981igbGUG7C/8hw==}
     dependencies:
       prosemirror-keymap: 1.2.0
       prosemirror-model: 1.18.3
@@ -2122,7 +2120,7 @@ packages:
       supports-color: 7.2.0
 
   /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/classnames/-/classnames-2.3.2.tgz}
     dev: false
 
   /clean-stack/2.2.0:
@@ -4245,7 +4243,7 @@ packages:
       prosemirror-model: 1.18.3
 
   /prosemirror-model/1.18.3:
-    resolution: {integrity: sha512-yUVejauEY3F1r7PDy4UJKEGeIU+KFc71JQl5sNvG66CLVdKXRjhWpBW6KMeduGsmGOsw85f6EGrs6QxIKOVILA==}
+    resolution: {integrity: sha512-yUVejauEY3F1r7PDy4UJKEGeIU+KFc71JQl5sNvG66CLVdKXRjhWpBW6KMeduGsmGOsw85f6EGrs6QxIKOVILA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/prosemirror-model/-/prosemirror-model-1.18.3.tgz}
     dependencies:
       orderedmap: 2.0.0
 
@@ -4258,14 +4256,14 @@ packages:
     dev: false
 
   /prosemirror-state/1.4.2:
-    resolution: {integrity: sha512-puuzLD2mz/oTdfgd8msFbe0A42j5eNudKAAPDB0+QJRw8cO1ygjLmhLrg9RvDpf87Dkd6D4t93qdef00KKNacQ==}
+    resolution: {integrity: sha512-puuzLD2mz/oTdfgd8msFbe0A42j5eNudKAAPDB0+QJRw8cO1ygjLmhLrg9RvDpf87Dkd6D4t93qdef00KKNacQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/prosemirror-state/-/prosemirror-state-1.4.2.tgz}
     dependencies:
       prosemirror-model: 1.18.3
       prosemirror-transform: 1.7.0
       prosemirror-view: 1.29.1
 
   /prosemirror-transform/1.7.0:
-    resolution: {integrity: sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==}
+    resolution: {integrity: sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/prosemirror-transform/-/prosemirror-transform-1.7.0.tgz}
     dependencies:
       prosemirror-model: 1.18.3
 
@@ -4835,7 +4833,7 @@ packages:
     dev: false
 
   /tslib/2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
+    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/tslib/-/tslib-2.4.1.tgz}
     dev: true
 
   /tsutils/3.21.0_typescript@4.9.3:

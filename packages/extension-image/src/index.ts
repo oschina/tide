@@ -1,6 +1,7 @@
-import { Image } from './image';
+import { Image } from './image-extension';
 
-export * from './image';
+export { ImageBubbleMenu } from './NodeView/ImageBubbleMenu';
+export * from './image-extension';
 export * from './utils';
 
 export default Image;

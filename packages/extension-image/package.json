@@ -15,6 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
+    "@test-pkgs/extension-bubble-menu": "workspace:*",
     "@test-pkgs/extension-uploader": "workspace:*",
     "@test-pkgs/react": "workspace:*",
     "@tiptap/extension-image": "^2.0.0-beta.209",
@@ -22,6 +23,8 @@
     "classnames": "^2.2.6"
   },
   "devDependencies": {
+    "@types/react": "^16.14.0",
+    "prosemirror-transform": "^1.7.0",
     "eslint-config-custom": "workspace:*",
     "prosemirror-transform": "^1.7.0",
     "tsconfig": "workspace:*",
