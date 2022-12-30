@@ -1,10 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Editor, isNodeSelection, posToDOMRect } from '@tiptap/core';
 import { BubbleMenu } from '@test-pkgs/react';
 import type { BubbleMenuProps } from '@test-pkgs/react';
 import {
   getCellsInColumn,
   getCellsInRow,
+  getSelectedCells,
   isCellSelection,
   isColumnSelected,
   isRowSelected,
@@ -19,41 +20,44 @@ export type TableCellBubbleMenuProps = {
 export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
   editor,
 }) => {
-  // selected cell
-  const hasCellSelected = isCellSelection(editor.state.selection);
-  // selected row
-  const cellsInFirstColumn = getCellsInColumn(0)(editor.state.selection);
-  const hasRowSelected = !!cellsInFirstColumn?.some((_cell, index) =>
-    isRowSelected(index)(editor.state.selection)
-  );
-  // selected column
-  const cellsInFirstRow = getCellsInRow(0)(editor.state.selection);
-  const hasColumnSelected = !!cellsInFirstRow?.some((_cell, index) =>
-    isColumnSelected(index)(editor.state.selection)
-  );
-  // selected table
-  const hasTableSelected = isTableSelected(editor.state.selection);
-
-  console.log(
-    'hasCellSelected',
-    hasCellSelected,
-    'hasRowSelected',
-    hasRowSelected,
-    'hasColumnSelected',
-    hasColumnSelected,
-    'hasTableSelected',
-    hasTableSelected
-  );
+  const [selectedCells, setSelectedCells] = useState<any[]>([]);
+  const [rowSelected, setRowSelected] = useState(false);
+  const [columnSelected, setColumnSelected] = useState(false);
+  const [tableSelected, setTableSelected] = useState(false);
 
   const shouldShow = useCallback<BubbleMenuProps['shouldShow']>(
     ({ editor }) => {
       if (!editor.isEditable) {
         return false;
       }
+
+      // selected row
+      const hasRowSelected = !!getCellsInColumn(0)(
+        editor.state.selection
+      )?.some((_cell, index) => isRowSelected(index)(editor.state.selection));
+      setRowSelected(hasRowSelected);
+
+      // selected column
+      const hasColumnSelected = !!getCellsInRow(0)(
+        editor.state.selection
+      )?.some((_cell, index) =>
+        isColumnSelected(index)(editor.state.selection)
+      );
+      setColumnSelected(hasColumnSelected);
+
+      // selected table
+      const hasTableSelected = isTableSelected(editor.state.selection);
+      setTableSelected(hasTableSelected);
+
+      // selected cells
+      const cells = getSelectedCells(editor.state.selection);
+      setSelectedCells(cells);
+
       return isCellSelection(editor.state.selection);
     },
     [editor]
   );
+
   const tippyOptions: BubbleMenuProps['tippyOptions'] = {
     interactive: true,
     placement: 'top',
@@ -73,7 +77,8 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     },
   };
 
-  const canSplitCell = editor.can().chain().focus().splitCell().run();
+  const selectedCellsCount = selectedCells?.length || 0;
+  const canSplitCell = editor.can().splitCell();
 
   return (
     <BubbleMenu
@@ -84,9 +89,11 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       updateDelay={0}
     >
       <div className={styles['table-cell-bubble-menu']}>
-        <button onClick={() => editor.commands.mergeOrSplit()}>
-          {canSplitCell ? '拆分' : '合并'}
-        </button>
+        {(selectedCellsCount > 1 || canSplitCell) && (
+          <button onClick={() => editor.commands.mergeOrSplit()}>
+            {canSplitCell ? '拆分' : '合并'}
+          </button>
+        )}
         <button onClick={() => (editor.commands as any).unsetTextAlign?.()}>
           居左
         </button>
@@ -100,11 +107,16 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
         >
           居右
         </button>
-        {hasRowSelected && (
+        {!tableSelected && rowSelected && (
           <button onClick={() => editor.commands.deleteRow()}>删除行</button>
         )}
-        {hasColumnSelected && (
+        {!tableSelected && columnSelected && (
           <button onClick={() => editor.commands.deleteColumn()}>删除列</button>
+        )}
+        {tableSelected && (
+          <button onClick={() => editor.commands.deleteTable()}>
+            删除表格
+          </button>
         )}
       </div>
     </BubbleMenu>

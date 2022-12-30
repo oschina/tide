@@ -330,3 +330,23 @@ export default function isTableNode(node: Node): boolean {
     name === 'tableCell'
   );
 }
+
+export const getSelectedCells = (selection: any) => {
+  if (isCellSelection(selection)) {
+    const table = findTable(selection);
+    const map = TableMap.get(selection.$anchorCell.node(-1));
+    const start = selection.$anchorCell.start(-1);
+    const selectedCells = map.cellsInRect(
+      map.rectBetween(
+        selection.$anchorCell.pos - start,
+        selection.$headCell.pos - start
+      )
+    );
+    return selectedCells.map((nodePos) => {
+      const node = table.node.nodeAt(nodePos);
+      const pos = nodePos + table.start;
+      return { pos, start: pos + 1, node };
+    });
+  }
+  return null;
+};

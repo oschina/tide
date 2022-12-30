@@ -121,7 +121,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           Document,
           Paragraph,
           Text,
-          TextAlign.configure({
+          TextAlign.extend({
+            addKeyboardShortcuts: () => ({}),
+          }).configure({
             types: ['heading', 'paragraph'],
           }),
           Heading,
