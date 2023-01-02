@@ -63,12 +63,14 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.191",
+    "@types/prosemirror-dev-tools": "^3.0.3",
     "@types/react": "^16.14.0",
     "@types/react-dom": "^16.9.14",
     "@vitejs/plugin-react": "^3.0.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "fast-glob": "^3.2.12",
+    "prosemirror-dev-tools": "^4.0.0",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"

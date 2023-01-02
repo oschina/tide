@@ -23,4 +23,7 @@ export default defineConfig({
   resolve: {
     alias,
   },
+  define: {
+    'process.platform': '"web"',
+  },
 });

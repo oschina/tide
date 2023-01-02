@@ -2,6 +2,7 @@ import './style.less';
 
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
+import applyDevTools from 'prosemirror-dev-tools';
 import { MarkdownEditor } from '@test-pkgs/markdown';
 import DevtoolPanel from './components/DevtoolPanel';
 import {
@@ -46,14 +47,16 @@ function App() {
   return (
     <div className="demo">
       <div className="demo-header">
-        <input
-          type="checkbox"
-          id="editable"
-          name="editable"
-          checked={editable}
-          onChange={(e) => setEditable(e.target.checked)}
-        />
-        <label htmlFor="editable">editable</label>
+        <label>
+          <input
+            type="checkbox"
+            name="editable"
+            checked={editable}
+            onChange={(e) => setEditable(e.target.checked)}
+          />
+          editable
+        </label>
+        <div style={{ marginLeft: 'auto' }}>{import.meta.env.MODE}</div>
       </div>
       <div className="demo-main">
         <div className="demo-editor-wrapper">
@@ -68,6 +71,9 @@ function App() {
             onReady={(e) => {
               setReady(true);
               updateTextareaContent(e);
+              if (import.meta.env.MODE === 'development') {
+                applyDevTools(e.view);
+              }
             }}
           />
         </div>

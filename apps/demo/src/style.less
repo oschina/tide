@@ -1,6 +1,7 @@
 @import 'highlight.js/styles/default.css';
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -13,7 +14,8 @@ body {
   font-smooth: always;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Roboto, PingFang SC, Noto Sans SC, Microsoft YaHei UI, Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Roboto, PingFang SC, Noto Sans SC, Microsoft YaHei UI,
+    Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -43,6 +45,9 @@ a:active {
 
   &-header {
     margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   &-main {
@@ -68,7 +73,7 @@ a:active {
   &-devtool-wrapper {
     width: 50%;
     min-width: 0;
-    border: 1px solid #DADEE3;
+    border: 1px solid #dadee3;
     border-radius: 4px;
     background-color: #fff;
     display: flex;
@@ -83,7 +88,7 @@ a:active {
 
     .tab {
       padding: 8px;
-      border-bottom: 1px solid #DADEE3;
+      border-bottom: 1px solid #dadee3;
     }
 
     textarea {
