@@ -75,6 +75,14 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
               this.storage.clearCallbacks.forEach((cb) => cb());
               this.storage.clearCallbacks.length = 0;
 
+              let rowIndex = 0;
+              const cellRowIndexMap: number[] = [];
+              cells.forEach(({ node }) => {
+                const rowspan = node.attrs.rowspan || 1;
+                cellRowIndexMap.push(rowIndex);
+                rowIndex += rowspan;
+              });
+
               cells.forEach(({ pos }, index) => {
                 if (index === 0) {
                   decorations.push(
@@ -101,7 +109,8 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                 decorations.push(
                   Decoration.widget(pos + 1, () => {
                     let className = 'grip-row';
-                    const rowSelected = isRowSelected(index)(selection);
+                    const cellRowIndex = cellRowIndexMap[index];
+                    const rowSelected = isRowSelected(cellRowIndex)(selection);
                     if (rowSelected) {
                       className += ' selected';
                     }
@@ -123,7 +132,7 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                         event.preventDefault();
                         event.stopImmediatePropagation();
                         this.editor.view.dispatch(
-                          selectRow(index)(this.editor.state.tr)
+                          selectRow(cellRowIndex)(this.editor.state.tr)
                         );
                         if (event.target !== grip) {
                           addRowAfter(

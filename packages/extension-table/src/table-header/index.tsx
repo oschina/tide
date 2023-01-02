@@ -69,11 +69,21 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
               this.storage.clearCallbacks.forEach((cb) => cb());
               this.storage.clearCallbacks.length = 0;
 
+              let columnIndex = 0;
+              const cellColumnIndexMap: number[] = [];
+              cells.forEach(({ node }) => {
+                const colspan = node.attrs.colspan || 1;
+                cellColumnIndexMap.push(columnIndex);
+                columnIndex += colspan;
+              });
+
               cells.forEach(({ pos }, index) => {
                 decorations.push(
                   Decoration.widget(pos + 1, () => {
                     let className = 'grip-column';
-                    const colSelected = isColumnSelected(index)(selection);
+                    const cellColumnIndex = cellColumnIndexMap[index];
+                    const colSelected =
+                      isColumnSelected(cellColumnIndex)(selection);
                     if (colSelected) {
                       className += ' selected';
                     }
@@ -92,7 +102,7 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
                       event.preventDefault();
                       event.stopImmediatePropagation();
                       this.editor.view.dispatch(
-                        selectColumn(index)(this.editor.state.tr)
+                        selectColumn(cellColumnIndex)(this.editor.state.tr)
                       );
                       if (event.target !== grip) {
                         addColumnAfter(
