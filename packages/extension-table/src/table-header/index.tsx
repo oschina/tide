@@ -32,7 +32,9 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
         default: [100],
         parseHTML: (element) => {
           const colwidth = element.getAttribute('colwidth');
-          const value = colwidth ? [parseInt(colwidth, 10)] : null;
+          const value = colwidth
+            ? colwidth.split(',').map((item) => parseInt(item, 10))
+            : null;
           return value;
         },
       },
@@ -70,8 +72,8 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
               cells.forEach(({ pos }, index) => {
                 decorations.push(
                   Decoration.widget(pos + 1, () => {
-                    const colSelected = isColumnSelected(index)(selection);
                     let className = 'grip-column';
+                    const colSelected = isColumnSelected(index)(selection);
                     if (colSelected) {
                       className += ' selected';
                     }
