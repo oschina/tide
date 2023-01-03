@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
 import { uploadImage } from '@test-pkgs/extension-image';
+import { InsertTableButton } from '@test-pkgs/extension-table';
 
 type MenuBarProps = {
   className?: string;
@@ -155,25 +156,15 @@ const MenuBar: React.FC<MenuBarProps> = ({
       >
         link
       </button>
-
       <button
         onClick={() => uploadImage(editor)}
         className={editor.isActive('image') ? 'is-active' : ''}
       >
         image
       </button>
-
-      <button
-        onClick={() =>
-          editor
-            ?.chain()
-            .focus()
-            .insertTable({ rows: 3, cols: 3, withHeaderRow: false })
-            .run()
-        }
-      >
-        insertTable
-      </button>
+      <InsertTableButton editor={editor}>
+        <button>table</button>
+      </InsertTableButton>
       <button
         onClick={() => editor?.chain().focus().toggleBlockquote().run()}
         className={editor.isActive('blockquote') ? 'is-active' : ''}

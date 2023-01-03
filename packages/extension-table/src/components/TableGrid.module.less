@@ -1,0 +1,28 @@
+@cell-border-color: #dadee3;
+@cell-background-color: #f5f6f8;
+@selected-cell-border-color: #156ef3;
+@selected-cell-background-color: #2c7ef8;
+
+.table-grid {
+  cursor: pointer;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__cell {
+    flex-shrink: 0;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    border: solid 1px @cell-border-color;
+    background-color: @cell-background-color;
+    border-radius: 2px;
+
+    &--selected {
+      border-color: @selected-cell-border-color;
+      background-color: @selected-cell-background-color;
+    }
+  }
+}
