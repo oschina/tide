@@ -1,13 +1,17 @@
-import { mergeAttributes } from '@tiptap/core';
+import { InputRule, mergeAttributes } from '@tiptap/core';
 import {
+  createTable,
   Table as TTable,
   TableOptions as TTableOptions,
 } from '@tiptap/extension-table';
 import { tableEditing } from '@tiptap/prosemirror-tables';
-import { Node } from 'prosemirror-model';
-import { NodeView } from 'prosemirror-view';
+import { TextSelection } from 'prosemirror-state';
+import type { Node } from 'prosemirror-model';
+import type { NodeView } from 'prosemirror-view';
 import { columnResizing } from './columnresizing';
 import { TableView } from './TableView';
+
+export const tableInputRegex = /^([|｜]{2,})\n$/;
 
 export const Table = TTable.extend<TTableOptions>({
   addOptions() {
@@ -78,6 +82,46 @@ export const Table = TTable.extend<TTableOptions>({
           ['tbody', 0],
         ],
       ],
+    ];
+  },
+
+  addInputRules() {
+    return [
+      new InputRule({
+        find: tableInputRegex,
+        handler: ({ state, range, match }) => {
+          const $start = state.doc.resolve(range.from);
+
+          if (
+            !$start
+              .node(-1)
+              .canReplaceWith(
+                $start.index(-1),
+                $start.indexAfter(-1),
+                this.type
+              )
+          ) {
+            return null;
+          }
+
+          const rows = 3;
+          const cols = Math.max(1, match[1]?.length - 1 || 0);
+          const withHeaderRow = false;
+          const node = createTable(
+            this.editor.schema,
+            rows,
+            cols,
+            withHeaderRow
+          );
+
+          state.tr
+            .replaceRangeWith(range.from, range.to, node)
+            .scrollIntoView()
+            .setSelection(
+              TextSelection.near(state.tr.doc.resolve(range.from + 1))
+            );
+        },
+      }),
     ];
   },
 
