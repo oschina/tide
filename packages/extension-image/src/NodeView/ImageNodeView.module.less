@@ -17,9 +17,11 @@
 }
 
 .image-resize-view {
-  display: inline-flex;
   position: relative;
 
+  img{
+    display: block;
+  }
 
   &:hover {
     .draggable-btn {
@@ -28,7 +30,6 @@
     }
 
     .img-highlight {
-      display: inline-flex;
       border: 1px solid @theme-color;
     }
   }

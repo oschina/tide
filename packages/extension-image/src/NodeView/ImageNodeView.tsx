@@ -40,8 +40,8 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
       }
     },
     () => {
-      const width = imgRef.current.width;
-      const height = imgRef.current.height;
+      const width = imgRef.current?.width;
+      const height = imgRef.current?.height;
       if (width && height) {
         updateAttributes({ width, height });
       }
