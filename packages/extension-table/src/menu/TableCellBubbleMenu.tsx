@@ -32,16 +32,31 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       }
 
       // selected row
-      const hasRowSelected = !!getCellsInColumn(0)(
-        editor.state.selection
-      )?.some((_cell, index) => isRowSelected(index)(editor.state.selection));
+      const cellsInColumn = getCellsInColumn(0)(editor.state.selection) || [];
+      let rowIndex = 0;
+      const cellRowIndexMap: number[] = [];
+      cellsInColumn.forEach(({ node }) => {
+        const rowspan = node.attrs.rowspan || 1;
+        cellRowIndexMap.push(rowIndex);
+        rowIndex += rowspan;
+      });
+      const hasRowSelected = !!cellsInColumn.some((_cell, index) =>
+        isRowSelected(cellRowIndexMap[index])(editor.state.selection)
+      );
       setRowSelected(hasRowSelected);
 
       // selected column
-      const hasColumnSelected = !!getCellsInRow(0)(
-        editor.state.selection
-      )?.some((_cell, index) =>
-        isColumnSelected(index)(editor.state.selection)
+      const cellsInRow = getCellsInRow(0)(editor.state.selection) || [];
+      let columnIndex = 0;
+      const cellColumnIndexMap: number[] = [];
+      cellsInRow.forEach(({ node }) => {
+        const colspan = node.attrs.colspan || 1;
+        cellColumnIndexMap.push(columnIndex);
+        columnIndex += colspan;
+      });
+      console.log('cellColumnIndexMap', cellColumnIndexMap);
+      const hasColumnSelected = !!cellsInRow.some((_cell, index) =>
+        isColumnSelected(cellColumnIndexMap[index])(editor.state.selection)
       );
       setColumnSelected(hasColumnSelected);
 
