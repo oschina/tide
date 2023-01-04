@@ -54,7 +54,6 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
         cellColumnIndexMap.push(columnIndex);
         columnIndex += colspan;
       });
-      console.log('cellColumnIndexMap', cellColumnIndexMap);
       const hasColumnSelected = !!cellsInRow.some((_cell, index) =>
         isColumnSelected(cellColumnIndexMap[index])(editor.state.selection)
       );

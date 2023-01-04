@@ -281,13 +281,14 @@ function handleDecorations(state, cell) {
     start = $cell.start(-1);
   let col = map.colCount($cell.pos - start) + $cell.nodeAfter.attrs.colspan;
   for (let row = 0; row < map.height; row++) {
+    // cell index
     let index = col + row * map.width - 1;
     // For positions that are have either a different cell or the end
     // of the table to their right, and either the top of the table or
     // a different cell above them, add a decoration
     if (
       (col == map.width || map.map[index] != map.map[index + 1]) &&
-      (row == 0 || map.map[index - 1] != map.map[index - 1 - map.width])
+      (row == 0 || map.map[index] != map.map[index - map.width])
     ) {
       let cellPos = map.map[index];
       let pos = start + cellPos + table.nodeAt(cellPos).nodeSize - 1;
