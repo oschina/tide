@@ -6,6 +6,7 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
+import { isActive } from '@test-pkgs/helpers';
 import { SelectionBubbleMenu } from '@test-pkgs/extension-bubble-menu';
 import { Image } from '../image-extension';
 import styles from './ImageBubbleMenu.module.less';
@@ -16,7 +17,7 @@ export type ImageBubbleMenuProps = {
 
 export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
   const shouldShow = useCallback(() => {
-    const show = editor.isActive(Image.name);
+    const show = isActive(editor.state, Image.name);
     if (show) {
       const attrs = editor.getAttributes(Image.name);
     }

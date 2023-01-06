@@ -3,6 +3,7 @@ import {
   Link as TLink,
   LinkOptions as TLinkOptions,
 } from '@tiptap/extension-link';
+import { isActive } from '@test-pkgs/helpers';
 import { showLinkEditPopup } from './menu/LinkEditPopup';
 
 export const inputRegex = /(?:^|\s)\[(.+?)]\((\S+?)\)$/;
@@ -43,7 +44,7 @@ export const Link = TLink.extend<LinkOptions>({
       toggleLink:
         (attributes) =>
         ({ chain, editor }) => {
-          if (editor.isActive('link')) {
+          if (isActive(editor.state, this.name)) {
             return chain().unsetLink().run();
           }
           showLinkEditPopup(this.editor, {

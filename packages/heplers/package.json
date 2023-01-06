@@ -21,6 +21,7 @@
   "devDependencies": {
     "@test-pkgs/markdown": "workspace:*",
     "eslint-config-custom": "workspace:*",
+    "prosemirror-state": "^1.4.2",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },

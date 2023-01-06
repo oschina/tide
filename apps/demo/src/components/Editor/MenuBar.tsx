@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
+import { isActive } from '@test-pkgs/helpers';
 import { uploadImage } from '@test-pkgs/extension-image';
 import { InsertTableButton } from '@test-pkgs/extension-table';
 
@@ -43,7 +44,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
     >
       <button
         onClick={() => editor?.chain().focus().setParagraph().run()}
-        className={editor.isActive('paragraph') ? 'is-active' : ''}
+        className={isActive(editor.state, 'paragraph') ? 'is-active' : ''}
       >
         paragraph
       </button>
@@ -51,7 +52,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         onClick={() =>
           editor?.chain().focus().toggleHeading({ level: 1 }).run()
         }
-        className={editor.isActive('heading', { level: 1 }) ? 'is-active' : ''}
+        className={
+          isActive(editor.state, 'heading', { level: 1 }) ? 'is-active' : ''
+        }
       >
         h1
       </button>
@@ -59,7 +62,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         onClick={() =>
           editor?.chain().focus().toggleHeading({ level: 2 }).run()
         }
-        className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
+        className={
+          isActive(editor.state, 'heading', { level: 2 }) ? 'is-active' : ''
+        }
       >
         h2
       </button>
@@ -67,7 +72,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         onClick={() =>
           editor?.chain().focus().toggleHeading({ level: 3 }).run()
         }
-        className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
+        className={
+          isActive(editor.state, 'heading', { level: 3 }) ? 'is-active' : ''
+        }
       >
         h3
       </button>
@@ -75,7 +82,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         onClick={() =>
           editor?.chain().focus().toggleHeading({ level: 4 }).run()
         }
-        className={editor.isActive('heading', { level: 4 }) ? 'is-active' : ''}
+        className={
+          isActive(editor.state, 'heading', { level: 4 }) ? 'is-active' : ''
+        }
       >
         h4
       </button>
@@ -83,7 +92,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         onClick={() =>
           editor?.chain().focus().toggleHeading({ level: 5 }).run()
         }
-        className={editor.isActive('heading', { level: 5 }) ? 'is-active' : ''}
+        className={
+          isActive(editor.state, 'heading', { level: 5 }) ? 'is-active' : ''
+        }
       >
         h5
       </button>
@@ -91,7 +102,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         onClick={() =>
           editor?.chain().focus().toggleHeading({ level: 6 }).run()
         }
-        className={editor.isActive('heading', { level: 6 }) ? 'is-active' : ''}
+        className={
+          isActive(editor.state, 'heading', { level: 6 }) ? 'is-active' : ''
+        }
       >
         h6
       </button>
@@ -101,28 +114,28 @@ const MenuBar: React.FC<MenuBarProps> = ({
       <button
         onClick={() => editor?.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
-        className={editor.isActive('bold') ? 'is-active' : ''}
+        className={isActive(editor.state, 'bold') ? 'is-active' : ''}
       >
         bold
       </button>
       <button
         onClick={() => editor?.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
-        className={editor.isActive('italic') ? 'is-active' : ''}
+        className={isActive(editor.state, 'italic') ? 'is-active' : ''}
       >
         italic
       </button>
       <button
         onClick={() => editor?.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
-        className={editor.isActive('strike') ? 'is-active' : ''}
+        className={isActive(editor.state, 'strike') ? 'is-active' : ''}
       >
         strike
       </button>
       <button
         onClick={() => editor?.chain().focus().toggleCode().run()}
         disabled={!editor.can().chain().focus().toggleCode().run()}
-        className={editor.isActive('code') ? 'is-active' : ''}
+        className={isActive(editor.state, 'code') ? 'is-active' : ''}
       >
         code
       </button>
@@ -131,19 +144,19 @@ const MenuBar: React.FC<MenuBarProps> = ({
 
       <button
         onClick={() => editor?.chain().focus().toggleBulletList().run()}
-        className={editor.isActive('bulletList') ? 'is-active' : ''}
+        className={isActive(editor.state, 'bulletList') ? 'is-active' : ''}
       >
         bullet list
       </button>
       <button
         onClick={() => editor?.chain().focus().toggleOrderedList().run()}
-        className={editor.isActive('orderedList') ? 'is-active' : ''}
+        className={isActive(editor.state, 'orderedList') ? 'is-active' : ''}
       >
         ordered list
       </button>
       <button
         onClick={() => editor?.chain().focus().toggleTaskList().run()}
-        className={editor.isActive('taskList') ? 'is-active' : ''}
+        className={isActive(editor.state, 'taskList') ? 'is-active' : ''}
       >
         task list
       </button>
@@ -152,32 +165,37 @@ const MenuBar: React.FC<MenuBarProps> = ({
 
       <button
         onClick={() => editor?.chain().focus().toggleLink({ href: '' }).run()}
-        className={editor.isActive('link') ? 'is-active' : ''}
+        className={isActive(editor.state, 'link') ? 'is-active' : ''}
       >
         link
       </button>
       <button
         onClick={() => uploadImage(editor)}
-        className={editor.isActive('image') ? 'is-active' : ''}
+        className={isActive(editor.state, 'image') ? 'is-active' : ''}
       >
         image
       </button>
       <InsertTableButton editor={editor}>
-        <button>table</button>
+        <button className={isActive(editor.state, 'table') ? 'is-active' : ''}>
+          table
+        </button>
       </InsertTableButton>
       <button
         onClick={() => editor?.chain().focus().toggleBlockquote().run()}
-        className={editor.isActive('blockquote') ? 'is-active' : ''}
+        className={isActive(editor.state, 'blockquote') ? 'is-active' : ''}
       >
         blockquote
       </button>
       <button
         onClick={() => editor?.chain().focus().toggleCodeBlock().run()}
-        className={editor.isActive('codeBlock') ? 'is-active' : ''}
+        className={isActive(editor.state, 'codeBlock') ? 'is-active' : ''}
       >
         code block
       </button>
-      <button onClick={() => editor?.chain().focus().setHorizontalRule().run()}>
+      <button
+        onClick={() => editor?.chain().focus().setHorizontalRule().run()}
+        className={isActive(editor.state, 'horizontalRule') ? 'is-active' : ''}
+      >
         horizontal rule
       </button>
 

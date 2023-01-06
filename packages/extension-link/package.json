@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@test-pkgs/extension-bubble-menu": "workspace:*",
+    "@test-pkgs/helpers": "workspace:*",
     "@tiptap/extension-link": "^2.0.0-beta.209"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { Editor } from '@tiptap/core';
 import { SelectionBubbleMenu } from '@test-pkgs/extension-bubble-menu';
+import { isActive } from '@test-pkgs/helpers';
 import { showLinkEditPopup } from './LinkEditPopup';
 import { Link as LinkExtension } from '../link';
 import styles from './LinkBubbleMenu.module.less';
@@ -15,7 +16,7 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
   const [target, setTarget] = useState<string>('');
 
   const shouldShow = useCallback(() => {
-    const show = editor.isActive(LinkExtension.name);
+    const show = isActive(editor.state, LinkExtension.name);
     if (show) {
       const attrs = editor.getAttributes(LinkExtension.name);
       setHref(attrs.href || '');
