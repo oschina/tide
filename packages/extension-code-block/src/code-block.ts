@@ -6,8 +6,12 @@ import { lowlight } from 'lowlight/lib/all';
 import { isActive } from '@test-pkgs/helpers';
 import { ReactNodeViewRenderer } from '@test-pkgs/react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
+import { textblockTypeInputRule } from '@tiptap/core';
 
 export type CodeBlockOptions = CodeBlockLowlightOptions;
+
+export const backtickInputRegex = /^[`·]{3}([a-z]+)?[\s\n]$/;
+export const tildeInputRegex = /^[~～]{3}([a-z]+)?[\s\n]$/;
 
 export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
   name: 'codeBlock',
@@ -38,5 +42,24 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
         return false;
       },
     };
+  },
+
+  addInputRules() {
+    return [
+      textblockTypeInputRule({
+        find: backtickInputRegex,
+        type: this.type,
+        getAttributes: (match) => ({
+          language: match[1],
+        }),
+      }),
+      textblockTypeInputRule({
+        find: tildeInputRegex,
+        type: this.type,
+        getAttributes: (match) => ({
+          language: match[1],
+        }),
+      }),
+    ];
   },
 });

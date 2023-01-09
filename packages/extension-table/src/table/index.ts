@@ -17,7 +17,7 @@ export const Table = TTable.extend<TTableOptions>({
   addOptions() {
     return {
       HTMLAttributes: {},
-      resizable: false,
+      resizable: true,
       handleWidth: 5,
       cellMinWidth: 48,
       View: TableView as unknown as NodeView,

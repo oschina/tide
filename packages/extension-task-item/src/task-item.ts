@@ -18,7 +18,8 @@ export const TaskItem = Node.create<TaskItemOptions>({
 
   addOptions() {
     return {
-      nested: false,
+      onReadOnlyChecked: undefined,
+      nested: true,
       HTMLAttributes: {},
     };
   },

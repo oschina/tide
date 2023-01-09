@@ -14,21 +14,15 @@ import { Paragraph } from '@tiptap/extension-paragraph';
 import { Text } from '@tiptap/extension-text';
 import { TextAlign } from '@tiptap/extension-text-align';
 import { Heading } from '@tiptap/extension-heading';
-import { Blockquote } from '@tiptap/extension-blockquote';
 import { HardBreak } from '@tiptap/extension-hard-break';
-import { HorizontalRule } from '@tiptap/extension-horizontal-rule';
 import { BulletList } from '@tiptap/extension-bullet-list';
-import { OrderedList } from '@tiptap/extension-ordered-list';
 import { ListItem } from '@tiptap/extension-list-item';
 import { TaskList } from '@tiptap/extension-task-list';
 import { Bold } from '@tiptap/extension-bold';
-import { Code } from '@tiptap/extension-code';
 import { Italic } from '@tiptap/extension-italic';
-import { Strike } from '@tiptap/extension-strike';
 import { History } from '@tiptap/extension-history';
 import { Dropcursor } from '@tiptap/extension-dropcursor';
 import { Gapcursor } from '@tiptap/extension-gapcursor';
-// import { Placeholder } from '@tiptap/extension-placeholder';
 import {
   Table,
   TableRow,
@@ -38,12 +32,16 @@ import {
 import { TaskItem } from '@test-pkgs/extension-task-item';
 import { Link } from '@test-pkgs/extension-link';
 import { Image } from '@test-pkgs/extension-image';
+import { OrderedList } from '@test-pkgs/extension-ordered-list';
+import { Strike } from '@test-pkgs/extension-strike';
+import { Blockquote } from '@test-pkgs/extension-blockquote';
+import { Code } from '@test-pkgs/extension-code';
 import { CodeBlock } from '@test-pkgs/extension-code-block';
-import { MentionMember } from './extensions/mention-member';
 import {
   Emoji,
   suggestion as emojiSuggestion,
 } from '@test-pkgs/extension-emoji';
+import { HorizontalRule } from '@test-pkgs/extension-horizontal-rule';
 import { Markdown } from '@test-pkgs/extension-markdown';
 import { Uploader, defaultUploader } from '@test-pkgs/extension-uploader';
 import { MarkdownEditor, createMarkdownEditor } from '@test-pkgs/markdown';
@@ -53,6 +51,7 @@ import {
   EditorContent as TEditorContent,
   useEditor,
 } from '@test-pkgs/react';
+import { MentionMember } from './extensions/mention-member';
 import './EditorContent.less';
 
 export type EditorContentProps = {
@@ -126,6 +125,11 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           }).configure({
             types: ['heading', 'paragraph'],
           }),
+          Bold,
+          Italic,
+          Strike,
+          Code,
+          Link,
           Heading,
           Blockquote,
           HardBreak,
@@ -135,12 +139,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           ListItem,
           TaskList,
           TaskItem.configure({
-            nested: true,
             onReadOnlyChecked: () => true,
           }),
-          Table.configure({
-            resizable: true,
-          }),
+          Table,
           TableRow,
           TableCell,
           TableHeader,
@@ -205,15 +206,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
             forceFallbackImages: false,
             suggestion: emojiSuggestion,
           }),
-          Bold,
-          Code,
-          Italic,
-          Link,
-          Strike,
           History,
           Dropcursor,
           Gapcursor,
-          // Placeholder,
           Uploader.configure({
             uploader: async (files) => {
               onImageUploadingRef.current?.(true);

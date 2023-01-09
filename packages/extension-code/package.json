@@ -1,0 +1,29 @@
+{
+  "name": "@test-pkgs/extension-code",
+  "version": "0.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/cjs/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
+  },
+  "dependencies": {
+    "@tiptap/extension-code": "^2.0.0-beta.209"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.0-beta.209"
+  },
+  "sideEffects": false
+}
