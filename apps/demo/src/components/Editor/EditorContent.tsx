@@ -18,8 +18,6 @@ import { HardBreak } from '@tiptap/extension-hard-break';
 import { BulletList } from '@tiptap/extension-bullet-list';
 import { ListItem } from '@tiptap/extension-list-item';
 import { TaskList } from '@tiptap/extension-task-list';
-import { Bold } from '@tiptap/extension-bold';
-import { Italic } from '@tiptap/extension-italic';
 import { History } from '@tiptap/extension-history';
 import { Dropcursor } from '@tiptap/extension-dropcursor';
 import { Gapcursor } from '@tiptap/extension-gapcursor';
@@ -35,6 +33,8 @@ import { Image } from '@test-pkgs/extension-image';
 import { OrderedList } from '@test-pkgs/extension-ordered-list';
 import { Strike } from '@test-pkgs/extension-strike';
 import { Blockquote } from '@test-pkgs/extension-blockquote';
+import { Bold } from '@test-pkgs/extension-bold';
+import { Italic } from '@test-pkgs/extension-italic';
 import { Code } from '@test-pkgs/extension-code';
 import { CodeBlock } from '@test-pkgs/extension-code-block';
 import {

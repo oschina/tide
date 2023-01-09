@@ -1,3 +1,4 @@
+import { textblockTypeInputRule } from '@tiptap/core';
 import {
   CodeBlockLowlight,
   CodeBlockLowlightOptions,
@@ -6,7 +7,6 @@ import { lowlight } from 'lowlight/lib/all';
 import { isActive } from '@test-pkgs/helpers';
 import { ReactNodeViewRenderer } from '@test-pkgs/react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
-import { textblockTypeInputRule } from '@tiptap/core';
 
 export type CodeBlockOptions = CodeBlockLowlightOptions;
 

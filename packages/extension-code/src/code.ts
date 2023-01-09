@@ -6,8 +6,8 @@ import {
 
 export type CodeOptions = TCodeOptions;
 
-export const inputRegex = /(?:^|\s)((?:[`·])((?:[^`·]+))(?:[`·]))$/;
-export const pasteRegex = /(?:^|\s)((?:[`·])((?:[^`·]+))(?:[`·]))/g;
+export const inputRegex = /(?:^|\s)((?:[`·])((?:[^`·]+))(?:[`·]))\s$/;
+export const pasteRegex = /(?:^|\s)((?:[`·])((?:[^`·]+))(?:[`·]))\s/g;
 
 export const Code = TCode.extend<CodeOptions>({
   addInputRules() {

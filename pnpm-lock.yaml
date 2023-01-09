@@ -50,11 +50,13 @@ importers:
     specifiers:
       '@test-pkgs/editor': workspace:*
       '@test-pkgs/extension-blockquote': workspace:*
+      '@test-pkgs/extension-bold': workspace:*
       '@test-pkgs/extension-code': workspace:*
       '@test-pkgs/extension-code-block': workspace:*
       '@test-pkgs/extension-emoji': workspace:*
       '@test-pkgs/extension-horizontal-rule': workspace:*
       '@test-pkgs/extension-image': workspace:*
+      '@test-pkgs/extension-italic': workspace:*
       '@test-pkgs/extension-link': workspace:*
       '@test-pkgs/extension-markdown': workspace:*
       '@test-pkgs/extension-mention': workspace:*
@@ -67,7 +69,6 @@ importers:
       '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/extension-bold': ^2.0.0-beta.209
       '@tiptap/extension-bullet-list': ^2.0.0-beta.209
       '@tiptap/extension-document': ^2.0.0-beta.209
       '@tiptap/extension-dropcursor': ^2.0.0-beta.209
@@ -75,7 +76,6 @@ importers:
       '@tiptap/extension-hard-break': ^2.0.0-beta.209
       '@tiptap/extension-heading': ^2.0.0-beta.209
       '@tiptap/extension-history': ^2.0.0-beta.209
-      '@tiptap/extension-italic': ^2.0.0-beta.209
       '@tiptap/extension-list-item': ^2.0.0-beta.209
       '@tiptap/extension-paragraph': ^2.0.0-beta.209
       '@tiptap/extension-task-list': ^2.0.0-beta.209
@@ -112,11 +112,13 @@ importers:
     dependencies:
       '@test-pkgs/editor': link:../../packages/editor
       '@test-pkgs/extension-blockquote': link:../../packages/extension-blockquote
+      '@test-pkgs/extension-bold': link:../../packages/extension-bold
       '@test-pkgs/extension-code': link:../../packages/extension-code
       '@test-pkgs/extension-code-block': link:../../packages/extension-code-block
       '@test-pkgs/extension-emoji': link:../../packages/extension-emoji
       '@test-pkgs/extension-horizontal-rule': link:../../packages/extension-horizontal-rule
       '@test-pkgs/extension-image': link:../../packages/extension-image
+      '@test-pkgs/extension-italic': link:../../packages/extension-italic
       '@test-pkgs/extension-link': link:../../packages/extension-link
       '@test-pkgs/extension-markdown': link:../../packages/extension-markdown
       '@test-pkgs/extension-mention': link:../../packages/extension-mention
@@ -129,7 +131,6 @@ importers:
       '@test-pkgs/markdown': link:../../packages/markdown
       '@test-pkgs/react': link:../../packages/react
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/extension-bold': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-bullet-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-document': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-dropcursor': 2.0.0-beta.209_qfdcmhnxwxslpsupsyi7ae3p2e
@@ -137,7 +138,6 @@ importers:
       '@tiptap/extension-hard-break': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-heading': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-history': 2.0.0-beta.209_4l4d2nbnhzh4n42foqovky5q2e
-      '@tiptap/extension-italic': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-list-item': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-paragraph': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-task-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
@@ -302,6 +302,21 @@ importers:
     dependencies:
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      typescript: 4.9.3
+
+  packages/extension-bold:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.209
+      '@tiptap/extension-bold': ^2.0.0-beta.209
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-bold': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -477,6 +492,21 @@ importers:
       prosemirror-transform: 1.7.0
       tsconfig: link:../tsconfig
       tslib: 2.4.1
+      typescript: 4.9.3
+
+  packages/extension-italic:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.209
+      '@tiptap/extension-italic': ^2.0.0-beta.209
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-italic': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/extension-link:
