@@ -1,5 +1,25 @@
-import { mergeAttributes, Node, wrappingInputRule } from '@tiptap/core';
+import {
+  mergeAttributes,
+  Node,
+  wrappingInputRule,
+  isNodeActive,
+  InputRule,
+  PasteRule,
+} from '@tiptap/core';
 import { Node as ProseMirrorNode } from 'prosemirror-model';
+
+declare module '@tiptap/core' {
+  interface Commands<ReturnType> {
+    TaskItem: {
+      insertTaskItem: (
+        text: string,
+        checked: boolean,
+        from: number,
+        to: number
+      ) => ReturnType;
+    };
+  }
+}
 
 export interface TaskItemOptions {
   onReadOnlyChecked?: (
@@ -11,7 +31,9 @@ export interface TaskItemOptions {
   HTMLAttributes: Record<string, any>;
 }
 
-export const inputRegex = /^\s*([[【]([( |x])?[\]】])\s$/;
+export const inputRegex = /^\s*(-\s)*([[【]([( |x])?[\]】])\s$/;
+
+export const pasteRegex = /^\s*(-\s)*(\[([( |x])?\])\s.*$/g;
 
 export const TaskItem = Node.create<TaskItemOptions>({
   name: 'taskItem',
@@ -174,6 +196,29 @@ export const TaskItem = Node.create<TaskItemOptions>({
     };
   },
 
+  addCommands() {
+    return {
+      ...this.parent?.(),
+
+      insertTaskItem:
+        (text, cehcked, from, to) =>
+        ({ state }) => {
+          const { schema, tr } = state;
+          const { paragraph, taskItem } = schema.nodes;
+
+          const textNode = schema.text(text);
+          const newParagraph = paragraph.create(undefined, textNode);
+          const newTaskItem = taskItem.create(
+            { checked: cehcked },
+            newParagraph
+          );
+
+          tr.replaceRangeWith(from, to, newTaskItem);
+          return true;
+        },
+    };
+  },
+
   addInputRules() {
     return [
       wrappingInputRule({
@@ -182,6 +227,41 @@ export const TaskItem = Node.create<TaskItemOptions>({
         getAttributes: (match) => ({
           checked: match[match.length - 1] === 'x',
         }),
+      }),
+      new InputRule({
+        find: inputRegex,
+        handler: ({ state, range, match, commands }) => {
+          const isBulletList = isNodeActive(state, 'bulletList');
+          if (isBulletList) {
+            commands.insertTaskItem(
+              ' ',
+              match[match.length - 1] === 'x',
+              range.from - 3,
+              range.to
+            );
+            return true;
+          }
+        },
+      }),
+    ];
+  },
+
+  addPasteRules() {
+    return [
+      new PasteRule({
+        find: pasteRegex,
+        handler: ({ match, range, commands }) => {
+          if (match.input) {
+            const text = match.input.substring(match.input.indexOf('] ') + 2);
+            commands.insertTaskItem(
+              text,
+              match[match.length - 1] === 'x',
+              range.from - 1,
+              range.to
+            );
+            return true;
+          }
+        },
       }),
     ];
   },
