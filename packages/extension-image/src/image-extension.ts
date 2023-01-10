@@ -2,7 +2,7 @@ import {
   Image as TImage,
   ImageOptions as TImageOptions,
 } from '@tiptap/extension-image';
-import { mergeAttributes } from '@tiptap/core';
+import { mergeAttributes, nodeInputRule } from '@tiptap/core';
 import { ReactNodeViewRenderer } from '@test-pkgs/react';
 import ImageNodeView from './NodeView/ImageNodeView';
 
@@ -15,6 +15,9 @@ declare module '@tiptap/core' {
 }
 
 export type ImageOptions = TImageOptions;
+
+export const inputRegex =
+  /(?:^|\s)(!\[(.+|:?)]\((\S+)(?:(?:\s+)["'](\S+)["'])?\))\s$/;
 
 export const Image = TImage.extend<ImageOptions>({
   name: 'image',
@@ -87,5 +90,19 @@ export const Image = TImage.extend<ImageOptions>({
 
   addNodeView() {
     return ReactNodeViewRenderer(ImageNodeView);
+  },
+
+  addInputRules() {
+    return [
+      nodeInputRule({
+        find: inputRegex,
+        type: this.type,
+        getAttributes: (match) => {
+          const [, , alt, src, title] = match;
+
+          return { src, alt, title };
+        },
+      }),
+    ];
   },
 });

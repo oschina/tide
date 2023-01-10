@@ -6,7 +6,7 @@ import {
 import { isActive } from '@test-pkgs/helpers';
 import { showLinkEditPopup } from './menu/LinkEditPopup';
 
-export const inputRegex = /(?:^|\s)\[(.+?)]\((\S+?)\)$/;
+export const inputRegex = /(?:^|\s)\[(.+?)]\((.+?)\)\s$/;
 
 export type LinkOptions = TLinkOptions;
 
@@ -67,7 +67,8 @@ export const Link = TLink.extend<LinkOptions>({
         find: inputRegex,
         type: this.type,
         getAttributes: (match) => {
-          const [, href] = match;
+          const [, , href] = match;
+          match.pop();
           return { href };
         },
       }),
