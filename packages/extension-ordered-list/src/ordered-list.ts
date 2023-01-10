@@ -1,8 +1,8 @@
-import { wrappingInputRule } from '@tiptap/core';
 import {
   OrderedList as TOrderedList,
   OrderedListOptions as TOrderedListOptions,
 } from '@tiptap/extension-ordered-list';
+import { wrappingInputRule } from '@test-pkgs/common';
 
 export type OrderedListOptions = TOrderedListOptions;
 
@@ -15,7 +15,7 @@ export const OrderedList = TOrderedList.extend<OrderedListOptions>({
         find: inputRegex,
         type: this.type,
         getAttributes: (match) => ({ start: +match[1] }),
-        joinPredicate: (match, node) =>
+        joinBefore: (match, node) =>
           node.childCount + node.attrs.start === +match[1],
       }),
     ];

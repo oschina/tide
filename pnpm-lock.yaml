@@ -51,6 +51,7 @@ importers:
       '@test-pkgs/editor': workspace:*
       '@test-pkgs/extension-blockquote': workspace:*
       '@test-pkgs/extension-bold': workspace:*
+      '@test-pkgs/extension-bullet-list': workspace:*
       '@test-pkgs/extension-code': workspace:*
       '@test-pkgs/extension-code-block': workspace:*
       '@test-pkgs/extension-emoji': workspace:*
@@ -69,7 +70,6 @@ importers:
       '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/extension-bullet-list': ^2.0.0-beta.209
       '@tiptap/extension-document': ^2.0.0-beta.209
       '@tiptap/extension-dropcursor': ^2.0.0-beta.209
       '@tiptap/extension-gapcursor': ^2.0.0-beta.209
@@ -113,6 +113,7 @@ importers:
       '@test-pkgs/editor': link:../../packages/editor
       '@test-pkgs/extension-blockquote': link:../../packages/extension-blockquote
       '@test-pkgs/extension-bold': link:../../packages/extension-bold
+      '@test-pkgs/extension-bullet-list': link:../../packages/extension-bullet-list
       '@test-pkgs/extension-code': link:../../packages/extension-code
       '@test-pkgs/extension-code-block': link:../../packages/extension-code-block
       '@test-pkgs/extension-emoji': link:../../packages/extension-emoji
@@ -131,7 +132,6 @@ importers:
       '@test-pkgs/markdown': link:../../packages/markdown
       '@test-pkgs/react': link:../../packages/react
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
-      '@tiptap/extension-bullet-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-document': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-dropcursor': 2.0.0-beta.209_qfdcmhnxwxslpsupsyi7ae3p2e
       '@tiptap/extension-gapcursor': 2.0.0-beta.209_v2bfq5maicdelkbmqszbe5xqhy
@@ -172,6 +172,23 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.3
       vite: 4.0.1
+
+  packages/common:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.209
+      eslint-config-custom: workspace:*
+      prosemirror-model: ^1.18.3
+      prosemirror-transform: ^1.7.0
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      prosemirror-model: 1.18.3
+      prosemirror-transform: 1.7.0
+      tsconfig: link:../tsconfig
+      typescript: 4.9.3
 
   packages/editor:
     specifiers:
@@ -294,12 +311,14 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
+      '@test-pkgs/common': workspace:^0.0.0
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-blockquote': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/common': link:../common
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
@@ -349,6 +368,23 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: 2.4.1
+      typescript: 4.9.3
+
+  packages/extension-bullet-list:
+    specifiers:
+      '@test-pkgs/common': workspace:^0.0.0
+      '@tiptap/core': ^2.0.0-beta.209
+      '@tiptap/extension-bullet-list': ^2.0.0-beta.209
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@test-pkgs/common': link:../common
+      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-bullet-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/extension-code:
@@ -590,12 +626,14 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
+      '@test-pkgs/common': workspace:^0.0.0
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-ordered-list': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/common': link:../common
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-ordered-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
@@ -665,16 +703,18 @@ importers:
 
   packages/extension-task-item:
     specifiers:
+      '@test-pkgs/common': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       prosemirror-model: ^1.18.3
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
+      '@test-pkgs/common': link:../common
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
-      prosemirror-model: 1.18.3
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
+      prosemirror-model: 1.18.3
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 

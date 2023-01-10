@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/extension-ordered-list",
+  "name": "@test-pkgs/extension-bullet-list",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@test-pkgs/common": "workspace:^0.0.0",
-    "@tiptap/extension-ordered-list": "^2.0.0-beta.209"
+    "@tiptap/extension-bullet-list": "^2.0.0-beta.209"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

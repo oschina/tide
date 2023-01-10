@@ -14,8 +14,12 @@
     "lint": "TIMING=1 eslint \"**/*.ts\"",
     "clear": "rm -rf dist"
   },
+  "dependencies": {
+    "@test-pkgs/common": "workspace:*"
+  },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
+    "prosemirror-model": "^1.18.3",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },

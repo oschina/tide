@@ -1,12 +1,12 @@
+import { Node as ProseMirrorNode } from 'prosemirror-model';
 import {
   mergeAttributes,
   Node,
-  wrappingInputRule,
   isNodeActive,
   InputRule,
   PasteRule,
 } from '@tiptap/core';
-import { Node as ProseMirrorNode } from 'prosemirror-model';
+import { wrappingInputRule } from '@test-pkgs/common';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {

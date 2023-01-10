@@ -1,8 +1,8 @@
-import { wrappingInputRule } from '@tiptap/core';
 import {
   Blockquote as TBlockquote,
   BlockquoteOptions as TBlockquoteOptions,
 } from '@tiptap/extension-blockquote';
+import { wrappingInputRule } from '@test-pkgs/common';
 
 export type BlockquoteOptions = TBlockquoteOptions;
 
