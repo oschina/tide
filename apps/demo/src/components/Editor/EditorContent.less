@@ -85,12 +85,8 @@
     }
 
     p {
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       line-height: 1.42857143;
-    }
-
-    .react-renderer {
-      margin: 0 0 10px;
     }
 
     ul,
@@ -205,31 +201,13 @@
     /* Table-specific styling */
     .tableWrapper {
       position: relative;
-      margin: 20px 0;
-
-      &.has-focus {
-        .scrollWrapper {
-          margin-top: -20px;
-        }
-      }
-
-      table {
-        margin: 0;
-      }
     }
 
     .scrollWrapper {
       overflow-y: hidden;
       overflow-x: auto;
-      padding-left: 28px;
-      padding-top: 28px;
-      padding-bottom: 8px;
-      margin-left: -28px;
-      margin-top: -20px;
-      margin-bottom: -8px;
-      border-left: 1px solid transparent;
-      border-right: 1px solid transparent;
-      transition: border 250ms ease-in-out 0s;
+      padding: 28px 8px 4px 24px;
+      margin: -20px -8px -4px -24px;
     }
 
     table {
@@ -238,6 +216,7 @@
       border-collapse: collapse;
       border-radius: 4px;
       overflow: auto;
+      margin: 0;
 
       box-sizing: border-box;
 
@@ -257,6 +236,7 @@
         word-wrap: break-word;
         word-break: break-all;
 
+        // FIXME: first-child and last-child margin (not .ProseMirror-widget)
         > *,
         > .react-renderer {
           margin-bottom: 0;
@@ -315,7 +295,7 @@
           content: '';
           position: absolute;
           left: 100%;
-          bottom: 4px;
+          bottom: 6px;
           transform: translateX(-1px);
 
           width: 4px;
@@ -390,7 +370,7 @@
           content: '';
           position: absolute;
           left: -10px;
-          bottom: -2px;
+          bottom: -3px;
           width: 4px;
           height: 4px;
           background-color: @table-border-color;
