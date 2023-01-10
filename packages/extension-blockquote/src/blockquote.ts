@@ -9,6 +9,12 @@ export type BlockquoteOptions = TBlockquoteOptions;
 export const inputRegex = /^\s*[>》]\s$/;
 
 export const Blockquote = TBlockquote.extend<BlockquoteOptions>({
+  addKeyboardShortcuts() {
+    return {
+      'Mod-Shift-.': () => this.editor.commands.toggleBlockquote(),
+    };
+  },
+
   addInputRules() {
     return [
       wrappingInputRule({
