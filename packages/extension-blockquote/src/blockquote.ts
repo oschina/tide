@@ -20,6 +20,8 @@ export const Blockquote = TBlockquote.extend<BlockquoteOptions>({
       wrappingInputRule({
         find: inputRegex,
         type: this.type,
+        joinBefore: () => false,
+        joinAfter: () => false,
       }),
     ];
   },

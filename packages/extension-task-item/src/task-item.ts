@@ -5,6 +5,7 @@ import {
   isNodeActive,
   InputRule,
   PasteRule,
+  getNodeType,
 } from '@tiptap/core';
 import { wrappingInputRule } from '@test-pkgs/common';
 
@@ -220,6 +221,7 @@ export const TaskItem = Node.create<TaskItemOptions>({
   },
 
   addInputRules() {
+    const taskListType = getNodeType('taskList', this.editor.schema);
     return [
       wrappingInputRule({
         find: inputRegex,
@@ -227,6 +229,8 @@ export const TaskItem = Node.create<TaskItemOptions>({
         getAttributes: (match) => ({
           checked: match[match.length - 1] === 'x',
         }),
+        joinBefore: (_match, node) => node.type === taskListType,
+        joinAfter: (_match, node) => node.type === taskListType,
       }),
       new InputRule({
         find: inputRegex,

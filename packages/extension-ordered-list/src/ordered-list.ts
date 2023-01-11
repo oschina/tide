@@ -16,7 +16,9 @@ export const OrderedList = TOrderedList.extend<OrderedListOptions>({
         type: this.type,
         getAttributes: (match) => ({ start: +match[1] }),
         joinBefore: (match, node) =>
+          node.type === this.type &&
           node.childCount + node.attrs.start === +match[1],
+        joinAfter: (_match, node) => node.type === this.type,
       }),
     ];
   },

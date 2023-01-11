@@ -64,15 +64,17 @@ export function wrappingInputRule(config: {
 
       const canJoinBefore =
         before &&
-        before.type === config.type &&
         canJoin(tr.doc, currentStartPos) &&
-        (!config.joinBefore || config.joinBefore(match, before));
+        (!config.joinBefore
+          ? before.type === config.type
+          : config.joinBefore(match, before));
 
       const canJoinAfter =
         after &&
-        after.type === config.type &&
         canJoin(tr.doc, afterPos) &&
-        (!config.joinAfter || config.joinAfter(match, after));
+        (!config.joinAfter
+          ? after.type === config.type
+          : config.joinAfter(match, after));
 
       let joinedBefore = false;
       if (canJoinBefore) {
