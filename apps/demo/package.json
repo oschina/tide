@@ -22,6 +22,7 @@
     "@test-pkgs/extension-image": "workspace:*",
     "@test-pkgs/extension-italic": "workspace:*",
     "@test-pkgs/extension-link": "workspace:*",
+    "@test-pkgs/extension-lists-indentation": "workspace:*",
     "@test-pkgs/extension-markdown": "workspace:*",
     "@test-pkgs/extension-mention": "workspace:*",
     "@test-pkgs/extension-ordered-list": "workspace:*",

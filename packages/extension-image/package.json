@@ -27,7 +27,6 @@
     "@types/react": "^16.14.0",
     "prosemirror-transform": "^1.7.0",
     "eslint-config-custom": "workspace:*",
-    "prosemirror-transform": "^1.7.0",
     "tsconfig": "workspace:*",
     "tslib": "^2.4.1",
     "typescript": "^4.5.2"

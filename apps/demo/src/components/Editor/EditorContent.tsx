@@ -29,6 +29,7 @@ import {
 import { TaskItem } from '@test-pkgs/extension-task-item';
 import { Link } from '@test-pkgs/extension-link';
 import { Image } from '@test-pkgs/extension-image';
+import { ListsIndentation } from '@test-pkgs/extension-lists-indentation';
 import { OrderedList } from '@test-pkgs/extension-ordered-list';
 import { BulletList } from '@test-pkgs/extension-bullet-list';
 import { Strike } from '@test-pkgs/extension-strike';
@@ -134,6 +135,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           Blockquote,
           HardBreak,
           HorizontalRule,
+          ListsIndentation,
           BulletList,
           OrderedList,
           ListItem,
