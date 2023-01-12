@@ -7,7 +7,7 @@ import {
 export type StrikeOptions = TStrikeOptions;
 
 export const inputRegex = /(?:^|\s)((?:[~～]{2})((?:[^~～]+))(?:[~～]{2}))\s$/;
-export const pasteRegex = /(?:^|\s)((?:[~～]{2})((?:[^~～]+))(?:[~～]{2}))\s/g;
+export const pasteRegex = /(?:^|\s)((?:[~～]{2})((?:[^~～]+))(?:[~～]{2}))/g;
 
 export const Strike = TStrike.extend<StrikeOptions>({
   addInputRules() {

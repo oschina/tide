@@ -7,9 +7,9 @@ import {
 export type BoldOptions = TBoldOptions;
 
 export const starInputRegex = /(?:^|\s)((?:\*\*)((?:[^*]+))(?:\*\*))\s$/;
-export const starPasteRegex = /(?:^|\s)((?:\*\*)((?:[^*]+))(?:\*\*))\s/g;
+export const starPasteRegex = /(?:^|\s)((?:\*\*)((?:[^*]+))(?:\*\*))/g;
 export const underscoreInputRegex = /(?:^|\s)((?:__)((?:[^__]+))(?:__))\s$/;
-export const underscorePasteRegex = /(?:^|\s)((?:__)((?:[^__]+))(?:__))\s/g;
+export const underscorePasteRegex = /(?:^|\s)((?:__)((?:[^__]+))(?:__))/g;
 
 export const Bold = TBold.extend<BoldOptions>({
   addInputRules() {

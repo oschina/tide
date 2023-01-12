@@ -52,6 +52,8 @@ export type EmojiStorage = {
 
 export const EmojiPluginKey = new PluginKey('emojiSuggestion');
 
+export const pasteRegex = /:([a-zA-Z0-9_+-]+):/g;
+
 export const Emoji = Node.create<EmojiOptions, EmojiStorage>({
   name: 'emoji',
 
@@ -268,7 +270,7 @@ export const Emoji = Node.create<EmojiOptions, EmojiStorage>({
   addPasteRules() {
     return [
       new PasteRule({
-        find: /:([a-zA-Z0-9_+-]+):/g,
+        find: pasteRegex,
         handler: ({ range, match, commands }) => {
           const name = match[1];
           if (findEmoji(name, this.options.emojis)) {

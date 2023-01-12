@@ -7,9 +7,9 @@ import {
 export type ItalicOptions = TItalicOptions;
 
 export const starInputRegex = /(?:^|\s)((?:\*)((?:[^*]+))(?:\*))\s$/;
-export const starPasteRegex = /(?:^|\s)((?:\*)((?:[^*]+))(?:\*))\s/g;
+export const starPasteRegex = /(?:^|\s)((?:\*)((?:[^*]+))(?:\*))/g;
 export const underscoreInputRegex = /(?:^|\s)((?:_)((?:[^_]+))(?:_))\s$/;
-export const underscorePasteRegex = /(?:^|\s)((?:_)((?:[^_]+))(?:_))\s/g;
+export const underscorePasteRegex = /(?:^|\s)((?:_)((?:[^_]+))(?:_))/g;
 
 export const Italic = TItalic.extend<ItalicOptions>({
   addInputRules() {
