@@ -18,8 +18,12 @@ export const isMarkdown = (text: string): boolean => {
   if (text.match(/^#{1,6}\s+\S+/gm)) return true;
 
   // list-ish
-  const listItems = text.match(/^[\d-*].?\s\S+/gm);
+  const listItems = text.match(/^\s*[\d-*]\s+\S+/gm);
   if (listItems && listItems.length > 1) return true;
+
+  // task-list-ish
+  const taskListItems = text.match(/^\s*[-*]\s\[[ xX]\]\s+\S+/gm);
+  if (taskListItems && taskListItems.length > 1) return true;
 
   // blockquote-ish
   if (text.match(/^>\s+\S+/gm)) return true;
