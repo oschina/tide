@@ -1,13 +1,6 @@
 import { Node as ProseMirrorNode } from 'prosemirror-model';
-import {
-  mergeAttributes,
-  Node,
-  isNodeActive,
-  InputRule,
-  PasteRule,
-  getNodeType,
-} from '@tiptap/core';
-import { wrappingInputRule } from '@test-pkgs/common';
+import { mergeAttributes, Node, getNodeType, PasteRule } from '@tiptap/core';
+import { wrapInListInputRule, wrappingInputRule } from '@test-pkgs/common';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -32,7 +25,7 @@ export interface TaskItemOptions {
   HTMLAttributes: Record<string, any>;
 }
 
-export const inputRegex = /^\s*(-\s)*([[【]([( |x])?[\]】])\s$/;
+export const inputRegex = /^\s*([[【]([( |x])?[\]】])\s$/;
 
 export const pasteRegex = /^\s*(-\s)*(\[([( |x])?\])\s.*$/g;
 
@@ -202,17 +195,14 @@ export const TaskItem = Node.create<TaskItemOptions>({
       ...this.parent?.(),
 
       insertTaskItem:
-        (text, cehcked, from, to) =>
+        (text, checked, from, to) =>
         ({ state }) => {
           const { schema, tr } = state;
-          const { paragraph, taskItem } = schema.nodes;
+          const { paragraph } = schema.nodes;
 
           const textNode = schema.text(text);
           const newParagraph = paragraph.create(undefined, textNode);
-          const newTaskItem = taskItem.create(
-            { checked: cehcked },
-            newParagraph
-          );
+          const newTaskItem = this.type.create({ checked }, newParagraph);
 
           tr.replaceRangeWith(from, to, newTaskItem);
           return true;
@@ -232,20 +222,15 @@ export const TaskItem = Node.create<TaskItemOptions>({
         joinBefore: (_match, node) => node.type === taskListType,
         joinAfter: (_match, node) => node.type === taskListType,
       }),
-      new InputRule({
+      wrapInListInputRule({
         find: inputRegex,
-        handler: ({ state, range, match, commands }) => {
-          const isBulletList = isNodeActive(state, 'bulletList');
-          if (isBulletList) {
-            commands.insertTaskItem(
-              ' ',
-              match[match.length - 1] === 'x',
-              range.from - 3,
-              range.to
-            );
-            return true;
-          }
-        },
+        listType: taskListType,
+        extensions: this.editor.extensionManager.extensions,
+        getAttributes: (match) => ({
+          checked: match[match.length - 1] === 'x',
+        }),
+        joinBefore: (_match, node) => node.type === taskListType,
+        joinAfter: (_match, node) => node.type === taskListType,
       }),
     ];
   },

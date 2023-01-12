@@ -2,7 +2,7 @@ import {
   BulletList as TBulletList,
   BulletListOptions as TBulletListOptions,
 } from '@tiptap/extension-bullet-list';
-import { wrappingInputRule } from '@test-pkgs/common';
+import { wrapInListInputRule, wrappingInputRule } from '@test-pkgs/common';
 
 export type BulletListOptions = TBulletListOptions;
 
@@ -14,6 +14,11 @@ export const BulletList = TBulletList.extend<BulletListOptions>({
       wrappingInputRule({
         find: inputRegex,
         type: this.type,
+      }),
+      wrapInListInputRule({
+        find: inputRegex,
+        listType: this.type,
+        extensions: this.editor.extensionManager.extensions,
       }),
     ];
   },
