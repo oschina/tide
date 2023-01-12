@@ -88,6 +88,7 @@ importers:
       '@types/react-dom': ^16.9.14
       '@vitejs/plugin-react': ^3.0.0
       classnames: ^2.2.6
+      copy-to-clipboard: ^3.3.3
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       fast-glob: ^3.2.12
@@ -146,6 +147,7 @@ importers:
       '@tiptap/extension-text': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-text-align': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       classnames: 2.3.2
+      copy-to-clipboard: 3.3.3
       highlight.js: 11.7.0
       lodash: 4.17.21
       prosemirror-commands: 1.5.0
@@ -2476,7 +2478,7 @@ packages:
     dev: true
 
   /copy-to-clipboard/3.3.3:
-    resolution: {integrity: sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/copy-to-clipboard/-/copy-to-clipboard-3.3.3.tgz}
+    resolution: {integrity: sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==}
     dependencies:
       toggle-selection: 1.0.6
     dev: false

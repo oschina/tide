@@ -46,6 +46,7 @@
     "@tiptap/extension-text": "^2.0.0-beta.209",
     "@tiptap/extension-text-align": "2.0.0-beta.209",
     "classnames": "^2.2.6",
+    "copy-to-clipboard": "^3.3.3",
     "highlight.js": "^11.7.0",
     "lodash": "^4.17.21",
     "prosemirror-commands": "^1.5.0",
