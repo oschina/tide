@@ -89,7 +89,9 @@ function App() {
             />
             editable
           </label>
-          <button onClick={handleClickPermalink}>permalink</button>
+          <button style={{ marginLeft: 8 }} onClick={handleClickPermalink}>
+            permalink
+          </button>
         </div>
         <div style={{ marginLeft: 'auto' }}>{import.meta.env.MODE}</div>
       </div>

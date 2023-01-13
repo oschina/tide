@@ -6,7 +6,7 @@ export const isInCode = (state: EditorState): boolean => {
 };
 
 export const isMarkdown = (text: string): boolean => {
-  // code-ish
+  // code-block-ish
   const fences = text.match(/^```/gm);
   if (fences && fences.length > 1) return true;
 

@@ -27,7 +27,7 @@ export interface TaskItemOptions {
 
 export const inputRegex = /^\s*([[【]([( |x])?[\]】])\s$/;
 
-export const pasteRegex = /^\s*(-\s)*(\[([( |x])?\])\s.*$/g;
+export const pasteRegex = /^\s*(?:-\s)*(\[([( |x])?\])\s(.*)$/g;
 
 export const TaskItem = Node.create<TaskItemOptions>({
   name: 'taskItem',
@@ -240,11 +240,11 @@ export const TaskItem = Node.create<TaskItemOptions>({
       new PasteRule({
         find: pasteRegex,
         handler: ({ match, range, commands }) => {
-          if (match.input) {
-            const text = match.input.substring(match.input.indexOf('] ') + 2);
+          const [, , checked, text] = match;
+          if (text) {
             commands.insertTaskItem(
               text,
-              match[match.length - 1] === 'x',
+              checked === 'x',
               range.from - 1,
               range.to
             );
