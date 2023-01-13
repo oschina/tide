@@ -14,6 +14,10 @@ import {
   selectRow,
   selectTable,
 } from '../utilities';
+import { mergeAttributes } from '@tiptap/core';
+
+// TODO: tableCellHeight
+export const tableCellHeight = 36;
 
 export const TableCell = TTableCell.extend<TTableCellOptions>({
   addAttributes() {
@@ -45,6 +49,23 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
         },
       },
     };
+  },
+
+  renderHTML({ HTMLAttributes }) {
+    const rowspan = Math.max(parseInt(HTMLAttributes.rowspan, 10), 1);
+    return [
+      'td',
+      mergeAttributes(
+        this.options.HTMLAttributes,
+        HTMLAttributes,
+        rowspan > 1
+          ? {
+              style: `height: ${rowspan * tableCellHeight}px`,
+            }
+          : {}
+      ),
+      0,
+    ];
   },
 
   addStorage() {

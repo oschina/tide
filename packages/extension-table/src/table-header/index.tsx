@@ -8,6 +8,10 @@ import { Plugin, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import { addColumnAfter } from '@tiptap/prosemirror-tables';
 import { getCellsInRow, isColumnSelected, selectColumn } from '../utilities';
+import { mergeAttributes } from '@tiptap/core';
+
+// TODO: tableHeaderHeight
+export const tableHeaderHeight = 36;
 
 export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
   addAttributes() {
@@ -39,6 +43,23 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
         },
       },
     };
+  },
+
+  renderHTML({ HTMLAttributes }) {
+    const rowspan = Math.max(parseInt(HTMLAttributes.rowspan, 10), 1);
+    return [
+      'th',
+      mergeAttributes(
+        this.options.HTMLAttributes,
+        HTMLAttributes,
+        rowspan > 1
+          ? {
+              style: `height: ${rowspan * tableHeaderHeight}px`,
+            }
+          : {}
+      ),
+      0,
+    ];
   },
 
   addStorage() {
