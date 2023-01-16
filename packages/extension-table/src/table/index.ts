@@ -5,11 +5,21 @@ import {
   TableOptions as TTableOptions,
 } from '@tiptap/extension-table';
 import { tableEditing } from '@tiptap/prosemirror-tables';
-import { TextSelection } from 'prosemirror-state';
-import type { Node } from 'prosemirror-model';
+import { AllSelection, TextSelection } from 'prosemirror-state';
+import type { Node, NodeType } from 'prosemirror-model';
 import type { NodeView } from 'prosemirror-view';
 import { columnResizing } from './columnresizing';
 import { TableView } from './TableView';
+
+function findTableInLastChild(node: Node, type: NodeType): Node | null {
+  if (!node) {
+    return null;
+  }
+  if (node.type === type) {
+    return node;
+  }
+  return findTableInLastChild(node.lastChild, type);
+}
 
 export const tableInputRegex = /^([|｜]{2,})\n$/;
 
@@ -83,6 +93,29 @@ export const Table = TTable.extend<TTableOptions>({
         ],
       ],
     ];
+  },
+
+  addKeyboardShortcuts() {
+    return {
+      ...this.parent?.(),
+      // When a table is the last node in the document and its last cell is empty,
+      // Mod + A fails to select anything but the first node of the document.
+      // @see https://github.com/ueberdosis/tiptap/issues/2401
+      'Mod-a': () => {
+        const tableNode = findTableInLastChild(
+          this.editor.view.state.doc,
+          this.type
+        );
+        if (tableNode) {
+          const { state, dispatch } = this.editor.view;
+          const { tr } = state;
+          tr.setSelection(new AllSelection(tr.doc));
+          dispatch(tr);
+          return true;
+        }
+        return false;
+      },
+    };
   },
 
   addInputRules() {

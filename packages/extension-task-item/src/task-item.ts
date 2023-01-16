@@ -4,7 +4,7 @@ import { wrapInListInputRule, wrappingInputRule } from '@test-pkgs/common';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
-    TaskItem: {
+    taskItem: {
       insertTaskItem: (
         text: string,
         checked: boolean,
