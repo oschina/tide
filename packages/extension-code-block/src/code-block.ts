@@ -34,20 +34,10 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
     return {
       ...this.parent?.(),
       Tab: ({ editor }) => {
+        const { state, view } = editor;
         // TODO: 代码块内输入 Tab 不生效
-        if (isActive(editor.state, this.name)) {
-          const sel = window.getSelection();
-          const range = sel.getRangeAt(0);
-
-          const tabNode = document.createTextNode('    ');
-          range.insertNode(tabNode);
-
-          // 以tabNode为基准，设置 Range 的起点和终点位置。
-          range.setStartAfter(tabNode);
-          range.setEndAfter(tabNode);
-
-          sel.removeAllRanges();
-          sel.addRange(range);
+        if (isActive(state, this.name)) {
+          view.dispatch(state.tr.insertText('    ').scrollIntoView());
           return true;
         }
         return false;
