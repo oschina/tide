@@ -9,7 +9,6 @@ import {
 import { isActive } from '@test-pkgs/helpers';
 import { SelectionBubbleMenu } from '@test-pkgs/extension-bubble-menu';
 import { Image } from '../image-extension';
-import styles from './ImageBubbleMenu.module.less';
 
 export type ImageBubbleMenuProps = {
   editor: Editor;
@@ -48,7 +47,7 @@ export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
         },
       }}
     >
-      <div className={styles['image-bubble-menu']}>
+      <div>
         <button
           onClick={() => {
             editor.chain().updateImageAttr({ align: 'left' }).run();

@@ -26,10 +26,12 @@ export const Image = TImage.extend<ImageOptions>({
     return {
       inline: false,
       allowBase64: true,
-      HTMLAttributes: {},
+      HTMLAttributes: null,
     };
   },
 
+  atom: true,
+  draggable: false,
   selectable: true,
 
   allowGapCursor() {
@@ -39,22 +41,22 @@ export const Image = TImage.extend<ImageOptions>({
   addAttributes() {
     return {
       src: {
-        default: null,
+        default: '',
       },
       alt: {
-        default: null,
+        default: '',
       },
       title: {
-        default: null,
+        default: '',
       },
       width: {
         default: 500,
       },
       height: {
-        default: null,
+        default: 'auto',
       },
       align: {
-        default: null,
+        default: 'left',
       },
     };
   },

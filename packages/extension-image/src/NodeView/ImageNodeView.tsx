@@ -1,27 +1,27 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import type { NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@test-pkgs/react';
 import { useResize } from './resize';
 
-import styles from './ImageNodeView.module.less';
+import './ImageNodeView.less';
 
 const resizeBtn = [
   {
     position: 'top-left',
-    className: styles['top-left-btn'],
+    className: 'gwe-image__view-resize-btn-top-left',
   },
   {
     position: 'top-right',
-    className: styles['top-right-btn'],
+    className: 'gwe-image__view-resize-btn-top-right',
   },
   {
     position: 'bottom-right',
-    className: styles['bottom-right-btn'],
+    className: 'gwe-image__view-resize-btn-bottom-right',
   },
   {
     position: 'bottom-left',
-    className: styles['bottom-left-btn'],
+    className: 'gwe-image__view-resize-btn-bottom-left',
   },
 ];
 
@@ -32,6 +32,7 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
 }) => {
   const imgRef = useRef<HTMLImageElement>();
   const { onMousedown } = useResize(
+    imgRef.current,
     editor,
     ({ width, height }) => {
       if (imgRef.current) {
@@ -50,33 +51,36 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
 
   return (
     <NodeViewWrapper
-      draggable={node.type.spec.draggable}
-      className={classNames(node.attrs.className, styles['image-wrapper'], {
-        [styles['align-left']]: node.attrs.align === 'left',
-        [styles['align-center']]: node.attrs.align === 'center',
-        [styles['align-right']]: node.attrs.align === 'right',
+      data-drag-handle
+      className={classNames(node.attrs.className, 'gwe-image', {
+        'gwe-image__align-left': node.attrs.align === 'left',
+        'gwe-image__align-center': node.attrs.align === 'center',
+        'gwe-image__align-right': node.attrs.align === 'right',
       })}
     >
-      <div className={styles['image-resize-view']}>
-        {resizeBtn.map((item) => {
-          return (
-            <div
-              key={item.position}
-              className={classNames(styles['draggable-btn'], item.className)}
-              onMouseDown={(e) => onMousedown(item.position, e)}
-            />
-          );
-        })}
-        <div className={styles['img-highlight']}>
-          <img
-            ref={imgRef}
-            src={node.attrs.src}
-            alt={node.attrs.alt}
-            style={{
-              width: node.attrs.width,
-              height: node.attrs.height,
-            }}
-          />
+      <div className={classNames('gwe-image__view')}>
+        <img
+          ref={imgRef}
+          src={node.attrs.src}
+          alt={node.attrs.alt}
+          style={{
+            width: node.attrs.width,
+            height: node.attrs.height,
+          }}
+        />
+        <div className={classNames('gwe-image__view-resize')}>
+          {resizeBtn.map((item) => {
+            return (
+              <div
+                key={item.position}
+                className={classNames(
+                  'gwe-image__view-resize-btn',
+                  item.className
+                )}
+                onMouseDown={(e) => onMousedown(item.position, e)}
+              />
+            );
+          })}
         </div>
       </div>
     </NodeViewWrapper>

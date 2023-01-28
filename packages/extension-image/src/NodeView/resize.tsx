@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import type { Editor } from '@tiptap/core';
 
 export const useResize = (
+  imgEl: HTMLImageElement | null,
   editor: Editor,
   onUpdate: (v: { width: number; height: number }) => void,
   onConfirm: () => void
@@ -24,9 +25,8 @@ export const useResize = (
     store.clientY = e.clientY;
 
     // 此时图片的尺寸
-    const img = e.target.parentElement.querySelector('img');
-    store.imageWidth = img.width || img.clientWidth;
-    store.imageHeight = img.height || img.clientHeight;
+    store.imageWidth = imgEl?.width || imgEl?.clientWidth;
+    store.imageHeight = imgEl?.height || imgEl?.clientHeight;
 
     // 此时图片的拉伸方位
     store.position = position;
