@@ -7,7 +7,7 @@ import { LinkBubbleMenu } from '@test-pkgs/extension-link';
 import { TableCellBubbleMenu } from '@test-pkgs/extension-table';
 import { ImageBubbleMenu } from '@test-pkgs/extension-image';
 import { MarkdownEditor } from '@test-pkgs/markdown';
-import './EditorRender.less';
+import './index.less';
 
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   createPortal(children, document.body);
@@ -24,7 +24,7 @@ export type EditorRenderProps = Omit<
   contentStyle?: React.CSSProperties;
 };
 
-export const EditorRender = forwardRef<MarkdownEditor, EditorRenderProps>(
+export const WysiwygEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
   (
     {
       className,
@@ -41,6 +41,8 @@ export const EditorRender = forwardRef<MarkdownEditor, EditorRenderProps>(
     const [fullscreen, setFullscreen] = useState(false);
 
     useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
+
+    console.log('WysiwygEditor', editor);
 
     const content = (
       <div
@@ -77,4 +79,4 @@ export const EditorRender = forwardRef<MarkdownEditor, EditorRenderProps>(
   }
 );
 
-EditorRender.displayName = 'EditorRender';
+WysiwygEditor.displayName = 'WysiwygEditor';

@@ -23,6 +23,11 @@ export default defineConfig({
   resolve: {
     alias,
   },
+  // css: {
+  //   modules: {
+  //     localsConvention: 'camelCase',
+  //   },
+  // },
   define: {
     'process.platform': '"web"',
   },
