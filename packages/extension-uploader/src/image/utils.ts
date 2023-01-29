@@ -3,12 +3,13 @@ import { fileOpen } from 'browser-fs-access';
 
 // 模拟 ajax 上传
 export async function defaultImgUploader(file, progressCallBack) {
-  let src: string | ArrayBuffer = '';
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    src = e.target.result;
-  };
-  reader.readAsDataURL(file);
+  // let src: string | ArrayBuffer = '';
+  // const reader = new FileReader();
+  // reader.onload = (e) => {
+  //   src = e.target.result;
+  // };
+  // reader.readAsDataURL(file);
+  const src = URL.createObjectURL(file);
 
   return new Promise((resolve) => {
     let mockProgress = 1;

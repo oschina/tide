@@ -5,21 +5,21 @@ import throttle from 'lodash/throttle';
 
 const InspectPanel = ({ editor }: { editor: MarkdownEditor | null }) => {
   const [tab, setTab] = React.useState<'html' | 'json' | 'markdown'>('json');
-  const [inspectData, setInspectData] = React.useState('');
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     const updateHandle = throttle(({ editor }: EditorEvents['update']) => {
-      if (!editor) return;
+      if (!editor || !textareaRef.current) return;
 
       switch (tab) {
         case 'json':
-          setInspectData(JSON.stringify(editor.getJSON(), null, 2));
+          textareaRef.current.value = JSON.stringify(editor.getJSON(), null, 2);
           break;
         case 'html':
-          setInspectData(editor.getHTML());
+          textareaRef.current.value = editor.getHTML();
           break;
         case 'markdown':
-          setInspectData((editor as MarkdownEditor).getMarkdown());
+          textareaRef.current.value = (editor as MarkdownEditor).getMarkdown();
           break;
         default:
       }
@@ -33,7 +33,7 @@ const InspectPanel = ({ editor }: { editor: MarkdownEditor | null }) => {
     return () => {
       editor?.off('update', updateHandle);
     };
-  }, [editor, tab, setInspectData]);
+  }, [editor, tab]);
 
   return (
     <div className="inspect-panel">
@@ -72,13 +72,13 @@ const InspectPanel = ({ editor }: { editor: MarkdownEditor | null }) => {
       </div>
 
       <textarea
+        ref={textareaRef}
         className={tab === 'json' ? 'json' : 'html'}
-        value={inspectData}
-        onChange={(e) => {
-          setInspectData(e.target.value);
-          // todo sync editor
-          console.log('--------onChange----', e.target.value);
-        }}
+        // onChange={(e) => {
+        //   // 当图片数据量 base64 字符太大时会卡顿
+        //   // todo sync editor
+        //   console.log('--------onChange----', e.target.value);
+        // }}
       />
     </div>
   );

@@ -78,8 +78,6 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
     {
       className,
       style,
-      defaultValue = null,
-      value: inputValue,
       autoFocus,
       readOnly,
       readOnlyEmptyView,
@@ -88,16 +86,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
       onFocus,
       onBlur,
       onReady,
-      onImageUploading,
     },
     ref
   ) => {
-    const [value, setValue] = useState<Content>(
-      (inputValue ?? defaultValue) || null
-    );
-    const inputValueRef = useRef(inputValue);
-    inputValueRef.current = inputValue;
-
     const onChangeRef = useRef(onChange);
     onChangeRef.current = onChange;
     const onFocusRef = useRef(onFocus);
@@ -106,8 +97,6 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
     onBlurRef.current = onBlur;
     const onReadyRef = useRef(onReady);
     onReadyRef.current = onReady;
-    const onImageUploadingRef = useRef(onImageUploading);
-    onImageUploadingRef.current = onImageUploading;
 
     const editor = useEditor<MarkdownEditor, MarkdownEditorOptions>(
       MarkdownEditorClass,
@@ -221,7 +210,6 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
             copy: false,
           }),
         ],
-        content: value,
         autofocus: autoFocus,
         editable: !readOnly,
         editorProps: {
@@ -252,13 +240,6 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           }
           onReadyRef.current?.(e as MarkdownEditor);
         },
-        onUpdate: ({ editor: e }) => {
-          const json = e.getJSON();
-          setValue(json);
-          if (!isEqual(inputValueRef.current, json)) {
-            onChangeRef.current?.(json, e as MarkdownEditor);
-          }
-        },
         onFocus: () => {
           onFocusRef.current?.();
         },
@@ -268,16 +249,6 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
       },
       []
     );
-
-    useEffect(() => {
-      if (!editor || isEqual(inputValue, value)) return;
-      try {
-        editor.commands.setContent(inputValue || '');
-      } catch (err) {
-        editor.commands.setContent('');
-        console.error(err);
-      }
-    }, [inputValue]);
 
     useEffect(() => {
       if (!editor || editor.isEditable === !readOnly) return;

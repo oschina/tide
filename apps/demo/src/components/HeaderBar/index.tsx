@@ -32,7 +32,7 @@ const HeaderBar = ({
     history.pushState(null, '', urlString);
     copy(urlString);
 
-    if (urlString.length > 20000) {
+    if (urlString.length > 10000) {
       alert('复制成功 内容过多导致会数据丢失');
     } else {
       alert('复制成功');
@@ -80,7 +80,7 @@ const HeaderBar = ({
           console.log('localStorage setItem error:', e);
         }
       },
-      500
+      600
     );
 
     editor?.on('update', updateSaveToLocalHandle);

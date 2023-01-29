@@ -18,22 +18,36 @@ export const handleUploadImages = (
 
   images.forEach(async (image, index) => {
     const id = {};
-    const reader = new FileReader();
-    reader.onload = (readerEvent) => {
-      const tr = view.state.tr;
-      if (!tr.selection.empty) {
-        tr.deleteSelection();
-      }
-      tr.setMeta(ImagePlaceholderPlugin, {
-        add: {
-          id,
-          pos: pos + index,
-          src: readerEvent.target.result,
-        },
-      });
-      view.dispatch(tr);
-    };
-    reader.readAsDataURL(image);
+    const blobUrl = URL.createObjectURL(image);
+    const tr = view.state.tr;
+    if (!tr.selection.empty) {
+      tr.deleteSelection();
+    }
+    tr.setMeta(ImagePlaceholderPlugin, {
+      add: {
+        id,
+        pos: pos + index,
+        src: blobUrl,
+      },
+    });
+    view.dispatch(tr);
+
+    // const reader = new FileReader();
+    // reader.onload = (readerEvent) => {
+    //   const tr = view.state.tr;
+    //   if (!tr.selection.empty) {
+    //     tr.deleteSelection();
+    //   }
+    //   tr.setMeta(ImagePlaceholderPlugin, {
+    //     add: {
+    //       id,
+    //       pos: pos + index,
+    //       src: readerEvent.target.result,
+    //     },
+    //   });
+    //   view.dispatch(tr);
+    // };
+    // reader.readAsDataURL(image);
 
     const src = await uploadFunc(image, (progress) => {
       view.dispatch(
@@ -44,6 +58,8 @@ export const handleUploadImages = (
     });
 
     if (src) {
+      URL.revokeObjectURL(blobUrl);
+
       const plpos = findPlaceholder(view.state, id);
       if (plpos == null) {
         return;
