@@ -44,7 +44,7 @@ import {
 } from '@test-pkgs/extension-emoji';
 import { HorizontalRule } from '@test-pkgs/extension-horizontal-rule';
 import { Markdown } from '@test-pkgs/extension-markdown';
-import { Uploader, defaultUploader } from '@test-pkgs/extension-uploader';
+import { Uploader, defaultImgUploader } from '@test-pkgs/extension-uploader';
 import { MarkdownEditor, createMarkdownEditor } from '@test-pkgs/markdown';
 import type { MarkdownEditorOptions, Content } from '@test-pkgs/markdown';
 import {
@@ -212,13 +212,8 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           Dropcursor,
           Gapcursor,
           Uploader.configure({
-            uploader: async (files) => {
-              onImageUploadingRef.current?.(true);
-              const items = await defaultUploader(
-                files.filter((file) => file.type.includes('image'))
-              );
-              onImageUploadingRef.current?.(false);
-              return items;
+            image: {
+              uploader: defaultImgUploader,
             },
           }),
           Markdown.configure({

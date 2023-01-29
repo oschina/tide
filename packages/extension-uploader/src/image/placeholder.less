@@ -1,0 +1,30 @@
+.gwe-uploader {
+
+  &__img-placeholder {
+    display: inline-block;
+    position: relative;
+
+    img {
+      width: 500px;
+    }
+  }
+
+  &__img-progress {
+    width: 80%;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .6);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    &-inner {
+      display: block;
+      height: 100%;
+      border-radius: 10px;
+      background: #fff;
+    }
+  }
+}

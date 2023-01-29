@@ -325,7 +325,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/common': link:../common
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-blockquote': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -340,7 +340,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-bold': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -363,7 +363,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/react': link:../react
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
       react: 16.14.0
@@ -386,7 +386,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/common': link:../common
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-bullet-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -401,7 +401,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-code': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -427,7 +427,7 @@ importers:
     dependencies:
       '@test-pkgs/helpers': link:../heplers
       '@test-pkgs/react': link:../react
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-code-block': 2.0.0-beta.209_prfudu5zgovreazvyjp3brspre
       '@tiptap/extension-code-block-lowlight': 2.0.0-beta.209_oncrp2q33yaneu43jffs7gw3am
       classnames: 2.3.2
@@ -486,7 +486,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-horizontal-rule': 2.0.0-beta.209_prfudu5zgovreazvyjp3brspre
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -496,42 +496,38 @@ importers:
   packages/extension-image:
     specifiers:
       '@test-pkgs/extension-bubble-menu': workspace:*
-      '@test-pkgs/extension-uploader': workspace:*
       '@test-pkgs/helpers': workspace:*
       '@test-pkgs/react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-image': ^2.0.0-beta.209
       '@types/react': ^16.14.0
-      browser-fs-access: ^0.31.1
       classnames: ^2.2.6
       eslint-config-custom: workspace:*
       prosemirror-commands: ^1.1.4
       prosemirror-model: ^1.11.0
       prosemirror-state: ^1.3.3
       prosemirror-transform: ^1.7.0
-      prosemirror-view: ^1.15.5
+      prosemirror-view: ^1.29.1
       react: ^16.14.0
       tsconfig: workspace:*
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
-      '@test-pkgs/extension-uploader': link:../extension-uploader
       '@test-pkgs/helpers': link:../heplers
       '@test-pkgs/react': link:../react
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-image': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
-      browser-fs-access: 0.31.1
       classnames: 2.3.2
       prosemirror-commands: 1.5.0
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
+      prosemirror-transform: 1.7.0
       prosemirror-view: 1.29.1
       react: 16.14.0
     devDependencies:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
-      prosemirror-transform: 1.7.0
       tsconfig: link:../tsconfig
       tslib: 2.4.1
       typescript: 4.9.3
@@ -544,7 +540,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-italic': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -569,7 +565,7 @@ importers:
       '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
       '@test-pkgs/helpers': link:../heplers
       '@test-pkgs/react': link:../react
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-link': 2.0.0-beta.209_kdf7tbeyuz6zzmi7724b5ghupu
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -612,7 +608,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/markdown': link:../markdown
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
     devDependencies:
@@ -637,7 +633,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/react': link:../react
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-mention': 2.0.0-beta.209_kqrjrkoewe7xnbl2egssj7ugbi
       '@tiptap/suggestion': 2.0.0-beta.209_nv3r55gosyqqywjqk2ljir6ei4
       classnames: 2.3.2
@@ -661,7 +657,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/common': link:../common
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-ordered-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -676,7 +672,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-strike': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -738,7 +734,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@test-pkgs/common': link:../common
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       prosemirror-model: 1.18.3
@@ -747,17 +743,27 @@ importers:
 
   packages/extension-uploader:
     specifiers:
+      '@test-pkgs/extension-image': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
+      browser-fs-access: ^0.31.1
       eslint-config-custom: workspace:*
+      prosemirror-model: ^1.11.0
       prosemirror-state: ^1.4.2
+      prosemirror-transform: ^1.7.1
+      prosemirror-view: ^1.29.1
       tsconfig: workspace:*
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
-      prosemirror-state: 1.4.2
+      '@test-pkgs/extension-image': link:../extension-image
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
+      browser-fs-access: 0.31.1
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
+      prosemirror-model: 1.18.3
+      prosemirror-state: 1.4.2
+      prosemirror-transform: 1.7.1
+      prosemirror-view: 1.29.1
       tsconfig: link:../tsconfig
       tslib: 2.4.1
       typescript: 4.9.3
@@ -774,7 +780,7 @@ importers:
       typescript: ^4.5.2
       zeed-dom: ^0.9.26
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/html': 2.0.0-beta.209_a3wkqvivg3aepok4e4szoya4aa
       prosemirror-model: 1.18.3
       zeed-dom: 0.9.26
@@ -796,7 +802,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-model: 1.18.3
       tiptap-markdown: 0.6.0_a3wkqvivg3aepok4e4szoya4aa
     devDependencies:
@@ -817,7 +823,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/react': 2.0.0-beta.209_wysdsburyqwpwqxd577eft7tem
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -1503,6 +1509,26 @@ packages:
       tippy.js: 6.3.7
     dev: false
 
+  /@tiptap/core/2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky:
+    resolution: {integrity: sha512-DOOzfo2XKD5Qt2oEGW33/6ugwSnvpl4WbxtlKdPadLoApk6Kja3K1Eps3pihBgIGmo4tkctkCzmj8wNWS7KeWg==}
+    peerDependencies:
+      prosemirror-commands: ^1.3.1
+      prosemirror-keymap: ^1.2.0
+      prosemirror-model: ^1.18.1
+      prosemirror-schema-list: ^1.2.2
+      prosemirror-state: ^1.4.1
+      prosemirror-transform: ^1.7.0
+      prosemirror-view: ^1.28.2
+    dependencies:
+      prosemirror-commands: 1.5.0
+      prosemirror-keymap: 1.2.0
+      prosemirror-model: 1.18.3
+      prosemirror-schema-list: 1.2.2
+      prosemirror-state: 1.4.2
+      prosemirror-transform: 1.7.1
+      prosemirror-view: 1.29.1
+    dev: false
+
   /@tiptap/core/2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay:
     resolution: {integrity: sha512-DOOzfo2XKD5Qt2oEGW33/6ugwSnvpl4WbxtlKdPadLoApk6Kja3K1Eps3pihBgIGmo4tkctkCzmj8wNWS7KeWg==}
     peerDependencies:
@@ -1546,7 +1572,7 @@ packages:
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       lodash: 4.17.21
       prosemirror-state: 1.4.2
       prosemirror-view: 1.29.1
@@ -1570,7 +1596,7 @@ packages:
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-code-block': 2.0.0-beta.209_prfudu5zgovreazvyjp3brspre
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
@@ -1583,7 +1609,7 @@ packages:
       '@tiptap/core': ^2.0.0-beta.193
       prosemirror-state: ^1.4.1
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-state: 1.4.2
     dev: false
 
@@ -1620,7 +1646,7 @@ packages:
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-state: 1.4.2
       prosemirror-view: 1.29.1
       tippy.js: 6.3.7
@@ -1841,7 +1867,7 @@ packages:
       '@tiptap/core': ^2.0.0-beta.204
       prosemirror-model: ^1.18.1
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-model: 1.18.3
       zeed-dom: 0.9.26
     dev: false
@@ -1863,7 +1889,7 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-bubble-menu': 2.0.0-beta.209_vde3gi7hrsabw5pj6bw7jls3ai
       '@tiptap/extension-floating-menu': 2.0.0-beta.209_vde3gi7hrsabw5pj6bw7jls3ai
       prosemirror-view: 1.29.1
@@ -4647,6 +4673,11 @@ packages:
     dependencies:
       prosemirror-model: 1.18.3
 
+  /prosemirror-transform/1.7.1:
+    resolution: {integrity: sha512-VteoifAfpt46z0yEt6Fc73A5OID9t/y2QIeR5MgxEwTuitadEunD/V0c9jQW8ziT8pbFM54uTzRLJ/nLuQjMxg==}
+    dependencies:
+      prosemirror-model: 1.18.3
+
   /prosemirror-view/1.29.1:
     resolution: {integrity: sha512-OhujVZSDsh0l0PyHNdfaBj6DBkbhYaCfbaxmTeFrMKd/eWS+G6IC+OAbmR9IsLC8Se1HSbphMaXnsXjupHL3UQ==}
     dependencies:
@@ -5259,7 +5290,7 @@ packages:
       '@tiptap/core': ^2.0.0-beta.129
       prosemirror-model: ^1.14.1
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@types/markdown-it': 12.2.3
       markdown-it: 12.3.2
       markdown-it-task-lists: 2.1.1

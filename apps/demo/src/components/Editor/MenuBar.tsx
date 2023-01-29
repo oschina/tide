@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
 import { isActive } from '@test-pkgs/helpers';
-import { uploadImage } from '@test-pkgs/extension-image';
+import { selectImageUpload } from '@test-pkgs/extension-uploader';
 import { InsertTableButton } from '@test-pkgs/extension-table';
 
 type MenuBarProps = {
@@ -170,7 +170,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
         link
       </button>
       <button
-        onClick={() => uploadImage(editor)}
+        onClick={() => selectImageUpload(editor)}
         className={isActive(editor.state, 'image') ? 'is-active' : ''}
       >
         image
