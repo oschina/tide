@@ -102,13 +102,10 @@ export const Table = TTable.extend<TTableOptions>({
       // Mod + A fails to select anything but the first node of the document.
       // @see https://github.com/ueberdosis/tiptap/issues/2401
       'Mod-a': () => {
-        const tableNode = findTableInLastChild(
-          this.editor.view.state.doc,
-          this.type
-        );
+        const { state, dispatch } = this.editor.view;
+        const { tr, doc } = state;
+        const tableNode = findTableInLastChild(doc, this.type);
         if (tableNode) {
-          const { state, dispatch } = this.editor.view;
-          const { tr } = state;
           tr.setSelection(new AllSelection(tr.doc));
           dispatch(tr);
           return true;

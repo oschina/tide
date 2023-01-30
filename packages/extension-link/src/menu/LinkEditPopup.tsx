@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Editor,
-  getMarkRange,
   getMarkType,
   isMarkActive,
   posToDOMRect,
+  Range,
 } from '@tiptap/core';
 import { ReactRenderer } from '@test-pkgs/react';
 import { showBubbleMenu } from '@test-pkgs/extension-bubble-menu';
@@ -46,7 +46,6 @@ export const LinkEditPopup: React.FC<LinkEditPopupProps> = ({
     return () => {
       clearTimeout(timer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -110,8 +109,22 @@ export const showLinkEditPopup = (
     text = state.doc.textBetween(start, end) || defaultText || '';
     href = defaultHref || '';
   } else {
-    const { from } = selection;
-    const range = getMarkRange(editor.state.doc.resolve(from), linkMarkType);
+    const { from, to } = selection;
+    let range: void | Range;
+    state.doc.nodesBetween(from, to, (node, pos) => {
+      if (!node.isText && !node.marks.length) {
+        return;
+      }
+      if (pos <= from && pos + node.nodeSize >= to && node.marks.length) {
+        const mark = node.marks.find((item) => item.type === linkMarkType);
+        if (mark) {
+          range = {
+            from: pos,
+            to: pos + node.nodeSize,
+          };
+        }
+      }
+    });
     if (!range) {
       return;
     }
