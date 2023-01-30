@@ -43,14 +43,16 @@ const MenuBar: React.FC<MenuBarProps> = ({
       style={style}
     >
       <button
-        onClick={() => editor?.chain().focus().setParagraph().run()}
+        onClick={() => editor.chain().focus().setParagraph().run()}
+        disabled={!editor.can().chain().focus().setParagraph().run()}
         className={isActive(editor.state, 'paragraph') ? 'is-active' : ''}
       >
         paragraph
       </button>
       <button
-        onClick={() =>
-          editor?.chain().focus().toggleHeading({ level: 1 }).run()
+        onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+        disabled={
+          !editor.can().chain().focus().toggleHeading({ level: 1 }).run()
         }
         className={
           isActive(editor.state, 'heading', { level: 1 }) ? 'is-active' : ''
@@ -59,8 +61,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         h1
       </button>
       <button
-        onClick={() =>
-          editor?.chain().focus().toggleHeading({ level: 2 }).run()
+        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+        disabled={
+          !editor.can().chain().focus().toggleHeading({ level: 2 }).run()
         }
         className={
           isActive(editor.state, 'heading', { level: 2 }) ? 'is-active' : ''
@@ -69,8 +72,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         h2
       </button>
       <button
-        onClick={() =>
-          editor?.chain().focus().toggleHeading({ level: 3 }).run()
+        onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+        disabled={
+          !editor.can().chain().focus().toggleHeading({ level: 3 }).run()
         }
         className={
           isActive(editor.state, 'heading', { level: 3 }) ? 'is-active' : ''
@@ -79,8 +83,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         h3
       </button>
       <button
-        onClick={() =>
-          editor?.chain().focus().toggleHeading({ level: 4 }).run()
+        onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
+        disabled={
+          !editor.can().chain().focus().toggleHeading({ level: 4 }).run()
         }
         className={
           isActive(editor.state, 'heading', { level: 4 }) ? 'is-active' : ''
@@ -89,8 +94,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         h4
       </button>
       <button
-        onClick={() =>
-          editor?.chain().focus().toggleHeading({ level: 5 }).run()
+        onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
+        disabled={
+          !editor.can().chain().focus().toggleHeading({ level: 5 }).run()
         }
         className={
           isActive(editor.state, 'heading', { level: 5 }) ? 'is-active' : ''
@@ -99,8 +105,9 @@ const MenuBar: React.FC<MenuBarProps> = ({
         h5
       </button>
       <button
-        onClick={() =>
-          editor?.chain().focus().toggleHeading({ level: 6 }).run()
+        onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
+        disabled={
+          !editor.can().chain().focus().toggleHeading({ level: 6 }).run()
         }
         className={
           isActive(editor.state, 'heading', { level: 6 }) ? 'is-active' : ''
@@ -112,28 +119,28 @@ const MenuBar: React.FC<MenuBarProps> = ({
       <span className="divider" />
 
       <button
-        onClick={() => editor?.chain().focus().toggleBold().run()}
+        onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
         className={isActive(editor.state, 'bold') ? 'is-active' : ''}
       >
         bold
       </button>
       <button
-        onClick={() => editor?.chain().focus().toggleItalic().run()}
+        onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
         className={isActive(editor.state, 'italic') ? 'is-active' : ''}
       >
         italic
       </button>
       <button
-        onClick={() => editor?.chain().focus().toggleStrike().run()}
+        onClick={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         className={isActive(editor.state, 'strike') ? 'is-active' : ''}
       >
         strike
       </button>
       <button
-        onClick={() => editor?.chain().focus().toggleCode().run()}
+        onClick={() => editor.chain().focus().toggleCode().run()}
         disabled={!editor.can().chain().focus().toggleCode().run()}
         className={isActive(editor.state, 'code') ? 'is-active' : ''}
       >
@@ -143,19 +150,22 @@ const MenuBar: React.FC<MenuBarProps> = ({
       <span className="divider" />
 
       <button
-        onClick={() => editor?.chain().focus().toggleBulletList().run()}
+        onClick={() => editor.chain().focus().toggleBulletList().run()}
+        disabled={!editor.can().chain().focus().toggleBulletList().run()}
         className={isActive(editor.state, 'bulletList') ? 'is-active' : ''}
       >
         bullet list
       </button>
       <button
-        onClick={() => editor?.chain().focus().toggleOrderedList().run()}
+        onClick={() => editor.chain().focus().toggleOrderedList().run()}
+        disabled={!editor.can().chain().focus().toggleOrderedList().run()}
         className={isActive(editor.state, 'orderedList') ? 'is-active' : ''}
       >
         ordered list
       </button>
       <button
-        onClick={() => editor?.chain().focus().toggleTaskList().run()}
+        onClick={() => editor.chain().focus().toggleTaskList().run()}
+        disabled={!editor.can().chain().focus().toggleTaskList().run()}
         className={isActive(editor.state, 'taskList') ? 'is-active' : ''}
       >
         task list
@@ -164,36 +174,45 @@ const MenuBar: React.FC<MenuBarProps> = ({
       <span className="divider" />
 
       <button
-        onClick={() => editor?.chain().focus().toggleLink({ href: '' }).run()}
+        onClick={() => editor.chain().focus().toggleLink({ href: '' }).run()}
+        // TODO: link disabled (code block)
+        // disabled={!editor.can().chain().focus().toggleMark('link').run()}
         className={isActive(editor.state, 'link') ? 'is-active' : ''}
       >
         link
       </button>
       <button
         onClick={() => selectImageUpload(editor)}
+        disabled={!editor.can().chain().focus().uploadImage([]).run()}
         className={isActive(editor.state, 'image') ? 'is-active' : ''}
       >
         image
       </button>
       <InsertTableButton editor={editor}>
-        <button className={isActive(editor.state, 'table') ? 'is-active' : ''}>
+        <button
+          disabled={!editor.can().chain().focus().insertTable().run()}
+          className={isActive(editor.state, 'table') ? 'is-active' : ''}
+        >
           table
         </button>
       </InsertTableButton>
       <button
-        onClick={() => editor?.chain().focus().toggleBlockquote().run()}
+        onClick={() => editor.chain().focus().toggleBlockquote().run()}
+        disabled={!editor.can().chain().focus().toggleBlockquote().run()}
         className={isActive(editor.state, 'blockquote') ? 'is-active' : ''}
       >
         blockquote
       </button>
       <button
-        onClick={() => editor?.chain().focus().toggleCodeBlock().run()}
+        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+        disabled={!editor.can().chain().focus().toggleCodeBlock().run()}
         className={isActive(editor.state, 'codeBlock') ? 'is-active' : ''}
       >
         code block
       </button>
       <button
-        onClick={() => editor?.chain().focus().setHorizontalRule().run()}
+        onClick={() => editor.chain().focus().setHorizontalRule().run()}
+        disabled={!editor.can().chain().focus().setHorizontalRule().run()}
         className={isActive(editor.state, 'horizontalRule') ? 'is-active' : ''}
       >
         horizontal rule

@@ -42,6 +42,14 @@
         color: #fff;
         background-color: #2C7EF8;
       }
+
+      &[disabled] {
+        cursor: not-allowed;
+      }
+
+      &.is-active[disabled] {
+        opacity: 0.5;
+      }
     }
   }
 
