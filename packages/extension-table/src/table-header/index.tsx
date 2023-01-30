@@ -14,6 +14,9 @@ import { mergeAttributes } from '@tiptap/core';
 export const tableHeaderHeight = 36;
 
 export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
+  content:
+    '(paragraph | heading | blockquote | list | codeBlock | image | horizontalRule)+',
+
   addAttributes() {
     return {
       colspan: {

@@ -20,6 +20,9 @@ import { mergeAttributes } from '@tiptap/core';
 export const tableCellHeight = 36;
 
 export const TableCell = TTableCell.extend<TTableCellOptions>({
+  content:
+    '(paragraph | heading | blockquote | list | codeBlock | image | horizontalRule)+',
+
   addAttributes() {
     return {
       colspan: {
