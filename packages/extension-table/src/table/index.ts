@@ -95,6 +95,41 @@ export const Table = TTable.extend<TTableOptions>({
     ];
   },
 
+  addCommands() {
+    return {
+      ...this.parent?.(),
+
+      insertTable:
+        ({ rows = 3, cols = 3, withHeaderRow = true } = {}) =>
+        ({ tr, state, dispatch, editor }) => {
+          const $start = state.doc.resolve(tr.selection.from);
+          if (
+            !$start
+              .node(-1)
+              ?.canReplaceWith(
+                $start.index(-1),
+                $start.indexAfter(-1),
+                this.type
+              )
+          ) {
+            return false;
+          }
+
+          const node = createTable(editor.schema, rows, cols, withHeaderRow);
+
+          if (dispatch) {
+            const offset = tr.selection.anchor + 1;
+
+            tr.replaceSelectionWith(node)
+              .scrollIntoView()
+              .setSelection(TextSelection.near(tr.doc.resolve(offset)));
+          }
+
+          return true;
+        },
+    };
+  },
+
   addKeyboardShortcuts() {
     return {
       ...this.parent?.(),
@@ -125,7 +160,7 @@ export const Table = TTable.extend<TTableOptions>({
           if (
             !$start
               .node(-1)
-              .canReplaceWith(
+              ?.canReplaceWith(
                 $start.index(-1),
                 $start.indexAfter(-1),
                 this.type
