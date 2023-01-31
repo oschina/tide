@@ -291,7 +291,8 @@ function handleDecorations(state, cell) {
       (row == 0 || map.map[index] != map.map[index - map.width])
     ) {
       let cellPos = map.map[index];
-      let pos = start + cellPos + table.nodeAt(cellPos).nodeSize - 1;
+      // let pos = start + cellPos + table.nodeAt(cellPos).nodeSize - 1;
+      let pos = start + cellPos + 1;
       let dom = document.createElement('div');
       dom.className = 'column-resize-handle';
       decorations.push(Decoration.widget(pos, dom));

@@ -17,7 +17,7 @@ import {
 import { mergeAttributes } from '@tiptap/core';
 
 // TODO: tableCellHeight
-export const tableCellHeight = 36;
+export const tableCellHeight = 38;
 
 export const TableCell = TTableCell.extend<TTableCellOptions>({
   content:
@@ -68,6 +68,7 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
           : {}
       ),
       0,
+      // ['div', { style: 'overflow: hidden' }, 0],
     ];
   },
 
@@ -98,6 +99,8 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
             if (cells) {
               this.storage.clearCallbacks.forEach((cb) => cb());
               this.storage.clearCallbacks.length = 0;
+
+              console.log('cells', cells);
 
               let rowIndex = 0;
               const cellRowIndexMap: number[] = [];

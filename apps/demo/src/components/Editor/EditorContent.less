@@ -26,17 +26,15 @@
       Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.42857143;
+    line-height: 1.5;
 
     > * {
-      margin: 16px 0;
-
       &:first-child {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
 
       &:last-child {
-        margin-bottom: 0 !important;
+        margin-bottom: 0;
       }
     }
 
@@ -46,6 +44,15 @@
 
     [contenteditable='false'] [contenteditable='true'] {
       white-space: pre-wrap;
+    }
+
+    blockquote,
+    hr,
+    ul,
+    ol,
+    .tableWrapper,
+    .react-renderer {
+      margin: 16px 0;
     }
 
     h1,
@@ -86,7 +93,7 @@
 
     p {
       margin: 0 0 8px;
-      line-height: 1.42857143;
+      line-height: 1.5;
     }
 
     ul,
@@ -215,7 +222,6 @@
     hr {
       border: none;
       border-top: 0.25em solid #e1e4e8;
-      margin: 24px 0;
     }
 
     /* Table-specific styling */
@@ -249,7 +255,7 @@
       th {
         min-width: 1em;
         border: 1px solid @table-border-color;
-        padding: 6px 8px;
+        padding: 7px 8px;
         position: relative;
         vertical-align: top;
         box-sizing: border-box;
@@ -257,10 +263,18 @@
         word-wrap: break-word;
         word-break: break-all;
 
-        // FIXME: first-child and last-child margin (not .ProseMirror-widget)
-        > *,
-        > .react-renderer {
-          margin-bottom: 0;
+        > *:not(.ProseMirror-widget) {
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        > .ProseMirror-widget + * {
+          margin-top: 0;
         }
       }
 

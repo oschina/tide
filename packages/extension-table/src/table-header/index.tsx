@@ -11,7 +11,7 @@ import { getCellsInRow, isColumnSelected, selectColumn } from '../utilities';
 import { mergeAttributes } from '@tiptap/core';
 
 // TODO: tableHeaderHeight
-export const tableHeaderHeight = 36;
+export const tableHeaderHeight = 38;
 
 export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
   content:
@@ -62,6 +62,7 @@ export const TableHeader = TTableHeader.extend<TTableHeaderOptions>({
           : {}
       ),
       0,
+      // ['div', { style: 'overflow: hidden' }, 0],
     ];
   },
 
