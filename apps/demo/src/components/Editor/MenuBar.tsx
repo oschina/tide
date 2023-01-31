@@ -345,7 +345,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
             <span className={'gwe-dropdown-trigger__text'}>
               {getHeadingText()}
             </span>
-            <span className={'gwe-dropdown-trigger__icon'}>V</span>
+            <span className={'gwe-dropdown-trigger__icon'}>v</span>
           </div>
         </Tippy>
       </div>
