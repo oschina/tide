@@ -100,7 +100,7 @@ export const Table = TTable.extend<TTableOptions>({
       ...this.parent?.(),
 
       insertTable:
-        ({ rows = 3, cols = 3, withHeaderRow = true } = {}) =>
+        ({ rows = 3, cols = 3, withHeaderRow = false } = {}) =>
         ({ tr, state, dispatch, editor }) => {
           const $start = state.doc.resolve(tr.selection.from);
           if (

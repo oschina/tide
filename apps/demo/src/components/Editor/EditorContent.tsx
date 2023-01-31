@@ -20,12 +20,7 @@ import { TaskList } from '@tiptap/extension-task-list';
 import { History } from '@tiptap/extension-history';
 import { Dropcursor } from '@tiptap/extension-dropcursor';
 import { Gapcursor } from '@tiptap/extension-gapcursor';
-import {
-  Table,
-  TableRow,
-  TableCell,
-  TableHeader,
-} from '@test-pkgs/extension-table';
+import { Table, TableRow, TableCell } from '@test-pkgs/extension-table';
 import { TaskItem } from '@test-pkgs/extension-task-item';
 import { Link } from '@test-pkgs/extension-link';
 import { Image } from '@test-pkgs/extension-image';
@@ -135,7 +130,6 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           Table,
           TableRow,
           TableCell,
-          TableHeader,
           CodeBlock,
           Image,
           MentionMember.configure({
