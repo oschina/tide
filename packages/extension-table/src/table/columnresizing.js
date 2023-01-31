@@ -7,9 +7,7 @@ import {
   pointsAtCell,
   setAttr,
   TableMap,
-  TableView,
   updateColumnsOnResize as updateColumns,
-  tableNodeTypes,
 } from '@tiptap/prosemirror-tables';
 
 export const key = new PluginKey('tableColumnResizing');
@@ -18,17 +16,12 @@ export function columnResizing({
   editor,
   handleWidth = 5,
   cellMinWidth = 25,
-  View = TableView,
   lastColumnResizable = true,
 } = {}) {
   let plugin = new Plugin({
     key,
     state: {
-      init(_, state) {
-        this.spec.props.nodeViews[tableNodeTypes(state.schema).table.name] = (
-          node,
-          view
-        ) => new View(node, cellMinWidth, view);
+      init() {
         return new ResizeState(-1, false);
       },
       apply(tr, prev) {

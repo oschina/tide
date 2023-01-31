@@ -7,7 +7,7 @@ export function updateColumns(
   table: HTMLElement,
   cellMinWidth: number,
   overrideCol?: number,
-  overrideValue?: any
+  overrideValue?: number
 ) {
   let totalWidth = 0;
   let fixedWidth = true;

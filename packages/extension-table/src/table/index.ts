@@ -7,7 +7,6 @@ import {
 import { tableEditing } from '@tiptap/prosemirror-tables';
 import { AllSelection, TextSelection } from 'prosemirror-state';
 import type { Node, NodeType } from 'prosemirror-model';
-import type { NodeView } from 'prosemirror-view';
 import { columnResizing } from './columnresizing';
 import { TableView } from './TableView';
 
@@ -23,14 +22,15 @@ function findTableInLastChild(node: Node, type: NodeType): Node | null {
 
 export const tableInputRegex = /^([|｜]{2,})\n$/;
 
-export const Table = TTable.extend<TTableOptions>({
+export type TableOptions = Omit<TTableOptions, 'View'>;
+
+export const Table = TTable.extend<TableOptions>({
   addOptions() {
     return {
       HTMLAttributes: {},
       resizable: true,
       handleWidth: 5,
       cellMinWidth: 48,
-      View: TableView as unknown as NodeView,
       lastColumnResizable: true,
       allowTableNodeSelection: false,
     };
@@ -39,60 +39,53 @@ export const Table = TTable.extend<TTableOptions>({
   renderHTML({ node, HTMLAttributes }) {
     let totalWidth = 0;
     let fixedWidth = true;
-    const colwidthArr: number[] = [];
+    const colwidthArr: string[] = [];
 
     try {
-      const tr = node.firstChild;
-      (tr.content as unknown as { content: Node[] }).content.forEach((td) => {
-        if (td.attrs.colwidth) {
-          td.attrs.colwidth.forEach((col: number) => {
-            if (!col) {
-              fixedWidth = false;
-              totalWidth += this.options.cellMinWidth;
-              colwidthArr.push(this.options.cellMinWidth);
-            } else {
-              totalWidth += col;
-              colwidthArr.push(col);
-            }
-          });
-        } else {
-          fixedWidth = false;
-          const colspan = td.attrs.colspan ? td.attrs.colspan : 1;
-          totalWidth += this.options.cellMinWidth * colspan;
-          colwidthArr.push(...Array(colspan).fill(this.options.cellMinWidth));
+      const row = node.firstChild;
+      for (let i = 0; i < row.childCount; i += 1) {
+        const { colspan, colwidth } = row.child(i).attrs;
+
+        for (let j = 0; j < colspan; j += 1) {
+          const hasWidth = colwidth && colwidth[j];
+          const cssWidth = hasWidth ? `${hasWidth}px` : '';
+
+          totalWidth += hasWidth || this.options.cellMinWidth;
+
+          if (!hasWidth) {
+            fixedWidth = false;
+          }
+
+          colwidthArr.push(cssWidth);
         }
-      });
+      }
     } catch (error) {
       fixedWidth = false;
     }
 
-    const colgroupEls = colwidthArr.map((x) => [
+    const colgroupEls = colwidthArr.map((width) => [
       'col',
-      { style: `width: ${x}px` },
+      width ? { style: width } : {},
     ]);
 
-    if (fixedWidth && totalWidth > 0) {
+    if (fixedWidth) {
       HTMLAttributes.style = `width: ${totalWidth}px`;
-    } else if (totalWidth && totalWidth > 0) {
+    } else if (totalWidth) {
       HTMLAttributes.style = `min-width: ${totalWidth}px`;
     } else {
       HTMLAttributes.style = null;
     }
 
     return [
-      'div',
-      { class: 'tableWrapper' },
-      [
-        'div',
-        { class: 'scrollWrapper' },
-        [
-          'table',
-          mergeAttributes(this.options.HTMLAttributes, HTMLAttributes),
-          ['colgroup', {}, ...colgroupEls],
-          ['tbody', 0],
-        ],
-      ],
+      'table',
+      mergeAttributes(this.options.HTMLAttributes, HTMLAttributes),
+      ['colgroup', {}, ...colgroupEls],
+      ['tbody', 0],
     ];
+  },
+
+  addNodeView() {
+    return ({ node }) => new TableView(node, this.options.cellMinWidth);
   },
 
   addCommands() {
@@ -198,7 +191,6 @@ export const Table = TTable.extend<TTableOptions>({
               editor: this.editor,
               handleWidth: this.options.handleWidth,
               cellMinWidth: this.options.cellMinWidth,
-              View: this.options.View,
               lastColumnResizable: this.options.lastColumnResizable,
             }),
           ]
