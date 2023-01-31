@@ -70,6 +70,7 @@ importers:
       '@test-pkgs/helpers': workspace:*
       '@test-pkgs/markdown': workspace:*
       '@test-pkgs/react': workspace:*
+      '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-document': ^2.0.0-beta.209
       '@tiptap/extension-dropcursor': ^2.0.0-beta.209
@@ -136,6 +137,7 @@ importers:
       '@test-pkgs/helpers': link:../../packages/heplers
       '@test-pkgs/markdown': link:../../packages/markdown
       '@test-pkgs/react': link:../../packages/react
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-document': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-dropcursor': 2.0.0-beta.209_qfdcmhnxwxslpsupsyi7ae3p2e
