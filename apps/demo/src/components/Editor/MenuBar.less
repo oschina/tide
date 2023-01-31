@@ -7,9 +7,82 @@
 
   &__divider {
     width: 1px;
-    margin: 2px 0 2px 8px;
+    margin: 2px 8px 2px 0;
     height: 20px;
     background-color: #dadee3;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  &__btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    &:hover {
+      background-color: #e8e9e9;
+    }
+  
+    &--active {
+      background-color: #eff4ff;
+      color: #6698ff;
+      &:hover {
+        background-color: #e1eaff;
+      }
+    }
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  
+    &--active[disabled] {
+      opacity: 0.5;
+    }
+  
+    &--disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__tooltip {
+    padding: 4px 8px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #404040;
+    border-radius: 2px;
+  }
+
+
+  /* tippy tooltip的arrow样式*/
+  .tippy-arrow {
+    width: 16px;
+    height: 16px;
+    color: #404040;
+  }
+
+  .tippy-box[data-placement^='top'] > .tippy-arrow {
+    bottom: 0;
+  }
+
+  .tippy-arrow:before {
+    content: '';
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  .tippy-box[data-placement^='top'] > .tippy-arrow:before {
+    bottom: -7px;
+    left: 0;
+    border-width: 8px 8px 0;
+    border-top-color: initial;
+    transform-origin: center top;
   }
 }
 
@@ -23,6 +96,7 @@
   outline: none;
   box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%),
     0 9px 28px 8px rgb(0 0 0 / 5%);
+    
   &__item {
     clear: both;
     margin: 0;
@@ -40,6 +114,10 @@
 
     &--active {
       background-color: #e6f4ff;
+    }
+    &--disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
     }
   }
 }
@@ -84,41 +162,5 @@
   &__span {
     font-weight: 400;
     color: #c7c9c8;
-  }
-}
-
-.gwe-menu-btn {
-  width: 24px;
-  height: 24px;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer;
-  &:hover {
-    background-color: #e8e9e9;
-  }
-
-  &--active {
-    background-color: #eff4ff;
-    color: #6698ff;
-    &:hover {
-      background-color: #e1eaff;
-    }
-  }
-  &[disabled] {
-    cursor: not-allowed;
-  }
-
-  &--active[disabled] {
-    opacity: 0.5;
-  }
-
-  &--disabled {
-    cursor: not-allowed;
-  }
-
-  &:not(:first-child) {
-    margin-left: 8px;
   }
 }
