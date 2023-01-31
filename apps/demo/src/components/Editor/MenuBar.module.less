@@ -1,0 +1,124 @@
+.gwe-menu-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #dadee3;
+
+  &__divider {
+    width: 1px;
+    margin: 2px 0 2px 8px;
+    height: 20px;
+    background-color: #dadee3;
+  }
+}
+
+.gwe-dropdown-menu {
+  margin: 0;
+  padding: 4px;
+  list-style-type: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%),
+    0 9px 28px 8px rgb(0 0 0 / 5%);
+  &__item {
+    clear: both;
+    margin: 0;
+    padding: 5px 12px;
+    color: rgba(0, 0, 0, 0.88);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &--active {
+      background-color: #e6f4ff;
+    }
+  }
+}
+
+.gwe-dropdown-trigger {
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    width: 60px;
+  }
+}
+
+.gwe-menu-head-row {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    &--level1 {
+      font-size: 22px;
+    }
+    &--level2 {
+      font-size: 20px;
+    }
+    &--level3 {
+      font-size: 18px;
+    }
+    &--level4 {
+      font-size: 16px;
+    }
+    &--level5 {
+      font-size: 14px;
+    }
+    &--level6 {
+      font-size: 14px;
+    }
+  }
+  &__span {
+    font-weight: 400;
+    color: #c7c9c8;
+  }
+}
+
+.gwe-menu-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  &:hover {
+    background-color: #e8e9e9;
+  }
+
+  &--active {
+    background-color: #eff4ff;
+    color: #6698ff;
+    &:hover {
+      background-color: #e1eaff;
+    }
+  }
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &--active[disabled] {
+    opacity: 0.5;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &:not(:first-child) {
+    margin-left: 8px;
+  }
+}
