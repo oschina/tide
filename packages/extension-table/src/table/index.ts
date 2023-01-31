@@ -191,11 +191,11 @@ export const Table = TTable.extend<TTableOptions>({
   },
 
   addProseMirrorPlugins() {
-    const isResizable = this.options.resizable && this.editor.isEditable;
     return [
-      ...(isResizable
+      ...(this.options.resizable
         ? [
             columnResizing({
+              editor: this.editor,
               handleWidth: this.options.handleWidth,
               cellMinWidth: this.options.cellMinWidth,
               View: this.options.View,

@@ -15,6 +15,7 @@ import {
 export const key = new PluginKey('tableColumnResizing');
 
 export function columnResizing({
+  editor,
   handleWidth = 5,
   cellMinWidth = 25,
   View = TableView,
@@ -44,23 +45,29 @@ export function columnResizing({
 
       handleDOMEvents: {
         mousemove(view, event) {
-          handleMouseMove(
-            view,
-            event,
-            handleWidth,
-            cellMinWidth,
-            lastColumnResizable
-          );
+          if (!editor.isEditable) {
+            return;
+          }
+          handleMouseMove(view, event, handleWidth, lastColumnResizable);
         },
         mouseleave(view) {
+          if (!editor.isEditable) {
+            return;
+          }
           handleMouseLeave(view);
         },
         mousedown(view, event) {
+          if (!editor.isEditable) {
+            return;
+          }
           handleMouseDown(view, event, cellMinWidth);
         },
       },
 
       decorations(state) {
+        if (!editor.isEditable) {
+          return;
+        }
         let pluginState = key.getState(state);
         if (pluginState.activeHandle > -1)
           return handleDecorations(state, pluginState.activeHandle);
@@ -94,13 +101,7 @@ class ResizeState {
   }
 }
 
-function handleMouseMove(
-  view,
-  event,
-  handleWidth,
-  cellMinWidth,
-  lastColumnResizable
-) {
+function handleMouseMove(view, event, handleWidth, lastColumnResizable) {
   let pluginState = key.getState(view.state);
 
   if (!pluginState.dragging) {
