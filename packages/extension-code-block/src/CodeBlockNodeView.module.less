@@ -2,6 +2,7 @@
   display: block;
   border: 1px solid #ccc;
   border-radius: 3px;
+  overflow: hidden;
 
   .toolbar {
     display: flex;
@@ -14,15 +15,18 @@
     user-select: none;
 
     select {
+      flex-shrink: 0;
       width: auto;
       padding: 4px 8px;
     }
 
     button {
+      flex-shrink: 0;
       font-weight: normal;
     }
 
     .soft-wrap {
+      flex-shrink: 0;
       margin-left: auto;
       margin-right: 16px;
 
