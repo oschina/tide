@@ -31,7 +31,6 @@
     "@test-pkgs/extension-table": "workspace:*",
     "@test-pkgs/extension-task-item": "workspace:*",
     "@test-pkgs/extension-uploader": "workspace:*",
-    "@test-pkgs/helpers": "workspace:*",
     "@test-pkgs/markdown": "workspace:*",
     "@test-pkgs/react": "workspace:*",
     "@tippyjs/react": "^4.2.6",

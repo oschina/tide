@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Editor, isTextSelection } from '@tiptap/core';
-import { isActive } from '@test-pkgs/helpers';
+import { isActive } from '@test-pkgs/common';
 import { BubbleMenu } from '@test-pkgs/react';
 import useBtnMenus from './useBtnMenus';
 import { BtnItem } from './BtnItem';

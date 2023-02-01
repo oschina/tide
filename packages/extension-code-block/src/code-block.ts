@@ -4,7 +4,7 @@ import {
   CodeBlockLowlightOptions,
 } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight/lib/all';
-import { isActive } from '@test-pkgs/helpers';
+import { isActive } from '@test-pkgs/common';
 import { ReactNodeViewRenderer } from '@test-pkgs/react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
 

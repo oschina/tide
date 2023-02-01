@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
-import { isActive } from '@test-pkgs/helpers';
+import { isActive } from '@test-pkgs/common';
 import Tippy from '@tippyjs/react';
 import { Level } from '@tiptap/extension-heading';
 import useBtnMenus from './useBtnMenus';

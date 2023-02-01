@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
-import { isActive } from '@test-pkgs/helpers';
+import { isActive } from '@test-pkgs/common';
 import { InsertTableButton } from '@test-pkgs/extension-table';
 import Tippy from '@tippyjs/react';
 

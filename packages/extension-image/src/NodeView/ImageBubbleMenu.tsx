@@ -6,7 +6,7 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
-import { isActive } from '@test-pkgs/helpers';
+import { isActive } from '@test-pkgs/common';
 import { SelectionBubbleMenu } from '@test-pkgs/extension-bubble-menu';
 import { Image } from '../image-extension';
 

@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { Editor } from '@tiptap/core';
 import { SelectionBubbleMenu } from '@test-pkgs/extension-bubble-menu';
-import { isActive } from '@test-pkgs/helpers';
+import { isActive } from '@test-pkgs/common';
 import { showLinkEditPopup } from './LinkEditPopup';
 import { Link as LinkExtension } from '../link';
 import styles from './LinkBubbleMenu.module.less';
