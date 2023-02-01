@@ -77,6 +77,7 @@ const useBtnMenus = (editor: Editor) => {
         onClick: () => editor.chain().focus().toggleLink({ href: '' }).run(),
         // TODO: link disabled (code block)
         disabled: !editor.can().chain().focus().toggleMark('link').run(),
+        bubble: true,
       },
       {
         name: 'image',
