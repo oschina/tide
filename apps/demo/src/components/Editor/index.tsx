@@ -7,6 +7,7 @@ import { LinkBubbleMenu } from '@test-pkgs/extension-link';
 import { TableCellBubbleMenu } from '@test-pkgs/extension-table';
 import { ImageBubbleMenu } from '@test-pkgs/extension-image';
 import { MarkdownEditor } from '@test-pkgs/markdown';
+import TextBubbleMenu from './MenuBar/TextBubbleMenu';
 import './index.less';
 
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>
@@ -71,6 +72,7 @@ export const WysiwygEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
           {editor && <LinkBubbleMenu editor={editor} />}
           {editor && <TableCellBubbleMenu editor={editor} />}
           {editor && <ImageBubbleMenu editor={editor} />}
+          {editor && <TextBubbleMenu editor={editor} />}
         </EditorContent>
       </div>
     );

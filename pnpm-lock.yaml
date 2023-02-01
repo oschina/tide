@@ -72,6 +72,7 @@ importers:
       '@test-pkgs/react': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
+      '@tiptap/extension-bubble-menu': 2.0.0-beta.209
       '@tiptap/extension-document': ^2.0.0-beta.209
       '@tiptap/extension-dropcursor': ^2.0.0-beta.209
       '@tiptap/extension-gapcursor': ^2.0.0-beta.209
@@ -139,6 +140,7 @@ importers:
       '@test-pkgs/react': link:../../packages/react
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/extension-bubble-menu': 2.0.0-beta.209_vde3gi7hrsabw5pj6bw7jls3ai
       '@tiptap/extension-document': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-dropcursor': 2.0.0-beta.209_qfdcmhnxwxslpsupsyi7ae3p2e
       '@tiptap/extension-gapcursor': 2.0.0-beta.209_v2bfq5maicdelkbmqszbe5xqhy
@@ -1578,7 +1580,7 @@ packages:
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
+      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       lodash: 4.17.21
       prosemirror-state: 1.4.2
       prosemirror-view: 1.29.1
@@ -5121,6 +5123,7 @@ packages:
   /source-map/0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dev: true
 
   /source-map/0.7.4:
