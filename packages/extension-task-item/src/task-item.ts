@@ -225,6 +225,7 @@ export const TaskItem = Node.create<TaskItemOptions>({
       wrapInListInputRule({
         find: inputRegex,
         listType: taskListType,
+        itemType: this.type,
         extensions: this.editor.extensionManager.extensions,
         getAttributes: (match) => ({
           checked: match[match.length - 1] === 'x',

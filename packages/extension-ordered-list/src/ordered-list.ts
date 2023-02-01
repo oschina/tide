@@ -3,6 +3,7 @@ import {
   OrderedListOptions as TOrderedListOptions,
 } from '@tiptap/extension-ordered-list';
 import { wrapInListInputRule, wrappingInputRule } from '@test-pkgs/common';
+import { getNodeType } from '@tiptap/core';
 
 export type OrderedListOptions = TOrderedListOptions;
 
@@ -10,6 +11,7 @@ export const inputRegex = /^(\d+)[.)）]\s$/;
 
 export const OrderedList = TOrderedList.extend<OrderedListOptions>({
   addInputRules() {
+    const listItemType = getNodeType('listItem', this.editor.schema);
     return [
       wrappingInputRule({
         find: inputRegex,
@@ -23,6 +25,7 @@ export const OrderedList = TOrderedList.extend<OrderedListOptions>({
       wrapInListInputRule({
         find: inputRegex,
         listType: this.type,
+        itemType: listItemType,
         extensions: this.editor.extensionManager.extensions,
         getAttributes: (match) => ({ start: +match[1] }),
         joinBefore: (match, node) =>
