@@ -42,6 +42,7 @@ import { Markdown } from '@test-pkgs/extension-markdown';
 import { Uploader, defaultImgUploader } from '@test-pkgs/extension-uploader';
 import { MarkdownEditor, createMarkdownEditor } from '@test-pkgs/markdown';
 import type { MarkdownEditorOptions, Content } from '@test-pkgs/markdown';
+import { extensions } from '@test-pkgs/common';
 import {
   Editor as TEditor,
   EditorContent as TEditorContent,
@@ -67,6 +68,8 @@ export type EditorContentProps = {
 };
 
 const MarkdownEditorClass = createMarkdownEditor(TEditor);
+
+const coreExtensions = Object.values(extensions);
 
 const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
   (
@@ -102,6 +105,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           tightLists: true,
         },
         extensions: [
+          ...coreExtensions,
           Document,
           Paragraph,
           Text,

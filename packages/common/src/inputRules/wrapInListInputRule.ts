@@ -1,6 +1,5 @@
 import { Node as ProseMirrorNode, NodeType } from 'prosemirror-model';
-import { Transaction } from 'prosemirror-state';
-import { canJoin, findWrapping } from 'prosemirror-transform';
+import { findWrapping } from 'prosemirror-transform';
 import {
   InputRule,
   InputRuleFinder,
@@ -10,70 +9,7 @@ import {
   Extensions,
   callOrReturn,
 } from '@tiptap/core';
-
-const joinListBackwards = (
-  tr: Transaction,
-  listType: NodeType,
-  canJoinFn?: (node: ProseMirrorNode) => boolean
-): boolean => {
-  const list = findParentNode((node) => node.type === listType)(tr.selection);
-
-  if (!list) {
-    return true;
-  }
-
-  const before = tr.doc.resolve(Math.max(0, list.pos - 1)).before(list.depth);
-
-  if (before === undefined) {
-    return true;
-  }
-
-  const nodeBefore = tr.doc.nodeAt(before);
-  const canJoinBackwards =
-    nodeBefore &&
-    (!canJoinFn ? list.node.type === nodeBefore.type : canJoinFn(nodeBefore)) &&
-    canJoin(tr.doc, list.pos);
-
-  if (!canJoinBackwards) {
-    return true;
-  }
-
-  tr.join(list.pos);
-
-  return true;
-};
-
-const joinListForwards = (
-  tr: Transaction,
-  listType: NodeType,
-  canJoinFn?: (node: ProseMirrorNode) => boolean
-): boolean => {
-  const list = findParentNode((node) => node.type === listType)(tr.selection);
-
-  if (!list) {
-    return true;
-  }
-
-  const after = tr.doc.resolve(list.start).after(list.depth);
-
-  if (after === undefined) {
-    return true;
-  }
-
-  const nodeAfter = tr.doc.nodeAt(after);
-  const canJoinForwards =
-    nodeAfter &&
-    (!canJoinFn ? list.node.type === nodeAfter.type : canJoinFn(nodeAfter)) &&
-    canJoin(tr.doc, after);
-
-  if (!canJoinForwards) {
-    return true;
-  }
-
-  tr.join(after);
-
-  return true;
-};
+import { joinListBackwards, joinListForwards } from '../helpers';
 
 /**
  * Build an input rule for automatically wrapping a textblock to

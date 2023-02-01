@@ -11,6 +11,7 @@
     "lint": "TIMING=1 eslint \"src/**/*.ts\""
   },
   "dependencies": {
+    "@test-pkgs/common": "workspace:*",
     "@test-pkgs/editor": "workspace:*",
     "@test-pkgs/extension-blockquote": "workspace:*",
     "@test-pkgs/extension-bold": "workspace:*",
