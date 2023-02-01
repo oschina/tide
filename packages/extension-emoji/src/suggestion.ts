@@ -79,8 +79,8 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
       },
 
       onExit() {
-        popup[0].destroy();
-        component.destroy();
+        popup?.[0].destroy();
+        component?.destroy();
       },
     };
   },

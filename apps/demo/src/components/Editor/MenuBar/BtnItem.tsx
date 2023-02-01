@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
 import { isActive } from '@test-pkgs/common';
 import { InsertTableButton } from '@test-pkgs/extension-table';
+import { InsertEmojiButton } from '@test-pkgs/extension-emoji';
 import Tippy from '@tippyjs/react';
 
 interface BtnItemProps {
@@ -42,6 +43,21 @@ export const BtnItem: React.FC<BtnItemProps> = ({
           T
         </button>
       </InsertTableButton>
+    );
+  }
+
+  if (name === 'emoji') {
+    return (
+      <InsertEmojiButton editor={editor}>
+        <button
+          className={classNames(
+            'gwe-menu-bar__btn',
+            isActive(editor.state, name) ? `gwe-menu-bar__btn--active` : ''
+          )}
+        >
+          😃
+        </button>
+      </InsertEmojiButton>
     );
   }
 

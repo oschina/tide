@@ -459,6 +459,7 @@ importers:
     specifiers:
       '@test-pkgs/extension-bubble-menu': workspace:*
       '@test-pkgs/react': workspace:*
+      '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/suggestion': ^2.0.0-beta.209
       '@types/react': ^16.14.0
@@ -476,12 +477,13 @@ importers:
     dependencies:
       '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
       '@test-pkgs/react': link:../react
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/suggestion': 2.0.0-beta.209_nv3r55gosyqqywjqk2ljir6ei4
       classnames: 2.3.2
       emoji-regex: 10.2.1
       prosemirror-state: 1.4.2
-      prosemirror-transform: 1.7.0
+      prosemirror-transform: 1.7.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
@@ -1898,7 +1900,7 @@ packages:
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
+      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
       prosemirror-view: 1.29.1
@@ -4570,7 +4572,7 @@ packages:
     dependencies:
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
-      prosemirror-transform: 1.7.0
+      prosemirror-transform: 1.7.1
     dev: false
 
   /prosemirror-dev-tools/4.0.0_s3vg5vpqctxa4hm5avlltdtt2q:
@@ -4654,7 +4656,7 @@ packages:
     dependencies:
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
-      prosemirror-transform: 1.7.0
+      prosemirror-transform: 1.7.1
     dev: false
 
   /prosemirror-state/1.4.2:
@@ -4679,7 +4681,7 @@ packages:
     dependencies:
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
-      prosemirror-transform: 1.7.0
+      prosemirror-transform: 1.7.1
 
   /prr/1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}

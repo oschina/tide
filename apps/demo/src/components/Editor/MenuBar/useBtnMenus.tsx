@@ -117,6 +117,10 @@ const useBtnMenus = (editor: Editor) => {
         disabled: !editor.can().chain().focus().setHorizontalRule().run(),
       },
       {
+        name: 'emoji',
+        title: 'Emoji',
+      },
+      {
         name: 'divider',
       },
     ],
