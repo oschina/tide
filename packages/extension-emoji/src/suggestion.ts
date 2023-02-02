@@ -6,7 +6,8 @@ import {
 } from '@tiptap/suggestion';
 import { ReactRenderer } from '@test-pkgs/react';
 import { EmojiItem } from './emoji';
-import { EmojiList } from './EmojiList';
+// import { EmojiList } from './EmojiList';
+import EmojiPanel from './EmojiPanel';
 
 export type EmojiListRef = {
   onKeyDown: (props: SuggestionKeyDownProps) => boolean;
@@ -35,7 +36,12 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
 
     return {
       onStart: (props) => {
-        component = new ReactRenderer(EmojiList, {
+        // component = new ReactRenderer(EmojiList, {
+        //   props,
+        //   editor: props.editor,
+        // });
+
+        component = new ReactRenderer(EmojiPanel, {
           props,
           editor: props.editor,
         });

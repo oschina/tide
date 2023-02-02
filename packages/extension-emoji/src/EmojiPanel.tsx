@@ -1,7 +1,7 @@
-import React, { useMemo, useState } from 'react';
-import { Editor } from '@tiptap/core';
+import React, { useMemo, useState, useEffect } from 'react';
 import './EmojiPanel.less';
 import classNames from 'classnames';
+import { SuggestionProps } from '@tiptap/suggestion';
 import type { EmojiStorage, EmojiItem } from './emoji';
 import { appleEmojis } from './emojis';
 
@@ -26,15 +26,14 @@ const Emoji: React.FC<{
   );
 };
 
-const EmojiPanel: React.FC<{
-  editor: Editor;
-}> = ({ editor }) => {
-  const [search, setSearch] = useState('');
+const EmojiPanel: React.FC<SuggestionProps<EmojiItem>> = (props) => {
+  const { editor } = props;
+  const { storage } = editor;
+  const [search, setSearch] = useState(props?.query || '');
   const [activeGroup, setActiveGroup] = useState({
     title: '表情',
     group: 'smileys & emotion',
   });
-  const { storage } = editor;
 
   const groups = [
     {
@@ -71,6 +70,13 @@ const EmojiPanel: React.FC<{
     },
   ];
 
+  useEffect(() => {
+    if (props?.query) {
+      setSearch(props?.query);
+      setActiveGroup(null);
+    }
+  }, [props?.query]);
+
   const activeGroupEmojis = useMemo(
     () => appleEmojis.filter((i) => i?.group === activeGroup?.group),
     [activeGroup]
@@ -89,6 +95,14 @@ const EmojiPanel: React.FC<{
       }),
     [search]
   );
+
+  const selectEmoji = (emoji: EmojiItem) => {
+    if (props.command && typeof props.command === 'function') {
+      props.command({ name: emoji.name } as any);
+    } else {
+      editor?.commands.insertEmoji(emoji.name);
+    }
+  };
 
   return (
     <div className="gwe-emoji-panel">
@@ -117,7 +131,7 @@ const EmojiPanel: React.FC<{
               key={emoji.name}
               emoji={emoji}
               emojiStorage={storage.emoji}
-              onClick={() => editor?.commands.insertEmoji(emoji.name)}
+              onClick={() => selectEmoji(emoji)}
             />
           ))}
         {activeGroup && (
@@ -132,7 +146,7 @@ const EmojiPanel: React.FC<{
                 key={emoji.name}
                 emoji={emoji}
                 emojiStorage={storage.emoji}
-                onClick={() => editor?.commands.insertEmoji(emoji.name)}
+                onClick={() => selectEmoji(emoji)}
               />
             ))}
           </>
