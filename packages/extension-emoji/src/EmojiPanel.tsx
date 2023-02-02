@@ -4,6 +4,44 @@ import classNames from 'classnames';
 import { SuggestionProps } from '@tiptap/suggestion';
 import type { EmojiStorage, EmojiItem } from './emoji';
 import { appleEmojis } from './emojis';
+import { getEmojisByNameList } from './utils';
+
+const localStorageKey = 'gwe-recent-emojis';
+
+const groups = [
+  {
+    title: '最近',
+    group: 'recent',
+  },
+  {
+    title: '表情',
+    group: 'smileys & emotion',
+  },
+  {
+    title: '人物',
+    group: 'people & body',
+  },
+  {
+    title: '自然',
+    group: 'animals & nature',
+  },
+  {
+    title: '食物',
+    group: 'food & drink',
+  },
+  {
+    title: '旅行',
+    group: 'travel & places',
+  },
+  {
+    title: '活动',
+    group: 'activities',
+  },
+  {
+    title: '物品',
+    group: 'objects',
+  },
+];
 
 const Emoji: React.FC<{
   emojiStorage: EmojiStorage;
@@ -30,57 +68,25 @@ const EmojiPanel: React.FC<SuggestionProps<EmojiItem>> = (props) => {
   const { editor } = props;
   const { storage } = editor;
   const [search, setSearch] = useState(props?.query || '');
-  const [activeGroup, setActiveGroup] = useState({
-    title: '表情',
-    group: 'smileys & emotion',
-  });
+  const [activeGroup, setActiveGroup] = useState(groups[0]);
 
-  const groups = [
-    {
-      title: '最近',
-      group: '',
-    },
-    {
-      title: '表情',
-      group: 'smileys & emotion',
-    },
-    {
-      title: '人物',
-      group: 'people & body',
-    },
-    {
-      title: '自然',
-      group: 'animals & nature',
-    },
-    {
-      title: '食物',
-      group: 'food & drink',
-    },
-    {
-      title: '旅行',
-      group: 'travel & places',
-    },
-    {
-      title: '活动',
-      group: 'activities',
-    },
-    {
-      title: '物品',
-      group: 'objects',
-    },
-  ];
+  const [historyEmojis, setHistoryEmojis] = useState([]);
 
   useEffect(() => {
+    // 若是输入：搜索的，需设置input的值
     if (props?.query) {
       setSearch(props?.query);
       setActiveGroup(null);
     }
   }, [props?.query]);
 
-  const activeGroupEmojis = useMemo(
-    () => appleEmojis.filter((i) => i?.group === activeGroup?.group),
-    [activeGroup]
-  );
+  const activeGroupEmojis = useMemo(() => {
+    if (activeGroup?.group === 'recent') {
+      return historyEmojis;
+    } else {
+      return appleEmojis.filter((i) => i?.group === activeGroup?.group);
+    }
+  }, [activeGroup, historyEmojis]);
 
   const searchedEmojis = useMemo(
     () =>
@@ -96,12 +102,48 @@ const EmojiPanel: React.FC<SuggestionProps<EmojiItem>> = (props) => {
     [search]
   );
 
+  useEffect(() => {
+    // 从本地存储获取最近使用的emojis
+    const historyEmojis = localStorage.getItem(localStorageKey);
+    if (historyEmojis) {
+      try {
+        const json = JSON.parse(historyEmojis);
+        if (json && json.length) {
+          setHistoryEmojis(getEmojisByNameList(json, appleEmojis));
+          setActiveGroup(groups[0]);
+        }
+      } catch (e) {
+        console.error('localStorage value json parse error:', e);
+      }
+    }
+  }, []);
+
+  const saveEmojiToStorage = (emoji: EmojiItem) => {
+    try {
+      const historyEmojis = localStorage.getItem(localStorageKey);
+      let json = [];
+      if (historyEmojis) {
+        json = JSON.parse(historyEmojis);
+        json.unshift(emoji.name);
+      } else {
+        json = [emoji.name];
+      }
+      json = Array.from(new Set(json)).slice(0, 20);
+
+      localStorage.setItem(localStorageKey, JSON.stringify(json));
+      setHistoryEmojis(getEmojisByNameList(json, appleEmojis));
+    } catch (e) {
+      console.log('localStorage setItem error:', e);
+    }
+  };
+
   const selectEmoji = (emoji: EmojiItem) => {
     if (props.command && typeof props.command === 'function') {
       props.command({ name: emoji.name } as any);
     } else {
       editor?.commands.insertEmoji(emoji.name);
     }
+    saveEmojiToStorage(emoji);
   };
 
   return (
