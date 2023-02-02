@@ -1,65 +1,7 @@
 import { findParentNode, getNodeType, isList, RawCommands } from '@tiptap/core';
-import { TextSelection, Transaction } from 'prosemirror-state';
-import { Fragment, Node, NodeType } from 'prosemirror-model';
+import { NodeType } from 'prosemirror-model';
 import { joinListBackwards, joinListForwards } from '../helpers';
-
-/**
- * Change a bullet/ordered list into a task list or vice versa. These lists use different type of list items,
- * so you need to use this function to not only change the list type but also change the list item type.
- */
-function deepChangeListType(
-  tr: Transaction,
-  foundList: {
-    pos: number;
-    start: number;
-    depth: number;
-    node: Node;
-  },
-  listType: NodeType,
-  itemType: NodeType
-): boolean {
-  const oldList = foundList.node;
-  const $start = tr.doc.resolve(foundList.start);
-  const listParent = $start.node(-1);
-  const indexBefore = $start.index(-1);
-
-  if (!listParent) {
-    return false;
-  }
-
-  if (
-    !listParent.canReplace(
-      indexBefore,
-      indexBefore + 1,
-      Fragment.from(listType.create())
-    )
-  ) {
-    return false;
-  }
-
-  const newItems: Node[] = [];
-
-  for (let index = 0; index < oldList.childCount; index++) {
-    const oldItem = oldList.child(index);
-
-    if (!itemType.validContent(oldItem.content)) {
-      return false;
-    }
-
-    const newItem = itemType.createChecked(null, oldItem.content);
-    newItems.push(newItem);
-  }
-
-  const newList = listType.createChecked(null, newItems);
-
-  const start = foundList.pos;
-  const end = start + oldList.nodeSize;
-  const from = tr.selection.from;
-
-  tr.replaceRangeWith(start, end, newList);
-  tr.setSelection(TextSelection.near(tr.doc.resolve(from)));
-  return true;
-}
+import { deepChangeListType } from '../utilities/list/list-commands';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -109,8 +51,8 @@ export const toggleList: RawCommands['toggleList'] =
 
               return true;
             })
-            .command(() => joinListBackwards(tr, listType))
-            .command(() => joinListForwards(tr, listType))
+            .command(() => joinListBackwards(tr))
+            .command(() => joinListForwards(tr))
             .run();
         }
 
@@ -118,8 +60,8 @@ export const toggleList: RawCommands['toggleList'] =
         // toggle a bullet/ordered list into a task list or vice versa
         return chain()
           .command(() => deepChangeListType(tr, parentList, listType, itemType))
-          .command(() => joinListBackwards(tr, listType))
-          .command(() => joinListForwards(tr, listType))
+          .command(() => joinListBackwards(tr))
+          .command(() => joinListForwards(tr))
           .run();
       }
     }
@@ -137,8 +79,8 @@ export const toggleList: RawCommands['toggleList'] =
           return commands.clearNodes();
         })
         .wrapInList(listType)
-        .command(() => joinListBackwards(tr, listType))
-        .command(() => joinListForwards(tr, listType))
+        .command(() => joinListBackwards(tr))
+        .command(() => joinListForwards(tr))
         .run()
     );
   };

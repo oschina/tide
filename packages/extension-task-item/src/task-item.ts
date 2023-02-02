@@ -32,6 +32,8 @@ export const pasteRegex = /^\s*(?:-\s)*(\[([( |x])?\])\s(.*)$/g;
 export const TaskItem = Node.create<TaskItemOptions>({
   name: 'taskItem',
 
+  group: 'listItem',
+
   addOptions() {
     return {
       onReadOnlyChecked: undefined,
@@ -87,22 +89,6 @@ export const TaskItem = Node.create<TaskItemOptions>({
       ],
       ['div', 0],
     ];
-  },
-
-  addKeyboardShortcuts() {
-    const shortcuts = {
-      Enter: () => this.editor.commands.splitListItem(this.name),
-      'Shift-Tab': () => this.editor.commands.liftListItem(this.name),
-    };
-
-    if (!this.options.nested) {
-      return shortcuts;
-    }
-
-    return {
-      ...shortcuts,
-      Tab: () => this.editor.commands.sinkListItem(this.name),
-    };
   },
 
   addNodeView() {

@@ -44,7 +44,7 @@ importers:
       rollup-plugin-sourcemaps: 0.6.3_rollup@2.79.1
       rollup-plugin-typescript2: 0.31.2_k35zwyycrckt5xfsejji7kbwn4
       rollup-plugin-visualizer: 5.8.3_rollup@2.79.1
-      turbo: 1.7.1
+      turbo: 1.7.2
 
   apps/demo:
     specifiers:
@@ -60,6 +60,7 @@ importers:
       '@test-pkgs/extension-image': workspace:*
       '@test-pkgs/extension-italic': workspace:*
       '@test-pkgs/extension-link': workspace:*
+      '@test-pkgs/extension-list-item': workspace:*
       '@test-pkgs/extension-lists-indentation': workspace:*
       '@test-pkgs/extension-markdown': workspace:*
       '@test-pkgs/extension-mention': workspace:*
@@ -79,7 +80,6 @@ importers:
       '@tiptap/extension-hard-break': ^2.0.0-beta.209
       '@tiptap/extension-heading': ^2.0.0-beta.209
       '@tiptap/extension-history': ^2.0.0-beta.209
-      '@tiptap/extension-list-item': ^2.0.0-beta.209
       '@tiptap/extension-paragraph': ^2.0.0-beta.209
       '@tiptap/extension-task-list': ^2.0.0-beta.209
       '@tiptap/extension-text': ^2.0.0-beta.209
@@ -128,6 +128,7 @@ importers:
       '@test-pkgs/extension-image': link:../../packages/extension-image
       '@test-pkgs/extension-italic': link:../../packages/extension-italic
       '@test-pkgs/extension-link': link:../../packages/extension-link
+      '@test-pkgs/extension-list-item': link:../../packages/extension-list-item
       '@test-pkgs/extension-lists-indentation': link:../../packages/extension-lists-indentation
       '@test-pkgs/extension-markdown': link:../../packages/extension-markdown
       '@test-pkgs/extension-mention': link:../../packages/extension-mention
@@ -147,7 +148,6 @@ importers:
       '@tiptap/extension-hard-break': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-heading': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-history': 2.0.0-beta.209_4l4d2nbnhzh4n42foqovky5q2e
-      '@tiptap/extension-list-item': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-paragraph': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-task-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-text': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
@@ -590,6 +590,19 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: 2.4.1
+      typescript: 4.9.3
+
+  packages/extension-list-item:
+    specifiers:
+      '@tiptap/extension-list-item': ^2.0.0-beta.209
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/extension-list-item': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/extension-lists-indentation:
@@ -1900,7 +1913,7 @@ packages:
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
+      '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
       prosemirror-view: 1.29.1
@@ -5330,65 +5343,65 @@ packages:
       typescript: 4.9.3
     dev: false
 
-  /turbo-darwin-64/1.7.1:
-    resolution: {integrity: sha512-H2txI1gkCQpav+5qGVxB4RzPTTqgDmzbXaJXbjYDR8cS0X/Oq5STea6fRTfumYR2x86Gr3co0V4fQfwILnfvYg==}
+  /turbo-darwin-64/1.7.2:
+    resolution: {integrity: sha512-Sml3WR8MSu80W+gS8SnoKNImcDOlIX7zlvezzds65mW11yGniIFfZ18aKWGOm92Nj2SvXCQ2+UmyGghbFaHNmQ==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.7.1:
-    resolution: {integrity: sha512-T7yLTMAdnwfaF9H3uBizztLld1aK/gYiNubpl4HCbMsE/aYEbITtNx1dAFQnjRiPHS4dNYK4gIKc9nnAsnfkxg==}
+  /turbo-darwin-arm64/1.7.2:
+    resolution: {integrity: sha512-JnlgGLScboUJGJxvmSsF+5xkImEDTMPg2FHzX4n8AMB9az9ZlPQAMtc+xu4p6Xp9eaykKiV2RG81YS3H0fxDLA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.7.1:
-    resolution: {integrity: sha512-kQw+jEpEVUskfPy+7rMF5x6e9Za9AbdD9P7bSo1JuV+tZgUOaFc5iC9Zyj26qhc0Zzl4qZecZ9YccNbZKZ9yCQ==}
+  /turbo-linux-64/1.7.2:
+    resolution: {integrity: sha512-vbLJw6ovG+lpiPqxniscBjljKJ2jbsHuKp8uK4j/wqgp68wAVKeAZW77GGDAUgDb88XH6Kvhh2hcizL+iWduww==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.7.1:
-    resolution: {integrity: sha512-PLe0XBJ/YEmiQh+jDcmTRZlxVtkY0CerAu/AKE/c9hCnp6shYqG+peyyuCEzIssUCij2A5yhVd7SIOTQGDzFrQ==}
+  /turbo-linux-arm64/1.7.2:
+    resolution: {integrity: sha512-zLnuS8WdHonKL74KqOopOH/leBOWumlVGF8/8hldbDPq0mwY+6myRR5/5LdveB51rkG4UJh/sQ94xV67tjBoyw==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.7.1:
-    resolution: {integrity: sha512-70ndrkQomG4JlAAaflVL+Io1msItHiZUq/zf88Nk4z30QSqqC0Zl4rOpUPE3v1IYSO48bUabshySZa9/aTPHhw==}
+  /turbo-windows-64/1.7.2:
+    resolution: {integrity: sha512-oE5PMoXjmR09okvVzteFb6FjA6yo+nMsacsgKH2yLNq4sOrVo9tG98JkRurOv5+L6ZQ3yGXPxWHiqeH7hLkAVQ==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.7.1:
-    resolution: {integrity: sha512-344XY2SrugfHtIe06Vbi17yZ4SRkPvWghvO/gUgUkgSZN06oYj0SHN2+z8pnLkBTfgkt2zBm2cqFFpVFwa8F2A==}
+  /turbo-windows-arm64/1.7.2:
+    resolution: {integrity: sha512-mdTUJk23acRv5qxA/yEstYhM1VFenVE3FDrssxGRFq7S80smtCGK1xUd4BEDDzDlVXOqBohmM5jRh9516rcjPQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.7.1:
-    resolution: {integrity: sha512-0ngDU5+2/wLuvTKpc2ZyDtO6aPeHTa6ASlQGySCx+lwSDiE4fCkRVvNINDtT1HgdO/bEo2CQkLoen/Qjf7wWiQ==}
+  /turbo/1.7.2:
+    resolution: {integrity: sha512-YR/x3GZEx0C1RV6Yvuw/HB1Ixx3upM6ZTTa4WqKz9WtLWN8u2g+u2h5KpG5YtjCS3wl/8zVXgHf2WiMK6KIghg==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.7.1
-      turbo-darwin-arm64: 1.7.1
-      turbo-linux-64: 1.7.1
-      turbo-linux-arm64: 1.7.1
-      turbo-windows-64: 1.7.1
-      turbo-windows-arm64: 1.7.1
+      turbo-darwin-64: 1.7.2
+      turbo-darwin-arm64: 1.7.2
+      turbo-linux-64: 1.7.2
+      turbo-linux-arm64: 1.7.2
+      turbo-windows-64: 1.7.2
+      turbo-windows-arm64: 1.7.2
     dev: true
 
   /type-check/0.4.0:

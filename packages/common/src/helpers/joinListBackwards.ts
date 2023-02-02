@@ -1,14 +1,14 @@
-import { Node as ProseMirrorNode, NodeType } from 'prosemirror-model';
+import { Node as ProseMirrorNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { canJoin } from 'prosemirror-transform';
 import { findParentNode } from '@tiptap/core';
+import { isList } from './isList';
 
 export const joinListBackwards = (
   tr: Transaction,
-  listType: NodeType,
   canJoinFn?: (node: ProseMirrorNode) => boolean
 ): boolean => {
-  const list = findParentNode((node) => node.type === listType)(tr.selection);
+  const list = findParentNode((node) => isList(node.type))(tr.selection);
 
   if (!list) {
     return true;
