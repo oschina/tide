@@ -12,6 +12,7 @@ interface BtnItemProps {
   icon?: string;
   title?: string;
   onClick?: () => void;
+  onRefresh: () => void;
   disabled?: boolean;
 }
 
@@ -21,6 +22,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
   icon,
   title,
   onClick,
+  onRefresh,
   disabled,
 }) => {
   if (!editor) {
@@ -68,7 +70,10 @@ export const BtnItem: React.FC<BtnItemProps> = ({
         content={<div className={'gwe-menu-bar__tooltip'}>{title}</div>}
       >
         <button
-          onClick={onClick}
+          onClick={() => {
+            onClick?.();
+            onRefresh();
+          }}
           disabled={disabled}
           className={classNames(
             'gwe-menu-bar__btn',

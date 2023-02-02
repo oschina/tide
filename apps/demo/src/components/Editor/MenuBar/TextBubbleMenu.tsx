@@ -13,18 +13,6 @@ const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
   const btnMenus = useBtnMenus(editor).filter((i) => i.bubble);
   const [menuBarRefreshKey, setMenuBarRefreshKey] = useState<number>(0);
 
-  useEffect(() => {
-    const listener = () => {
-      setMenuBarRefreshKey((prev) => prev + 1);
-    };
-    editor?.on('selectionUpdate', listener);
-    editor?.on('update', listener);
-    return () => {
-      editor?.off('selectionUpdate', listener);
-      editor?.off('update', listener);
-    };
-  }, [editor]);
-
   return (
     <BubbleMenu
       editor={editor}
@@ -62,7 +50,14 @@ const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
     >
       <div key={menuBarRefreshKey} className="gwe-menu-bar gwe-menu-bar-bubble">
         {btnMenus.map((props, index) => (
-          <BtnItem key={index} editor={editor} {...props} />
+          <BtnItem
+            key={index}
+            editor={editor}
+            {...props}
+            onRefresh={() => {
+              setMenuBarRefreshKey((prev) => prev + 1);
+            }}
+          />
         ))}
       </div>
     </BubbleMenu>

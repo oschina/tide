@@ -3,6 +3,7 @@ import { Editor } from '@tiptap/core';
 import './EmojiPanel.less';
 import classNames from 'classnames';
 import type { EmojiStorage, EmojiItem } from './emoji';
+import { appleEmojis } from './emojis';
 
 const Emoji: React.FC<{
   emojiStorage: EmojiStorage;
@@ -68,24 +69,16 @@ const EmojiPanel: React.FC<{
       title: '物品',
       group: 'objects',
     },
-    // {
-    //   title: '符号',
-    //   group: 'symbols',
-    // },
-    // {
-    //   title: '国旗',
-    //   group: 'flags',
-    // },
   ];
 
   const activeGroupEmojis = useMemo(
-    () => storage?.emoji?.emojis.filter((i) => i?.group === activeGroup?.group),
-    [storage, activeGroup]
+    () => appleEmojis.filter((i) => i?.group === activeGroup?.group),
+    [activeGroup]
   );
 
   const searchedEmojis = useMemo(
     () =>
-      storage?.emoji?.emojis.filter(({ name, shortcodes, tags }) => {
+      appleEmojis.filter(({ name, shortcodes, tags }) => {
         return (
           name.startsWith(search.toLowerCase()) ||
           shortcodes.find((shortcode) =>
@@ -94,7 +87,7 @@ const EmojiPanel: React.FC<{
           tags.find((tag) => tag.startsWith(search.toLowerCase()))
         );
       }),
-    [storage, search]
+    [search]
   );
 
   return (

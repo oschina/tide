@@ -27,17 +27,18 @@ const MenuBar: React.FC<MenuBarProps> = ({
   const [menuBarRefreshKey, setMenuBarRefreshKey] = useState<number>(0);
   const [headVisible, setHeadVisible] = useState(false);
 
-  useEffect(() => {
-    const listener = () => {
-      setMenuBarRefreshKey((prev) => prev + 1);
-    };
-    editor?.on('selectionUpdate', listener);
-    editor?.on('update', listener);
-    return () => {
-      editor?.off('selectionUpdate', listener);
-      editor?.off('update', listener);
-    };
-  }, [editor]);
+  // 输入会卡顿，去掉监听
+  // useEffect(() => {
+  //   const listener = () => {
+  //     setMenuBarRefreshKey((prev) => prev + 1);
+  //   };
+  //   editor?.on('selectionUpdate', listener);
+  //   editor?.on('update', listener);
+  //   return () => {
+  //     editor?.off('selectionUpdate', listener);
+  //     editor?.off('update', listener);
+  //   };
+  // }, [editor]);
 
   if (!editor) {
     return null;
@@ -149,7 +150,14 @@ const MenuBar: React.FC<MenuBarProps> = ({
       </div>
 
       {btnMenus?.map((props, index) => (
-        <BtnItem key={index} editor={editor} {...props} />
+        <BtnItem
+          key={index}
+          editor={editor}
+          onRefresh={() => {
+            setMenuBarRefreshKey((prev) => prev + 1);
+          }}
+          {...props}
+        />
       ))}
 
       <button
