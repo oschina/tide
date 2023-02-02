@@ -5,7 +5,6 @@ import type { BubbleMenuProps } from '@test-pkgs/react';
 import {
   getCellsInColumn,
   getCellsInRow,
-  getSelectedCells,
   isCellSelection,
   isColumnSelected,
   isRowSelected,
@@ -20,7 +19,6 @@ export type TableCellBubbleMenuProps = {
 export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
   editor,
 }) => {
-  const [selectedCells, setSelectedCells] = useState<any[]>([]);
   const [rowSelected, setRowSelected] = useState(false);
   const [columnSelected, setColumnSelected] = useState(false);
   const [tableSelected, setTableSelected] = useState(false);
@@ -63,10 +61,6 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       const hasTableSelected = isTableSelected(editor.state.selection);
       setTableSelected(hasTableSelected);
 
-      // selected cells
-      const cells = getSelectedCells(editor.state.selection);
-      setSelectedCells(cells);
-
       return isCellSelection(editor.state.selection);
     },
     [editor]
@@ -91,8 +85,8 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     },
   };
 
-  const selectedCellsCount = selectedCells?.length || 0;
   const canSplitCell = editor.can().splitCell();
+  const canMergeCells = editor.can().mergeCells();
 
   return (
     <BubbleMenu
@@ -103,7 +97,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       updateDelay={0}
     >
       <div className={styles['table-cell-bubble-menu']}>
-        {(selectedCellsCount > 1 || canSplitCell) && (
+        {(canMergeCells || canSplitCell) && (
           <button onClick={() => editor.commands.mergeOrSplit()}>
             {canSplitCell ? '拆分' : '合并'}
           </button>
