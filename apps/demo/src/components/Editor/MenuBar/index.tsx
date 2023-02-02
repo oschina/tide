@@ -6,6 +6,7 @@ import Tippy from '@tippyjs/react';
 import { Level } from '@tiptap/extension-heading';
 import useBtnMenus from './useBtnMenus';
 import { BtnItem } from './BtnItem';
+import { useStatusMap } from './useStatusMap';
 
 import './MenuBar.less';
 
@@ -24,25 +25,25 @@ const MenuBar: React.FC<MenuBarProps> = ({
   fullscreen,
   onFullscreenChange,
 }) => {
-  const [menuBarRefreshKey, setMenuBarRefreshKey] = useState<number>(0);
-  const [headVisible, setHeadVisible] = useState(false);
-
-  // 输入会卡顿，去掉监听
-  // useEffect(() => {
-  //   const listener = () => {
-  //     setMenuBarRefreshKey((prev) => prev + 1);
-  //   };
-  //   editor?.on('selectionUpdate', listener);
-  //   editor?.on('update', listener);
-  //   return () => {
-  //     editor?.off('selectionUpdate', listener);
-  //     editor?.off('update', listener);
-  //   };
-  // }, [editor]);
-
   if (!editor) {
     return null;
   }
+  const [headVisible, setHeadVisible] = useState(false);
+
+  const { statusMap, updateStatusMap } = useStatusMap(editor);
+
+  useEffect(() => {
+    const listener = () => {
+      updateStatusMap();
+    };
+    editor?.on('selectionUpdate', listener);
+    editor?.on('update', listener);
+
+    return () => {
+      editor?.off('selectionUpdate', listener);
+      editor?.off('update', listener);
+    };
+  }, [editor]);
 
   const heads: Level[] = [1, 2, 3, 4, 5, 6];
 
@@ -63,11 +64,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
   };
 
   return (
-    <div
-      key={menuBarRefreshKey}
-      className={classNames('gwe-menu-bar', className)}
-      style={style}
-    >
+    <div className={classNames('gwe-menu-bar', className)} style={style}>
       <div>
         <Tippy
           offset={[0, 4]}
@@ -150,14 +147,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
       </div>
 
       {btnMenus?.map((props, index) => (
-        <BtnItem
-          key={index}
-          editor={editor}
-          onRefresh={() => {
-            setMenuBarRefreshKey((prev) => prev + 1);
-          }}
-          {...props}
-        />
+        <BtnItem key={index} editor={editor} statusMap={statusMap} {...props} />
       ))}
 
       <button

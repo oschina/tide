@@ -1,19 +1,18 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
-import { isActive } from '@test-pkgs/common';
 import { InsertTableButton } from '@test-pkgs/extension-table';
 import { InsertEmojiButton } from '@test-pkgs/extension-emoji';
 import Tippy from '@tippyjs/react';
+import { MenuStatusMap, menuKey } from './useStatusMap';
 
 interface BtnItemProps {
   editor?: Editor | null;
-  name: string;
+  name: menuKey | 'divider';
   icon?: string;
   title?: string;
   onClick?: () => void;
-  onRefresh: () => void;
-  disabled?: boolean;
+  statusMap: MenuStatusMap;
 }
 
 export const BtnItem: React.FC<BtnItemProps> = ({
@@ -22,8 +21,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
   icon,
   title,
   onClick,
-  onRefresh,
-  disabled,
+  statusMap,
 }) => {
   if (!editor) {
     return null;
@@ -38,9 +36,9 @@ export const BtnItem: React.FC<BtnItemProps> = ({
         <button
           className={classNames(
             'gwe-menu-bar__btn',
-            isActive(editor.state, name) ? `gwe-menu-bar__btn--active` : ''
+            statusMap[name].isActive ? `gwe-menu-bar__btn--active` : ''
           )}
-          disabled={disabled}
+          disabled={statusMap[name]?.disabled || false}
         >
           T
         </button>
@@ -54,7 +52,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
         <button
           className={classNames(
             'gwe-menu-bar__btn',
-            isActive(editor.state, name) ? `gwe-menu-bar__btn--active` : ''
+            statusMap[name]?.isActive ? `gwe-menu-bar__btn--active` : ''
           )}
         >
           😃
@@ -70,14 +68,11 @@ export const BtnItem: React.FC<BtnItemProps> = ({
         content={<div className={'gwe-menu-bar__tooltip'}>{title}</div>}
       >
         <button
-          onClick={() => {
-            onClick?.();
-            onRefresh();
-          }}
-          disabled={disabled}
+          onClick={onClick}
+          disabled={statusMap[name]?.disabled || false}
           className={classNames(
             'gwe-menu-bar__btn',
-            isActive(editor.state, name) ? `gwe-menu-bar__btn--active` : ''
+            statusMap[name]?.isActive ? `gwe-menu-bar__btn--active` : ''
           )}
         >
           {icon}

@@ -4,6 +4,7 @@ import { isActive } from '@test-pkgs/common';
 import { BubbleMenu } from '@test-pkgs/react';
 import useBtnMenus from './useBtnMenus';
 import { BtnItem } from './BtnItem';
+import { useStatusMap } from './useStatusMap';
 
 export type TextBubbleMenuProps = {
   editor: Editor;
@@ -11,7 +12,20 @@ export type TextBubbleMenuProps = {
 
 const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
   const btnMenus = useBtnMenus(editor).filter((i) => i.bubble);
-  const [menuBarRefreshKey, setMenuBarRefreshKey] = useState<number>(0);
+  const { statusMap, updateStatusMap } = useStatusMap(editor);
+
+  useEffect(() => {
+    const listener = () => {
+      updateStatusMap();
+    };
+    editor?.on('selectionUpdate', listener);
+    editor?.on('update', listener);
+
+    return () => {
+      editor?.off('selectionUpdate', listener);
+      editor?.off('update', listener);
+    };
+  }, [editor]);
 
   return (
     <BubbleMenu
@@ -48,15 +62,13 @@ const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
         return true;
       }}
     >
-      <div key={menuBarRefreshKey} className="gwe-menu-bar gwe-menu-bar-bubble">
+      <div className="gwe-menu-bar gwe-menu-bar-bubble">
         {btnMenus.map((props, index) => (
           <BtnItem
             key={index}
             editor={editor}
+            statusMap={statusMap}
             {...props}
-            onRefresh={() => {
-              setMenuBarRefreshKey((prev) => prev + 1);
-            }}
           />
         ))}
       </div>
