@@ -426,6 +426,7 @@ importers:
     specifiers:
       '@test-pkgs/common': workspace:*
       '@test-pkgs/react': workspace:*
+      '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-code-block': ^2.0.0-beta.209
       '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.209
@@ -441,6 +442,7 @@ importers:
     dependencies:
       '@test-pkgs/common': link:../common
       '@test-pkgs/react': link:../react
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-code-block': 2.0.0-beta.209_prfudu5zgovreazvyjp3brspre
       '@tiptap/extension-code-block-lowlight': 2.0.0-beta.209_oncrp2q33yaneu43jffs7gw3am
@@ -4676,7 +4678,7 @@ packages:
     resolution: {integrity: sha512-puuzLD2mz/oTdfgd8msFbe0A42j5eNudKAAPDB0+QJRw8cO1ygjLmhLrg9RvDpf87Dkd6D4t93qdef00KKNacQ==}
     dependencies:
       prosemirror-model: 1.18.3
-      prosemirror-transform: 1.7.0
+      prosemirror-transform: 1.7.1
       prosemirror-view: 1.29.1
 
   /prosemirror-transform/1.7.0:

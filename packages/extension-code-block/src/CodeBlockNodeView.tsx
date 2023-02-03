@@ -3,7 +3,8 @@ import React, { useMemo, useRef, useState } from 'react';
 import copy from 'copy-to-clipboard';
 import type { NodeViewProps } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper } from '@test-pkgs/react';
-import styles from './CodeBlockNodeView.module.less';
+import Tippy from '@tippyjs/react';
+import './CodeBlockNodeView.less';
 
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
   editor,
@@ -16,6 +17,9 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
     node.attrs.language || extension?.options?.defaultLanguage || '';
   const $container = useRef<HTMLPreElement>(null);
   const [softWrap, setSoftWrap] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [search, setSearch] = useState('');
+  const inputRef = useRef<HTMLInputElement>();
 
   const languages = useMemo(
     () => [
@@ -28,28 +32,71 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
     ],
     [extension]
   );
+  const [value, setValue] = useState(languages?.[0]?.value);
+
+  const searchedLanguages = useMemo(
+    () => languages.filter((i) => i.value.includes(search.toLowerCase())),
+    [languages, search]
+  );
 
   return (
     <NodeViewWrapper
-      className={classNames(node.attrs.className, styles['code-block'])}
+      className={classNames(node.attrs.className, 'gwe-code-block')}
     >
-      <div className={styles.toolbar} contentEditable={false}>
+      <div className="gwe-code-block__toolbar" contentEditable={false}>
         {isEditable ? (
-          <select
-            value={language}
-            onChange={(e) => updateAttributes({ language: e.target.value })}
-            disabled={!isEditable}
+          <Tippy
+            placement="bottom-start"
+            interactive
+            onClickOutside={() => setVisible(false)}
+            visible={visible}
+            onHidden={() => setSearch('')}
+            content={
+              <div className="gwe-dropdown-menu gwe-code-block__dropdown">
+                <div className="gwe-code-block__search-input">
+                  <input
+                    ref={inputRef}
+                    placeholder="搜索"
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                </div>
+                <div className="gwe-scrollbar-container">
+                  {searchedLanguages.map((lang) => (
+                    <div
+                      key={lang.value}
+                      className="gwe-dropdown-menu__item"
+                      onClick={() => {
+                        setValue(lang.value);
+                        updateAttributes({ language: lang.value });
+                        setVisible(false);
+                      }}
+                    >
+                      {lang.label}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            }
           >
-            {languages.map((lang) => (
-              <option key={lang.value} value={lang.value}>
-                {lang.label}
-              </option>
-            ))}
-          </select>
+            <div
+              className="gwe-dropdown-trigger"
+              onClick={() => {
+                if (!isEditable) {
+                  return;
+                }
+                setVisible((prev) => !prev);
+                setTimeout(() => inputRef.current.focus());
+              }}
+            >
+              <span>{value}</span>
+            </div>
+          </Tippy>
         ) : (
           <span>{language}</span>
         )}
-        <label className={styles['soft-wrap']}>
+        <label className="gwe-code-block__soft-wrap">
           <input
             type="checkbox"
             checked={softWrap}
@@ -61,9 +108,11 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
           复制
         </button>
       </div>
-      <div className={styles.content}>
+      <div className="gwe-code-block__content">
         <pre
-          className={classNames('code-block hljs', { 'soft-wrap': softWrap })}
+          className={classNames('gwe-code-block__content-pre code-block hljs', {
+            'soft-wrap': softWrap,
+          })}
           ref={$container}
         >
           <NodeViewContent as="code" />

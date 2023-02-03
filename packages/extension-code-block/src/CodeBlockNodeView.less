@@ -1,0 +1,62 @@
+.gwe-code-block {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: hidden;
+  &__toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 6px 16px;
+    font-size: 14px;
+    user-select: none;
+    button {
+      flex-shrink: 0;
+      font-weight: normal;
+    }
+  }
+
+  &__soft-wrap {
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 16px;
+
+    input {
+      vertical-align: -0.15em;
+      margin-right: 4px;
+    }
+  }
+
+  &__content-pre {
+    border-radius: 0;
+    margin: 0;
+  }
+
+  &__search-input {
+    padding: 4px 8px;
+    input {
+      height: 28px;
+      line-height: 28px;
+      padding: 0 8px;
+      outline: none;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      &::placeholder {
+        color: #bfbfbf;
+      }
+    }
+  }
+}
+
+.gwe-dropdown-menu.gwe-code-block__dropdown {
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gwe-scrollbar-container {
+  overflow: auto;
+}
+
