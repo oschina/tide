@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import debounce from 'lodash/debounce';
 import { Editor } from '@tiptap/core';
 import { isActive } from '@test-pkgs/common';
 import Tippy from '@tippyjs/react';
@@ -33,9 +34,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
   const { statusMap, updateStatusMap } = useStatusMap(editor);
 
   useEffect(() => {
-    const listener = () => {
-      updateStatusMap();
-    };
+    const listener = debounce(updateStatusMap, 300);
     editor?.on('selectionUpdate', listener);
     editor?.on('update', listener);
 

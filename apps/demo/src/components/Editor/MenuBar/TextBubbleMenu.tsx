@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import debounce from 'lodash/debounce';
 import { Editor, isTextSelection } from '@tiptap/core';
 import { isActive } from '@test-pkgs/common';
 import { BubbleMenu } from '@test-pkgs/react';
@@ -15,9 +16,7 @@ const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
   const { statusMap, updateStatusMap } = useStatusMap(editor);
 
   useEffect(() => {
-    const listener = () => {
-      updateStatusMap();
-    };
+    const listener = debounce(updateStatusMap, 300);
     editor?.on('selectionUpdate', listener);
     editor?.on('update', listener);
 
