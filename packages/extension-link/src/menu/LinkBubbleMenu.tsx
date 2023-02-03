@@ -35,10 +35,22 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
     showLinkEditPopup(editor);
   }, [editor]);
 
-  const unsetLink = useCallback(
-    () => editor.chain().extendMarkRange(LinkExtension.name).unsetLink().run(),
-    [editor]
-  );
+  // 移除链接
+  const unsetLink = useCallback(() => {
+    const { empty } = editor.view.state.selection;
+    if (empty) {
+      // 无选区: 移除光标所在的 node 的链接 (连续多个相同链接的 node 会被一起移除链接)
+      const attrs = editor.getAttributes(LinkExtension.name);
+      editor
+        .chain()
+        .extendMarkRange(LinkExtension.name, attrs)
+        .unsetLink()
+        .run();
+    } else {
+      // 有选区: 移除对应区域的链接 (如果选区在 node 内部 或 跨多个 node, 将自动拆开)
+      editor.chain().unsetLink().run();
+    }
+  }, [editor]);
 
   return (
     <SelectionBubbleMenu

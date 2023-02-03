@@ -1,11 +1,13 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { TextSelection } from 'prosemirror-state';
 import {
   Editor,
+  getMarkRange,
   getMarkType,
-  isMarkActive,
   posToDOMRect,
   Range,
 } from '@tiptap/core';
+import { isActive } from '@test-pkgs/common';
 import { ReactRenderer } from '@test-pkgs/react';
 import { showBubbleMenu } from '@test-pkgs/extension-bubble-menu';
 import styles from './LinkEditPopup.module.less';
@@ -94,46 +96,73 @@ export const showLinkEditPopup = (
   const { dom, defaultText, defaultHref } = options || {};
   const { state, schema } = editor;
   const { selection } = state;
+  const { $from, from, to, empty } = selection;
   const linkMarkType = getMarkType(schema.marks.link, state.schema);
-  const isInLink = isMarkActive(state, linkMarkType);
+  const isInLink = isActive(state, linkMarkType.name);
+  const attrs = editor.getAttributes(linkMarkType);
 
+  // 选区
   let start: number;
   let end: number;
-  let text: string;
-  let href: string;
 
   if (!isInLink) {
-    const { from, to } = selection;
+    // 无链接: 创建链接
     start = from;
     end = to;
-    text = state.doc.textBetween(start, end) || defaultText || '';
-    href = defaultHref || '';
   } else {
-    const { from, to } = selection;
+    // 有链接: 编辑链接
     let range: void | Range;
-    state.doc.nodesBetween(from, to, (node, pos) => {
-      if (!node.isText && !node.marks.length) {
-        return;
+    if (empty) {
+      // 无选区: 编辑光标所在的 node 的链接 (连续多个相同链接的 node 会被一起编辑)
+      const markRange = getMarkRange($from, linkMarkType, attrs);
+      if (markRange) {
+        range = {
+          from: markRange.from,
+          to: markRange.to,
+        };
       }
-      if (pos <= from && pos + node.nodeSize >= to && node.marks.length) {
-        const mark = node.marks.find((item) => item.type === linkMarkType);
-        if (mark) {
-          range = {
-            from: pos,
-            to: pos + node.nodeSize,
-          };
-        }
-      }
-    });
+    } else {
+      // 有选区: 编辑对应区域的链接 (如果选区在 node 内部 或 跨多个 node, 将自动拆开)
+      range = {
+        from,
+        to,
+      };
+    }
     if (!range) {
       return;
     }
-
     start = range.from;
     end = range.to;
+  }
 
-    const attrs = editor.getAttributes(linkMarkType);
-    text = state.doc.textBetween(start, end);
+  // 文字/链接
+  let text = '';
+  let href = '';
+
+  state.doc.nodesBetween(start, end, (node, pos, parent, index) => {
+    if (!node.isInline) {
+      return;
+    }
+    const chunk =
+      node.type.spec.toText?.({
+        node,
+        pos,
+        parent,
+        index,
+      }) ||
+      node.textContent ||
+      '';
+    // 此处使用展开运算符解决 emoji unicode 多个字符截取的问题
+    text += [...chunk]
+      .slice(Math.max(0, start - pos), Math.max(0, end - pos))
+      .join('');
+  });
+
+  if (!isInLink) {
+    text = text || state.doc.textBetween(start, end) || defaultText || '';
+    href = defaultHref || '';
+  } else {
+    text = text || state.doc.textBetween(start, end) || '';
     href = attrs.href;
   }
 
@@ -146,23 +175,49 @@ export const showLinkEditPopup = (
           text,
           href,
           onConfirm: (values) => {
-            const { view } = editor;
-            const { schema } = view.state;
-            const node = schema.text(values.text, [
-              linkMarkType.create({ href: values.href }),
-            ]);
-            view.dispatch(
-              view.state.tr
-                .deleteRange(start, end)
-                .insert(start, node)
-                .scrollIntoView()
-            );
+            if (text === values.text) {
+              // 文字未变化: 只修改链接
+              editor
+                .chain()
+                .setTextSelection({ from: start, to: end })
+                .setLink({
+                  href: values.href,
+                })
+                .run();
+            } else {
+              // 文字有变化: 替换内容并添加链接
+
+              // 插入内容 (通过 insertContentAt 插入内容可以解析 emoji, 为 emoji 创建 node)
+              editor
+                .chain()
+                .deleteRange({ from: start, to: end })
+                .insertContentAt(start, values.text, {
+                  updateSelection: true,
+                })
+                .run();
+
+              // 添加链接
+              editor
+                .chain()
+                .command(({ tr }) => {
+                  const markFrom = Math.min(start, tr.selection.from);
+                  const markTo = tr.selection.to;
+                  tr.setSelection(
+                    TextSelection.create(tr.doc, markFrom, markTo)
+                  );
+                  return true;
+                })
+                .setLink({
+                  href: values.href,
+                })
+                .run();
+            }
             tippyRef.instance?.hide();
-            editor.chain().focus().run();
+            editor.commands.focus();
           },
           onCancel: () => {
             tippyRef.instance?.hide();
-            editor.chain().focus().run();
+            editor.commands.focus();
           },
         } as LinkEditPopupProps,
         editor,
