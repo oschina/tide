@@ -3,7 +3,7 @@
  */
 import './style.css';
 
-import createEditor from '@test-pkgs/editor';
+import { createEditor } from '@test-pkgs/editor';
 
 createEditor({
   el: document.getElementById('app')!,

@@ -1,6 +1,6 @@
 import { renderApp } from './renderApp';
 
-const createEditor = ({
+export const createEditor = ({
   el,
   content,
 }: {
@@ -9,5 +9,3 @@ const createEditor = ({
 }) => {
   renderApp({ el, content });
 };
-
-export default createEditor;

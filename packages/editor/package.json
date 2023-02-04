@@ -14,16 +14,6 @@
     "lint": "TIMING=1 eslint \"**/*.ts\"",
     "clear": "rm -rf dist"
   },
-  "devDependencies": {
-    "@types/react": "^16.14.0",
-    "@types/react-dom": "^16.9.14",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "tsconfig": "workspace:*",
-    "typescript": "^4.5.2"
-  },
   "dependencies": {
     "@test-pkgs/extension-code-block": "workspace:*",
     "@test-pkgs/markdown": "workspace:*",
@@ -69,6 +59,16 @@
     "prosemirror-transform": "^1.7.0",
     "prosemirror-view": "^1.29.1",
     "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "@types/react": "^16.14.0",
+    "@types/react-dom": "^16.9.14",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",

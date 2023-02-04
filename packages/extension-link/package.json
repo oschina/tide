@@ -31,6 +31,7 @@
     "@test-pkgs/react": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.209",
     "prosemirror-state": "^1.4.2",
+    "prosemirror-transform": "^1.7.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },

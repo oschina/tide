@@ -1,11 +1,9 @@
 import classNames from 'classnames';
-import { isEqual } from 'lodash';
 import React, {
   forwardRef,
   useEffect,
   useImperativeHandle,
   useRef,
-  useState,
 } from 'react';
 import type { Plugin } from 'prosemirror-state';
 import type { JSONContent } from '@tiptap/core';
