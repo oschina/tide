@@ -89,9 +89,11 @@ export const ImagePlaceholderPlugin = new Plugin({
 
       if (action.add) {
         const template = document.createElement('template');
-        template.innerHTML = `<div class='gwe-uploader__img-placeholder'>
-          <img src='${action.add.src}' alt='upload placeholder'>
-          <span class='gwe-uploader__img-progress'><span class='gwe-uploader__img-progress-inner' style='width: 10%;'></span></span>
+        template.innerHTML = `<div class='gwe-uploader__img'>
+          <div class='gwe-uploader__img-placeholder'>
+            <img src='${action.add.src}' alt='upload placeholder'>
+            <span class='gwe-uploader__img-progress'><span class='gwe-uploader__img-progress-inner' style='width: 10%;'></span></span>
+          </div>
         </div>`;
         const widget = template.content.firstChild;
 

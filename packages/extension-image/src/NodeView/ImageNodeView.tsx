@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames';
 import type { NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@test-pkgs/react';
@@ -30,9 +30,9 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
   node,
   updateAttributes,
 }) => {
-  const imgRef = useRef<HTMLImageElement>();
+  const imgRef = useRef<HTMLImageElement>(null);
   const { onMousedown } = useResize(
-    imgRef.current,
+    imgRef,
     editor,
     ({ width, height }) => {
       if (imgRef.current) {
@@ -77,7 +77,10 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
                   'gwe-image__view-resize-btn',
                   item.className
                 )}
-                onMouseDown={(e) => onMousedown(item.position, e)}
+                onMouseDown={(e) => {
+                  //  todo 选中 该节点
+                  onMousedown(item.position, e);
+                }}
               />
             );
           })}

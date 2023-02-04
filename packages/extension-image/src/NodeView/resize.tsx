@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import type { Editor } from '@tiptap/core';
 
 export const useResize = (
-  imgEl: HTMLImageElement | null,
+  imgRef: React.RefObject<HTMLImageElement>,
   editor: Editor,
   onUpdate: (v: { width: number; height: number }) => void,
   onConfirm: () => void
@@ -25,8 +25,8 @@ export const useResize = (
     store.clientY = e.clientY;
 
     // 此时图片的尺寸
-    store.imageWidth = imgEl?.width || imgEl?.clientWidth;
-    store.imageHeight = imgEl?.height || imgEl?.clientHeight;
+    store.imageWidth = imgRef.current?.width || imgRef.current?.clientWidth;
+    store.imageHeight = imgRef.current?.height || imgRef.current?.clientHeight;
 
     // 此时图片的拉伸方位
     store.position = position;
@@ -41,7 +41,7 @@ export const useResize = (
       if (store.resizing && store.focus) {
         // 鼠标移动距离
         const distanceX = event.clientX - store.clientX;
-        const distanceY = event.clientY - store.clientY;
+        // const distanceY = event.clientY - store.clientY;
         const moveDirection = distanceX;
 
         // 变化的尺寸

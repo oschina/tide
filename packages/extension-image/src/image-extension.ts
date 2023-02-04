@@ -31,7 +31,7 @@ export const Image = TImage.extend<ImageOptions>({
   },
 
   atom: true,
-  draggable: false,
+  draggable: true,
   selectable: true,
 
   allowGapCursor() {
@@ -50,7 +50,7 @@ export const Image = TImage.extend<ImageOptions>({
         default: '',
       },
       width: {
-        default: 500,
+        default: 350,
       },
       height: {
         default: 'auto',
