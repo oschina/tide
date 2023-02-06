@@ -26,6 +26,7 @@ export const Link = TLink.extend<LinkOptions>({
     return {
       href: {
         default: null,
+        parseHTML: (element) => `${element.getAttribute('href') ?? ''}`,
       },
       target: {
         default: this.options.HTMLAttributes.target,

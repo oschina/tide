@@ -42,6 +42,7 @@ export const Image = TImage.extend<ImageOptions>({
     return {
       src: {
         default: '',
+        parseHTML: (element) => `${element.getAttribute('src') ?? ''}`,
       },
       alt: {
         default: '',
