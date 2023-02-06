@@ -12,10 +12,15 @@ import {
   isTableSelected,
 } from '../utilities';
 import styles from './TableCellBubbleMenu.module.less';
+import { PluginKey } from 'prosemirror-state';
 
 export type TableCellBubbleMenuProps = {
   editor: Editor;
 };
+
+export const tableCellBubbleMenuPluginKey = new PluginKey(
+  'tableCellBubbleMenu'
+);
 
 export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
   editor,
@@ -80,14 +85,22 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     getReferenceClientRect: () => {
       const { state, view } = editor;
       const { from, to } = state.selection;
-      // FIXME: 显示位置
+      const selectedCells = getSelectedCells(state.selection);
+      let posFrom = from;
+      let posTo = to;
+      if (selectedCells.length) {
+        const firstCell = selectedCells[0];
+        const lastCell = selectedCells[selectedCells.length - 1];
+        posFrom = firstCell ? firstCell.pos : posFrom;
+        posTo = lastCell ? lastCell.pos + lastCell.node.nodeSize : posTo;
+      }
       if (isNodeSelection(state.selection)) {
         const node = view.nodeDOM(from) as HTMLElement;
         if (node) {
           return node.getBoundingClientRect();
         }
       }
-      return posToDOMRect(view, from, to);
+      return posToDOMRect(view, posFrom, posTo);
     },
   };
 
@@ -97,7 +110,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
 
   return (
     <BubbleMenu
-      pluginKey="tableCellBubbleMenu"
+      pluginKey={tableCellBubbleMenuPluginKey}
       editor={editor}
       shouldShow={shouldShow}
       tippyOptions={tippyOptions}
