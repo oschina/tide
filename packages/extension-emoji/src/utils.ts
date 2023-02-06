@@ -74,3 +74,24 @@ export const getEmojisByNameList = (nameList, emojis: EmojiItem[]) => {
   });
   return list;
 };
+
+export const saveEmojiToStorage = (emoji: EmojiItem) => {
+  const localStorageKey = 'gwe-recent-emojis';
+  try {
+    const historyEmojis = localStorage.getItem(localStorageKey);
+    let nameList = [];
+    if (historyEmojis) {
+      nameList = JSON.parse(historyEmojis);
+      nameList.unshift(emoji.name);
+    } else {
+      nameList = [emoji.name];
+    }
+    nameList = Array.from(new Set(nameList)).slice(0, 20);
+
+    localStorage.setItem(localStorageKey, JSON.stringify(nameList));
+    return nameList;
+  } catch (e) {
+    console.log('localStorage setItem error:', e);
+    return [emoji.name];
+  }
+};

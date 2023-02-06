@@ -13,6 +13,10 @@ export type EmojiListRef = {
   onKeyDown: (props: SuggestionKeyDownProps) => boolean;
 };
 
+export type EmojiPanelRef = {
+  onShow: () => void;
+};
+
 export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
   items: ({ editor, query }) => {
     return (editor.storage.emoji.emojis as EmojiItem[])
@@ -31,7 +35,7 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
   allowSpaces: false,
 
   render: () => {
-    let component: ReactRenderer<EmojiListRef, SuggestionProps<EmojiItem>>;
+    let component: ReactRenderer<EmojiPanelRef, SuggestionProps<EmojiItem>>;
     let popup: TippyInstance[];
 
     return {
@@ -73,16 +77,16 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
         });
       },
 
-      onKeyDown(props) {
-        if (props.event.key === 'Escape') {
-          popup[0].hide();
-          component.destroy();
+      // onKeyDown(props) {
+      //   if (props.event.key === 'Escape') {
+      //     popup[0].hide();
+      //     component.destroy();
 
-          return true;
-        }
+      //     return true;
+      //   }
 
-        return !!component.ref?.onKeyDown(props);
-      },
+      //   return !!component.ref?.onKeyDown(props);
+      // },
 
       onExit() {
         popup?.[0].destroy();

@@ -13,7 +13,12 @@ import { Suggestion, SuggestionOptions } from '@tiptap/suggestion';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import emojiRegex from 'emoji-regex';
 import { appleEmojis } from './emojis';
-import { checkEmojiSupport, findEmoji, getEmojiName } from './utils';
+import {
+  checkEmojiSupport,
+  findEmoji,
+  getEmojiName,
+  saveEmojiToStorage,
+} from './utils';
 
 export type EmojiItem = {
   emoji?: string;
@@ -221,13 +226,15 @@ export const Emoji = Node.create<EmojiOptions, EmojiStorage>({
         find: /:([a-zA-Z0-9_+-]+):$/,
         handler: ({ range, match, commands }) => {
           const name = match[1];
-          if (findEmoji(name, this.options.emojis)) {
+          const emoji = findEmoji(name, this.options.emojis);
+          if (emoji) {
             commands.insertContentAt(range, {
               type: this.name,
               attrs: {
                 name,
               },
             });
+            saveEmojiToStorage(emoji);
           }
         },
       })

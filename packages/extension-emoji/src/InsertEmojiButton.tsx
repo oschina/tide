@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Tippy from '@tippyjs/react';
 import { Editor } from '@tiptap/core';
 import EmojiPanel from './EmojiPanel';
@@ -7,6 +7,7 @@ export const InsertEmojiButton: React.FC<{
   editor: Editor;
   children: React.ReactElement;
 }> = ({ editor, children }) => {
+  const ref = useRef(null);
   return (
     <Tippy
       interactive
@@ -15,6 +16,7 @@ export const InsertEmojiButton: React.FC<{
       <Tippy
         content={
           <EmojiPanel
+            ref={ref}
             editor={editor}
             range={null}
             query=""
@@ -28,6 +30,7 @@ export const InsertEmojiButton: React.FC<{
         trigger="click"
         interactive
         hideOnClick
+        onShow={() => ref?.current?.onShow()}
       >
         {children}
       </Tippy>
