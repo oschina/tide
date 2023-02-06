@@ -138,21 +138,27 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                     }
                     const grip = document.createElement('a');
                     grip.className = className;
-                    const addSpan = document.createElement('span');
-                    addSpan.className = 'add';
-                    addSpan.textContent = '+';
-                    grip.appendChild(addSpan);
+
+                    const bar = document.createElement('span');
+                    bar.className = 'bar';
+                    grip.appendChild(bar);
+
+                    const add = document.createElement('span');
+                    add.className = 'add';
+                    add.textContent = '+';
+                    grip.appendChild(add);
+
                     grip.addEventListener(
                       'mousedown',
                       (event) => {
                         event.preventDefault();
                         event.stopImmediatePropagation();
-                        if (event.target !== grip) {
+                        if (event.target === add) {
                           const rect = selectedRect(state);
                           this.editor.view.dispatch(
                             addRow(state.tr, rect, cellRowIndex + 1)
                           );
-                        } else {
+                        } else if (event.target === bar) {
                           this.editor.view.dispatch(
                             selectRow(cellRowIndex)(this.editor.state.tr)
                           );
@@ -194,19 +200,25 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                     }
                     const grip = document.createElement('a');
                     grip.className = className;
-                    const addSpan = document.createElement('span');
-                    addSpan.className = 'add';
-                    addSpan.textContent = '+';
-                    grip.appendChild(addSpan);
+
+                    const bar = document.createElement('span');
+                    bar.className = 'bar';
+                    grip.appendChild(bar);
+
+                    const add = document.createElement('span');
+                    add.className = 'add';
+                    add.textContent = '+';
+                    grip.appendChild(add);
+
                     grip.addEventListener('mousedown', (event) => {
                       event.preventDefault();
                       event.stopImmediatePropagation();
-                      if (event.target !== grip) {
+                      if (event.target === add) {
                         const rect = selectedRect(state);
                         this.editor.view.dispatch(
                           addColumn(state.tr, rect, cellColumnIndex + 1)
                         );
-                      } else {
+                      } else if (event.target === bar) {
                         this.editor.view.dispatch(
                           selectColumn(cellColumnIndex)(this.editor.state.tr)
                         );
