@@ -4,6 +4,7 @@ import React, {
   useState,
   useEffect,
   useImperativeHandle,
+  useRef,
 } from 'react';
 import classNames from 'classnames';
 import { SuggestionProps } from '@tiptap/suggestion';
@@ -79,6 +80,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, SuggestionProps<EmojiItem>>(
     const [activeGroup, setActiveGroup] = useState(groups[0]);
 
     const [historyEmojis, setHistoryEmojis] = useState([]);
+    const inputRef = useRef<HTMLInputElement>();
 
     const activeGroupEmojis = useMemo(() => {
       if (activeGroup?.group === 'recent') {
@@ -143,6 +145,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, SuggestionProps<EmojiItem>>(
     useImperativeHandle(ref, () => ({
       onShow: () => {
         getEmojisFromStorage();
+        setTimeout(() => inputRef?.current?.focus());
       },
     }));
 
@@ -150,6 +153,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, SuggestionProps<EmojiItem>>(
       <div className="gwe-emoji-panel">
         <div className="gwe-emoji-panel__input-wrap">
           <input
+            ref={inputRef}
             className="gwe-emoji-panel__input"
             type="text"
             placeholder="请输入关键字"
