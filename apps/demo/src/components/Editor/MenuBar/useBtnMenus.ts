@@ -39,7 +39,7 @@ const useBtnMenus = (editor: Editor) => {
       {
         name: 'code',
         icon: 'C',
-        title: '行内代码',
+        title: '行内代码 (Ctrl + E)',
         onClick: () => editor.chain().focus().toggleCode().run(),
         bubble: true,
       },
