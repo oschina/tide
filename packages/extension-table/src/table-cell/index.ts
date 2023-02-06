@@ -4,7 +4,7 @@ import {
 } from '@tiptap/extension-table-cell';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
-import { addColumnAfter, addRowAfter } from '@tiptap/prosemirror-tables';
+import { addColumn, addRow, selectedRect } from '@tiptap/prosemirror-tables';
 import {
   getCellsInColumn,
   getCellsInRow,
@@ -147,13 +147,14 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                       (event) => {
                         event.preventDefault();
                         event.stopImmediatePropagation();
-                        this.editor.view.dispatch(
-                          selectRow(cellRowIndex)(this.editor.state.tr)
-                        );
                         if (event.target !== grip) {
-                          addRowAfter(
-                            this.editor.state,
-                            this.editor.view.dispatch
+                          const rect = selectedRect(state);
+                          this.editor.view.dispatch(
+                            addRow(state.tr, rect, cellRowIndex + 1)
+                          );
+                        } else {
+                          this.editor.view.dispatch(
+                            selectRow(cellRowIndex)(this.editor.state.tr)
                           );
                         }
                       },
@@ -200,13 +201,14 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                     grip.addEventListener('mousedown', (event) => {
                       event.preventDefault();
                       event.stopImmediatePropagation();
-                      this.editor.view.dispatch(
-                        selectColumn(cellColumnIndex)(this.editor.state.tr)
-                      );
                       if (event.target !== grip) {
-                        addColumnAfter(
-                          this.editor.state,
-                          this.editor.view.dispatch
+                        const rect = selectedRect(state);
+                        this.editor.view.dispatch(
+                          addColumn(state.tr, rect, cellColumnIndex + 1)
+                        );
+                      } else {
+                        this.editor.view.dispatch(
+                          selectColumn(cellColumnIndex)(this.editor.state.tr)
                         );
                       }
                     });

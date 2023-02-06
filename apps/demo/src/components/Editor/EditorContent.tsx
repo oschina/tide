@@ -74,7 +74,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
     {
       className,
       style,
-      autoFocus,
+      autoFocus = false,
       readOnly,
       readOnlyEmptyView,
       children,
