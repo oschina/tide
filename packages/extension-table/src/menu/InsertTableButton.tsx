@@ -12,6 +12,7 @@ export const InsertTableButton: React.FC<{
     rows: 0,
     columns: 0,
   });
+  const [visible, setVisible] = useState(false);
   return (
     <Tippy
       interactive
@@ -43,6 +44,7 @@ export const InsertTableButton: React.FC<{
                       withHeaderRow: false,
                     })
                     .run();
+                  setVisible(false);
                 }
               }}
             />
@@ -50,11 +52,13 @@ export const InsertTableButton: React.FC<{
         }
         offset={[0, 4]}
         placement="bottom-start"
-        trigger="click"
         interactive
-        hideOnClick
+        onClickOutside={() => setVisible(false)}
+        visible={visible}
       >
-        {children}
+        <div className="gwe-menu-bar__item" onClick={() => setVisible(true)}>
+          {children}
+        </div>
       </Tippy>
     </Tippy>
   );

@@ -5,6 +5,7 @@ import { Editor } from '@tiptap/core';
 import { isActive } from '@test-pkgs/common';
 import Tippy from '@tippyjs/react';
 import { Level } from '@tiptap/extension-heading';
+import { IconMaximize } from '@gitee/icons-react';
 import useBtnMenus from './useBtnMenus';
 import { BtnItem } from './BtnItem';
 import { useStatusMap } from './useStatusMap';
@@ -149,15 +150,20 @@ const MenuBar: React.FC<MenuBarProps> = ({
         <BtnItem key={index} editor={editor} statusMap={statusMap} {...props} />
       ))}
 
-      <button
-        onClick={() => onFullscreenChange?.(!fullscreen)}
-        className={classNames(
-          'gwe-menu-bar__btn',
-          fullscreen ? `gwe-menu-bar__btn--active` : ''
-        )}
+      <Tippy
+        interactive
+        content={<div className={'gwe-menu-bar__tooltip'}>全屏</div>}
       >
-        full
-      </button>
+        <button
+          onClick={() => onFullscreenChange?.(!fullscreen)}
+          className={classNames(
+            'gwe-menu-bar__btn',
+            fullscreen ? `gwe-menu-bar__btn--active` : ''
+          )}
+        >
+          <IconMaximize />
+        </button>
+      </Tippy>
     </div>
   );
 };

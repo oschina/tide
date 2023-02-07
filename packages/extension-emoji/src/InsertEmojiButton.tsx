@@ -26,7 +26,7 @@ export const InsertEmojiButton: React.FC<{
             decorationNode={null}
           />
         }
-        placement="bottom-start"
+        placement="bottom-end"
         trigger="click"
         interactive
         hideOnClick

@@ -19,12 +19,15 @@
   }
 
   &__btn {
+    display: inline-block;
     width: 24px;
     height: 24px;
     border: none;
     outline: none;
     border-radius: 4px;
     background-color: #fff;
+    font-size: 16px;
+    padding: 4px;
     cursor: pointer;
     &:hover {
       background-color: #e8e9e9;
@@ -134,11 +137,18 @@
   }
 }
 
-.gwe-menu-head-row {
-  width: 150px;
+.gwe-items-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.gwe-menu-head-row {
+  width: 150px;
+  &:extend(.gwe-items-between);
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
 
   &__title {
     &--level1 {

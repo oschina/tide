@@ -222,4 +222,6 @@ const EmojiPanel = forwardRef<EmojiPanelRef, SuggestionProps<EmojiItem>>(
   }
 );
 
+EmojiPanel.displayName = 'EmojiPanel';
+
 export default EmojiPanel;

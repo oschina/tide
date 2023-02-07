@@ -4,12 +4,45 @@ import { Editor } from '@tiptap/core';
 import { InsertTableButton } from '@test-pkgs/extension-table';
 import { InsertEmojiButton } from '@test-pkgs/extension-emoji';
 import Tippy from '@tippyjs/react';
-import { MenuStatusMap, menuKey } from './useStatusMap';
+import { IconTableSquare, IconSmileCircle } from '@gitee/icons-react';
+import {
+  IconBoldBold,
+  IconItalicBold,
+  IconCode,
+  IconList,
+  IconXmark,
+  IconImage,
+  IconChain,
+  IconListNumberBold,
+  IconTask,
+  IconRepo,
+  IconQuoteBold,
+  IconMinus,
+} from '@gitee/icons-react';
+
+import { MenuStatusMap } from './useStatusMap';
+
+const IconMap = {
+  bold: IconBoldBold,
+  italic: IconItalicBold,
+  strike: IconXmark,
+  code: IconCode,
+  bulletList: IconList,
+  orderedList: IconListNumberBold,
+  taskList: IconTask,
+  link: IconChain,
+  image: IconImage,
+  codeBlock: IconRepo,
+  blockquote: IconQuoteBold,
+  horizontalRule: IconMinus,
+  divider: null,
+  table: IconTableSquare,
+  emoji: IconSmileCircle,
+};
 
 interface BtnItemProps {
   editor?: Editor | null;
-  name: menuKey | 'divider';
-  icon?: string;
+  name: keyof typeof IconMap;
   title?: string;
   onClick?: () => void;
   statusMap: MenuStatusMap;
@@ -18,7 +51,6 @@ interface BtnItemProps {
 export const BtnItem: React.FC<BtnItemProps> = ({
   editor,
   name,
-  icon,
   title,
   onClick,
   statusMap,
@@ -28,6 +60,11 @@ export const BtnItem: React.FC<BtnItemProps> = ({
   }
   if (name === 'divider') {
     return <span className={'gwe-menu-bar__divider'} />;
+  }
+
+  const IconComponent = IconMap[name];
+  if (!IconComponent) {
+    return null;
   }
 
   if (name === 'table') {
@@ -40,7 +77,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
           )}
           disabled={statusMap[name]?.disabled || false}
         >
-          T
+          <IconComponent />
         </button>
       </InsertTableButton>
     );
@@ -49,14 +86,16 @@ export const BtnItem: React.FC<BtnItemProps> = ({
   if (name === 'emoji') {
     return (
       <InsertEmojiButton editor={editor}>
-        <button
-          className={classNames(
-            'gwe-menu-bar__btn',
-            statusMap[name]?.isActive ? `gwe-menu-bar__btn--active` : ''
-          )}
-        >
-          😃
-        </button>
+        <div className="gwe-menu-bar__item">
+          <button
+            className={classNames(
+              'gwe-menu-bar__btn',
+              statusMap[name]?.isActive ? `gwe-menu-bar__btn--active` : ''
+            )}
+          >
+            <IconComponent />
+          </button>
+        </div>
       </InsertEmojiButton>
     );
   }
@@ -75,7 +114,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
             statusMap[name]?.isActive ? `gwe-menu-bar__btn--active` : ''
           )}
         >
-          {icon}
+          <IconComponent />
         </button>
       </Tippy>
     </div>
