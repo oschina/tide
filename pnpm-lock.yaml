@@ -435,6 +435,8 @@ importers:
       copy-to-clipboard: ^3.3.3
       eslint-config-custom: workspace:*
       lowlight: ^2.8.0
+      prosemirror-model: ^1.18.3
+      prosemirror-state: ^1.4.2
       react: ^16.14.0
       react-dom: ^16.14.0
       tsconfig: workspace:*
@@ -454,6 +456,8 @@ importers:
     devDependencies:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
+      prosemirror-model: 1.18.3
+      prosemirror-state: 1.4.2
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 

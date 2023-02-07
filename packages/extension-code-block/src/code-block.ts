@@ -4,9 +4,11 @@ import {
   CodeBlockLowlightOptions,
 } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight/lib/all';
+import { TextSelection } from 'prosemirror-state';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
+import { getSelectedLineRange } from './utils';
 
 export type CodeBlockOptions = CodeBlockLowlightOptions;
 
@@ -35,12 +37,60 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
       ...this.parent?.(),
       Tab: ({ editor }) => {
         const { state, view } = editor;
-        // TODO: 代码块内输入 Tab 不生效
-        if (isActive(state, this.name)) {
-          view.dispatch(state.tr.insertText('    ').scrollIntoView());
-          return true;
+        if (!isActive(state, this.name)) {
+          return false;
         }
-        return false;
+        const { selection, tr } = state;
+        const tab = '  ';
+        if (selection.empty) {
+          view.dispatch(tr.insertText(tab));
+        } else {
+          const { $from, from, to } = selection;
+          const node = $from.node(); // code block node
+          if (node.type !== this.type) {
+            return false;
+          }
+
+          const { start: selectedLineStart, end: selectedLineEnd } =
+            getSelectedLineRange(selection, node);
+          if (
+            selectedLineStart === undefined ||
+            selectedLineEnd === undefined
+          ) {
+            view.dispatch(tr.replaceSelectionWith(state.schema.text(tab)));
+            return true;
+          }
+
+          const text = node.textContent || '';
+          const lines = text.split('\n');
+          const newLines = lines.map((line, index) => {
+            if (
+              index >= selectedLineStart &&
+              index <= selectedLineEnd &&
+              line
+            ) {
+              return tab + line;
+            }
+            return line;
+          });
+          const codeBlockTextNode = $from.node(1);
+          const codeBlockTextNodeStart = $from.start(1);
+          tr.replaceWith(
+            codeBlockTextNodeStart,
+            codeBlockTextNodeStart + codeBlockTextNode.nodeSize,
+            state.schema.text(newLines.join('\n'))
+          );
+          tr.setSelection(
+            TextSelection.between(
+              tr.doc.resolve(from + tab.length),
+              tr.doc.resolve(
+                to + (selectedLineEnd - selectedLineStart + 1) * tab.length
+              )
+            )
+          );
+          view.dispatch(tr);
+        }
+        return true;
       },
     };
   },
