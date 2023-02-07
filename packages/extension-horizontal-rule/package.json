@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/extension-horizontal-rule",
+  "name": "@gitee/wysiwyg-editor-extension-horizontal-rule",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

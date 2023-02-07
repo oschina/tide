@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { useMemo, useRef, useState } from 'react';
 import copy from 'copy-to-clipboard';
 import type { NodeViewProps } from '@tiptap/core';
-import { NodeViewContent, NodeViewWrapper } from '@test-pkgs/react';
+import { NodeViewContent, NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import Tippy from '@tippyjs/react';
 import './CodeBlockNodeView.less';
 

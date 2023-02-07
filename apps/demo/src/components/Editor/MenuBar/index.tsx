@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
 import { Editor } from '@tiptap/core';
-import { isActive } from '@test-pkgs/common';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import Tippy from '@tippyjs/react';
 import { Level } from '@tiptap/extension-heading';
 import { IconMaximize } from '@gitee/icons-react';

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MarkdownEditor } from '@test-pkgs/markdown';
+import { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import lz from 'lz-string';
 import copy from 'copy-to-clipboard';
 import applyDevTools from 'prosemirror-dev-tools';

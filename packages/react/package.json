@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/react",
+  "name": "@gitee/wysiwyg-editor-react",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

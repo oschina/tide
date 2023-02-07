@@ -4,8 +4,8 @@ import {
   CodeBlockLowlightOptions,
 } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight/lib/all';
-import { isActive } from '@test-pkgs/common';
-import { ReactNodeViewRenderer } from '@test-pkgs/react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
+import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
 
 export type CodeBlockOptions = CodeBlockLowlightOptions;

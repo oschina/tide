@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/extension-link",
+  "name": "@gitee/wysiwyg-editor-extension-link",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,8 +15,8 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@test-pkgs/common": "workspace:*",
-    "@test-pkgs/extension-bubble-menu": "workspace:*",
+    "@gitee/wysiwyg-editor-common": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
     "@tiptap/extension-link": "^2.0.0-beta.209"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@test-pkgs/react": "workspace:*",
+    "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.209",
     "prosemirror-state": "^1.4.2",
     "prosemirror-transform": "^1.7.0",

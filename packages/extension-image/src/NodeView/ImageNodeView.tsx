@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
 import type { NodeViewProps } from '@tiptap/core';
-import { NodeViewWrapper } from '@test-pkgs/react';
+import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import { useResize } from './resize';
 
 import './ImageNodeView.less';

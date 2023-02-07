@@ -3,10 +3,10 @@ import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import MenuBar from './MenuBar';
 import EditorContent, { EditorContentProps } from './EditorContent';
-import { LinkBubbleMenu } from '@test-pkgs/extension-link';
-import { TableCellBubbleMenu } from '@test-pkgs/extension-table';
-import { ImageBubbleMenu } from '@test-pkgs/extension-image';
-import { MarkdownEditor } from '@test-pkgs/markdown';
+import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
+import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
+import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
+import { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import TextBubbleMenu from './MenuBar/TextBubbleMenu';
 import './index.less';
 

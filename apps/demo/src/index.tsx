@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { MarkdownEditor } from '@test-pkgs/markdown';
+import { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import HeaderBar from './components/HeaderBar';
 import InspectPanel from './components/InspectPanel';
 import { WysiwygEditor } from './components/Editor';

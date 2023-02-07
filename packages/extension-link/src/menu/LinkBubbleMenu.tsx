@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { Editor } from '@tiptap/core';
-import { SelectionBubbleMenu } from '@test-pkgs/extension-bubble-menu';
-import { isActive } from '@test-pkgs/common';
+import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { showLinkEditPopup } from './LinkEditPopup';
 import { Link as LinkExtension } from '../link';
 import styles from './LinkBubbleMenu.module.less';

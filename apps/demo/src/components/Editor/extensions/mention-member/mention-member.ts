@@ -5,7 +5,7 @@ import {
   MentionItem,
   MentionList,
   MentionOptions,
-} from '@test-pkgs/extension-mention';
+} from '@gitee/wysiwyg-editor-extension-mention';
 
 export type MentionMemberAttributes = {
   id: string;

@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/extension-code-block",
+  "name": "@gitee/wysiwyg-editor-extension-code-block",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,8 +15,8 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@test-pkgs/common": "workspace:*",
-    "@test-pkgs/react": "workspace:*",
+    "@gitee/wysiwyg-editor-common": "workspace:*",
+    "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/extension-code-block": "^2.0.0-beta.209",
     "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.209",

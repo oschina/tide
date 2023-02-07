@@ -7,7 +7,7 @@ import {
   ParseOptions,
 } from 'prosemirror-model';
 import { parseHTML, createHTMLDocument, VHTMLDocument } from 'zeed-dom';
-import type { MarkdownEditor } from '@test-pkgs/markdown';
+import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 
 export class Transformer {
   schema: Schema;

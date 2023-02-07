@@ -2,7 +2,10 @@ import {
   BulletList as TBulletList,
   BulletListOptions as TBulletListOptions,
 } from '@tiptap/extension-bullet-list';
-import { wrapInListInputRule, wrappingInputRule } from '@test-pkgs/common';
+import {
+  wrapInListInputRule,
+  wrappingInputRule,
+} from '@gitee/wysiwyg-editor-common';
 import { getNodeType } from '@tiptap/core';
 
 export type BulletListOptions = TBulletListOptions;

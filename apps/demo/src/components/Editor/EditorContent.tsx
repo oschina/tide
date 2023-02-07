@@ -17,35 +17,48 @@ import { TaskList } from '@tiptap/extension-task-list';
 import { History } from '@tiptap/extension-history';
 import { Dropcursor } from '@tiptap/extension-dropcursor';
 import { Gapcursor } from '@tiptap/extension-gapcursor';
-import { Table, TableRow, TableCell } from '@test-pkgs/extension-table';
-import { TaskItem } from '@test-pkgs/extension-task-item';
-import { Link } from '@test-pkgs/extension-link';
-import { Image } from '@test-pkgs/extension-image';
-import { ListsIndentation } from '@test-pkgs/extension-lists-indentation';
-import { OrderedList } from '@test-pkgs/extension-ordered-list';
-import { BulletList } from '@test-pkgs/extension-bullet-list';
-import { ListItem } from '@test-pkgs/extension-list-item';
-import { Strike } from '@test-pkgs/extension-strike';
-import { Blockquote } from '@test-pkgs/extension-blockquote';
-import { Bold } from '@test-pkgs/extension-bold';
-import { Italic } from '@test-pkgs/extension-italic';
-import { Code } from '@test-pkgs/extension-code';
-import { CodeBlock } from '@test-pkgs/extension-code-block';
+import {
+  Table,
+  TableRow,
+  TableCell,
+} from '@gitee/wysiwyg-editor-extension-table';
+import { TaskItem } from '@gitee/wysiwyg-editor-extension-task-item';
+import { Link } from '@gitee/wysiwyg-editor-extension-link';
+import { Image } from '@gitee/wysiwyg-editor-extension-image';
+import { ListsIndentation } from '@gitee/wysiwyg-editor-extension-lists-indentation';
+import { OrderedList } from '@gitee/wysiwyg-editor-extension-ordered-list';
+import { BulletList } from '@gitee/wysiwyg-editor-extension-bullet-list';
+import { ListItem } from '@gitee/wysiwyg-editor-extension-list-item';
+import { Strike } from '@gitee/wysiwyg-editor-extension-strike';
+import { Blockquote } from '@gitee/wysiwyg-editor-extension-blockquote';
+import { Bold } from '@gitee/wysiwyg-editor-extension-bold';
+import { Italic } from '@gitee/wysiwyg-editor-extension-italic';
+import { Code } from '@gitee/wysiwyg-editor-extension-code';
+import { CodeBlock } from '@gitee/wysiwyg-editor-extension-code-block';
 import {
   Emoji,
   suggestion as emojiSuggestion,
-} from '@test-pkgs/extension-emoji';
-import { HorizontalRule } from '@test-pkgs/extension-horizontal-rule';
-import { Markdown } from '@test-pkgs/extension-markdown';
-import { Uploader, defaultImgUploader } from '@test-pkgs/extension-uploader';
-import { MarkdownEditor, createMarkdownEditor } from '@test-pkgs/markdown';
-import type { MarkdownEditorOptions, Content } from '@test-pkgs/markdown';
-import { extensions } from '@test-pkgs/common';
+} from '@gitee/wysiwyg-editor-extension-emoji';
+import { HorizontalRule } from '@gitee/wysiwyg-editor-extension-horizontal-rule';
+import { Markdown } from '@gitee/wysiwyg-editor-extension-markdown';
+import {
+  Uploader,
+  defaultImgUploader,
+} from '@gitee/wysiwyg-editor-extension-uploader';
+import {
+  MarkdownEditor,
+  createMarkdownEditor,
+} from '@gitee/wysiwyg-editor-markdown';
+import type {
+  MarkdownEditorOptions,
+  Content,
+} from '@gitee/wysiwyg-editor-markdown';
+import { extensions } from '@gitee/wysiwyg-editor-common';
 import {
   Editor as TEditor,
   EditorContent as TEditorContent,
   useEditor,
-} from '@test-pkgs/react';
+} from '@gitee/wysiwyg-editor-react';
 import { MentionMember } from './extensions/mention-member';
 import './EditorContent.less';
 

@@ -2,7 +2,10 @@ import {
   OrderedList as TOrderedList,
   OrderedListOptions as TOrderedListOptions,
 } from '@tiptap/extension-ordered-list';
-import { wrapInListInputRule, wrappingInputRule } from '@test-pkgs/common';
+import {
+  wrapInListInputRule,
+  wrappingInputRule,
+} from '@gitee/wysiwyg-editor-common';
 import { getNodeType } from '@tiptap/core';
 
 export type OrderedListOptions = TOrderedListOptions;

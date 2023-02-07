@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/editor",
+  "name": "@gitee/wysiwyg-editor-editor",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,9 +15,9 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@test-pkgs/extension-code-block": "workspace:*",
-    "@test-pkgs/markdown": "workspace:*",
-    "@test-pkgs/react": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-code-block": "workspace:*",
+    "@gitee/wysiwyg-editor-markdown": "workspace:*",
+    "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.209",
     "@tiptap/extension-blockquote": "^2.0.0-beta.209",
     "@tiptap/extension-bold": "^2.0.0-beta.209",

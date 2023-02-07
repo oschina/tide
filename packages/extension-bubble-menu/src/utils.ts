@@ -8,7 +8,7 @@ import {
 import tippy from 'tippy.js';
 import type { Instance, Props as TippyOptions } from 'tippy.js';
 import type { MarkType } from 'prosemirror-model';
-import type { ReactRenderer } from '@test-pkgs/react';
+import type { ReactRenderer } from '@gitee/wysiwyg-editor-react';
 
 export type ShowBubbleMenuOptions = {
   editor: Editor;

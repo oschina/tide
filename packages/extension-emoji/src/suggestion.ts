@@ -4,7 +4,7 @@ import {
   SuggestionOptions,
   SuggestionProps,
 } from '@tiptap/suggestion';
-import { ReactRenderer } from '@test-pkgs/react';
+import { ReactRenderer } from '@gitee/wysiwyg-editor-react';
 import { EmojiItem } from './emoji';
 // import { EmojiList } from './EmojiList';
 import EmojiPanel from './EmojiPanel';

@@ -3,7 +3,7 @@ import {
   Blockquote as TBlockquote,
   BlockquoteOptions as TBlockquoteOptions,
 } from '@tiptap/extension-blockquote';
-import { wrappingInputRule } from '@test-pkgs/common';
+import { wrappingInputRule } from '@gitee/wysiwyg-editor-common';
 
 export type BlockquoteOptions = TBlockquoteOptions;
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Editor } from '@tiptap/core';
-import { InsertTableButton } from '@test-pkgs/extension-table';
-import { InsertEmojiButton } from '@test-pkgs/extension-emoji';
+import { InsertTableButton } from '@gitee/wysiwyg-editor-extension-table';
+import { InsertEmojiButton } from '@gitee/wysiwyg-editor-extension-emoji';
 import Tippy from '@tippyjs/react';
 import { IconTableSquare, IconSmileCircle } from '@gitee/icons-react';
 import {

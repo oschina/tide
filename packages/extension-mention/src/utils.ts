@@ -6,7 +6,7 @@ import type {
   SuggestionOptions,
   SuggestionProps,
 } from '@tiptap/suggestion';
-import { ReactRenderer } from '@test-pkgs/react';
+import { ReactRenderer } from '@gitee/wysiwyg-editor-react';
 
 export interface MentionListProps<I = any, A = any>
   extends Omit<SuggestionProps<I>, 'command'> {

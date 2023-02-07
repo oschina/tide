@@ -45,29 +45,29 @@ importers:
   apps/demo:
     specifiers:
       '@gitee/icons-react': ^0.1.35
-      '@test-pkgs/common': workspace:*
-      '@test-pkgs/editor': workspace:*
-      '@test-pkgs/extension-blockquote': workspace:*
-      '@test-pkgs/extension-bold': workspace:*
-      '@test-pkgs/extension-bullet-list': workspace:*
-      '@test-pkgs/extension-code': workspace:*
-      '@test-pkgs/extension-code-block': workspace:*
-      '@test-pkgs/extension-emoji': workspace:*
-      '@test-pkgs/extension-horizontal-rule': workspace:*
-      '@test-pkgs/extension-image': workspace:*
-      '@test-pkgs/extension-italic': workspace:*
-      '@test-pkgs/extension-link': workspace:*
-      '@test-pkgs/extension-list-item': workspace:*
-      '@test-pkgs/extension-lists-indentation': workspace:*
-      '@test-pkgs/extension-markdown': workspace:*
-      '@test-pkgs/extension-mention': workspace:*
-      '@test-pkgs/extension-ordered-list': workspace:*
-      '@test-pkgs/extension-strike': workspace:*
-      '@test-pkgs/extension-table': workspace:*
-      '@test-pkgs/extension-task-item': workspace:*
-      '@test-pkgs/extension-uploader': workspace:*
-      '@test-pkgs/markdown': workspace:*
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-editor': workspace:*
+      '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
+      '@gitee/wysiwyg-editor-extension-bold': workspace:*
+      '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-code': workspace:*
+      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
+      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
+      '@gitee/wysiwyg-editor-extension-image': workspace:*
+      '@gitee/wysiwyg-editor-extension-italic': workspace:*
+      '@gitee/wysiwyg-editor-extension-link': workspace:*
+      '@gitee/wysiwyg-editor-extension-list-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
+      '@gitee/wysiwyg-editor-extension-markdown': workspace:*
+      '@gitee/wysiwyg-editor-extension-mention': workspace:*
+      '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-strike': workspace:*
+      '@gitee/wysiwyg-editor-extension-table': workspace:*
+      '@gitee/wysiwyg-editor-extension-task-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
+      '@gitee/wysiwyg-editor-markdown': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-bubble-menu': 2.0.0-beta.209
@@ -114,29 +114,29 @@ importers:
       vite: ^4.0.0
     dependencies:
       '@gitee/icons-react': 0.1.35_react@16.14.0
-      '@test-pkgs/common': link:../../packages/common
-      '@test-pkgs/editor': link:../../packages/editor
-      '@test-pkgs/extension-blockquote': link:../../packages/extension-blockquote
-      '@test-pkgs/extension-bold': link:../../packages/extension-bold
-      '@test-pkgs/extension-bullet-list': link:../../packages/extension-bullet-list
-      '@test-pkgs/extension-code': link:../../packages/extension-code
-      '@test-pkgs/extension-code-block': link:../../packages/extension-code-block
-      '@test-pkgs/extension-emoji': link:../../packages/extension-emoji
-      '@test-pkgs/extension-horizontal-rule': link:../../packages/extension-horizontal-rule
-      '@test-pkgs/extension-image': link:../../packages/extension-image
-      '@test-pkgs/extension-italic': link:../../packages/extension-italic
-      '@test-pkgs/extension-link': link:../../packages/extension-link
-      '@test-pkgs/extension-list-item': link:../../packages/extension-list-item
-      '@test-pkgs/extension-lists-indentation': link:../../packages/extension-lists-indentation
-      '@test-pkgs/extension-markdown': link:../../packages/extension-markdown
-      '@test-pkgs/extension-mention': link:../../packages/extension-mention
-      '@test-pkgs/extension-ordered-list': link:../../packages/extension-ordered-list
-      '@test-pkgs/extension-strike': link:../../packages/extension-strike
-      '@test-pkgs/extension-table': link:../../packages/extension-table
-      '@test-pkgs/extension-task-item': link:../../packages/extension-task-item
-      '@test-pkgs/extension-uploader': link:../../packages/extension-uploader
-      '@test-pkgs/markdown': link:../../packages/markdown
-      '@test-pkgs/react': link:../../packages/react
+      '@gitee/wysiwyg-editor-common': link:../../packages/common
+      '@gitee/wysiwyg-editor-editor': link:../../packages/editor
+      '@gitee/wysiwyg-editor-extension-blockquote': link:../../packages/extension-blockquote
+      '@gitee/wysiwyg-editor-extension-bold': link:../../packages/extension-bold
+      '@gitee/wysiwyg-editor-extension-bullet-list': link:../../packages/extension-bullet-list
+      '@gitee/wysiwyg-editor-extension-code': link:../../packages/extension-code
+      '@gitee/wysiwyg-editor-extension-code-block': link:../../packages/extension-code-block
+      '@gitee/wysiwyg-editor-extension-emoji': link:../../packages/extension-emoji
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../../packages/extension-horizontal-rule
+      '@gitee/wysiwyg-editor-extension-image': link:../../packages/extension-image
+      '@gitee/wysiwyg-editor-extension-italic': link:../../packages/extension-italic
+      '@gitee/wysiwyg-editor-extension-link': link:../../packages/extension-link
+      '@gitee/wysiwyg-editor-extension-list-item': link:../../packages/extension-list-item
+      '@gitee/wysiwyg-editor-extension-lists-indentation': link:../../packages/extension-lists-indentation
+      '@gitee/wysiwyg-editor-extension-markdown': link:../../packages/extension-markdown
+      '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
+      '@gitee/wysiwyg-editor-extension-ordered-list': link:../../packages/extension-ordered-list
+      '@gitee/wysiwyg-editor-extension-strike': link:../../packages/extension-strike
+      '@gitee/wysiwyg-editor-extension-table': link:../../packages/extension-table
+      '@gitee/wysiwyg-editor-extension-task-item': link:../../packages/extension-task-item
+      '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
+      '@gitee/wysiwyg-editor-markdown': link:../../packages/markdown
+      '@gitee/wysiwyg-editor-react': link:../../packages/react
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-bubble-menu': 2.0.0-beta.209_vde3gi7hrsabw5pj6bw7jls3ai
@@ -185,7 +185,7 @@ importers:
 
   packages/common:
     specifiers:
-      '@test-pkgs/markdown': workspace:*
+      '@gitee/wysiwyg-editor-markdown': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/html': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
@@ -200,7 +200,7 @@ importers:
       '@tiptap/html': 2.0.0-beta.209_a3wkqvivg3aepok4e4szoya4aa
       zeed-dom: 0.9.26
     devDependencies:
-      '@test-pkgs/markdown': link:../markdown
+      '@gitee/wysiwyg-editor-markdown': link:../markdown
       eslint-config-custom: link:../eslint-config-custom
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
@@ -210,9 +210,9 @@ importers:
 
   packages/editor:
     specifiers:
-      '@test-pkgs/extension-code-block': workspace:*
-      '@test-pkgs/markdown': workspace:*
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
+      '@gitee/wysiwyg-editor-markdown': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-blockquote': ^2.0.0-beta.209
       '@tiptap/extension-bold': ^2.0.0-beta.209
@@ -263,9 +263,9 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/extension-code-block': link:../extension-code-block
-      '@test-pkgs/markdown': link:../markdown
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-extension-code-block': link:../extension-code-block
+      '@gitee/wysiwyg-editor-markdown': link:../markdown
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-bold': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
@@ -329,14 +329,14 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
-      '@test-pkgs/common': workspace:^0.0.0
+      '@gitee/wysiwyg-editor-common': workspace:^0.0.0
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-blockquote': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/common': link:../common
+      '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-blockquote': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
@@ -361,7 +361,7 @@ importers:
 
   packages/extension-bubble-menu:
     specifiers:
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@types/react': ^16.14.0
       eslint-config-custom: workspace:*
@@ -374,7 +374,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
@@ -390,14 +390,14 @@ importers:
 
   packages/extension-bullet-list:
     specifiers:
-      '@test-pkgs/common': workspace:^0.0.0
+      '@gitee/wysiwyg-editor-common': workspace:^0.0.0
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-bullet-list': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/common': link:../common
+      '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-bullet-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
@@ -422,8 +422,8 @@ importers:
 
   packages/extension-code-block:
     specifiers:
-      '@test-pkgs/common': workspace:*
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-code-block': ^2.0.0-beta.209
@@ -438,8 +438,8 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/common': link:../common
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-code-block': 2.0.0-beta.209_prfudu5zgovreazvyjp3brspre
@@ -457,8 +457,8 @@ importers:
 
   packages/extension-emoji:
     specifiers:
-      '@test-pkgs/extension-bubble-menu': workspace:*
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/suggestion': ^2.0.0-beta.209
@@ -475,8 +475,8 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/suggestion': 2.0.0-beta.209_nv3r55gosyqqywjqk2ljir6ei4
@@ -511,9 +511,9 @@ importers:
 
   packages/extension-image:
     specifiers:
-      '@test-pkgs/common': workspace:*
-      '@test-pkgs/extension-bubble-menu': workspace:*
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-image': ^2.0.0-beta.209
       '@types/react': ^16.14.0
@@ -529,9 +529,9 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/common': link:../common
-      '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-image': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       classnames: 2.3.2
@@ -565,9 +565,9 @@ importers:
 
   packages/extension-link:
     specifiers:
-      '@test-pkgs/common': workspace:*
-      '@test-pkgs/extension-bubble-menu': workspace:*
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-link': ^2.0.0-beta.209
       '@types/react': ^16.14.0
@@ -580,9 +580,9 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/common': link:../common
-      '@test-pkgs/extension-bubble-menu': link:../extension-bubble-menu
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-link': 2.0.0-beta.209_kdf7tbeyuz6zzmi7724b5ghupu
       prosemirror-transform: 1.7.1
@@ -632,7 +632,7 @@ importers:
 
   packages/extension-markdown:
     specifiers:
-      '@test-pkgs/markdown': workspace:*
+      '@gitee/wysiwyg-editor-markdown': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       prosemirror-model: ^1.18.3
@@ -640,7 +640,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/markdown': link:../markdown
+      '@gitee/wysiwyg-editor-markdown': link:../markdown
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       prosemirror-model: 1.18.3
       prosemirror-state: 1.4.2
@@ -651,7 +651,7 @@ importers:
 
   packages/extension-mention:
     specifiers:
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-mention': ^2.0.0-beta.209
       '@tiptap/suggestion': ^2.0.0-beta.209
@@ -665,7 +665,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-mention': 2.0.0-beta.209_kqrjrkoewe7xnbl2egssj7ugbi
       '@tiptap/suggestion': 2.0.0-beta.209_nv3r55gosyqqywjqk2ljir6ei4
@@ -682,14 +682,14 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
-      '@test-pkgs/common': workspace:^0.0.0
+      '@gitee/wysiwyg-editor-common': workspace:^0.0.0
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-ordered-list': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/common': link:../common
+      '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       '@tiptap/extension-ordered-list': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
     devDependencies:
@@ -714,7 +714,7 @@ importers:
 
   packages/extension-table:
     specifiers:
-      '@test-pkgs/react': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-table': ^2.0.0-beta.209
@@ -735,7 +735,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/react': link:../react
+      '@gitee/wysiwyg-editor-react': link:../react
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-table': 2.0.0-beta.209_rzq3d64dvyh4nxe2glmegnqyxq
@@ -759,14 +759,14 @@ importers:
 
   packages/extension-task-item:
     specifiers:
-      '@test-pkgs/common': workspace:*
+      '@gitee/wysiwyg-editor-common': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       eslint-config-custom: workspace:*
       prosemirror-model: ^1.18.3
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/common': link:../common
+      '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -776,7 +776,7 @@ importers:
 
   packages/extension-uploader:
     specifiers:
-      '@test-pkgs/extension-image': workspace:*
+      '@gitee/wysiwyg-editor-extension-image': workspace:*
       '@tiptap/core': ^2.0.0-beta.209
       browser-fs-access: ^0.31.1
       eslint-config-custom: workspace:*
@@ -788,7 +788,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@test-pkgs/extension-image': link:../extension-image
+      '@gitee/wysiwyg-editor-extension-image': link:../extension-image
       '@tiptap/core': 2.0.0-beta.209_c4gvsp3mxo265xqbbh3e7uk4ky
       browser-fs-access: 0.31.1
     devDependencies:

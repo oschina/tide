@@ -9,7 +9,7 @@ const alias = [
     .map((name) => name.replace('../../packages/', ''))
     .map((name) => {
       return {
-        find: `@test-pkgs/${name}`,
+        find: `@gitee/wysiwyg-editor-${name}`,
         replacement: resolve(`../../packages/${name}/src/index.ts`),
       };
     }),

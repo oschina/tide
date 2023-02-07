@@ -1,5 +1,5 @@
 import { Editor } from '@tiptap/core';
-import { isActive } from '@test-pkgs/common';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { useState } from 'react';
 
 export type menuKey =

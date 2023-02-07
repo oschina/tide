@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Editor } from '@tiptap/core';
-import { selectImageUpload } from '@test-pkgs/extension-uploader';
+import { selectImageUpload } from '@gitee/wysiwyg-editor-extension-uploader';
 import { menuKey } from './useStatusMap';
 
 interface BtnMenu {

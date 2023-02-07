@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/common",
+  "name": "@gitee/wysiwyg-editor-common",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,7 +19,7 @@
     "zeed-dom": "^0.9.26"
   },
   "devDependencies": {
-    "@test-pkgs/markdown": "workspace:*",
+    "@gitee/wysiwyg-editor-markdown": "workspace:*",
     "eslint-config-custom": "workspace:*",
     "prosemirror-model": "^1.18.3",
     "prosemirror-state": "^1.4.2",

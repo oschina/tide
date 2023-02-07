@@ -6,8 +6,8 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
-import { isActive } from '@test-pkgs/common';
-import { SelectionBubbleMenu } from '@test-pkgs/extension-bubble-menu';
+import { isActive } from '@gitee/wysiwyg-editor-common';
+import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu';
 import { Image } from '../image-extension';
 
 export type ImageBubbleMenuProps = {

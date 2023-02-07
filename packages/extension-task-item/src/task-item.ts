@@ -1,6 +1,9 @@
 import { Node as ProseMirrorNode } from 'prosemirror-model';
 import { mergeAttributes, Node, getNodeType, PasteRule } from '@tiptap/core';
-import { wrapInListInputRule, wrappingInputRule } from '@test-pkgs/common';
+import {
+  wrapInListInputRule,
+  wrappingInputRule,
+} from '@gitee/wysiwyg-editor-common';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {

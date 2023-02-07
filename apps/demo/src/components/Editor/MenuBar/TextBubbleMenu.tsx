@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import debounce from 'lodash/debounce';
 import { Editor, isTextSelection } from '@tiptap/core';
-import { isActive } from '@test-pkgs/common';
-import { BubbleMenu } from '@test-pkgs/react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
+import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
 import useBtnMenus from './useBtnMenus';
 import { BtnItem } from './BtnItem';
 import { useStatusMap } from './useStatusMap';

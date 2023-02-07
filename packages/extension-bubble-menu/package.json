@@ -1,5 +1,5 @@
 {
-  "name": "@test-pkgs/extension-bubble-menu",
+  "name": "@gitee/wysiwyg-editor-extension-bubble-menu",
   "version": "0.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@test-pkgs/react": "workspace:*",
+    "@gitee/wysiwyg-editor-react": "workspace:*",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {

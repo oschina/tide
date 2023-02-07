@@ -5,9 +5,9 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
-import { BubbleMenu } from '@test-pkgs/react';
+import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
 import type { Props as TippyOptions } from 'tippy.js';
-import type { BubbleMenuProps } from '@test-pkgs/react';
+import type { BubbleMenuProps } from '@gitee/wysiwyg-editor-react';
 import type { PluginKey } from 'prosemirror-state';
 import type { MarkType } from 'prosemirror-model';
 

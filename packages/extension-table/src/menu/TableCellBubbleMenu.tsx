@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Editor, isNodeSelection, posToDOMRect } from '@tiptap/core';
-import { BubbleMenu } from '@test-pkgs/react';
-import type { BubbleMenuProps } from '@test-pkgs/react';
+import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
+import type { BubbleMenuProps } from '@gitee/wysiwyg-editor-react';
 import {
   getCellsInColumn,
   getCellsInRow,
