@@ -51,14 +51,22 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
         find: backtickInputRegex,
         type: this.type,
         getAttributes: (match) => ({
-          language: match[1],
+          language: (this.options.lowlight?.listLanguages?.() || []).includes(
+            match[1]
+          )
+            ? match[1]
+            : this.options.defaultLanguage,
         }),
       }),
       textblockTypeInputRule({
         find: tildeInputRegex,
         type: this.type,
         getAttributes: (match) => ({
-          language: match[1],
+          language: (this.options.lowlight?.listLanguages?.() || []).includes(
+            match[1]
+          )
+            ? match[1]
+            : this.options.defaultLanguage,
         }),
       }),
     ];

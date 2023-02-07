@@ -32,7 +32,13 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
     ],
     [extension]
   );
-  const [value, setValue] = useState(languages?.[0]?.value);
+
+  const [value, setValue] = useState(() => {
+    if (language && languages.some((i) => i.value === language)) {
+      return language;
+    }
+    return languages?.[0]?.value;
+  });
 
   const searchedLanguages = useMemo(
     () => languages.filter((i) => i.value.includes(search.toLowerCase())),
