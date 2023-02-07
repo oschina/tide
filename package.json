@@ -9,10 +9,12 @@
     "clear": "turbo run clear",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "release": "pnpm build:nocache && changeset version && changeset publish"
   },
   "devDependencies": {
     "@atomico/rollup-plugin-sizes": "^1.1.4",
+    "@changesets/cli": "^2.26.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
