@@ -53,7 +53,7 @@ import type {
   MarkdownEditorOptions,
   Content,
 } from '@gitee/wysiwyg-editor-markdown';
-import { extensions } from '@gitee/wysiwyg-editor-common';
+import { Commands, Keymap } from '@gitee/wysiwyg-editor-common';
 import {
   Editor as TEditor,
   EditorContent as TEditorContent,
@@ -79,8 +79,6 @@ export type EditorContentProps = {
 };
 
 const MarkdownEditorClass = createMarkdownEditor(TEditor);
-
-const coreExtensions = Object.values(extensions);
 
 const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
   (
@@ -116,7 +114,8 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           tightLists: true,
         },
         extensions: [
-          ...coreExtensions,
+          Commands,
+          Keymap,
           Document,
           Paragraph,
           Text,
