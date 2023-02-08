@@ -64,13 +64,13 @@ export const buildSuggestionOptions = <I = any, A = any>({
         },
 
         onUpdate(props) {
-          component.updateProps(props);
+          component?.updateProps(props);
 
           if (!props.clientRect) {
             return;
           }
 
-          popup[0].setProps({
+          popup?.[0]?.setProps({
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore getReferenceClientRect null
             getReferenceClientRect: props.clientRect,
@@ -79,17 +79,16 @@ export const buildSuggestionOptions = <I = any, A = any>({
 
         onKeyDown(props) {
           if (props.event.key === 'Escape') {
-            popup[0].hide();
-
+            popup?.[0]?.hide();
+            component?.destroy();
             return true;
           }
-
-          return component.ref?.onKeyDown(props) ?? false;
+          return !!component?.ref?.onKeyDown(props);
         },
 
         onExit() {
-          popup[0].destroy();
-          component.destroy();
+          popup?.[0]?.destroy();
+          component?.destroy();
         },
       };
     },

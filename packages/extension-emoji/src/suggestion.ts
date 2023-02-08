@@ -68,9 +68,13 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
       },
 
       onUpdate(props) {
-        component.updateProps(props);
+        component?.updateProps(props);
 
-        popup[0].setProps({
+        if (!props.clientRect) {
+          return;
+        }
+
+        popup?.[0]?.setProps({
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore getReferenceClientRect null
           getReferenceClientRect: props.clientRect,
@@ -79,17 +83,15 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
 
       // onKeyDown(props) {
       //   if (props.event.key === 'Escape') {
-      //     popup[0].hide();
-      //     component.destroy();
-
+      //     popup?.[0]?.hide();
+      //     component?.destroy();
       //     return true;
       //   }
-
-      //   return !!component.ref?.onKeyDown(props);
+      //   return !!component?.ref?.onKeyDown(props);
       // },
 
       onExit() {
-        popup?.[0].destroy();
+        popup?.[0]?.destroy();
         component?.destroy();
       },
     };
