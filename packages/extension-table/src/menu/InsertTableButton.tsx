@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Tippy from '@tippyjs/react';
 import { Editor } from '@tiptap/core';
 import { TableGrid } from '../components/TableGrid';
-import styles from './InsertTableButton.module.less';
+import './InsertTableButton.less';
 
 export const InsertTableButton: React.FC<{
   editor: Editor;
@@ -16,19 +16,20 @@ export const InsertTableButton: React.FC<{
   return (
     <Tippy
       interactive
-      content={<div className={'gwe-menu-bar__tooltip'}>Table</div>}
+      content={<div className="gwe-menu-bar__tooltip">Table</div>}
     >
       <Tippy
         content={
-          <div className={styles['insert-table-popup']}>
-            <div className={styles['insert-table-popup__header']}>
+          <div className="gwe-editor-popup gwe-insert-table-popup">
+            <div className="gwe-insert-table-popup__header">
               <span>插入表格</span>
-              <span className={styles.size}>
+              <span className="gwe-insert-table-popup__size">
                 {size.rows > 0 &&
                   size.columns > 0 &&
                   `${size.columns} x ${size.rows}`}
               </span>
             </div>
+            <hr className="gwe-insert-table-popup__divider" />
             <TableGrid
               rows={5}
               columns={5}

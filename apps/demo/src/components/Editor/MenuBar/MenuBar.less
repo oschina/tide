@@ -1,15 +1,17 @@
+@import '../variables.less';
+
 .gwe-menu-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 8px;
-  border-bottom: 1px solid #dadee3;
+  border-bottom: 1px solid @border-color;
 
   &__divider {
     width: 1px;
     margin: 2px 8px 2px 0;
     height: 20px;
-    background-color: #dadee3;
+    background-color: @border-color;
   }
 
   &__item {
@@ -25,19 +27,19 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: @background-color;
     font-size: 16px;
     padding: 4px;
     cursor: pointer;
     &:hover {
-      background-color: #e8e9e9;
+      background-color: @theme-bg-color;
     }
   
     &--active {
-      background-color: #eff4ff;
-      color: #6698ff;
+      background-color: @theme-bg-color;
+      color: @theme-color;
       &:hover {
-        background-color: #e1eaff;
+        background-color: @theme-bg-color;
       }
     }
     &[disabled] {
@@ -55,7 +57,7 @@
 
   &__tooltip {
     padding: 4px 8px;
-    color: #fff;
+    color: @background-color;
     font-size: 12px;
     background-color: #404040;
     border-radius: 2px;
@@ -93,30 +95,32 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  background-color: #fff;
+  background-color: @background-color;
   background-clip: padding-box;
   border-radius: 4px;
   outline: none;
-  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%),
-    0 9px 28px 8px rgb(0 0 0 / 5%);
+  box-shadow: 0px 4px 8px -2px rgba(9,30,66,0.25), 0px 0px 1px 0px rgba(9,30,66,0.31);
 
+  &__content {
+    padding: 8px 0;
+  }
   &__item {
     clear: both;
     margin: 0;
-    padding: 5px 12px;
-    color: rgba(0, 0, 0, 0.88);
+    padding: 6px 16px;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 20px;
     cursor: pointer;
     transition: all 0.2s;
 
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.04);
+    &:hover:not(.gwe-dropdown-menu__item--active) {
+      background-color: @select-hover-bg-color;
     }
 
     &--active {
-      background-color: #e6f4ff;
+      background-color: @theme-bg-color;
+      color: @theme-color;
     }
     &--disabled {
       cursor: not-allowed;
@@ -128,12 +132,13 @@
 .gwe-dropdown-trigger {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-right: 8px;
   font-size: 14px;
   cursor: pointer;
   
-  &__text {
-    width: 60px;
+  &__head-text {
+    width: 40px;
   }
 }
 
@@ -146,38 +151,53 @@
 .gwe-menu-head-row {
   width: 150px;
   &:extend(.gwe-items-between);
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
 
   &__title {
     &--level1 {
-      font-size: 22px;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: 600;
     }
     &--level2 {
-      font-size: 20px;
+      font-size: 24px;
+      line-height: 33px;
+      font-weight: 600;
     }
     &--level3 {
-      font-size: 18px;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
     }
     &--level4 {
-      font-size: 16px;
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: 600;
     }
     &--level5 {
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
     }
     &--level6 {
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
     }
   }
   &__span {
     font-weight: 400;
-    color: #c7c9c8;
+    color: @gray-color;
   }
 }
 
 .gwe-menu-bar.gwe-menu-bar-bubble {
-  border: 1px solid #dadee3;
+  border: 1px solid @table-border-color;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: @background-color;
+  box-shadow: 0px 4px 8px -2px rgba(9,30,66,0.25);
+}
+
+.gwe-menu-bar-bubble__link {
+  font-size: 14px;
+  margin-right: 16px;
 }

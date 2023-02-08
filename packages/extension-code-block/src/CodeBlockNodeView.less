@@ -1,14 +1,19 @@
+@_theme-color: #2c7ef8;
+@theme-color: var(--theme-color, @_theme-color); // 主题色
+@border-color: #dadee3;
+@theme-bg-color: rgba(var(--theme-color-raw), 0.1); // 浅色背景主题色，透明度10%
+
 .gwe-code-block {
   display: block;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid @border-color;
+  border-radius: 4px;
   overflow: hidden;
   &__toolbar {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid @border-color;
     padding: 6px 16px;
     font-size: 14px;
     user-select: none;
@@ -18,15 +23,17 @@
     }
   }
 
+  &__dropdown {
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 152px;
+  }
+
   &__soft-wrap {
     flex-shrink: 0;
     margin-left: auto;
     margin-right: 16px;
-
-    input {
-      vertical-align: -0.15em;
-      margin-right: 4px;
-    }
   }
 
   &__content-pre {
@@ -34,29 +41,48 @@
     margin: 0;
   }
 
-  &__search-input {
-    padding: 4px 8px;
-    input {
-      height: 28px;
-      line-height: 28px;
-      padding: 0 8px;
-      outline: none;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      &::placeholder {
-        color: #bfbfbf;
-      }
+  &__button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px 4px;
+
+    &:hover {
+      color: @theme-color;
+    }
+    &:active {
+      background-color: @theme-bg-color;
+    }
+    & > svg {
+      margin-right: 2px;
     }
   }
 }
 
-.gwe-dropdown-menu.gwe-code-block__dropdown {
-  max-height: 300px;
-  display: flex;
-  flex-direction: column;
-}
-
 .gwe-scrollbar-container {
   overflow: auto;
+  overflow: overlay;
 }
 
+.gwe-dropdown-trigger-search {
+  border: 1px solid @border-color;
+  border-radius: 4px;
+  padding: 4px 16px;
+  margin: 0;
+
+  &--active {
+    border-color: @theme-color;
+    box-shadow:  0 0 0 1px @theme-color;
+  }
+
+  &__input {
+    font-size: 14px;
+    outline: none;
+    border: none;
+    width: 100px;
+  }
+}

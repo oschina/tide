@@ -1,10 +1,15 @@
-@cell-border-color: #dadee3;
+// 主题色
+@_theme-color: #2c7ef8;
+@theme-color: var(--theme-color, @_theme-color);
+
+@theme-bg-color: fade(@_theme-color, 10%);
+
+@border-color: #dadee3;
 @cell-background-color: #f5f6f8;
-@selected-cell-border-color: #156ef3;
-@selected-cell-background-color: #2c7ef8;
 
 .table-grid {
   cursor: pointer;
+  margin: -2px;
 
   &__row {
     display: flex;
@@ -16,13 +21,13 @@
     height: 16px;
     width: 16px;
     margin: 2px;
-    border: solid 1px @cell-border-color;
+    border: solid 1px @border-color;
     background-color: @cell-background-color;
     border-radius: 2px;
 
     &--selected {
-      border-color: @selected-cell-border-color;
-      background-color: @selected-cell-background-color;
+      border-color: @theme-color;
+      background-color: @theme-bg-color;
     }
   }
 }

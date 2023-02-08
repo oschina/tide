@@ -10,7 +10,7 @@ import {
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { ReactRenderer } from '@gitee/wysiwyg-editor-react';
 import { showBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu';
-import styles from './LinkEditPopup.module.less';
+import './LinkEditPopup.less';
 
 export type LinkEditPopupProps = {
   text: string;
@@ -51,18 +51,20 @@ export const LinkEditPopup: React.FC<LinkEditPopupProps> = ({
   }, []);
 
   return (
-    <div className={styles['link-edit-popup']}>
-      <div className={styles.row}>
-        <span>文本</span>
+    <div className="gwe-editor-popup gwe-link-popup">
+      <div className="gwe-link-popup__row">
+        <label className="gwe-link-popup__label">文本</label>
         <input
+          className="gwe-link-popup__input"
           ref={textInputRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
       </div>
-      <div className={styles.row}>
-        <span>链接</span>
+      <div className="gwe-link-popup__row">
+        <label className="gwe-link-popup__label">链接</label>
         <input
+          className="gwe-link-popup__input"
           ref={hrefInputRef}
           value={href}
           onChange={(e) => setHref(e.target.value)}
@@ -73,12 +75,20 @@ export const LinkEditPopup: React.FC<LinkEditPopupProps> = ({
           }}
         />
       </div>
-      <div>
-        <button onClick={handleConfirm} disabled={!href}>
-          确定
-        </button>
-        <button style={{ marginLeft: 8 }} onClick={onCancel}>
+      <div className="gwe-link-popup__btn-group">
+        <button
+          className="gwe-link-popup__button gwe-link-popup__button--basic"
+          style={{ marginLeft: 8 }}
+          onClick={onCancel}
+        >
           取消
+        </button>
+        <button
+          className="gwe-link-popup__button gwe-link-popup__button--primary"
+          onClick={handleConfirm}
+          disabled={!href}
+        >
+          确定
         </button>
       </div>
     </div>

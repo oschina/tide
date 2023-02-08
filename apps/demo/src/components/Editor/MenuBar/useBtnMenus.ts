@@ -46,19 +46,16 @@ const useBtnMenus = (editor: Editor) => {
         name: 'bulletList',
         title: '无序列表 (Ctrl + Shift + 8)',
         onClick: () => editor.chain().focus().toggleBulletList().run(),
-        bubble: true,
       },
       {
         name: 'orderedList',
         title: '有序列表 (Ctrl + Shift + 7)',
         onClick: () => editor.chain().focus().toggleOrderedList().run(),
-        bubble: true,
       },
       {
         name: 'taskList',
         title: '任务列表 (Ctrl + Shift + 9)',
         onClick: () => editor.chain().focus().toggleTaskList().run(),
-        bubble: true,
       },
       {
         name: 'divider',
@@ -90,7 +87,6 @@ const useBtnMenus = (editor: Editor) => {
         name: 'blockquote',
         title: '引用 (Ctrl + Shift + >)',
         onClick: () => editor?.chain().focus().toggleBlockquote().run(),
-        bubble: true,
       },
       {
         name: 'horizontalRule',

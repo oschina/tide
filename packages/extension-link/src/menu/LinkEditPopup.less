@@ -1,0 +1,61 @@
+@_theme-color: #2c7ef8;
+@theme-color: var(--theme-color, @_theme-color); // 主题色
+
+@_background-color: #fff;
+@background-color: var(--background-color, @_background-color); // 背景色
+@border-color: #dadee3;
+@text-color: #2e405e;
+
+.gwe-editor-popup.gwe-link-popup {
+  padding: 16px;
+  font-size: 14px;
+}
+.gwe-link-popup {
+  &__row {
+    margin-bottom: 16px;
+  }
+
+  &__label {
+    display: block;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  &__input {
+    display: block;
+    width: 210px;
+    padding: 7px 8px;
+    background: #ffffff;
+    border-radius: 3px;
+    border: 1px solid rgba(9, 30, 66, 0.15);
+    outline: 0;
+    &:focus {
+      border-color: @theme-color;
+      box-shadow: 0 0 0 1px @theme-color;
+    }
+  }
+  &__btn-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    width: 60px;
+    height: 32px;
+    outline: 0;
+    border-radius: 4px;
+    margin-left: 8px;
+    cursor: pointer;
+
+    &--primary {
+      color: @background-color;
+      background-color: @theme-color;
+      border: 1px solid @theme-color;
+    }
+
+    &--basic {
+      color: @text-color;
+      background-color: @background-color;
+      border: 1px solid @border-color;
+    }
+  }
+}

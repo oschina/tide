@@ -4,8 +4,7 @@ import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { showLinkEditPopup } from './LinkEditPopup';
 import { Link as LinkExtension } from '../link';
-import styles from './LinkBubbleMenu.module.less';
-
+import { IconEdit, IconTrash } from '@gitee/icons-react';
 export type LinkBubbleMenuProps = {
   editor: Editor;
 };
@@ -61,15 +60,25 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
       referenceMarkType={LinkExtension.name}
       placement="bottom-start"
     >
-      <div ref={containerRef} className={styles['link-bubble-menu']}>
-        <span className={styles.link}>
+      <div ref={containerRef} className="gwe-menu-bar gwe-menu-bar-bubble">
+        <span className="gwe-menu-bar-bubble__link">
           <a href={href} target={target} rel="noopener noreferrer nofollow">
             {href}
           </a>
         </span>
-        <button onClick={openLink}>访问</button>
-        <button onClick={openLinkEditPopup}>编辑</button>
-        <button onClick={unsetLink}>移除</button>
+        {/* <button  onClick={openLink}>访问</button> */}
+        <button
+          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          onClick={openLinkEditPopup}
+        >
+          <IconEdit />
+        </button>
+        <button
+          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          onClick={unsetLink}
+        >
+          <IconTrash />
+        </button>
       </div>
     </SelectionBubbleMenu>
   );

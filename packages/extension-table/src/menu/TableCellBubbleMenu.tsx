@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Editor, isNodeSelection, posToDOMRect } from '@tiptap/core';
 import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
 import type { BubbleMenuProps } from '@gitee/wysiwyg-editor-react';
+import Tippy from '@tippyjs/react';
 import {
   getCellsInColumn,
   getCellsInRow,
@@ -11,8 +12,14 @@ import {
   isRowSelected,
   isTableSelected,
 } from '../utilities';
-import styles from './TableCellBubbleMenu.module.less';
 import { PluginKey } from 'prosemirror-state';
+import {
+  IconAngleLeftLine,
+  IconAngleRightLine,
+  IconPause,
+  IconTrash,
+  IconCollapse,
+} from '@gitee/icons-react';
 
 export type TableCellBubbleMenuProps = {
   editor: Editor;
@@ -116,35 +123,95 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       tippyOptions={tippyOptions}
       updateDelay={0}
     >
-      <div className={styles['table-cell-bubble-menu']}>
+      <div className="gwe-menu-bar gwe-menu-bar-bubble">
         {((selectedCellsCount > 1 && canMergeCells) || canSplitCell) && (
-          <button onClick={() => editor.commands.mergeOrSplit()}>
-            {canSplitCell ? '拆分' : '合并'}
-          </button>
+          <Tippy
+            interactive
+            content={
+              <div className={'gwe-menu-bar__tooltip'}>
+                {canSplitCell ? '拆分' : '合并'}
+              </div>
+            }
+          >
+            <button
+              className="gwe-menu-bar__btn gwe-menu-bar__item"
+              onClick={() => editor.commands.mergeOrSplit()}
+            >
+              <IconCollapse />
+            </button>
+          </Tippy>
         )}
-        <button onClick={() => (editor.commands as any).unsetTextAlign?.()}>
-          居左
-        </button>
-        <button
-          onClick={() => (editor.commands as any).setTextAlign?.('center')}
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>居左</div>}
         >
-          居中
-        </button>
-        <button
-          onClick={() => (editor.commands as any).setTextAlign?.('right')}
+          <button
+            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            onClick={() => (editor.commands as any).unsetTextAlign?.()}
+          >
+            <IconAngleLeftLine />
+          </button>
+        </Tippy>
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>居中</div>}
         >
-          居右
-        </button>
+          <button
+            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            onClick={() => (editor.commands as any).setTextAlign?.('center')}
+          >
+            <IconPause />
+          </button>
+        </Tippy>
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>居右</div>}
+        >
+          <button
+            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            onClick={() => (editor.commands as any).setTextAlign?.('right')}
+          >
+            <IconAngleRightLine />
+          </button>
+        </Tippy>
         {!tableSelected && rowSelected && (
-          <button onClick={() => editor.commands.deleteRow()}>删除行</button>
+          <Tippy
+            interactive
+            content={<div className={'gwe-menu-bar__tooltip'}>删除行</div>}
+          >
+            <button
+              className="gwe-menu-bar__btn gwe-menu-bar__item"
+              onClick={() => editor.commands.deleteRow()}
+            >
+              <IconTrash />
+            </button>
+          </Tippy>
         )}
         {!tableSelected && columnSelected && (
-          <button onClick={() => editor.commands.deleteColumn()}>删除列</button>
+          <Tippy
+            interactive
+            content={<div className={'gwe-menu-bar__tooltip'}>删除列</div>}
+          >
+            <button
+              className="gwe-menu-bar__btn gwe-menu-bar__item"
+              onClick={() => editor.commands.deleteColumn()}
+            >
+              <IconTrash />
+            </button>
+          </Tippy>
         )}
         {tableSelected && (
-          <button onClick={() => editor.commands.deleteTable()}>
-            删除表格
-          </button>
+          <Tippy
+            interactive
+            content={<div className={'gwe-menu-bar__tooltip'}>删除表格</div>}
+          >
+            <button
+              className="gwe-menu-bar__btn gwe-menu-bar__item"
+              onClick={() => editor.commands.deleteTable()}
+            >
+              <IconTrash />
+            </button>
+          </Tippy>
         )}
       </div>
     </BubbleMenu>

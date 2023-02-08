@@ -86,7 +86,7 @@ export const saveEmojiToStorage = (emoji: EmojiItem) => {
     } else {
       nameList = [emoji.name];
     }
-    nameList = Array.from(new Set(nameList)).slice(0, 20);
+    nameList = Array.from(new Set(nameList)).slice(0, 24);
 
     localStorage.setItem(localStorageKey, JSON.stringify(nameList));
     return nameList;

@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import classNames from 'classnames';
 import { SuggestionProps } from '@tiptap/suggestion';
+import { IconSearch } from '@gitee/icons-react';
 import type { EmojiStorage, EmojiItem } from './emoji';
 import { appleEmojis } from './emojis';
 import { getEmojisByNameList, saveEmojiToStorage } from './utils';
@@ -150,8 +151,9 @@ const EmojiPanel = forwardRef<EmojiPanelRef, SuggestionProps<EmojiItem>>(
     }));
 
     return (
-      <div className="gwe-emoji-panel">
+      <div className="gwe-editor-popup gwe-emoji-panel">
         <div className="gwe-emoji-panel__input-wrap">
+          <IconSearch />
           <input
             ref={inputRef}
             className="gwe-emoji-panel__input"

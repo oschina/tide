@@ -1,32 +1,41 @@
-.gwe-emoji-panel {
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px -2px rgb(9 30 66 / 25%),
-    0px 0px 1px 0px rgb(9 30 66 / 31%);
+@text-muted-color: #909aaa;
+@border-color: #dadee3;
+@light-bg-color: #F5F6F8;
 
+.gwe-emoji-panel {
+  width: 420px;
   &__input-wrap {
-    margin: 12px;
+    position: relative;
+    margin: 16px;
+    
+    & > svg {
+      position: absolute;
+      top: 9px;
+      left: 8px;
+      font-size: 14px;
+      color: @text-muted-color;
+    }
   }
+
   &__input {
     width: 100%;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 12px;
+    line-height: 20px;
+    padding: 5px 12px 5px 24px;
     outline: none;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid @border-color;
     box-sizing: border-box;
+    color: inherit;
+    font-size: 14px;
 
     &::placeholder {
-      color: #BFBFBF;
+      color: @text-muted-color;
     }
   }
 
   &__content {
-    padding: 4px 12px 12px;
-    height: 240px;
+    padding: 0 16px 12px;
+    height: 180px;
     overflow: overlay;
   }
 
@@ -50,7 +59,7 @@
 
   &__menu {
     display: flex;
-    background-color: #f5f5f5;
+    border-top: 1px solid @border-color;
   }
 
   &__menu-btn {
@@ -60,13 +69,12 @@
     border: none;
     cursor: pointer;
     &--active {
-      color: #2c7ef8;
+      background-color: @light-bg-color;
     }
   }
 
   &__group-title {
     font-size: 14px;
-    color: #8f9492;
     margin-left: 4px;
   }
 }

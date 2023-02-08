@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import classNames from 'classnames';
 import type { MentionListProps, MentionListRef } from './utils';
-import styles from './MentionList.module.less';
 
 export type MentionItem<A = Record<string, any>> = {
   id: string;
@@ -74,27 +73,29 @@ export const MentionList = forwardRef(
 
     return (
       <div className="gwe-dropdown-menu">
-        {props.items.length ? (
-          props.items.map((item, index) => (
-            <div
-              key={item.id || index}
-              className={classNames(
-                'gwe-dropdown-menu__item',
-                'gwe-items-between',
-                {
-                  'gwe-dropdown-menu__item--active': index === selectedIndex,
-                }
-              )}
-              onClick={() => selectItem(index)}
-              onMouseOver={() => moveOverHandler(index)}
-            >
-              <span className={styles.label}>{item.label}</span>
-              {styles.desc && <span className={styles.desc}>{item.desc}</span>}
-            </div>
-          ))
-        ) : (
-          <div className="gwe-dropdown-menu__item">没有结果</div>
-        )}
+        <div className="gwe-dropdown-menu__content">
+          {props.items.length ? (
+            props.items.map((item, index) => (
+              <div
+                key={item.id || index}
+                className={classNames(
+                  'gwe-dropdown-menu__item',
+                  'gwe-items-between',
+                  {
+                    'gwe-dropdown-menu__item--active': index === selectedIndex,
+                  }
+                )}
+                onClick={() => selectItem(index)}
+                onMouseOver={() => moveOverHandler(index)}
+              >
+                <span>{item.label}</span>
+                <span>{item.desc}</span>
+              </div>
+            ))
+          ) : (
+            <div className="gwe-dropdown-menu__item">没有结果</div>
+          )}
+        </div>
       </div>
     );
   }

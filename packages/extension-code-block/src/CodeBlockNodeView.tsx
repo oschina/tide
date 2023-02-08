@@ -4,6 +4,7 @@ import copy from 'copy-to-clipboard';
 import type { NodeViewProps } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import Tippy from '@tippyjs/react';
+import { IconAngleDown, IconCopy } from '@gitee/icons-react';
 import './CodeBlockNodeView.less';
 
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
@@ -59,20 +60,13 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
             onHidden={() => setSearch('')}
             content={
               <div className="gwe-dropdown-menu gwe-code-block__dropdown">
-                <div className="gwe-code-block__search-input">
-                  <input
-                    ref={inputRef}
-                    placeholder="搜索"
-                    type="text"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                  />
-                </div>
-                <div className="gwe-scrollbar-container">
+                <div className="gwe-scrollbar-container gwe-dropdown-menu__content">
                   {searchedLanguages.map((lang) => (
                     <div
                       key={lang.value}
-                      className="gwe-dropdown-menu__item"
+                      className={classNames('gwe-dropdown-menu__item', {
+                        'gwe-dropdown-menu__item--active': value === lang.value,
+                      })}
                       onClick={() => {
                         setValue(lang.value);
                         updateAttributes({ language: lang.value });
@@ -87,7 +81,12 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
             }
           >
             <div
-              className="gwe-dropdown-trigger"
+              className={classNames(
+                'gwe-dropdown-trigger gwe-dropdown-trigger-search',
+                {
+                  'gwe-dropdown-trigger-search--active': visible,
+                }
+              )}
               onClick={() => {
                 if (!isEditable) {
                   return;
@@ -96,22 +95,31 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
                 setTimeout(() => inputRef.current.focus());
               }}
             >
-              <span>{value}</span>
+              <input
+                ref={inputRef}
+                type="text"
+                value={value}
+                className="gwe-dropdown-trigger-search__input"
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <IconAngleDown />
             </div>
           </Tippy>
         ) : (
           <span>{language}</span>
         )}
-        <label className="gwe-code-block__soft-wrap">
-          <input
-            type="checkbox"
-            checked={softWrap}
-            onChange={(e) => setSoftWrap(e.target.checked)}
-          />
-          自动换行
-        </label>
-        <button onClick={() => copy($container?.current?.innerText as string)}>
-          复制
+        <button
+          className="gwe-code-block__soft-wrap gwe-code-block__button"
+          onClick={() => setSoftWrap((prev) => !prev)}
+        >
+          {softWrap ? '取消自动换行' : '自动换行'}
+        </button>
+        <button
+          className="gwe-code-block__button"
+          onClick={() => copy($container?.current?.innerText as string)}
+        >
+          <IconCopy />
+          <span>复制</span>
         </button>
       </div>
       <div className="gwe-code-block__content">

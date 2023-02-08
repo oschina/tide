@@ -1,21 +1,4 @@
-@theme-color: #2c7ef8;
-@selection-border-color: @theme-color;
-@border-color: #dadee3;
-@text-color: #2e405e;
-@text-muted-color: #909aaa;
-
-@table-border-color: #c1c7d0;
-@table-header-bg-color: #f1f3f5;
-@table-selected-border-color: @theme-color;
-@table-selected-cell-bg-color: #e8f2ff;
-@table-selected-control-bg-color: #5096ff;
-@table-column-resize-handle-color: @theme-color;
-
-@mention-text-color: #4c5d7a;
-@mention-bg-color: #f1f3f5;
-@mention-selected-bg-color: rgba(179, 212, 255, 0.3);
-@text-font-mono: 'Roboto Mono', 'Andale Mono', Consolas, 'Courier New',
-  monospace;
+@import './variables.less';
 
 .ge-editor__editor-content {
   .ProseMirror {
@@ -104,7 +87,7 @@
 
     ul,
     ol {
-      padding: 0 0 0 2em;
+      padding: 0 0 0 20px;
 
       li {
         &::marker {
@@ -176,7 +159,7 @@
       overflow: auto;
       border-radius: 3px;
       color: #444;
-      background: #f6f8fa;
+      background: @light-bg-color;
       font-family: @text-font-mono;
       font-size: 85%;
       line-height: 1.45;
@@ -534,11 +517,11 @@
       text-decoration: none;
       font-size: 1em;
       line-height: 1.125em;
-      color: @mention-text-color;
+      color: @text-color;
       background-color: @mention-bg-color;
 
       &.ProseMirror-selectednode {
-        border-color: @selection-border-color;
+        border-color: @theme-color;
         background-color: @mention-selected-bg-color;
       }
     }

@@ -5,7 +5,13 @@ import { Editor } from '@tiptap/core';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import Tippy from '@tippyjs/react';
 import { Level } from '@tiptap/extension-heading';
-import { IconMaximize } from '@gitee/icons-react';
+import {
+  IconMaximize,
+  IconMinimize,
+  IconCaretDown,
+  IconUndoBold,
+  IconRedoBold,
+} from '@gitee/icons-react';
 import useBtnMenus from './useBtnMenus';
 import { BtnItem } from './BtnItem';
 import { useStatusMap } from './useStatusMap';
@@ -65,6 +71,41 @@ const MenuBar: React.FC<MenuBarProps> = ({
 
   return (
     <div className={classNames('gwe-menu-bar', className)} style={style}>
+      <div className="gwe-menu-bar__item">
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>撤销</div>}
+        >
+          <button
+            onClick={() => editor.chain().focus().undo().run()}
+            disabled={!editor.can().chain().focus().undo().run()}
+            className={classNames(
+              'gwe-menu-bar__btn',
+              isActive(editor.state, 'undo') ? `gwe-menu-bar__btn--active` : ''
+            )}
+          >
+            <IconUndoBold />
+          </button>
+        </Tippy>
+      </div>
+      <div className="gwe-menu-bar__item">
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>重做</div>}
+        >
+          <button
+            onClick={() => editor.chain().focus().redo().run()}
+            disabled={!editor.can().chain().focus().redo().run()}
+            className={classNames(
+              'gwe-menu-bar__btn',
+              isActive(editor.state, 'redo') ? `gwe-menu-bar__btn--active` : ''
+            )}
+          >
+            <IconRedoBold />
+          </button>
+        </Tippy>
+      </div>
+
       <div>
         <Tippy
           offset={[0, 4]}
@@ -73,75 +114,86 @@ const MenuBar: React.FC<MenuBarProps> = ({
           onClickOutside={() => setHeadVisible(false)}
           visible={headVisible}
           content={
-            <ul className={'gwe-dropdown-menu'}>
-              <li
-                onClick={() => {
-                  if (!editor.can().chain().focus().setParagraph().run()) {
-                    return false;
-                  }
-                  editor.chain().focus().setParagraph().run();
-                  setHeadVisible(false);
-                }}
-                className={classNames(
-                  'gwe-dropdown-menu__item',
-                  isActive(editor.state, 'paragraph')
-                    ? 'gwe-dropdown-menu__item--active'
-                    : ''
-                )}
-              >
-                <div className={classNames('gwe-menu-head-row')}>
-                  <span>正文</span>
-                  <span className={`gwe-menu-head-row__span`}>Ctrl Alt 0</span>
-                </div>
-              </li>
-              {heads.map((level) => (
-                <li
-                  key={level}
+            <div className="gwe-dropdown-menu">
+              <div className="gwe-dropdown-menu__content">
+                <div
                   onClick={() => {
-                    if (
+                    if (!editor.can().chain().focus().setParagraph().run()) {
+                      return false;
+                    }
+                    editor.chain().focus().setParagraph().run();
+                    setHeadVisible(false);
+                  }}
+                  className={classNames(
+                    'gwe-dropdown-menu__item',
+                    isActive(editor.state, 'paragraph')
+                      ? 'gwe-dropdown-menu__item--active'
+                      : ''
+                  )}
+                >
+                  <div className={classNames('gwe-menu-head-row')}>
+                    <span>正文</span>
+                    <span className={`gwe-menu-head-row__span`}>
+                      Ctrl Alt 0
+                    </span>
+                  </div>
+                </div>
+                {heads.map((level) => (
+                  <li
+                    key={level}
+                    onClick={() => {
+                      if (
+                        !editor
+                          .can()
+                          .chain()
+                          .focus()
+                          .toggleHeading({ level })
+                          .run()
+                      ) {
+                        return false;
+                      }
+                      editor.chain().focus().toggleHeading({ level }).run();
+                      setHeadVisible(false);
+                    }}
+                    className={classNames(
+                      'gwe-dropdown-menu__item',
+                      isActive(editor.state, 'heading', { level })
+                        ? 'gwe-dropdown-menu__item--active'
+                        : '',
                       !editor
                         .can()
                         .chain()
                         .focus()
                         .toggleHeading({ level })
                         .run()
-                    ) {
-                      return false;
-                    }
-                    editor.chain().focus().toggleHeading({ level }).run();
-                    setHeadVisible(false);
-                  }}
-                  className={classNames(
-                    'gwe-dropdown-menu__item',
-                    isActive(editor.state, 'heading', { level })
-                      ? 'gwe-dropdown-menu__item--active'
-                      : '',
-                    !editor.can().chain().focus().toggleHeading({ level }).run()
-                      ? 'gwe-dropdown-menu__item--disabled'
-                      : ''
-                  )}
-                >
-                  <div className={classNames('gwe-menu-head-row')}>
-                    <span className={`gwe-menu-head-row__title--level${level}`}>
-                      标题{level}
-                    </span>
-                    <span className={`gwe-menu-head-row__span`}>
-                      Ctrl Alt {level}
-                    </span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                        ? 'gwe-dropdown-menu__item--disabled'
+                        : ''
+                    )}
+                  >
+                    <div className={classNames('gwe-menu-head-row')}>
+                      <span
+                        className={`gwe-menu-head-row__title--level${level}`}
+                      >
+                        标题{level}
+                      </span>
+                      <span className={`gwe-menu-head-row__span`}>
+                        Ctrl Alt {level}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </div>
+            </div>
           }
         >
           <div
             className={'gwe-dropdown-trigger'}
             onClick={() => setHeadVisible(!headVisible)}
           >
-            <span className={'gwe-dropdown-trigger__text'}>
+            <span className={'gwe-dropdown-trigger__head-text'}>
               {getHeadingText()}
             </span>
-            <span className={'gwe-dropdown-trigger__icon'}>v</span>
+            <IconCaretDown />
           </div>
         </Tippy>
       </div>
@@ -161,7 +213,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
             fullscreen ? `gwe-menu-bar__btn--active` : ''
           )}
         >
-          <IconMaximize />
+          {fullscreen ? <IconMinimize /> : <IconMaximize />}
         </button>
       </Tippy>
     </div>
