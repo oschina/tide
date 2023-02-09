@@ -15,30 +15,30 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/icons-react": "^0.1.36",
     "@gitee/wysiwyg-editor-common": "workspace:*",
-    "@gitee/wysiwyg-editor-editor": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-emoji": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-table": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
-    "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tippyjs/react": "^4.2.6",
-    "@tiptap/core": "^2.0.0-beta.209",
-    "@tiptap/extension-heading": "^2.0.0-beta.209",
-    "@tiptap/extension-paragraph": "^2.0.0-beta.209",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.21",
-    "react": "^16.14.0"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.191",
     "@types/react": "^16.14.0",
     "@types/react-dom": "^16.9.14",
-    "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
-    "less": "^4.1.3",
     "tsconfig": "workspace:*",
-    "typescript": "^4.9.3"
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "@gitee/icons-react": "^0.1.36",
+    "@gitee/wysiwyg-editor-extension-emoji": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-table": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
+    "@gitee/wysiwyg-editor-react": "workspace:*",
+    "@tiptap/core": "^2.0.0-beta.209",
+    "@tiptap/extension-heading": "^2.0.0-beta.209",
+    "@tiptap/extension-paragraph": "^2.0.0-beta.209",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "sideEffects": false
 }

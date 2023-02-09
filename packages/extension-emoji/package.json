@@ -15,7 +15,6 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/icons-react": "^0.1.35",
     "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/suggestion": "^2.0.0-beta.216",
@@ -32,6 +31,7 @@
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
+    "@gitee/icons-react": "^0.1.35",
     "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.216",
     "@tiptap/pm": "^2.0.0-beta.216",

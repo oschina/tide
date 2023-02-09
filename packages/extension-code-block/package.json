@@ -15,9 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/icons-react": "^0.1.36",
     "@gitee/wysiwyg-editor-common": "workspace:*",
-    "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/extension-code-block": "^2.0.0-beta.216",
     "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.216",
@@ -32,6 +30,8 @@
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
+    "@gitee/icons-react": "^0.1.36",
+    "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.216",
     "@tiptap/pm": "^2.0.0-beta.216",
     "lowlight": "^2.8.0",
