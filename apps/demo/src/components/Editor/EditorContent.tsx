@@ -5,6 +5,7 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
+import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import type { Plugin } from '@tiptap/pm/state';
 import type { JSONContent } from '@tiptap/core';
 import { Document } from '@tiptap/extension-document';
@@ -105,6 +106,67 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
     const onReadyRef = useRef(onReady);
     onReadyRef.current = onReady;
 
+    const mockFetchMemberMention = (query: string) => {
+      console.log('mockFetchMemberMention', query);
+      const items = [
+        'Gitee',
+        'OSCHINA',
+        '开源中国',
+        '马建仓',
+        'Tiptap',
+        'Google',
+        'Apple',
+        'Lea Thompson',
+        'Cyndi Lauper',
+        'Tom Cruise',
+        'Madonna',
+        'Jerry Hall',
+        'Joan Collins',
+        'Winona Ryder',
+        'Christina Applegate',
+        'Alyssa Milano',
+        'Molly Ringwald',
+        'Ally Sheedy',
+        'Debbie Harry',
+        'Olivia Newton-John',
+        'Elton John',
+        'Michael J. Fox',
+        'Axl Rose',
+        'Emilio Estevez',
+        'Ralph Macchio',
+        'Rob Lowe',
+        'Jennifer Grey',
+        'Mickey Rourke',
+        'John Cusack',
+        'Matthew Broderick',
+        'Justine Bateman',
+        'Lisa Bonet',
+      ]
+        .map((label, index) => ({
+          id: `${index + 1}`,
+          label,
+          desc: label.toLowerCase(),
+          attrs: {
+            name: label,
+            username: label.toLowerCase(),
+            url: `/members/${label.toLowerCase()}`,
+          },
+        }))
+        .filter((item) =>
+          item.label.toLowerCase().startsWith(query.toLowerCase())
+        )
+        .slice(0, 5);
+      return items;
+    };
+
+    const mockFetchMemberMentionDebounced = AwesomeDebouncePromise(
+      mockFetchMemberMention,
+      300,
+      {
+        onlyResolvesLast: false,
+      }
+    );
+
     const editor = useEditor<MarkdownEditor, MarkdownEditorOptions>(
       MarkdownEditorClass,
       {
@@ -148,57 +210,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           Image,
           MentionMember.configure({
             suggestion: {
-              items: ({ query }) => {
-                const items = [
-                  'Gitee',
-                  'OSCHINA',
-                  '开源中国',
-                  '马建仓',
-                  'Tiptap',
-                  'Google',
-                  'Apple',
-                  'Lea Thompson',
-                  'Cyndi Lauper',
-                  'Tom Cruise',
-                  'Madonna',
-                  'Jerry Hall',
-                  'Joan Collins',
-                  'Winona Ryder',
-                  'Christina Applegate',
-                  'Alyssa Milano',
-                  'Molly Ringwald',
-                  'Ally Sheedy',
-                  'Debbie Harry',
-                  'Olivia Newton-John',
-                  'Elton John',
-                  'Michael J. Fox',
-                  'Axl Rose',
-                  'Emilio Estevez',
-                  'Ralph Macchio',
-                  'Rob Lowe',
-                  'Jennifer Grey',
-                  'Mickey Rourke',
-                  'John Cusack',
-                  'Matthew Broderick',
-                  'Justine Bateman',
-                  'Lisa Bonet',
-                ]
-                  .map((label, index) => ({
-                    id: `${index + 1}`,
-                    label,
-                    desc: label.toLowerCase(),
-                    attrs: {
-                      name: label,
-                      username: label.toLowerCase(),
-                      url: `/members/${label.toLowerCase()}`,
-                    },
-                  }))
-                  .filter((item) =>
-                    item.label.toLowerCase().startsWith(query.toLowerCase())
-                  )
-                  .slice(0, 5);
-                return items;
-              },
+              items: ({ query }) => mockFetchMemberMentionDebounced(query),
             },
           }),
           Emoji.configure({
