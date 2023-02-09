@@ -20,7 +20,7 @@ importers:
       rollup-plugin-dts: ^4.0.1
       rollup-plugin-postcss: ^4.0.2
       rollup-plugin-sourcemaps: ^0.6.3
-      rollup-plugin-typescript2: ^0.31.2
+      rollup-plugin-typescript2: ^0.34.1
       rollup-plugin-visualizer: ^5.8.3
       turbo: latest
     devDependencies:
@@ -40,7 +40,7 @@ importers:
       rollup-plugin-dts: 4.2.3_k35zwyycrckt5xfsejji7kbwn4
       rollup-plugin-postcss: 4.0.2_postcss@8.4.20
       rollup-plugin-sourcemaps: 0.6.3_rollup@2.79.1
-      rollup-plugin-typescript2: 0.31.2_k35zwyycrckt5xfsejji7kbwn4
+      rollup-plugin-typescript2: 0.34.1_k35zwyycrckt5xfsejji7kbwn4
       rollup-plugin-visualizer: 5.8.3_rollup@2.79.1
       turbo: 1.7.4
 
@@ -2306,14 +2306,6 @@ packages:
       - supports-color
     dev: true
 
-  /@yarn-tool/resolve-package/1.0.47:
-    resolution: {integrity: sha512-Zaw58gQxjQceJqhqybJi1oUDaORT8i2GTgwICPs8v/X/Pkx35FXQba69ldHVg5pQZ6YLKpROXgyHvBaCJOFXiA==}
-    dependencies:
-      pkg-dir: 5.0.0
-      tslib: 2.4.1
-      upath2: 3.1.19
-    dev: true
-
   /acorn-jsx/5.3.2_acorn@7.4.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -4329,7 +4321,7 @@ packages:
     optional: true
 
   /make-dir/3.1.0:
-    resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/make-dir/-/make-dir-3.1.0.tgz}
+    resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
     dependencies:
       semver: 6.3.0
@@ -4719,12 +4711,6 @@ packages:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
 
-  /path-is-network-drive/1.0.20:
-    resolution: {integrity: sha512-p5wCWlRB4+ggzxWshqHH9aF3kAuVu295NaENXmVhThbZPJQBeJdxZTP6CIoUR+kWHDUW56S9YcaO1gXnc/BOxw==}
-    dependencies:
-      tslib: 2.4.1
-    dev: true
-
   /path-key/3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
@@ -4736,12 +4722,6 @@ packages:
 
   /path-parse/1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
-    dev: true
-
-  /path-strip-sep/1.0.17:
-    resolution: {integrity: sha512-+2zIC2fNgdilgV7pTrktY6oOxxZUo9x5zJYfTzxsGze5kSGDDwhA5/0WlBn+sUyv/WuuyYn3OfM+Ue5nhdQUgA==}
-    dependencies:
-      tslib: 2.4.1
     dev: true
 
   /path-type/4.0.0:
@@ -4777,13 +4757,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
-    dev: true
-
-  /pkg-dir/5.0.0:
-    resolution: {integrity: sha512-NPE8TDbzl/3YQYY7CSS228s3g2ollTFnc+Qi3tqmqJp9Vg2ovUpixcJEo2HJScN2Ez+kEaal6y70c0ehqJBJeA==}
-    engines: {node: '>=10'}
-    dependencies:
-      find-up: 5.0.0
     dev: true
 
   /postcss-calc/8.2.4_postcss@8.4.20:
@@ -5629,18 +5602,17 @@ packages:
       source-map-resolve: 0.6.0
     dev: true
 
-  /rollup-plugin-typescript2/0.31.2_k35zwyycrckt5xfsejji7kbwn4:
-    resolution: {integrity: sha512-hRwEYR1C8xDGVVMFJQdEVnNAeWRvpaY97g5mp3IeLnzhNXzSVq78Ye/BJ9PAaUfN4DXa/uDnqerifMOaMFY54Q==}
+  /rollup-plugin-typescript2/0.34.1_k35zwyycrckt5xfsejji7kbwn4:
+    resolution: {integrity: sha512-P4cHLtGikESmqi1CA+tdMDUv8WbQV48mzPYt77TSTOPJpERyZ9TXdDgjSDix8Fkqce6soYz3+fa4lrC93IEkcw==}
     peerDependencies:
       rollup: '>=1.26.3'
       typescript: '>=2.4.0'
     dependencies:
       '@rollup/pluginutils': 4.2.1
-      '@yarn-tool/resolve-package': 1.0.47
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
-      resolve: 1.22.1
       rollup: 2.79.1
+      semver: 7.3.8
       tslib: 2.4.1
       typescript: 4.9.3
     dev: true
@@ -6272,15 +6244,6 @@ packages:
   /universalify/2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
-    dev: true
-
-  /upath2/3.1.19:
-    resolution: {integrity: sha512-d23dQLi8nDWSRTIQwXtaYqMrHuca0As53fNiTLLFDmsGBbepsZepISaB2H1x45bDFN/n3Qw9bydvyZEacTrEWQ==}
-    dependencies:
-      '@types/node': 18.11.15
-      path-is-network-drive: 1.0.20
-      path-strip-sep: 1.0.17
-      tslib: 2.4.1
     dev: true
 
   /update-browserslist-db/1.0.10_browserslist@4.21.4:
