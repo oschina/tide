@@ -1,5 +1,6 @@
 import { Plugin } from '@tiptap/pm/state';
-import { Decoration, DecorationSet } from '@tiptap/pm/view';
+import { Decoration, DecorationSet, EditorView } from '@tiptap/pm/view';
+import { UploaderFunc } from '../types';
 import './placeholder.less';
 
 function findPlaceholder(state, id) {
@@ -9,10 +10,10 @@ function findPlaceholder(state, id) {
 }
 
 export const handleUploadImages = (
-  view,
+  view: EditorView,
   pos: number,
   images: File[],
-  uploadFunc
+  uploadFunc: UploaderFunc
 ) => {
   const { schema } = view.state;
 

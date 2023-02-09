@@ -5,8 +5,10 @@ import {
   ImagePlaceholderPlugin,
 } from './image/placeholder';
 import { defaultImgUploader, getImageFileList } from './image/utils';
+import { UploaderFunc } from './types';
 
 export * from './image/utils';
+export * from './types';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -18,7 +20,7 @@ declare module '@tiptap/core' {
 
 export interface UploaderOptions {
   image: {
-    uploader: (file, progressCallback) => void;
+    uploader: UploaderFunc;
   };
 }
 

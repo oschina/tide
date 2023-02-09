@@ -1,8 +1,12 @@
 import { Editor } from '@tiptap/core';
 import { fileOpen } from 'browser-fs-access';
+import { UploaderFunc } from '../types';
 
 // 模拟 ajax 上传
-export async function defaultImgUploader(file, progressCallBack) {
+export const defaultImgUploader: UploaderFunc = async (
+  file,
+  progressCallBack
+) => {
   // let src: string | ArrayBuffer = '';
   // const reader = new FileReader();
   // reader.onload = (e) => {
@@ -23,7 +27,7 @@ export async function defaultImgUploader(file, progressCallBack) {
       }
     }, 300);
   });
-}
+};
 
 export const getImageFileList = (files: FileList) =>
   Array.prototype.slice
