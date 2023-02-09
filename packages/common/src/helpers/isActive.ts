@@ -1,5 +1,5 @@
 import { isNodeActive } from '@tiptap/core';
-import type { EditorState } from 'prosemirror-state';
+import type { EditorState } from '@tiptap/pm/state';
 import { isMarkActive } from './isMarkActive';
 
 export function isActive(

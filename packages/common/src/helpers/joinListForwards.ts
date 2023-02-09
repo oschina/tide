@@ -1,6 +1,6 @@
-import { Node as ProseMirrorNode } from 'prosemirror-model';
-import { Transaction } from 'prosemirror-state';
-import { canJoin } from 'prosemirror-transform';
+import { Node as ProseMirrorNode } from '@tiptap/pm/model';
+import { Transaction } from '@tiptap/pm/state';
+import { canJoin } from '@tiptap/pm/transform';
 import { findParentNode } from '@tiptap/core';
 import { isList } from './isList';
 

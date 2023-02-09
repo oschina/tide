@@ -1,7 +1,7 @@
 declare module 'tiptap-markdown' {
   import { Editor, EditorOptions, Node, Mark } from '@tiptap/core';
-  import { MarkdownSerializerState } from 'prosemirror-markdown';
-  import * as Prosemirror from 'prosemirror-model';
+  import { MarkdownSerializerState } from '@tiptap/pm/markdown';
+  import * as ProseMirror from '@tiptap/pm/model';
   import * as MarkdownIt from 'markdown-it';
 
   export type MarkdownEditorOptions = EditorOptions & {
@@ -30,24 +30,24 @@ declare module 'tiptap-markdown' {
     };
     serialize: (
       state: MarkdownSerializerState,
-      node: Prosemirror.Node,
-      parent: Prosemirror.Node,
+      node: ProseMirror.Node,
+      parent: ProseMirror.Node,
       index: number
     ) => void | {
       open:
         | string
         | ((
             state: MarkdownSerializerState,
-            mark: Prosemirror.Mark,
-            parent: Prosemirror.Node,
+            mark: ProseMirror.Mark,
+            parent: ProseMirror.Node,
             index: number
           ) => string);
       close:
         | string
         | ((
             state: MarkdownSerializerState,
-            mark: Prosemirror.Mark,
-            parent: Prosemirror.Node,
+            mark: ProseMirror.Mark,
+            parent: ProseMirror.Node,
             index: number
           ) => string);
       mixable?: boolean;
@@ -86,7 +86,7 @@ declare module 'tiptap-markdown' {
   ): MarkdownExtension;
 
   export function parse(
-    schema: Prosemirror.Schema,
+    schema: ProseMirror.Schema,
     content: string,
     options: {
       extensions: MarkdownExtension[];
@@ -98,8 +98,8 @@ declare module 'tiptap-markdown' {
   ): string;
 
   export function serialize(
-    schema: Prosemirror.Schema,
-    content: Prosemirror.Node,
+    schema: ProseMirror.Schema,
+    content: ProseMirror.Node,
     options: {
       extensions: MarkdownExtension[];
       html?: boolean;

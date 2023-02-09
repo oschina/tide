@@ -5,7 +5,7 @@ import {
   DOMParser,
   DOMSerializer,
   ParseOptions,
-} from 'prosemirror-model';
+} from '@tiptap/pm/model';
 import { parseHTML, createHTMLDocument, VHTMLDocument } from 'zeed-dom';
 import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 

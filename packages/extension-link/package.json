@@ -18,21 +18,20 @@
     "@gitee/icons-react": "^0.1.35",
     "@gitee/wysiwyg-editor-common": "workspace:*",
     "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
-    "@tiptap/extension-link": "^2.0.0-beta.209"
+    "@tiptap/extension-link": "^2.0.0-beta.216"
   },
   "devDependencies": {
+    "@tiptap/pm": "^2.0.0-beta.216",
     "@types/react": "^16.14.0",
     "eslint-config-custom": "workspace:*",
-    "prosemirror-state": "^1.4.2",
     "tsconfig": "workspace:*",
     "tslib": "^2.4.1",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
     "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@tiptap/core": "^2.0.0-beta.209",
-    "prosemirror-state": "^1.4.2",
-    "prosemirror-transform": "^1.7.0",
+    "@tiptap/core": "^2.0.0-beta.216",
+    "@tiptap/pm": "^2.0.0-beta.216",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },

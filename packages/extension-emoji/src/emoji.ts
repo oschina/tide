@@ -10,7 +10,7 @@ import {
   mergeAttributes,
 } from '@tiptap/core';
 import { Suggestion, SuggestionOptions } from '@tiptap/suggestion';
-import { Plugin, PluginKey } from 'prosemirror-state';
+import { Plugin, PluginKey } from '@tiptap/pm/state';
 import emojiRegex from 'emoji-regex';
 import { appleEmojis } from './emojis';
 import {

@@ -1,7 +1,7 @@
 import { getMarkType, objectIncludes } from '@tiptap/core';
 import type { MarkRange } from '@tiptap/core';
-import type { MarkType } from 'prosemirror-model';
-import type { EditorState } from 'prosemirror-state';
+import type { MarkType } from '@tiptap/pm/model';
+import type { EditorState } from '@tiptap/pm/state';
 
 export function isMarkActive(
   state: EditorState,

@@ -1,4 +1,4 @@
-import { Plugin } from 'prosemirror-state';
+import { Plugin } from '@tiptap/pm/state';
 import { Extension } from '@tiptap/core';
 import {
   handleUploadImages,

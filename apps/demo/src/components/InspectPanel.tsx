@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
+import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import { EditorEvents } from '@tiptap/core';
 import throttle from 'lodash/throttle';
 

@@ -1,21 +1,6 @@
 import { findParentNode, getNodeType, isList, RawCommands } from '@tiptap/core';
-import { NodeType } from 'prosemirror-model';
 import { joinListBackwards, joinListForwards } from '../helpers';
 import { deepChangeListType } from '../utilities/list/list-commands';
-
-declare module '@tiptap/core' {
-  interface Commands<ReturnType> {
-    toggleList: {
-      /**
-       * Toggle between different list types.
-       */
-      toggleList: (
-        listTypeOrName: string | NodeType,
-        itemTypeOrName: string | NodeType
-      ) => ReturnType;
-    };
-  }
-}
 
 export const toggleList: RawCommands['toggleList'] =
   (listTypeOrName, itemTypeOrName) =>

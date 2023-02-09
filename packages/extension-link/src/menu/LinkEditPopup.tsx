@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { TextSelection } from 'prosemirror-state';
+import { TextSelection } from '@tiptap/pm/state';
 import {
   Editor,
   getMarkRange,

@@ -1,7 +1,7 @@
-import { Plugin, PluginKey } from 'prosemirror-state';
-import { DOMParser, Slice } from 'prosemirror-model';
+import { Plugin, PluginKey } from '@tiptap/pm/state';
+import { DOMParser, Slice } from '@tiptap/pm/model';
 import { elementFromString, Extension } from '@tiptap/core';
-import { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
+import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import { isInCode, isMarkdown } from './utils';
 
 export const ClipboardMarkdownHandlerPluginKey = new PluginKey(

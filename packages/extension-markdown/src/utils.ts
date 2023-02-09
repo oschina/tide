@@ -1,4 +1,4 @@
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@tiptap/pm/state';
 import { isMarkActive, isNodeActive } from '@tiptap/core';
 
 export const isInCode = (state: EditorState): boolean => {

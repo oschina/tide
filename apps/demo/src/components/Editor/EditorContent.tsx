@@ -5,7 +5,7 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import type { Plugin } from 'prosemirror-state';
+import type { Plugin } from '@tiptap/pm/state';
 import type { JSONContent } from '@tiptap/core';
 import { Document } from '@tiptap/extension-document';
 import { Paragraph } from '@tiptap/extension-paragraph';

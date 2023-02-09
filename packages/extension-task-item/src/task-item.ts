@@ -1,4 +1,4 @@
-import { Node as ProseMirrorNode } from 'prosemirror-model';
+import { Node as ProseMirrorNode } from '@tiptap/pm/model';
 import { mergeAttributes, Node, getNodeType, PasteRule } from '@tiptap/core';
 import {
   wrapInListInputRule,

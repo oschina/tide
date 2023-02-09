@@ -4,9 +4,9 @@ import {
   Table as TTable,
   TableOptions as TTableOptions,
 } from '@tiptap/extension-table';
-import { tableEditing } from '@tiptap/prosemirror-tables';
-import { AllSelection, TextSelection } from 'prosemirror-state';
-import type { Node, NodeType } from 'prosemirror-model';
+import { tableEditing } from '@tiptap/pm/tables';
+import { AllSelection, TextSelection } from '@tiptap/pm/state';
+import type { Node, NodeType } from '@tiptap/pm/model';
 import { columnResizing } from './columnresizing';
 import { TableView } from './TableView';
 

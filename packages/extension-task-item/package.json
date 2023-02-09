@@ -18,14 +18,14 @@
     "@gitee/wysiwyg-editor-common": "workspace:*"
   },
   "devDependencies": {
+    "@tiptap/pm": "^2.0.0-beta.216",
     "eslint-config-custom": "workspace:*",
-    "prosemirror-model": "^1.18.3",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.209",
-    "prosemirror-model": "^1.18.3"
+    "@tiptap/core": "^2.0.0-beta.216",
+    "@tiptap/pm": "^2.0.0-beta.216"
   },
   "sideEffects": false
 }

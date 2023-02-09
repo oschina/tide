@@ -8,8 +8,8 @@ import {
 import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
 import type { Props as TippyOptions } from 'tippy.js';
 import type { BubbleMenuProps } from '@gitee/wysiwyg-editor-react';
-import type { PluginKey } from 'prosemirror-state';
-import type { MarkType } from 'prosemirror-model';
+import type { PluginKey } from '@tiptap/pm/state';
+import type { MarkType } from '@tiptap/pm/model';
 
 export type SelectionBubbleMenuProps = BubbleMenuProps & {
   pluginKey: PluginKey | string;

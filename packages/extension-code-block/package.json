@@ -19,26 +19,22 @@
     "@gitee/wysiwyg-editor-common": "workspace:*",
     "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tippyjs/react": "^4.2.6",
-    "@tiptap/extension-code-block": "^2.0.0-beta.209",
-    "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.209",
+    "@tiptap/extension-code-block": "^2.0.0-beta.216",
+    "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.216",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.3.3"
   },
   "devDependencies": {
+    "@tiptap/pm": "^2.0.0-beta.216",
     "@types/react": "^16.14.0",
     "eslint-config-custom": "workspace:*",
-    "prosemirror-model": "^1.18.3",
-    "prosemirror-state": "^1.4.2",
-    "prosemirror-transform": "^1.7.0",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.209",
+    "@tiptap/core": "^2.0.0-beta.216",
+    "@tiptap/pm": "^2.0.0-beta.216",
     "lowlight": "^2.8.0",
-    "prosemirror-model": "^1.18.3",
-    "prosemirror-state": "^1.4.2",
-    "prosemirror-transform": "^1.7.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },

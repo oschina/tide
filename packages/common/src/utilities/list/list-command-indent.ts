@@ -1,11 +1,11 @@
-import { TextSelection, Transaction } from 'prosemirror-state';
+import { TextSelection, Transaction } from '@tiptap/pm/state';
 import {
   Fragment,
   Node,
   NodeRange,
   ResolvedPos,
   Slice,
-} from 'prosemirror-model';
+} from '@tiptap/pm/model';
 import { isList } from '../../helpers/isList';
 import { isListItem } from '../../helpers/isListItem';
 

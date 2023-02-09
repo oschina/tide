@@ -1,12 +1,12 @@
-import { Transaction } from 'prosemirror-state';
+import { Transaction } from '@tiptap/pm/state';
 import {
   Fragment,
   Node,
   NodeRange,
   ResolvedPos,
   Slice,
-} from 'prosemirror-model';
-import { liftTarget, ReplaceAroundStep } from 'prosemirror-transform';
+} from '@tiptap/pm/model';
+import { liftTarget, ReplaceAroundStep } from '@tiptap/pm/transform';
 import { isList } from '../../helpers/isList';
 import { isListItem } from '../../helpers/isListItem';
 import {

@@ -1,5 +1,5 @@
 import * as tiptapMarkdown from 'tiptap-markdown';
-import type { Node, Schema } from 'prosemirror-model';
+import type { Node, Schema } from '@tiptap/pm/model';
 import type { Editor } from '@tiptap/core';
 import type { MarkdownEditor, MarkdownExtension } from './types';
 

@@ -1,8 +1,16 @@
 import React, { useCallback, useState } from 'react';
+import Tippy from '@tippyjs/react';
+import { PluginKey } from '@tiptap/pm/state';
 import { Editor, isNodeSelection, posToDOMRect } from '@tiptap/core';
 import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
 import type { BubbleMenuProps } from '@gitee/wysiwyg-editor-react';
-import Tippy from '@tippyjs/react';
+import {
+  IconAngleLeftLine,
+  IconAngleRightLine,
+  IconPause,
+  IconTrash,
+  IconCollapse,
+} from '@gitee/icons-react';
 import {
   getCellsInColumn,
   getCellsInRow,
@@ -12,14 +20,6 @@ import {
   isRowSelected,
   isTableSelected,
 } from '../utilities';
-import { PluginKey } from 'prosemirror-state';
-import {
-  IconAngleLeftLine,
-  IconAngleRightLine,
-  IconPause,
-  IconTrash,
-  IconCollapse,
-} from '@gitee/icons-react';
 
 export type TableCellBubbleMenuProps = {
   editor: Editor;

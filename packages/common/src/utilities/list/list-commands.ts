@@ -6,9 +6,9 @@ import {
   NodeType,
   ResolvedPos,
   Slice,
-} from 'prosemirror-model';
-import { Selection, TextSelection, Transaction } from 'prosemirror-state';
-import { canJoin } from 'prosemirror-transform';
+} from '@tiptap/pm/model';
+import { Selection, TextSelection, Transaction } from '@tiptap/pm/state';
+import { canJoin } from '@tiptap/pm/transform';
 import { isList } from '../../helpers/isList';
 import { isListItem } from '../../helpers/isListItem';
 

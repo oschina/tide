@@ -1,5 +1,5 @@
-import { Node, NodeType } from 'prosemirror-model';
-import { findWrapping } from 'prosemirror-transform';
+import { Node, NodeType } from '@tiptap/pm/model';
+import { findWrapping } from '@tiptap/pm/transform';
 import {
   InputRule,
   InputRuleFinder,

@@ -1,5 +1,5 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core';
-import type { Node } from 'prosemirror-model';
+import type { Node } from '@tiptap/pm/model';
 import type { MarkdownEditor as CoreMarkdownEditor } from 'tiptap-markdown';
 import type { MarkdownExtension } from 'tiptap-markdown';
 

@@ -6,7 +6,7 @@ import EditorContent, { EditorContentProps } from './EditorContent';
 import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
 import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
 import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
-import { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
+import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import TextBubbleMenu from './MenuBar/TextBubbleMenu';
 import './index.less';
 

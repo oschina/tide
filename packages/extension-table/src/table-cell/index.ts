@@ -2,9 +2,9 @@ import {
   TableCell as TTableCell,
   TableCellOptions as TTableCellOptions,
 } from '@tiptap/extension-table-cell';
-import { Plugin, PluginKey } from 'prosemirror-state';
-import { Decoration, DecorationSet } from 'prosemirror-view';
-import { addColumn, addRow, selectedRect } from '@tiptap/prosemirror-tables';
+import { Plugin, PluginKey } from '@tiptap/pm/state';
+import { Decoration, DecorationSet } from '@tiptap/pm/view';
+import { addColumn, addRow, selectedRect } from '@tiptap/pm/tables';
 import {
   getCellsInColumn,
   getCellsInRow,

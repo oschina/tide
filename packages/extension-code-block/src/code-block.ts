@@ -4,7 +4,7 @@ import {
   CodeBlockLowlightOptions,
 } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight/lib/all';
-import { TextSelection } from 'prosemirror-state';
+import { TextSelection } from '@tiptap/pm/state';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';

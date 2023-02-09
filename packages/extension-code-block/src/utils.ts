@@ -1,5 +1,5 @@
-import { Selection } from 'prosemirror-state';
-import { Node } from 'prosemirror-model';
+import { Selection } from '@tiptap/pm/state';
+import { Node } from '@tiptap/pm/model';
 
 export function getSelectedLineRange(
   selection: Selection,

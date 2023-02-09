@@ -15,19 +15,14 @@
     "clear": "rm -rf dist"
   },
   "devDependencies": {
+    "@tiptap/pm": "^2.0.0-beta.216",
     "eslint-config-custom": "workspace:*",
-    "prosemirror-model": "^1.18.3",
-    "prosemirror-state": "^1.4.2",
-    "prosemirror-transform": "^1.7.0",
-    "prosemirror-view": "^1.29.1",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.209",
-    "prosemirror-model": "^1.18.3",
-    "prosemirror-state": "^1.4.2",
-    "prosemirror-view": "^1.29.1"
+    "@tiptap/core": "^2.0.0-beta.216",
+    "@tiptap/pm": "^2.0.0-beta.216"
   },
   "sideEffects": false
 }
