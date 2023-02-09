@@ -26,7 +26,7 @@ type MenuBarProps = {
   onFullscreenChange?: (fullscreen: boolean) => void;
 };
 
-const MenuBar: React.FC<MenuBarProps> = ({
+export const MenuBar: React.FC<MenuBarProps> = ({
   className,
   style,
   editor,
@@ -77,7 +77,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
           content={<div className={'gwe-menu-bar__tooltip'}>撤销</div>}
         >
           <button
-            onClick={() => editor.chain().focus().undo().run()}
+            onClick={() => editor?.chain().focus().undo?.().run()}
             disabled={!editor.can().chain().focus().undo().run()}
             className={classNames(
               'gwe-menu-bar__btn',
@@ -219,5 +219,3 @@ const MenuBar: React.FC<MenuBarProps> = ({
     </div>
   );
 };
-
-export default MenuBar;

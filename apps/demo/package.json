@@ -28,6 +28,7 @@
     "@gitee/wysiwyg-editor-extension-lists-indentation": "workspace:*",
     "@gitee/wysiwyg-editor-extension-markdown": "workspace:*",
     "@gitee/wysiwyg-editor-extension-mention": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-menubar": "workspace:*",
     "@gitee/wysiwyg-editor-extension-ordered-list": "workspace:*",
     "@gitee/wysiwyg-editor-extension-strike": "workspace:*",
     "@gitee/wysiwyg-editor-extension-table": "workspace:*",

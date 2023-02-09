@@ -11,7 +11,7 @@ export type TextBubbleMenuProps = {
   editor: Editor;
 };
 
-const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
+export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
   const btnMenus = useBtnMenus(editor).filter((i) => i.bubble);
   const { statusMap, updateStatusMap } = useStatusMap(editor);
 
@@ -74,5 +74,3 @@ const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
     </BubbleMenu>
   );
 };
-
-export default TextBubbleMenu;

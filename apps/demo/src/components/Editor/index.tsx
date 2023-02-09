@@ -1,13 +1,15 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { createPortal } from 'react-dom';
 import classNames from 'classnames';
-import MenuBar from './MenuBar';
+import {
+  MenuBar,
+  TextBubbleMenu,
+} from '@gitee/wysiwyg-editor-extension-menubar';
 import EditorContent, { EditorContentProps } from './EditorContent';
 import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
 import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
 import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
 import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
-import TextBubbleMenu from './MenuBar/TextBubbleMenu';
 import './index.less';
 
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>

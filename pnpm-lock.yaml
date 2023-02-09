@@ -63,6 +63,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
       '@gitee/wysiwyg-editor-extension-markdown': workspace:*
       '@gitee/wysiwyg-editor-extension-mention': workspace:*
+      '@gitee/wysiwyg-editor-extension-menubar': workspace:*
       '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
       '@gitee/wysiwyg-editor-extension-strike': workspace:*
       '@gitee/wysiwyg-editor-extension-table': workspace:*
@@ -123,6 +124,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-lists-indentation': link:../../packages/extension-lists-indentation
       '@gitee/wysiwyg-editor-extension-markdown': link:../../packages/extension-markdown
       '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
+      '@gitee/wysiwyg-editor-extension-menubar': link:../../packages/extension-menubar
       '@gitee/wysiwyg-editor-extension-ordered-list': link:../../packages/extension-ordered-list
       '@gitee/wysiwyg-editor-extension-strike': link:../../packages/extension-strike
       '@gitee/wysiwyg-editor-extension-table': link:../../packages/extension-table
@@ -626,6 +628,55 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: 2.4.1
+      typescript: 4.9.3
+
+  packages/extension-menubar:
+    specifiers:
+      '@gitee/icons-react': ^0.1.35
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-editor': workspace:*
+      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
+      '@gitee/wysiwyg-editor-extension-table': workspace:*
+      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
+      '@tippyjs/react': ^4.2.6
+      '@tiptap/core': ^2.0.0-beta.209
+      '@tiptap/extension-heading': ^2.0.0-beta.209
+      '@tiptap/extension-paragraph': ^2.0.0-beta.209
+      '@types/lodash': ^4.14.191
+      '@types/react': ^16.14.0
+      '@types/react-dom': ^16.9.14
+      classnames: ^2.2.6
+      eslint: ^7.32.0
+      eslint-config-custom: workspace:*
+      less: ^4.1.3
+      lodash: ^4.17.21
+      react: ^16.14.0
+      tsconfig: workspace:*
+      typescript: ^4.9.3
+    dependencies:
+      '@gitee/icons-react': 0.1.35_react@16.14.0
+      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/wysiwyg-editor-editor': link:../editor
+      '@gitee/wysiwyg-editor-extension-emoji': link:../extension-emoji
+      '@gitee/wysiwyg-editor-extension-table': link:../extension-table
+      '@gitee/wysiwyg-editor-extension-uploader': link:../extension-uploader
+      '@gitee/wysiwyg-editor-react': link:../react
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
+      '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
+      '@tiptap/extension-heading': 2.0.0-beta.216_pmer27shfotwm74gjrzdl5eg2i
+      '@tiptap/extension-paragraph': 2.0.0-beta.216_pmer27shfotwm74gjrzdl5eg2i
+      classnames: 2.3.2
+      lodash: 4.17.21
+      react: 16.14.0
+    devDependencies:
+      '@types/lodash': 4.14.191
+      '@types/react': 16.14.34
+      '@types/react-dom': 16.9.17
+      eslint: 7.32.0
+      eslint-config-custom: link:../eslint-config-custom
+      less: 4.1.3
+      tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/extension-ordered-list:
@@ -2555,7 +2606,7 @@ packages:
     dev: true
 
   /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/classnames/-/classnames-2.3.2.tgz}
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: false
 
   /clean-stack/2.2.0:
