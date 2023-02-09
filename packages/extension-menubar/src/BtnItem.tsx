@@ -4,20 +4,21 @@ import { Editor } from '@tiptap/core';
 import { InsertTableButton } from '@gitee/wysiwyg-editor-extension-table';
 import { InsertEmojiButton } from '@gitee/wysiwyg-editor-extension-emoji';
 import Tippy from '@tippyjs/react';
-import { IconTableSquare, IconSmileCircle } from '@gitee/icons-react';
 import {
   IconBoldBold,
   IconItalicBold,
-  IconCode,
-  IconList,
-  IconXmark,
-  IconImage,
-  IconChain,
+  IconCodeBold,
+  IconListBold,
   IconListNumberBold,
-  IconTask,
-  IconRepo,
+  IconListSquareBold,
+  IconImageBold,
+  IconChainBold,
+  IconTableBold,
+  IconCodeSquareBold,
   IconQuoteBold,
-  IconMinus,
+  IconLineBold,
+  IconStrikethroughBold,
+  IconSmileCircleBold,
 } from '@gitee/icons-react';
 
 import { MenuStatusMap } from './useStatusMap';
@@ -25,19 +26,19 @@ import { MenuStatusMap } from './useStatusMap';
 const IconMap = {
   bold: IconBoldBold,
   italic: IconItalicBold,
-  strike: IconXmark,
-  code: IconCode,
-  bulletList: IconList,
+  strike: IconStrikethroughBold,
+  code: IconCodeBold,
+  bulletList: IconListBold,
   orderedList: IconListNumberBold,
-  taskList: IconTask,
-  link: IconChain,
-  image: IconImage,
-  codeBlock: IconRepo,
+  taskList: IconListSquareBold,
+  link: IconChainBold,
+  image: IconImageBold,
+  codeBlock: IconCodeSquareBold,
   blockquote: IconQuoteBold,
-  horizontalRule: IconMinus,
+  horizontalRule: IconLineBold,
   divider: null,
-  table: IconTableSquare,
-  emoji: IconSmileCircle,
+  table: IconTableBold,
+  emoji: IconSmileCircleBold,
 };
 
 interface BtnItemProps {

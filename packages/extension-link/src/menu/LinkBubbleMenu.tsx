@@ -4,7 +4,7 @@ import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { showLinkEditPopup } from './LinkEditPopup';
 import { Link as LinkExtension } from '../link';
-import { IconEdit, IconTrash } from '@gitee/icons-react';
+import { IconPenBold, IconChainSlashBold } from '@gitee/icons-react';
 export type LinkBubbleMenuProps = {
   editor: Editor;
 };
@@ -71,13 +71,13 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
           className="gwe-menu-bar__btn gwe-menu-bar__item"
           onClick={openLinkEditPopup}
         >
-          <IconEdit />
+          <IconPenBold />
         </button>
         <button
           className="gwe-menu-bar__btn gwe-menu-bar__item"
           onClick={unsetLink}
         >
-          <IconTrash />
+          <IconChainSlashBold />
         </button>
       </div>
     </SelectionBubbleMenu>

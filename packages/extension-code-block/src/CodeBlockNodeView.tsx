@@ -4,7 +4,7 @@ import copy from 'copy-to-clipboard';
 import type { NodeViewProps } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import Tippy from '@tippyjs/react';
-import { IconAngleDown, IconCopy } from '@gitee/icons-react';
+import { IconAngleDown, IconCopyBold, IconWarpBold } from '@gitee/icons-react';
 import './CodeBlockNodeView.less';
 
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
@@ -109,16 +109,22 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
           <span>{language}</span>
         )}
         <button
-          className="gwe-code-block__soft-wrap gwe-code-block__button"
+          className={classNames(
+            'gwe-code-block__soft-wrap gwe-code-block__button',
+            {
+              'gwe-code-block__button--active': softWrap,
+            }
+          )}
           onClick={() => setSoftWrap((prev) => !prev)}
         >
-          {softWrap ? '取消自动换行' : '自动换行'}
+          <IconWarpBold />
+          自动换行
         </button>
         <button
           className="gwe-code-block__button"
           onClick={() => copy($container?.current?.innerText as string)}
         >
-          <IconCopy />
+          <IconCopyBold />
           <span>复制</span>
         </button>
       </div>

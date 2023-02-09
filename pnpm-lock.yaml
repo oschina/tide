@@ -46,7 +46,6 @@ importers:
 
   apps/demo:
     specifiers:
-      '@gitee/icons-react': ^0.1.35
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-editor': workspace:*
       '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
@@ -107,7 +106,6 @@ importers:
       typescript: ^4.9.3
       vite: ^4.0.0
     dependencies:
-      '@gitee/icons-react': 0.1.35_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../../packages/common
       '@gitee/wysiwyg-editor-editor': link:../../packages/editor
       '@gitee/wysiwyg-editor-extension-blockquote': link:../../packages/extension-blockquote
@@ -384,7 +382,7 @@ importers:
 
   packages/extension-code-block:
     specifiers:
-      '@gitee/icons-react': ^0.1.35
+      '@gitee/icons-react': ^0.1.36
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@tippyjs/react': ^4.2.6
@@ -402,7 +400,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@gitee/icons-react': 0.1.35_react@16.14.0
+      '@gitee/icons-react': 0.1.36_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-react': link:../react
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
@@ -523,7 +521,7 @@ importers:
 
   packages/extension-link:
     specifiers:
-      '@gitee/icons-react': ^0.1.35
+      '@gitee/icons-react': ^0.1.36
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
@@ -538,7 +536,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@gitee/icons-react': 0.1.35_react@16.14.0
+      '@gitee/icons-react': 0.1.36_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
@@ -655,7 +653,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.9.3
     dependencies:
-      '@gitee/icons-react': 0.1.35_react@16.14.0
+      '@gitee/icons-react': 0.1.36_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-editor': link:../editor
       '@gitee/wysiwyg-editor-extension-emoji': link:../extension-emoji
@@ -713,7 +711,7 @@ importers:
 
   packages/extension-table:
     specifiers:
-      '@gitee/icons-react': ^0.1.35
+      '@gitee/icons-react': ^0.1.36
       '@gitee/wysiwyg-editor-react': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.216
@@ -731,7 +729,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@gitee/icons-react': 0.1.35_react@16.14.0
+      '@gitee/icons-react': 0.1.36_react@16.14.0
       '@gitee/wysiwyg-editor-react': link:../react
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
@@ -1488,6 +1486,16 @@ packages:
 
   /@gitee/icons-react/0.1.35_react@16.14.0:
     resolution: {integrity: sha512-bEUpkqbCQ0XarV5+/yc8EzkWg1QVDKgHcgtlTuJsPyrYKy2Jc/UQoyLxMjaxV5LwNtwp/oi2dSAoDBGHR2Gf7g==}
+    peerDependencies:
+      react: '>=16.14.0'
+    dependencies:
+      '@babel/runtime': 7.20.7
+      '@iconify/react': 3.2.2_react@16.14.0
+      react: 16.14.0
+    dev: false
+
+  /@gitee/icons-react/0.1.36_react@16.14.0:
+    resolution: {integrity: sha512-zp7SbgY47ENem2Addk0CE68l3Oq4DgF5l/NNhI7BR3O2sRi2NcddQ1MzqLSSGDlMIDQg4lEsV2NiqWfpyMVGBA==}
     peerDependencies:
       react: '>=16.14.0'
     dependencies:

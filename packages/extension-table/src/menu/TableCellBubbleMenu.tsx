@@ -5,11 +5,12 @@ import { Editor, isNodeSelection, posToDOMRect } from '@tiptap/core';
 import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
 import type { BubbleMenuProps } from '@gitee/wysiwyg-editor-react';
 import {
-  IconAngleLeftLine,
-  IconAngleRightLine,
-  IconPause,
-  IconTrash,
-  IconCollapse,
+  IconAlignCenterBold,
+  IconAlignRightBold,
+  IconAlignLeftBold,
+  IconTrashBold,
+  IconCellMergeBold,
+  IconCellSplitBold,
 } from '@gitee/icons-react';
 import {
   getCellsInColumn,
@@ -137,7 +138,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
               className="gwe-menu-bar__btn gwe-menu-bar__item"
               onClick={() => editor.commands.mergeOrSplit()}
             >
-              <IconCollapse />
+              {canSplitCell ? <IconCellSplitBold /> : <IconCellMergeBold />}
             </button>
           </Tippy>
         )}
@@ -149,7 +150,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
             className="gwe-menu-bar__btn gwe-menu-bar__item"
             onClick={() => (editor.commands as any).unsetTextAlign?.()}
           >
-            <IconAngleLeftLine />
+            <IconAlignLeftBold />
           </button>
         </Tippy>
         <Tippy
@@ -160,7 +161,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
             className="gwe-menu-bar__btn gwe-menu-bar__item"
             onClick={() => (editor.commands as any).setTextAlign?.('center')}
           >
-            <IconPause />
+            <IconAlignCenterBold />
           </button>
         </Tippy>
         <Tippy
@@ -171,7 +172,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
             className="gwe-menu-bar__btn gwe-menu-bar__item"
             onClick={() => (editor.commands as any).setTextAlign?.('right')}
           >
-            <IconAngleRightLine />
+            <IconAlignRightBold />
           </button>
         </Tippy>
         {!tableSelected && rowSelected && (
@@ -183,7 +184,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
               className="gwe-menu-bar__btn gwe-menu-bar__item"
               onClick={() => editor.commands.deleteRow()}
             >
-              <IconTrash />
+              <IconTrashBold />
             </button>
           </Tippy>
         )}
@@ -196,7 +197,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
               className="gwe-menu-bar__btn gwe-menu-bar__item"
               onClick={() => editor.commands.deleteColumn()}
             >
-              <IconTrash />
+              <IconTrashBold />
             </button>
           </Tippy>
         )}
@@ -209,7 +210,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
               className="gwe-menu-bar__btn gwe-menu-bar__item"
               onClick={() => editor.commands.deleteTable()}
             >
-              <IconTrash />
+              <IconTrashBold />
             </button>
           </Tippy>
         )}

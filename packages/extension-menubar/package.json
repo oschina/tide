@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/icons-react": "^0.1.35",
+    "@gitee/icons-react": "^0.1.36",
     "@gitee/wysiwyg-editor-common": "workspace:*",
     "@gitee/wysiwyg-editor-editor": "workspace:*",
     "@gitee/wysiwyg-editor-extension-emoji": "workspace:*",

@@ -6,8 +6,8 @@ import { isActive } from '@gitee/wysiwyg-editor-common';
 import Tippy from '@tippyjs/react';
 import { Level } from '@tiptap/extension-heading';
 import {
-  IconMaximize,
-  IconMinimize,
+  IconMaximizeBold,
+  IconMinimizeBold,
   IconCaretDown,
   IconUndoBold,
   IconRedoBold,
@@ -213,7 +213,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({
             fullscreen ? `gwe-menu-bar__btn--active` : ''
           )}
         >
-          {fullscreen ? <IconMinimize /> : <IconMaximize />}
+          {fullscreen ? <IconMinimizeBold /> : <IconMaximizeBold />}
         </button>
       </Tippy>
     </div>
