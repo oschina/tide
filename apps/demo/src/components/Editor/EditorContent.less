@@ -34,8 +34,12 @@
     ul,
     ol,
     .tableWrapper,
-    .react-renderer {
+    div.react-renderer {
       margin: 16px 0;
+    }
+
+    .react-renderer {
+      text-decoration: inherit;
     }
 
     h1,
@@ -510,20 +514,7 @@
 
     /* Mention-specific styling */
     .mention {
-      display: inline-block;
-      border-radius: 1em;
-      border: 1px solid transparent;
-      padding: 1px 0.3em 1px 0.23em;
-      text-decoration: none;
-      font-size: 1em;
-      line-height: 1.125em;
-      color: @text-color;
-      background-color: @mention-bg-color;
-
-      &.ProseMirror-selectednode {
-        border-color: @theme-color;
-        background-color: @mention-selected-bg-color;
-      }
+      text-decoration: inherit;
     }
 
     /* TODO: Details-specific styling */

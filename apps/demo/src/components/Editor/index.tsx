@@ -5,11 +5,11 @@ import {
   MenuBar,
   TextBubbleMenu,
 } from '@gitee/wysiwyg-editor-extension-menubar';
-import EditorContent, { EditorContentProps } from './EditorContent';
 import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
 import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
 import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
 import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
+import EditorContent, { EditorContentProps } from './EditorContent';
 import './index.less';
 
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>

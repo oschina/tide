@@ -62,11 +62,13 @@ export const pasteRegex = /:([a-zA-Z0-9_+-]+):/g;
 export const Emoji = Node.create<EmojiOptions, EmojiStorage>({
   name: 'emoji',
 
-  inline: true,
-
   group: 'inline',
 
+  inline: true,
+
   selectable: false,
+
+  atom: true,
 
   addOptions() {
     return {

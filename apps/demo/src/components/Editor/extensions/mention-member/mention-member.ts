@@ -1,3 +1,4 @@
+import { mergeAttributes } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {
   buildSuggestionOptions,
@@ -6,10 +7,18 @@ import {
   MentionList,
   MentionOptions,
 } from '@gitee/wysiwyg-editor-extension-mention';
+import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
+import { MentionMemberNodeView } from './MentionMemberNodeView';
 
 export type MentionMemberAttributes = {
-  id: string;
-  label: string;
+  /** 姓名 */
+  name: string;
+
+  /** 用户名 */
+  username: string;
+
+  /** 链接 */
+  url: string;
 };
 
 export type MentionMemberItem = MentionItem<MentionMemberAttributes>;
@@ -25,6 +34,9 @@ export const MentionMember = Mention.extend<MentionOptions<MentionMemberItem>>({
     const parentOptions = this.parent?.();
     return {
       ...parentOptions,
+      renderLabel({ options, node }) {
+        return `${options.suggestion.char}${node.attrs.name ?? node.attrs.id}`;
+      },
       suggestion: buildSuggestionOptions<
         MentionMemberItem,
         MentionMemberAttributes
@@ -35,5 +47,64 @@ export const MentionMember = Mention.extend<MentionOptions<MentionMemberItem>>({
         component: MentionList,
       }),
     };
+  },
+
+  addAttributes() {
+    return {
+      name: {
+        default: null,
+        parseHTML: (element) => element.getAttribute('data-name') || '',
+        renderHTML: (attributes) => ({
+          'data-name': attributes.name || '',
+        }),
+      },
+
+      username: {
+        default: null,
+        parseHTML: (element) => element.getAttribute('data-username') || '',
+        renderHTML: (attributes) => ({
+          'data-username': attributes.username || '',
+        }),
+      },
+
+      url: {
+        default: null,
+        parseHTML: (element) => element.getAttribute('data-url') || '',
+        renderHTML: (attributes) => ({
+          'data-url': attributes.url,
+        }),
+      },
+    };
+  },
+
+  parseHTML() {
+    return [
+      {
+        tag: `a[data-type="${this.name}"]`,
+      },
+    ];
+  },
+
+  renderHTML({ node, HTMLAttributes }) {
+    return [
+      'a',
+      mergeAttributes(
+        {
+          'data-type': this.name,
+          href: node.attrs.url,
+          target: '_blank',
+        },
+        this.options.HTMLAttributes,
+        HTMLAttributes
+      ),
+      this.options.renderLabel({
+        options: this.options,
+        node,
+      }),
+    ];
+  },
+
+  addNodeView() {
+    return ReactNodeViewRenderer(MentionMemberNodeView);
   },
 });

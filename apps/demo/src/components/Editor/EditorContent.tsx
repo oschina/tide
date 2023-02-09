@@ -188,8 +188,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
                     label,
                     desc: label.toLowerCase(),
                     attrs: {
-                      id: `${index + 1}`,
-                      label,
+                      name: label,
+                      username: label.toLowerCase(),
+                      url: `/members/${label.toLowerCase()}`,
                     },
                   }))
                   .filter((item) =>

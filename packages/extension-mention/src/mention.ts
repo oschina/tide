@@ -7,11 +7,15 @@ export type MentionOptions<I = any> = TMentionOptions & {
 };
 
 export const Mention = TMention.extend<MentionOptions>({
-  marks: '',
+  name: 'mention',
 
-  selectable: true,
+  group: 'inline',
 
-  draggable: true,
+  inline: true,
+
+  selectable: false,
+
+  atom: true,
 
   addOptions() {
     const parentOptions = this.parent?.();
