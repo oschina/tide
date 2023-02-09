@@ -1,7 +1,6 @@
 @import "~@gitee/wysiwyg-editor-theme/src/variable";
 
 .gwe-uploader {
-
   &__img {
     display: block;
     margin: 16px 0;
@@ -14,16 +13,27 @@
         display: block;
         width: 100%;
       }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
 
     &-progress {
-      width: 80%;
-      height: 20px;
+      width: 50%;
+      height: 8px;
       position: absolute;
       top: 50%;
       left: 50%;
       border-radius: 10px;
-      background: rgba(0, 0, 0, .6);
+      background: #eceef5;
       transform: translate(-50%, -50%);
       overflow: hidden;
 
@@ -35,5 +45,4 @@
       }
     }
   }
-
 }

@@ -479,9 +479,11 @@ importers:
 
   packages/extension-image:
     specifiers:
+      '@gitee/icons-react': ^0.1.36
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-image': ^2.0.0-beta.216
       '@tiptap/pm': ^2.0.0-beta.216
@@ -493,9 +495,11 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
+      '@gitee/icons-react': 0.1.36_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/extension-image': 2.0.0-beta.216_pmer27shfotwm74gjrzdl5eg2i
       classnames: 2.3.2

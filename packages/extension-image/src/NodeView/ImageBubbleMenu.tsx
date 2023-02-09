@@ -8,6 +8,12 @@ import {
 } from '@tiptap/core';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu';
+import Tippy from '@tippyjs/react';
+import {
+  IconAlignCenterBold,
+  IconAlignRightBold,
+  IconAlignLeftBold,
+} from '@gitee/icons-react';
 import { Image } from '../image-extension';
 
 export type ImageBubbleMenuProps = {
@@ -47,28 +53,46 @@ export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
         },
       }}
     >
-      <div>
-        <button
-          onClick={() => {
-            editor.chain().updateImageAttr({ align: 'left' }).run();
-          }}
+      <div className="gwe-menu-bar gwe-menu-bar-bubble" style={{ width: 96 }}>
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>居左</div>}
         >
-          向左
-        </button>
-        <button
-          onClick={() => {
-            editor.chain().updateImageAttr({ align: 'center' }).run();
-          }}
+          <button
+            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            onClick={() => {
+              editor.chain().updateImageAttr({ align: 'left' }).run();
+            }}
+          >
+            <IconAlignLeftBold />
+          </button>
+        </Tippy>
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>居中</div>}
         >
-          居中
-        </button>
-        <button
-          onClick={() => {
-            editor.chain().updateImageAttr({ align: 'right' }).run();
-          }}
+          <button
+            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            onClick={() => {
+              editor.chain().updateImageAttr({ align: 'center' }).run();
+            }}
+          >
+            <IconAlignCenterBold />
+          </button>
+        </Tippy>
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>居右</div>}
         >
-          向右
-        </button>
+          <button
+            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            onClick={() => {
+              editor.chain().updateImageAttr({ align: 'right' }).run();
+            }}
+          >
+            <IconAlignRightBold />
+          </button>
+        </Tippy>
       </div>
     </SelectionBubbleMenu>
   );

@@ -124,7 +124,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       tippyOptions={tippyOptions}
       updateDelay={0}
     >
-      <div className="gwe-menu-bar gwe-menu-bar-bubble">
+      <div className="gwe-menu-bar gwe-menu-bar-bubble" style={{ width: 160 }}>
         {((selectedCellsCount > 1 && canMergeCells) || canSplitCell) && (
           <Tippy
             interactive
