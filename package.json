@@ -23,6 +23,7 @@
     "husky": "^8.0.0",
     "less": "^4.1.3",
     "lint-staged": "^13.1.0",
+    "less-plugin-npm-import": "^2.1.0",
     "prettier": "^2.5.1",
     "rollup": "^2.67.0",
     "rollup-plugin-delete": "^2.0.0",

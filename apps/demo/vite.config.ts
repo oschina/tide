@@ -13,6 +13,10 @@ const alias = [
         replacement: resolve(`../../packages/${name}/src/index.ts`),
       };
     }),
+  {
+    find: `~@gitee/wysiwyg-editor-theme`,
+    replacement: resolve(`../../packages/theme`),
+  },
 ];
 
 console.log(alias);

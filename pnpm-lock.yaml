@@ -13,6 +13,7 @@ importers:
       eslint-config-custom: workspace:*
       husky: ^8.0.0
       less: ^4.1.3
+      less-plugin-npm-import: ^2.1.0
       lint-staged: ^13.1.0
       prettier: ^2.5.1
       rollup: ^2.67.0
@@ -33,6 +34,7 @@ importers:
       eslint-config-custom: link:packages/eslint-config-custom
       husky: 8.0.2
       less: 4.1.3
+      less-plugin-npm-import: 2.1.0
       lint-staged: 13.1.0
       prettier: 2.8.0
       rollup: 2.79.1
@@ -70,6 +72,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-uploader': workspace:*
       '@gitee/wysiwyg-editor-markdown': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-bubble-menu': ^2.0.0-beta.216
@@ -130,6 +133,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
       '@gitee/wysiwyg-editor-markdown': link:../../packages/markdown
       '@gitee/wysiwyg-editor-react': link:../../packages/react
+      '@gitee/wysiwyg-editor-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/extension-bubble-menu': 2.0.0-beta.216_52znevncfm2yh6onrqrq3pxfpu
@@ -768,6 +772,7 @@ importers:
   packages/extension-uploader:
     specifiers:
       '@gitee/wysiwyg-editor-extension-image': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/pm': ^2.0.0-beta.216
       browser-fs-access: ^0.31.1
@@ -777,6 +782,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@gitee/wysiwyg-editor-extension-image': link:../extension-image
+      '@gitee/wysiwyg-editor-theme': link:../theme
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       browser-fs-access: 0.31.1
     devDependencies:
@@ -825,6 +831,9 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
+
+  packages/theme:
+    specifiers: {}
 
   packages/tsconfig:
     specifiers: {}
@@ -2463,6 +2472,10 @@ packages:
   /arrify/1.0.1:
     resolution: {integrity: sha512-3CYzex9M9FGQjCGMGyi6/31c8GJbgb0qGyrx5HWxPd0aCwh4cB2YjMb2Xf9UuoogrMrlO9cTqnB5rI5GHZTcUA==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /asap/2.0.6:
+    resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==}
     dev: true
 
   /astral-regex/2.0.0:
@@ -4151,6 +4164,14 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /less-plugin-npm-import/2.1.0:
+    resolution: {integrity: sha512-f7pVkEooRq2/jge/M/Y+spoPXj5rRIY30q1as+3kZsDG8Rs+loNJUCVQjzXB9Ao/9FeIJULiq2zrXymv+OMTbw==}
+    engines: {node: '>=0.4.2'}
+    dependencies:
+      promise: 7.0.4
+      resolve: 1.1.7
+    dev: true
+
   /less/4.1.3:
     resolution: {integrity: sha512-w16Xk/Ta9Hhyei0Gpz9m7VS8F28nieJaL/VyShID7cYvP6IL5oHeL6p4TXSDJqZE/lNv0oJ2pGVjJsRkfwm5FA==}
     engines: {node: '>=6'}
@@ -5228,6 +5249,12 @@ packages:
     engines: {node: '>=0.12'}
     dev: true
 
+  /promise/7.0.4:
+    resolution: {integrity: sha512-8z1gTSL9cMgqCx8zvMYhzT0eQURAQNSQqR8B2hGfCYkAzt1vjReVdKBv4YwGw3OXAPaxfm4aR0gLoBUon4VmmA==}
+    dependencies:
+      asap: 2.0.6
+    dev: true
+
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -5568,6 +5595,10 @@ packages:
   /resolve-from/5.0.0:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
     engines: {node: '>=8'}
+    dev: true
+
+  /resolve/1.1.7:
+    resolution: {integrity: sha512-9znBF0vBcaSN3W2j7wKvdERPwqTxSpCq+if5C0WoTCyV9n24rua28jeuQ2pL/HOf+yUe/Mef+H/5p60K0Id3bg==}
     dev: true
 
   /resolve/1.22.1:

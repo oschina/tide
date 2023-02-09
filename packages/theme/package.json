@@ -1,0 +1,22 @@
+{
+  "name": "@gitee/wysiwyg-editor-theme",
+  "version": "0.1.0-alpha.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "types": "dist/cjs/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "",
+    "build": "",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "sideEffects": false
+}

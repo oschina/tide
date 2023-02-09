@@ -35,6 +35,7 @@
     "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
     "@gitee/wysiwyg-editor-markdown": "workspace:*",
     "@gitee/wysiwyg-editor-react": "workspace:*",
+    "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/core": "^2.0.0-beta.216",
     "@tiptap/extension-bubble-menu": "^2.0.0-beta.216",
