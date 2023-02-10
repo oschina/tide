@@ -1,6 +1,6 @@
 {
   "name": "@gitee/wysiwyg-editor-extension-ordered-list",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.0",
+    "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.1",
     "@tiptap/extension-ordered-list": "^2.0.0-beta.216"
   },
   "devDependencies": {
