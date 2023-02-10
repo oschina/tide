@@ -34,6 +34,7 @@
     "@gitee/wysiwyg-editor-extension-table": "workspace:*",
     "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
     "@gitee/wysiwyg-editor-react": "workspace:*",
+    "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.209",
     "@tiptap/extension-heading": "^2.0.0-beta.209",
     "@tiptap/extension-paragraph": "^2.0.0-beta.209",

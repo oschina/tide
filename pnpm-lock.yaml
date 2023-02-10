@@ -391,6 +391,7 @@ importers:
       '@gitee/icons-react': ^0.1.36
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-code-block': ^2.0.0-beta.216
@@ -409,6 +410,7 @@ importers:
       '@gitee/icons-react': 0.1.36_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/extension-code-block': 2.0.0-beta.216_52znevncfm2yh6onrqrq3pxfpu
@@ -485,6 +487,7 @@ importers:
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-image': ^2.0.0-beta.216
@@ -501,6 +504,7 @@ importers:
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/extension-image': 2.0.0-beta.216_pmer27shfotwm74gjrzdl5eg2i
@@ -535,6 +539,7 @@ importers:
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-link': ^2.0.0-beta.216
       '@tiptap/pm': ^2.0.0-beta.216
@@ -550,6 +555,7 @@ importers:
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/extension-link': 2.0.0-beta.216_52znevncfm2yh6onrqrq3pxfpu
       react: 16.14.0
@@ -646,6 +652,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-table': workspace:*
       '@gitee/wysiwyg-editor-extension-uploader': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-heading': ^2.0.0-beta.209
@@ -667,6 +674,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-table': link:../extension-table
       '@gitee/wysiwyg-editor-extension-uploader': link:../extension-uploader
       '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/extension-heading': 2.0.0-beta.216_pmer27shfotwm74gjrzdl5eg2i
@@ -719,6 +727,7 @@ importers:
     specifiers:
       '@gitee/icons-react': ^0.1.36
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-table': ^2.0.0-beta.216
@@ -737,6 +746,7 @@ importers:
     dependencies:
       '@gitee/icons-react': 0.1.36_react@16.14.0
       '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/extension-table': 2.0.0-beta.216_52znevncfm2yh6onrqrq3pxfpu

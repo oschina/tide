@@ -17,6 +17,7 @@
   "dependencies": {
     "@gitee/wysiwyg-editor-common": "workspace:*",
     "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
+    "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tiptap/extension-link": "^2.0.0-beta.216"
   },
   "devDependencies": {
