@@ -58,10 +58,11 @@
 
   &__tooltip {
     padding: 4px 8px;
-    color: @background-color;
+    color: #fff;
     font-size: 12px;
-    background-color: #404040;
-    border-radius: 2px;
+    background-color: @tooltip-bg-color;
+    border-radius: 4px;
+    border: 1px solid @border-color;
   }
 
 
@@ -69,7 +70,7 @@
   .tippy-arrow {
     width: 16px;
     height: 16px;
-    color: #404040;
+    color: @tooltip-bg-color;
   }
 
   .tippy-box[data-placement^='top'] > .tippy-arrow {

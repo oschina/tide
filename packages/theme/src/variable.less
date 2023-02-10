@@ -66,6 +66,9 @@
 @table-grid-active-bg-color: var(--gwe-table-grid-active-bg-color, @_table-grid-active-bg-color);
 @table-grid-active-border-color: var(--gwe-table-grid-active-border-color, @_table-grid-active-border-color);
 
+@_tooltip-bg-color: #404040;
+@tooltip-bg-color: var(--gwe-tooltip-bg-color, @_tooltip-bg-color);
+
 
 /**
  * 暗黑主题
@@ -94,6 +97,7 @@
 @dark-table-grid-active-bg-color: @dark-theme-color;
 @dark-table-grid-active-border-color: @dark-theme-color;
 
+@dark-tooltip-bg-color: @dark-background-color;
 
 :root, :root .theme-blue {
   --gwe-theme-color: #2c7ef8;
@@ -143,14 +147,15 @@
   --gwe-select-active-color: @_select-active-color;
   --gwe-select-active-bg-color: @_select-active-bg-color;
 
-  --gwe-emoji-menu-active-color: @emoji-menu-active-color;
-  --gwe-emoji-menu-active-bg-color: @emoji-menu-active-bg-color;
+  --gwe-emoji-menu-active-color: @_emoji-menu-active-color;
+  --gwe-emoji-menu-active-bg-color: @_emoji-menu-active-bg-color;
 
   --gwe-table-bar-bg-color: @_table-bar-bg-color;
   --gwe-table-grid-bg-color: @_table-grid-bg-color;
   --gwe-table-grid-active-bg-color: @_table-grid-active-bg-color;
   --gwe-table-grid-active-border-color: @_table-grid-active-border-color;
 
+  --gwe-tooltip-bg-color: @_tooltip-bg-color;
 }
 
 :root .theme-dark {
@@ -182,4 +187,6 @@
   --gwe-table-grid-bg-color: @dark-table-grid-bg-color;
   --gwe-table-grid-active-bg-color: @dark-table-grid-active-bg-color;
   --gwe-table-grid-active-border-color: @dark-table-grid-active-border-color;
+
+  --gwe-tooltip-bg-color: @dark-tooltip-bg-color;
 }
