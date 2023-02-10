@@ -1,0 +1,26 @@
+@import "~@gitee/wysiwyg-editor-theme/src/variable";
+
+.gwe-editor-table-grid {
+  cursor: pointer;
+  margin: -2px;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__cell {
+    flex-shrink: 0;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    border: solid 1px @border-color;
+    background-color: @table-grid-bg-color;
+    border-radius: 2px;
+
+    &--selected {
+      border-color: @table-grid-active-border-color;
+      background-color: @table-grid-active-bg-color;
+    }
+  }
+}

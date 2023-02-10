@@ -1,39 +1,185 @@
-:root {
-  --theme-color: #2c7ef8;
-  --theme-color-raw: 44,126,248;
-}
-
-// :root .theme-purple {
-//   --theme-color: #6554c0;
-// }
+// 浅色主题
 
 @_theme-color: #2c7ef8;
-@theme-color: var(--theme-color, @_theme-color); // 主题色
+@theme-color: var(--gwe-theme-color, @_theme-color); // 主题色
 
-@theme-bg-color: rgba(var(--theme-color-raw), 0.1); // 浅色背景主题色，透明度10%
+@theme-bg-color: rgba(
+  var(--gwe-theme-color-rgb, @_theme-color),
+  0.1
+); // 浅色背景主题色，透明度10%
 
 @_background-color: #fff;
-@background-color: var(--background-color, @_background-color); // 背景色
+@background-color: var(--gwe-background-color, @_background-color); // 背景色
 
-@light-bg-color: #F5F6F8;
+@_light-bg-color: #f5f6f8;
+@_gray-color: #c1c7d0;
 
-@select-hover-bg-color: @light-bg-color;
-@gray-color: #C1C7D0;
+@_border-color: #dadee3;
+@border-color: var(--gwe-border-color, @_border-color);
 
+@_text-color: #2e405e;
+@text-color: var(--gwe-text-color, @_text-color);
 
-@selection-border-color: @theme-color;
-@border-color: #dadee3;
-@text-color: #2e405e;
-@text-muted-color: #909aaa;
+@_text-muted-color: #909aaa;
+@text-muted-color: var(--gwe-text-muted-color, @_text-muted-color);
 
-@table-border-color: @border-color;
-@table-header-bg-color: @light-bg-color;
-@table-selected-border-color: @theme-color;
-@table-selected-cell-bg-color: @theme-bg-color;
-@table-selected-control-bg-color: @theme-color;
-@table-column-resize-handle-color: @theme-color;
+@light-bg-color: var(--gwe-light-bg-color, @_light-bg-color);
+@gray-color: var(--gwe-gray-color, @_gray-color);
 
-@mention-bg-color: @theme-bg-color;
-@mention-selected-bg-color: @theme-bg-color;
 @text-font-mono: 'Roboto Mono', 'Andale Mono', Consolas, 'Courier New',
-monospace;
+  monospace;
+
+// 菜单按钮 active 的样式
+@_menu-btn-active-color: @theme-color;
+@_menu-btn-active-bg-color: @theme-bg-color;
+@menu-btn-active-color: var(--gwe-menu-btn-active-color, @_menu-btn-active-color);
+@menu-btn-active-bg-color: var(--gwe-menu-btn-active-bg-color, @_menu-btn-active-bg-color);
+
+// popup 弹窗样式
+@_popup-bg-color: @_background-color;
+@_popup-shadow-color: 0px 4px 8px -2px rgba(9, 30, 66, 0.25),
+  0px 0px 1px 0px rgba(9, 30, 66, 0.31);
+@popup-bg-color: var(--gwe-popup-bg-color, @_popup-bg-color);
+@popup-shadow-color: var(--gwe-popup-shadow-color, @_popup-shadow-color);
+
+// 下拉菜单
+@_select-active-color: @theme-color;
+@_select-active-bg-color: @theme-bg-color;
+@select-active-color: var(--gwe-select-active-color, @_select-active-color);
+@select-active-bg-color: var(
+  --gwe-select-active-bg-color,
+  @_select-active-bg-color
+);
+
+@_emoji-menu-active-color: @_text-color;
+@_emoji-menu-active-bg-color: #F5F6F8;
+@emoji-menu-active-color: var(--gwe-emoji-menu-active-color, @_emoji-menu-active-color);
+@emoji-menu-active-bg-color: var(--gwe-emoji-menu-active-bg-color, @_emoji-menu-active-bg-color);
+
+@_table-bar-bg-color: #F5F6F8;
+@_table-grid-bg-color: #F5F6F8;
+@_table-grid-active-bg-color: @theme-bg-color;
+@_table-grid-active-border-color: @theme-color;
+
+@table-bar-bg-color: var(--gwe-table-bar-bg-color, @_table-bar-bg-color);
+@table-grid-bg-color: var(--gwe-table-grid-bg-color, @_table-grid-bg-color);
+@table-grid-active-bg-color: var(--gwe-table-grid-active-bg-color, @_table-grid-active-bg-color);
+@table-grid-active-border-color: var(--gwe-table-grid-active-border-color, @_table-grid-active-border-color);
+
+
+/**
+ * 暗黑主题
+ */
+@dark-background-color: #1a1b1e;
+@dark-border-color: #30363d;
+@dark-theme-color: #165fcf; // 主题蓝色
+@dark-text-color: #b5bbc6; // 文字色 
+@dark-text-muted-color: #8c96a6; // 文字辅助色
+
+// 菜单按钮 active 的样式
+@dark-menu-btn-active-color: #fff;
+@dark-menu-btn-active-bg-color: @dark-theme-color;
+
+@dark-popup-bg-color: @dark-background-color;
+@dark-popup-shadow-color: 0 0 0 1px @dark-border-color;
+
+@dark-select-active-color: @dark-text-color;
+@dark-select-active-bg-color: #2d343d;
+
+@dark-emoji-menu-active-color: #fff;
+@dark-emoji-menu-active-bg-color: @dark-theme-color;
+
+@dark-table-bar-bg-color: #272931;
+@dark-table-grid-bg-color: @dark-background-color;
+@dark-table-grid-active-bg-color: @dark-theme-color;
+@dark-table-grid-active-border-color: @dark-theme-color;
+
+
+:root, :root .theme-blue {
+  --gwe-theme-color: #2c7ef8;
+  --gwe-theme-color-rgb: 44, 126, 248;
+}
+
+:root .theme-purple {
+  --gwe-theme-color: #6554c0;
+  --gwe-theme-color-rgb: 101, 84, 192;
+}
+
+:root .theme-green {
+  --gwe-theme-color: #36b37e;
+  --gwe-theme-color-rgb: 54, 179, 126;
+}
+
+:root .theme-orange {
+  --gwe-theme-color: #ff8118;
+  --gwe-theme-color-rgb: 255, 129, 24;
+}
+
+:root .theme-pink {
+  --gwe-theme-color: #b25578;
+  --gwe-theme-color-rgb: 178, 85, 120;
+}
+
+
+:root .theme-blue,
+:root .theme-green,
+:root .theme-orange,
+:root .theme-pink,
+:root .theme-purple {
+  --gwe-background-color: @_background-color;
+  --gwe-border-color: @_border-color;
+  --gwe-text-color: @_text-color;
+  --gwe-text-muted-color: @_text-muted-color;
+
+  --gwe-light-bg-color: @_light-bg-color;
+  --gwe-gray-color: @_gray-color;
+
+  --gwe-menu-btn-active-color: @_menu-btn-active-color;
+  --gwe-menu-btn-active-bg-color: @_menu-btn-active-bg-color;
+
+  --gwe-popup-bg-color: @_popup-bg-color;
+  --gwe-popup-shadow-color: @_popup-shadow-color;
+
+  --gwe-select-active-color: @_select-active-color;
+  --gwe-select-active-bg-color: @_select-active-bg-color;
+
+  --gwe-emoji-menu-active-color: @emoji-menu-active-color;
+  --gwe-emoji-menu-active-bg-color: @emoji-menu-active-bg-color;
+
+  --gwe-table-bar-bg-color: @_table-bar-bg-color;
+  --gwe-table-grid-bg-color: @_table-grid-bg-color;
+  --gwe-table-grid-active-bg-color: @_table-grid-active-bg-color;
+  --gwe-table-grid-active-border-color: @_table-grid-active-border-color;
+
+}
+
+:root .theme-dark {
+  --gwe-theme-color: #165fcf;
+  --gwe-theme-color-rgb: 22, 95, 207;
+
+  --gwe-background-color: @dark-background-color;
+
+  --gwe-border-color: @dark-border-color;
+  --gwe-text-color: @dark-text-color;
+  --gwe-text-muted-color: @dark-text-muted-color;
+
+  --gwe-light-bg-color: @_light-bg-color;
+  --gwe-gray-color: @_gray-color;
+
+  --gwe-menu-btn-active-color: @dark-menu-btn-active-color;
+  --gwe-menu-btn-active-bg-color: @dark-menu-btn-active-bg-color;
+
+  --gwe-popup-bg-color: @dark-popup-bg-color;
+  --gwe-popup-shadow-color: @dark-popup-shadow-color;
+
+  --gwe-select-active-color: @dark-select-active-color;
+  --gwe-select-active-bg-color: @dark-select-active-bg-color;
+
+  --gwe-emoji-menu-active-color: @dark-emoji-menu-active-color;
+  --gwe-emoji-menu-active-bg-color: @dark-emoji-menu-active-bg-color;
+
+  --gwe-table-bar-bg-color: @dark-table-bar-bg-color;
+  --gwe-table-grid-bg-color: @dark-table-grid-bg-color;
+  --gwe-table-grid-active-bg-color: @dark-table-grid-active-bg-color;
+  --gwe-table-grid-active-border-color: @dark-table-grid-active-border-color;
+}
