@@ -32,5 +32,5 @@
     "@gitee/wysiwyg-editor-extension-menubar": "0.1.0-alpha.0",
     "@gitee/wysiwyg-editor-theme": "0.1.0-alpha.0"
   },
-  "changesets": ["rare-forks-rule", "real-trainers-turn"]
+  "changesets": ["few-baboons-attack", "rare-forks-rule", "real-trainers-turn"]
 }

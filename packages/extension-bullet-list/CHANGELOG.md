@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-bullet-list
 
+## 0.1.0-alpha.2
+
+### Minor Changes
+
+- UI optimize.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.2
+
 ## 0.1.0-alpha.1
 
 ### Minor Changes
