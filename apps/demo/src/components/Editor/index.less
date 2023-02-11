@@ -1,6 +1,6 @@
-@import "~@gitee/wysiwyg-editor-theme/src/variable";
+@import '~@gitee/wysiwyg-editor-theme/src/variable';
 
-.ge-editor {
+.gwe-editor {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -18,11 +18,11 @@
     height: 100%;
     border: 0;
 
-    .gwe-menu-bar {
+    > .gwe-menu-bar {
       justify-content: center;
     }
 
-    .ge-editor__editor-content {
+    .gwe-content {
       .ProseMirror {
         max-width: 864px;
         margin: 0 auto;
@@ -31,7 +31,7 @@
     }
   }
 
-  & &__editor-content {
+  .gwe-content {
     flex: 1;
     min-height: 0;
     overflow: auto;
@@ -42,12 +42,12 @@
       padding: 24px 32px;
     }
   }
-}
 
-.gwe-editor-popup {
-  position: relative;
-  overflow: hidden;
-  background-color: @popup-bg-color;
-  box-shadow: @popup-shadow-color;
-  border-radius: 4px;
+  .gwe-editor-popup {
+    position: relative;
+    overflow: hidden;
+    background-color: @popup-bg-color;
+    box-shadow: @popup-shadow-color;
+    border-radius: 4px;
+  }
 }

@@ -278,7 +278,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
 
     useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
 
-    const fullClassName = classNames('ge-editor__editor-content', className);
+    const fullClassName = classNames('gwe-content', className);
 
     if (editor && editor.isEmpty && !editor.isEditable) {
       return <div className={fullClassName}>{readOnlyEmptyView || null}</div>;

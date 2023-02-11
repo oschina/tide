@@ -15,7 +15,6 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-extension-image": "workspace:*",
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "browser-fs-access": "^0.31.1"
   },

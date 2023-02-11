@@ -50,8 +50,8 @@ export const WysiwygEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
     const content = (
       <div
         className={classNames(
-          'ge-editor',
-          { 'ge-editor--fullscreen': fullscreen },
+          'gwe-editor',
+          { 'gwe-editor--fullscreen': fullscreen },
           className
         )}
         style={style}

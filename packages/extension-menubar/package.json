@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-common": "workspace:*",
+    "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "classnames": "^2.2.6",
     "lodash": "^4.17.21"
@@ -34,7 +35,6 @@
     "@gitee/wysiwyg-editor-extension-table": "workspace:*",
     "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
     "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tiptap/core": "^2.0.0-beta.209",
     "@tiptap/extension-heading": "^2.0.0-beta.209",
     "@tiptap/extension-paragraph": "^2.0.0-beta.209",

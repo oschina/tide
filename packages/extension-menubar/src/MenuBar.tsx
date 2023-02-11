@@ -106,9 +106,8 @@ export const MenuBar: React.FC<MenuBarProps> = ({
         </Tippy>
       </div>
 
-      <div>
+      <div className="gwe-menu-bar__item">
         <Tippy
-          offset={[0, 4]}
           placement="bottom-start"
           interactive
           onClickOutside={() => setHeadVisible(false)}
@@ -193,7 +192,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({
             <span className={'gwe-dropdown-trigger__head-text'}>
               {getHeadingText()}
             </span>
-            <IconCaretDown />
+            <IconCaretDown className={'gwe-dropdown-trigger__head-icon'} />
           </div>
         </Tippy>
       </div>

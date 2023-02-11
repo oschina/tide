@@ -31,6 +31,7 @@ export const InsertEmojiButton: React.FC<{
         interactive
         hideOnClick
         onShow={() => ref?.current?.onShow()}
+        maxWidth={null}
       >
         {children}
       </Tippy>

@@ -53,7 +53,7 @@ export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
         },
       }}
     >
-      <div className="gwe-menu-bar gwe-menu-bar-bubble" style={{ width: 96 }}>
+      <div className="gwe-menu-bar gwe-menu-bar-bubble">
         <Tippy
           interactive
           content={<div className={'gwe-menu-bar__tooltip'}>居左</div>}

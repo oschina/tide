@@ -297,7 +297,7 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.0
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.1
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-blockquote': ^2.0.0-beta.216
       eslint-config-custom: workspace:*
@@ -356,7 +356,7 @@ importers:
 
   packages/extension-bullet-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.0
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.1
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-bullet-list': ^2.0.0-beta.216
       eslint-config-custom: workspace:*
@@ -432,6 +432,7 @@ importers:
       '@gitee/icons-react': ^0.1.35
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/pm': ^2.0.0-beta.216
@@ -450,6 +451,7 @@ importers:
       '@gitee/icons-react': 0.1.35_react@16.14.0
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       '@tiptap/suggestion': 2.0.0-beta.216_52znevncfm2yh6onrqrq3pxfpu
@@ -693,7 +695,7 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.0
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.1
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/extension-ordered-list': ^2.0.0-beta.216
       eslint-config-custom: workspace:*
@@ -783,7 +785,6 @@ importers:
 
   packages/extension-uploader:
     specifiers:
-      '@gitee/wysiwyg-editor-extension-image': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tiptap/core': ^2.0.0-beta.216
       '@tiptap/pm': ^2.0.0-beta.216
@@ -793,7 +794,6 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@gitee/wysiwyg-editor-extension-image': link:../extension-image
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tiptap/core': 2.0.0-beta.216_@tiptap+pm@2.0.0-beta.216
       browser-fs-access: 0.31.1

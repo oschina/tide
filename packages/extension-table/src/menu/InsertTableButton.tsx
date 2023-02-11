@@ -51,7 +51,6 @@ export const InsertTableButton: React.FC<{
             />
           </div>
         }
-        offset={[0, 4]}
         placement="bottom-start"
         interactive
         onClickOutside={() => setVisible(false)}
