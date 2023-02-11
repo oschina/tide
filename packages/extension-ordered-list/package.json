@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.1",
-    "@tiptap/extension-ordered-list": "^2.0.0-beta.216"
+    "@tiptap/extension-ordered-list": "^2.0.0-beta.217"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
@@ -24,7 +24,7 @@
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.216"
+    "@tiptap/core": "^2.0.0-beta.217"
   },
   "sideEffects": false
 }

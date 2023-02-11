@@ -18,13 +18,13 @@
     "@gitee/wysiwyg-editor-common": "workspace:*",
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
-    "@tiptap/extension-code-block": "^2.0.0-beta.216",
-    "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.216",
+    "@tiptap/extension-code-block": "^2.0.0-beta.217",
+    "@tiptap/extension-code-block-lowlight": "^2.0.0-beta.217",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.3.3"
   },
   "devDependencies": {
-    "@tiptap/pm": "^2.0.0-beta.216",
+    "@tiptap/pm": "^2.0.0-beta.217",
     "@types/react": "^16.14.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
@@ -33,8 +33,8 @@
   "peerDependencies": {
     "@gitee/icons-react": "^0.1.36",
     "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@tiptap/core": "^2.0.0-beta.216",
-    "@tiptap/pm": "^2.0.0-beta.216",
+    "@tiptap/core": "^2.0.0-beta.217",
+    "@tiptap/pm": "^2.0.0-beta.217",
     "lowlight": "^2.8.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"

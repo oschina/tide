@@ -18,13 +18,13 @@
     "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
-    "@tiptap/suggestion": "^2.0.0-beta.216",
+    "@tiptap/suggestion": "^2.0.0-beta.217",
     "classnames": "^2.2.6",
     "emoji-regex": "^10.2.1",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
-    "@tiptap/pm": "^2.0.0-beta.216",
+    "@tiptap/pm": "^2.0.0-beta.217",
     "@types/react": "^16.14.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
@@ -34,8 +34,8 @@
   "peerDependencies": {
     "@gitee/icons-react": "^0.1.35",
     "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@tiptap/core": "^2.0.0-beta.216",
-    "@tiptap/pm": "^2.0.0-beta.216",
+    "@tiptap/core": "^2.0.0-beta.217",
+    "@tiptap/pm": "^2.0.0-beta.217",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },
