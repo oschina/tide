@@ -37,7 +37,7 @@
     padding: 4px;
     cursor: pointer;
 
-    &:hover {
+    &:hover:not([disabled]) {
       background-color: @menu-btn-active-bg-color;
     }
 
@@ -45,17 +45,18 @@
       color: @menu-btn-active-color;
       background-color: @menu-btn-active-bg-color;
 
-      &:hover {
+      &:hover:not([disabled]) {
         background-color: @menu-btn-active-bg-color;
       }
     }
 
     &[disabled] {
       cursor: not-allowed;
+      color: #C1C7D0;
     }
 
     &--active[disabled] {
-      opacity: 0.5;
+      opacity: 0.7;
     }
 
     &--disabled {

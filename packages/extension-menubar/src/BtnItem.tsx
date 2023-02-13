@@ -70,7 +70,10 @@ export const BtnItem: React.FC<BtnItemProps> = ({
 
   if (name === 'table') {
     return (
-      <InsertTableButton editor={editor}>
+      <InsertTableButton
+        editor={editor}
+        disabled={statusMap[name]?.disabled || false}
+      >
         <button
           className={classNames(
             'gwe-menu-bar__btn',

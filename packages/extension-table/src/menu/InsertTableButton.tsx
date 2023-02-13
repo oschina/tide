@@ -6,8 +6,9 @@ import './InsertTableButton.less';
 
 export const InsertTableButton: React.FC<{
   editor: Editor;
+  disabled: boolean;
   children: React.ReactElement;
-}> = ({ editor, children }) => {
+}> = ({ editor, disabled, children }) => {
   const [size, setSize] = useState<{ rows: number; columns: number }>({
     rows: 0,
     columns: 0,
@@ -56,7 +57,15 @@ export const InsertTableButton: React.FC<{
         onClickOutside={() => setVisible(false)}
         visible={visible}
       >
-        <div className="gwe-menu-bar__item" onClick={() => setVisible(true)}>
+        <div
+          className="gwe-menu-bar__item"
+          onClick={() => {
+            if (disabled) {
+              return;
+            }
+            setVisible(true);
+          }}
+        >
           {children}
         </div>
       </Tippy>
