@@ -12,6 +12,7 @@ import {
   IconUndoBold,
   IconRedoBold,
 } from '@gitee/icons-react';
+import { isWindows } from '@gitee/wysiwyg-editor-common';
 import useBtnMenus from './useBtnMenus';
 import { BtnItem } from './BtnItem';
 import { useStatusMap } from './useStatusMap';
@@ -178,7 +179,9 @@ export const MenuBar: React.FC<MenuBarProps> = ({
                         标题{level}
                       </span>
                       <span className={`gwe-menu-head-row__span`}>
-                        Ctrl Alt {level}
+                        {isWindows()
+                          ? `Ctrl Alt ${level}`
+                          : `Command + Option ${level}`}
                       </span>
                     </div>
                   </li>

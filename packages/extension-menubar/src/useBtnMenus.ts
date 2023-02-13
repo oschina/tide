@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Editor } from '@tiptap/core';
 import { selectImageUpload } from '@gitee/wysiwyg-editor-extension-uploader';
+import { isWindows } from '@gitee/wysiwyg-editor-common';
 import { menuKey } from './useStatusMap';
 
 declare module '@tiptap/core' {
@@ -101,30 +102,31 @@ interface BtnMenu {
 }
 
 const useBtnMenus = (editor: Editor) => {
+  const command = isWindows() ? 'Ctrl' : 'Command';
   return useMemo<BtnMenu[]>(
     () => [
       {
         name: 'bold',
-        title: '加粗 (Ctrl + B)',
+        title: `加粗 (${command} + B)`,
         onClick: () => editor.chain().focus().toggleBold().run(),
         // 悬浮菜单是否显示
         bubble: true,
       },
       {
         name: 'italic',
-        title: '斜体 (Ctrl + I)',
+        title: `斜体 (${command} + I)`,
         onClick: () => editor.chain().focus().toggleItalic().run(),
         bubble: true,
       },
       {
         name: 'strike',
-        title: '删除线 (Ctrl + Shift + X)',
+        title: `删除线 (${command} + Shift + X)`,
         onClick: () => editor.chain().focus().toggleStrike().run(),
         bubble: true,
       },
       {
         name: 'code',
-        title: '行内代码 (Ctrl + E)',
+        title: `行内代码 (${command} + E)`,
         onClick: () => editor.chain().focus().toggleCode().run(),
         bubble: true,
       },
@@ -134,17 +136,17 @@ const useBtnMenus = (editor: Editor) => {
       },
       {
         name: 'bulletList',
-        title: '无序列表 (Ctrl + Shift + 8)',
+        title: `无序列表 (${command} + Shift + 8)`,
         onClick: () => editor.chain().focus().toggleBulletList().run(),
       },
       {
         name: 'orderedList',
-        title: '有序列表 (Ctrl + Shift + 7)',
+        title: `有序列表 (${command} + Shift + 7)`,
         onClick: () => editor.chain().focus().toggleOrderedList().run(),
       },
       {
         name: 'taskList',
-        title: '任务列表 (Ctrl + Shift + 9)',
+        title: `任务列表 (${command} + Shift + 9)`,
         onClick: () => editor.chain().focus().toggleTaskList().run(),
       },
       {
@@ -152,7 +154,7 @@ const useBtnMenus = (editor: Editor) => {
       },
       {
         name: 'link',
-        title: '链接 (Ctrl + K)',
+        title: `链接 (${command} + K)`,
         onClick: () => editor.chain().focus().toggleLink({ href: '' }).run(),
         bubble: true,
       },
@@ -175,12 +177,14 @@ const useBtnMenus = (editor: Editor) => {
       },
       {
         name: 'blockquote',
-        title: '引用 (Ctrl + Shift + >)',
+        title: `引用 (${command} + Shift + >)`,
         onClick: () => editor?.chain().focus().toggleBlockquote().run(),
       },
       {
         name: 'horizontalRule',
-        title: '分割线 (Ctrl + Alt + S)',
+        title: isWindows()
+          ? '分割线 (Ctrl + Alt + S)'
+          : '分割线 (Command + Option + S)',
         onClick: () => editor?.chain().focus().setHorizontalRule().run(),
       },
       {
