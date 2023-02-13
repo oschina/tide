@@ -25,23 +25,38 @@
         background-color: rgba(0, 0, 0, 0.5);
       }
     }
-
-    &-progress {
-      width: 50%;
-      height: 8px;
+    &-progress-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      height: 20px;
       position: absolute;
+      z-index: 2;
       top: 50%;
       left: 50%;
-      border-radius: 10px;
-      background: #eceef5;
       transform: translate(-50%, -50%);
       overflow: hidden;
+    }
+
+    &-progress {
+      width: 80%;
+      height: 8px;
+      margin-right: 8px;
+      border-radius: 10px;
+      background: #eceef5;
 
       &-inner {
         display: block;
         height: 100%;
         border-radius: 10px;
         background: @theme-color;
+      }
+
+      &-text {
+        font-size: 14px;
+        color: #fff;
+        line-height: 18px;
       }
     }
   }
