@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import lz from 'lz-string';
 import copy from 'copy-to-clipboard';
@@ -19,6 +19,7 @@ const HeaderBar = ({
   editable: boolean;
   onEditableChange: (v: boolean) => void;
 }) => {
+  const [theme, setTheme] = useState('');
   const handleClickShareLink = () => {
     const jsonContent = editor?.getJSON();
     const url = new URL(window.location.href);
@@ -105,6 +106,24 @@ const HeaderBar = ({
         </label>
       </div>
       <div className={'demo-header-bar-right'}>
+        <select
+          onChange={(e) => {
+            const val = e.target.value;
+            const classList = document.body.classList;
+            if (classList.contains(theme)) {
+              classList.replace(theme, val);
+            } else {
+              classList.add(val);
+            }
+            setTheme(val);
+          }}
+        >
+          <option value="theme-blue">蓝色</option>
+          <option value="theme-purple">紫色</option>
+          <option value="theme-green">绿色</option>
+          <option value="theme-pink">梅红</option>
+          <option value="theme-dark">暗黑</option>
+        </select>
         <button
           className="btn-dev-tool"
           onClick={() => {
