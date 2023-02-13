@@ -106,6 +106,8 @@ export const MenuBar: React.FC<MenuBarProps> = ({
         </Tippy>
       </div>
 
+      <span className="gwe-menu-bar__divider" />
+
       <div className="gwe-menu-bar__item">
         <Tippy
           placement="bottom-start"
@@ -208,7 +210,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({
         <button
           onClick={() => onFullscreenChange?.(!fullscreen)}
           className={classNames(
-            'gwe-menu-bar__btn',
+            'gwe-menu-bar__item gwe-menu-bar__btn',
             fullscreen ? `gwe-menu-bar__btn--active` : ''
           )}
         >

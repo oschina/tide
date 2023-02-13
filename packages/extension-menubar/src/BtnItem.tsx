@@ -60,7 +60,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
     return null;
   }
   if (name === 'divider') {
-    return <span className={'gwe-menu-bar__divider'} />;
+    return <span className="gwe-menu-bar__divider" />;
   }
 
   const IconComponent = IconMap[name];
