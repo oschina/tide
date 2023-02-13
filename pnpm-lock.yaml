@@ -388,7 +388,7 @@ importers:
 
   packages/extension-code-block:
     specifiers:
-      '@gitee/icons-react': ^0.1.36
+      '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
@@ -485,7 +485,7 @@ importers:
 
   packages/extension-image:
     specifiers:
-      '@gitee/icons-react': ^0.1.36
+      '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
@@ -537,7 +537,7 @@ importers:
 
   packages/extension-link:
     specifiers:
-      '@gitee/icons-react': ^0.1.36
+      '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
@@ -648,7 +648,7 @@ importers:
 
   packages/extension-menubar:
     specifiers:
-      '@gitee/icons-react': ^0.1.36
+      '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-emoji': workspace:*
       '@gitee/wysiwyg-editor-extension-table': workspace:*
@@ -727,7 +727,7 @@ importers:
 
   packages/extension-table:
     specifiers:
-      '@gitee/icons-react': ^0.1.36
+      '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
