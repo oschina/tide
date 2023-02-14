@@ -19,6 +19,7 @@ const getPlugins = ({ projectPath }) => {
     typescript({
       tsconfig: path.resolve(projectPath, 'tsconfig.json'),
       clean: true,
+      useTsconfigDeclarationDir: true,
       exclude: ['**/__tests__', '**/*.test.ts'],
     }),
     sourcemaps(),
@@ -31,7 +32,7 @@ const getPlugins = ({ projectPath }) => {
           },
         ],
       ],
-      extract: true,
+      extract: 'style.css',
     }),
     // terser({
     //   output: { comments: false },

@@ -1,12 +1,12 @@
 {
   "name": "@gitee/wysiwyg-editor-extension-link",
   "version": "0.1.0-alpha.3",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
-  "types": "dist/cjs/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "license": "MIT",
   "scripts": {
     "dev": "rollup -c rollup.config.js -w",
