@@ -46,6 +46,14 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
     [languages, search]
   );
 
+  const handleOpen = () => {
+    if (!isEditable) {
+      return;
+    }
+    setVisible((prev) => !prev);
+    setTimeout(() => inputRef.current.focus());
+  };
+
   return (
     <NodeViewWrapper
       className={classNames(node.attrs.className, 'gwe-code-block')}
@@ -69,6 +77,7 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
                       })}
                       onClick={() => {
                         setValue(lang.value);
+                        setSearch(lang.value);
                         updateAttributes({ language: lang.value });
                         setVisible(false);
                       }}
@@ -87,22 +96,25 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
                   'gwe-dropdown-trigger-search--active': visible,
                 }
               )}
-              onClick={() => {
-                if (!isEditable) {
-                  return;
-                }
-                setVisible((prev) => !prev);
-                setTimeout(() => inputRef.current.focus());
-              }}
             >
-              <input
-                ref={inputRef}
-                type="text"
-                value={value}
-                className="gwe-dropdown-trigger-search__input"
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <IconAngleDown />
+              {visible ? (
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={search}
+                  placeholder={value ? value : '请搜索'}
+                  className="gwe-dropdown-trigger-search__input"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              ) : (
+                <span
+                  onClick={() => handleOpen()}
+                  className="gwe-dropdown-trigger-search__text"
+                >
+                  {value}
+                </span>
+              )}
+              <IconAngleDown onClick={() => handleOpen()} />
             </div>
           </Tippy>
         ) : (
