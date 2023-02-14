@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-uploader
 
+## 0.1.0-alpha.3
+
+### Minor Changes
+
+- Fix bugs.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.3
+
 ## 0.1.0-alpha.2
 
 ### Minor Changes

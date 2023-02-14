@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-list-item
 
+## 0.1.0-alpha.3
+
+### Minor Changes
+
+- Fix bugs.
+
 ## 0.1.0-alpha.2
 
 ### Minor Changes

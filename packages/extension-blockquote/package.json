@@ -1,6 +1,6 @@
 {
   "name": "@gitee/wysiwyg-editor-extension-blockquote",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.2",
+    "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.3",
     "@tiptap/extension-blockquote": "^2.0.0-beta.217"
   },
   "devDependencies": {
