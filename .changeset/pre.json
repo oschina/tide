@@ -33,6 +33,7 @@
     "@gitee/wysiwyg-editor-theme": "0.1.0-alpha.0"
   },
   "changesets": [
+    "curly-bugs-clean",
     "few-baboons-attack",
     "gold-bottles-kneel",
     "rare-forks-rule",

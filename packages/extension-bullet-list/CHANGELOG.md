@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-bullet-list
 
+## 0.1.0-alpha.4
+
+### Minor Changes
+
+- Fix mention, emoji, link bugs.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.4
+
 ## 0.1.0-alpha.3
 
 ### Minor Changes
