@@ -1,11 +1,11 @@
-@import "~@gitee/wysiwyg-editor-theme/src/variable";
+@import '~@gitee/wysiwyg-editor-theme/src/variable';
 
 .gwe-emoji-panel {
   width: 420px;
   &__input-wrap {
     position: relative;
     margin: 16px;
-    
+
     & > svg {
       position: absolute;
       top: 9px;
@@ -46,9 +46,12 @@
     text-align: center;
     border-radius: 4px;
     cursor: pointer;
+    font-family: @text-font-emoji;
+
     &:hover {
       background-color: @menu-btn-active-bg-color;
     }
+
     img {
       width: 1em;
       height: 1em;
