@@ -8,41 +8,51 @@ import type {
 } from '@tiptap/suggestion';
 import { ReactRenderer } from '@gitee/wysiwyg-editor-react';
 
-export interface MentionListProps<I = any, A = any>
-  extends Omit<SuggestionProps<I>, 'command'> {
-  command: (attrs: A) => void;
+export interface BaseMentionListProps<ItemDataType = any, AttrsType = any>
+  extends Omit<SuggestionProps<ItemDataType>, 'command'> {
+  command: (attrs: AttrsType) => void;
 }
 
-export type MentionListRef = {
+export type BaseMentionListRef = {
   onKeyDown: (props: SuggestionKeyDownProps) => boolean;
 };
 
-export type BuildSuggestionOptionsParams<I = any, A = any> = Omit<
-  SuggestionOptions,
-  'editor'
-> & {
+export type BuildSuggestionOptionsParams<
+  ItemDataType = any,
+  ListProps extends BaseMentionListProps<ItemDataType> = BaseMentionListProps<ItemDataType>,
+  ListRef extends BaseMentionListRef = BaseMentionListRef
+> = Omit<SuggestionOptions, 'editor'> & {
   /** mention list component */
-  component: ForwardRefExoticComponent<
-    MentionListProps<I, A> & RefAttributes<MentionListRef>
-  >;
+  component: ForwardRefExoticComponent<ListProps & RefAttributes<ListRef>>;
+
+  /** mention list component props */
+  componentProps?: Partial<ListProps> | undefined;
 
   /** mention items */
-  items?: (props: { query: string; editor: Editor }) => I[] | Promise<I[]>;
+  items?: (props: {
+    query: string;
+    editor: Editor;
+  }) => ItemDataType[] | Promise<ItemDataType[]>;
 };
 
-export const buildSuggestionOptions = <I = any, A = any>({
+export const buildSuggestionOptions = <
+  ItemDataType = any,
+  ListProps extends BaseMentionListProps = BaseMentionListProps,
+  ListRef extends BaseMentionListRef = BaseMentionListRef
+>({
   component: MentionListComponent,
+  componentProps,
   ...otherOptions
-}: BuildSuggestionOptionsParams) => {
+}: BuildSuggestionOptionsParams<ItemDataType, ListProps, ListRef>) => {
   const options: Omit<SuggestionOptions, 'editor'> = {
     render: () => {
-      let component: ReactRenderer<MentionListRef, MentionListProps>;
+      let component: ReactRenderer<ListRef, ListProps>;
       let popup: TippyInstance[];
 
       return {
         onStart: (props) => {
           component = new ReactRenderer(MentionListComponent, {
-            props,
+            props: { ...props, ...componentProps },
             editor: props.editor,
           });
 

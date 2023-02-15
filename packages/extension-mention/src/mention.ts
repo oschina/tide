@@ -2,8 +2,8 @@ import { Mention as TMention } from '@tiptap/extension-mention';
 import type { MentionOptions as TMentionOptions } from '@tiptap/extension-mention';
 import type { SuggestionOptions } from '@tiptap/suggestion';
 
-export type MentionOptions<I = any> = TMentionOptions & {
-  suggestion: Omit<SuggestionOptions<I>, 'editor'>;
+export type MentionOptions<ItemDataType = any> = TMentionOptions & {
+  suggestion: Omit<SuggestionOptions<ItemDataType>, 'editor'>;
 };
 
 export const Mention = TMention.extend<MentionOptions>({

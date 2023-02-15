@@ -1,33 +1,25 @@
 import { mergeAttributes } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {
+  BaseMentionListRef,
   buildSuggestionOptions,
   Mention,
-  MentionItem,
   MentionList,
+  MentionListProps,
   MentionOptions,
 } from '@gitee/wysiwyg-editor-extension-mention';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
 import { MentionMemberNodeView } from './MentionMemberNodeView';
-
-export type MentionMemberAttributes = {
-  /** 姓名 */
-  name: string;
-
-  /** 用户名 */
-  username: string;
-
-  /** 链接 */
-  url: string;
-};
-
-export type MentionMemberItem = MentionItem<MentionMemberAttributes>;
+import { MentionMemberAttributes, MentionMemberItemDataType } from './types';
+import MentionListItemRender from './MentionListItemRender';
 
 export const MentionMemberSuggestionPluginKey = new PluginKey(
   'mentionMemberSuggestion'
 );
 
-export const MentionMember = Mention.extend<MentionOptions<MentionMemberItem>>({
+export const MentionMember = Mention.extend<
+  MentionOptions<MentionMemberItemDataType>
+>({
   name: 'mentionMember',
 
   addOptions() {
@@ -38,13 +30,17 @@ export const MentionMember = Mention.extend<MentionOptions<MentionMemberItem>>({
         return `${options.suggestion.char}${node.attrs.name ?? node.attrs.id}`;
       },
       suggestion: buildSuggestionOptions<
-        MentionMemberItem,
-        MentionMemberAttributes
+        MentionMemberItemDataType,
+        MentionListProps<MentionMemberItemDataType, MentionMemberAttributes>,
+        BaseMentionListRef
       >({
         ...parentOptions?.suggestion,
         pluginKey: MentionMemberSuggestionPluginKey,
         char: '@',
-        component: MentionList,
+        component: MentionList as any, // FIXME: type error
+        componentProps: {
+          itemRender: (item) => <MentionListItemRender item={item} />,
+        },
       }),
     };
   },

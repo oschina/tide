@@ -6,19 +6,28 @@ import React, {
   useState,
 } from 'react';
 import classNames from 'classnames';
-import type { MentionListProps, MentionListRef } from './utils';
+import type { BaseMentionListProps, BaseMentionListRef } from './utils';
 
-export type MentionItem<A = Record<string, any>> = {
+export type MentionItemDataType<AttrsType = any> = {
   id: string;
-  label: string;
-  desc?: string;
-  attrs: A;
+  attrs: AttrsType;
+};
+
+export type MentionListProps<
+  ItemDataType extends MentionItemDataType<ItemAttrsType>,
+  ItemAttrsType
+> = BaseMentionListProps<ItemDataType, ItemAttrsType> & {
+  itemRender: (item: ItemDataType) => React.ReactNode;
+  emptyRender?: () => React.ReactNode;
 };
 
 export const MentionList = forwardRef(
-  <T extends MentionItem>(
-    props: MentionListProps<T>,
-    ref: Ref<MentionListRef>
+  <
+    ItemDataType extends MentionItemDataType<ItemAttrsType>,
+    ItemAttrsType = any
+  >(
+    props: MentionListProps<ItemDataType, ItemAttrsType>,
+    ref: Ref<BaseMentionListRef>
   ) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -88,12 +97,13 @@ export const MentionList = forwardRef(
                 onClick={() => selectItem(index)}
                 onMouseOver={() => moveOverHandler(index)}
               >
-                <span>{item.label}</span>
-                <span>{item.desc}</span>
+                {props.itemRender?.(item)}
               </div>
             ))
           ) : (
-            <div className="gwe-dropdown-menu__item">没有结果</div>
+            <div className="gwe-dropdown-menu__item">
+              {props.emptyRender?.() || '没有结果'}
+            </div>
           )}
         </div>
       </div>
