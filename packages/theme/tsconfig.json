@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/react.json",
+  "compilerOptions": {
+    "declarationDir": "./dist/types",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src", "script.ts"],
+  "exclude": ["node_modules"]
+}
