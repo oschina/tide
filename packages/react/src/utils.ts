@@ -5,9 +5,9 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
-import { ReactRenderer } from '@tiptap/react';
 import tippy, { Instance, Props as TippyOptions } from 'tippy.js';
 import type { MarkType } from '@tiptap/pm/model';
+import type { ReactRenderer } from './ReactRenderer';
 
 export type ShowBubbleMenuOptions = {
   editor: Editor;

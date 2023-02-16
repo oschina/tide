@@ -1,6 +1,6 @@
 {
   "name": "@gitee/wysiwyg-editor-react",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
@@ -16,16 +16,19 @@
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
-    "@tiptap/react": "^2.0.0-beta.217",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
+    "@tiptap/core": "^2.0.0-beta.217",
     "@tiptap/pm": "^2.0.0-beta.217",
     "@types/react": "^16.14.0",
+    "@types/react-dom": "^18.0.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "tslib": "^2.4.1",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "peerDependencies": {
     "@tiptap/core": "^2.0.0-beta.217",

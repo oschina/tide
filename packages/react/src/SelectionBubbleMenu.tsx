@@ -5,10 +5,10 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
-import { BubbleMenu, BubbleMenuProps } from '@tiptap/react';
 import type { Props as TippyOptions } from 'tippy.js';
 import type { PluginKey } from '@tiptap/pm/state';
 import type { MarkType } from '@tiptap/pm/model';
+import { BubbleMenu, BubbleMenuProps } from './BubbleMenu';
 
 export type SelectionBubbleMenuProps = BubbleMenuProps & {
   pluginKey: PluginKey | string;

@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-markdown
 
+## 0.1.0-alpha.5
+
+### Minor Changes
+
+- Refactor @gitee/wysiwyg-editor-extension-bubble-menu.
+
 ## 0.1.0-alpha.4
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-bullet-list
 
+## 0.1.0-alpha.5
+
+### Minor Changes
+
+- Refactor @gitee/wysiwyg-editor-extension-bubble-menu.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.5
+
 ## 0.1.0-alpha.4
 
 ### Minor Changes

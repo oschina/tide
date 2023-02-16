@@ -1,5 +1,18 @@
 # @gitee/wysiwyg-editor-editor
 
+## 0.1.0-alpha.5
+
+### Minor Changes
+
+- Refactor @gitee/wysiwyg-editor-extension-bubble-menu.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-extension-code-block@0.1.0-alpha.5
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.5
+  - @gitee/wysiwyg-editor-markdown@0.1.0-alpha.5
+
 ## 0.1.0-alpha.4
 
 ### Minor Changes

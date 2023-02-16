@@ -297,7 +297,7 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.4
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.5
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-blockquote': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -329,20 +329,28 @@ importers:
 
   packages/extension-bubble-menu:
     specifiers:
-      '@tiptap/extension-bubble-menu': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.217
+      '@tiptap/pm': ^2.0.0-beta.217
+      '@types/lodash': ^4.14.191
       eslint-config-custom: workspace:*
+      lodash: ^4.17.21
+      tippy.js: ^6.3.7
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/extension-bubble-menu': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      lodash: 4.17.21
+      tippy.js: 6.3.7
     devDependencies:
+      '@types/lodash': 4.14.191
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/extension-bullet-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.4
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.5
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-bullet-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -679,7 +687,7 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.4
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.5
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-ordered-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -812,8 +820,8 @@ importers:
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/pm': ^2.0.0-beta.217
-      '@tiptap/react': ^2.0.0-beta.217
       '@types/react': ^16.14.0
+      '@types/react-dom': ^18.0.0
       eslint-config-custom: workspace:*
       react: ^16.14.0
       react-dom: ^16.14.0
@@ -823,15 +831,15 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/react': 2.0.0-beta.217_tugoe42glouwxr5ijw6zo6il24
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
     devDependencies:
+      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
       '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
       '@types/react': 16.14.34
+      '@types/react-dom': 18.0.11
       eslint-config-custom: link:../eslint-config-custom
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
       tsconfig: link:../tsconfig
       tslib: 2.4.1
       typescript: 4.9.3
@@ -2067,17 +2075,6 @@ packages:
       '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
     dev: false
 
-  /@tiptap/extension-floating-menu/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-mP77UrimZo3sdC+Xam0DsPeYfXn29hl4ixEuZeiQQBMqz7g1K9T7vOEsRMQCBVFS7Hsc7MWBqLa1lL1GtyBB9Q==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/pm': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      tippy.js: 6.3.7
-    dev: false
-
   /@tiptap/extension-gapcursor/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
     resolution: {integrity: sha512-BMZAeMuba41EOmSo8ZEClarbrO4XDfGvOslWkjJwqPyJ4oO3nHtX8ep13g6Y3RhMSUDEGmBSUXEKVuUPgSS+Qg==}
     peerDependencies:
@@ -2309,22 +2306,6 @@ packages:
       prosemirror-transform: 1.7.1
       prosemirror-view: 1.29.1
 
-  /@tiptap/react/2.0.0-beta.217_tugoe42glouwxr5ijw6zo6il24:
-    resolution: {integrity: sha512-aNyvte3fuY97SFilldaz36g2D36D86UZSb/jjxTEAhYc6F4pY8O/4sh20fw6zvoeKAW4DTH/r8v0BRc18+Vm3g==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/pm': ^2.0.0-beta.209
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-bubble-menu': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-floating-menu': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-    dev: false
-
   /@tiptap/suggestion/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
     resolution: {integrity: sha512-Z1hXr1giNQ/fkuRrsMICtfyBCbMV+ZPiYYfpKKqUC4uc/lqAeHiRwk3lozpnLZEImnOW42LsYbYug2jtRqrDgA==}
     peerDependencies:
@@ -2444,6 +2425,12 @@ packages:
 
   /@types/react-dom/16.9.17:
     resolution: {integrity: sha512-qSRyxEsrm5btPXnowDOs5jSkgT8ldAA0j6Qp+otHUh+xHzy3sXmgNfyhucZjAjkgpdAUw9rJe0QRtX/l+yaS4g==}
+    dependencies:
+      '@types/react': 16.14.34
+    dev: true
+
+  /@types/react-dom/18.0.11:
+    resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
     dependencies:
       '@types/react': 16.14.34
     dev: true
