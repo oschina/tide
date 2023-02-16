@@ -15,11 +15,11 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
+    "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tiptap/extension-mention": "^2.0.0-beta.217",
     "@tiptap/suggestion": "^2.0.0-beta.217",
     "classnames": "^2.2.6",
-    "tippy.js": "^6.3.7",
-    "@gitee/wysiwyg-editor-react": "workspace:*"
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "@types/react": "^16.14.0",

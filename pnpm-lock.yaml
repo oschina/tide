@@ -297,7 +297,7 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.3
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.4
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-blockquote': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -329,34 +329,20 @@ importers:
 
   packages/extension-bubble-menu:
     specifiers:
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
-      '@types/react': ^16.14.0
+      '@tiptap/extension-bubble-menu': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
-      react: ^16.14.0
-      react-dom: ^16.14.0
-      tippy.js: ^6.3.7
       tsconfig: workspace:*
-      tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-      tippy.js: 6.3.7
+      '@tiptap/extension-bubble-menu': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
       typescript: 4.9.3
 
   packages/extension-bullet-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.3
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.4
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-bullet-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -539,7 +525,6 @@ importers:
     specifiers:
       '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tiptap/core': ^2.0.0-beta.217
@@ -555,7 +540,6 @@ importers:
     dependencies:
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
-      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
@@ -695,7 +679,7 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.3
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.4
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-ordered-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -825,23 +809,31 @@ importers:
 
   packages/react:
     specifiers:
+      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@tiptap/core': ^2.0.0-beta.217
+      '@tiptap/pm': ^2.0.0-beta.217
       '@tiptap/react': ^2.0.0-beta.217
       '@types/react': ^16.14.0
       eslint-config-custom: workspace:*
       react: ^16.14.0
       react-dom: ^16.14.0
+      tippy.js: ^6.3.7
       tsconfig: workspace:*
+      tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
+      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
       '@tiptap/react': 2.0.0-beta.217_tugoe42glouwxr5ijw6zo6il24
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
+      tippy.js: 6.3.7
     devDependencies:
+      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
+      tslib: 2.4.1
       typescript: 4.9.3
 
   packages/theme:

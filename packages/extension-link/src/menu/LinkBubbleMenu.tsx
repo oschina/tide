@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { Editor } from '@tiptap/core';
-import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu';
+import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-react';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { showLinkEditPopup } from './LinkEditPopup';
 import { Link as LinkExtension } from '../link';

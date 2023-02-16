@@ -1,2 +1,1 @@
-export * from './SelectionBubbleMenu';
-export * from './utils';
+export * from '@tiptap/extension-bubble-menu';

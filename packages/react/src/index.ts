@@ -1,5 +1,4 @@
 export type {
-  BubbleMenuProps,
   EditorContentProps,
   EditorContentState,
   FloatingMenuProps,
@@ -10,7 +9,6 @@ export type {
 } from '@tiptap/react';
 
 export {
-  BubbleMenu,
   Editor,
   FloatingMenu,
   NodeViewContent,
@@ -21,3 +19,7 @@ export {
 
 export * from './EditorContent';
 export * from './useEditor';
+
+export * from './BubbleMenu';
+export * from './SelectionBubbleMenu';
+export * from './utils';

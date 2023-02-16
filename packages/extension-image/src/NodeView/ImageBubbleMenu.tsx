@@ -7,7 +7,7 @@ import {
   posToDOMRect,
 } from '@tiptap/core';
 import { isActive } from '@gitee/wysiwyg-editor-common';
-import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-extension-bubble-menu';
+import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-react';
 import Tippy from '@tippyjs/react';
 import {
   IconAlignCenterBold,
