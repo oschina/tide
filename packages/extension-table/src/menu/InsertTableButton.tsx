@@ -6,9 +6,10 @@ import './InsertTableButton.less';
 
 export const InsertTableButton: React.FC<{
   editor: Editor;
+  title?: string;
   disabled: boolean;
   children: React.ReactElement;
-}> = ({ editor, disabled, children }) => {
+}> = ({ editor, title, disabled, children }) => {
   const [size, setSize] = useState<{ rows: number; columns: number }>({
     rows: 0,
     columns: 0,
@@ -17,7 +18,7 @@ export const InsertTableButton: React.FC<{
   return (
     <Tippy
       interactive
-      content={<div className="gwe-menu-bar__tooltip">Table</div>}
+      content={<div className="gwe-menu-bar__tooltip">{title || 'Table'}</div>}
     >
       <Tippy
         content={

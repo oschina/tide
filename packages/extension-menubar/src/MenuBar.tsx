@@ -72,44 +72,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({
 
   return (
     <div className={classNames('gwe-menu-bar', className)} style={style}>
-      <div className="gwe-menu-bar__item">
-        <Tippy
-          interactive
-          content={<div className={'gwe-menu-bar__tooltip'}>撤销</div>}
-        >
-          <button
-            onClick={() => editor?.chain().focus().undo?.().run()}
-            disabled={!editor.can().chain().focus().undo().run()}
-            className={classNames(
-              'gwe-menu-bar__btn',
-              isActive(editor.state, 'undo') ? `gwe-menu-bar__btn--active` : ''
-            )}
-          >
-            <IconUndoBold />
-          </button>
-        </Tippy>
-      </div>
-      <div className="gwe-menu-bar__item">
-        <Tippy
-          interactive
-          content={<div className={'gwe-menu-bar__tooltip'}>重做</div>}
-        >
-          <button
-            onClick={() => editor.chain().focus().redo().run()}
-            disabled={!editor.can().chain().focus().redo().run()}
-            className={classNames(
-              'gwe-menu-bar__btn',
-              isActive(editor.state, 'redo') ? `gwe-menu-bar__btn--active` : ''
-            )}
-          >
-            <IconRedoBold />
-          </button>
-        </Tippy>
-      </div>
-
-      <span className="gwe-menu-bar__divider" />
-
-      <div className="gwe-menu-bar__item">
+      <span className="gwe-menu-bar__item">
         <Tippy
           placement="bottom-start"
           interactive
@@ -200,26 +163,28 @@ export const MenuBar: React.FC<MenuBarProps> = ({
             <IconCaretDown className={'gwe-dropdown-trigger__head-icon'} />
           </div>
         </Tippy>
-      </div>
+      </span>
 
       {btnMenus?.map((props, index) => (
         <BtnItem key={index} editor={editor} statusMap={statusMap} {...props} />
       ))}
 
-      <Tippy
-        interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>全屏</div>}
-      >
-        <button
-          onClick={() => onFullscreenChange?.(!fullscreen)}
-          className={classNames(
-            'gwe-menu-bar__item gwe-menu-bar__btn',
-            fullscreen ? `gwe-menu-bar__btn--active` : ''
-          )}
+      <span className="gwe-menu-bar__item">
+        <Tippy
+          interactive
+          content={<div className={'gwe-menu-bar__tooltip'}>全屏</div>}
         >
-          {fullscreen ? <IconMinimizeBold /> : <IconMaximizeBold />}
-        </button>
-      </Tippy>
+          <button
+            onClick={() => onFullscreenChange?.(!fullscreen)}
+            className={classNames(
+              'gwe-menu-bar__btn',
+              fullscreen ? `gwe-menu-bar__btn--active` : ''
+            )}
+          >
+            {fullscreen ? <IconMinimizeBold /> : <IconMaximizeBold />}
+          </button>
+        </Tippy>
+      </span>
     </div>
   );
 };

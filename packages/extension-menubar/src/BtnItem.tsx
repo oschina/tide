@@ -19,11 +19,15 @@ import {
   IconLineBold,
   IconStrikethroughBold,
   IconSmileCircleBold,
+  IconUndoBold,
+  IconRedoBold,
 } from '@gitee/icons-react';
 
 import { MenuStatusMap } from './useStatusMap';
 
 const IconMap = {
+  undo: IconUndoBold,
+  redo: IconRedoBold,
   bold: IconBoldBold,
   italic: IconItalicBold,
   strike: IconStrikethroughBold,
@@ -72,6 +76,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
     return (
       <InsertTableButton
         editor={editor}
+        title="表格"
         disabled={statusMap[name]?.disabled || false}
       >
         <button
@@ -105,7 +110,7 @@ export const BtnItem: React.FC<BtnItemProps> = ({
   }
 
   return (
-    <div className="gwe-menu-bar__item">
+    <span className="gwe-menu-bar__item">
       <Tippy
         interactive
         content={<div className={'gwe-menu-bar__tooltip'}>{title}</div>}
@@ -121,6 +126,6 @@ export const BtnItem: React.FC<BtnItemProps> = ({
           <IconComponent />
         </button>
       </Tippy>
-    </div>
+    </span>
   );
 };

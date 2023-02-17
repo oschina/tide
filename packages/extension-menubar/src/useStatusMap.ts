@@ -3,6 +3,8 @@ import { isActive } from '@gitee/wysiwyg-editor-common';
 import { useState } from 'react';
 
 export type menuKey =
+  | 'undo'
+  | 'redo'
   | 'bold'
   | 'italic'
   | 'strike'
@@ -53,6 +55,14 @@ export const useStatusMap = (editor: Editor) => {
 
   const updateStatusMap = () => {
     const data = {
+      undo: {
+        isActive: false,
+        disabled: !editor.can().chain().focus().undo().run(),
+      },
+      redo: {
+        isActive: false,
+        disabled: !editor.can().chain().focus().redo().run(),
+      },
       bold: {
         isActive: isActive(editor.state, 'bold'),
         disabled: !editor?.can().chain().focus().toggleBold().run(),

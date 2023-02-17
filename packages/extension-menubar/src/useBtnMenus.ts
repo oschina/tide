@@ -102,9 +102,25 @@ interface BtnMenu {
 }
 
 const useBtnMenus = (editor: Editor) => {
-  const command = isWindows() ? 'Ctrl' : 'Command';
+  const command = isWindows() ? 'Ctrl' : '⌘';
   return useMemo<BtnMenu[]>(
     () => [
+      {
+        name: 'undo',
+        title: `撤销 (${command} + Z)`,
+        onClick: () => editor?.chain().focus().undo?.().run(),
+        bubble: false,
+      },
+      {
+        name: 'redo',
+        title: `重做 (${command} + Shift + Z)`,
+        onClick: () => editor.chain().focus().redo().run(),
+        bubble: false,
+      },
+      {
+        name: 'divider',
+        bubble: false,
+      },
       {
         name: 'bold',
         title: `加粗 (${command} + B)`,
@@ -184,7 +200,7 @@ const useBtnMenus = (editor: Editor) => {
         name: 'horizontalRule',
         title: isWindows()
           ? '分割线 (Ctrl + Alt + S)'
-          : '分割线 (Command + Option + S)',
+          : '分割线 (⌘ + Option + S)',
         onClick: () => editor?.chain().focus().setHorizontalRule().run(),
       },
       {
