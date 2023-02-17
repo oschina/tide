@@ -28,6 +28,9 @@ export type BuildSuggestionOptionsParams<
   /** mention list component props */
   componentProps?: Partial<ListProps> | undefined;
 
+  /** tippy options */
+  tippyOptions?: Partial<TippyInstance['props']>;
+
   /** mention items */
   items?: (props: {
     query: string;
@@ -42,6 +45,7 @@ export const buildSuggestionOptions = <
 >({
   component: MentionListComponent,
   componentProps,
+  tippyOptions,
   ...otherOptions
 }: BuildSuggestionOptionsParams<ItemDataType, ListProps, ListRef>) => {
   const options: Omit<SuggestionOptions, 'editor'> = {
@@ -70,6 +74,7 @@ export const buildSuggestionOptions = <
             interactive: true,
             trigger: 'manual',
             placement: 'bottom-start',
+            ...tippyOptions,
           });
         },
 
