@@ -2,13 +2,34 @@ import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import {
+  Blockquote,
+  Bold,
+  BulletList,
+  Code,
+  CodeBlock,
+  Emoji,
+  Fullscreen,
+  Heading,
+  HorizontalRule,
+  Image,
+  Italic,
+  Link,
   MenuBar,
+  MenuBarContextProvider,
+  MenuBarDivider,
+  OrderedList,
+  Redo,
+  Strike,
+  Table,
+  TaskList,
   TextBubbleMenu,
+  Undo,
 } from '@gitee/wysiwyg-editor-extension-menubar';
 import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
 import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
 import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
 import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
+import type { Editor } from '@gitee/wysiwyg-editor-react';
 import EditorContent, { EditorContentProps } from './EditorContent';
 import './index.less';
 
@@ -56,26 +77,49 @@ export const WysiwygEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
         )}
         style={style}
       >
-        {editor && !editorContentProps?.readOnly && (
-          <MenuBar
-            className={menuClassName}
-            style={menuStyle}
-            editor={editor}
-            fullscreen={fullscreen}
-            onFullscreenChange={setFullscreen}
-          />
-        )}
-        <EditorContent
-          className={contentClassName}
-          style={contentStyle}
-          ref={setEditor}
-          {...editorContentProps}
-        >
-          {editor && <LinkBubbleMenu editor={editor} />}
-          {editor && <TableCellBubbleMenu editor={editor} />}
-          {editor && <ImageBubbleMenu editor={editor} />}
-          {editor && <TextBubbleMenu editor={editor} />}
-        </EditorContent>
+        <MenuBarContextProvider editor={editor as unknown as Editor}>
+          {editor && !editorContentProps?.readOnly && (
+            <MenuBar className={menuClassName} style={menuStyle}>
+              <Undo />
+              <Redo />
+              <MenuBarDivider />
+              <Heading />
+              <Bold />
+              <Italic />
+              <Strike />
+              <Code />
+              <MenuBarDivider />
+              <BulletList />
+              <OrderedList />
+              <TaskList />
+              <MenuBarDivider />
+              <Link />
+              <Image />
+              <Table />
+              <CodeBlock />
+              <MenuBarDivider />
+              <Blockquote />
+              <HorizontalRule />
+              <Emoji />
+              <MenuBarDivider />
+              <Fullscreen
+                fullscreen={fullscreen}
+                onFullscreenChange={setFullscreen}
+              />
+            </MenuBar>
+          )}
+          <EditorContent
+            className={contentClassName}
+            style={contentStyle}
+            ref={setEditor}
+            {...editorContentProps}
+          >
+            {editor && <LinkBubbleMenu editor={editor} />}
+            {editor && <TableCellBubbleMenu editor={editor} />}
+            {editor && <ImageBubbleMenu editor={editor} />}
+            {editor && <TextBubbleMenu editor={editor} />}
+          </EditorContent>
+        </MenuBarContextProvider>
       </div>
     );
 

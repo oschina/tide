@@ -1,36 +1,20 @@
-import React, { useEffect } from 'react';
-import debounce from 'lodash/debounce';
+import React from 'react';
 import { Editor, isTextSelection } from '@tiptap/core';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
-import useBtnMenus from './useBtnMenus';
-import { BtnItem } from './BtnItem';
-import { useStatusMap } from './useStatusMap';
+import { Bold, Code, Italic, Link, Strike } from './components/items';
+import { MenuBarDivider } from './components/MenuBarDivider';
 
 export type TextBubbleMenuProps = {
   editor: Editor;
 };
 
 export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
-  const btnMenus = useBtnMenus(editor).filter((i) => i.bubble);
-  const { statusMap, updateStatusMap } = useStatusMap(editor);
-
-  useEffect(() => {
-    const listener = debounce(updateStatusMap, 300);
-    editor?.on('selectionUpdate', listener);
-    editor?.on('update', listener);
-
-    return () => {
-      editor?.off('selectionUpdate', listener);
-      editor?.off('update', listener);
-    };
-  }, [editor]);
-
   return (
     <BubbleMenu
       editor={editor}
       tippyOptions={{ duration: 100 }}
-      shouldShow={({ editor, view, state, oldState, from, to }) => {
+      shouldShow={({ editor, view, state, from, to }) => {
         const { doc, selection } = state;
         const { empty } = selection;
 
@@ -62,14 +46,12 @@ export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
       }}
     >
       <div className="gwe-menu-bar gwe-menu-bar-bubble">
-        {btnMenus.map((props, index) => (
-          <BtnItem
-            key={index}
-            editor={editor}
-            statusMap={statusMap}
-            {...props}
-          />
-        ))}
+        <Bold />
+        <Italic />
+        <Strike />
+        <Code />
+        <MenuBarDivider />
+        <Link />
       </div>
     </BubbleMenu>
   );
