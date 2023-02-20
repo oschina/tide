@@ -1,5 +1,21 @@
 # @gitee/wysiwyg-editor-extension-menubar
 
+## 0.1.0-alpha.6
+
+### Minor Changes
+
+- Refactor menubar, fix emoji, task list style.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.6
+  - @gitee/wysiwyg-editor-extension-emoji@0.1.0-alpha.6
+  - @gitee/wysiwyg-editor-extension-table@0.1.0-alpha.6
+  - @gitee/wysiwyg-editor-extension-uploader@0.1.0-alpha.6
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.6
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.6
+
 ## 0.1.0-alpha.5
 
 ### Minor Changes

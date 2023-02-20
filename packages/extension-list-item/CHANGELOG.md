@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-list-item
 
+## 0.1.0-alpha.6
+
+### Minor Changes
+
+- Refactor menubar, fix emoji, task list style.
+
 ## 0.1.0-alpha.5
 
 ### Minor Changes

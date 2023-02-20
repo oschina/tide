@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-bullet-list
 
+## 0.1.0-alpha.6
+
+### Minor Changes
+
+- Refactor menubar, fix emoji, task list style.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.6
+
 ## 0.1.0-alpha.5
 
 ### Minor Changes
