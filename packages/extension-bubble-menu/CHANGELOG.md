@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-bubble-menu
 
+## 0.1.0-alpha.7
+
+### Minor Changes
+
+- Fix table tab, image click update.
+
 ## 0.1.0-alpha.6
 
 ### Minor Changes

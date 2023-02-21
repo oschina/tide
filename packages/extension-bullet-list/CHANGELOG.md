@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-bullet-list
 
+## 0.1.0-alpha.7
+
+### Minor Changes
+
+- Fix table tab, image click update.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.7
+
 ## 0.1.0-alpha.6
 
 ### Minor Changes

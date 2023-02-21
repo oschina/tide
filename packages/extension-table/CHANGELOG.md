@@ -1,5 +1,17 @@
 # @gitee/wysiwyg-editor-extension-table
 
+## 0.1.0-alpha.7
+
+### Minor Changes
+
+- Fix table tab, image click update.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.7
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.7
+
 ## 0.1.0-alpha.6
 
 ### Minor Changes
