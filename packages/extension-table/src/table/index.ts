@@ -25,6 +25,14 @@ export const tableInputRegex = /^([|｜]{2,})\n$/;
 export type TableOptions = Omit<TTableOptions, 'View'>;
 
 export const Table = TTable.extend<TableOptions>({
+  /**
+   * 优先级
+   *
+   * 表格内的 Tab 快捷键优先级需要比 task-item, list-item 内的 Tab 快捷键低
+   * tiptap 默认优先级 100
+   */
+  priority: 99,
+
   addOptions() {
     return {
       HTMLAttributes: {},
