@@ -35,7 +35,7 @@ export const Heading: React.FC = () => {
       (level) => statusMap?.[`heading${level}IsActive`]
     );
     if (activeLevel) {
-      return `标题${activeLevel}`;
+      return `标题 ${activeLevel}`;
     }
     return '正文';
   };
@@ -98,7 +98,7 @@ export const Heading: React.FC = () => {
                 >
                   <div className={classNames('gwe-menu-head-row')}>
                     <span className={`gwe-menu-head-row__title--level${level}`}>
-                      标题{level}
+                      标题 {level}
                     </span>
                     <span className={`gwe-menu-head-row__span`}>
                       {`${command} + ${option} + ${level}`}

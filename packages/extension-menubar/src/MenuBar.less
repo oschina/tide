@@ -21,6 +21,12 @@
 
     .gwe-dropdown-trigger {
       height: 24px;
+      padding: 0 4px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: @menu-btn-active-bg-color;
+      }
     }
   }
 
@@ -125,7 +131,8 @@
     transition: all 0.2s;
 
     &:hover:not(.gwe-dropdown-menu__item--active) {
-      background-color: @select-active-bg-color;
+      background-color: @select-hover-bg-color;
+      color: @select-hover-color;
     }
 
     &--active {
@@ -164,7 +171,7 @@
 }
 
 .gwe-menu-head-row {
-  width: 240px;
+  width: 208px;
   &:extend(.gwe-items-between);
 
   &__title {

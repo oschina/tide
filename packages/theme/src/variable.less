@@ -3,10 +3,8 @@
 @_theme-color: #2c7ef8;
 @theme-color: var(--gwe-theme-color, @_theme-color); // 主题色
 
-@theme-bg-color: rgba(
-  var(--gwe-theme-color-rgb, @_theme-color),
-  0.1
-); // 浅色背景主题色，透明度10%
+@_theme-bg-color: rgba(44, 126, 248, 0.1);
+@theme-bg-color: var(--gwe-theme-bg-color, @_theme-bg-color); // 浅色背景主题色，透明度10%
 
 @_background-color: #fff;
 @background-color: var(--gwe-background-color, @_background-color); // 背景色
@@ -36,20 +34,24 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 'Apple Color Emoji', 'Twemoji Mozilla', 'Noto Color Emoji',
 'EmojiOne Color', 'Android Emoji';
 
-// 菜单按钮 active 的样式
+// 菜单按钮样式
 @_menu-btn-active-color: @theme-color;
 @_menu-btn-active-bg-color: @theme-bg-color;
 @menu-btn-active-color: var(--gwe-menu-btn-active-color, @_menu-btn-active-color);
 @menu-btn-active-bg-color: var(--gwe-menu-btn-active-bg-color, @_menu-btn-active-bg-color);
 
-// popup 弹窗样式
+// Popup 样式
 @_popup-bg-color: @_background-color;
 @_popup-shadow-color: 0px 4px 8px -2px rgba(9, 30, 66, 0.25),
   0px 0px 1px 0px rgba(9, 30, 66, 0.31);
 @popup-bg-color: var(--gwe-popup-bg-color, @_popup-bg-color);
 @popup-shadow-color: var(--gwe-popup-shadow-color, @_popup-shadow-color);
 
-// 下拉菜单
+// 下拉菜单样式
+@_select-hover-color: @text-color;
+@_select-hover-bg-color: #F5F6F8;
+@select-hover-color: var(--gwe-select-hover-color, @_select-hover-color);
+@select-hover-bg-color: var(--gwe-select-hover-bg-color, @_select-hover-bg-color);
 @_select-active-color: @theme-color;
 @_select-active-bg-color: @theme-bg-color;
 @select-active-color: var(--gwe-select-active-color, @_select-active-color);
@@ -83,18 +85,23 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 @dark-background-color: #1a1b1e;
 @dark-border-color: #30363d;
 @dark-theme-color: #165fcf; // 主题蓝色
+@dark-theme-bg-color: @theme-bg-color; // 浅色背景主题色，透明度20%
 @dark-text-color: #b5bbc6; // 文字色
 @dark-text-muted-color: #8c96a6; // 文字辅助色
 
-// 菜单按钮 active 的样式
+// 菜单按钮样式
 @dark-menu-btn-active-color: #fff;
 @dark-menu-btn-active-bg-color: @dark-theme-color;
 
+// Popup 样式
 @dark-popup-bg-color: @dark-background-color;
 @dark-popup-shadow-color: 0 0 0 1px @dark-border-color;
 
-@dark-select-active-color: @dark-text-color;
-@dark-select-active-bg-color: #2d343d;
+// 下拉菜单样式
+@dark-select-hover-color: @dark-text-color;
+@dark-select-hover-bg-color: #2d343d;
+@dark-select-active-color: @dark-theme-color;
+@dark-select-active-bg-color: @dark-theme-bg-color;
 
 @dark-emoji-menu-active-color: #fff;
 @dark-emoji-menu-active-bg-color: @dark-theme-color;
@@ -137,7 +144,10 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 :root .theme-orange,
 :root .theme-pink,
 :root .theme-purple {
+  --gwe-theme-bg-color: rgba(var(--gwe-theme-color-rgb), 0.1);
+
   --gwe-background-color: @_background-color;
+
   --gwe-border-color: @_border-color;
   --gwe-text-color: @_text-color;
   --gwe-text-muted-color: @_text-muted-color;
@@ -151,6 +161,8 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
   --gwe-popup-bg-color: @_popup-bg-color;
   --gwe-popup-shadow-color: @_popup-shadow-color;
 
+  --gew-select-hover-color: @_select-hover-color;
+  --gwe-select-hover-bg-color: @_select-hover-bg-color;
   --gwe-select-active-color: @_select-active-color;
   --gwe-select-active-bg-color: @_select-active-bg-color;
 
@@ -169,6 +181,8 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
   --gwe-theme-color: #165fcf;
   --gwe-theme-color-rgb: 22, 95, 207;
 
+  --gwe-theme-bg-color: rgba(var(--gwe-theme-color-rgb), 0.2);
+
   --gwe-background-color: @dark-background-color;
 
   --gwe-border-color: @dark-border-color;
@@ -184,6 +198,8 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
   --gwe-popup-bg-color: @dark-popup-bg-color;
   --gwe-popup-shadow-color: @dark-popup-shadow-color;
 
+  --gew-select-hover-color: @dark-select-hover-color;
+  --gwe-select-hover-bg-color: @dark-select-hover-bg-color;
   --gwe-select-active-color: @dark-select-active-color;
   --gwe-select-active-bg-color: @dark-select-active-bg-color;
 
