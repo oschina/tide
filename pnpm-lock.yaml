@@ -297,7 +297,7 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.5
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.6
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-blockquote': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -350,7 +350,7 @@ importers:
 
   packages/extension-bullet-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.5
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.6
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-bullet-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -689,7 +689,7 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.5
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.6
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-ordered-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
