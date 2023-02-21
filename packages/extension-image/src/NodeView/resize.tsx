@@ -8,12 +8,14 @@ export const useResize = (
   onConfirm: () => void
 ) => {
   const store = useRef({
+    newWidth: 0,
+    newHeight: 0,
+    originWidth: 0,
+    originHeight: 0,
     focus: false,
     resizing: false,
     clientX: 0,
     clientY: 0,
-    imageWidth: 0,
-    imageHeight: 0,
     position: '',
     minWidth: 50,
     maxWidth: 0,
@@ -25,8 +27,13 @@ export const useResize = (
     store.clientY = e.clientY;
 
     // 此时图片的尺寸
-    store.imageWidth = imgRef.current?.width || imgRef.current?.clientWidth;
-    store.imageHeight = imgRef.current?.height || imgRef.current?.clientHeight;
+    const originWidth = imgRef.current?.width || imgRef.current?.clientWidth;
+    const originHeight = imgRef.current?.height || imgRef.current?.clientHeight;
+    store.newWidth = originWidth;
+    store.newHeight = originHeight;
+
+    store.originWidth = originWidth;
+    store.originHeight = originHeight;
 
     // 此时图片的拉伸方位
     store.position = position;
@@ -78,7 +85,7 @@ export const useResize = (
           }
         }
 
-        width = store.imageWidth + Math.abs(distanceX) * scale;
+        width = store.originWidth + Math.abs(distanceX) * scale;
         // height = store.imageHeight + distanceY * scale;
 
         // 目标尺寸
@@ -86,7 +93,7 @@ export const useResize = (
         let imageHeight = 0;
 
         // 图像的原始比例
-        const ratio = store.imageWidth / store.imageHeight;
+        const ratio = store.originWidth / store.originHeight;
 
         // // 选择移动距离大的方向
         // if (Math.abs(distanceX) > Math.abs(distanceY)) {
@@ -102,17 +109,34 @@ export const useResize = (
         if (imageWidth >= store.maxWidth) return;
         if (imageWidth < store.minWidth) return;
 
+        const newWidth = Math.round(imageWidth);
+        const newHeight = Math.round(imageHeight);
+        store.newWidth = newWidth;
+        store.newHeight = newHeight;
+
         // 最终设置图片的尺寸
-        onUpdate({
-          width: Math.round(imageWidth),
-          height: Math.round(imageHeight),
-        });
+        onUpdate({ width: newWidth, height: newHeight });
       }
     };
     const onMouseup = () => {
       store.resizing = false;
+
+      //  没有变化不触发更新
+      if (
+        store.newWidth === store.originWidth &&
+        store.newHeight === store.originHeight
+      ) {
+        return;
+      }
+
+      // 回调
       onConfirm();
+
+      //更新为拖拽后的 宽高
+      store.originWidth = store.newWidth;
+      store.originHeight = store.newHeight;
     };
+
     const onMouseOut = () => {
       store.focus = false;
     };
