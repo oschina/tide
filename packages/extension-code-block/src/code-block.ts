@@ -1,11 +1,10 @@
-import { textblockTypeInputRule } from '@tiptap/core';
 import {
   CodeBlockLowlight,
   CodeBlockLowlightOptions,
 } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight/lib/all';
 import { TextSelection } from '@tiptap/pm/state';
-import { isActive } from '@gitee/wysiwyg-editor-common';
+import { isActive, textblockTypeInputRule } from '@gitee/wysiwyg-editor-common';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
 import { getSelectedLineRange } from './utils';
@@ -107,6 +106,7 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
             ? match[1]
             : this.options.defaultLanguage,
         }),
+        autoFocus: true,
       }),
       textblockTypeInputRule({
         find: tildeInputRegex,
@@ -118,6 +118,7 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
             ? match[1]
             : this.options.defaultLanguage,
         }),
+        autoFocus: true,
       }),
     ];
   },
