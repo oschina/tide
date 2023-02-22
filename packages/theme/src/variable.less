@@ -4,7 +4,7 @@
 @theme-color: var(--gwe-theme-color, @_theme-color); // 主题色
 
 @_theme-bg-color: rgba(44, 126, 248, 0.1);
-@theme-bg-color: var(--gwe-theme-bg-color, @_theme-bg-color); // 浅色背景主题色，透明度10%
+@theme-bg-color: var(--gwe-theme-bg-color, @_theme-bg-color); // 浅色背景主题色 (透明度10%)
 
 @_background-color: #fff;
 @background-color: var(--gwe-background-color, @_background-color); // 背景色
@@ -55,10 +55,7 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 @_select-active-color: @theme-color;
 @_select-active-bg-color: @theme-bg-color;
 @select-active-color: var(--gwe-select-active-color, @_select-active-color);
-@select-active-bg-color: var(
-  --gwe-select-active-bg-color,
-  @_select-active-bg-color
-);
+@select-active-bg-color: var(--gwe-select-active-bg-color, @_select-active-bg-color);
 
 @_emoji-menu-active-color: @_text-color;
 @_emoji-menu-active-bg-color: #F5F6F8;
@@ -85,7 +82,7 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 @dark-background-color: #1a1b1e;
 @dark-border-color: #30363d;
 @dark-theme-color: #165fcf; // 主题蓝色
-@dark-theme-bg-color: @theme-bg-color; // 浅色背景主题色，透明度20%
+@dark-theme-bg-color: rgba(22, 95, 207, 0.2); // 浅色背景主题色 (透明度20%)
 @dark-text-color: #b5bbc6; // 文字色
 @dark-text-muted-color: #8c96a6; // 文字辅助色
 
@@ -116,26 +113,31 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 :root, :root .theme-blue {
   --gwe-theme-color: #2c7ef8;
   --gwe-theme-color-rgb: 44, 126, 248;
+  --gwe-theme-bg-color: rgba(44, 126, 248, 0.1);
 }
 
 :root .theme-purple {
   --gwe-theme-color: #6554c0;
   --gwe-theme-color-rgb: 101, 84, 192;
+  --gwe-theme-bg-color: rgba(101, 84, 192, 0.1);
 }
 
 :root .theme-green {
   --gwe-theme-color: #36b37e;
   --gwe-theme-color-rgb: 54, 179, 126;
+  --gwe-theme-bg-color: rgba(54, 179, 126, 0.1);
 }
 
 :root .theme-orange {
   --gwe-theme-color: #ff8118;
   --gwe-theme-color-rgb: 255, 129, 24;
+  --gwe-theme-bg-color: rgba(255, 129, 24, 0.1);
 }
 
 :root .theme-pink {
   --gwe-theme-color: #b25578;
   --gwe-theme-color-rgb: 178, 85, 120;
+  --gwe-theme-bg-color: rgba(178, 85, 120, 0.1);
 }
 
 
@@ -144,8 +146,6 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 :root .theme-orange,
 :root .theme-pink,
 :root .theme-purple {
-  --gwe-theme-bg-color: rgba(var(--gwe-theme-color-rgb), 0.1);
-
   --gwe-background-color: @_background-color;
 
   --gwe-border-color: @_border-color;
@@ -180,8 +180,7 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 :root .theme-dark {
   --gwe-theme-color: #165fcf;
   --gwe-theme-color-rgb: 22, 95, 207;
-
-  --gwe-theme-bg-color: rgba(var(--gwe-theme-color-rgb), 0.2);
+  --gwe-theme-bg-color: rgba(22, 95, 207, 0.2);
 
   --gwe-background-color: @dark-background-color;
 
