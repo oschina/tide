@@ -26,6 +26,7 @@ import {
 import { TaskItem } from '@gitee/wysiwyg-editor-extension-task-item';
 import { Link } from '@gitee/wysiwyg-editor-extension-link';
 import { Image } from '@gitee/wysiwyg-editor-extension-image';
+import { Indentation } from '@gitee/wysiwyg-editor-extension-indentation';
 import { ListsIndentation } from '@gitee/wysiwyg-editor-extension-lists-indentation';
 import { OrderedList } from '@gitee/wysiwyg-editor-extension-ordered-list';
 import { BulletList } from '@gitee/wysiwyg-editor-extension-bullet-list';
@@ -196,6 +197,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           HardBreak,
           HorizontalRule,
           ListsIndentation,
+          Indentation,
           BulletList,
           OrderedList,
           ListItem,

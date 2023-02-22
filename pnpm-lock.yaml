@@ -58,6 +58,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-emoji': workspace:*
       '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
       '@gitee/wysiwyg-editor-extension-image': workspace:*
+      '@gitee/wysiwyg-editor-extension-indentation': workspace:*
       '@gitee/wysiwyg-editor-extension-italic': workspace:*
       '@gitee/wysiwyg-editor-extension-link': workspace:*
       '@gitee/wysiwyg-editor-extension-list-item': workspace:*
@@ -120,6 +121,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-emoji': link:../../packages/extension-emoji
       '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../../packages/extension-horizontal-rule
       '@gitee/wysiwyg-editor-extension-image': link:../../packages/extension-image
+      '@gitee/wysiwyg-editor-extension-indentation': link:../../packages/extension-indentation
       '@gitee/wysiwyg-editor-extension-italic': link:../../packages/extension-italic
       '@gitee/wysiwyg-editor-extension-link': link:../../packages/extension-link
       '@gitee/wysiwyg-editor-extension-list-item': link:../../packages/extension-list-item
@@ -297,7 +299,7 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.6
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.7
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-blockquote': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -350,7 +352,7 @@ importers:
 
   packages/extension-bullet-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.6
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.7
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-bullet-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*
@@ -512,6 +514,21 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: 2.4.1
+      typescript: 4.9.3
+
+  packages/extension-indentation:
+    specifiers:
+      '@tiptap/core': ^2.0.0-beta.217
+      '@tiptap/pm': ^2.0.0-beta.217
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.5.2
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+    devDependencies:
+      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/extension-italic:
@@ -689,7 +706,7 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.6
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.7
       '@tiptap/core': ^2.0.0-beta.217
       '@tiptap/extension-ordered-list': ^2.0.0-beta.217
       eslint-config-custom: workspace:*

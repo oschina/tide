@@ -1,0 +1,28 @@
+{
+  "name": "@gitee/wysiwyg-editor-extension-indentation",
+  "version": "0.1.0-alpha.7",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@tiptap/pm": "^2.0.0-beta.217",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.0-beta.217",
+    "@tiptap/pm": "^2.0.0-beta.217"
+  },
+  "sideEffects": false
+}

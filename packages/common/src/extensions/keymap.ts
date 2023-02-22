@@ -9,6 +9,7 @@ export const Keymap = Extension.create({
     return {
       // prevent default tab behavior
       Tab: () => true,
+      'Shift-Tab': () => true,
     };
   },
 });

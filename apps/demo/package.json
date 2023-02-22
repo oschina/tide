@@ -21,6 +21,7 @@
     "@gitee/wysiwyg-editor-extension-emoji": "workspace:*",
     "@gitee/wysiwyg-editor-extension-horizontal-rule": "workspace:*",
     "@gitee/wysiwyg-editor-extension-image": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-indentation": "workspace:*",
     "@gitee/wysiwyg-editor-extension-italic": "workspace:*",
     "@gitee/wysiwyg-editor-extension-link": "workspace:*",
     "@gitee/wysiwyg-editor-extension-list-item": "workspace:*",

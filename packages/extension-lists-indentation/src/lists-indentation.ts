@@ -41,7 +41,7 @@ export function getDecorations(
       const depth = processedListsStack.length;
 
       const attrs: Record<string, string> = {
-        'data-indent-level': `${depth}`,
+        'data-list-indent-level': `${depth}`,
       };
 
       const listStyleTypes = listStyleTypesMap[node.type.name];
