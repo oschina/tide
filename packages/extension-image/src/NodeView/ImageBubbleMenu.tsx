@@ -1,11 +1,5 @@
-import React, { useCallback, useRef, useState } from 'react';
-import {
-  Editor,
-  getMarkRange,
-  getMarkType,
-  isNodeSelection,
-  posToDOMRect,
-} from '@tiptap/core';
+import React, { useCallback } from 'react';
+import { Editor, isNodeSelection, posToDOMRect } from '@tiptap/core';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { SelectionBubbleMenu } from '@gitee/wysiwyg-editor-react';
 import Tippy from '@tippyjs/react';
@@ -23,10 +17,7 @@ export type ImageBubbleMenuProps = {
 export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
   const shouldShow = useCallback(() => {
     const show = isActive(editor.state, Image.name);
-    if (show) {
-      const attrs = editor.getAttributes(Image.name);
-    }
-    return show;
+    return show && editor.isEditable;
   }, [editor]);
 
   return (

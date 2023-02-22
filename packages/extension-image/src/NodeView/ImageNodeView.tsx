@@ -30,6 +30,7 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
   node,
   updateAttributes,
 }) => {
+  const { isEditable } = editor;
   const imgRef = useRef<HTMLImageElement>(null);
   const { onMousedown } = useResize(
     imgRef,
@@ -58,7 +59,11 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
         'gwe-image__align-right': node.attrs.align === 'right',
       })}
     >
-      <div className={classNames('gwe-image__view')}>
+      <div
+        className={classNames('gwe-image__view', {
+          'gwe-image__view-hover': isEditable,
+        })}
+      >
         <img
           ref={imgRef}
           src={node.attrs.src}

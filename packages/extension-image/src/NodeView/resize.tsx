@@ -137,18 +137,21 @@ export const useResize = (
       store.originHeight = store.newHeight;
     };
 
-    const onMouseOut = () => {
+    const onMouseLeave = () => {
       store.focus = false;
+
+      // 结束拖拽
+      onMouseup();
     };
 
     editor.view.dom.addEventListener('mousemove', onMousemove);
-    editor.view.dom.addEventListener('mouseleave', onMouseOut);
-    document.addEventListener('mouseup', onMouseup);
+    editor.view.dom.addEventListener('mouseup', onMouseup);
+    editor.view.dom.addEventListener('mouseleave', onMouseLeave);
 
     return () => {
       editor.view.dom.removeEventListener('mousemove', onMousemove);
-      editor.view.dom.removeEventListener('mouseleave', onMouseOut);
-      document.removeEventListener('mouseup', onMousemove);
+      editor.view.dom.removeEventListener('mouseup', onMouseup);
+      editor.view.dom.removeEventListener('mouseleave', onMouseLeave);
     };
   }, []);
 
