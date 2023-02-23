@@ -4,7 +4,7 @@ import {
   isTextSelection,
   posToDOMRect,
 } from '@tiptap/core';
-import { EditorState, Plugin, PluginKey } from '@tiptap/pm/state';
+import { EditorState, Plugin, PluginKey, PluginView } from '@tiptap/pm/state';
 import { EditorView } from '@tiptap/pm/view';
 import debounce from 'lodash/debounce';
 import tippy, { Instance, Props } from 'tippy.js';
@@ -31,7 +31,7 @@ export type BubbleMenuViewProps = BubbleMenuPluginProps & {
   view: EditorView;
 };
 
-export class BubbleMenuView {
+export class BubbleMenuView implements PluginView {
   public editor: Editor;
 
   public element: HTMLElement;

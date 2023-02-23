@@ -1,5 +1,5 @@
 import { Plugin } from '@tiptap/pm/state';
-import { Extension } from '@tiptap/core';
+import { Extension, findParentNode } from '@tiptap/core';
 import {
   handleUploadImages,
   ImagePlaceholderPlugin,
@@ -47,6 +47,14 @@ export const Uploader = Extension.create<UploaderOptions>({
               return false;
             }
 
+            // code block 不允许插入图片
+            const predicate = (node) =>
+              node.type === view.state.schema.nodes.codeBlock;
+            const codeBlock = findParentNode(predicate)(view.state.selection);
+            if (codeBlock) {
+              return;
+            }
+
             // 图片
             const files = getImageFileList(event.clipboardData.files);
             if (files.length > 0) {
@@ -63,6 +71,14 @@ export const Uploader = Extension.create<UploaderOptions>({
             const editable = this.editor.isEditable;
             if (!editable || view.dragging || !event.dataTransfer) {
               return false;
+            }
+
+            // code block 不允许插入图片
+            const predicate = (node) =>
+              node.type === view.state.schema.nodes.codeBlock;
+            const codeBlock = findParentNode(predicate)(view.state.selection);
+            if (codeBlock) {
+              return;
             }
 
             // 图片
