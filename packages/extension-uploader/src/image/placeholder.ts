@@ -2,6 +2,7 @@ import { Plugin } from '@tiptap/pm/state';
 import { Decoration, DecorationSet, EditorView } from '@tiptap/pm/view';
 import { UploaderFunc } from '../types';
 import './placeholder.less';
+import { findParentNode } from '@tiptap/core';
 
 function findPlaceholder(state, id) {
   const decos = ImagePlaceholderPlugin.getState(state);
@@ -24,31 +25,26 @@ export const handleUploadImages = (
     if (!tr.selection.empty) {
       tr.deleteSelection();
     }
+
+    let imgWidth = 350;
+
+    // 表格内插入图片 宽度处理
+    const predicate = (node) => node.type === view.state.schema.nodes.tableCell;
+    const tableCell = findParentNode(predicate)(view.state.selection);
+    if (tableCell) {
+      const el = view.nodeDOM(tableCell.pos);
+      if (el) imgWidth = (el as HTMLElement)?.offsetWidth * 0.9;
+    }
+
     tr.setMeta(ImagePlaceholderPlugin, {
       add: {
         id,
         pos: pos + index,
         src: blobUrl,
+        width: imgWidth,
       },
     });
     view.dispatch(tr);
-
-    // const reader = new FileReader();
-    // reader.onload = (readerEvent) => {
-    //   const tr = view.state.tr;
-    //   if (!tr.selection.empty) {
-    //     tr.deleteSelection();
-    //   }
-    //   tr.setMeta(ImagePlaceholderPlugin, {
-    //     add: {
-    //       id,
-    //       pos: pos + index,
-    //       src: readerEvent.target.result,
-    //     },
-    //   });
-    //   view.dispatch(tr);
-    // };
-    // reader.readAsDataURL(image);
 
     const src = await uploadFunc(image, (progress) => {
       view.dispatch(
@@ -68,7 +64,11 @@ export const handleUploadImages = (
 
       view.dispatch(
         view.state.tr
-          .replaceWith(plpos, plpos, schema.nodes.image.create({ src }))
+          .replaceWith(
+            plpos,
+            plpos,
+            schema.nodes.image.create({ src, width: imgWidth })
+          )
           .setMeta(ImagePlaceholderPlugin, { remove: { id } })
       );
     }
@@ -91,7 +91,7 @@ export const ImagePlaceholderPlugin = new Plugin({
       if (action.add) {
         const template = document.createElement('template');
         template.innerHTML = `<div class='gwe-uploader__img'>
-          <div class='gwe-uploader__img-placeholder'>
+          <div class='gwe-uploader__img-placeholder' style='width: ${action.width}px;'>
             <img src='${action.add.src}' alt='upload placeholder' />
             <div class='gwe-uploader__img-progress-wrap'> 
               <span class='gwe-uploader__img-progress'>
