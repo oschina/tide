@@ -8,6 +8,7 @@ import {
 } from '@tiptap/pm/model';
 import { isList } from '../../helpers/isList';
 import { isListItem } from '../../helpers/isListItem';
+import { joinListBackwards, joinListForwards } from '../../helpers';
 
 /**
  * Try to find the previous item. Indent can only works if we can find this item.
@@ -165,6 +166,10 @@ export function indentList(tr: Transaction): boolean {
           tr.doc.resolve($to.pos - 2)
         )
   );
+
+  joinListBackwards(tr);
+
+  joinListForwards(tr);
 
   return true;
 }
