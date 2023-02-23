@@ -55,7 +55,11 @@ import type {
   MarkdownEditorOptions,
   Content,
 } from '@gitee/wysiwyg-editor-markdown';
-import { Commands, Keymap } from '@gitee/wysiwyg-editor-common';
+import {
+  Commands,
+  HighPriorityKeymap,
+  LowPriorityKeymap,
+} from '@gitee/wysiwyg-editor-common';
 import {
   Editor as TEditor,
   EditorContent as TEditorContent,
@@ -178,7 +182,8 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
         },
         extensions: [
           Commands,
-          Keymap,
+          HighPriorityKeymap,
+          LowPriorityKeymap,
           Document,
           Paragraph,
           Text,

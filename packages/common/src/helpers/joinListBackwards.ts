@@ -11,13 +11,13 @@ export const joinListBackwards = (
   const list = findParentNode((node) => isList(node.type))(tr.selection);
 
   if (!list) {
-    return true;
+    return false;
   }
 
   const before = tr.doc.resolve(Math.max(0, list.pos - 1)).before(list.depth);
 
   if (before === undefined) {
-    return true;
+    return false;
   }
 
   const nodeBefore = tr.doc.nodeAt(before);
@@ -27,7 +27,7 @@ export const joinListBackwards = (
     canJoin(tr.doc, list.pos);
 
   if (!canJoinBackwards) {
-    return true;
+    return false;
   }
 
   tr.join(list.pos);

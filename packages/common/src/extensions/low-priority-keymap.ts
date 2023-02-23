@@ -1,13 +1,13 @@
 import { Extension } from '@tiptap/core';
 
-export const Keymap = Extension.create({
-  name: 'coreKeymap',
+export const LowPriorityKeymap = Extension.create({
+  name: 'lowPriorityKeymap',
 
   priority: 1,
 
   addKeyboardShortcuts() {
     return {
-      // prevent default tab behavior
+      // prevent default tab, shift-tab behavior
       Tab: () => true,
       'Shift-Tab': () => true,
     };

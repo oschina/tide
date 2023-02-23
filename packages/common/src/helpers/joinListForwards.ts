@@ -11,13 +11,13 @@ export const joinListForwards = (
   const list = findParentNode((node) => isList(node.type))(tr.selection);
 
   if (!list) {
-    return true;
+    return false;
   }
 
   const after = tr.doc.resolve(list.start).after(list.depth);
 
   if (after === undefined) {
-    return true;
+    return false;
   }
 
   const nodeAfter = tr.doc.nodeAt(after);
@@ -27,7 +27,7 @@ export const joinListForwards = (
     canJoin(tr.doc, after);
 
   if (!canJoinForwards) {
-    return true;
+    return false;
   }
 
   tr.join(after);

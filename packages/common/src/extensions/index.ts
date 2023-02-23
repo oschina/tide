@@ -1,2 +1,3 @@
 export { Commands } from './commands';
-export { Keymap } from './keymap';
+export { LowPriorityKeymap } from './low-priority-keymap';
+export { HighPriorityKeymap } from './high-priority-keymap';

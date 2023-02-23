@@ -4,5 +4,6 @@ export * from './isList';
 export * from './isListItem';
 export * from './joinListBackwards';
 export * from './joinListForwards';
+export * from './listBackspace';
 export * from './transformer';
 export * from './isWindows';
