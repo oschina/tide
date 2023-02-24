@@ -143,21 +143,34 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                     bar.className = 'bar';
                     grip.appendChild(bar);
 
-                    const add = document.createElement('span');
-                    add.className = 'add';
-                    add.textContent = '+';
-                    grip.appendChild(add);
+                    let addBefore: HTMLSpanElement | null = null;
+                    if (cellRowIndex === 0) {
+                      addBefore = document.createElement('span');
+                      addBefore.className = 'add before';
+                      addBefore.textContent = '+';
+                      grip.appendChild(addBefore);
+                    }
+
+                    const addAfter = document.createElement('span');
+                    addAfter.className = 'add after';
+                    addAfter.textContent = '+';
+                    grip.appendChild(addAfter);
 
                     grip.addEventListener(
                       'mousedown',
                       (event) => {
                         event.preventDefault();
                         event.stopImmediatePropagation();
-                        if (event.target === add) {
+                        if (event.target === addAfter) {
                           const rect = selectedRect(state);
                           const rowspan = parseInt(node.attrs.rowspan) || 1;
                           this.editor.view.dispatch(
                             addRow(state.tr, rect, cellRowIndex + rowspan)
+                          );
+                        } else if (addBefore && event.target === addBefore) {
+                          const rect = selectedRect(state);
+                          this.editor.view.dispatch(
+                            addRow(state.tr, rect, cellRowIndex)
                           );
                         } else if (event.target === bar) {
                           this.editor.view.dispatch(
@@ -206,19 +219,32 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                     bar.className = 'bar';
                     grip.appendChild(bar);
 
-                    const add = document.createElement('span');
-                    add.className = 'add';
-                    add.textContent = '+';
-                    grip.appendChild(add);
+                    let addBefore: HTMLSpanElement | null = null;
+                    if (cellColumnIndex === 0) {
+                      addBefore = document.createElement('span');
+                      addBefore.className = 'add before';
+                      addBefore.textContent = '+';
+                      grip.appendChild(addBefore);
+                    }
+
+                    const addAfter = document.createElement('span');
+                    addAfter.className = 'add after';
+                    addAfter.textContent = '+';
+                    grip.appendChild(addAfter);
 
                     grip.addEventListener('mousedown', (event) => {
                       event.preventDefault();
                       event.stopImmediatePropagation();
-                      if (event.target === add) {
+                      if (event.target === addAfter) {
                         const rect = selectedRect(state);
                         const colspan = parseInt(node.attrs.colspan) || 1;
                         this.editor.view.dispatch(
                           addColumn(state.tr, rect, cellColumnIndex + colspan)
+                        );
+                      } else if (addBefore && event.target === addBefore) {
+                        const rect = selectedRect(state);
+                        this.editor.view.dispatch(
+                          addColumn(state.tr, rect, cellColumnIndex)
                         );
                       } else if (event.target === bar) {
                         this.editor.view.dispatch(

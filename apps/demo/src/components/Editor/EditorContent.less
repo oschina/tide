@@ -346,7 +346,6 @@
         .add {
           position: absolute;
           top: -15px;
-          left: 100%;
           transform: translateX(-7px);
 
           display: block;
@@ -356,6 +355,14 @@
           text-align: center;
           cursor: pointer;
           font-size: 0;
+
+          &.before {
+            left: 0;
+          }
+
+          &.after {
+            left: 100%;
+          }
 
           &::before {
             content: '';
@@ -418,9 +425,8 @@
 
         .add {
           position: absolute;
-          left: -15px;
-          bottom: 0;
-          transform: translateY(9px);
+          left: -16px;
+          transform: translateY(-7px);
 
           display: block;
           width: 16px;
@@ -429,6 +435,14 @@
           text-align: center;
           cursor: pointer;
           font-size: 0;
+
+          &.before {
+            top: 0;
+          }
+
+          &.after {
+            top: 100%;
+          }
 
           &::before {
             content: '';
