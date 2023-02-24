@@ -94,12 +94,12 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
               let rowIndex = 0;
               const cellRowIndexMap: number[] = [];
               cellsInColumn.forEach(({ node }) => {
-                const rowspan = node.attrs.rowspan || 1;
+                const rowspan = parseInt(node.attrs.rowspan) || 1;
                 cellRowIndexMap.push(rowIndex);
                 rowIndex += rowspan;
               });
 
-              cellsInColumn.forEach(({ pos }, index) => {
+              cellsInColumn.forEach(({ node, pos }, index) => {
                 if (index === 0) {
                   decorations.push(
                     Decoration.widget(pos + 1, () => {
@@ -155,8 +155,9 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                         event.stopImmediatePropagation();
                         if (event.target === add) {
                           const rect = selectedRect(state);
+                          const rowspan = parseInt(node.attrs.rowspan) || 1;
                           this.editor.view.dispatch(
-                            addRow(state.tr, rect, cellRowIndex + 1)
+                            addRow(state.tr, rect, cellRowIndex + rowspan)
                           );
                         } else if (event.target === bar) {
                           this.editor.view.dispatch(
@@ -178,12 +179,12 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
               let columnIndex = 0;
               const cellColumnIndexMap: number[] = [];
               cellsInRow.forEach(({ node }) => {
-                const colspan = node.attrs.colspan || 1;
+                const colspan = parseInt(node.attrs.colspan) || 1;
                 cellColumnIndexMap.push(columnIndex);
                 columnIndex += colspan;
               });
 
-              cellsInRow.forEach(({ pos }, index) => {
+              cellsInRow.forEach(({ node, pos }, index) => {
                 decorations.push(
                   Decoration.widget(pos + 1, () => {
                     let className = 'grip-column';
@@ -215,8 +216,9 @@ export const TableCell = TTableCell.extend<TTableCellOptions>({
                       event.stopImmediatePropagation();
                       if (event.target === add) {
                         const rect = selectedRect(state);
+                        const colspan = parseInt(node.attrs.colspan) || 1;
                         this.editor.view.dispatch(
-                          addColumn(state.tr, rect, cellColumnIndex + 1)
+                          addColumn(state.tr, rect, cellColumnIndex + colspan)
                         );
                       } else if (event.target === bar) {
                         this.editor.view.dispatch(
