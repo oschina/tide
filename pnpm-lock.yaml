@@ -89,19 +89,19 @@ importers:
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-bubble-menu': ^2.0.0-beta.217
-      '@tiptap/extension-document': ^2.0.0-beta.217
-      '@tiptap/extension-dropcursor': ^2.0.0-beta.217
-      '@tiptap/extension-gapcursor': ^2.0.0-beta.217
-      '@tiptap/extension-hard-break': ^2.0.0-beta.217
-      '@tiptap/extension-heading': ^2.0.0-beta.217
-      '@tiptap/extension-history': ^2.0.0-beta.217
-      '@tiptap/extension-paragraph': ^2.0.0-beta.217
-      '@tiptap/extension-task-list': ^2.0.0-beta.217
-      '@tiptap/extension-text': ^2.0.0-beta.217
-      '@tiptap/extension-text-align': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-bubble-menu': ^2.0.0-beta.218
+      '@tiptap/extension-document': ^2.0.0-beta.218
+      '@tiptap/extension-dropcursor': ^2.0.0-beta.218
+      '@tiptap/extension-gapcursor': ^2.0.0-beta.218
+      '@tiptap/extension-hard-break': ^2.0.0-beta.218
+      '@tiptap/extension-heading': ^2.0.0-beta.218
+      '@tiptap/extension-history': ^2.0.0-beta.218
+      '@tiptap/extension-paragraph': ^2.0.0-beta.218
+      '@tiptap/extension-task-list': ^2.0.0-beta.218
+      '@tiptap/extension-text': ^2.0.0-beta.218
+      '@tiptap/extension-text-align': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       '@types/lodash': ^4.14.191
       '@types/prosemirror-dev-tools': ^3.0.3
       '@types/react': ^16.14.0
@@ -153,19 +153,19 @@ importers:
       '@gitee/wysiwyg-editor-react': link:../../packages/react
       '@gitee/wysiwyg-editor-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-bubble-menu': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-document': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-dropcursor': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-gapcursor': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-hard-break': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-heading': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-history': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-paragraph': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-task-list': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-text': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-text-align': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-bubble-menu': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-document': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-dropcursor': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-gapcursor': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-hard-break': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-heading': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-history': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-paragraph': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-task-list': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-text': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-text-align': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       awesome-debounce-promise: 2.1.0
       axios: 1.3.4
       classnames: 2.3.2
@@ -195,21 +195,21 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-markdown': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/html': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/html': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
       zeed-dom: ^0.9.26
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/html': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/html': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
       zeed-dom: 0.9.26
     devDependencies:
       '@gitee/wysiwyg-editor-markdown': link:../markdown
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
@@ -220,36 +220,36 @@ importers:
       '@gitee/wysiwyg-editor-extension-code-block': workspace:*
       '@gitee/wysiwyg-editor-markdown': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-blockquote': ^2.0.0-beta.217
-      '@tiptap/extension-bold': ^2.0.0-beta.217
-      '@tiptap/extension-bullet-list': ^2.0.0-beta.217
-      '@tiptap/extension-code': ^2.0.0-beta.217
-      '@tiptap/extension-document': ^2.0.0-beta.217
-      '@tiptap/extension-dropcursor': ^2.0.0-beta.217
-      '@tiptap/extension-gapcursor': ^2.0.0-beta.217
-      '@tiptap/extension-hard-break': ^2.0.0-beta.217
-      '@tiptap/extension-heading': ^2.0.0-beta.217
-      '@tiptap/extension-history': ^2.0.0-beta.217
-      '@tiptap/extension-horizontal-rule': ^2.0.0-beta.217
-      '@tiptap/extension-image': ^2.0.0-beta.217
-      '@tiptap/extension-italic': ^2.0.0-beta.217
-      '@tiptap/extension-link': ^2.0.0-beta.217
-      '@tiptap/extension-list-item': ^2.0.0-beta.217
-      '@tiptap/extension-mention': ^2.0.0-beta.217
-      '@tiptap/extension-ordered-list': ^2.0.0-beta.217
-      '@tiptap/extension-paragraph': ^2.0.0-beta.217
-      '@tiptap/extension-placeholder': ^2.0.0-beta.217
-      '@tiptap/extension-strike': ^2.0.0-beta.217
-      '@tiptap/extension-table': ^2.0.0-beta.217
-      '@tiptap/extension-table-cell': ^2.0.0-beta.217
-      '@tiptap/extension-table-header': ^2.0.0-beta.217
-      '@tiptap/extension-table-row': ^2.0.0-beta.217
-      '@tiptap/extension-task-item': ^2.0.0-beta.217
-      '@tiptap/extension-task-list': ^2.0.0-beta.217
-      '@tiptap/extension-text': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
-      '@tiptap/suggestion': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-blockquote': ^2.0.0-beta.218
+      '@tiptap/extension-bold': ^2.0.0-beta.218
+      '@tiptap/extension-bullet-list': ^2.0.0-beta.218
+      '@tiptap/extension-code': ^2.0.0-beta.218
+      '@tiptap/extension-document': ^2.0.0-beta.218
+      '@tiptap/extension-dropcursor': ^2.0.0-beta.218
+      '@tiptap/extension-gapcursor': ^2.0.0-beta.218
+      '@tiptap/extension-hard-break': ^2.0.0-beta.218
+      '@tiptap/extension-heading': ^2.0.0-beta.218
+      '@tiptap/extension-history': ^2.0.0-beta.218
+      '@tiptap/extension-horizontal-rule': ^2.0.0-beta.218
+      '@tiptap/extension-image': ^2.0.0-beta.218
+      '@tiptap/extension-italic': ^2.0.0-beta.218
+      '@tiptap/extension-link': ^2.0.0-beta.218
+      '@tiptap/extension-list-item': ^2.0.0-beta.218
+      '@tiptap/extension-mention': ^2.0.0-beta.218
+      '@tiptap/extension-ordered-list': ^2.0.0-beta.218
+      '@tiptap/extension-paragraph': ^2.0.0-beta.218
+      '@tiptap/extension-placeholder': ^2.0.0-beta.218
+      '@tiptap/extension-strike': ^2.0.0-beta.218
+      '@tiptap/extension-table': ^2.0.0-beta.218
+      '@tiptap/extension-table-cell': ^2.0.0-beta.218
+      '@tiptap/extension-table-header': ^2.0.0-beta.218
+      '@tiptap/extension-table-row': ^2.0.0-beta.218
+      '@tiptap/extension-task-item': ^2.0.0-beta.218
+      '@tiptap/extension-task-list': ^2.0.0-beta.218
+      '@tiptap/extension-text': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
+      '@tiptap/suggestion': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
       browser-fs-access: ^0.31.1
@@ -265,36 +265,36 @@ importers:
       '@gitee/wysiwyg-editor-extension-code-block': link:../extension-code-block
       '@gitee/wysiwyg-editor-markdown': link:../markdown
       '@gitee/wysiwyg-editor-react': link:../react
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-blockquote': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-bold': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-bullet-list': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-code': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-document': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-dropcursor': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-gapcursor': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-hard-break': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-heading': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-history': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-horizontal-rule': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-image': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-italic': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-link': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-list-item': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-mention': 2.0.0-beta.217_gqvd6mcvk7usu3rs2je5swl32u
-      '@tiptap/extension-ordered-list': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-paragraph': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-placeholder': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-strike': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-table': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-table-cell': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-table-header': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-table-row': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-task-item': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-task-list': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-text': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/suggestion': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-blockquote': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-bold': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-bullet-list': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-code': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-document': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-dropcursor': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-gapcursor': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-hard-break': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-heading': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-history': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-horizontal-rule': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-image': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-italic': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-link': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-list-item': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-mention': 2.0.0-beta.218_okj7iheobpqkm4fufiqnvbd35q
+      '@tiptap/extension-ordered-list': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-paragraph': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-placeholder': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-strike': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-table': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-table-cell': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-table-header': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-table-row': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-task-item': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-task-list': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-text': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/suggestion': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
       browser-fs-access: 0.31.1
       tippy.js: 6.3.7
     devDependencies:
@@ -321,16 +321,16 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.7
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-blockquote': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-blockquote': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-blockquote': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-blockquote': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -339,15 +339,15 @@ importers:
   packages/extension-bold:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-bold': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-bold': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-bold': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-bold': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -356,8 +356,8 @@ importers:
   packages/extension-bubble-menu:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       '@types/lodash': ^4.14.191
       eslint-config-custom: workspace:*
       lodash: ^4.17.21
@@ -366,8 +366,8 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       lodash: 4.17.21
       tippy.js: 6.3.7
     devDependencies:
@@ -380,16 +380,16 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.7
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-bullet-list': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-bullet-list': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-bullet-list': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-bullet-list': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -398,15 +398,15 @@ importers:
   packages/extension-code:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-code': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-code': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-code': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-code': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -420,10 +420,10 @@ importers:
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-code-block': ^2.0.0-beta.217
-      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-code-block': ^2.0.0-beta.218
+      '@tiptap/extension-code-block-lowlight': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       copy-to-clipboard: ^3.3.3
@@ -440,16 +440,16 @@ importers:
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-code-block': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-code-block-lowlight': 2.0.0-beta.217_7qr6d6jfs2xkpyyfeznblzyu2e
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-code-block': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-code-block-lowlight': 2.0.0-beta.218_emxi6b2wjemadchziudik5fqhq
       classnames: 2.3.2
       copy-to-clipboard: 3.3.3
       lowlight: 2.8.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -463,9 +463,9 @@ importers:
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
-      '@tiptap/suggestion': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
+      '@tiptap/suggestion': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       emoji-regex: ^10.2.1
@@ -483,15 +483,15 @@ importers:
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/suggestion': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/suggestion': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
       classnames: 2.3.2
       emoji-regex: 10.2.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -501,15 +501,15 @@ importers:
   packages/extension-horizontal-rule:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-horizontal-rule': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-horizontal-rule': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-horizontal-rule': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-horizontal-rule': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -524,9 +524,9 @@ importers:
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-image': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-image': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       eslint-config-custom: workspace:*
@@ -542,12 +542,12 @@ importers:
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-image': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-image': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       classnames: 2.3.2
       react: 16.14.0
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -557,16 +557,16 @@ importers:
   packages/extension-indentation:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
@@ -574,15 +574,15 @@ importers:
   packages/extension-italic:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-italic': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-italic': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-italic': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-italic': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -595,9 +595,9 @@ importers:
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-link': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-link': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       eslint-config-custom: workspace:*
       react: ^16.14.0
@@ -611,12 +611,12 @@ importers:
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-link': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-link': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -626,13 +626,13 @@ importers:
   packages/extension-list-item:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/extension-list-item': ^2.0.0-beta.217
+      '@tiptap/extension-list-item': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/extension-list-item': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/extension-list-item': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -641,16 +641,16 @@ importers:
   packages/extension-lists-indentation:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
@@ -659,17 +659,17 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-markdown': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    devDependencies:
       '@babel/runtime': 7.21.0
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    devDependencies:
       '@gitee/wysiwyg-editor-markdown': link:../markdown
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
@@ -678,9 +678,9 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-react': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-mention': ^2.0.0-beta.217
-      '@tiptap/suggestion': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-mention': ^2.0.0-beta.218
+      '@tiptap/suggestion': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       eslint-config-custom: workspace:*
@@ -693,9 +693,9 @@ importers:
     dependencies:
       '@babel/runtime': 7.21.0
       '@gitee/wysiwyg-editor-react': link:../react
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-mention': 2.0.0-beta.217_gqvd6mcvk7usu3rs2je5swl32u
-      '@tiptap/suggestion': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-mention': 2.0.0-beta.218_okj7iheobpqkm4fufiqnvbd35q
+      '@tiptap/suggestion': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
       classnames: 2.3.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -718,9 +718,9 @@ importers:
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-heading': ^2.0.0-beta.217
-      '@tiptap/extension-paragraph': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-heading': ^2.0.0-beta.218
+      '@tiptap/extension-paragraph': ^2.0.0-beta.218
       '@types/lodash': ^4.14.191
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
@@ -742,9 +742,9 @@ importers:
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-heading': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-paragraph': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-heading': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-paragraph': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       classnames: 2.3.2
       lodash: 4.17.21
       react: 16.14.0
@@ -762,16 +762,16 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.7
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-ordered-list': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-ordered-list': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-ordered-list': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-ordered-list': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -780,15 +780,15 @@ importers:
   packages/extension-strike:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-strike': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-strike': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-strike': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-strike': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -801,12 +801,12 @@ importers:
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/extension-table': ^2.0.0-beta.217
-      '@tiptap/extension-table-cell': ^2.0.0-beta.217
-      '@tiptap/extension-table-header': ^2.0.0-beta.217
-      '@tiptap/extension-table-row': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/extension-table': ^2.0.0-beta.218
+      '@tiptap/extension-table-cell': ^2.0.0-beta.218
+      '@tiptap/extension-table-header': ^2.0.0-beta.218
+      '@tiptap/extension-table-row': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       eslint-config-custom: workspace:*
@@ -821,17 +821,17 @@ importers:
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-table': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/extension-table-cell': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-table-header': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/extension-table-row': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-table': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/extension-table-cell': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-table-header': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/extension-table-row': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       classnames: 2.3.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -841,17 +841,17 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.3
@@ -860,8 +860,8 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-theme': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       browser-fs-access: ^0.31.1
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
@@ -870,10 +870,10 @@ importers:
     dependencies:
       '@babel/runtime': 7.21.0
       '@gitee/wysiwyg-editor-theme': link:../theme
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
       browser-fs-access: 0.31.1
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: 2.4.1
@@ -882,8 +882,8 @@ importers:
   packages/markdown:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218
       eslint-config-custom: workspace:*
       markdown-it: ^13.0.1
       tiptap-markdown: ^0.6.0
@@ -891,10 +891,10 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      tiptap-markdown: 0.6.0_anfcpfcr72psko4uapefmyyily
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      tiptap-markdown: 0.6.0_tpwqsgijugfl56yxbdpnu4v4ua
     devDependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       eslint-config-custom: link:../eslint-config-custom
       markdown-it: 13.0.1
       tsconfig: link:../tsconfig
@@ -904,8 +904,8 @@ importers:
     specifiers:
       '@babel/runtime': ^7.21.0
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
-      '@tiptap/core': ^2.0.0-beta.217
-      '@tiptap/pm': ^2.0.0-beta.217
+      '@tiptap/core': ^2.0.0-beta.218
+      '@tiptap/pm': ^2.0.0-beta.218
       '@types/react': ^16.14.0
       '@types/react-dom': ^18.0.0
       eslint-config-custom: workspace:*
@@ -920,8 +920,8 @@ importers:
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       tippy.js: 6.3.7
     devDependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       '@types/react': 16.14.34
       '@types/react-dom': 18.0.11
       eslint-config-custom: link:../eslint-config-custom
@@ -3305,309 +3305,309 @@ packages:
       tippy.js: 6.3.7
     dev: false
 
-  /@tiptap/core/2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217:
-    resolution: {integrity: sha512-Vifwcg5SglkVjEmtFbnwHOKWU4UUenOhe7ke5fqGhh7FNfGkccu6sK8W1JTDbG4ARWZ1b/632kQ51YE+WuPe7g==}
+  /@tiptap/core/2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218:
+    resolution: {integrity: sha512-RCrT4AYgH+2mQtt26EkFjIkGZGsuT7vKTbknEhpXdhWgbxy/fg65WyPs8hQMyocjOqPX2vbike4PfqWi9nBqCw==}
     peerDependencies:
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
 
-  /@tiptap/extension-blockquote/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-4U6DUr+xaCe3MRMAh3uMA5devHZmyrk6/6MURg57S3uRXDIMiWlKBkSxxys0URjbpS17T41hvKlRQR85tO1N1Q==}
+  /@tiptap/extension-blockquote/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-cQ1mjWjSqe6ztglfRRBIAzZ+6Ro5jN7QpSstVMravqW3lu52omXqYx5SfDNycoO6574BoSw2Wijz36RwQLeAsQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.1
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-bold/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-oLzekoVWjvkAbDyOIv4Aj9DzjIwCQLTy33kXH/ItTxH2Z/zxZ+Et3y9qAZi0eR8x8wO552cG41lYUte4tuwo1w==}
+  /@tiptap/extension-bold/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-XKQ9QiXspGLY9LyZVhPTQFfJQEDzrwCigILG+QwM3WAp/hKNDJsUy4GXRl/Rdtx+5mfqGyh+Zlo41xF2WhoKUg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-bubble-menu/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-f52hjIzNbvAJy0P3pTf6sv/65XlMU1LCLXam4VCTkYJ2HHVvW+LZcu+dG1M8YmGkM9l+6dQPs5L2rriAQDXt+w==}
+  /@tiptap/extension-bubble-menu/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-NXVaRSoweM54AGCJCJWkY3D9CfYlARtC04+7T8EF0Dwz99RcVzDHCXaNJGk+rMH7vGxsJop4RxHEQO/D2pgADw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       lodash: 4.17.21
       tippy.js: 6.3.7
     dev: false
 
-  /@tiptap/extension-bullet-list/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-t/9lqdZhErYUOtU9H2m/qDjUUSilzVAjI2pVvJt6y9Z7Aex9uS7sPBVhjirjV43G4yQEVhT7BuTAzyCUX+JXkQ==}
+  /@tiptap/extension-bullet-list/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-pf4MMcM65tYLauogxfIsvmFf5pqV9hlTAsgsQhPw2L3ayceOr6JvmiGHBVlZifhNcIuSDY/3i2Ft/O4tKFncbQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-code-block-lowlight/2.0.0-beta.217_7qr6d6jfs2xkpyyfeznblzyu2e:
-    resolution: {integrity: sha512-osfnTclcymplaks4a1vyh1qTFvkQ1ZERmXHq1t6XGdNeus7GrhIt3Lkd+1T0Ws4XdJu/Ut3GX+C1Zisnz7sNRQ==}
+  /@tiptap/extension-code-block-lowlight/2.0.0-beta.218_emxi6b2wjemadchziudik5fqhq:
+    resolution: {integrity: sha512-6bFESBajfbLM2vaA9aAE9+FBxcpGj72l2ECavd2COflUX5Gjd+agEzSZtbln6UQsdhcn1FaiU4T6t6QPD8CKBg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/extension-code-block': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/extension-code-block': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/extension-code-block': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
-  /@tiptap/extension-code-block/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-vmntduEBM/o+mx4+sSEv+aVU8swr5rOFswMr7tYMXRqzXFYbqjvlEo86kGOQ4lrpnvf/2eUEjrq+2L4Hx2LdsA==}
+  /@tiptap/extension-code-block/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-ajmHrZ2xDgCjLaokvmdiI7fETqRyvI/qHD4jzmzMTKdIiwLzwCgTVmbU73TmZSdR1+fO+pyDTp48YIxDy9zRdA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
-  /@tiptap/extension-code/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-IPpuI8MeVX5N0ueWQcIvh2nD+EN6DbFtKSsoU+FgFJ9meOkiEWGibSJ5yFQinPsiE9zrwYIaZzzjhr4oeY2JNA==}
+  /@tiptap/extension-code/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-i/gJuY78+QWTc4LeSHM613IxKCC63oqGKounl+xlBqtH6b/w9Rx8R6WJQIz78Mth5dQHKTSUPwjR5+UcmKhFRA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-document/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-CDCTutbVO1Ub7QUULPCYILl2px48ezCX2kxbspQZzPD7nMoYZNmUMZ8gRJvVDdnSpMNlEl7oNnCAU7uC/lny/A==}
+  /@tiptap/extension-document/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-bpNhUEho8sbjLVYGX+jkqZv//2OVFs0RhiNtMJ1SUbdr9LDJu+KMo86KUkTkRPPgoJPDkEViIgNrYcc66MFxmQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-dropcursor/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-+HkLmLBKSAJB987KM6z/pxsE+QMr7wZJiTSJv4JSTQnSjKwyJIHbfYNvNgWZo0k9MSncmLGhd/c4TFxYJZ762w==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/pm': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-    dev: false
-
-  /@tiptap/extension-gapcursor/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-BMZAeMuba41EOmSo8ZEClarbrO4XDfGvOslWkjJwqPyJ4oO3nHtX8ep13g6Y3RhMSUDEGmBSUXEKVuUPgSS+Qg==}
+  /@tiptap/extension-dropcursor/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-RvYB0koNJs3ETcVnzwda0hhDxCa2hoKW1C3WiRKg1+pYA5oW12NtiNWqViQKkSn1ugQXXzhdxMHGCSr4BczmAA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
-  /@tiptap/extension-hard-break/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-15cKxMsJZJ+3cbSKuMa7wjr2sQHxjoJ8aCmbPqUH+zGNLsRtUHvTZzeIPGxJ1SpEjpJpb+rRnu9RMTNjwDMFMA==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-heading/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-v7G/1R0+qmPm0U2sOCOftqZef5yd89tEg1R+KVF78ucFvuLgH50Pldes8lhHEBlfoRShye2Ht54E6JHDP73J5w==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-history/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-wdgAGMTFVeEh6hlO1Iy0l0LzqUVuoplrYnc2zjry4YFGCJbWwQqLKEKQaHIvmMea0PaXW4Q5wpNy875+UoXDOw==}
+  /@tiptap/extension-gapcursor/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-buawfpYb+wgXj+01qLb58Cv9x6dhcM4oHoFggBRo8E3mj561plfDKWK45OZIbyqRQeE8U3bbwfSYgail5wd7JA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
-  /@tiptap/extension-horizontal-rule/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-h7uIpGOYLCPfYJUit6Fe8oLnrMf0hK0mHBXa8cV7AWIlDvVRrXZZ/sdtLTF+TXOylvbOYR+vjkvnwDTeVX6dcw==}
+  /@tiptap/extension-hard-break/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-mAtjRjkEQ2I+WGTOn90SefRvpF/HVVLRji9jidPTCnTVOJzEYax5xPlr5vFh2N4wcprWWi/T5qcwybs1oV3uig==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-heading/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-JYkDLk19wFdjHG1prUfNV6EzZuDt9P5psaPaiwGoAujUMHKBJTllSC+UZ4H7YL87RpUIPs5GHQMWL91HP+0RYQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-history/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-4xfEKWGHU2785vUXXaIguxIaKKQ3b+z7463QhF2qhcpm5Ip6eupYbbE0jy8S12wSujhrjk88W0Ud6n3puV73xA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
-  /@tiptap/extension-image/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-8ibJOicpcqhFeiPLqYOY8SO9sxkz2bemzwhtzRvgkevy/QERe9D0mbAL0qm1gg88LtXy3z2eFUdwD8suq1xsPQ==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-italic/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-Oua5QbsOJ/MNV41fvbBtJOE/ciw2AjWybSiPkn8clu1/KjieE9dectlj+COaNbVIOccTNhurECpqfF0h8K87Kg==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-link/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-pC1UnK1OrbW+NDdBdHE8sfmZ+tOpIOsHVAeeX6pg1fkdP/FlbPFFvcvILgJc20dr7DiM6dRqYq16H473G9vyEg==}
+  /@tiptap/extension-horizontal-rule/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-JlKMzqgheujKkx0ZQvUCO+WkIUQQKkWMiUSEsTaAvgIfzI97dKuP/r7CsgZczurtJ9edRPmQqMRwxZ4XLtC/aQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+    dev: false
+
+  /@tiptap/extension-image/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-WefQYI04ZzbAX2x3z6fpk8bjWmR6nW7p+EUN6v9yeBiKUAeMClCL1toAhQcKBI0yBinTz+OOjlnc3iKa/nOMzw==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-italic/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-+/NRGoLQXi+CCziVT7MixB10jC72c5BCG6w15H4hfHkD+eJc/DfzLCuIaePzYCZC/xqjNI/EBNh6BP3HTMHCpQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-link/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-Vi+qZOzqS+tTpK2q23q5wLEDxIZMiRNHduzJtZh2wKryLPjbs7jEnxSVQybvQqRHAhUC6uGsh+9nhN0+fq6oAw==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+      '@tiptap/pm': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       linkifyjs: 3.0.5
     dev: false
 
-  /@tiptap/extension-list-item/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-yJmB/Je6CAiyjjJyVl77PPv4AWNFejrhxxmIdPfkYNRuQx9xX5yccx/zXC5RMaUFZVttlC4+gXDZsCvxMiVF1g==}
+  /@tiptap/extension-list-item/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-ZqSA0dZAzACYgfFAM+RWCRhMPUcZiWT8JhpN/2on0egI+b1gtt2RAA4niBaNFp4skGQS8a4bCy5cttIHUNO7FA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-mention/2.0.0-beta.217_gqvd6mcvk7usu3rs2je5swl32u:
-    resolution: {integrity: sha512-QCUEyvXQYvTfp8iojPG0agF4euu+vFm0BvIQr5TpjE46kSbsK07PMD2D8Z8YBqZEI7x8YWAz2jZDik62Y1+Ssg==}
+  /@tiptap/extension-mention/2.0.0-beta.218_okj7iheobpqkm4fufiqnvbd35q:
+    resolution: {integrity: sha512-pP6ktxnjgJscv5xTn8BT9p5JjkdrHcnugR1qA0jAQpDRUioFKDIxR5DK0oDcR29YftulZBgkEPQjuw7U1zAboQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
       '@tiptap/suggestion': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-      '@tiptap/suggestion': 2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@tiptap/suggestion': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
     dev: false
 
-  /@tiptap/extension-ordered-list/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-Jv79D+imZPqFi7U+nrMBQbNp2FQDk9Y2D7jTovM0ySCYLbgYtG/n5ZLj/eBAN6MwLcqHHWzZa1TXWzF7anlUOQ==}
+  /@tiptap/extension-ordered-list/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-Oe/Kl6+mNSBOpF4fXeQxFXu7/fMFPwn3UZ2hR+DTIJkoLbviKehcxSInqWmUV0n5FbEr3usErPDYDDrCH+zEVw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-paragraph/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-EeWCz6Boz1eeCrECQ8i9yzbs1MyhmuLmPnvW0WUyNuqlA/qbgr4OvqDGZk4X+4E3CI30Nqzr0PPNpz0CWQgphQ==}
+  /@tiptap/extension-paragraph/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-qBNGJl0r/uufPoC02fqdjRQBmafE3zd+uPevtN+Nozze4kBc5VIlkLMw6VR83jMMeWKNhbQ97aCCYQYjCabaDw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
     dev: false
 
-  /@tiptap/extension-placeholder/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-wk8HBzS02UzuPiai+UfuaFi2T0w/rBjWmULIG55DL9QzFWseIJCv/f7b+0A7ryVP0Idn1+QNCiAe6ymnsFb9Fg==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/pm': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
-    dev: false
-
-  /@tiptap/extension-strike/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-frC3SUoh9bSrHYWdW2S3A8s+FEqDMaNjp+Ldoe6vz2ugHXxjUFJ+SsF/pcQbmKw6FsNaf/bqL24KieRt22kgpg==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-table-cell/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-W5UxsZxQdBms916hHp4giXi6AOkwCEfSaTXfi3FQqxcg/EQnmzMNB82/9BcVqBUaoJrx1dIVm4ploIL+GikG/w==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-table-header/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-oahTLhItvoPzCA9RuGLowZ0ZGro+Yn3+1NefXu/yGlp3twKQyhrwOv3+TqZ21L+8uKGOVLfLgPZnF6oNozEdJQ==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-table-row/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-6ie3YtnOliIzER4JtVh0T8HQl3Z2gwTBoCOvqoetsoKIk0zNdsai+ZjVjVN4ZiMLFNYm5xnCUfr83usp9kawhQ==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-table/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-8PwfNXIRPy1zxZAk0kS+sqFeUE2M6al1y/mA6p0SA9YhSN0iWvjQfmq9Ds52hmRcL2Dv9QmLR97S7WGRmHKcQg==}
+  /@tiptap/extension-placeholder/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-zjxSDWGMp3iLXBH22fj9fNN5ngD7FwopsdH/SigWEck29DDk5uGCTKhz/7wb9kMkdUKq8stAdCAPZvz79kFSrQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
-  /@tiptap/extension-task-item/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-eLdIuLTDkTKPEzuy2uG7akv+M39/+vHK/7E115LtQ9KQiN3iLaE0RHXPb5vPvP8gX9U2gGeboRhhMxf/7yh/vg==}
+  /@tiptap/extension-strike/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-PZ3FGmh3XkdQqRIfMZrHApFVerf/2vQu0V1IWTxUDpaUSD/TL5A1dp3R/O/dlVauhKV3zDs/XGfepXJ99fyXAg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-table-cell/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-SFnBHxYifDCmHnSDqDS+LBKxTeujonE+7OeM7/LV+1Qqp44FKZsleQVGUp5fUmP7LmdRZSeoWzKQNl1SC4dhuA==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-table-header/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-LZd10qo1oHH4GESlsnPgagO0INicewAdJLBV4PdXIKsEOCyYhVP6IF3WPSsafxRqWasmiJ0jg1yGDhXx9Gqy9A==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-table-row/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-WSljowOBl4eVnl3ihxQzlBq1ff4NUvzMVI43OvuPQkDLMzAnkuNEwFSBt8csolc4gDsJHvMFbK9wgftIMbXgdA==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-table/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-Beyzkso7twfxfdkNJ5WY+FC3fqddkOseDKcjKU0YQVg/81EvlFEFRiyLN6S5b8XHhDXuNzV49pYo9hIbQ75iwA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
-  /@tiptap/extension-task-list/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-d5+YkjPBjc4beVCOip+T1GW1HUo7vLwp9Mrec+PcxMSU1GDUwxvz3zpkKG3rrTnwK5QzEnvmSQC2SzSRp//OPQ==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-text-align/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-oFr1xkUFJKHGJkFA0CDcfkEA4z3jr1umFRkr6qejKiYqwAUdnn5YrtfdGICJzBEa6/1wOCZz0ODzCnv9XmGDkA==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/extension-text/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-l5PkVhZzVnxbGyMiCMqpLU3ZomJWcZXhuBD0aajry+l85DWc6TK0mhLEAVEU1LoTL8hXFmICoW1KJ1m20Va9dg==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-    dev: false
-
-  /@tiptap/html/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-VCnkmMdhluVZ+WLFUQdptJPdjXUMq9uh9VBSCCZnysOZP7AIkLIJT7+S52RT58K3TLNwbiZNUGbPwEjJwP1OMw==}
+  /@tiptap/extension-task-item/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-RSFeKEpqDb+e0v0eBT9EM2VZW3GT74LQoT+UwZP6LM8fPIYS/wHWHDvPRo0zl3JpA04x13UbS6lOZ2MJruykzQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+    dev: false
+
+  /@tiptap/extension-task-list/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-MscfmeeAKsRrnyFDcUoByikfQihDQhSSYYXG0AgvcQu3Qjf/eoVp44eAIQlCsh67xOeDDdGI2ripmeqJqUFZUQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-text-align/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-r2ABsqN551BzikIBXrb2v1AFsqWXrdm+jsNyxk6qcuL0D2Sj2ythz1XbVyu+baaJQz2VImP7wVcVMEVZgdPMIQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/extension-text/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-Z14dRRIjQwPGJD3+joD3nEs6NcQUORuPXa2BDWsFcAb6R+yPz7j9Wpn4nkcWCw2CIqnMm17ERs+KSSvKvzWY6Q==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+    dev: false
+
+  /@tiptap/html/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-9FgIyAz7YgtECbLbTjLGUpGb705+QoYjwYoxn6bIkcGlQE1Nbs///03y3h7mPbnnty4kX/DikTSSg2jGxCWatg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.209
+      '@tiptap/pm': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
       zeed-dom: 0.9.26
     dev: false
 
-  /@tiptap/pm/2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca:
-    resolution: {integrity: sha512-krEplJli2BbBB3U2c+cxDPw4mpHsUEwOMJCM3fr1GTVv7qAOvsrWt2ndRPOwraPSvmUF3rw9gvoP86eyK2nDmA==}
+  /@tiptap/pm/2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4:
+    resolution: {integrity: sha512-mRKHch3BMleLmFJbQcD7Su7oFayHBCl5zzYlQ0ws44dLCR7zlGL85Fxxfk+8wd64dwDjlbdAAZmRLQctq4JgjA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
       prosemirror-changeset: 2.2.0
       prosemirror-collab: 1.3.0
       prosemirror-commands: 1.5.0
@@ -3627,14 +3627,14 @@ packages:
       prosemirror-transform: 1.7.1
       prosemirror-view: 1.29.1
 
-  /@tiptap/suggestion/2.0.0-beta.217_taqr5qhzhq7eqkenooggtvpgbi:
-    resolution: {integrity: sha512-Z1hXr1giNQ/fkuRrsMICtfyBCbMV+ZPiYYfpKKqUC4uc/lqAeHiRwk3lozpnLZEImnOW42LsYbYug2jtRqrDgA==}
+  /@tiptap/suggestion/2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64:
+    resolution: {integrity: sha512-wuySgX9mBjr15dGjFZlAIEHC+fs4MiAXJXywEcFUYl+hFDhCejyeKCl/Bw4Xf7JZiiUtfE0REeL5DkPvPmlFwQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
-      '@tiptap/pm': 2.0.0-beta.217_pv7cmqvutaztpd4mucego55zca
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
+      '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
     dev: false
 
   /@trysound/sax/0.2.0:
@@ -8016,13 +8016,13 @@ packages:
       '@popperjs/core': 2.11.6
     dev: false
 
-  /tiptap-markdown/0.6.0_anfcpfcr72psko4uapefmyyily:
+  /tiptap-markdown/0.6.0_tpwqsgijugfl56yxbdpnu4v4ua:
     resolution: {integrity: sha512-x2Bqp75W5wrQ0aN4Hl8kpNyfPSgr0QqdorosLXqySOmG12lwMJLUxw0lEH7za9uArzLAax+1nv/V7dCYnqJbPA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.129
       prosemirror-model: ^1.14.1
     dependencies:
-      '@tiptap/core': 2.0.0-beta.217_@tiptap+pm@2.0.0-beta.217
+      '@tiptap/core': 2.0.0-beta.218_@tiptap+pm@2.0.0-beta.218
       '@types/markdown-it': 12.2.3
       markdown-it: 12.3.2
       markdown-it-task-lists: 2.1.1
