@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconSmileCircleBold } from '@gitee/icons-react';
-import { isActive } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { InsertEmojiButton } from '@gitee/wysiwyg-editor-extension-emoji';
 import { MenuBarItem } from '../MenuBarItem';
 import { useStatusMap } from '../../MenuBarContext';

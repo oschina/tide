@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconListTaskBold } from '@gitee/icons-react';
-import { isActive } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { MenuBarItem } from '../MenuBarItem';
 import { useStatusMap } from '../../MenuBarContext';
 import { Tooltip } from '../Tooltip';
@@ -19,7 +19,7 @@ export const TaskList: React.FC<TaskListProps> = ({
   title,
 }) => {
   const { editor, statusMap } = useStatusMap(() => ({
-    isActive: () => isActive(editor.state, 'tasklist'),
+    isActive: () => isActive(editor.state, 'taskList'),
     disabled: () => !editor.can().chain().focus().toggleTaskList().run(),
   }));
   return (

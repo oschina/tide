@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconItalicBold } from '@gitee/icons-react';
-import { isActive } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { MenuBarItem } from '../MenuBarItem';
 import { useStatusMap } from '../../MenuBarContext';
 import { Tooltip } from '../Tooltip';

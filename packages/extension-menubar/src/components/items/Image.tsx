@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconImageBold } from '@gitee/icons-react';
-import { isActive } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { selectImageUpload } from '@gitee/wysiwyg-editor-extension-uploader';
 import { MenuBarItem } from '../MenuBarItem';
 import { useStatusMap } from '../../MenuBarContext';

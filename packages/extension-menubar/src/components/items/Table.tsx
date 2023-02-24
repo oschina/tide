@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconTableBold } from '@gitee/icons-react';
-import { isActive } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { InsertTableButton } from '@gitee/wysiwyg-editor-extension-table';
 import { MenuBarItem } from '../MenuBarItem';
 import { useStatusMap } from '../../MenuBarContext';

@@ -31,7 +31,7 @@ export function wrapInListInputRule(config: {
 }) {
   return new InputRule({
     find: config.find,
-    handler: ({ state, match, range, chain }) => {
+    handler: ({ state, match, range }) => {
       const { selection, tr } = state;
       const attributes =
         callOrReturn(config.getAttributes, undefined, match) || {};
@@ -52,38 +52,32 @@ export function wrapInListInputRule(config: {
         return null;
       }
 
-      return chain()
-        .command(({ tr }) =>
-          wrapSelectedItems({
-            listType: config.listType,
-            itemType: config.itemType,
-            tr,
-          })
-        )
-        .command(({ tr }) => {
-          tr.deleteRange(
-            tr.selection.$from.pos - (range.to - range.from),
-            tr.selection.$from.pos
-          );
-          return true;
+      if (
+        wrapSelectedItems({
+          listType: config.listType,
+          itemType: config.itemType,
+          tr,
         })
-        .command(({ tr }) =>
-          joinListBackwards(
-            tr,
-            config.joinBefore
-              ? (before) => config.joinBefore(match, before)
-              : undefined
-          )
-        )
-        .command(({ tr }) =>
-          joinListForwards(
-            tr,
-            config.joinAfter
-              ? (after) => config.joinAfter(match, after)
-              : undefined
-          )
-        )
-        .run();
+      ) {
+        tr.deleteRange(
+          tr.selection.$from.pos - (range.to - range.from),
+          tr.selection.$from.pos
+        );
+
+        joinListBackwards(
+          tr,
+          config.joinBefore
+            ? (before) => config.joinBefore(match, before)
+            : undefined
+        );
+
+        joinListForwards(
+          tr,
+          config.joinAfter
+            ? (after) => config.joinAfter(match, after)
+            : undefined
+        );
+      }
     },
   });
 }

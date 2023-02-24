@@ -4,7 +4,7 @@ import { deepChangeListType } from '../utilities/list/list-commands';
 
 export const toggleList: RawCommands['toggleList'] =
   (listTypeOrName, itemTypeOrName) =>
-  ({ editor, tr, state, dispatch, chain, commands, can }) => {
+  ({ editor, tr, state, chain, commands, can }) => {
     const { extensions } = editor.extensionManager;
     const listType = getNodeType(listTypeOrName, state.schema);
     const itemType = getNodeType(itemTypeOrName, state.schema);
@@ -27,27 +27,24 @@ export const toggleList: RawCommands['toggleList'] =
       }
 
       // change list type
-      if (isList(parentList.node.type.name, extensions) && dispatch) {
+      if (isList(parentList.node.type.name, extensions)) {
         // the list items type is the same, just change the list type
         if (listType.validContent(parentList.node.content)) {
-          return chain()
-            .command(() => {
-              tr.setNodeMarkup(parentList.pos, listType);
-
-              return true;
-            })
-            .command(() => joinListBackwards(tr))
-            .command(() => joinListForwards(tr))
-            .run();
+          tr.setNodeMarkup(parentList.pos, listType);
+          joinListBackwards(tr);
+          joinListForwards(tr);
+          return true;
         }
 
         // the list items type is different, change the list items type
         // toggle a bullet/ordered list into a task list or vice versa
-        return chain()
-          .command(() => deepChangeListType(tr, parentList, listType, itemType))
-          .command(() => joinListBackwards(tr))
-          .command(() => joinListForwards(tr))
-          .run();
+        const callback = deepChangeListType(tr, parentList, listType, itemType);
+        if (!callback) {
+          return false;
+        }
+        joinListBackwards(tr);
+        joinListForwards(tr);
+        return true;
       }
     }
 
@@ -64,8 +61,14 @@ export const toggleList: RawCommands['toggleList'] =
           return commands.clearNodes();
         })
         .wrapInList(listType)
-        .command(() => joinListBackwards(tr))
-        .command(() => joinListForwards(tr))
+        .command(() => {
+          joinListBackwards(tr);
+          return true;
+        })
+        .command(() => {
+          joinListForwards(tr);
+          return true;
+        })
         .run()
     );
   };

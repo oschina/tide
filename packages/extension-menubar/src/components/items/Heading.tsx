@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Tippy from '@tippyjs/react';
 import { Level } from '@tiptap/extension-heading';
 import { IconCaretDown } from '@gitee/icons-react';
-import { isActive } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/wysiwyg-editor-common';
 import { MenuBarItem } from '../MenuBarItem';
 import { useStatusMap } from '../../MenuBarContext';
 import { command, option } from '../../utils';
