@@ -18,6 +18,7 @@
     "@gitee/wysiwyg-editor-react": "workspace:*",
     "@tiptap/extension-mention": "^2.0.0-beta.217",
     "@tiptap/suggestion": "^2.0.0-beta.217",
+    "@babel/runtime": "^7.21.0",
     "classnames": "^2.2.6",
     "tippy.js": "^6.3.7"
   },

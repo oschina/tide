@@ -20,6 +20,7 @@
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/suggestion": "^2.0.0-beta.217",
+    "@babel/runtime": "^7.21.0",
     "classnames": "^2.2.6",
     "emoji-regex": "^10.2.1",
     "tippy.js": "^6.3.7"

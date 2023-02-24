@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "@babel/runtime": "^7.21.0"
   },
   "devDependencies": {
     "@tiptap/core": "^2.0.0-beta.217",

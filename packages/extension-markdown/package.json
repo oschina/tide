@@ -14,6 +14,9 @@
     "lint": "TIMING=1 eslint \"**/*.ts\"",
     "clear": "rm -rf dist"
   },
+  "dependencies": {
+    "@babel/runtime": "^7.21.0"
+  },
   "devDependencies": {
     "@gitee/wysiwyg-editor-markdown": "workspace:*",
     "@tiptap/pm": "^2.0.0-beta.217",

@@ -14,6 +14,9 @@
     "lint": "TIMING=1 eslint \"**/*.ts\"",
     "clear": "rm -rf dist"
   },
+  "dependencies": {
+    "@babel/runtime": "^7.21.0"
+  },
   "devDependencies": {
     "@tiptap/pm": "^2.0.0-beta.217",
     "eslint-config-custom": "workspace:*",

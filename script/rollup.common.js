@@ -2,25 +2,40 @@ import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import babel from '@rollup/plugin-babel';
+import { DEFAULT_EXTENSIONS } from '@babel/core';
+// import autoExternal from 'rollup-plugin-auto-external';
 import typescript from 'rollup-plugin-typescript2';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import postcss from 'rollup-plugin-postcss';
 import NpmImport from 'less-plugin-npm-import';
-
-// import { terser } from 'rollup-plugin-terser';
 import { visualizer } from 'rollup-plugin-visualizer';
 import sizes from '@atomico/rollup-plugin-sizes';
 
+const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx'];
+
 const getPlugins = ({ projectPath }) => {
   return [
-    resolve({ browser: true, preferBuiltins: false }),
+    // autoExternal({
+    //   packagePath: path.resolve(projectPath, 'package.json'),
+    // }),
+    resolve({
+      browser: true,
+      preferBuiltins: false,
+      extensions: extensions,
+    }),
     commonjs(),
     json(),
     typescript({
       tsconfig: path.resolve(projectPath, 'tsconfig.json'),
-      clean: true,
       useTsconfigDeclarationDir: true,
       exclude: ['**/__tests__', '**/*.test.ts'],
+    }),
+    babel({
+      rootMode: 'upward',
+      babelHelpers: 'runtime',
+      extensions: extensions,
+      exclude: '**/node_modules/**',
     }),
     sourcemaps(),
     postcss({
@@ -34,12 +49,6 @@ const getPlugins = ({ projectPath }) => {
       ],
       extract: 'style.css',
     }),
-    // terser({
-    //   output: { comments: false },
-    //   compress: {
-    //     drop_console: true,
-    //   },
-    // }),
     sizes(),
     visualizer({
       emitFile: true,

@@ -15,7 +15,8 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@tiptap/extension-list-item": "^2.0.0-beta.217"
+    "@tiptap/extension-list-item": "^2.0.0-beta.217",
+    "@babel/runtime": "^7.21.0"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

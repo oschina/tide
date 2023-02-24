@@ -15,7 +15,8 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-common": "workspace:*"
+    "@gitee/wysiwyg-editor-common": "workspace:*",
+    "@babel/runtime": "^7.21.0"
   },
   "devDependencies": {
     "@tiptap/pm": "^2.0.0-beta.217",
