@@ -1,17 +1,5 @@
 import { Extension } from '@tiptap/core';
-import { listBackspace } from '../helpers/listBackspace';
 import * as commands from '../commands';
-
-declare module '@tiptap/core' {
-  interface Commands<ReturnType> {
-    highPriorityKeymap: {
-      /**
-       * Handle backspace in a list item.
-       */
-      listBackspace: () => ReturnType;
-    };
-  }
-}
 
 export const Commands = Extension.create({
   name: 'coreCommands',
@@ -24,11 +12,6 @@ export const Commands = Extension.create({
   addCommands() {
     return {
       ...commands,
-
-      listBackspace:
-        () =>
-        ({ tr, state, dispatch, view }) =>
-          listBackspace(tr, state, dispatch, view),
     };
   },
 });
