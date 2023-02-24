@@ -1,4 +1,4 @@
-import { Extension, findParentNode } from '@tiptap/core';
+import { Extension, findParentNodeClosestToPos } from '@tiptap/core';
 import { TextSelection, AllSelection, Transaction } from '@tiptap/pm/state';
 
 declare module '@tiptap/core' {
@@ -116,16 +116,18 @@ export const Indentation = Extension.create<IndentationOptions>({
       ) {
         const { from, to } = selection;
 
-        const disabledNode = findParentNode(
-          (node) =>
-            this.options.disabledGroups.some(
-              (group) => node.type.spec.group?.split(' ').indexOf(group) > -1
-            ) || this.options.disabledTypes.indexOf(node.type.name) > -1
-        )(selection);
-
         doc.nodesBetween(from, to, (node, pos) => {
-          const nodeType = node.type;
-          if (!disabledNode && this.options.types.indexOf(nodeType.name) > -1) {
+          const disabledNode = findParentNodeClosestToPos(
+            tr.doc.resolve(pos),
+            (node) =>
+              this.options.disabledGroups.some(
+                (group) => node.type.spec.group?.split(' ').indexOf(group) > -1
+              ) || this.options.disabledTypes.indexOf(node.type.name) > -1
+          );
+          if (
+            !disabledNode &&
+            this.options.types.indexOf(node.type.name) > -1
+          ) {
             tr = setNodeIndentMarkup(tr, pos, delta);
             return false;
           }
