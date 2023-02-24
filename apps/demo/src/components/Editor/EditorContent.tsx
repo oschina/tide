@@ -66,6 +66,7 @@ import {
   useEditor,
 } from '@gitee/wysiwyg-editor-react';
 import { MentionMember } from './extensions/mention-member';
+import { ajaxImgUploader } from './utils';
 import './EditorContent.less';
 
 export type EditorContentProps = {
@@ -230,7 +231,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
           Gapcursor,
           Uploader.configure({
             image: {
-              uploader: defaultImgUploader,
+              uploader: ajaxImgUploader,
             },
           }),
           Markdown.configure({

@@ -35,7 +35,6 @@ export const handleUploadImages = (
       const el = view.nodeDOM(tableCell.pos);
       if (el) imgWidth = (el as HTMLElement)?.offsetWidth * 0.9;
     }
-
     tr.setMeta(ImagePlaceholderPlugin, {
       add: {
         id,
@@ -46,17 +45,21 @@ export const handleUploadImages = (
     });
     view.dispatch(tr);
 
-    const src = await uploadFunc(image, (progress) => {
-      view.dispatch(
-        view.state.tr.setMeta(ImagePlaceholderPlugin, {
-          progress: { id, progress },
-        })
-      );
-    });
+    let src = '';
+    try {
+      src = await uploadFunc(image, (progress) => {
+        view.dispatch(
+          view.state.tr.setMeta(ImagePlaceholderPlugin, {
+            progress: { id, progress },
+          })
+        );
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
-    if (src) {
-      URL.revokeObjectURL(blobUrl);
-
+    //  上传成功
+    if (src && typeof src === 'string') {
       const plpos = findPlaceholder(view.state, id);
       if (plpos == null) {
         return;
@@ -71,7 +74,17 @@ export const handleUploadImages = (
           )
           .setMeta(ImagePlaceholderPlugin, { remove: { id } })
       );
+    } else {
+      // 上传失败处理
+      setTimeout(() => {
+        view.dispatch(
+          view.state.tr.setMeta(ImagePlaceholderPlugin, { remove: { id } })
+        );
+      }, 1000);
     }
+
+    // 释放 URL 对象
+    URL.revokeObjectURL(blobUrl);
   });
 };
 
@@ -91,7 +104,7 @@ export const ImagePlaceholderPlugin = new Plugin({
       if (action.add) {
         const template = document.createElement('template');
         template.innerHTML = `<div class='gwe-uploader__img'>
-          <div class='gwe-uploader__img-placeholder' style='width: ${action.width}px;'>
+          <div class='gwe-uploader__img-placeholder' style='width: ${action.add.width}px;'>
             <img src='${action.add.src}' alt='upload placeholder' />
             <div class='gwe-uploader__img-progress-wrap'> 
               <span class='gwe-uploader__img-progress'>
