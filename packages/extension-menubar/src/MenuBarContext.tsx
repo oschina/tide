@@ -87,12 +87,9 @@ export const MenuBarContextProvider: React.FC<MenuBarContextProviderProps> = ({
 
   useEffect(() => {
     const listener = debounce(updateAllStatusMap, 200);
-    editor?.on('selectionUpdate', listener);
-    editor?.on('update', listener);
-
+    editor?.on('transaction', listener);
     return () => {
-      editor?.off('selectionUpdate', listener);
-      editor?.off('update', listener);
+      editor?.off('transaction', listener);
     };
   }, [editor]);
 
