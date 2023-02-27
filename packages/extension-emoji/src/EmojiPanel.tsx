@@ -81,7 +81,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
   const { editor } = props;
   const { storage } = editor;
   const [search, setSearch] = useState(props?.query || '');
-  const [activeGroup, setActiveGroup] = useState(groups[0]);
+  const [activeGroup, setActiveGroup] = useState(null);
 
   const [historyEmojis, setHistoryEmojis] = useState([]);
   const inputRef = useRef<HTMLInputElement>();
@@ -108,6 +108,14 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
     [search]
   );
 
+  const displayGroups = useMemo(() => {
+    if (historyEmojis.length) {
+      return groups;
+    } else {
+      return groups.slice(1);
+    }
+  }, [historyEmojis]);
+
   // 从本地存储获取最近使用的emojis
   const getEmojisFromStorage = () => {
     const historyEmojis = localStorage.getItem(localStorageKey);
@@ -117,11 +125,14 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
         if (json && json.length) {
           setHistoryEmojis(getEmojisByNameList(json, appleEmojis));
           setActiveGroup(groups[0]);
+          return;
         }
       } catch (e) {
         console.error('localStorage value json parse error:', e);
       }
     }
+    setHistoryEmojis([]);
+    setActiveGroup(groups[1]);
   };
 
   useEffect(() => {
@@ -170,7 +181,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
             if (val) {
               setActiveGroup(null);
             } else {
-              setActiveGroup(groups[0]);
+              setActiveGroup(displayGroups[0]);
             }
           }}
         />
@@ -205,7 +216,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
         )}
       </div>
       <div className="gwe-emoji-panel__menu">
-        {groups.map((item) => (
+        {displayGroups.map((item) => (
           <button
             className={classNames(
               'gwe-emoji-panel__menu-btn',

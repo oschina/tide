@@ -1,4 +1,4 @@
-@import '~@gitee/wysiwyg-editor-theme/src/variable';
+@import '~@gitee/wysiwyg-editor-theme/src/variable.less';
 
 .gwe-content {
   .ProseMirror {
@@ -229,11 +229,31 @@
     }
 
     hr {
+      position: relative;
+      display: block;
+      height: 1px;
       border: none;
-      border-top: 0.25em solid #e1e4e8;
+      background-color: @border-color;
+      overflow: visible;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 24px;
+        transform: translateY(-50%);
+      }
 
       &.ProseMirror-selectednode {
-        border-color: @theme-color;
+        background-color: @theme-color;
+      }
+    }
+
+    &[contenteditable='true'] {
+      hr {
+        cursor: pointer;
       }
     }
 
