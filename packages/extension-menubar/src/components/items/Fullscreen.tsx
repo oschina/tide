@@ -1,3 +1,4 @@
+import React from 'react';
 import { IconMaximizeBold, IconMinimizeBold } from '@gitee/icons-react';
 import { Button } from '../Button';
 import { MenuBarItem } from '../MenuBarItem';

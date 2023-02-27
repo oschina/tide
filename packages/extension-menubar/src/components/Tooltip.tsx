@@ -1,3 +1,4 @@
+import React from 'react';
 import Tippy, { TippyProps } from '@tippyjs/react';
 
 export type TooltipProps = TippyProps & {
