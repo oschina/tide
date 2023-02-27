@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-strike
 
+## 0.1.0-alpha.8
+
+### Minor Changes
+
+- Bug fix and UI improvements.
+
 ## 0.1.0-alpha.7
 
 ### Minor Changes

@@ -1,5 +1,18 @@
 # @gitee/wysiwyg-editor-editor
 
+## 0.1.0-alpha.8
+
+### Minor Changes
+
+- Bug fix and UI improvements.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-extension-code-block@0.1.0-alpha.8
+  - @gitee/wysiwyg-editor-markdown@0.1.0-alpha.8
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.8
+
 ## 0.1.0-alpha.7
 
 ### Minor Changes

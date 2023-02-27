@@ -30,12 +30,14 @@
     "@gitee/wysiwyg-editor-react": "0.0.0",
     "tsconfig": "0.0.0",
     "@gitee/wysiwyg-editor-extension-menubar": "0.1.0-alpha.0",
-    "@gitee/wysiwyg-editor-theme": "0.1.0-alpha.0"
+    "@gitee/wysiwyg-editor-theme": "0.1.0-alpha.0",
+    "@gitee/wysiwyg-editor-extension-indentation": "0.1.0-alpha.7"
   },
   "changesets": [
     "curly-bugs-clean",
     "few-baboons-attack",
     "gold-bottles-kneel",
+    "green-cycles-dance",
     "healthy-baboons-live",
     "large-apples-enjoy",
     "late-flowers-dress",
