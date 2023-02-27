@@ -1,8 +1,9 @@
 import { Plugin } from '@tiptap/pm/state';
 import { Decoration, DecorationSet, EditorView } from '@tiptap/pm/view';
 import { UploaderFunc } from '../types';
+import { selectionCellInfo } from '@gitee/wysiwyg-editor-common';
+
 import './placeholder.less';
-import { findParentNode } from '@tiptap/core';
 
 function findPlaceholder(state, id) {
   const decos = ImagePlaceholderPlugin.getState(state);
@@ -29,12 +30,11 @@ export const handleUploadImages = (
     let imgWidth = 350;
 
     // 表格内插入图片 宽度处理
-    const predicate = (node) => node.type === view.state.schema.nodes.tableCell;
-    const tableCell = findParentNode(predicate)(view.state.selection);
-    if (tableCell) {
-      const el = view.nodeDOM(tableCell.pos);
-      if (el) imgWidth = (el as HTMLElement)?.offsetWidth * 0.9;
+    const { isInTableCel, tableCellWidth } = selectionCellInfo(view);
+    if (isInTableCel) {
+      imgWidth = tableCellWidth;
     }
+
     tr.setMeta(ImagePlaceholderPlugin, {
       add: {
         id,

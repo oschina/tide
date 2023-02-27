@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
 import type { NodeViewProps } from '@tiptap/core';
+import { NodeSelection } from '@tiptap/pm/state';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import { useResize } from './resize';
 
@@ -29,6 +30,7 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
   editor,
   node,
   updateAttributes,
+  getPos,
 }) => {
   const { isEditable } = editor;
   const imgRef = useRef<HTMLImageElement>(null);
@@ -49,6 +51,13 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
       }
     }
   );
+
+  const selectImage = () => {
+    const { view } = editor;
+    const selection = NodeSelection.create(view.state.doc, getPos());
+    const transaction = view.state.tr.setSelection(selection);
+    view.dispatch(transaction);
+  };
 
   return (
     <NodeViewWrapper
@@ -83,7 +92,7 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
                   item.className
                 )}
                 onMouseDown={(e) => {
-                  //  todo 选中 该节点
+                  selectImage();
                   onMousedown(item.position, e);
                 }}
               />

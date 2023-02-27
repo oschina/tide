@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-theme": "workspace:*",
+    "@gitee/wysiwyg-editor-common": "workspace:*",
     "browser-fs-access": "^0.31.1",
     "@babel/runtime": "^7.21.0"
   },

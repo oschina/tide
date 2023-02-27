@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import type { Editor } from '@tiptap/core';
+import { selectionCellInfo } from '@gitee/wysiwyg-editor-common';
+import throttle from 'lodash/throttle';
 
 export const useResize = (
   imgRef: React.RefObject<HTMLImageElement>,
@@ -17,7 +19,7 @@ export const useResize = (
     clientX: 0,
     clientY: 0,
     position: '',
-    minWidth: 50,
+    minWidth: 20,
     maxWidth: 0,
   }).current;
 
@@ -40,9 +42,16 @@ export const useResize = (
 
     // 最大值为 编辑器宽度
     store.maxWidth = editor.view.dom.clientWidth - 80;
+
+    // 不能超过单元格
+    const { isInTableCel, tableCellWidth } = selectionCellInfo(editor.view);
+    if (isInTableCel) {
+      store.maxWidth = tableCellWidth;
+    }
   };
 
   useEffect(() => {
+    const throttleUpdate = throttle(onUpdate, 20);
     const onMousemove = (event) => {
       store.focus = true;
       if (store.resizing && store.focus) {
@@ -115,7 +124,7 @@ export const useResize = (
         store.newHeight = newHeight;
 
         // 最终设置图片的尺寸
-        onUpdate({ width: newWidth, height: newHeight });
+        throttleUpdate({ width: newWidth, height: newHeight });
       }
     };
     const onMouseup = () => {

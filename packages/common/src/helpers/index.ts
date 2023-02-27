@@ -7,3 +7,4 @@ export * from './joinListForwards';
 export * from './listBackspace';
 export * from './transformer';
 export * from './isWindows';
+export * from './selectionInfo';

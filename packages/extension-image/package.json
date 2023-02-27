@@ -22,7 +22,7 @@
     "@tippyjs/react": "^4.2.6",
     "@tiptap/extension-image": "^2.0.0-beta.218",
     "@babel/runtime": "^7.21.0",
-    "classnames": "^2.2.6"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@tiptap/pm": "^2.0.0-beta.218",
