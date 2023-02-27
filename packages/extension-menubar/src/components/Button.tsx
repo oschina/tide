@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 
 export type ButtonProps = {
   disabled?: boolean;
