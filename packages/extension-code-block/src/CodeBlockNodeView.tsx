@@ -1,10 +1,15 @@
 import classNames from 'classnames';
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import copy from 'copy-to-clipboard';
 import type { NodeViewProps } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import Tippy from '@tippyjs/react';
-import { IconAngleDown, IconCopyBold, IconWarpBold } from '@gitee/icons-react';
+import {
+  IconAngleDown,
+  IconCopyBold,
+  IconSearch,
+  IconWarpBold,
+} from '@gitee/icons-react';
 import './CodeBlockNodeView.less';
 
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
@@ -18,7 +23,8 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
     node.attrs.language || extension?.options?.defaultLanguage || '';
   const $container = useRef<HTMLPreElement>(null);
   const [softWrap, setSoftWrap] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [toolbarVisible, setToolbarVisible] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
   const [search, setSearch] = useState('');
   const inputRef = useRef<HTMLInputElement>();
 
@@ -46,75 +52,82 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
     [languages, search]
   );
 
-  const handleOpen = () => {
+  const handleOpen = useCallback(() => {
     if (!isEditable) {
       return;
     }
-    setVisible((prev) => !prev);
+    setDropdownVisible((prev) => !prev);
     setTimeout(() => inputRef.current.focus());
-  };
+  }, [isEditable]);
 
   return (
     <NodeViewWrapper
       className={classNames(node.attrs.className, 'gwe-code-block')}
+      onMouseEnter={() => setToolbarVisible(true)}
+      onMouseLeave={() => {
+        if (!dropdownVisible) {
+          setToolbarVisible(false);
+        }
+      }}
     >
-      <div className="gwe-code-block__toolbar" contentEditable={false}>
+      <div
+        className={classNames('gwe-code-block__toolbar', {
+          'gwe-code-block__toolbar--visible': toolbarVisible,
+        })}
+        contentEditable={false}
+      >
         {isEditable ? (
           <Tippy
             placement="bottom-start"
             interactive
-            onClickOutside={() => setVisible(false)}
-            visible={visible}
+            appendTo={editor.options.element}
+            onClickOutside={() => setDropdownVisible(false)}
+            visible={dropdownVisible}
             onHidden={() => setSearch('')}
+            offset={[0, 4]}
             content={
               <div className="gwe-dropdown-menu gwe-code-block__dropdown">
-                <div className="gwe-scrollbar-container gwe-dropdown-menu__content">
-                  {searchedLanguages.map((lang) => (
-                    <div
-                      key={lang.value}
-                      className={classNames('gwe-dropdown-menu__item', {
-                        'gwe-dropdown-menu__item--active': value === lang.value,
-                      })}
-                      onClick={() => {
-                        setValue(lang.value);
-                        setSearch(lang.value);
-                        updateAttributes({ language: lang.value });
-                        setVisible(false);
-                      }}
-                    >
-                      {lang.label}
+                <div className="gwe-dropdown-menu__content">
+                  <div className="gwe-code-block__dropdown-search">
+                    <div className="gwe-code-block__dropdown-input">
+                      <input
+                        ref={inputRef}
+                        type="text"
+                        value={search}
+                        placeholder="搜索"
+                        onChange={(e) => setSearch(e.target.value)}
+                      />
+                      <IconSearch />
                     </div>
-                  ))}
+                  </div>
+                  <div className="gwe-code-block__dropdown-list">
+                    {searchedLanguages.map((lang) => (
+                      <div
+                        key={lang.value}
+                        className={classNames('gwe-dropdown-menu__item', {
+                          'gwe-dropdown-menu__item--active':
+                            value === lang.value,
+                        })}
+                        onClick={() => {
+                          setValue(lang.value);
+                          updateAttributes({ language: lang.value });
+                          setDropdownVisible(false);
+                        }}
+                      >
+                        {lang.label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             }
           >
             <div
-              className={classNames(
-                'gwe-dropdown-trigger gwe-dropdown-trigger-search',
-                {
-                  'gwe-dropdown-trigger-search--active': visible,
-                }
-              )}
+              className="gwe-dropdown-trigger gwe-code-block__dropdown-trigger"
+              onClick={handleOpen}
             >
-              {visible ? (
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={search}
-                  placeholder={value ? value : '请搜索'}
-                  className="gwe-dropdown-trigger-search__input"
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-              ) : (
-                <span
-                  onClick={() => handleOpen()}
-                  className="gwe-dropdown-trigger-search__text"
-                >
-                  {value}
-                </span>
-              )}
-              <IconAngleDown onClick={() => handleOpen()} />
+              <span>{value}</span>
+              <IconAngleDown />
             </div>
           </Tippy>
         ) : (
@@ -137,12 +150,12 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
           onClick={() => copy($container?.current?.innerText as string)}
         >
           <IconCopyBold />
-          <span>复制</span>
+          复制
         </button>
       </div>
       <div className="gwe-code-block__content">
         <pre
-          className={classNames('gwe-code-block__content-pre code-block hljs', {
+          className={classNames('hljs', {
             'soft-wrap': softWrap,
           })}
           ref={$container}

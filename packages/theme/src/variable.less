@@ -9,8 +9,14 @@
 @_background-color: #fff;
 @background-color: var(--gwe-background-color, @_background-color); // 背景色
 
+@_background-hover-color: #f5f6f8;
+@background-hover-color: var(--gwe-background-hover-color, @_background-hover-color); // 背景色 hover
+
 @_light-bg-color: #f5f6f8;
+@light-bg-color: var(--gwe-light-bg-color, @_light-bg-color);
+
 @_gray-color: #c1c7d0;
+@gray-color: var(--gwe-gray-color, @_gray-color);
 
 @_border-color: #dadee3;
 @border-color: var(--gwe-border-color, @_border-color);
@@ -21,18 +27,15 @@
 @_text-muted-color: #909aaa;
 @text-muted-color: var(--gwe-text-muted-color, @_text-muted-color);
 
-@light-bg-color: var(--gwe-light-bg-color, @_light-bg-color);
-@gray-color: var(--gwe-gray-color, @_gray-color);
-
 @text-font-mono: 'Roboto Mono', 'Andale Mono', Consolas, 'Courier New',
   monospace;
 
 @text-font-family: Roboto, PingFang SC, Noto Sans SC, Microsoft YaHei UI,
-Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+  Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 
 @text-font-emoji: 'Segoe UI Emoji', 'Segoe UI Symbol', 'Segoe UI',
-'Apple Color Emoji', 'Twemoji Mozilla', 'Noto Color Emoji',
-'EmojiOne Color', 'Android Emoji';
+  'Apple Color Emoji', 'Twemoji Mozilla', 'Noto Color Emoji', 'EmojiOne Color',
+  'Android Emoji';
 
 // 菜单按钮样式
 @_menu-btn-active-color: @theme-color;
@@ -49,7 +52,7 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 
 // 下拉菜单样式
 @_select-hover-color: @text-color;
-@_select-hover-bg-color: #F5F6F8;
+@_select-hover-bg-color: #f5f6f8;
 @select-hover-color: var(--gwe-select-hover-color, @_select-hover-color);
 @select-hover-bg-color: var(--gwe-select-hover-bg-color, @_select-hover-bg-color);
 @_select-active-color: @theme-color;
@@ -58,7 +61,7 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 @select-active-bg-color: var(--gwe-select-active-bg-color, @_select-active-bg-color);
 
 @_emoji-menu-active-color: @_text-color;
-@_emoji-menu-active-bg-color: #F5F6F8;
+@_emoji-menu-active-bg-color: #f5f6f8;
 @emoji-menu-active-color: var(--gwe-emoji-menu-active-color, @_emoji-menu-active-color);
 @emoji-menu-active-bg-color: var(--gwe-emoji-menu-active-bg-color, @_emoji-menu-active-bg-color);
 
@@ -75,11 +78,16 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 @_tooltip-bg-color: #404040;
 @tooltip-bg-color: var(--gwe-tooltip-bg-color, @_tooltip-bg-color);
 
+@_code-text-color: #444;
+@code-text-color: var(--gwe-code-text-color, @_code-text-color);
 
 /**
  * 暗黑主题
  */
 @dark-background-color: #1a1b1e;
+@dark-background-hover-color: #272931;
+@dark-light-bg-color: #272931;
+@dark-gray-color: #616469;
 @dark-border-color: #30363d;
 @dark-theme-color: #165fcf; // 主题蓝色
 @dark-theme-bg-color: rgba(22, 95, 207, 0.2); // 浅色背景主题色 (透明度20%)
@@ -110,7 +118,10 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
 
 @dark-tooltip-bg-color: @dark-background-color;
 
-:root, :root .theme-blue {
+@dark-code-text-color: @dark-text-color;
+
+:root,
+:root .theme-blue {
   --gwe-theme-color: #2c7ef8;
   --gwe-theme-color-rgb: 44, 126, 248;
   --gwe-theme-bg-color: rgba(44, 126, 248, 0.1);
@@ -140,20 +151,20 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
   --gwe-theme-bg-color: rgba(178, 85, 120, 0.1);
 }
 
-
 :root .theme-blue,
 :root .theme-green,
 :root .theme-orange,
 :root .theme-pink,
 :root .theme-purple {
   --gwe-background-color: @_background-color;
+  --gwe-background-hover-color: @_background-hover-color;
+
+  --gwe-light-bg-color: @_light-bg-color;
+  --gwe-gray-color: @_gray-color;
 
   --gwe-border-color: @_border-color;
   --gwe-text-color: @_text-color;
   --gwe-text-muted-color: @_text-muted-color;
-
-  --gwe-light-bg-color: @_light-bg-color;
-  --gwe-gray-color: @_gray-color;
 
   --gwe-menu-btn-active-color: @_menu-btn-active-color;
   --gwe-menu-btn-active-bg-color: @_menu-btn-active-bg-color;
@@ -175,6 +186,8 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
   --gwe-table-grid-active-border-color: @_table-grid-active-border-color;
 
   --gwe-tooltip-bg-color: @_tooltip-bg-color;
+
+  --gwe-code-text-color: @_code-text-color;
 }
 
 :root .theme-dark {
@@ -183,13 +196,14 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
   --gwe-theme-bg-color: rgba(22, 95, 207, 0.2);
 
   --gwe-background-color: @dark-background-color;
+  --gwe-background-hover-color: @dark-background-hover-color;
+
+  --gwe-light-bg-color: @dark-light-bg-color;
+  --gwe-gray-color: @dark-gray-color;
 
   --gwe-border-color: @dark-border-color;
   --gwe-text-color: @dark-text-color;
   --gwe-text-muted-color: @dark-text-muted-color;
-
-  --gwe-light-bg-color: @_light-bg-color;
-  --gwe-gray-color: @_gray-color;
 
   --gwe-menu-btn-active-color: @dark-menu-btn-active-color;
   --gwe-menu-btn-active-bg-color: @dark-menu-btn-active-bg-color;
@@ -211,4 +225,6 @@ Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
   --gwe-table-grid-active-border-color: @dark-table-grid-active-border-color;
 
   --gwe-tooltip-bg-color: @dark-tooltip-bg-color;
+
+  --gwe-code-text-color: @dark-code-text-color;
 }
