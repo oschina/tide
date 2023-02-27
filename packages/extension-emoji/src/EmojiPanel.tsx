@@ -7,11 +7,12 @@ import React, {
   useRef,
 } from 'react';
 import classNames from 'classnames';
+import { throttle } from 'lodash';
 import { SuggestionProps } from '@tiptap/suggestion';
 import { IconSearch } from '@gitee/icons-react';
-import type { EmojiStorage, EmojiItem } from './emoji';
 import { appleEmojis } from './emojis';
 import { getEmojisByNameList, saveEmojiToStorage } from './utils';
+import type { EmojiStorage, EmojiItem } from './emoji';
 import type { EmojiPanelRef } from './suggestion';
 import './EmojiPanel.less';
 
@@ -52,6 +53,17 @@ const groups = [
   },
 ];
 
+const appleEmojisGroupMap: Record<string, EmojiItem[]> = appleEmojis.reduce(
+  (acc, emoji) => {
+    if (!acc[emoji.group]) {
+      acc[emoji.group] = [];
+    }
+    acc[emoji.group].push(emoji);
+    return acc;
+  },
+  {}
+);
+
 const Emoji: React.FC<{
   emojiStorage: EmojiStorage;
   emoji: EmojiItem;
@@ -79,20 +91,20 @@ export type EmojiPanelProps = SuggestionProps<EmojiItem> & {
 
 const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
   const { editor } = props;
-  const { storage } = editor;
-  const [search, setSearch] = useState(props?.query || '');
-  const [activeGroup, setActiveGroup] = useState(null);
 
-  const [historyEmojis, setHistoryEmojis] = useState([]);
+  const contentElRef = useRef<HTMLDivElement>();
   const inputRef = useRef<HTMLInputElement>();
+  const [search, setSearch] = useState(props?.query || '');
+  const [historyEmojis, setHistoryEmojis] = useState([]);
+  const [activeGroup, setActiveGroup] = useState<string>(null);
 
-  const activeGroupEmojis = useMemo(() => {
-    if (activeGroup?.group === 'recent') {
-      return historyEmojis;
-    } else {
-      return appleEmojis.filter((i) => i?.group === activeGroup?.group);
-    }
-  }, [activeGroup, historyEmojis]);
+  const emojisGroupMap: Record<string, EmojiItem[]> = useMemo(
+    () => ({
+      recent: historyEmojis,
+      ...appleEmojisGroupMap,
+    }),
+    [historyEmojis]
+  );
 
   const searchedEmojis = useMemo(
     () =>
@@ -116,7 +128,6 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
     }
   }, [historyEmojis]);
 
-  // 从本地存储获取最近使用的emojis
   const getEmojisFromStorage = () => {
     const historyEmojis = localStorage.getItem(localStorageKey);
     if (historyEmojis) {
@@ -124,28 +135,13 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
         const json = JSON.parse(historyEmojis);
         if (json && json.length) {
           setHistoryEmojis(getEmojisByNameList(json, appleEmojis));
-          setActiveGroup(groups[0]);
           return;
         }
       } catch (e) {
         console.error('localStorage value json parse error:', e);
       }
     }
-    setHistoryEmojis([]);
-    setActiveGroup(groups[1]);
   };
-
-  useEffect(() => {
-    // 若是输入：搜索的，需设置input的值
-    if (props?.query) {
-      setSearch(props?.query);
-      setActiveGroup(null);
-    }
-  }, [props?.query]);
-
-  useEffect(() => {
-    getEmojisFromStorage();
-  }, []);
 
   const selectEmoji = (emoji: EmojiItem) => {
     if (props.command && typeof props.command === 'function') {
@@ -157,6 +153,63 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
     const nameList = saveEmojiToStorage(emoji);
     setHistoryEmojis(getEmojisByNameList(nameList, appleEmojis));
   };
+
+  const scrollToGroup = (group: string) => {
+    const el: HTMLDivElement = document.querySelector(
+      `[data-group="${group}"]`
+    );
+    if (el) {
+      contentElRef.current.scrollTop = el.offsetTop;
+    }
+  };
+
+  const scrollToTop = () => {
+    contentElRef.current.scrollTop = 0;
+  };
+
+  const getActiveGroupName = () => {
+    const contentElTop = contentElRef.current.getBoundingClientRect().top;
+    const groupEls: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll('[data-group]');
+    const activeGroupEl = Array.from(groupEls).find((el) => {
+      const elTop = el.getBoundingClientRect().top;
+      const elBottom = elTop + el.offsetHeight;
+      if (elTop <= contentElTop && elBottom >= contentElTop) {
+        return true;
+      }
+      return false;
+    });
+    if (activeGroupEl) {
+      return activeGroupEl.getAttribute('data-group');
+    }
+    return null;
+  };
+
+  useEffect(() => {
+    const onScroll = throttle(() => {
+      setActiveGroup(getActiveGroupName());
+    }, 100);
+    contentElRef.current.addEventListener('scroll', onScroll);
+    return () => {
+      contentElRef.current.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setActiveGroup(search ? null : getActiveGroupName());
+  }, [search]);
+
+  useEffect(() => {
+    // 通过快捷语法输入 : 唤起的搜索, 需设置 search 值
+    if (props?.query !== undefined) {
+      setSearch(props?.query);
+      scrollToTop();
+    }
+  }, [props?.query]);
+
+  useEffect(() => {
+    getEmojisFromStorage();
+  }, []);
 
   useImperativeHandle(ref, () => ({
     onShow: () => {
@@ -176,58 +229,62 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
           placeholder="请输入关键字"
           value={search}
           onChange={(e) => {
-            const val = e.target.value.trim();
-            setSearch(val);
-            if (val) {
-              setActiveGroup(null);
-            } else {
-              setActiveGroup(displayGroups[0]);
-            }
+            setSearch((e.target.value || '').trim());
+            scrollToTop();
           }}
         />
       </div>
-      <div className="gwe-emoji-panel__content">
-        {search &&
-          searchedEmojis &&
-          searchedEmojis.map((emoji) => (
-            <Emoji
-              key={emoji.name}
-              emoji={emoji}
-              emojiStorage={storage.emoji}
-              onClick={() => selectEmoji(emoji)}
-            />
-          ))}
-        {activeGroup && (
+      <div ref={contentElRef} className="gwe-emoji-panel__content">
+        {search ? (
           <>
-            <div>
-              <span className="gwe-emoji-panel__group-title">
-                {activeGroup.title}
-              </span>
+            <div className="gwe-emoji-panel__group">
+              <div className="gwe-emoji-panel__group-content">
+                {searchedEmojis.map((emoji) => (
+                  <Emoji
+                    key={emoji.name}
+                    emoji={emoji}
+                    emojiStorage={editor.storage.emoji}
+                    onClick={() => selectEmoji(emoji)}
+                  />
+                ))}
+              </div>
             </div>
-            {activeGroupEmojis.map((emoji) => (
-              <Emoji
-                key={emoji.name}
-                emoji={emoji}
-                emojiStorage={storage.emoji}
-                onClick={() => selectEmoji(emoji)}
-              />
-            ))}
           </>
+        ) : (
+          displayGroups.map((group) => (
+            <div
+              key={group.group}
+              className="gwe-emoji-panel__group"
+              data-group={group.group}
+            >
+              <div className="gwe-emoji-panel__group-title">{group.title}</div>
+              <div className="gwe-emoji-panel__group-content">
+                {emojisGroupMap[group.group].map((emoji) => (
+                  <Emoji
+                    key={emoji.name}
+                    emoji={emoji}
+                    emojiStorage={editor.storage.emoji}
+                    onClick={() => selectEmoji(emoji)}
+                  />
+                ))}
+              </div>
+            </div>
+          ))
         )}
       </div>
       <div className="gwe-emoji-panel__menu">
         {displayGroups.map((item) => (
           <button
+            key={item.group}
             className={classNames(
               'gwe-emoji-panel__menu-btn',
-              activeGroup?.group === item.group
+              activeGroup === item.group
                 ? 'gwe-emoji-panel__menu-btn--active'
                 : ''
             )}
-            key={item.title}
             onClick={() => {
-              setActiveGroup(item);
               setSearch('');
+              scrollToGroup(item.group);
             }}
           >
             {item.title}

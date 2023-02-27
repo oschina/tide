@@ -466,10 +466,12 @@ importers:
       '@tiptap/core': ^2.0.0-beta.218
       '@tiptap/pm': ^2.0.0-beta.218
       '@tiptap/suggestion': ^2.0.0-beta.218
+      '@types/lodash': ^4.14.191
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       emoji-regex: ^10.2.1
       eslint-config-custom: workspace:*
+      lodash: ^4.17.21
       react: ^16.14.0
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
@@ -487,11 +489,13 @@ importers:
       '@tiptap/suggestion': 2.0.0-beta.218_p7b6nzxe7qctmzbzapdik3nr64
       classnames: 2.3.2
       emoji-regex: 10.2.1
+      lodash: 4.17.21
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
     devDependencies:
       '@tiptap/pm': 2.0.0-beta.218_xixjdlstfbsoyvyes7aewz3ng4
+      '@types/lodash': 4.14.191
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig

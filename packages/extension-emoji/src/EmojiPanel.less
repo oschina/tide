@@ -2,6 +2,7 @@
 
 .gwe-emoji-panel {
   width: 420px;
+
   &__input-wrap {
     position: relative;
     margin: 16px;
@@ -33,6 +34,7 @@
   }
 
   &__content {
+    position: relative;
     padding: 0 16px 12px;
     height: 180px;
     overflow: overlay;
@@ -75,14 +77,31 @@
     border: none;
     color: inherit;
     cursor: pointer;
+
     &--active {
       color: @emoji-menu-active-color;
       background-color: @emoji-menu-active-bg-color;
     }
   }
 
-  &__group-title {
-    font-size: 14px;
-    margin-left: 4px;
+  &__group {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      font-size: 14px;
+      padding: 0 4px 4px;
+      position: sticky;
+      top: 0;
+      background-color: @background-color;
+    }
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
