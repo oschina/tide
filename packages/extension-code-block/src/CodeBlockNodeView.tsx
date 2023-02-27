@@ -10,6 +10,11 @@ import {
   IconSearch,
   IconWarpBold,
 } from '@gitee/icons-react';
+import {
+  getLanguageByValue,
+  getLanguageByValueOrAlias,
+  languages,
+} from './languages';
 import './CodeBlockNodeView.less';
 
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
@@ -19,38 +24,35 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
   extension,
 }) => {
   const { isEditable } = editor;
-  const language =
-    node.attrs.language || extension?.options?.defaultLanguage || '';
+
   const $container = useRef<HTMLPreElement>(null);
+  const inputRef = useRef<HTMLInputElement>();
+  const [search, setSearch] = useState('');
   const [softWrap, setSoftWrap] = useState(false);
   const [toolbarVisible, setToolbarVisible] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [search, setSearch] = useState('');
-  const inputRef = useRef<HTMLInputElement>();
 
-  const languages = useMemo(
-    () => [
-      ...(extension?.options?.lowlight?.listLanguages?.() || []).map(
-        (lang: string) => ({
-          label: lang,
-          value: lang,
-        })
-      ),
-    ],
-    [extension]
+  const language =
+    node.attrs.language || extension?.options?.defaultLanguage || '';
+  const languageItem = useMemo(() => getLanguageByValue(language), [language]);
+
+  const [selectedValue, setSelectedValue] = useState(
+    () => getLanguageByValueOrAlias(language)?.value || 'plaintext'
+  );
+  const selectedLanguageItem = useMemo(
+    () => getLanguageByValue(selectedValue),
+    [selectedValue]
   );
 
-  const [value, setValue] = useState(() => {
-    if (language && languages.some((i) => i.value === language)) {
-      return language;
-    }
-    return languages?.[0]?.value;
-  });
-
-  const searchedLanguages = useMemo(
-    () => languages.filter((i) => i.value.includes(search.toLowerCase())),
-    [languages, search]
-  );
+  const searchedLanguages = useMemo(() => {
+    const keyword = search.toLowerCase();
+    return languages.filter(
+      (lang) =>
+        lang.value.includes(keyword) ||
+        lang.alias.includes(keyword) ||
+        lang.name.includes(keyword)
+    );
+  }, [search]);
 
   const handleOpen = useCallback(() => {
     if (!isEditable) {
@@ -64,15 +66,11 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
     <NodeViewWrapper
       className={classNames(node.attrs.className, 'gwe-code-block')}
       onMouseEnter={() => setToolbarVisible(true)}
-      onMouseLeave={() => {
-        if (!dropdownVisible) {
-          setToolbarVisible(false);
-        }
-      }}
+      onMouseLeave={() => setToolbarVisible(false)}
     >
       <div
         className={classNames('gwe-code-block__toolbar', {
-          'gwe-code-block__toolbar--visible': toolbarVisible,
+          'gwe-code-block__toolbar--visible': toolbarVisible || dropdownVisible,
         })}
         contentEditable={false}
       >
@@ -106,15 +104,15 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
                         key={lang.value}
                         className={classNames('gwe-dropdown-menu__item', {
                           'gwe-dropdown-menu__item--active':
-                            value === lang.value,
+                            selectedValue === lang.value,
                         })}
                         onClick={() => {
-                          setValue(lang.value);
+                          setSelectedValue(lang.value);
                           updateAttributes({ language: lang.value });
                           setDropdownVisible(false);
                         }}
                       >
-                        {lang.label}
+                        {lang.name}
                       </div>
                     ))}
                   </div>
@@ -126,12 +124,12 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
               className="gwe-dropdown-trigger gwe-code-block__dropdown-trigger"
               onClick={handleOpen}
             >
-              <span>{value}</span>
+              <span>{selectedLanguageItem?.name || selectedValue}</span>
               <IconAngleDown />
             </div>
           </Tippy>
         ) : (
-          <span>{language}</span>
+          <span>{languageItem?.name || language}</span>
         )}
         <button
           className={classNames(

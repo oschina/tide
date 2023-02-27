@@ -8,6 +8,7 @@ import { isActive, textblockTypeInputRule } from '@gitee/wysiwyg-editor-common';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
 import { getSelectedLineRange } from './utils';
+import { getLanguageByValueOrAlias } from './languages';
 
 export type CodeBlockOptions = CodeBlockLowlightOptions;
 
@@ -100,11 +101,9 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
         find: backtickInputRegex,
         type: this.type,
         getAttributes: (match) => ({
-          language: (this.options.lowlight?.listLanguages?.() || []).includes(
-            match[1]
-          )
-            ? match[1]
-            : this.options.defaultLanguage,
+          language:
+            getLanguageByValueOrAlias(match[1])?.value ||
+            this.options.defaultLanguage,
         }),
         autoFocus: true,
       }),
@@ -112,11 +111,9 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
         find: tildeInputRegex,
         type: this.type,
         getAttributes: (match) => ({
-          language: (this.options.lowlight?.listLanguages?.() || []).includes(
-            match[1]
-          )
-            ? match[1]
-            : this.options.defaultLanguage,
+          language:
+            getLanguageByValueOrAlias(match[1])?.value ||
+            this.options.defaultLanguage,
         }),
         autoFocus: true,
       }),
