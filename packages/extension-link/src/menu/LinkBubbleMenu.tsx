@@ -27,8 +27,6 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
     return show;
   }, [editor]);
 
-  const openLink = useCallback(() => window.open(href, '_blank'), [href]);
-
   const openLinkEditPopup = useCallback(() => {
     editor.chain().blur().focus().run();
     showLinkEditPopup(editor);
@@ -66,7 +64,6 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
             {href}
           </a>
         </span>
-        {/* <button  onClick={openLink}>访问</button> */}
         <button
           className="gwe-menu-bar__btn gwe-menu-bar__item"
           onClick={openLinkEditPopup}

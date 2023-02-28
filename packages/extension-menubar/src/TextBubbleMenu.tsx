@@ -27,6 +27,7 @@ export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
           !hasEditorFocus ||
           empty ||
           isEmptyTextBlock ||
+          !isTextSelection(state.selection) ||
           !editor.isEditable
         ) {
           return false;
@@ -34,9 +35,8 @@ export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
 
         if (
           isActive(editor.state, 'image') ||
-          // isActive(editor.state, 'link') ||
+          isActive(editor.state, 'link') ||
           isActive(editor.state, 'codeBlock') ||
-          isActive(editor.state, 'table') ||
           isActive(editor.state, 'horizontalRule')
         ) {
           return false;
