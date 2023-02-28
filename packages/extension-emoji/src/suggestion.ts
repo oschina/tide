@@ -6,15 +6,11 @@ import {
 } from '@tiptap/suggestion';
 import { ReactRenderer } from '@gitee/wysiwyg-editor-react';
 import { EmojiItem } from './emoji';
-// import { EmojiList } from './EmojiList';
 import EmojiPanel from './EmojiPanel';
-
-export type EmojiListRef = {
-  onKeyDown: (props: SuggestionKeyDownProps) => boolean;
-};
 
 export type EmojiPanelRef = {
   onShow: () => void;
+  onKeyDown: (props: SuggestionKeyDownProps) => boolean;
 };
 
 export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
@@ -40,11 +36,6 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
 
     return {
       onStart: (props) => {
-        // component = new ReactRenderer(EmojiList, {
-        //   props,
-        //   editor: props.editor,
-        // });
-
         component = new ReactRenderer(EmojiPanel, {
           props,
           editor: props.editor,
@@ -81,14 +72,14 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
         });
       },
 
-      // onKeyDown(props) {
-      //   if (props.event.key === 'Escape') {
-      //     popup?.[0]?.hide();
-      //     component?.destroy();
-      //     return true;
-      //   }
-      //   return !!component?.ref?.onKeyDown(props);
-      // },
+      onKeyDown(props) {
+        if (props.event.key === 'Escape') {
+          popup?.[0]?.hide();
+          component?.destroy();
+          return true;
+        }
+        return !!component?.ref?.onKeyDown(props);
+      },
 
       onExit() {
         popup?.[0]?.destroy();
