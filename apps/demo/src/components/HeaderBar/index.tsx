@@ -135,7 +135,7 @@ const HeaderBar = ({
         <button
           className="btn-clear"
           onClick={() => {
-            history.pushState(null, '', '/');
+            history.pushState(null, '', window.location.pathname);
             localStorage.removeItem(localStorageKey);
             editor?.commands.setContent('');
           }}
