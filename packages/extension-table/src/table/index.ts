@@ -4,11 +4,12 @@ import {
   Table as TTable,
   TableOptions as TTableOptions,
 } from '@tiptap/extension-table';
-import { tableEditing } from '@tiptap/pm/tables';
-import { AllSelection, TextSelection } from '@tiptap/pm/state';
+import { tableEditing, TableMap } from '@tiptap/pm/tables';
+import { AllSelection, TextSelection, Selection } from '@tiptap/pm/state';
 import type { Node, NodeType } from '@tiptap/pm/model';
 import { columnResizing } from './columnresizing';
 import { TableView } from './TableView';
+import { findCellClosestToPos } from '../utilities';
 
 function findTableInLastChild(node: Node, type: NodeType): Node | null {
   if (!node) {
@@ -145,6 +146,88 @@ export const Table = TTable.extend<TableOptions>({
           tr.setSelection(new AllSelection(tr.doc));
           dispatch(tr);
           return true;
+        }
+        return false;
+      },
+      // 在表格内选中文字后按向上/下键
+      // prosemirror-tables 默认行为: 跳到左/右的单元格
+      // 调整为 跳到上/下的单元格或表格外
+      ArrowUp: () => {
+        const { state, dispatch } = this.editor.view;
+        const { tr, selection, doc } = state;
+        if (selection instanceof TextSelection && !selection.empty) {
+          const cell = findCellClosestToPos(selection.$from);
+          if (!cell) {
+            return false;
+          }
+          const $cell = doc.resolve(cell.pos);
+          const table = $cell.node(-1);
+          if (!table) {
+            return false;
+          }
+
+          const cellChildIndex = selection.$from.index(
+            cell.depth - selection.$from.depth
+          );
+
+          // 单元格内第一个子节点
+          if (cellChildIndex === 0) {
+            const map = TableMap.get(table);
+            const tableStart = $cell.start(-1);
+            const topCellPos = map.nextCell(cell.pos - tableStart, 'vert', -1);
+
+            // 跳到表格前面 或者 跳到上面的单元格
+            let newPos = tableStart - 2;
+            if (topCellPos !== null) {
+              newPos = topCellPos + tableStart;
+            }
+
+            tr.setSelection(Selection.near(state.doc.resolve(newPos)));
+            dispatch(tr);
+            return true;
+          }
+        }
+        return false;
+      },
+      ArrowDown: () => {
+        const { state, dispatch } = this.editor.view;
+        const { tr, selection, doc } = state;
+        if (selection instanceof TextSelection && !selection.empty) {
+          const cell = findCellClosestToPos(selection.$from);
+          if (!cell) {
+            return false;
+          }
+          const $cell = doc.resolve(cell.pos);
+          const table = $cell.node(-1);
+          if (!table) {
+            return false;
+          }
+
+          const cellChildIndex = selection.$from.index(
+            cell.depth - selection.$from.depth
+          );
+          const cellChildCount = $cell.nodeAfter?.childCount || 0;
+
+          // 单元格内最后一个子节点
+          if (cellChildIndex === cellChildCount - 1) {
+            const map = TableMap.get(table);
+            const tableStart = $cell.start(-1);
+            const bottomCellPos = map.nextCell(
+              cell.pos - tableStart,
+              'vert',
+              1
+            );
+
+            // 跳到表格后面 或者 跳到下面的单元格
+            let newPos = tableStart + table.nodeSize;
+            if (bottomCellPos !== null) {
+              newPos = bottomCellPos + tableStart;
+            }
+
+            tr.setSelection(Selection.near(state.doc.resolve(newPos)));
+            dispatch(tr);
+            return true;
+          }
         }
         return false;
       },
