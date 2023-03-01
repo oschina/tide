@@ -55,6 +55,7 @@ export const suggestion: Omit<SuggestionOptions<EmojiItem>, 'editor'> = {
           interactive: true,
           trigger: 'manual',
           placement: 'bottom-start',
+          maxWidth: 'none',
         });
       },
 
