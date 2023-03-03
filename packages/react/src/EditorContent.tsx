@@ -86,8 +86,6 @@ export class PureEditorContent extends React.Component<
     // lifecycle methods, and React doesn't allow calling flushSync from inside
     // a lifecycle method.
     if (this.initialized) {
-      // fix: Queue flushSync call
-      // @see https://github.com/ueberdosis/tiptap/pull/3533
       queueMicrotask(() => {
         flushSync(fn);
       });
@@ -125,6 +123,8 @@ export class PureEditorContent extends React.Component<
     if (!editor) {
       return;
     }
+
+    this.initialized = false;
 
     if (!editor.isDestroyed) {
       editor.view.setProps({

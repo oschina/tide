@@ -15,20 +15,20 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@tiptap/html": "^2.0.0-beta.218",
+    "@tiptap/html": "^2.0.0-beta.220",
     "@babel/runtime": "^7.21.0",
     "zeed-dom": "^0.9.26"
   },
   "devDependencies": {
     "@gitee/wysiwyg-editor-markdown": "workspace:*",
-    "@tiptap/pm": "^2.0.0-beta.218",
+    "@tiptap/pm": "^2.0.0-beta.220",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.218",
-    "@tiptap/pm": "^2.0.0-beta.218"
+    "@tiptap/core": "^2.0.0-beta.220",
+    "@tiptap/pm": "^2.0.0-beta.220"
   },
   "sideEffects": false
 }

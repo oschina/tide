@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.9",
-    "@tiptap/extension-ordered-list": "^2.0.0-beta.218",
+    "@tiptap/extension-ordered-list": "^2.0.0-beta.220",
     "@babel/runtime": "^7.21.0"
   },
   "devDependencies": {
@@ -25,7 +25,7 @@
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.218"
+    "@tiptap/core": "^2.0.0-beta.220"
   },
   "sideEffects": false
 }

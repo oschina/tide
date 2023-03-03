@@ -19,14 +19,14 @@
     "@babel/runtime": "^7.21.0"
   },
   "devDependencies": {
-    "@tiptap/pm": "^2.0.0-beta.218",
+    "@tiptap/pm": "^2.0.0-beta.220",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.0-beta.218",
-    "@tiptap/pm": "^2.0.0-beta.218"
+    "@tiptap/core": "^2.0.0-beta.220",
+    "@tiptap/pm": "^2.0.0-beta.220"
   },
   "sideEffects": false
 }
