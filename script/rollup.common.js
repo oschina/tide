@@ -57,8 +57,13 @@ const getPlugins = ({ projectPath }) => {
   ];
 };
 
+export const autoExternal = (packageNames) => {
+  const deps = Array.from(new Set([...packageNames]));
+  return [...deps.map((dep) => new RegExp(`^${dep}($|\\/|\\\\)`))];
+};
+
 export const createRollupConfig = (opts) => {
-  const { pkg, projectPath } = opts || {};
+  const { pkg, projectPath, external } = opts || {};
 
   if (pkg && projectPath) {
     const outputs = [
@@ -83,17 +88,15 @@ export const createRollupConfig = (opts) => {
       },
     ];
 
-    const deps = Array.from(
-      new Set([
-        ...Object.keys(pkg.dependencies || {}),
-        ...Object.keys(pkg.peerDependencies || {}),
-      ])
-    );
-
     return outputs.map((o) => {
       return {
         ...o,
-        external: [...deps.map((dep) => new RegExp(`^${dep}($|\\/|\\\\)`))],
+        external: external
+          ? external
+          : autoExternal([
+              ...Object.keys(pkg.dependencies || {}),
+              ...Object.keys(pkg.peerDependencies || {}),
+            ]),
         plugins: getPlugins({ projectPath }),
       };
     });

@@ -1,7 +1,7 @@
 /**
  * 纯 js 用法
  */
-import './style.css';
+import './index.less';
 
 import { createEditor } from '@gitee/wysiwyg-editor-editor';
 

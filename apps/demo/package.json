@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:vanilla": "cross-env ENTRY=vanilla vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "clear": "rm -rf dist",
@@ -68,6 +69,7 @@
     "@types/react": "^16.14.0",
     "@types/react-dom": "^16.9.14",
     "@vitejs/plugin-react": "^3.0.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "fast-glob": "^3.2.12",

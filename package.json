@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "demo": "pnpm --filter demo dev",
+    "demo:vanilla": "pnpm --filter demo dev:vanilla",
     "dev": "turbo run dev --parallel --filter=./packages/*",
     "build": "turbo run build --filter=./packages/*",
     "build:nocache": "pnpm clear && turbo run build --force --filter=./packages/*",
