@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "release": "pnpm build:nocache && changeset version && changeset publish",
-    "deploy": "cd apps/demo/dist && git add --all && git commit -m \"Deploy demo on pages updated\" && git push origin demo-pages"
+    "pages": "cd apps/demo/dist && git add --all && git commit -m \"Deploy demo on pages updated\" && git push origin demo-pages"
   },
   "devDependencies": {
     "@atomico/rollup-plugin-sizes": "^1.1.4",

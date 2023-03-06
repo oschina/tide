@@ -23,5 +23,13 @@ pnpm demo
 
 ## 部署 pages
 
-yarn build:demo
-yarn deploy
+```shell
+# 设置一次就行，使用 git worktree 将分支挂载为子目录：
+git checkout -b demo-pages origin/demo-pages
+git checkout master
+git worktree add apps/demo/dist demo-pages
+
+# 以后直接 构建部署
+pnpm build:demo
+pnpm pages
+```
