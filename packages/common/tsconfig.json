@@ -1,6 +1,7 @@
 {
   "extends": "tsconfig/react.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "declarationDir": "./dist/types",
     "emitDeclarationOnly": true
   },

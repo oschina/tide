@@ -75,7 +75,7 @@ export const handleUploadImages = (
           .setMeta(ImagePlaceholderPlugin, { remove: { id } })
       );
     } else {
-      // 上传失败处理
+      // todo 完善上传失败处理
       setTimeout(() => {
         view.dispatch(
           view.state.tr.setMeta(ImagePlaceholderPlugin, { remove: { id } })
