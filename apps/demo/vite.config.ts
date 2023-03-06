@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import fg from 'fast-glob';
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
+import { format } from 'date-fns';
 
 const alias = [
   ...fg
@@ -19,20 +20,23 @@ const alias = [
   },
 ];
 
-console.log(alias);
-
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias,
-  },
-  // css: {
-  //   modules: {
-  //     localsConvention: 'camelCase',
-  //   },
-  // },
-  define: {
-    'process.platform': '"web"',
-  },
+export default defineConfig((env) => {
+  console.log(env);
+  const { mode } = env;
+  return {
+    base: mode === 'production' ? '/wysiwyg-editor' : '/',
+    define: {
+      __BUILD_TIME__: JSON.stringify(format(new Date(), 'yyyy-MM-dd HH:mm:ss')),
+    },
+    plugins: [react()],
+    resolve: {
+      alias,
+    },
+    // css: {
+    //   modules: {
+    //     localsConvention: 'camelCase',
+    //   },
+    // },
+  };
 });

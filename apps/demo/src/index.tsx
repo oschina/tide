@@ -7,11 +7,11 @@ import { WysiwygEditor } from './components/Editor';
 
 import './index.less';
 
+console.log('BUILD_TIME：', __BUILD_TIME__);
+
 function App() {
   const [editor, setEditor] = useState<MarkdownEditor | null>(null);
   const [editable, setEditable] = useState(true);
-
-  console.log('App', editor);
 
   return (
     <div className="demo">

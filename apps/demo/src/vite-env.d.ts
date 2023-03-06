@@ -16,3 +16,5 @@ declare module 'lz-string' {
   function compress(input: string): string;
   function decompress(compressed: string): string;
 }
+
+declare const __BUILD_TIME__: string;
