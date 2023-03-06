@@ -320,7 +320,7 @@ importers:
   packages/extension-blockquote:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.9
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-blockquote': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -379,7 +379,7 @@ importers:
   packages/extension-bullet-list:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.9
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-bullet-list': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -458,7 +458,7 @@ importers:
   packages/extension-emoji:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@gitee/icons-react': ^0.1.35
+      '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
@@ -480,7 +480,7 @@ importers:
       typescript: ^4.5.2
     dependencies:
       '@babel/runtime': 7.21.0
-      '@gitee/icons-react': 0.1.35_react@16.14.0
+      '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
@@ -767,7 +767,7 @@ importers:
   packages/extension-ordered-list:
     specifiers:
       '@babel/runtime': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.9
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-ordered-list': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -3050,16 +3050,6 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
-
-  /@gitee/icons-react/0.1.35_react@16.14.0:
-    resolution: {integrity: sha512-bEUpkqbCQ0XarV5+/yc8EzkWg1QVDKgHcgtlTuJsPyrYKy2Jc/UQoyLxMjaxV5LwNtwp/oi2dSAoDBGHR2Gf7g==}
-    peerDependencies:
-      react: '>=16.14.0'
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@iconify/react': 3.2.2_react@16.14.0
-      react: 16.14.0
-    dev: false
 
   /@gitee/icons-react/0.1.39_react@16.14.0:
     resolution: {integrity: sha512-ImVC4oUGPf3fTDkc6ddS5auJPx5Q9udUJ/vCSgpFfdo9SuPxSdATbaJGyGGVKmmsYlZIwmwe8fvksnTbWBYS8w==}
