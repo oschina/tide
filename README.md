@@ -20,3 +20,8 @@ pnpm demo
 ## 构建
 
 ## 发布
+
+## 部署 pages
+
+yarn build:demo
+yarn deploy
