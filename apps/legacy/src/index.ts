@@ -1,4 +1,4 @@
-import { renderApp } from './component/render';
+import { renderOnEl } from './component';
 
 export const createEditor = ({
   el,
@@ -7,5 +7,5 @@ export const createEditor = ({
   el: HTMLElement;
   content?: string;
 }) => {
-  renderApp({ el, content });
+  renderOnEl({ el, content });
 };
