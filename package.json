@@ -2,11 +2,11 @@
   "private": true,
   "scripts": {
     "demo": "pnpm --filter demo dev",
-    "demo:vanilla": "pnpm --filter demo dev:vanilla",
-    "dev": "turbo run dev --parallel --filter=./packages/*",
+    "legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy dev",
     "build": "turbo run build --filter=./packages/*",
     "build:nocache": "pnpm clear && turbo run build --force --filter=./packages/*",
     "build:demo": "pnpm --filter demo build",
+    "build:legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy build",
     "lint": "turbo run lint",
     "clear": "turbo run clear --force",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

@@ -1,9 +1,4 @@
-/**
- * 纯 js 用法
- */
-import './index.less';
-
-import { createEditor } from '@gitee/wysiwyg-editor-editor';
+import { createEditor } from './index';
 
 createEditor({
   el: document.getElementById('app')!,

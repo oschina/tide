@@ -4,7 +4,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
-// import autoExternal from 'rollup-plugin-auto-external';
 import typescript from 'rollup-plugin-typescript2';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import postcss from 'rollup-plugin-postcss';
@@ -14,11 +13,8 @@ import sizes from '@atomico/rollup-plugin-sizes';
 
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx'];
 
-const getPlugins = ({ projectPath }) => {
+const getPlugins = ({ projectPath, tsconfigPath }) => {
   return [
-    // autoExternal({
-    //   packagePath: path.resolve(projectPath, 'package.json'),
-    // }),
     resolve({
       browser: true,
       preferBuiltins: false,
@@ -27,7 +23,9 @@ const getPlugins = ({ projectPath }) => {
     commonjs(),
     json(),
     typescript({
-      tsconfig: path.resolve(projectPath, 'tsconfig.json'),
+      tsconfig: tsconfigPath
+        ? tsconfigPath
+        : path.resolve(projectPath, 'tsconfig.json'),
       useTsconfigDeclarationDir: true,
       exclude: ['**/__tests__', '**/*.test.ts'],
     }),
@@ -63,7 +61,7 @@ export const autoExternal = (packageNames) => {
 };
 
 export const createRollupConfig = (opts) => {
-  const { pkg, projectPath, external } = opts || {};
+  const { pkg, projectPath, external, tsconfigPath } = opts || {};
 
   if (pkg && projectPath) {
     const outputs = [
@@ -97,7 +95,7 @@ export const createRollupConfig = (opts) => {
               ...Object.keys(pkg.dependencies || {}),
               ...Object.keys(pkg.peerDependencies || {}),
             ]),
-        plugins: getPlugins({ projectPath }),
+        plugins: getPlugins({ projectPath, tsconfigPath }),
       };
     });
   }

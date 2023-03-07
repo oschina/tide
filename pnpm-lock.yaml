@@ -65,7 +65,6 @@ importers:
   apps/demo:
     specifiers:
       '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-editor': workspace:*
       '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
       '@gitee/wysiwyg-editor-extension-bold': workspace:*
       '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
@@ -130,7 +129,6 @@ importers:
       vite: ^4.0.0
     dependencies:
       '@gitee/wysiwyg-editor-common': link:../../packages/common
-      '@gitee/wysiwyg-editor-editor': link:../../packages/editor
       '@gitee/wysiwyg-editor-extension-blockquote': link:../../packages/extension-blockquote
       '@gitee/wysiwyg-editor-extension-bold': link:../../packages/extension-bold
       '@gitee/wysiwyg-editor-extension-bullet-list': link:../../packages/extension-bullet-list
@@ -195,6 +193,137 @@ importers:
       typescript: 4.9.3
       vite: 4.0.1_less@4.1.3
 
+  apps/legacy:
+    specifiers:
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
+      '@gitee/wysiwyg-editor-extension-bold': workspace:*
+      '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-code': workspace:*
+      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
+      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
+      '@gitee/wysiwyg-editor-extension-image': workspace:*
+      '@gitee/wysiwyg-editor-extension-indentation': workspace:*
+      '@gitee/wysiwyg-editor-extension-italic': workspace:*
+      '@gitee/wysiwyg-editor-extension-link': workspace:*
+      '@gitee/wysiwyg-editor-extension-list-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
+      '@gitee/wysiwyg-editor-extension-markdown': workspace:*
+      '@gitee/wysiwyg-editor-extension-mention': workspace:*
+      '@gitee/wysiwyg-editor-extension-menubar': workspace:*
+      '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-strike': workspace:*
+      '@gitee/wysiwyg-editor-extension-table': workspace:*
+      '@gitee/wysiwyg-editor-extension-task-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
+      '@gitee/wysiwyg-editor-markdown': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@tippyjs/react': ^4.2.6
+      '@tiptap/core': ^2.0.0-beta.220
+      '@tiptap/extension-bubble-menu': ^2.0.0-beta.220
+      '@tiptap/extension-document': ^2.0.0-beta.220
+      '@tiptap/extension-dropcursor': ^2.0.0-beta.220
+      '@tiptap/extension-gapcursor': ^2.0.0-beta.220
+      '@tiptap/extension-hard-break': ^2.0.0-beta.220
+      '@tiptap/extension-heading': ^2.0.0-beta.220
+      '@tiptap/extension-history': ^2.0.0-beta.220
+      '@tiptap/extension-paragraph': ^2.0.0-beta.220
+      '@tiptap/extension-task-list': ^2.0.0-beta.220
+      '@tiptap/extension-text': ^2.0.0-beta.220
+      '@tiptap/extension-text-align': ^2.0.0-beta.220
+      '@tiptap/pm': ^2.0.0-beta.220
+      '@types/lodash': ^4.14.191
+      '@types/prosemirror-dev-tools': ^3.0.3
+      '@types/react': ^16.14.0
+      '@types/react-dom': ^16.9.14
+      '@vitejs/plugin-react': ^3.0.0
+      awesome-debounce-promise: ^2.1.0
+      axios: ^1.3.4
+      classnames: ^2.2.6
+      copy-to-clipboard: ^3.3.3
+      cross-env: ^7.0.3
+      eslint: ^7.32.0
+      eslint-config-custom: workspace:*
+      fast-glob: ^3.2.12
+      highlight.js: ^11.7.0
+      less: ^4.1.3
+      lodash: ^4.17.21
+      lz-string: ^1.4.4
+      prosemirror-dev-tools: ^4.0.0
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tippy.js: ^6.3.7
+      tsconfig: workspace:*
+      typescript: ^4.9.3
+      vite: ^4.0.0
+    dependencies:
+      '@gitee/wysiwyg-editor-common': link:../../packages/common
+      '@gitee/wysiwyg-editor-extension-blockquote': link:../../packages/extension-blockquote
+      '@gitee/wysiwyg-editor-extension-bold': link:../../packages/extension-bold
+      '@gitee/wysiwyg-editor-extension-bullet-list': link:../../packages/extension-bullet-list
+      '@gitee/wysiwyg-editor-extension-code': link:../../packages/extension-code
+      '@gitee/wysiwyg-editor-extension-code-block': link:../../packages/extension-code-block
+      '@gitee/wysiwyg-editor-extension-emoji': link:../../packages/extension-emoji
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../../packages/extension-horizontal-rule
+      '@gitee/wysiwyg-editor-extension-image': link:../../packages/extension-image
+      '@gitee/wysiwyg-editor-extension-indentation': link:../../packages/extension-indentation
+      '@gitee/wysiwyg-editor-extension-italic': link:../../packages/extension-italic
+      '@gitee/wysiwyg-editor-extension-link': link:../../packages/extension-link
+      '@gitee/wysiwyg-editor-extension-list-item': link:../../packages/extension-list-item
+      '@gitee/wysiwyg-editor-extension-lists-indentation': link:../../packages/extension-lists-indentation
+      '@gitee/wysiwyg-editor-extension-markdown': link:../../packages/extension-markdown
+      '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
+      '@gitee/wysiwyg-editor-extension-menubar': link:../../packages/extension-menubar
+      '@gitee/wysiwyg-editor-extension-ordered-list': link:../../packages/extension-ordered-list
+      '@gitee/wysiwyg-editor-extension-strike': link:../../packages/extension-strike
+      '@gitee/wysiwyg-editor-extension-table': link:../../packages/extension-table
+      '@gitee/wysiwyg-editor-extension-task-item': link:../../packages/extension-task-item
+      '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
+      '@gitee/wysiwyg-editor-markdown': link:../../packages/markdown
+      '@gitee/wysiwyg-editor-react': link:../../packages/react
+      '@gitee/wysiwyg-editor-theme': link:../../packages/theme
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
+      '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
+      '@tiptap/extension-bubble-menu': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
+      '@tiptap/extension-document': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@tiptap/extension-dropcursor': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
+      '@tiptap/extension-gapcursor': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
+      '@tiptap/extension-hard-break': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@tiptap/extension-heading': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@tiptap/extension-history': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
+      '@tiptap/extension-paragraph': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@tiptap/extension-task-list': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@tiptap/extension-text': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@tiptap/extension-text-align': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      awesome-debounce-promise: 2.1.0
+      axios: 1.3.4
+      classnames: 2.3.2
+      copy-to-clipboard: 3.3.3
+      highlight.js: 11.7.0
+      lodash: 4.17.21
+      lz-string: 1.4.4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      tippy.js: 6.3.7
+    devDependencies:
+      '@types/lodash': 4.14.191
+      '@types/prosemirror-dev-tools': 3.0.3
+      '@types/react': 16.14.34
+      '@types/react-dom': 16.9.17
+      '@vitejs/plugin-react': 3.0.0_vite@4.0.1
+      cross-env: 7.0.3
+      eslint: 7.32.0
+      eslint-config-custom: link:../../packages/eslint-config-custom
+      fast-glob: 3.2.12
+      less: 4.1.3
+      prosemirror-dev-tools: 4.0.0_ncypvd7ed3mqhxy7ixmvmndjye
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.3
+      vite: 4.0.1_less@4.1.3
+
   packages/common:
     specifiers:
       '@babel/runtime': ^7.21.0
@@ -215,99 +344,6 @@ importers:
       '@gitee/wysiwyg-editor-markdown': link:../markdown
       '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
       eslint-config-custom: link:../eslint-config-custom
-      tsconfig: link:../tsconfig
-      typescript: 4.9.3
-
-  packages/editor:
-    specifiers:
-      '@babel/runtime': ^7.21.0
-      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
-      '@gitee/wysiwyg-editor-markdown': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@tiptap/core': ^2.0.0-beta.220
-      '@tiptap/extension-blockquote': ^2.0.0-beta.220
-      '@tiptap/extension-bold': ^2.0.0-beta.220
-      '@tiptap/extension-bullet-list': ^2.0.0-beta.220
-      '@tiptap/extension-code': ^2.0.0-beta.220
-      '@tiptap/extension-document': ^2.0.0-beta.220
-      '@tiptap/extension-dropcursor': ^2.0.0-beta.220
-      '@tiptap/extension-gapcursor': ^2.0.0-beta.220
-      '@tiptap/extension-hard-break': ^2.0.0-beta.220
-      '@tiptap/extension-heading': ^2.0.0-beta.220
-      '@tiptap/extension-history': ^2.0.0-beta.220
-      '@tiptap/extension-horizontal-rule': ^2.0.0-beta.220
-      '@tiptap/extension-image': ^2.0.0-beta.220
-      '@tiptap/extension-italic': ^2.0.0-beta.220
-      '@tiptap/extension-link': ^2.0.0-beta.220
-      '@tiptap/extension-list-item': ^2.0.0-beta.220
-      '@tiptap/extension-mention': ^2.0.0-beta.220
-      '@tiptap/extension-ordered-list': ^2.0.0-beta.220
-      '@tiptap/extension-paragraph': ^2.0.0-beta.220
-      '@tiptap/extension-placeholder': ^2.0.0-beta.220
-      '@tiptap/extension-strike': ^2.0.0-beta.220
-      '@tiptap/extension-table': ^2.0.0-beta.220
-      '@tiptap/extension-table-cell': ^2.0.0-beta.220
-      '@tiptap/extension-table-header': ^2.0.0-beta.220
-      '@tiptap/extension-table-row': ^2.0.0-beta.220
-      '@tiptap/extension-task-item': ^2.0.0-beta.220
-      '@tiptap/extension-task-list': ^2.0.0-beta.220
-      '@tiptap/extension-text': ^2.0.0-beta.220
-      '@tiptap/pm': ^2.0.0-beta.220
-      '@tiptap/suggestion': ^2.0.0-beta.220
-      '@types/react': ^16.14.0
-      '@types/react-dom': ^16.9.14
-      browser-fs-access: ^0.31.1
-      eslint: ^7.32.0
-      eslint-config-custom: workspace:*
-      react: ^16.14.0
-      react-dom: ^16.14.0
-      tippy.js: ^6.3.7
-      tsconfig: workspace:*
-      typescript: ^4.5.2
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@gitee/wysiwyg-editor-extension-code-block': link:../extension-code-block
-      '@gitee/wysiwyg-editor-markdown': link:../markdown
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
-      '@tiptap/extension-blockquote': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-bold': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-bullet-list': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-code': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-document': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-dropcursor': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-gapcursor': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-hard-break': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-heading': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-history': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-horizontal-rule': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-image': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-italic': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-link': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-list-item': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-mention': 2.0.0-beta.220_4hrws3p2gxcwlfe4ravipbxg6a
-      '@tiptap/extension-ordered-list': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-paragraph': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-placeholder': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-strike': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-table': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-table-cell': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-table-header': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-table-row': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-task-item': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      '@tiptap/extension-task-list': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/extension-text': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-      '@tiptap/suggestion': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
-      browser-fs-access: 0.31.1
-      tippy.js: 6.3.7
-    devDependencies:
-      '@types/react': 16.14.34
-      '@types/react-dom': 16.9.17
-      eslint: 7.32.0
-      eslint-config-custom: link:../eslint-config-custom
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
       tsconfig: link:../tsconfig
       typescript: 4.9.3
 
@@ -1186,8 +1222,8 @@ packages:
     resolution: {integrity: sha512-WAwHBINyrpqywkUH0nTnNgI5ina5TFn85HKS0pbPDfxFfhyR/aNQEn4hGi1P1JyT//I0t4OgXUlofzWILRvS5w==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/template': 7.18.10
-      '@babel/types': 7.20.5
+      '@babel/template': 7.20.7
+      '@babel/types': 7.21.2
     dev: true
 
   /@babel/helper-function-name/7.21.0:
@@ -3507,16 +3543,6 @@ packages:
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
     dev: false
 
-  /@tiptap/extension-placeholder/2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky:
-    resolution: {integrity: sha512-Pq79BH/JqhjTNgxHkmbzcmwATsSJdRRSLHrnLx5upSmwEkQwCzqni9jL10rL2NM1ZyR+o25xC+r5loujx0aQ+Q==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/pm': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
-      '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-    dev: false
-
   /@tiptap/extension-strike/2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q:
     resolution: {integrity: sha512-cIM2ma6mzk08pijOn+KS3ZoHWaUVsVT+OF3m6xewjwJdC0ILg9nApEOhPFrhbeDcxcPmJMlgBl/xeUrEu1HQMg==}
     peerDependencies:
@@ -3551,16 +3577,6 @@ packages:
 
   /@tiptap/extension-table/2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky:
     resolution: {integrity: sha512-wdA957lSwIPtaSEAGw/KDXvhKAv28XkooHctY8FxqxEtvyMyCA8v0YXuOhGny/Uz6VZE+vdRiESMjwRU4ZQQ4g==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0-beta.209
-      '@tiptap/pm': ^2.0.0-beta.209
-    dependencies:
-      '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
-      '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
-    dev: false
-
-  /@tiptap/extension-task-item/2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky:
-    resolution: {integrity: sha512-dta4V3GkL3C+gYUUkv26gxvCD11JYE7XYp4GSED/1X/3aHOdV9HcYRtIVnHqb4YwfuX/AJyIDfjhxc2tNGevkQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
       '@tiptap/pm': ^2.0.0-beta.209
@@ -5806,6 +5822,47 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
+  /jotai/1.12.0_5obxvyjpuxccpe27fq7j5zjh4i:
+    resolution: {integrity: sha512-IhyBmjxU1sE2Ni/MUK7gQAb8QvCM6yd1/K5jtQzgQBmmjCjgfXZkkk1rYlQAIRp2KoQk0Y+yzhm1f5cZ7kegnw==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      '@babel/template': '*'
+      jotai-immer: '*'
+      jotai-optics: '*'
+      jotai-redux: '*'
+      jotai-tanstack-query: '*'
+      jotai-urql: '*'
+      jotai-valtio: '*'
+      jotai-xstate: '*'
+      jotai-zustand: '*'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
+      jotai-immer:
+        optional: true
+      jotai-optics:
+        optional: true
+      jotai-redux:
+        optional: true
+      jotai-tanstack-query:
+        optional: true
+      jotai-urql:
+        optional: true
+      jotai-valtio:
+        optional: true
+      jotai-xstate:
+        optional: true
+      jotai-zustand:
+        optional: true
+    dependencies:
+      '@babel/core': 7.21.0
+      react: 16.14.0
+    dev: true
+
   /jotai/1.12.0_yaf7u6rfoktti7t5nh3weax2ey:
     resolution: {integrity: sha512-IhyBmjxU1sE2Ni/MUK7gQAb8QvCM6yd1/K5jtQzgQBmmjCjgfXZkkk1rYlQAIRp2KoQk0Y+yzhm1f5cZ7kegnw==}
     engines: {node: '>=12.20.0'}
@@ -7097,6 +7154,39 @@ packages:
       prosemirror-model: 1.19.0
       prosemirror-state: 1.4.2
       prosemirror-transform: 1.7.1
+
+  /prosemirror-dev-tools/4.0.0_ncypvd7ed3mqhxy7ixmvmndjye:
+    resolution: {integrity: sha512-fF1AqJJa/ojVJTtc6WvygVQWFQI1zo37dewn0BQEKNLUfdJ4PRbqIYIFfh30wQhe8XcWw7J1ZidHZHz0a8VoYQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@compiled/react': 0.11.2_react@16.14.0
+      html: 1.0.0
+      jotai: 1.12.0_5obxvyjpuxccpe27fq7j5zjh4i
+      jsondiffpatch: 0.4.1
+      nanoid: 2.1.11
+      prosemirror-model: 1.19.0
+      prosemirror-state: 1.4.2
+      react: 16.14.0
+      react-dock: 0.6.0_edij4neeagymnxmr7qklvezyj4
+      react-dom: 16.14.0_react@16.14.0
+      react-json-tree: 0.17.0_edij4neeagymnxmr7qklvezyj4
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@babel/template'
+      - '@types/react'
+      - jotai-immer
+      - jotai-optics
+      - jotai-redux
+      - jotai-tanstack-query
+      - jotai-urql
+      - jotai-valtio
+      - jotai-xstate
+      - jotai-zustand
+    dev: true
 
   /prosemirror-dev-tools/4.0.0_s3vg5vpqctxa4hm5avlltdtt2q:
     resolution: {integrity: sha512-fF1AqJJa/ojVJTtc6WvygVQWFQI1zo37dewn0BQEKNLUfdJ4PRbqIYIFfh30wQhe8XcWw7J1ZidHZHz0a8VoYQ==}

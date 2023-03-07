@@ -1,4 +1,4 @@
-import { renderApp } from './renderApp';
+import { renderApp } from './component/render';
 
 export const createEditor = ({
   el,

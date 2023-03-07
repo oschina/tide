@@ -1,14 +1,18 @@
 {
-  "name": "demo",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "@gitee/wysiwyg-editor-legacy",
+  "version": "0.1.0-alpha.10",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "clear": "rm -rf dist",
-    "lint": "TIMING=1 eslint \"src/**/*.ts\""
+    "build": "rollup -c rollup.config.js",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-common": "workspace:*",
