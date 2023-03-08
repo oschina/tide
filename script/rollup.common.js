@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
-import typescript from 'rollup-plugin-typescript2';
+import typescript2 from 'rollup-plugin-typescript2';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import postcss from 'rollup-plugin-postcss';
 import NpmImport from 'less-plugin-npm-import';
@@ -22,7 +22,8 @@ const getPlugins = ({ projectPath, tsconfigPath }) => {
     }),
     commonjs(),
     json(),
-    typescript({
+    typescript2({
+      clean: true,
       tsconfig: tsconfigPath
         ? tsconfigPath
         : path.resolve(projectPath, 'tsconfig.json'),
@@ -86,15 +87,15 @@ export const createRollupConfig = (opts) => {
       },
     ];
 
+    const defaultExternals = autoExternal([
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {}),
+    ]);
+
     return outputs.map((o) => {
       return {
         ...o,
-        external: external
-          ? external
-          : autoExternal([
-              ...Object.keys(pkg.dependencies || {}),
-              ...Object.keys(pkg.peerDependencies || {}),
-            ]),
+        external: external ? external : defaultExternals,
         plugins: getPlugins({ projectPath, tsconfigPath }),
       };
     });

@@ -8,7 +8,7 @@ import React, {
   memo,
 } from 'react';
 import classNames from 'classnames';
-import { throttle } from 'lodash';
+import { throttle } from 'lodash-es';
 import { SuggestionProps } from '@tiptap/suggestion';
 import { IconSearch } from '@gitee/icons-react';
 import { appleEmojis } from './emojis';

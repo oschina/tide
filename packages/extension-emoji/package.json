@@ -20,10 +20,10 @@
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/suggestion": "^2.0.0-beta.220",
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime-corejs3": "^7.21.0",
     "classnames": "^2.2.6",
     "emoji-regex": "^10.2.1",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {

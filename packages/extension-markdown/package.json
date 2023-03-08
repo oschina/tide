@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.0"
+    "@babel/runtime-corejs3": "^7.21.0"
   },
   "devDependencies": {
     "@gitee/wysiwyg-editor-markdown": "workspace:*",

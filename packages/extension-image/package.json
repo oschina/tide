@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime-corejs3": "^7.21.0",
     "@gitee/wysiwyg-editor-common": "workspace:*",
     "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
     "@gitee/wysiwyg-editor-react": "workspace:*",
@@ -23,7 +23,7 @@
     "@tippyjs/react": "^4.2.6",
     "@tiptap/extension-image": "^2.0.0-beta.220",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@tiptap/pm": "^2.0.0-beta.220",

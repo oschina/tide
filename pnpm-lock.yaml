@@ -10,11 +10,13 @@ importers:
       '@babel/preset-env': ^7.20.2
       '@babel/preset-react': ^7.18.6
       '@babel/preset-typescript': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@changesets/cli': ^2.26.0
       '@rollup/plugin-babel': ^6.0.3
       '@rollup/plugin-commonjs': ^21.0.1
       '@rollup/plugin-json': ^6.0.0
       '@rollup/plugin-node-resolve': ^13.1.3
+      core-js: '3'
       date-fns: ^2.29.3
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
@@ -39,11 +41,13 @@ importers:
       '@babel/preset-env': 7.20.2_@babel+core@7.21.0
       '@babel/preset-react': 7.18.6_@babel+core@7.21.0
       '@babel/preset-typescript': 7.21.0_@babel+core@7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@changesets/cli': 2.26.0
       '@rollup/plugin-babel': 6.0.3_4tnfxcmsyr7y5qv3uwkivwqysm
       '@rollup/plugin-commonjs': 21.1.0_rollup@2.79.1
       '@rollup/plugin-json': 6.0.0_rollup@2.79.1
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
+      core-js: 3.29.0
       date-fns: 2.29.3
       eslint: 7.32.0
       eslint-config-custom: link:packages/eslint-config-custom
@@ -249,13 +253,14 @@ importers:
       fast-glob: ^3.2.12
       highlight.js: ^11.7.0
       less: ^4.1.3
-      lodash: ^4.17.21
+      lodash-es: ^4.17.21
       lz-string: ^1.4.4
       prosemirror-dev-tools: ^4.0.0
       react: ^16.14.0
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
       tsconfig: workspace:*
+      tslib: ^2.4.1
       typescript: ^4.9.3
       vite: ^4.0.0
     dependencies:
@@ -303,7 +308,7 @@ importers:
       classnames: 2.3.2
       copy-to-clipboard: 3.3.3
       highlight.js: 11.7.0
-      lodash: 4.17.21
+      lodash-es: 4.17.21
       lz-string: 1.4.4
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -319,14 +324,15 @@ importers:
       eslint-config-custom: link:../../packages/eslint-config-custom
       fast-glob: 3.2.12
       less: 4.1.3
-      prosemirror-dev-tools: 4.0.0_ncypvd7ed3mqhxy7ixmvmndjye
+      prosemirror-dev-tools: 4.0.0_s3vg5vpqctxa4hm5avlltdtt2q
       tsconfig: link:../../packages/tsconfig
+      tslib: 2.4.1
       typescript: 4.9.3
       vite: 4.0.1_less@4.1.3
 
   packages/common:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-markdown': workspace:*
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/html': ^2.0.0-beta.220
@@ -336,7 +342,7 @@ importers:
       typescript: ^4.5.2
       zeed-dom: ^0.9.26
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/html': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
       zeed-dom: 0.9.26
@@ -359,7 +365,7 @@ importers:
 
   packages/extension-blockquote:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-blockquote': ^2.0.0-beta.220
@@ -367,7 +373,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-blockquote': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
@@ -378,14 +384,14 @@ importers:
 
   packages/extension-bold:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-bold': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-bold': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
     devDependencies:
@@ -395,7 +401,7 @@ importers:
 
   packages/extension-bubble-menu:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/pm': ^2.0.0-beta.220
       '@types/lodash': ^4.14.191
@@ -405,7 +411,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
       lodash: 4.17.21
@@ -418,7 +424,7 @@ importers:
 
   packages/extension-bullet-list:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-bullet-list': ^2.0.0-beta.220
@@ -426,7 +432,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-bullet-list': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
@@ -437,14 +443,14 @@ importers:
 
   packages/extension-code:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-code': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-code': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
     devDependencies:
@@ -454,7 +460,7 @@ importers:
 
   packages/extension-code-block:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
@@ -474,7 +480,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-react': link:../react
@@ -497,7 +503,7 @@ importers:
 
   packages/extension-emoji:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
@@ -511,7 +517,7 @@ importers:
       classnames: ^2.2.6
       emoji-regex: ^10.2.1
       eslint-config-custom: workspace:*
-      lodash: ^4.17.21
+      lodash-es: ^4.17.21
       react: ^16.14.0
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
@@ -519,7 +525,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/wysiwyg-editor-react': link:../react
@@ -529,7 +535,7 @@ importers:
       '@tiptap/suggestion': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
       classnames: 2.3.2
       emoji-regex: 10.2.1
-      lodash: 4.17.21
+      lodash-es: 4.17.21
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
@@ -544,14 +550,14 @@ importers:
 
   packages/extension-horizontal-rule:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-horizontal-rule': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-horizontal-rule': 2.0.0-beta.220_ohumfzynigfck3hzagxvh2a4ky
     devDependencies:
@@ -561,7 +567,7 @@ importers:
 
   packages/extension-image:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
@@ -574,13 +580,13 @@ importers:
       '@types/react': ^16.14.0
       classnames: ^2.2.6
       eslint-config-custom: workspace:*
-      lodash: ^4.17.21
+      lodash-es: ^4.17.21
       react: ^16.14.0
       tsconfig: workspace:*
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
@@ -590,7 +596,7 @@ importers:
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-image': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
       classnames: 2.3.2
-      lodash: 4.17.21
+      lodash-es: 4.17.21
       react: 16.14.0
     devDependencies:
       '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
@@ -602,14 +608,14 @@ importers:
 
   packages/extension-indentation:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/pm': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
     devDependencies:
       '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
@@ -619,14 +625,14 @@ importers:
 
   packages/extension-italic:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-italic': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-italic': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
     devDependencies:
@@ -636,7 +642,7 @@ importers:
 
   packages/extension-link:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
@@ -652,7 +658,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-react': link:../react
@@ -671,13 +677,13 @@ importers:
 
   packages/extension-list-item:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/extension-list-item': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/extension-list-item': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
@@ -686,14 +692,14 @@ importers:
 
   packages/extension-lists-indentation:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/pm': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
     devDependencies:
       '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
@@ -703,7 +709,7 @@ importers:
 
   packages/extension-markdown:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-markdown': workspace:*
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/pm': ^2.0.0-beta.220
@@ -711,7 +717,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
     devDependencies:
       '@gitee/wysiwyg-editor-markdown': link:../markdown
@@ -722,7 +728,7 @@ importers:
 
   packages/extension-mention:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-react': workspace:*
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-mention': ^2.0.0-beta.220
@@ -737,7 +743,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-react': link:../react
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-mention': 2.0.0-beta.220_4hrws3p2gxcwlfe4ravipbxg6a
@@ -755,7 +761,7 @@ importers:
 
   packages/extension-menubar:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-extension-emoji': workspace:*
@@ -772,14 +778,14 @@ importers:
       '@types/react-dom': ^16.9.14
       classnames: ^2.2.6
       eslint-config-custom: workspace:*
-      lodash: ^4.17.21
+      lodash-es: ^4.17.21
       react: ^16.14.0
       react-dom: ^16.14.0
       tsconfig: workspace:*
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-extension-emoji': link:../extension-emoji
@@ -792,7 +798,7 @@ importers:
       '@tiptap/extension-heading': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
       '@tiptap/extension-paragraph': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
       classnames: 2.3.2
-      lodash: 4.17.21
+      lodash-es: 4.17.21
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     devDependencies:
@@ -806,7 +812,7 @@ importers:
 
   packages/extension-ordered-list:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-ordered-list': ^2.0.0-beta.220
@@ -814,7 +820,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-ordered-list': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
@@ -825,14 +831,14 @@ importers:
 
   packages/extension-strike:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-strike': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       '@tiptap/extension-strike': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
     devDependencies:
@@ -842,7 +848,7 @@ importers:
 
   packages/extension-table:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
@@ -862,7 +868,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/wysiwyg-editor-react': link:../react
       '@gitee/wysiwyg-editor-theme': link:../theme
@@ -885,7 +891,7 @@ importers:
 
   packages/extension-task-item:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:*
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/pm': ^2.0.0-beta.220
@@ -893,7 +899,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
     devDependencies:
@@ -904,7 +910,7 @@ importers:
 
   packages/extension-uploader:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-common': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tiptap/core': ^2.0.0-beta.220
@@ -915,7 +921,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
       '@gitee/wysiwyg-editor-theme': link:../theme
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
@@ -929,7 +935,7 @@ importers:
 
   packages/markdown:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/pm': 2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -938,7 +944,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
       tiptap-markdown: 0.6.0_qla4wsnep6xhnrh645qv7bbvyy
     devDependencies:
@@ -950,7 +956,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@babel/runtime': ^7.21.0
+      '@babel/runtime-corejs3': ^7.21.0
       '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/pm': ^2.0.0-beta.220
@@ -964,7 +970,7 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.5.2
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
       tippy.js: 6.3.7
     devDependencies:
@@ -2379,6 +2385,13 @@ packages:
   /@babel/regjsgen/0.8.0:
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
     dev: true
+
+  /@babel/runtime-corejs3/7.21.0:
+    resolution: {integrity: sha512-TDD4UJzos3JJtM+tHX+w2Uc+KWj7GV+VKKFdMVd2Rx8sdA19hcc3P3AHFYd5LVOw+pYuSd5lICC3gm52B6Rwxw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      core-js-pure: 3.29.0
+      regenerator-runtime: 0.13.11
 
   /@babel/runtime/7.20.7:
     resolution: {integrity: sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==}
@@ -4452,6 +4465,15 @@ packages:
       browserslist: 4.21.5
     dev: true
 
+  /core-js-pure/3.29.0:
+    resolution: {integrity: sha512-v94gUjN5UTe1n0yN/opTihJ8QBWD2O8i19RfTZR7foONPWArnjB96QA/wk5ozu1mm6ja3udQCzOzwQXTxi3xOQ==}
+    requiresBuild: true
+
+  /core-js/3.29.0:
+    resolution: {integrity: sha512-VG23vuEisJNkGl6XQmFJd3rEG/so/CNatqeE+7uZAwTSwFeB/qaO0be8xZYUNWprJ/GIwL8aMt9cj1kvbpTZhg==}
+    requiresBuild: true
+    dev: true
+
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
@@ -5822,47 +5844,6 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
-  /jotai/1.12.0_5obxvyjpuxccpe27fq7j5zjh4i:
-    resolution: {integrity: sha512-IhyBmjxU1sE2Ni/MUK7gQAb8QvCM6yd1/K5jtQzgQBmmjCjgfXZkkk1rYlQAIRp2KoQk0Y+yzhm1f5cZ7kegnw==}
-    engines: {node: '>=12.20.0'}
-    peerDependencies:
-      '@babel/core': '*'
-      '@babel/template': '*'
-      jotai-immer: '*'
-      jotai-optics: '*'
-      jotai-redux: '*'
-      jotai-tanstack-query: '*'
-      jotai-urql: '*'
-      jotai-valtio: '*'
-      jotai-xstate: '*'
-      jotai-zustand: '*'
-      react: '>=16.8'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@babel/template':
-        optional: true
-      jotai-immer:
-        optional: true
-      jotai-optics:
-        optional: true
-      jotai-redux:
-        optional: true
-      jotai-tanstack-query:
-        optional: true
-      jotai-urql:
-        optional: true
-      jotai-valtio:
-        optional: true
-      jotai-xstate:
-        optional: true
-      jotai-zustand:
-        optional: true
-    dependencies:
-      '@babel/core': 7.21.0
-      react: 16.14.0
-    dev: true
-
   /jotai/1.12.0_yaf7u6rfoktti7t5nh3weax2ey:
     resolution: {integrity: sha512-IhyBmjxU1sE2Ni/MUK7gQAb8QvCM6yd1/K5jtQzgQBmmjCjgfXZkkk1rYlQAIRp2KoQk0Y+yzhm1f5cZ7kegnw==}
     engines: {node: '>=12.20.0'}
@@ -6127,6 +6108,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.camelcase/4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
@@ -7154,39 +7139,6 @@ packages:
       prosemirror-model: 1.19.0
       prosemirror-state: 1.4.2
       prosemirror-transform: 1.7.1
-
-  /prosemirror-dev-tools/4.0.0_ncypvd7ed3mqhxy7ixmvmndjye:
-    resolution: {integrity: sha512-fF1AqJJa/ojVJTtc6WvygVQWFQI1zo37dewn0BQEKNLUfdJ4PRbqIYIFfh30wQhe8XcWw7J1ZidHZHz0a8VoYQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@compiled/react': 0.11.2_react@16.14.0
-      html: 1.0.0
-      jotai: 1.12.0_5obxvyjpuxccpe27fq7j5zjh4i
-      jsondiffpatch: 0.4.1
-      nanoid: 2.1.11
-      prosemirror-model: 1.19.0
-      prosemirror-state: 1.4.2
-      react: 16.14.0
-      react-dock: 0.6.0_edij4neeagymnxmr7qklvezyj4
-      react-dom: 16.14.0_react@16.14.0
-      react-json-tree: 0.17.0_edij4neeagymnxmr7qklvezyj4
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
-      - '@types/react'
-      - jotai-immer
-      - jotai-optics
-      - jotai-redux
-      - jotai-tanstack-query
-      - jotai-urql
-      - jotai-valtio
-      - jotai-xstate
-      - jotai-zustand
-    dev: true
 
   /prosemirror-dev-tools/4.0.0_s3vg5vpqctxa4hm5avlltdtt2q:
     resolution: {integrity: sha512-fF1AqJJa/ojVJTtc6WvygVQWFQI1zo37dewn0BQEKNLUfdJ4PRbqIYIFfh30wQhe8XcWw7J1ZidHZHz0a8VoYQ==}

@@ -19,7 +19,7 @@
     "@gitee/wysiwyg-editor-react": "workspace:*",
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tiptap/extension-link": "^2.0.0-beta.220",
-    "@babel/runtime": "^7.21.0"
+    "@babel/runtime-corejs3": "^7.21.0"
   },
   "devDependencies": {
     "@tiptap/pm": "^2.0.0-beta.220",
