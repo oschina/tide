@@ -67,10 +67,16 @@ export function checkEmojiSupport(emojiSymbol: string) {
   return isSupported;
 }
 
-export const getEmojisByNameList = (nameList, emojis: EmojiItem[]) => {
+export const getEmojisByNameList = (
+  nameList: string[],
+  emojis: EmojiItem[]
+) => {
   const list = [];
   nameList.forEach((name) => {
-    list.push(emojis.find((i) => i.name === name));
+    const emoji = emojis.find((i) => i.name === name);
+    if (emoji) {
+      list.push(emoji);
+    }
   });
   return list;
 };

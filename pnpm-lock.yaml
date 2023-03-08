@@ -366,7 +366,7 @@ importers:
   packages/extension-blockquote:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.11
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-blockquote': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -425,7 +425,7 @@ importers:
   packages/extension-bullet-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.11
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-bullet-list': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -813,7 +813,7 @@ importers:
   packages/extension-ordered-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.10
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.11
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-ordered-list': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
