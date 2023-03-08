@@ -1,5 +1,18 @@
 # @gitee/wysiwyg-editor-extension-emoji
 
+## 0.1.0-alpha.12
+
+### Minor Changes
+
+- Fix emoji undefined error from localStorage.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-extension-bubble-menu@0.1.0-alpha.12
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.12
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.12
+
 ## 0.1.0-alpha.11
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @gitee/wysiwyg-editor-extension-uploader
 
+## 0.1.0-alpha.12
+
+### Minor Changes
+
+- Fix emoji undefined error from localStorage.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.12
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.12
+
 ## 0.1.0-alpha.11
 
 ### Minor Changes

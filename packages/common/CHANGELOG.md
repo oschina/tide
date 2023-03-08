@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-common
 
+## 0.1.0-alpha.12
+
+### Minor Changes
+
+- Fix emoji undefined error from localStorage.
+
 ## 0.1.0-alpha.11
 
 ### Minor Changes
