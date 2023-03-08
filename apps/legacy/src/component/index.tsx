@@ -32,6 +32,8 @@ import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import type { Editor } from '@gitee/wysiwyg-editor-react';
 import EditorContent, { EditorContentProps } from './Editor';
 
+import './index.less';
+
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   createPortal(children, document.body);
 

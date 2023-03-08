@@ -5,7 +5,6 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import ReactDOM from 'react-dom';
 import type { Plugin } from '@tiptap/pm/state';
 import type { JSONContent } from '@tiptap/core';
 import {

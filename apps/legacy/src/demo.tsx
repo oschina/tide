@@ -1,5 +1,4 @@
 import { createEditor } from './index';
-import './style.less';
 
 createEditor({
   el: document.getElementById('app')!,
