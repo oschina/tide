@@ -1,6 +1,6 @@
 {
   "name": "@gitee/wysiwyg-editor-extension-task-item",
-  "version": "0.1.0-alpha.10",
+  "version": "0.1.0-alpha.11",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [

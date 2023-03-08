@@ -31,7 +31,8 @@
     "tsconfig": "0.0.0",
     "@gitee/wysiwyg-editor-extension-menubar": "0.1.0-alpha.0",
     "@gitee/wysiwyg-editor-theme": "0.1.0-alpha.0",
-    "@gitee/wysiwyg-editor-extension-indentation": "0.1.0-alpha.7"
+    "@gitee/wysiwyg-editor-extension-indentation": "0.1.0-alpha.7",
+    "@gitee/wysiwyg-editor-legacy": "0.1.0-alpha.10"
   },
   "changesets": [
     "curly-bugs-clean",
@@ -44,6 +45,7 @@
     "large-apples-enjoy",
     "late-flowers-dress",
     "rare-forks-rule",
-    "real-trainers-turn"
+    "real-trainers-turn",
+    "tame-beds-attend"
   ]
 }

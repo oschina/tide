@@ -1,5 +1,18 @@
 # @gitee/wysiwyg-editor-extension-link
 
+## 0.1.0-alpha.11
+
+### Minor Changes
+
+- update build script
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.11
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.11
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.11
+
 ## 0.1.0-alpha.10
 
 ### Minor Changes

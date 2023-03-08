@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-list-item
 
+## 0.1.0-alpha.11
+
+### Minor Changes
+
+- update build script
+
 ## 0.1.0-alpha.10
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@gitee/wysiwyg-editor-extension-ordered-list",
-  "version": "0.1.0-alpha.10",
+  "version": "0.1.0-alpha.11",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.10",
+    "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.11",
     "@tiptap/extension-ordered-list": "^2.0.0-beta.220",
     "@babel/runtime-corejs3": "^7.21.0"
   },
