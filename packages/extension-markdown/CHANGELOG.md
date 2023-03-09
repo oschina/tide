@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-markdown
 
+## 0.1.0-alpha.13
+
+### Minor Changes
+
+- legacy add options
+
 ## 0.1.0-alpha.12
 
 ### Minor Changes
