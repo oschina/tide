@@ -6,14 +6,13 @@ import React, {
   useRef,
 } from 'react';
 import type { Plugin } from '@tiptap/pm/state';
-import type { JSONContent } from '@tiptap/core';
-import {
-  MarkdownEditor,
-  createMarkdownEditor,
-} from '@gitee/wysiwyg-editor-markdown';
 import type {
-  MarkdownEditorOptions,
   Content,
+  MarkdownEditorOptions,
+} from '@gitee/wysiwyg-editor-markdown';
+import {
+  createMarkdownEditor,
+  MarkdownEditor,
 } from '@gitee/wysiwyg-editor-markdown';
 import {
   Editor as TEditor,
@@ -26,16 +25,14 @@ export type EditorContentProps = {
   className?: string;
   style?: React.CSSProperties | undefined;
   defaultValue?: Content | undefined;
-  value?: Content | undefined;
   autoFocus?: boolean;
   readOnly?: boolean;
   readOnlyEmptyView?: React.ReactNode;
   children?: React.ReactNode;
-  onChange?: (doc: JSONContent, editor: MarkdownEditor) => void;
+  onChange?: (editor: MarkdownEditor) => void;
   onFocus?: () => void;
   onBlur?: () => void;
   onReady?: (editor: MarkdownEditor) => void;
-  onImageUploading?: (isUploading: boolean) => void;
 };
 
 const MarkdownEditorClass = createMarkdownEditor(TEditor);
@@ -45,6 +42,7 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
     {
       className,
       style,
+      defaultValue = undefined,
       autoFocus = false,
       readOnly,
       readOnlyEmptyView,
@@ -56,14 +54,14 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
     },
     ref
   ) => {
-    const onChangeRef = useRef(onChange);
-    onChangeRef.current = onChange;
     const onFocusRef = useRef(onFocus);
     onFocusRef.current = onFocus;
     const onBlurRef = useRef(onBlur);
     onBlurRef.current = onBlur;
     const onReadyRef = useRef(onReady);
     onReadyRef.current = onReady;
+    const onChangeRef = useRef(onChange);
+    onChangeRef.current = onChange;
 
     const editor = useEditor<MarkdownEditor, MarkdownEditorOptions>(
       MarkdownEditorClass,
@@ -73,6 +71,7 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
           breaks: true,
           tightLists: true,
         },
+        content: defaultValue,
         extensions: getExtensions(),
         autofocus: autoFocus,
         editable: !readOnly,
@@ -103,6 +102,9 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
             );
           }
           onReadyRef.current?.(e as MarkdownEditor);
+        },
+        onUpdate: ({ editor }) => {
+          onChangeRef.current?.(editor as MarkdownEditor);
         },
         onFocus: () => {
           onFocusRef.current?.();

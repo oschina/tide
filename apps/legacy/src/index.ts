@@ -1,11 +1,13 @@
-import { renderOnEl } from './component';
+import { EditorRenderProps, renderOnEl } from './component';
+
+export * from './component';
 
 export const createEditor = ({
   el,
-  content,
+  options,
 }: {
   el: HTMLElement;
-  content?: string;
+  options?: EditorRenderProps;
 }) => {
-  renderOnEl({ el, content });
+  renderOnEl({ el, options });
 };

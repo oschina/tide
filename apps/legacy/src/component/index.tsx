@@ -67,8 +67,6 @@ export const LegacyEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
 
     useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
 
-    console.log('WysiwygEditor', editor);
-
     const content = (
       <div
         className={classNames(
@@ -130,6 +128,10 @@ export const LegacyEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
 
 LegacyEditor.displayName = 'LegacyEditor';
 
-export function renderOnEl(opts: { el: HTMLElement; content?: string }) {
-  ReactDOM.render(<LegacyEditor />, opts.el);
+export function renderOnEl(opts: {
+  el: HTMLElement;
+  options?: EditorRenderProps;
+}) {
+  const { el, options = {} } = opts;
+  ReactDOM.render(<LegacyEditor {...options} />, el);
 }
