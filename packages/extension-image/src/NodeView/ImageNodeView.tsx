@@ -73,15 +73,6 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
           'gwe-image__view-hover': isEditable,
         })}
       >
-        <img
-          ref={imgRef}
-          src={node.attrs.src}
-          alt={node.attrs.alt}
-          style={{
-            width: node.attrs.width,
-            height: node.attrs.height,
-          }}
-        />
         <div className={classNames('gwe-image__view-resize')}>
           {resizeBtn.map((item) => {
             return (
@@ -99,6 +90,15 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
             );
           })}
         </div>
+        <img
+          ref={imgRef}
+          src={node.attrs.src}
+          alt={node.attrs.alt}
+          style={{
+            width: node.attrs.width,
+            height: node.attrs.height,
+          }}
+        />
       </div>
     </NodeViewWrapper>
   );
