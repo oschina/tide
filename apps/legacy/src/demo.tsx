@@ -1,30 +1,23 @@
 import { createEditor } from './index';
-import { defaultContent } from './mock';
+import { defaultContent } from './demo_mock';
+
+let defaultVal = undefined;
+try {
+  const str = localStorage.getItem('legacy-demo');
+  if (str) {
+    defaultVal = JSON.parse(str);
+  } else {
+    defaultVal = defaultContent;
+  }
+} catch (e) {
+  console.log(e);
+}
 
 createEditor({
   el: document.getElementById('app')!,
   options: {
-    fetchMemberMention: (query) => {
-      return Promise.resolve([
-        {
-          label: 'demo',
-          // desc: '',
-          id: 'demo',
-          attrs: {
-            name: 'demo',
-            username: 'demo',
-            url: 'https://file.nancode.cn/1678359851942-284541675.jpg',
-          },
-        },
-      ]);
-    },
-    imageUpload: (file: File, progressCallback: (progress: number) => void) => {
-      return Promise.resolve(
-        'https://file.nancode.cn/1678359851942-284541675.jpg'
-      );
-    },
-    // readOnly: true,
-    defaultValue: defaultContent,
+    readOnly: false,
+    defaultValue: defaultVal,
     onFocus: () => {
       console.log('onFocus');
     },
@@ -32,7 +25,23 @@ createEditor({
       console.log('onBlur');
     },
     onChange: (e) => {
-      console.log(JSON.stringify(e.getJSON()));
+      localStorage.setItem('legacy-demo', JSON.stringify(e.getJSON()));
+    },
+    imageUpload: (file: File, progressCallback: (progress: number) => void) => {
+      return Promise.resolve(
+        'https://file.nancode.cn/1678359851942-284541675.jpg'
+      );
+    },
+    mention: {
+      fetchMentionIssue: (query) => {
+        return Promise.resolve([]);
+      },
+      fetchMentionPR: (query) => {
+        return Promise.resolve([]);
+      },
+      fetchMentionMember: (query) => {
+        return Promise.resolve([]);
+      },
     },
   },
 });

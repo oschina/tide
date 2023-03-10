@@ -43,18 +43,39 @@ import {
   UploaderFunc,
 } from '@gitee/wysiwyg-editor-extension-uploader';
 import { MentionMember } from './extensions/mention-member';
+import { MentionIssue } from './extensions/mention-issue';
+import { MentionPullRequest } from './extensions/mention-pull-request';
 import { MentionMemberItemDataType } from './extensions/mention-member/types';
-import { mockFetchMemberMention, mockAjaxImgUploader } from './mock';
+import { MentionIssueItemDataType } from './extensions/mention-issue/types';
+import { MentionPullRequestItemDataType } from './extensions/mention-pull-request/types';
+import {
+  mockFetchMemberMention,
+  mockMentionIssue,
+  mockFetchMentionPR,
+  mockAjaxImgUploader,
+} from './default';
+
+export type MentionType = {
+  fetchMentionMember?: (query: string) => Promise<MentionMemberItemDataType[]>;
+  fetchMentionIssue?: (query: string) => Promise<MentionIssueItemDataType[]>;
+  fetchMentionPR?: (query: string) => Promise<MentionPullRequestItemDataType[]>;
+};
 
 export type ExtensionsOpts = {
-  fetchMemberMention?: (query: string) => Promise<MentionMemberItemDataType[]>;
+  mention?: MentionType;
   imageUpload?: UploaderFunc;
 };
 
 export const getExtensions = ({
-  fetchMemberMention = mockFetchMemberMention,
+  mention,
   imageUpload = mockAjaxImgUploader,
 }: ExtensionsOpts) => {
+  const {
+    fetchMentionMember = mockFetchMemberMention,
+    fetchMentionIssue = mockMentionIssue,
+    fetchMentionPR = mockFetchMentionPR,
+  } = mention || {};
+
   return [
     Commands,
     HighPriorityKeymap,
@@ -92,7 +113,17 @@ export const getExtensions = ({
     Image,
     MentionMember.configure({
       suggestion: {
-        items: ({ query }) => fetchMemberMention(query),
+        items: ({ query }) => fetchMentionMember(query),
+      },
+    }),
+    MentionIssue.configure({
+      suggestion: {
+        items: ({ query }) => fetchMentionIssue(query),
+      },
+    }),
+    MentionPullRequest.configure({
+      suggestion: {
+        items: ({ query }) => fetchMentionPR(query),
       },
     }),
     Emoji.configure({

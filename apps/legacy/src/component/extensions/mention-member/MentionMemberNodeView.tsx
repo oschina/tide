@@ -3,10 +3,6 @@ import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import styles from './MentionMemberNodeView.module.less';
 
-const MemberAvatar: React.FC = () => {
-  return <img src="" alt="" />;
-};
-
 export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
   editor,
   node,
@@ -19,9 +15,7 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
 
   const content = (
     <>
-      <span className={styles.avatar}>
-        <MemberAvatar />
-      </span>
+      <span className={styles.avatar}>@</span>
       <span className={styles.name}>{node.attrs.name}</span>
     </>
   );

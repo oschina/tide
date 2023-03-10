@@ -1,0 +1,49 @@
+.mention-issue {
+  text-decoration: inherit;
+
+  .type {
+    flex-shrink: 0;
+    margin: 0 4px 0 0;
+    height: 1em;
+    width: 1em;
+    position: relative;
+
+    :global {
+      img,
+      .ui.loader {
+        display: inline-block;
+        vertical-align: -0.155em;
+      }
+
+      .ui.loader {
+        font-size: 1em;
+        z-index: initial;
+
+        &,
+        &:before,
+        &:after {
+          width: 1em;
+          height: 1em;
+        }
+
+        &:before,
+        &:after {
+          margin: 0 0 0 -0.5em;
+        }
+      }
+
+      img {
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+}
+
+a.mention-issue {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: inherit !important;
+  }
+}

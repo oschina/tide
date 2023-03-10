@@ -2,7 +2,6 @@ import React from 'react';
 import { mergeAttributes } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {
-  BaseMentionListRef,
   buildSuggestionOptions,
   Mention,
   MentionList,
@@ -10,39 +9,47 @@ import {
   MentionOptions,
 } from '@gitee/wysiwyg-editor-extension-mention';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
-import { MentionMemberNodeView } from './MentionMemberNodeView';
-import { MentionMemberAttributes, MentionMemberItemDataType } from './types';
-import MentionListItemRender from './MentionListItemRender';
+import { MentionPullRequestNodeView } from './MentionPullRequestNodeView';
+import MentionPullRequestItemRender from './MentionPullRequestItemRender';
+import {
+  MentionPullRequestAttributes,
+  MentionPullRequestItemDataType,
+} from './types';
 import MentionNoResult from '../MentionNoResult';
 
-export const MentionMemberSuggestionPluginKey = new PluginKey(
-  'mentionMemberSuggestion'
+export const MentionPullRequestSuggestionPluginKey = new PluginKey(
+  'mentionPullRequestSuggestion'
 );
 
-export const MentionMember = Mention.extend<
-  MentionOptions<MentionMemberItemDataType>
+export const MentionPullRequest = Mention.extend<
+  MentionOptions<MentionPullRequestItemDataType>
 >({
-  name: 'mentionMember',
+  name: 'mentionPullRequest',
 
   addOptions() {
     const parentOptions = this.parent?.();
     return {
       ...parentOptions,
       renderLabel({ options, node }) {
-        return `${options.suggestion.char}${node.attrs.name ?? node.attrs.id}`;
+        return `${options.suggestion.char}${node.attrs.iid ?? node.attrs.id}`;
       },
       suggestion: buildSuggestionOptions<
-        MentionMemberItemDataType,
-        MentionListProps<MentionMemberItemDataType, MentionMemberAttributes>,
-        BaseMentionListRef
+        MentionPullRequestItemDataType,
+        MentionListProps<
+          MentionPullRequestItemDataType,
+          MentionPullRequestAttributes
+        >
       >({
         ...parentOptions?.suggestion,
-        pluginKey: MentionMemberSuggestionPluginKey,
-        char: '@',
-        component: MentionList as any, // FIXME: type error
+        pluginKey: MentionPullRequestSuggestionPluginKey,
+        char: '!',
+        component: MentionList as any,
         componentProps: {
-          itemRender: (item) => <MentionListItemRender item={item} />,
+          itemRender: (item) => <MentionPullRequestItemRender item={item} />,
           emptyRender: () => <MentionNoResult />,
+        },
+        tippyOptions: {
+          maxWidth: 400,
         },
       }),
     };
@@ -50,25 +57,33 @@ export const MentionMember = Mention.extend<
 
   addAttributes() {
     return {
-      name: {
+      id: {
         default: null,
-        parseHTML: (element) => element.getAttribute('data-name') || '',
+        parseHTML: (element) => `${element.getAttribute('data-id') ?? ''}`,
         renderHTML: (attributes) => ({
-          'data-name': attributes.name || '',
+          'data-id': attributes.id || '',
         }),
       },
 
-      username: {
+      iid: {
         default: null,
-        parseHTML: (element) => element.getAttribute('data-username') || '',
+        parseHTML: (element) => `${element.getAttribute('data-iid') ?? ''}`,
         renderHTML: (attributes) => ({
-          'data-username': attributes.username || '',
+          'data-iid': attributes.iid || '',
+        }),
+      },
+
+      title: {
+        default: null,
+        parseHTML: (element) => `${element.getAttribute('data-title') ?? ''}`,
+        renderHTML: (attributes) => ({
+          'data-title': attributes.title || '',
         }),
       },
 
       url: {
         default: null,
-        parseHTML: (element) => element.getAttribute('data-url') || '',
+        parseHTML: (element) => `${element.getAttribute('data-url') ?? ''}`,
         renderHTML: (attributes) => ({
           'data-url': attributes.url,
         }),
@@ -104,6 +119,6 @@ export const MentionMember = Mention.extend<
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(MentionMemberNodeView);
+    return ReactNodeViewRenderer(MentionPullRequestNodeView);
   },
 });

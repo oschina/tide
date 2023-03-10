@@ -2,7 +2,6 @@ import React from 'react';
 import { mergeAttributes } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {
-  BaseMentionListRef,
   buildSuggestionOptions,
   Mention,
   MentionList,
@@ -10,39 +9,41 @@ import {
   MentionOptions,
 } from '@gitee/wysiwyg-editor-extension-mention';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
-import { MentionMemberNodeView } from './MentionMemberNodeView';
-import { MentionMemberAttributes, MentionMemberItemDataType } from './types';
-import MentionListItemRender from './MentionListItemRender';
+import { MentionIssueNodeView } from './MentionIssueNodeView';
+import MentionIssueItemRender from './MentionIssueItemRender';
+import { MentionIssueAttributes, MentionIssueItemDataType } from './types';
 import MentionNoResult from '../MentionNoResult';
 
-export const MentionMemberSuggestionPluginKey = new PluginKey(
-  'mentionMemberSuggestion'
+export const MentionIssueSuggestionPluginKey = new PluginKey(
+  'mentionIssueSuggestion'
 );
 
-export const MentionMember = Mention.extend<
-  MentionOptions<MentionMemberItemDataType>
+export const MentionIssue = Mention.extend<
+  MentionOptions<MentionIssueItemDataType>
 >({
-  name: 'mentionMember',
+  name: 'mentionIssue',
 
   addOptions() {
     const parentOptions = this.parent?.();
     return {
       ...parentOptions,
       renderLabel({ options, node }) {
-        return `${options.suggestion.char}${node.attrs.name ?? node.attrs.id}`;
+        return `${options.suggestion.char}${node.attrs.ident}`;
       },
       suggestion: buildSuggestionOptions<
-        MentionMemberItemDataType,
-        MentionListProps<MentionMemberItemDataType, MentionMemberAttributes>,
-        BaseMentionListRef
+        MentionIssueItemDataType,
+        MentionListProps<MentionIssueItemDataType, MentionIssueAttributes>
       >({
         ...parentOptions?.suggestion,
-        pluginKey: MentionMemberSuggestionPluginKey,
-        char: '@',
-        component: MentionList as any, // FIXME: type error
+        pluginKey: MentionIssueSuggestionPluginKey,
+        char: '#',
+        component: MentionList as any,
         componentProps: {
-          itemRender: (item) => <MentionListItemRender item={item} />,
+          itemRender: (item) => <MentionIssueItemRender item={item} />,
           emptyRender: () => <MentionNoResult />,
+        },
+        tippyOptions: {
+          maxWidth: 400,
         },
       }),
     };
@@ -50,25 +51,25 @@ export const MentionMember = Mention.extend<
 
   addAttributes() {
     return {
-      name: {
+      ident: {
         default: null,
-        parseHTML: (element) => element.getAttribute('data-name') || '',
+        parseHTML: (element) => `${element.getAttribute('data-ident') ?? ''}`,
         renderHTML: (attributes) => ({
-          'data-name': attributes.name || '',
+          'data-ident': attributes.ident || '',
         }),
       },
 
-      username: {
+      title: {
         default: null,
-        parseHTML: (element) => element.getAttribute('data-username') || '',
+        parseHTML: (element) => `${element.getAttribute('data-title') ?? ''}`,
         renderHTML: (attributes) => ({
-          'data-username': attributes.username || '',
+          'data-title': attributes.title || '',
         }),
       },
 
       url: {
         default: null,
-        parseHTML: (element) => element.getAttribute('data-url') || '',
+        parseHTML: (element) => `${element.getAttribute('data-url') ?? ''}`,
         renderHTML: (attributes) => ({
           'data-url': attributes.url,
         }),
@@ -104,6 +105,6 @@ export const MentionMember = Mention.extend<
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(MentionMemberNodeView);
+    return ReactNodeViewRenderer(MentionIssueNodeView);
   },
 });

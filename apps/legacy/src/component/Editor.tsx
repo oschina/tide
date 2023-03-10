@@ -51,7 +51,7 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
       onFocus,
       onBlur,
       onReady,
-      fetchMemberMention,
+      mention,
       imageUpload,
     },
     ref
@@ -74,7 +74,7 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
           tightLists: true,
         },
         content: defaultValue,
-        extensions: getExtensions({ fetchMemberMention, imageUpload }),
+        extensions: getExtensions({ mention, imageUpload }),
         autofocus: autoFocus,
         editable: !readOnly,
         editorProps: {

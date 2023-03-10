@@ -8,10 +8,10 @@ const MentionListItemRender: React.FC<{ item: MentionMemberItemDataType }> = ({
     return null;
   }
   return (
-    <>
+    <div className="">
       <span>{item.label}</span>
       <span>{item.desc}</span>
-    </>
+    </div>
   );
 };
 
