@@ -1,5 +1,19 @@
 # @gitee/wysiwyg-editor-extension-image
 
+## 0.1.0-alpha.14
+
+### Minor Changes
+
+- update legacy
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.14
+  - @gitee/wysiwyg-editor-extension-bubble-menu@0.1.0-alpha.14
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.14
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.14
+
 ## 0.1.0-alpha.13
 
 ### Minor Changes

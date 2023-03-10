@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-bullet-list
 
+## 0.1.0-alpha.14
+
+### Minor Changes
+
+- update legacy
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.14
+
 ## 0.1.0-alpha.13
 
 ### Minor Changes

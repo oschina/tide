@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-lists-indentation
 
+## 0.1.0-alpha.14
+
+### Minor Changes
+
+- update legacy
+
 ## 0.1.0-alpha.13
 
 ### Minor Changes
