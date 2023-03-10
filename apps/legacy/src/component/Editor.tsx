@@ -19,7 +19,7 @@ import {
   EditorContent as TEditorContent,
   useEditor,
 } from '@gitee/wysiwyg-editor-react';
-import { getExtensions } from './extensions';
+import { ExtensionsOpts, getExtensions } from './extensions';
 
 export type EditorContentProps = {
   className?: string;
@@ -33,7 +33,7 @@ export type EditorContentProps = {
   onFocus?: () => void;
   onBlur?: () => void;
   onReady?: (editor: MarkdownEditor) => void;
-};
+} & ExtensionsOpts;
 
 const MarkdownEditorClass = createMarkdownEditor(TEditor);
 
@@ -51,6 +51,8 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
       onFocus,
       onBlur,
       onReady,
+      fetchMemberMention,
+      imageUpload,
     },
     ref
   ) => {
@@ -72,7 +74,7 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
           tightLists: true,
         },
         content: defaultValue,
-        extensions: getExtensions(),
+        extensions: getExtensions({ fetchMemberMention, imageUpload }),
         autofocus: autoFocus,
         editable: !readOnly,
         editorProps: {

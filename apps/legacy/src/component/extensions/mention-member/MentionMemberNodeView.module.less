@@ -1,0 +1,36 @@
+@import (reference) '~@gitee/wysiwyg-editor-theme/src/variable';
+
+.mention {
+  display: inline-block;
+  border-radius: 1em;
+  padding: 0 8px;
+  text-decoration: inherit;
+  font-size: 1em;
+  line-height: 1.125;
+  color: @text-color;
+  background-color: @theme-bg-color;
+
+  .avatar {
+    display: inline-block;
+    padding: 2px;
+    margin: 0 2px 0 -8px;
+    vertical-align: -0.125em;
+
+    img {
+      display: block;
+      width: 1em;
+      height: 1em;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: #000;
+    }
+  }
+}
+
+a.mention {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: inherit !important;
+  }
+}

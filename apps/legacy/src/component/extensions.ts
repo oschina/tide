@@ -38,10 +38,23 @@ import {
 } from '@gitee/wysiwyg-editor-extension-emoji';
 import { HorizontalRule } from '@gitee/wysiwyg-editor-extension-horizontal-rule';
 import { Markdown } from '@gitee/wysiwyg-editor-extension-markdown';
-import { Uploader } from '@gitee/wysiwyg-editor-extension-uploader';
-import { mockAjaxImgUploader } from './mock';
+import {
+  Uploader,
+  UploaderFunc,
+} from '@gitee/wysiwyg-editor-extension-uploader';
+import { MentionMember } from './extensions/mention-member';
+import { MentionMemberItemDataType } from './extensions/mention-member/types';
+import { mockFetchMemberMention, mockAjaxImgUploader } from './mock';
 
-export const getExtensions = () => {
+export type ExtensionsOpts = {
+  fetchMemberMention?: (query: string) => Promise<MentionMemberItemDataType[]>;
+  imageUpload?: UploaderFunc;
+};
+
+export const getExtensions = ({
+  fetchMemberMention = mockFetchMemberMention,
+  imageUpload = mockAjaxImgUploader,
+}: ExtensionsOpts) => {
   return [
     Commands,
     HighPriorityKeymap,
@@ -77,11 +90,11 @@ export const getExtensions = () => {
     TableCell,
     CodeBlock,
     Image,
-    // MentionMember.configure({
-    //   suggestion: {
-    //     items: ({ query }) => mockFetchMemberMentionDebounced(query),
-    //   },
-    // }),
+    MentionMember.configure({
+      suggestion: {
+        items: ({ query }) => fetchMemberMention(query),
+      },
+    }),
     Emoji.configure({
       enableEmoticons: true,
       forceFallbackImages: false,
@@ -92,7 +105,7 @@ export const getExtensions = () => {
     Gapcursor,
     Uploader.configure({
       image: {
-        uploader: mockAjaxImgUploader,
+        uploader: imageUpload,
       },
     }),
     Markdown.configure({
