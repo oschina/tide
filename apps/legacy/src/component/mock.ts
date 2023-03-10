@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { UploaderFunc } from '@gitee/wysiwyg-editor-extension-uploader';
 
 export const mockFetchMemberMention = (query: string) => {
