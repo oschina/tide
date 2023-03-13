@@ -12,7 +12,4 @@ export type MentionMemberAttributes = {
 };
 
 export type MentionMemberItemDataType =
-  MentionItemDataType<MentionMemberAttributes> & {
-    label: string;
-    desc?: string;
-  };
+  MentionItemDataType<MentionMemberAttributes>;

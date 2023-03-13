@@ -8,9 +8,9 @@ const MentionIssueItemRender: React.FC<{ item: MentionIssueItemDataType }> = ({
     return null;
   }
   return (
-    <div className="">
-      <span>{item.attrs.ident}</span>
-      <span>{item.attrs.title}</span>
+    <div className="gwe-mention-issue__item">
+      <span className="gwe-mention-issue__item-id">{item.attrs.ident}</span>
+      <span className="gwe-mention-issue__item-title">{item.attrs.title}</span>
     </div>
   );
 };

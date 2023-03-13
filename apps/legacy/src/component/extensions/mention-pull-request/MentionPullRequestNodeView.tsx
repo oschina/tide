@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
-import styles from './MentionPullRequestNodeView.module.less';
 
 export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
   editor,
@@ -22,14 +21,16 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
       {...props}
     >
       <a
-        className={classNames(styles.mentionPullRequest)}
+        className="gwe-mention-pull-request"
         href={node.attrs.url}
         target={editor.isEditable ? '_blank' : undefined}
         rel="noreferrer"
         title={node.attrs.title}
       >
-        <span>!</span>
-        <span className={styles.name}>{node.attrs.title}</span>
+        <span className="gwe-mention-pull-request__ident">!</span>
+        <span className="gwe-mention-pull-request__title">
+          {node.attrs.title}
+        </span>
       </a>
     </NodeViewWrapper>
   );

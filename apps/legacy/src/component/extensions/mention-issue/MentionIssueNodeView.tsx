@@ -1,8 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
-import styles from './MentionIssueNodeView.module.less';
+import './MentionIssueNodeView.less';
 
 export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
   editor,
@@ -22,14 +21,14 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
       {...props}
     >
       <a
-        className={classNames(styles.mentionIssue)}
+        className="gwe-mention-issue"
         href={node.attrs.url}
         target={editor.isEditable ? '_blank' : undefined}
         rel="noreferrer"
         title={node.attrs.title}
       >
-        <span>#</span>
-        <span className={styles.name}>{node.attrs.title}</span>
+        <span className="gwe-mention-issue__id">#{node.attrs.ident}</span>
+        <span className={'gwe-mention-issue__title'}>{node.attrs.title}</span>
       </a>
     </NodeViewWrapper>
   );

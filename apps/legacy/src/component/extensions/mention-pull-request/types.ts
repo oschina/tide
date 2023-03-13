@@ -11,17 +11,5 @@ export type MentionPullRequestAttributes = {
   url: string;
 };
 
-export type PullRequestItem = {
-  id: string;
-  iid: string;
-  title: string;
-  state: string;
-  projectPath: string;
-  projectFullPath: string;
-  search: string;
-};
-
 export type MentionPullRequestItemDataType =
-  MentionItemDataType<MentionPullRequestAttributes> & {
-    pullRequest?: PullRequestItem;
-  };
+  MentionItemDataType<MentionPullRequestAttributes>;

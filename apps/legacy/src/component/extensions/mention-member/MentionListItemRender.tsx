@@ -8,9 +8,9 @@ const MentionListItemRender: React.FC<{ item: MentionMemberItemDataType }> = ({
     return null;
   }
   return (
-    <div className="">
-      <span>{item.label}</span>
-      <span>{item.desc}</span>
+    <div className="gwe-mention-member__item">
+      <span className="gwe-mention-member__item">{item.attrs.name}</span>
+      <span className="gwe-mention-member__item">{item.attrs.username}</span>
     </div>
   );
 };
