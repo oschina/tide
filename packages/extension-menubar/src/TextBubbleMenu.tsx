@@ -13,7 +13,7 @@ export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
   return (
     <BubbleMenu
       editor={editor}
-      tippyOptions={{ duration: 100 }}
+      tippyOptions={{ duration: 100, appendTo: () => editor.options.element }}
       shouldShow={({ editor, view, state, from, to }) => {
         const { doc, selection } = state;
         const { empty } = selection;
