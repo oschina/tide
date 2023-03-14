@@ -2,18 +2,19 @@ module.exports = {
   env: {
     node: true,
   },
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
-  plugins: ["@typescript-eslint"],
+  plugins: ['@typescript-eslint'],
   parserOptions: {
-    sourceType: "module",
+    sourceType: 'module',
     ecmaVersion: 2020,
   },
   rules: {
-    "@typescript-eslint/no-non-null-assertion": "off",
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
 };

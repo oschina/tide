@@ -22,6 +22,7 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
         className="gwe-mention-member__item"
         href={node.attrs.url}
         target="_blank"
+        rel="noreferrer"
       >
         <span className="gwe-mention-member__ident">@</span>
         <span className="gwe-mention-member__name">{node.attrs.name}</span>

@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 
@@ -27,7 +26,9 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
         rel="noreferrer"
         title={node.attrs.title}
       >
-        <span className="gwe-mention-pull-request__ident">!</span>
+        <span className="gwe-mention-pull-request__ident">
+          !{node.attrs.iid}:
+        </span>
         <span className="gwe-mention-pull-request__title">
           {node.attrs.title}
         </span>

@@ -9,7 +9,7 @@ const MentionIssueItemRender: React.FC<{ item: MentionIssueItemDataType }> = ({
   }
   return (
     <div className="gwe-mention-issue__item">
-      <span className="gwe-mention-issue__item-id">{item.attrs.ident}</span>
+      <span className="gwe-mention-issue__item-id">#{item.attrs.ident}:</span>
       <span className="gwe-mention-issue__item-title">{item.attrs.title}</span>
     </div>
   );

@@ -27,7 +27,7 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
         rel="noreferrer"
         title={node.attrs.title}
       >
-        <span className="gwe-mention-issue__id">#{node.attrs.ident}</span>
+        <span className="gwe-mention-issue__id">#{node.attrs.ident}:</span>
         <span className={'gwe-mention-issue__title'}>{node.attrs.title}</span>
       </a>
     </NodeViewWrapper>

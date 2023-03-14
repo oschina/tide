@@ -10,7 +10,7 @@ const MentionPullRequestItemRender: React.FC<{
   return (
     <div className="gwe-mention-pull-request__item">
       <span className="gwe-mention-pull-request__item-id">
-        {item.attrs.iid}
+        !{item.attrs.iid}:
       </span>
       <span className="gwe-mention-pull-request__item-title">
         {item.attrs.title}
