@@ -143,4 +143,6 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
   }
 );
 
+Editor.displayName = 'Editor';
+
 export default Editor;

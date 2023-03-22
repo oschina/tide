@@ -101,10 +101,10 @@ export const LegacyEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
               <HorizontalRule />
               <Emoji />
               <MenuBarDivider />
-              {/*<Fullscreen*/}
-              {/*  fullscreen={fullscreen}*/}
-              {/*  onFullscreenChange={setFullscreen}*/}
-              {/*/>*/}
+              <Fullscreen
+                fullscreen={fullscreen}
+                onFullscreenChange={setFullscreen}
+              />
             </MenuBar>
           )}
           <EditorContent
