@@ -42,12 +42,16 @@ import {
   Uploader,
   UploaderFunc,
 } from '@gitee/wysiwyg-editor-extension-uploader';
-import { MentionMember } from './extensions/mention-member';
-import { MentionIssue } from './extensions/mention-issue';
-import { MentionPullRequest } from './extensions/mention-pull-request';
-import { MentionMemberItemDataType } from './extensions/mention-member/types';
-import { MentionIssueItemDataType } from './extensions/mention-issue/types';
-import { MentionPullRequestItemDataType } from './extensions/mention-pull-request/types';
+import {
+  MentionMember,
+  MentionIssue,
+  MentionPullRequest,
+} from '@gitee/wysiwyg-editor-presets-mentions';
+import type {
+  MentionMemberItemDataType,
+  MentionIssueItemDataType,
+  MentionPullRequestItemDataType,
+} from '@gitee/wysiwyg-editor-presets-mentions';
 import {
   mockFetchMemberMention,
   mockMentionIssue,

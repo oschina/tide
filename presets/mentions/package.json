@@ -1,0 +1,44 @@
+{
+  "name": "@gitee/wysiwyg-editor-presets-mentions",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.21.0",
+    "@gitee/wysiwyg-editor-common": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
+    "@gitee/wysiwyg-editor-extension-mention": "workspace:*",
+    "@gitee/wysiwyg-editor-react": "workspace:*",
+    "@gitee/wysiwyg-editor-theme": "workspace:*",
+    "@tippyjs/react": "^4.2.6",
+    "@tiptap/extension-image": "^2.0.0-beta.220",
+    "classnames": "^2.2.6",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@tiptap/pm": "^2.0.0-beta.220",
+    "@types/react": "^16.14.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tslib": "^2.4.1",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "@gitee/icons-react": "^0.1.37",
+    "@tiptap/core": "^2.0.0-beta.220",
+    "@tiptap/pm": "^2.0.0-beta.220",
+    "react": "^16.14.0"
+  },
+  "sideEffects": false
+}

@@ -9,37 +9,43 @@ import {
   MentionOptions,
 } from '@gitee/wysiwyg-editor-extension-mention';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
-import { MentionIssueNodeView } from './MentionIssueNodeView';
-import MentionIssueItemRender from './MentionIssueItemRender';
-import { MentionIssueAttributes, MentionIssueItemDataType } from './types';
-import MentionNoResult from '../MentionNoResult';
+import { MentionPullRequestNodeView } from './MentionPullRequestNodeView';
+import MentionPullRequestItemRender from './MentionPullRequestItemRender';
+import {
+  MentionPullRequestAttributes,
+  MentionPullRequestItemDataType,
+} from './types';
+import MentionNoResult from '../components/MentionNoResult';
 
-export const MentionIssueSuggestionPluginKey = new PluginKey(
-  'mentionIssueSuggestion'
+export const MentionPullRequestSuggestionPluginKey = new PluginKey(
+  'mentionPullRequestSuggestion'
 );
 
-export const MentionIssue = Mention.extend<
-  MentionOptions<MentionIssueItemDataType>
+export const MentionPullRequest = Mention.extend<
+  MentionOptions<MentionPullRequestItemDataType>
 >({
-  name: 'mentionIssue',
+  name: 'mentionPullRequest',
 
   addOptions() {
     const parentOptions = this.parent?.();
     return {
       ...parentOptions,
       renderLabel({ options, node }) {
-        return `${options.suggestion.char}${node.attrs.ident}`;
+        return `${options.suggestion.char}${node.attrs.iid ?? node.attrs.id}`;
       },
       suggestion: buildSuggestionOptions<
-        MentionIssueItemDataType,
-        MentionListProps<MentionIssueItemDataType, MentionIssueAttributes>
+        MentionPullRequestItemDataType,
+        MentionListProps<
+          MentionPullRequestItemDataType,
+          MentionPullRequestAttributes
+        >
       >({
         ...parentOptions?.suggestion,
-        pluginKey: MentionIssueSuggestionPluginKey,
-        char: '#',
+        pluginKey: MentionPullRequestSuggestionPluginKey,
+        char: '!',
         component: MentionList as any,
         componentProps: {
-          itemRender: (item) => <MentionIssueItemRender item={item} />,
+          itemRender: (item) => <MentionPullRequestItemRender item={item} />,
           emptyRender: () => <MentionNoResult />,
         },
         tippyOptions: {
@@ -51,11 +57,19 @@ export const MentionIssue = Mention.extend<
 
   addAttributes() {
     return {
-      ident: {
+      id: {
         default: null,
-        parseHTML: (element) => `${element.getAttribute('data-ident') ?? ''}`,
+        parseHTML: (element) => `${element.getAttribute('data-id') ?? ''}`,
         renderHTML: (attributes) => ({
-          'data-ident': attributes.ident || '',
+          'data-id': attributes.id || '',
+        }),
+      },
+
+      iid: {
+        default: null,
+        parseHTML: (element) => `${element.getAttribute('data-iid') ?? ''}`,
+        renderHTML: (attributes) => ({
+          'data-iid': attributes.iid || '',
         }),
       },
 
@@ -105,6 +119,6 @@ export const MentionIssue = Mention.extend<
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(MentionIssueNodeView);
+    return ReactNodeViewRenderer(MentionPullRequestNodeView);
   },
 });

@@ -1,18 +1,18 @@
 {
   "name": "@gitee/wysiwyg-editor-legacy",
   "version": "0.1.0-alpha.14",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
-  "types": "dist/types/index.d.ts",
-  "license": "MIT",
   "scripts": {
-    "dev": "vite",
     "build": "rollup -c rollup.config.js",
-    "lint": "TIMING=1 eslint \"**/*.ts\"",
-    "clear": "rm -rf dist"
+    "clear": "rm -rf dist",
+    "dev": "vite",
+    "lint": "TIMING=1 eslint \"**/*.ts\""
   },
   "dependencies": {
     "@gitee/wysiwyg-editor-common": "workspace:*",
@@ -38,6 +38,7 @@
     "@gitee/wysiwyg-editor-extension-task-item": "workspace:*",
     "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
     "@gitee/wysiwyg-editor-markdown": "workspace:*",
+    "@gitee/wysiwyg-editor-presets-mentions": "workspace:*",
     "@gitee/wysiwyg-editor-react": "workspace:*",
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
@@ -72,10 +73,10 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "fast-glob": "^3.2.12",
-    "tslib": "^2.4.1",
     "less": "^4.1.3",
     "prosemirror-dev-tools": "^4.0.0",
     "tsconfig": "workspace:*",
+    "tslib": "^2.4.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   }

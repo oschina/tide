@@ -64,7 +64,7 @@ importers:
       rollup-plugin-sourcemaps: 0.6.3_rollup@2.79.1
       rollup-plugin-typescript2: 0.34.1_k35zwyycrckt5xfsejji7kbwn4
       rollup-plugin-visualizer: 5.8.3_rollup@2.79.1
-      turbo: 1.8.3
+      turbo: 1.8.5
 
   apps/demo:
     specifiers:
@@ -222,6 +222,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-task-item': workspace:*
       '@gitee/wysiwyg-editor-extension-uploader': workspace:*
       '@gitee/wysiwyg-editor-markdown': workspace:*
+      '@gitee/wysiwyg-editor-presets-mentions': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
@@ -284,6 +285,7 @@ importers:
       '@gitee/wysiwyg-editor-extension-task-item': link:../../packages/extension-task-item
       '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
       '@gitee/wysiwyg-editor-markdown': link:../../packages/markdown
+      '@gitee/wysiwyg-editor-presets-mentions': link:../../presets/mentions
       '@gitee/wysiwyg-editor-react': link:../../packages/react
       '@gitee/wysiwyg-editor-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
@@ -1003,6 +1005,49 @@ importers:
 
   packages/tsconfig:
     specifiers: {}
+
+  presets/mentions:
+    specifiers:
+      '@babel/runtime-corejs3': ^7.21.0
+      '@gitee/icons-react': ^0.1.37
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
+      '@gitee/wysiwyg-editor-extension-mention': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@tippyjs/react': ^4.2.6
+      '@tiptap/core': ^2.0.0-beta.220
+      '@tiptap/extension-image': ^2.0.0-beta.220
+      '@tiptap/pm': ^2.0.0-beta.220
+      '@types/react': ^16.14.0
+      classnames: ^2.2.6
+      eslint-config-custom: workspace:*
+      lodash-es: ^4.17.21
+      react: ^16.14.0
+      tsconfig: workspace:*
+      tslib: ^2.4.1
+      typescript: ^4.5.2
+    dependencies:
+      '@babel/runtime-corejs3': 7.21.0
+      '@gitee/icons-react': 0.1.39_react@16.14.0
+      '@gitee/wysiwyg-editor-common': link:../../packages/common
+      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../../packages/extension-bubble-menu
+      '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
+      '@gitee/wysiwyg-editor-react': link:../../packages/react
+      '@gitee/wysiwyg-editor-theme': link:../../packages/theme
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
+      '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
+      '@tiptap/extension-image': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      classnames: 2.3.2
+      lodash-es: 4.17.21
+      react: 16.14.0
+    devDependencies:
+      '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      '@types/react': 16.14.34
+      eslint-config-custom: link:../../packages/eslint-config-custom
+      tsconfig: link:../../packages/tsconfig
+      tslib: 2.4.1
+      typescript: 4.9.3
 
 packages:
 
@@ -8232,65 +8277,65 @@ packages:
       yargs: 17.6.2
     dev: true
 
-  /turbo-darwin-64/1.8.3:
-    resolution: {integrity: sha512-bLM084Wr17VAAY/EvCWj7+OwYHvI9s/NdsvlqGp8iT5HEYVimcornCHespgJS/yvZDfC+mX9EQkn3V2JmYgGGw==}
+  /turbo-darwin-64/1.8.5:
+    resolution: {integrity: sha512-CAYh56bzeHfnh7jTm03r29bh8p5a/EjQo1Id5yLUH7hS7msTau/+YpxJWPodLbN0UQsUYivUqHQkglJ+eMJ7xA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.8.3:
-    resolution: {integrity: sha512-4oZjXtzakopMK110kue3z/hqu3WLv+eDLZOX1NGdo49gqca9BeD8GbH+sXpAp6tqyeuzpss+PIliVYuyt7LgbA==}
+  /turbo-darwin-arm64/1.8.5:
+    resolution: {integrity: sha512-R3jCPOv+lu3dcvMhj8b/Defv6dyUwX6W+tbX7d6YUCA46Plf/bGCQ8+MSbxmr/4E1GyGOVFsn1wRfiYk0us/Dg==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.8.3:
-    resolution: {integrity: sha512-uvX2VKotf5PU14FCxJA5iHItPQno2JWzerMd+g3/h/Asay6dvxvtVjc39MQeGT0H5njSvzVKFkT+3/5q8lgOEg==}
+  /turbo-linux-64/1.8.5:
+    resolution: {integrity: sha512-YRc/KNRZeUVvth11UO4SDQZR2IqGgl9MSsbzqoHuFz4B4Q5QXH7onHogv9aXWE/BZBBbcrSBTlwBSG0Gg+J8hg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.8.3:
-    resolution: {integrity: sha512-E1p+oH3XKMaPS4rqWhYsL4j2Pzc0d/9P5KU7Kn1kqVLo2T3iRA7n2KVULEieUNE0nTH+aIJPXYXOpqCI5wFJaA==}
+  /turbo-linux-arm64/1.8.5:
+    resolution: {integrity: sha512-8exVZb7XBl/V3gHSweuUyG2D9IzfWqwLvlXoeLWlVYSj61Ajgdv+WU7lvUmx+H2s+sSKqmIFmewA5Lw6YY37sg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.8.3:
-    resolution: {integrity: sha512-cnzAytHtoLXd0J7aNzRpZFpL/GTjcBmkvAPlbOdf/Pl1iwS4qzGrudZQ+OM1lmLgLIfBPIavsGHBknTwTNib4A==}
+  /turbo-windows-64/1.8.5:
+    resolution: {integrity: sha512-fA8PU5ZNoFnQkapG06WiEqfsVQ5wbIPkIqTwUsd/M2Lp+KgxE79SQbuEI+2vQ9SmwM5qoMi515IPjgvXAJXgCw==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.8.3:
-    resolution: {integrity: sha512-ulIiItNm2w/zYJdD5/oAzjzNns1IjbpweRzpsE8tLXaWwo6+fnXXkyloUug0IUhcd2k6fJXfoiDZfygqpOVuXg==}
+  /turbo-windows-arm64/1.8.5:
+    resolution: {integrity: sha512-SW/NvIdhckLsAWjU/iqBbCB0S8kXupKscUK3kEW1DZIr3MYcP/yIuaE/IdPuqcoF3VP0I3TLD4VTYCCKAo3tKA==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.8.3:
-    resolution: {integrity: sha512-zGrkU1EuNFmkq6iky6LcMqD4h0OLE8XysVFxQWRIZbcTNnf0XAycbsbeEyiJpiWeqb7qtg2bVuY9EYcNoNhVuQ==}
+  /turbo/1.8.5:
+    resolution: {integrity: sha512-UBnH2wIFb5g6OQCk8f34Ud15ZXV4xEMmugeDJTU5Ur2LpVRsNEny0isSCYdb3Iu3howoNyyXmtpaxWsAwNYkkg==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.8.3
-      turbo-darwin-arm64: 1.8.3
-      turbo-linux-64: 1.8.3
-      turbo-linux-arm64: 1.8.3
-      turbo-windows-64: 1.8.3
-      turbo-windows-arm64: 1.8.3
+      turbo-darwin-64: 1.8.5
+      turbo-darwin-arm64: 1.8.5
+      turbo-linux-64: 1.8.5
+      turbo-linux-arm64: 1.8.5
+      turbo-windows-64: 1.8.5
+      turbo-windows-arm64: 1.8.5
     dev: true
 
   /type-check/0.4.0:

@@ -13,7 +13,7 @@ import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
 import { MentionMemberNodeView } from './MentionMemberNodeView';
 import { MentionMemberAttributes, MentionMemberItemDataType } from './types';
 import MentionListItemRender from './MentionListItemRender';
-import MentionNoResult from '../MentionNoResult';
+import MentionNoResult from '../components/MentionNoResult';
 
 export const MentionMemberSuggestionPluginKey = new PluginKey(
   'mentionMemberSuggestion'

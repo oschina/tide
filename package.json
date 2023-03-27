@@ -1,20 +1,25 @@
 {
   "private": true,
   "scripts": {
-    "demo": "pnpm --filter demo dev",
-    "legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy dev",
-    "build": "turbo run build --filter=./packages/*",
-    "build:nocache": "pnpm clear && turbo run build --force --filter=./packages/*",
-    "build:demo": "pnpm --filter demo build",
-    "build:legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy build",
-    "lint": "turbo run lint",
+    "build": "turbo run build --filter=!./apps/*",
+    "build:app_demo": "pnpm --filter demo build",
+    "build:app_legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy build",
+    "build:nocache": "pnpm clear && turbo run build --force --filter=!./apps/*",
     "clear": "turbo run clear --force",
+    "dev:demo": "pnpm --filter demo dev",
+    "dev:legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install",
+    "lint": "turbo run lint",
     "lint-staged": "lint-staged",
-    "release": "pnpm build:nocache && changeset version && changeset publish",
-    "pages": "cd apps/demo/dist && git add --all && git commit -m \"Deploy demo on pages updated\" && git push origin demo-pages"
+    "pages": "cd apps/demo/dist && git add --all && git commit -m \"Deploy demo on pages updated\" && git push origin demo-pages",
+    "prepare": "husky install",
+    "release": "pnpm build:nocache && changeset version && changeset publish"
   },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.2%"
+  ],
   "devDependencies": {
     "@atomico/rollup-plugin-sizes": "^1.1.4",
     "@babel/core": "^7.21.0",
@@ -47,10 +52,5 @@
     "rollup-plugin-visualizer": "^5.8.3",
     "turbo": "latest"
   },
-  "browserslist": [
-    "last 2 versions",
-    "not dead",
-    "> 0.2%"
-  ],
   "packageManager": "pnpm@7.15.0"
 }
