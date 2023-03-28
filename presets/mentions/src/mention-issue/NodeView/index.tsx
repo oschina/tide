@@ -1,7 +1,11 @@
 import React from 'react';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
-import './MentionIssueNodeView.less';
+import Loading from '../../components/Loading';
+import IssueIcons from '../Icons';
+import { EntityType, useRemoteData } from '../../contexts';
+
+import './index.less';
 
 export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
   editor,
@@ -13,6 +17,15 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
     extension.options.HTMLAttributes
   );
 
+  const { loading, data: issue } = useRemoteData(
+    EntityType.ISSUE,
+    node.attrs.ident
+  );
+
+  const title = issue?.title || node.attrs.title;
+  const issue_type = issue?.issue_type;
+
+  console.log(node.attrs);
   return (
     <NodeViewWrapper
       as="span"
@@ -27,8 +40,15 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
         rel="noreferrer"
         title={node.attrs.title}
       >
-        <span className="gwe-mention-issue__id">#{node.attrs.ident}:</span>
-        <span className={'gwe-mention-issue__title'}>{node.attrs.title}</span>
+        {loading ? (
+          <Loading className="gwe-mention-issue__icon" />
+        ) : (
+          <IssueIcons
+            className="gwe-mention-issue__icon"
+            category={issue_type}
+          />
+        )}
+        <span className={'gwe-mention-issue__title'}>{title}</span>
       </a>
     </NodeViewWrapper>
   );

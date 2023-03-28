@@ -1,9 +1,11 @@
 import React from 'react';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
+import Avatar from '../../components/Avatar';
 
-export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
-  editor,
+import './index.less';
+
+export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
   node,
   extension,
 }) => {
@@ -20,18 +22,15 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
       {...props}
     >
       <a
-        className="gwe-mention-pull-request"
+        className="gwe-mention-member__item"
         href={node.attrs.url}
-        target={editor.isEditable ? '_blank' : undefined}
+        target="_blank"
         rel="noreferrer"
-        title={node.attrs.title}
       >
-        <span className="gwe-mention-pull-request__ident">
-          !{node.attrs.iid}:
+        <span className="gwe-mention-member__avatar">
+          <Avatar src={node.attrs.avatar} username={node.attrs.username} />
         </span>
-        <span className="gwe-mention-pull-request__title">
-          {node.attrs.title}
-        </span>
+        <span className="gwe-mention-member__name">{node.attrs.name}</span>
       </a>
     </NodeViewWrapper>
   );

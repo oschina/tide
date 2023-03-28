@@ -1,14 +1,13 @@
 import { MentionItemDataType } from '@gitee/wysiwyg-editor-extension-mention';
 
 export type MentionPullRequestAttributes = {
-  /** PR ID */
-  id: string;
-  /** PR IID */
-  iid: string;
-  /** PR 标题 */
+  id: number;
+  iid: number;
+  state: string;
   title: string;
-  /** PR 链接 */
-  url: string;
+  lightweight: boolean;
+  project_id: number;
+  project_path: string;
 };
 
 export type MentionPullRequestItemDataType =

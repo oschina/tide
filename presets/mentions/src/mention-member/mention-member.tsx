@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeAttributes } from '@tiptap/core';
+import { mergeAttributes, NodeViewRenderer } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {
   BaseMentionListRef,
@@ -10,17 +10,21 @@ import {
   MentionOptions,
 } from '@gitee/wysiwyg-editor-extension-mention';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
-import { MentionMemberNodeView } from './MentionMemberNodeView';
+import { MentionMemberNodeView } from './NodeView';
+import { MentionListItemRender } from './ItemRender';
 import { MentionMemberAttributes, MentionMemberItemDataType } from './types';
-import MentionListItemRender from './MentionListItemRender';
 import MentionNoResult from '../components/MentionNoResult';
 
 export const MentionMemberSuggestionPluginKey = new PluginKey(
   'mentionMemberSuggestion'
 );
 
+type MentionMemberOptions<T> = MentionOptions<T> & {
+  nodeView: NodeViewRenderer;
+};
+
 export const MentionMember = Mention.extend<
-  MentionOptions<MentionMemberItemDataType>
+  MentionMemberOptions<MentionMemberItemDataType>
 >({
   name: 'mentionMember',
 
@@ -45,6 +49,7 @@ export const MentionMember = Mention.extend<
           emptyRender: () => <MentionNoResult />,
         },
       }),
+      nodeView: ReactNodeViewRenderer(MentionMemberNodeView),
     };
   },
 
@@ -104,6 +109,6 @@ export const MentionMember = Mention.extend<
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(MentionMemberNodeView);
+    return this.options.nodeView;
   },
 });

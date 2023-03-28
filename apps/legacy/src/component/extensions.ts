@@ -52,17 +52,18 @@ import type {
   MentionIssueItemDataType,
   MentionPullRequestItemDataType,
 } from '@gitee/wysiwyg-editor-presets-mentions';
-import {
-  mockFetchMemberMention,
-  mockMentionIssue,
-  mockFetchMentionPR,
-  mockAjaxImgUploader,
-} from './default';
+import { mockMention, mockAjaxImgUploader } from './default';
 
 export type MentionType = {
-  fetchMentionMember?: (query: string) => Promise<MentionMemberItemDataType[]>;
-  fetchMentionIssue?: (query: string) => Promise<MentionIssueItemDataType[]>;
-  fetchMentionPR?: (query: string) => Promise<MentionPullRequestItemDataType[]>;
+  fetchMentionMember?: (
+    query: string
+  ) => Promise<MentionMemberItemDataType[] | []>;
+  fetchMentionIssue?: (
+    query: string
+  ) => Promise<MentionIssueItemDataType[] | []>;
+  fetchMentionPR?: (
+    query: string
+  ) => Promise<MentionPullRequestItemDataType[] | []>;
 };
 
 export type ExtensionsOpts = {
@@ -75,9 +76,9 @@ export const getExtensions = ({
   imageUpload = mockAjaxImgUploader,
 }: ExtensionsOpts) => {
   const {
-    fetchMentionMember = mockFetchMemberMention,
-    fetchMentionIssue = mockMentionIssue,
-    fetchMentionPR = mockFetchMentionPR,
+    fetchMentionMember = mockMention,
+    fetchMentionIssue = mockMention,
+    fetchMentionPR = mockMention,
   } = mention || {};
 
   return [

@@ -1,6 +1,7 @@
 import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
@@ -22,6 +23,7 @@ const getPlugins = ({ projectPath, tsconfigPath }) => {
     }),
     commonjs(),
     json(),
+    image(),
     typescript2({
       clean: true,
       tsconfig: tsconfigPath

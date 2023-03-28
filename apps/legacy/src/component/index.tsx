@@ -132,6 +132,11 @@ export function renderOnEl(opts: {
   el: HTMLElement;
   options?: EditorRenderProps;
 }) {
-  const { el, options = {} } = opts;
+  const {
+    el,
+    options = {
+      fetchResources: () => Promise.resolve([]) as any,
+    },
+  } = opts;
   ReactDOM.render(<LegacyEditor {...options} />, el);
 }

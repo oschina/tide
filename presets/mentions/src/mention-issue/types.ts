@@ -1,12 +1,27 @@
 import { MentionItemDataType } from '@gitee/wysiwyg-editor-extension-mention';
 
-export type MentionIssueAttributes = {
-  /** 任务 Ident */
-  ident: string;
-  /** 任务标题 */
+export interface IssueType {
+  id: number;
+  enterprise_id: number;
   title: string;
-  /** 任务链接 */
-  url: string;
+  created_at: string;
+  updated_at: string;
+  serial: number;
+  template: string;
+  ident: string;
+  is_system: boolean;
+  color: string;
+  category: string;
+  description: string;
+  state: number;
+}
+
+export type MentionIssueAttributes = {
+  id: number;
+  iid: number;
+  ident: string;
+  title: string;
+  issue_type: Partial<IssueType>;
 };
 
 export type MentionIssueItemDataType =

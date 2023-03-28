@@ -1,6 +1,6 @@
 import { createEditor } from './index';
-import { defaultContent } from './demo_mock';
-import testData from './demo_test.json';
+import { fetchMention } from './test/fetchMetion';
+import { defaultContent, sleep } from './test/demo_mock';
 
 let defaultVal = undefined;
 try {
@@ -33,64 +33,27 @@ createEditor({
         'https://file.nancode.cn/1678359851942-284541675.jpg'
       );
     },
+    fetchResources: async (query) => {
+      console.log('--------fetchResources------------------------', query);
+      await sleep(50000);
+      return Promise.resolve([]) as any;
+    },
     mention: {
-      fetchMentionIssue: (query) => {
-        const result = testData.issues
-          .filter(
-            (item) =>
-              `${item.ident}${item.title}`
-                .toLowerCase()
-                .indexOf(query.toLowerCase()) > -1
-          )
-          .slice(0, 5)
-          .map((item) => ({
-            id: `${item.iid}`,
-            attrs: {
-              ident: item.ident,
-              title: item.title,
-              url: '',
-            },
-          }));
-        return Promise.resolve(result);
+      fetchMentionIssue: async (query) => {
+        const res = await fetchMention('issues');
+        return res.map((i: any) => ({ id: i.id, attrs: { ...i } }));
       },
-      fetchMentionPR: (query) => {
-        const result = testData.pull_requests
-          .filter(
-            (item) =>
-              `${item.iid}${item.title}`
-                .toLowerCase()
-                .indexOf(query.toLowerCase()) > -1
-          )
-          .slice(0, 5)
-          .map((item) => ({
-            id: `${item.iid}`,
-            attrs: {
-              id: `${item.iid}`,
-              iid: `${item.iid}`,
-              title: item.title,
-              url: '',
-            },
-          }));
-        return Promise.resolve(result);
+      fetchMentionMember: async (query) => {
+        const res = await fetchMention('members');
+        console.log(res);
+        return res.map((i: any) => ({
+          id: i.username,
+          attrs: { ...i, url: `/${i.username}` },
+        }));
       },
-      fetchMentionMember: (query) => {
-        const result = testData.members
-          .filter(
-            (item) =>
-              `${item.name}${item.name_pinyin}${item.username}`
-                .toLowerCase()
-                .indexOf(query.toLowerCase()) > -1
-          )
-          .slice(0, 5)
-          .map((item) => ({
-            id: `${item.username}`,
-            attrs: {
-              name: item.name,
-              username: item.username,
-              url: '',
-            },
-          }));
-        return Promise.resolve(result);
+      fetchMentionPR: async (query) => {
+        const res = await fetchMention('pullRequests');
+        return res.map((i: any) => ({ id: i.id, attrs: { ...i } }));
       },
     },
   },

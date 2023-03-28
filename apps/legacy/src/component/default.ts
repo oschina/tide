@@ -1,14 +1,6 @@
 import { UploaderFunc } from '@gitee/wysiwyg-editor-extension-uploader';
 
-export const mockFetchMemberMention = (query: string) => {
-  return Promise.resolve([]);
-};
-
-export const mockMentionIssue = (query: string) => {
-  return Promise.resolve([]);
-};
-
-export const mockFetchMentionPR = (query: string) => {
+export const mockMention = (query: string) => {
   return Promise.resolve([]);
 };
 

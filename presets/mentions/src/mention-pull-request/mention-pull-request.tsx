@@ -9,8 +9,8 @@ import {
   MentionOptions,
 } from '@gitee/wysiwyg-editor-extension-mention';
 import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
-import { MentionPullRequestNodeView } from './MentionPullRequestNodeView';
-import MentionPullRequestItemRender from './MentionPullRequestItemRender';
+import { MentionPullRequestNodeView } from './NodeView';
+import MentionPullRequestItemRender from './ItemRender';
 import {
   MentionPullRequestAttributes,
   MentionPullRequestItemDataType,

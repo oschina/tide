@@ -1,17 +1,26 @@
 import { defineConfig, loadEnv } from 'vite';
+import fs from 'fs';
 import fg from 'fast-glob';
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import { format } from 'date-fns';
 
+const getPkgName = (path) => {
+  const json = fs.readFileSync(`${path}/package.json`, {
+    encoding: 'utf-8',
+  });
+  const { name } = JSON.parse(json);
+  return { name, path };
+};
+
 const alias = [
   ...fg
-    .sync('../../packages/*', { onlyDirectories: true })
-    .map((name) => name.replace('../../packages/', ''))
-    .map((name) => {
+    .sync(['../../packages/*', '../../presets/*'], { onlyDirectories: true })
+    .map((path) => getPkgName(path))
+    .map(({ name, path }) => {
       return {
-        find: `@gitee/wysiwyg-editor-${name}`,
-        replacement: resolve(`../../packages/${name}/src/index.ts`),
+        find: name,
+        replacement: resolve(`${path}/src/index.ts`),
       };
     }),
   {
@@ -20,30 +29,16 @@ const alias = [
   },
 ];
 
-const htmlPlugin = ({ entry }) => {
-  return {
-    name: 'html-transform',
-    transformIndexHtml(html) {
-      if (entry === 'vanilla') {
-        return html.replace(
-          '<script type="module" src="/src/index.tsx"></script>',
-          `<script type="module" src="/src/vanilla.ts"></script>`
-        );
-      }
-      return html;
-    },
-  };
-};
+// console.log(alias);
 
-// https://vitejs.dev/config/
+// // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const entry = process.env.ENTRY;
   return {
     base: mode === 'production' ? '/wysiwyg-editor' : '/',
     define: {
       __BUILD_TIME__: JSON.stringify(format(new Date(), 'yyyy-MM-dd HH:mm:ss')),
     },
-    plugins: [react(), htmlPlugin({ entry })],
+    plugins: [react()],
     resolve: {
       alias,
     },
