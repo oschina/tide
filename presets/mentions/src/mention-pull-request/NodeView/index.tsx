@@ -1,6 +1,10 @@
 import React from 'react';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
+import Loading from '../../components/Loading';
+import { StateIcon } from '../Icons/PullRequestIcon';
+import { useRemoteData, EntityType } from '../../contexts';
+
 import './index.less';
 
 export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
@@ -12,6 +16,12 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
     { 'data-type': extension.name },
     extension.options.HTMLAttributes
   );
+
+  const { loading, data: pull } = useRemoteData(
+    EntityType.PULL_REQUEST,
+    node.attrs.id
+  );
+  const title = pull?.title || node.attrs.title;
 
   return (
     <NodeViewWrapper
@@ -27,12 +37,10 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
         rel="noreferrer"
         title={node.attrs.title}
       >
-        <span className="gwe-mention-pull-request__ident">
-          !{node.attrs.iid}:
+        <span className="gwe-mention-pull-request__icon">
+          {loading ? <Loading /> : <StateIcon state={pull?.state} />}
         </span>
-        <span className="gwe-mention-pull-request__title">
-          {node.attrs.title}
-        </span>
+        <span className="gwe-mention-pull-request__title">{title}</span>
       </a>
     </NodeViewWrapper>
   );

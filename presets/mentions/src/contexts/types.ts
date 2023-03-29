@@ -1,7 +1,7 @@
 export enum EntityType {
-  MEMBER = 'member',
-  ISSUE = 'issue',
-  PULL_REQUEST = 'pull_request',
+  MEMBER = 'users',
+  ISSUE = 'issues',
+  PULL_REQUEST = 'pull_requests',
 }
 
 export type EntityPKValueType = {

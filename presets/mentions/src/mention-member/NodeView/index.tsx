@@ -2,6 +2,8 @@ import React from 'react';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import Avatar from '../../components/Avatar';
+import Loading from '../../components/Loading';
+import { EntityType, useRemoteData } from '../../contexts';
 
 import './index.less';
 
@@ -13,6 +15,20 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
     { 'data-type': extension.name },
     extension.options.HTMLAttributes
   );
+
+  const { loading, data: user } = useRemoteData(
+    EntityType.MEMBER,
+    node.attrs.username
+  );
+
+  const name =
+    user?.remark ||
+    user?.name ||
+    user?.username ||
+    node.attrs.name ||
+    node.attrs.username;
+
+  const avatar = user?.avatar_url;
 
   return (
     <NodeViewWrapper
@@ -28,9 +44,9 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
         rel="noreferrer"
       >
         <span className="gwe-mention-member__avatar">
-          <Avatar src={node.attrs.avatar} username={node.attrs.username} />
+          {loading ? <Loading /> : <Avatar src={avatar} username={name} />}
         </span>
-        <span className="gwe-mention-member__name">{node.attrs.name}</span>
+        <span className="gwe-mention-member__name">{name}</span>
       </a>
     </NodeViewWrapper>
   );

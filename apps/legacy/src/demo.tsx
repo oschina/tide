@@ -1,6 +1,7 @@
 import { createEditor } from './index';
 import { fetchMention } from './test/fetchMetion';
 import { defaultContent, sleep } from './test/demo_mock';
+import specifyResources from './test/specify_resources.json';
 
 let defaultVal = undefined;
 try {
@@ -34,26 +35,40 @@ createEditor({
       );
     },
     fetchResources: async (query) => {
-      console.log('--------fetchResources------------------------', query);
-      await sleep(50000);
-      return Promise.resolve([]) as any;
+      console.log(
+        '--------fetchResources------------------------',
+        query,
+        specifyResources
+      );
+      await sleep(1000);
+      return Promise.resolve(specifyResources) as any;
     },
     mention: {
       fetchMentionIssue: async (query) => {
         const res = await fetchMention('issues');
-        return res.map((i: any) => ({ id: i.id, attrs: { ...i } }));
+        const issue = res.map((i: any) => ({
+          id: i.id,
+          attrs: { ...i, url: `/${i.iid}` },
+        }));
+        return issue;
       },
       fetchMentionMember: async (query) => {
         const res = await fetchMention('members');
-        console.log(res);
         return res.map((i: any) => ({
           id: i.username,
-          attrs: { ...i, url: `/${i.username}` },
+          attrs: {
+            ...i,
+            url: `/${i.username}`,
+            avatar_url: 'https://file.nancode.cn/1678359851942-284541675.jpg',
+          },
         }));
       },
       fetchMentionPR: async (query) => {
         const res = await fetchMention('pullRequests');
-        return res.map((i: any) => ({ id: i.id, attrs: { ...i } }));
+        return res.map((i: any) => ({
+          id: i.id,
+          attrs: { ...i, url: `/${i.id}` },
+        }));
       },
     },
   },

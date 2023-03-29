@@ -22,6 +22,7 @@ export type MentionIssueAttributes = {
   ident: string;
   title: string;
   issue_type: Partial<IssueType>;
+  url: string;
 };
 
 export type MentionIssueItemDataType =

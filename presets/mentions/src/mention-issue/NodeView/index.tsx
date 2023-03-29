@@ -23,9 +23,8 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
   );
 
   const title = issue?.title || node.attrs.title;
-  const issue_type = issue?.issue_type;
+  const category = issue?.issue_type?.category;
 
-  console.log(node.attrs);
   return (
     <NodeViewWrapper
       as="span"
@@ -43,10 +42,7 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
         {loading ? (
           <Loading className="gwe-mention-issue__icon" />
         ) : (
-          <IssueIcons
-            className="gwe-mention-issue__icon"
-            category={issue_type}
-          />
+          <IssueIcons className="gwe-mention-issue__icon" category={category} />
         )}
         <span className={'gwe-mention-issue__title'}>{title}</span>
       </a>

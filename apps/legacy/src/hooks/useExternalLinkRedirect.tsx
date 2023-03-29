@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-const GITEE_BASE_URL = '';
+
+const GITEE_BASE_URL = window.location.origin;
 
 export function useExternalLinkRedirect(
   dom: HTMLElement,

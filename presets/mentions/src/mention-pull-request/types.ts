@@ -8,6 +8,7 @@ export type MentionPullRequestAttributes = {
   lightweight: boolean;
   project_id: number;
   project_path: string;
+  url: string;
 };
 
 export type MentionPullRequestItemDataType =
