@@ -1,5 +1,18 @@
 # @gitee/wysiwyg-editor-extension-emoji
 
+## 0.1.0-alpha.15
+
+### Minor Changes
+
+- update mentions
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-extension-bubble-menu@0.1.0-alpha.15
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.15
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.15
+
 ## 0.1.0-alpha.14
 
 ### Minor Changes
