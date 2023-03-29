@@ -15,6 +15,8 @@
   }
 
   &__item {
+    display: flex;
+
     &:not(:first-child) {
       margin-left: 8px;
     }
@@ -27,6 +29,13 @@
       &:hover {
         background-color: @menu-btn-active-bg-color;
       }
+    }
+  }
+
+  &.disabled {
+    .gwe-menu-bar__item {
+      opacity: 0.25;
+      pointer-events: none;
     }
   }
 

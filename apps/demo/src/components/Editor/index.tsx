@@ -44,6 +44,8 @@ export type EditorRenderProps = Omit<
   style?: React.CSSProperties | undefined;
   menuClassName?: string;
   menuStyle?: React.CSSProperties;
+  menuEnableUndoRedo?: boolean;
+  readOnlyShowMenu?: boolean;
   contentClassName?: string;
   contentStyle?: React.CSSProperties;
 };
@@ -55,6 +57,8 @@ export const WysiwygEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
       style,
       menuClassName,
       menuStyle,
+      menuEnableUndoRedo = true,
+      readOnlyShowMenu = false,
       contentClassName,
       contentStyle,
       ...editorContentProps
@@ -78,11 +82,20 @@ export const WysiwygEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
         style={style}
       >
         <MenuBarContextProvider editor={editor as unknown as Editor}>
-          {editor && !editorContentProps?.readOnly && (
-            <MenuBar className={menuClassName} style={menuStyle}>
-              <Undo />
-              <Redo />
-              <MenuBarDivider />
+          {editor && !(editorContentProps?.readOnly && !readOnlyShowMenu) && (
+            <MenuBar
+              className={classNames(menuClassName, {
+                disabled: readOnlyShowMenu,
+              })}
+              style={menuStyle}
+            >
+              {menuEnableUndoRedo && (
+                <>
+                  <Undo />
+                  <Redo />
+                  <MenuBarDivider />
+                </>
+              )}
               <Heading />
               <Bold />
               <Italic />

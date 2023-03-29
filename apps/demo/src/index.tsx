@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import HeaderBar from './components/HeaderBar';
