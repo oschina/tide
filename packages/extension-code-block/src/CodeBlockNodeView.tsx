@@ -17,6 +17,8 @@ import {
 } from './languages';
 import './CodeBlockNodeView.less';
 
+const softWrapLocalStorageKey = 'gwe-codeblock-soft-wrap';
+
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
   editor,
   node,
@@ -28,7 +30,9 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
   const $container = useRef<HTMLPreElement>(null);
   const inputRef = useRef<HTMLInputElement>();
   const [search, setSearch] = useState('');
-  const [softWrap, setSoftWrap] = useState(false);
+  const [softWrap, setSoftWrap] = useState(
+    () => window.localStorage?.getItem(softWrapLocalStorageKey) === 'true'
+  );
   const [toolbarVisible, setToolbarVisible] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -138,7 +142,15 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
               'gwe-code-block__button--active': softWrap,
             }
           )}
-          onClick={() => setSoftWrap((prev) => !prev)}
+          onClick={() =>
+            setSoftWrap((prev) => {
+              window.localStorage?.setItem(
+                softWrapLocalStorageKey,
+                String(!prev)
+              );
+              return !prev;
+            })
+          }
         >
           <IconWarpBold />
           自动换行
