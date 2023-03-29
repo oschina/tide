@@ -91,36 +91,42 @@ const allEmojisGroupMap: Record<string, EmojiItem[]> = allEmojis.reduce(
   {}
 );
 
-const Emoji: React.FC<{
+type EmojiProps = {
   emojiStorage: EmojiStorage;
   emoji: EmojiItem;
   active?: boolean;
   group: string;
   onClick: (emoji: EmojiItem) => void;
   onHover?: (emoji: EmojiItem, group: string) => void;
-}> = memo(({ emojiStorage, emoji, active, group, onClick, onHover }) => {
-  return (
-    <span
-      className={classNames('gwe-emoji-panel__emoji', {
-        'gwe-emoji-panel__emoji--active': active,
-      })}
-      title={emoji.name}
-      data-group={group}
-      data-name={emoji.name}
-      onClick={() => onClick(emoji)}
-      onMouseMove={() => onHover?.(emoji, group)}
-    >
-      {!(emojiStorage as EmojiStorage)?.isSupported(emoji) &&
-      emoji.fallbackImage ? (
-        <img src={emoji.fallbackImage} />
-      ) : (
-        emoji.emoji
-      )}
-    </span>
-  );
-});
+};
 
-const EmojiGroup: React.FC<{
+const Emoji = memo(
+  ({ emojiStorage, emoji, active, group, onClick, onHover }: EmojiProps) => {
+    return (
+      <span
+        className={classNames('gwe-emoji-panel__emoji', {
+          'gwe-emoji-panel__emoji--active': active,
+        })}
+        title={emoji.name}
+        data-group={group}
+        data-name={emoji.name}
+        onClick={() => onClick(emoji)}
+        onMouseMove={() => onHover?.(emoji, group)}
+      >
+        {!(emojiStorage as EmojiStorage)?.isSupported(emoji) &&
+        emoji.fallbackImage ? (
+          <img src={emoji.fallbackImage} />
+        ) : (
+          emoji.emoji
+        )}
+      </span>
+    );
+  }
+);
+
+Emoji.displayName = 'Emoji';
+
+type EmojiGroupProps = {
   group: Group;
   emojiStorage: EmojiStorage;
   emojis: EmojiItem[];
@@ -128,7 +134,9 @@ const EmojiGroup: React.FC<{
   activeIndex: number;
   onSelect: (emoji: EmojiItem) => void;
   onHover?: (emoji: EmojiItem, group: string) => void;
-}> = memo(
+};
+
+const EmojiGroup = memo(
   ({
     group,
     emojiStorage,
@@ -137,7 +145,7 @@ const EmojiGroup: React.FC<{
     activeIndex,
     onSelect,
     onHover,
-  }) => {
+  }: EmojiGroupProps) => {
     return (
       <div className="gwe-emoji-panel__group" data-group={group.group}>
         {group.title && (
@@ -164,6 +172,8 @@ const EmojiGroup: React.FC<{
     );
   }
 );
+
+EmojiGroup.displayName = 'EmojiGroup';
 
 export type EmojiPanelProps = SuggestionProps<EmojiItem> & {
   onSelect?: (emoji: EmojiItem) => void;
