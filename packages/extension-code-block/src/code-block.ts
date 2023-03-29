@@ -77,7 +77,7 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
           const codeBlockTextNodeStart = $from.start(1);
           tr.replaceWith(
             codeBlockTextNodeStart,
-            codeBlockTextNodeStart + codeBlockTextNode.nodeSize,
+            codeBlockTextNodeStart + codeBlockTextNode.nodeSize - 2,
             state.schema.text(newLines.join('\n'))
           );
           tr.setSelection(
