@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeAttributes } from '@tiptap/core';
+import { mergeAttributes, NodeViewRenderer } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {
   buildSuggestionOptions,
@@ -18,8 +18,13 @@ export const MentionIssueSuggestionPluginKey = new PluginKey(
   'mentionIssueSuggestion'
 );
 
+type MentionIssueOptions<T> = MentionOptions<T> & {
+  nodeView: NodeViewRenderer;
+  getLink: (path: string) => string;
+};
+
 export const MentionIssue = Mention.extend<
-  MentionOptions<MentionIssueItemDataType>
+  MentionIssueOptions<MentionIssueItemDataType>
 >({
   name: 'mentionIssue',
 
@@ -46,6 +51,8 @@ export const MentionIssue = Mention.extend<
           maxWidth: 400,
         },
       }),
+      getLink: (path) => path,
+      nodeView: ReactNodeViewRenderer(MentionIssueNodeView),
     };
   },
 
@@ -105,6 +112,6 @@ export const MentionIssue = Mention.extend<
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(MentionIssueNodeView);
+    return this.options.nodeView;
   },
 });

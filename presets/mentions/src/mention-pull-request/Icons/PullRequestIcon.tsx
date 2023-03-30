@@ -13,9 +13,9 @@ export function StateIcon({
   style?: React.CSSProperties;
 }) {
   const stateColors: Record<string, string> = {
-    opened: 'pr-state-blue',
-    closed: 'pr-state-muted',
-    merged: 'pr-state-green',
+    opened: 'gwe-pr-state-blue',
+    closed: 'gwe-pr-state-muted',
+    merged: 'gwe-pr-state-green',
   };
   return (
     <IconPr className={classNames(stateColors[state], className)} {...props} />

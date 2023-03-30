@@ -61,7 +61,8 @@
     "lodash-es": "^4.17.21",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "ahooks": "v3.7.6"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.191",

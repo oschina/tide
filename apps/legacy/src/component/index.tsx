@@ -1,5 +1,6 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import ReactDOM, { createPortal } from 'react-dom';
+import { useUpdateEffect } from 'ahooks';
 import classNames from 'classnames';
 import {
   Blockquote,
@@ -32,8 +33,6 @@ import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import type { Editor } from '@gitee/wysiwyg-editor-react';
 import EditorContent, { EditorContentProps } from './Editor';
 
-import './index.less';
-
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   createPortal(children, document.body);
 
@@ -49,6 +48,7 @@ export type EditorRenderProps = Omit<
   readOnlyShowMenu?: boolean;
   contentClassName?: string;
   contentStyle?: React.CSSProperties;
+  onFullscreenChange?: (fullscreen: boolean) => void;
 };
 
 export const LegacyEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
@@ -70,6 +70,10 @@ export const LegacyEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
     const [fullscreen, setFullscreen] = useState(false);
 
     useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
+
+    useUpdateEffect(() => {
+      editorContentProps.onFullscreenChange?.(fullscreen);
+    }, [fullscreen]);
 
     const content = (
       <div

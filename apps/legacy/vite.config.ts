@@ -14,6 +14,11 @@ const getPkgName = (path) => {
 };
 
 const alias = [
+  {
+    // for less import
+    find: `~@gitee/wysiwyg-editor-theme`,
+    replacement: resolve(`../../packages/theme`),
+  },
   ...fg
     .sync(['../../packages/*', '../../presets/*'], { onlyDirectories: true })
     .map((path) => getPkgName(path))
@@ -23,10 +28,6 @@ const alias = [
         replacement: resolve(`${path}/src/index.ts`),
       };
     }),
-  {
-    find: `~@gitee/wysiwyg-editor-theme`,
-    replacement: resolve(`../../packages/theme`),
-  },
 ];
 
 // console.log(alias);

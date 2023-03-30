@@ -24,6 +24,7 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
 
   const title = issue?.title || node.attrs.title;
   const category = issue?.issue_type?.category;
+  const url = extension.options.getLink(node.attrs.url);
 
   return (
     <NodeViewWrapper
@@ -34,7 +35,7 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
     >
       <a
         className="gwe-mention-issue"
-        href={node.attrs.url}
+        href={url}
         target={editor.isEditable ? '_blank' : undefined}
         rel="noreferrer"
         title={node.attrs.title}

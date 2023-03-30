@@ -22,6 +22,7 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
     node.attrs.id
   );
   const title = pull?.title || node.attrs.title;
+  const url = extension.options.getLink(node.attrs.url);
 
   return (
     <NodeViewWrapper
@@ -32,7 +33,7 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
     >
       <a
         className="gwe-mention-pull-request"
-        href={node.attrs.url}
+        href={url}
         target={editor.isEditable ? '_blank' : undefined}
         rel="noreferrer"
         title={node.attrs.title}

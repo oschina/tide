@@ -3,6 +3,7 @@ import { createRollupConfig, autoExternal } from '../../script/rollup.common';
 import packageJson from './package.json';
 
 export default createRollupConfig({
+  input: 'src/lib.ts',
   pkg: packageJson,
   projectPath: __dirname,
   tsconfigPath: path.resolve(__dirname, 'tsconfig.lib.json'),

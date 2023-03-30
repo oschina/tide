@@ -64,12 +64,12 @@ export const autoExternal = (packageNames) => {
 };
 
 export const createRollupConfig = (opts) => {
-  const { pkg, projectPath, external, tsconfigPath } = opts || {};
+  const { input, pkg, projectPath, external, tsconfigPath } = opts || {};
 
   if (pkg && projectPath) {
     const outputs = [
       {
-        input: 'src/index.ts',
+        input: input ? input : 'src/index.ts',
         output: {
           name: opts.pkg.name,
           file: opts.pkg.main,
@@ -79,7 +79,7 @@ export const createRollupConfig = (opts) => {
         },
       },
       {
-        input: 'src/index.ts',
+        input: input ? input : 'src/index.ts',
         output: {
           file: opts.pkg.module,
           format: 'esm',

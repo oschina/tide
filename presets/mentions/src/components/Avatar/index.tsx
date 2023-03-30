@@ -15,23 +15,28 @@ const Avatar = ({
 }) => {
   const matchFlag = 'no_portrait.png';
 
-  if (src && typeof src === 'string' && src.endsWith(matchFlag)) {
-    const showLetter = username.charAt(0).toUpperCase();
-    const backgroundColor = getTextAvatarColor(username);
+  if (
+    src &&
+    typeof src === 'string' &&
+    src.startsWith('http') &&
+    !src.endsWith(matchFlag)
+  ) {
     return (
-      <div
-        className={cls('gwe-member-avatar', className)}
-        style={{ backgroundColor }}
-      >
-        <span className="gwe-member-avatar__text">{showLetter}</span>
-      </div>
+      <span className={cls('gwe-member-avatar', className)}>
+        <img className="gwe-member-avatar__img" src={src} alt="" />
+      </span>
     );
   }
 
+  const showLetter = username.charAt(0).toUpperCase();
+  const backgroundColor = getTextAvatarColor(username);
   return (
-    <div className={cls('gwe-member-avatar', className)}>
-      <img className="gwe-member-avatar__img" src={src} alt="" />
-    </div>
+    <span
+      className={cls('gwe-member-avatar', className)}
+      style={{ backgroundColor }}
+    >
+      <span className="gwe-member-avatar__text">{showLetter}</span>
+    </span>
   );
 };
 

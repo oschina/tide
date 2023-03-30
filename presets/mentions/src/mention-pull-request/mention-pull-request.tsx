@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeAttributes } from '@tiptap/core';
+import { mergeAttributes, NodeViewRenderer } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {
   buildSuggestionOptions,
@@ -21,8 +21,13 @@ export const MentionPullRequestSuggestionPluginKey = new PluginKey(
   'mentionPullRequestSuggestion'
 );
 
+type MentionPullRequestOptions<T> = MentionOptions<T> & {
+  nodeView: NodeViewRenderer;
+  getLink: (path: string) => string;
+};
+
 export const MentionPullRequest = Mention.extend<
-  MentionOptions<MentionPullRequestItemDataType>
+  MentionPullRequestOptions<MentionPullRequestItemDataType>
 >({
   name: 'mentionPullRequest',
 
@@ -52,6 +57,8 @@ export const MentionPullRequest = Mention.extend<
           maxWidth: 400,
         },
       }),
+      getLink: (path) => path,
+      nodeView: ReactNodeViewRenderer(MentionPullRequestNodeView),
     };
   },
 
@@ -119,6 +126,6 @@ export const MentionPullRequest = Mention.extend<
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(MentionPullRequestNodeView);
+    return this.options.nodeView;
   },
 });

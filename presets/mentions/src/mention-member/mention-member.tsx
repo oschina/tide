@@ -21,6 +21,7 @@ export const MentionMemberSuggestionPluginKey = new PluginKey(
 
 type MentionMemberOptions<T> = MentionOptions<T> & {
   nodeView: NodeViewRenderer;
+  getLink: (path: string) => string;
 };
 
 export const MentionMember = Mention.extend<
@@ -49,6 +50,7 @@ export const MentionMember = Mention.extend<
           emptyRender: () => <MentionNoResult />,
         },
       }),
+      getLink: (path) => path,
       nodeView: ReactNodeViewRenderer(MentionMemberNodeView),
     };
   },

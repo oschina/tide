@@ -53,6 +53,7 @@ import type {
   MentionPullRequestItemDataType,
 } from '@gitee/wysiwyg-editor-presets-mentions';
 import { mockMention, mockAjaxImgUploader } from './default';
+import { pulls, issues, members } from '../utils/mentionLink';
 
 export type MentionType = {
   fetchMentionMember?: (
@@ -120,16 +121,19 @@ export const getExtensions = ({
       suggestion: {
         items: ({ query }) => fetchMentionMember(query),
       },
+      getLink: members.getLink,
     }),
     MentionIssue.configure({
       suggestion: {
         items: ({ query }) => fetchMentionIssue(query),
       },
+      getLink: issues.getLink,
     }),
     MentionPullRequest.configure({
       suggestion: {
         items: ({ query }) => fetchMentionPR(query),
       },
+      getLink: pulls.getLink,
     }),
     Emoji.configure({
       enableEmoticons: true,

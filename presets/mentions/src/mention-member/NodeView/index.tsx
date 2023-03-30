@@ -22,13 +22,10 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
   );
 
   const name =
-    user?.remark ||
-    user?.name ||
-    user?.username ||
-    node.attrs.name ||
-    node.attrs.username;
-
+    user?.name || user?.username || node.attrs.name || node.attrs.username;
   const avatar = user?.avatar_url;
+
+  const url = extension.options.getLink(node.attrs.url);
 
   return (
     <NodeViewWrapper
@@ -39,7 +36,7 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
     >
       <a
         className="gwe-mention-member__item"
-        href={node.attrs.url}
+        href={url}
         target="_blank"
         rel="noreferrer"
       >

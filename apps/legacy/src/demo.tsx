@@ -20,6 +20,9 @@ createEditor({
   options: {
     readOnly: false,
     defaultValue: defaultVal,
+    onReady: () => {
+      console.log('onReady');
+    },
     onFocus: () => {
       console.log('onFocus');
     },
@@ -29,22 +32,22 @@ createEditor({
     onChange: (e) => {
       localStorage.setItem('legacy-demo', JSON.stringify(e.getJSON()));
     },
+    onFullscreenChange: (bool) => {
+      console.log('----onFullscreenChange-----', bool);
+    },
     imageUpload: (file: File, progressCallback: (progress: number) => void) => {
       return Promise.resolve(
         'https://file.nancode.cn/1678359851942-284541675.jpg'
       );
     },
     fetchResources: async (query) => {
-      console.log(
-        '--------fetchResources------------------------',
-        query,
-        specifyResources
-      );
       await sleep(1000);
       return Promise.resolve(specifyResources) as any;
     },
     mention: {
       fetchMentionIssue: async (query) => {
+        console.log('fetchMentionIssue', query);
+        await sleep(1000);
         const res = await fetchMention('issues');
         const issue = res.map((i: any) => ({
           id: i.id,
@@ -53,6 +56,8 @@ createEditor({
         return issue;
       },
       fetchMentionMember: async (query) => {
+        console.log('fetchMentionIssue', query);
+        await sleep(1000);
         const res = await fetchMention('members');
         return res.map((i: any) => ({
           id: i.username,
@@ -64,6 +69,8 @@ createEditor({
         }));
       },
       fetchMentionPR: async (query) => {
+        console.log('fetchMentionIssue', query);
+        await sleep(1000);
         const res = await fetchMention('pullRequests');
         return res.map((i: any) => ({
           id: i.id,

@@ -246,6 +246,7 @@ importers:
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
       '@vitejs/plugin-react': ^3.0.0
+      ahooks: v3.7.6
       classnames: ^2.2.6
       copy-to-clipboard: ^3.3.3
       cross-env: ^7.0.3
@@ -304,6 +305,7 @@ importers:
       '@tiptap/extension-text': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
       '@tiptap/extension-text-align': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
       '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
+      ahooks: 3.7.6_react@16.14.0
       classnames: 2.3.2
       copy-to-clipboard: 3.3.3
       highlight.js: 11.7.0
@@ -366,7 +368,7 @@ importers:
   packages/extension-blockquote:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.15
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.16
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-blockquote': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -425,7 +427,7 @@ importers:
   packages/extension-bullet-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.15
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.16
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-bullet-list': ^2.0.0-beta.220
       eslint-config-custom: workspace:*
@@ -813,7 +815,7 @@ importers:
   packages/extension-ordered-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.15
+      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.16
       '@tiptap/core': ^2.0.0-beta.220
       '@tiptap/extension-ordered-list': ^2.0.0-beta.220
       eslint-config-custom: workspace:*

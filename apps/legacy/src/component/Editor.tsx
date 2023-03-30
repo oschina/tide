@@ -4,7 +4,6 @@ import React, {
   useEffect,
   useImperativeHandle,
   useRef,
-  useState,
 } from 'react';
 import type { Plugin } from '@tiptap/pm/state';
 import type {
@@ -25,7 +24,6 @@ import {
   EditorRemoteDataProvider,
   BulkFetcherRequestFunc,
 } from '@gitee/wysiwyg-editor-presets-mentions';
-import { useExternalLinkRedirect } from '../hooks/useExternalLinkRedirect';
 
 export type EditorContentProps = {
   className?: string;
@@ -73,7 +71,6 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
     const onChangeRef = useRef(onChange);
     onChangeRef.current = onChange;
 
-    const [ready, setReady] = useState(false);
     const editor = useEditor<MarkdownEditor, MarkdownEditorOptions>(
       MarkdownEditorClass,
       {
@@ -113,7 +110,6 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
             );
           }
           onReadyRef.current?.(e as MarkdownEditor);
-          setReady(true);
         },
         onUpdate: ({ editor }) => {
           onChangeRef.current?.(editor as MarkdownEditor);
@@ -132,12 +128,6 @@ const Editor = forwardRef<MarkdownEditor, EditorContentProps>(
       if (!editor || editor.isEditable === !readOnly) return;
       editor.setEditable(!readOnly);
     }, [readOnly]);
-
-    useExternalLinkRedirect(
-      editor?.options.element as HTMLDivElement,
-      editor && !editor.isEditable,
-      [defaultValue, ready]
-    );
 
     useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
 

@@ -1,18 +1,24 @@
 .gwe-member-avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  position: relative;
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
   background-color: #ccc;
   overflow: hidden;
-  display: inline-flex;
+  border-radius: 50%;
 }
 
 .gwe-member-avatar__text {
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.7em;
+  transform-origin: 0 center;
+  transform: translate(-50%, -50%);
   color: #fff;
 }
 
