@@ -36,6 +36,7 @@
     "@gitee/wysiwyg-editor-presets-mentions": "0.0.1"
   },
   "changesets": [
+    "bright-crabs-look",
     "curly-bugs-clean",
     "cyan-kiwis-travel",
     "dry-dryers-beg",

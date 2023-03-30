@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-react
 
+## 0.1.0-alpha.16
+
+### Minor Changes
+
+- Fix code-block, emoji, bubble-menu bugs.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-extension-bubble-menu@0.1.0-alpha.16
+
 ## 0.1.0-alpha.15
 
 ### Minor Changes
