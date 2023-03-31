@@ -10,7 +10,6 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    min-height: 300px;
 
     > * {
       &:first-child {
@@ -662,21 +661,40 @@
   img.ProseMirror-separator {
     display: none !important;
   }
+}
 
-  .mention-no-result {
-    font-size: 14px;
-    color: #ccc;
+.gwe-editor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &--fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    border: 0;
+  }
+
+  .gwe-content {
+    flex: 1;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .gwe-editor-popup {
+    position: relative;
+    overflow: hidden;
+    background-color: @popup-bg-color;
+    box-shadow: @popup-shadow-color;
+    border-radius: 4px;
   }
 }
 
-.gwe-editor--fullscreen {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background-color: #fff;
-}
