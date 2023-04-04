@@ -32,6 +32,67 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
     return ReactNodeViewRenderer(CodeBlockNodeView);
   },
 
+  addCommands() {
+    return {
+      ...this.parent?.(),
+      toggleCodeBlock:
+        (attributes) =>
+        ({ commands, editor, chain }) => {
+          const { state } = editor;
+          const { from, to } = state.selection;
+
+          // 如果选中范围是连续段落，则合并后转成一个 codeBlock
+          if (!isActive(state, this.name) && !state.selection.empty) {
+            let isSelectMultipleParagraphs = true;
+            const textArr: string[] = [];
+            state.doc.nodesBetween(from, to, (node, pos) => {
+              if (node.isInline) {
+                return false;
+              }
+              if (node.type.name !== 'paragraph') {
+                if (pos + 1 <= from && pos + node.nodeSize - 1 >= to) {
+                  // 不要返回 false, 否则会中断遍历子节点
+                  return;
+                } else {
+                  isSelectMultipleParagraphs = false;
+                  return false;
+                }
+              } else {
+                const selectedText = (node.textContent || '').slice(
+                  pos + 1 > from ? 0 : from - pos - 1,
+                  pos + node.nodeSize - 1 < to
+                    ? node.nodeSize - 1
+                    : to - pos - 1
+                );
+                textArr.push(selectedText || '');
+              }
+            });
+            if (isSelectMultipleParagraphs && textArr.length) {
+              return chain()
+                .command(({ state, tr }) => {
+                  tr.replaceRangeWith(
+                    from,
+                    to,
+                    this.type.create(
+                      attributes,
+                      state.schema.text(textArr.join('\n'))
+                    )
+                  );
+                  return true;
+                })
+                .setTextSelection({
+                  from: from + 2,
+                  to: from + 2,
+                })
+                .run();
+            }
+          }
+
+          return commands.toggleNode(this.name, 'paragraph', attributes);
+        },
+    };
+  },
+
   addKeyboardShortcuts() {
     return {
       ...this.parent?.(),
