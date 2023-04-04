@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-task-item
 
+## 0.1.0-alpha.17
+
+### Minor Changes
+
+- feat(code-block): 选区为连续多个段落时创建代码块将合并内容
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.17
+
 ## 0.1.0-alpha.16
 
 ### Minor Changes
