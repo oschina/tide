@@ -43,7 +43,7 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
 
           // 如果选中范围是连续段落，则合并后转成一个 codeBlock
           if (!isActive(state, this.name) && !state.selection.empty) {
-            let isSelectMultipleParagraphs = true;
+            let isSelectConsecutiveParagraphs = true;
             const textArr: string[] = [];
             state.doc.nodesBetween(from, to, (node, pos) => {
               if (node.isInline) {
@@ -54,7 +54,7 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
                   // 不要返回 false, 否则会中断遍历子节点
                   return;
                 } else {
-                  isSelectMultipleParagraphs = false;
+                  isSelectConsecutiveParagraphs = false;
                   return false;
                 }
               } else {
@@ -67,7 +67,8 @@ export const CodeBlock = CodeBlockLowlight.extend<CodeBlockOptions>({
                 textArr.push(selectedText || '');
               }
             });
-            if (isSelectMultipleParagraphs && textArr.length) {
+            // 仅处理选择连续多个段落的情况
+            if (isSelectConsecutiveParagraphs && textArr.length > 1) {
               return chain()
                 .command(({ state, tr }) => {
                   tr.replaceRangeWith(
