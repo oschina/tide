@@ -1,5 +1,11 @@
 # @gitee/wysiwyg-editor-extension-strike
 
+## 0.1.0-alpha.18
+
+### Minor Changes
+
+- Fix code-block select a empty paragraph throw error.
+
 ## 0.1.0-alpha.17
 
 ### Minor Changes

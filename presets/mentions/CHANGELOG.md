@@ -1,5 +1,20 @@
 # @gitee/wysiwyg-editor-presets-mentions
 
+## 0.1.0-alpha.3
+
+### Minor Changes
+
+- Fix code-block select a empty paragraph throw error.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.18
+  - @gitee/wysiwyg-editor-extension-bubble-menu@0.1.0-alpha.18
+  - @gitee/wysiwyg-editor-extension-mention@0.1.0-alpha.18
+  - @gitee/wysiwyg-editor-react@0.1.0-alpha.18
+  - @gitee/wysiwyg-editor-theme@0.1.0-alpha.18
+
 ## 0.1.0-alpha.2
 
 ### Minor Changes

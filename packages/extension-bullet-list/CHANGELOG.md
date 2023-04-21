@@ -1,5 +1,16 @@
 # @gitee/wysiwyg-editor-extension-bullet-list
 
+## 0.1.0-alpha.18
+
+### Minor Changes
+
+- Fix code-block select a empty paragraph throw error.
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/wysiwyg-editor-common@0.1.0-alpha.18
+
 ## 0.1.0-alpha.17
 
 ### Minor Changes
