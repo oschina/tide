@@ -30,6 +30,6 @@ git checkout master
 git worktree add apps/demo/dist demo-pages
 
 # 以后直接 构建部署
-pnpm build:demo
+pnpm build:app_demo
 pnpm pages
 ```
