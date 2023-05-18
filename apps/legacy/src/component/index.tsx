@@ -29,7 +29,6 @@ import {
 import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
 import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
 import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
-import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import type { Editor } from '@gitee/wysiwyg-editor-react';
 import EditorContent, { EditorContentProps } from './Editor';
 
@@ -51,7 +50,7 @@ export type EditorRenderProps = Omit<
   onFullscreenChange?: (fullscreen: boolean) => void;
 };
 
-export const LegacyEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
+export const LegacyEditor = forwardRef<Editor, EditorRenderProps>(
   (
     {
       className,
@@ -66,10 +65,10 @@ export const LegacyEditor = forwardRef<MarkdownEditor, EditorRenderProps>(
     },
     ref
   ) => {
-    const [editor, setEditor] = useState<MarkdownEditor | null>(null);
+    const [editor, setEditor] = useState<Editor | null>(null);
     const [fullscreen, setFullscreen] = useState(false);
 
-    useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
+    useImperativeHandle(ref, () => editor as Editor, [editor]);
 
     useUpdateEffect(() => {
       editorContentProps.onFullscreenChange?.(fullscreen);

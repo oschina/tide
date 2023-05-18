@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
-import { EditorEvents } from '@tiptap/core';
+import { Editor, EditorEvents } from '@tiptap/core';
 import throttle from 'lodash/throttle';
 
-const InspectPanel = ({ editor }: { editor: MarkdownEditor | null }) => {
+const InspectPanel = ({ editor }: { editor: Editor | null }) => {
   const [tab, setTab] = React.useState<'html' | 'json' | 'markdown'>('json');
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -19,7 +18,7 @@ const InspectPanel = ({ editor }: { editor: MarkdownEditor | null }) => {
           textareaRef.current.value = editor.getHTML();
           break;
         case 'markdown':
-          textareaRef.current.value = (editor as MarkdownEditor).getMarkdown();
+          textareaRef.current.value = editor.storage.markdown.getMarkdown();
           break;
         default:
       }

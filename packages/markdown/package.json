@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "tiptap-markdown": "^0.6.0",
+    "tiptap-markdown": "^0.7.2",
     "@babel/runtime-corejs3": "^7.21.0"
   },
   "devDependencies": {

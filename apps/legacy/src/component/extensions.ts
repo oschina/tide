@@ -149,6 +149,9 @@ export const getExtensions = ({
       },
     }),
     Markdown.configure({
+      linkify: true,
+      breaks: true,
+      tightLists: true,
       paste: true,
       copy: false,
     }),

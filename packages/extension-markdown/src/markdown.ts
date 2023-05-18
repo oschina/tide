@@ -1,7 +1,7 @@
 import { Plugin, PluginKey } from '@tiptap/pm/state';
-import { DOMParser, Slice } from '@tiptap/pm/model';
-import { elementFromString, Extension } from '@tiptap/core';
-import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
+import { DOMParser, Node, Slice } from '@tiptap/pm/model';
+import { elementFromString } from '@tiptap/core';
+import { Markdown as TiptapMarkdown } from 'tiptap-markdown';
 import { isInCode, isMarkdown } from './utils';
 
 export const ClipboardMarkdownHandlerPluginKey = new PluginKey(
@@ -9,17 +9,36 @@ export const ClipboardMarkdownHandlerPluginKey = new PluginKey(
 );
 
 export type MarkdownOptions = {
+  html?: boolean;
+  tightLists?: boolean;
+  tightListClass?: string;
+  bulletListMarker?: string;
+  linkify?: boolean;
+  breaks?: boolean;
   paste?: boolean;
   copy?: boolean;
 };
 
-export const Markdown = Extension.create<MarkdownOptions>({
+export const Markdown = TiptapMarkdown.extend<MarkdownOptions>({
   name: 'markdown',
 
   addOptions() {
     return {
+      ...this.parent?.(),
       paste: true,
       copy: true,
+    };
+  },
+
+  onBeforeCreate() {
+    this.parent?.();
+
+    console.log('this.editor.storage.markdown', this.editor.storage.markdown);
+
+    this.editor.storage.markdown.getMarkdown = (content?: Node) => {
+      return this.editor.storage.markdown.serializer.serialize(
+        content ?? this.editor.state.doc
+      );
     };
   },
 
@@ -54,12 +73,9 @@ export const Markdown = Extension.create<MarkdownOptions>({
                 }
 
                 if (isMarkdown(text)) {
-                  const html = (this.editor as MarkdownEditor).parseMarkdown(
-                    text,
-                    {
-                      inline: false,
-                    }
-                  );
+                  const html = this.editor.storage.markdown.parse(text, {
+                    inline: false,
+                  });
                   if (!html || typeof html !== 'string') return false;
                   const parser = DOMParser.fromSchema(this.editor.schema);
                   const slice = parser.parse(
@@ -91,7 +107,7 @@ export const Markdown = Extension.create<MarkdownOptions>({
                 if (!doc) {
                   return '';
                 }
-                return (this.editor as MarkdownEditor).getMarkdown(doc);
+                return this.editor.storage.markdown.getMarkdown(doc);
               },
         },
       }),
