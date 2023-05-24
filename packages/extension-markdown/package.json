@@ -19,7 +19,6 @@
     "tiptap-markdown": "^0.7.2"
   },
   "devDependencies": {
-    "@gitee/wysiwyg-editor-markdown": "workspace:*",
     "@tiptap/pm": "^2.0.3",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",

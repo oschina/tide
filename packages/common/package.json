@@ -19,7 +19,6 @@
     "zeed-dom": "^0.10.4"
   },
   "devDependencies": {
-    "@gitee/wysiwyg-editor-markdown": "workspace:*",
     "@tiptap/pm": "^2.0.3",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",

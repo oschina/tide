@@ -92,7 +92,6 @@ importers:
       '@gitee/wysiwyg-editor-extension-table': workspace:*
       '@gitee/wysiwyg-editor-extension-task-item': workspace:*
       '@gitee/wysiwyg-editor-extension-uploader': workspace:*
-      '@gitee/wysiwyg-editor-markdown': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tippyjs/react': ^4.2.6
@@ -156,7 +155,6 @@ importers:
       '@gitee/wysiwyg-editor-extension-table': link:../../packages/extension-table
       '@gitee/wysiwyg-editor-extension-task-item': link:../../packages/extension-task-item
       '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
-      '@gitee/wysiwyg-editor-markdown': link:../../packages/markdown
       '@gitee/wysiwyg-editor-react': link:../../packages/react
       '@gitee/wysiwyg-editor-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
@@ -223,7 +221,6 @@ importers:
       '@gitee/wysiwyg-editor-extension-table': workspace:*
       '@gitee/wysiwyg-editor-extension-task-item': workspace:*
       '@gitee/wysiwyg-editor-extension-uploader': workspace:*
-      '@gitee/wysiwyg-editor-markdown': workspace:*
       '@gitee/wysiwyg-editor-presets-mentions': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
@@ -287,7 +284,6 @@ importers:
       '@gitee/wysiwyg-editor-extension-table': link:../../packages/extension-table
       '@gitee/wysiwyg-editor-extension-task-item': link:../../packages/extension-task-item
       '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
-      '@gitee/wysiwyg-editor-markdown': link:../../packages/markdown
       '@gitee/wysiwyg-editor-presets-mentions': link:../../presets/mentions
       '@gitee/wysiwyg-editor-react': link:../../packages/react
       '@gitee/wysiwyg-editor-theme': link:../../packages/theme
@@ -333,7 +329,6 @@ importers:
   packages/common:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-markdown': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/pm': ^2.0.3
       eslint-config-custom: workspace:*
@@ -345,7 +340,6 @@ importers:
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       zeed-dom: 0.10.4
     devDependencies:
-      '@gitee/wysiwyg-editor-markdown': link:../markdown
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -710,7 +704,6 @@ importers:
   packages/extension-markdown:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-markdown': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/pm': ^2.0.3
       eslint-config-custom: workspace:*
@@ -722,7 +715,6 @@ importers:
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       tiptap-markdown: 0.7.2_@tiptap+core@2.0.3
     devDependencies:
-      '@gitee/wysiwyg-editor-markdown': link:../markdown
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -933,27 +925,6 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       tslib: 2.4.1
-      typescript: 4.9.3
-
-  packages/markdown:
-    specifiers:
-      '@babel/runtime-corejs3': ^7.21.0
-      '@tiptap/core': ^2.0.3
-      '@tiptap/pm': 2.0.3
-      eslint-config-custom: workspace:*
-      markdown-it: ^13.0.1
-      tiptap-markdown: ^0.7.2
-      tsconfig: workspace:*
-      typescript: ^4.5.2
-    dependencies:
-      '@babel/runtime-corejs3': 7.21.0
-      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
-      tiptap-markdown: 0.7.2_@tiptap+core@2.0.3
-    devDependencies:
-      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
-      eslint-config-custom: link:../eslint-config-custom
-      markdown-it: 13.0.1
-      tsconfig: link:../tsconfig
       typescript: 4.9.3
 
   packages/react:

@@ -83,7 +83,7 @@ export const LegacyEditor = forwardRef<Editor, EditorRenderProps>(
         )}
         style={style}
       >
-        <MenuBarContextProvider editor={editor as unknown as Editor}>
+        <MenuBarContextProvider editor={editor}>
           {editor && !(editorContentProps?.readOnly && !readOnlyShowMenu) && (
             <MenuBar
               className={classNames(menuClassName, {

@@ -56,7 +56,6 @@ import {
   Content,
   Editor as TEditor,
   EditorContent as TEditorContent,
-  EditorOptions as TEditorOptions,
   useEditor,
 } from '@gitee/wysiwyg-editor-react';
 import { MentionMember } from './extensions/mention-member';
@@ -165,7 +164,7 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
       }
     );
 
-    const editor = useEditor<TEditor, TEditorOptions>(
+    const editor = useEditor(
       TEditor,
       {
         extensions: [
@@ -283,11 +282,7 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
     }
 
     return (
-      <TEditorContent
-        className={fullClassName}
-        style={style}
-        editor={editor as unknown as TEditor}
-      >
+      <TEditorContent className={fullClassName} style={style} editor={editor}>
         {children}
       </TEditorContent>
     );

@@ -33,7 +33,6 @@
     "@gitee/wysiwyg-editor-extension-table": "workspace:*",
     "@gitee/wysiwyg-editor-extension-task-item": "workspace:*",
     "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
-    "@gitee/wysiwyg-editor-markdown": "workspace:*",
     "@gitee/wysiwyg-editor-react": "workspace:*",
     "@gitee/wysiwyg-editor-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",

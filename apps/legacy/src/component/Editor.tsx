@@ -9,8 +9,7 @@ import type { Plugin } from '@tiptap/pm/state';
 import {
   Content,
   Editor as TEditor,
-  EditorContent as TEditorContent,
-  EditorOptions as TEditorOptions,
+  EditorContent,
   useEditor,
 } from '@gitee/wysiwyg-editor-react';
 import { ExtensionsOpts, getExtensions } from './extensions';
@@ -63,7 +62,7 @@ const Editor = forwardRef<TEditor, EditorContentProps>(
     const onChangeRef = useRef(onChange);
     onChangeRef.current = onChange;
 
-    const editor = useEditor<TEditor, TEditorOptions>(
+    const editor = useEditor(
       TEditor,
       {
         content: defaultValue,
@@ -126,13 +125,9 @@ const Editor = forwardRef<TEditor, EditorContentProps>(
 
     return (
       <EditorRemoteDataProvider fetchResources={fetchResources}>
-        <TEditorContent
-          className={fullClassName}
-          style={style}
-          editor={editor as unknown as TEditor}
-        >
+        <EditorContent className={fullClassName} style={style} editor={editor}>
           {children}
-        </TEditorContent>
+        </EditorContent>
       </EditorRemoteDataProvider>
     );
   }
