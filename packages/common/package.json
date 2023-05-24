@@ -15,9 +15,8 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@tiptap/html": "^2.0.3",
     "@babel/runtime-corejs3": "^7.21.0",
-    "zeed-dom": "^0.9.26"
+    "zeed-dom": "^0.10.4"
   },
   "devDependencies": {
     "@gitee/wysiwyg-editor-markdown": "workspace:*",
