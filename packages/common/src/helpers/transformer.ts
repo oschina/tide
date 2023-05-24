@@ -59,7 +59,7 @@ export class Transformer {
 
   // Markdown to HTML
   markdownToHTML(markdown: string, editor: Editor): string {
-    return editor.storage.markdown.parse(markdown);
+    return editor.storage.markdown?.parser?.parse?.(markdown) || '';
   }
 
   // Markdown to ProseMirror Node
@@ -74,7 +74,7 @@ export class Transformer {
 
   // ProseMirror Node to Markdown
   nodeToMarkdown(node: ProseMirrorNode, editor: Editor): string {
-    return editor.storage.markdown.getMarkdown(node);
+    return editor.storage.markdown?.getMarkdown?.(node) || '';
   }
 
   // JSONContent to Markdown

@@ -18,7 +18,8 @@ const InspectPanel = ({ editor }: { editor: Editor | null }) => {
           textareaRef.current.value = editor.getHTML();
           break;
         case 'markdown':
-          textareaRef.current.value = editor.storage.markdown.getMarkdown();
+          textareaRef.current.value =
+            editor.storage.markdown?.getMarkdown?.() || '';
           break;
         default:
       }
@@ -73,11 +74,20 @@ const InspectPanel = ({ editor }: { editor: Editor | null }) => {
       <textarea
         ref={textareaRef}
         className={tab === 'json' ? 'json' : 'html'}
-        // onChange={(e) => {
-        //   // 当图片数据量 base64 字符太大时会卡顿
-        //   // todo sync editor
-        //   console.log('--------onChange----', e.target.value);
-        // }}
+        onChange={(e) => {
+          // 当图片数据量 base64 字符太大时会卡顿
+          // todo sync editor
+          console.log('--------onChange----', e.target.value);
+          if (tab === 'json') {
+            try {
+              editor?.commands.setContent(JSON.parse(e.target.value));
+            } catch (error) {
+              console.log(error);
+            }
+          } else {
+            editor?.commands.setContent(e.target.value);
+          }
+        }}
       />
     </div>
   );
