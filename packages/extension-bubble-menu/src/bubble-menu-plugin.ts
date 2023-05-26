@@ -6,7 +6,6 @@ import {
 } from '@tiptap/core';
 import { EditorState, Plugin, PluginKey, PluginView } from '@tiptap/pm/state';
 import { EditorView } from '@tiptap/pm/view';
-import debounce from 'lodash/debounce';
 import tippy, { Instance, Props, sticky } from 'tippy.js';
 
 export interface BubbleMenuPluginProps {
@@ -45,6 +44,8 @@ export class BubbleMenuView implements PluginView {
   public tippyOptions?: Partial<Props>;
 
   public updateDelay: number;
+
+  private updateDebounceTimer: number | undefined;
 
   public shouldShow: Exclude<BubbleMenuPluginProps['shouldShow'], null> = ({
     view,
@@ -179,17 +180,43 @@ export class BubbleMenuView implements PluginView {
       state.selection.$from.pos !== state.selection.$to.pos;
 
     if (this.updateDelay > 0 && hasValidSelection) {
-      debounce(this.updateHandler, this.updateDelay)(view, oldState);
-    } else {
-      this.updateHandler(view, oldState);
+      this.handleDebouncedUpdate(view, oldState);
+      return;
     }
+
+    const selectionChanged = !oldState?.selection.eq(view.state.selection);
+    const docChanged = !oldState?.doc.eq(view.state.doc);
+
+    this.updateHandler(view, selectionChanged, docChanged, oldState);
   }
 
-  updateHandler = (view: EditorView, oldState?: EditorState) => {
+  handleDebouncedUpdate = (view: EditorView, oldState?: EditorState) => {
+    const selectionChanged = !oldState?.selection.eq(view.state.selection);
+    const docChanged = !oldState?.doc.eq(view.state.doc);
+
+    if (!selectionChanged && !docChanged) {
+      return;
+    }
+
+    if (this.updateDebounceTimer) {
+      clearTimeout(this.updateDebounceTimer);
+    }
+
+    this.updateDebounceTimer = window.setTimeout(() => {
+      this.updateHandler(view, selectionChanged, docChanged, oldState);
+    }, this.updateDelay);
+  };
+
+  updateHandler = (
+    view: EditorView,
+    selectionChanged: boolean,
+    docChanged: boolean,
+    oldState?: EditorState
+  ) => {
     const { state, composing } = view;
-    const { doc, selection } = state;
-    const isSame =
-      oldState && oldState.doc.eq(doc) && oldState.selection.eq(selection);
+    const { selection } = state;
+
+    const isSame = !selectionChanged && !docChanged;
 
     if (composing || isSame) {
       return;
@@ -222,7 +249,15 @@ export class BubbleMenuView implements PluginView {
         this.tippyOptions?.getReferenceClientRect ||
         (() => {
           if (isNodeSelection(state.selection)) {
-            const node = view.nodeDOM(from) as HTMLElement;
+            let node = view.nodeDOM(from) as HTMLElement;
+
+            const nodeViewWrapper = node.dataset.nodeViewWrapper
+              ? node
+              : node.querySelector('[data-node-view-wrapper]');
+
+            if (nodeViewWrapper) {
+              node = nodeViewWrapper.firstChild as HTMLElement;
+            }
 
             if (node) {
               return node.getBoundingClientRect();

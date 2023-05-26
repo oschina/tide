@@ -1,100 +1,51 @@
-import { Plugin, PluginKey } from '@tiptap/pm/state';
-import { DOMParser, Slice } from '@tiptap/pm/model';
-import { elementFromString, Extension } from '@tiptap/core';
-import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
-import { isInCode, isMarkdown } from './utils';
+import { PluginKey } from '@tiptap/pm/state';
+import { Node } from '@tiptap/pm/model';
+import { Markdown as TiptapMarkdown } from 'tiptap-markdown';
+import { MarkdownClipboardCopy } from './clipboardCopy';
+import { MarkdownClipboardPaste } from './clipboardPaste';
 
 export const ClipboardMarkdownHandlerPluginKey = new PluginKey(
   'clipboardMarkdownHandler'
 );
 
 export type MarkdownOptions = {
+  html?: boolean;
+  tightLists?: boolean;
+  tightListClass?: string;
+  bulletListMarker?: string;
+  linkify?: boolean;
+  breaks?: boolean;
   paste?: boolean;
   copy?: boolean;
 };
 
-export const Markdown = Extension.create<MarkdownOptions>({
+export const Markdown = TiptapMarkdown.extend<MarkdownOptions>({
   name: 'markdown',
+
+  priority: 50,
 
   addOptions() {
     return {
+      ...this.parent?.(),
       paste: true,
       copy: true,
     };
   },
 
-  addProseMirrorPlugins() {
+  onBeforeCreate() {
+    this.parent?.();
+
+    this.editor.storage.markdown.getMarkdown = (content?: Node) => {
+      return this.editor.storage.markdown.serializer.serialize(
+        content ?? this.editor.state.doc
+      );
+    };
+  },
+
+  addExtensions() {
     return [
-      new Plugin({
-        key: ClipboardMarkdownHandlerPluginKey,
-        props: {
-          handlePaste: !this.options.paste
-            ? undefined
-            : (view, event) => {
-                const editable = this.editor.isEditable;
-                const { clipboardData } = event;
-                if (
-                  !editable ||
-                  !clipboardData ||
-                  clipboardData.files.length !== 0
-                ) {
-                  return false;
-                }
-
-                const text = clipboardData.getData('text/plain');
-                const html = clipboardData.getData('text/html');
-                if (html.length > 0) {
-                  return false;
-                }
-
-                if (isInCode(view.state)) {
-                  event.preventDefault();
-                  view.dispatch(view.state.tr.insertText(text));
-                  return true;
-                }
-
-                if (isMarkdown(text)) {
-                  const html = (this.editor as MarkdownEditor).parseMarkdown(
-                    text,
-                    {
-                      inline: false,
-                    }
-                  );
-                  if (!html || typeof html !== 'string') return false;
-                  const parser = DOMParser.fromSchema(this.editor.schema);
-                  const slice = parser.parse(
-                    elementFromString(html),
-                    {}
-                  ).content;
-                  const contentSlice = view.state.selection.content();
-                  view.dispatch(
-                    view.state.tr.replaceSelection(
-                      new Slice(
-                        slice,
-                        contentSlice.openStart,
-                        contentSlice.openEnd
-                      )
-                    )
-                  );
-                  return true;
-                }
-
-                return false;
-              },
-          clipboardTextSerializer: !this.options.copy
-            ? undefined
-            : (slice) => {
-                const doc = this.editor.schema.topNodeType.createAndFill(
-                  undefined,
-                  slice.content
-                );
-                if (!doc) {
-                  return '';
-                }
-                return (this.editor as MarkdownEditor).getMarkdown(doc);
-              },
-        },
-      }),
+      ...(this.options.copy ? [MarkdownClipboardCopy] : []),
+      ...(this.options.paste ? [MarkdownClipboardPaste] : []),
     ];
   },
 });

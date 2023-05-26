@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 import lz from 'lz-string';
 import copy from 'copy-to-clipboard';
 import applyDevTools from 'prosemirror-dev-tools';
 import throttle from 'lodash/throttle';
+import { Editor, EditorEvents } from '@tiptap/core';
 
 import './index.less';
-import { EditorEvents } from '@tiptap/core';
 
 const localStorageKey = 'wysiwyg-editor-history';
 
@@ -15,7 +14,7 @@ const HeaderBar = ({
   editable,
   onEditableChange,
 }: {
-  editor: MarkdownEditor | null;
+  editor: Editor | null;
   editable: boolean;
   onEditableChange: (v: boolean) => void;
 }) => {

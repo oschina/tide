@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
+import { Editor } from '@tiptap/core';
 import HeaderBar from './components/HeaderBar';
 import InspectPanel from './components/InspectPanel';
 import { WysiwygEditor } from './components/Editor';
@@ -10,7 +10,7 @@ import './index.less';
 console.log('BUILD_TIME：', __BUILD_TIME__);
 
 function App() {
-  const [editor, setEditor] = useState<MarkdownEditor | null>(null);
+  const [editor, setEditor] = useState<Editor | null>(null);
   const [editable, setEditable] = useState(true);
 
   return (

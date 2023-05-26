@@ -2,8 +2,7 @@ import React from 'react';
 import { Editor, isTextSelection } from '@tiptap/core';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
-import { Bold, Code, Italic, Link, Strike } from './components/items';
-import { MenuBarDivider } from './components/MenuBarDivider';
+import { Bold, Code, Italic, Link, Strike, MenuBarDivider } from './components';
 
 export type TextBubbleMenuProps = {
   editor: Editor;

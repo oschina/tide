@@ -48,19 +48,12 @@ import {
   defaultImgUploader,
 } from '@gitee/wysiwyg-editor-extension-uploader';
 import {
-  MarkdownEditor,
-  createMarkdownEditor,
-} from '@gitee/wysiwyg-editor-markdown';
-import type {
-  MarkdownEditorOptions,
-  Content,
-} from '@gitee/wysiwyg-editor-markdown';
-import {
   Commands,
   HighPriorityKeymap,
   LowPriorityKeymap,
 } from '@gitee/wysiwyg-editor-common';
 import {
+  Content,
   Editor as TEditor,
   EditorContent as TEditorContent,
   useEditor,
@@ -78,16 +71,14 @@ export type EditorContentProps = {
   readOnly?: boolean;
   readOnlyEmptyView?: React.ReactNode;
   children?: React.ReactNode;
-  onChange?: (doc: JSONContent, editor: MarkdownEditor) => void;
+  onChange?: (doc: JSONContent, editor: TEditor) => void;
   onFocus?: () => void;
   onBlur?: () => void;
-  onReady?: (editor: MarkdownEditor) => void;
+  onReady?: (editor: TEditor) => void;
   onImageUploading?: (isUploading: boolean) => void;
 };
 
-const MarkdownEditorClass = createMarkdownEditor(TEditor);
-
-const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
+const EditorContent = forwardRef<TEditor, EditorContentProps>(
   (
     {
       className,
@@ -173,14 +164,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
       }
     );
 
-    const editor = useEditor<MarkdownEditor, MarkdownEditorOptions>(
-      MarkdownEditorClass,
+    const editor = useEditor(
+      TEditor,
       {
-        markdown: {
-          linkify: true,
-          breaks: true,
-          tightLists: true,
-        },
         extensions: [
           Commands,
           HighPriorityKeymap,
@@ -235,6 +221,9 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
             },
           }),
           Markdown.configure({
+            linkify: true,
+            breaks: true,
+            tightLists: true,
             paste: true,
             copy: false,
           }),
@@ -267,7 +256,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
               })
             );
           }
-          onReadyRef.current?.(e as MarkdownEditor);
+          onReadyRef.current?.(e as TEditor);
         },
         onFocus: () => {
           onFocusRef.current?.();
@@ -284,7 +273,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
       editor.setEditable(!readOnly);
     }, [readOnly]);
 
-    useImperativeHandle(ref, () => editor as MarkdownEditor, [editor]);
+    useImperativeHandle(ref, () => editor, [editor]);
 
     const fullClassName = classNames('gwe-content', className);
 
@@ -293,11 +282,7 @@ const EditorContent = forwardRef<MarkdownEditor, EditorContentProps>(
     }
 
     return (
-      <TEditorContent
-        className={fullClassName}
-        style={style}
-        editor={editor as unknown as TEditor}
-      >
+      <TEditorContent className={fullClassName} style={style} editor={editor}>
         {children}
       </TEditorContent>
     );

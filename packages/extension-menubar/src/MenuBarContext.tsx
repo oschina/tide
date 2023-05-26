@@ -8,7 +8,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Editor } from '@gitee/wysiwyg-editor-react';
+import type { Editor } from '@tiptap/core';
 
 export type MenuBarContextType = {
   editor: Editor;

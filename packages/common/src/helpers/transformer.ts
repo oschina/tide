@@ -1,4 +1,4 @@
-import { Extension, getSchema, JSONContent } from '@tiptap/core';
+import { Editor, Extension, getSchema, JSONContent } from '@tiptap/core';
 import {
   Node as ProseMirrorNode,
   Schema,
@@ -7,7 +7,6 @@ import {
   ParseOptions,
 } from '@tiptap/pm/model';
 import { parseHTML, createHTMLDocument, VHTMLDocument } from 'zeed-dom';
-import type { MarkdownEditor } from '@gitee/wysiwyg-editor-markdown';
 
 export class Transformer {
   schema: Schema;
@@ -59,37 +58,37 @@ export class Transformer {
   }
 
   // Markdown to HTML
-  markdownToHTML(markdown: string, editor: MarkdownEditor): string {
-    return editor.parseMarkdown(markdown);
+  markdownToHTML(markdown: string, editor: Editor): string {
+    return editor.storage.markdown?.parser?.parse?.(markdown) || '';
   }
 
   // Markdown to ProseMirror Node
-  markdownToNode(markdown: string, editor: MarkdownEditor): ProseMirrorNode {
+  markdownToNode(markdown: string, editor: Editor): ProseMirrorNode {
     return this.htmlToNode(this.markdownToHTML(markdown, editor));
   }
 
   // Markdown to JSONContent
-  markdownToJSON(markdown: string, editor: MarkdownEditor): JSONContent {
+  markdownToJSON(markdown: string, editor: Editor): JSONContent {
     return this.markdownToNode(markdown, editor).toJSON();
   }
 
   // ProseMirror Node to Markdown
-  nodeToMarkdown(node: ProseMirrorNode, editor: MarkdownEditor): string {
-    return editor.getMarkdown(node);
+  nodeToMarkdown(node: ProseMirrorNode, editor: Editor): string {
+    return editor.storage.markdown?.getMarkdown?.(node) || '';
   }
 
   // JSONContent to Markdown
-  jsonToMarkdown(doc: JSONContent, editor: MarkdownEditor): string {
+  jsonToMarkdown(doc: JSONContent, editor: Editor): string {
     return this.nodeToMarkdown(this.jsonToNode(doc), editor);
   }
 
   // HTML to Markdown
-  htmlToMarkdown(html: string, editor: MarkdownEditor): string {
+  htmlToMarkdown(html: string, editor: Editor): string {
     return this.nodeToMarkdown(this.htmlToNode(html), editor);
   }
 
   // Markdown to Markdown
-  markdownToMarkdown(markdown: string, editor: MarkdownEditor): string {
+  markdownToMarkdown(markdown: string, editor: Editor): string {
     return this.nodeToMarkdown(this.markdownToNode(markdown, editor), editor);
   }
 
