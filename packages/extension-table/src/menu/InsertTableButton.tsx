@@ -40,7 +40,7 @@ export const InsertTableButton = forwardRef<
                 editor
                   ?.chain()
                   .focus()
-                  .insertTable({
+                  .insertTable?.({
                     rows: size.rows,
                     cols: size.columns,
                     withHeaderRow: false,
@@ -70,3 +70,5 @@ export const InsertTableButton = forwardRef<
     </Tippy>
   );
 });
+
+InsertTableButton.displayName = 'InsertTableButton';

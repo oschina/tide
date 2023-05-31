@@ -20,13 +20,15 @@ export const OrderedList: React.FC<OrderedListProps> = ({
 }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'orderedList'),
-    disabled: () => !editor.can().chain().focus().toggleOrderedList().run(),
+    disabled: () =>
+      !editor.state.schema.nodes.orderedList ||
+      !editor.can().chain().focus().toggleOrderedList?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `有序列表 (${command} + Shift + 7)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleOrderedList().run()}
+          onClick={() => editor?.chain().focus().toggleOrderedList?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

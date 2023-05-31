@@ -139,7 +139,7 @@
     cursor: pointer;
     transition: all 0.2s;
 
-    &:hover:not(.gwe-dropdown-menu__item--active) {
+    &:hover:not(.gwe-dropdown-menu__item--active):not(.gwe-dropdown-menu__item--disabled) {
       background-color: @select-hover-bg-color;
       color: @select-hover-color;
     }

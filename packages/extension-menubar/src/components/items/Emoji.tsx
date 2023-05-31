@@ -16,7 +16,9 @@ export type EmojiProps = {
 export const Emoji: React.FC<EmojiProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'emoji'),
-    disabled: () => !editor.can().chain().focus().insertEmoji('smile').run(),
+    disabled: () =>
+      !editor.state.schema.nodes.emoji ||
+      !editor.can().chain().focus().insertEmoji?.('smile').run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>

@@ -20,13 +20,15 @@ export const TaskList: React.FC<TaskListProps> = ({
 }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'taskList'),
-    disabled: () => !editor.can().chain().focus().toggleTaskList().run(),
+    disabled: () =>
+      !editor.state.schema.nodes.taskList ||
+      !editor.can().chain().focus().toggleTaskList?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `任务列表 (${command} + Shift + 9)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleTaskList().run()}
+          onClick={() => editor?.chain().focus().toggleTaskList?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

@@ -20,13 +20,15 @@ export const HorizontalRule: React.FC<HorizontalRuleProps> = ({
 }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'horizontalRule'),
-    disabled: () => !editor.can().chain().focus().setHorizontalRule().run(),
+    disabled: () =>
+      !editor.state.schema.nodes.horizontalRule ||
+      !editor.can().chain().focus().setHorizontalRule?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `分割线 (${command} + ${option} + S)`}>
         <Button
-          onClick={() => editor?.chain().focus().setHorizontalRule().run()}
+          onClick={() => editor?.chain().focus().setHorizontalRule?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

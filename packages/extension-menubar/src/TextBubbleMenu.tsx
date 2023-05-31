@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Editor, isTextSelection } from '@tiptap/core';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
@@ -9,6 +9,32 @@ export type TextBubbleMenuProps = {
 };
 
 export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
+  const { bold, italic, strike, link, code } = editor.state.schema.marks;
+
+  if (!bold && !italic && !strike && !link && !code) {
+    return null;
+  }
+
+  const content = useMemo(() => {
+    return [
+      [
+        bold && <Bold key="bold" />,
+        italic && <Italic key="italic" />,
+        strike && <Strike key="strike" />,
+        code && <Code key="code" />,
+      ],
+      [link && <Link key="link" />],
+    ]
+      .map((group) => group.filter(Boolean))
+      .filter((group) => group.length > 0)
+      .map((group, index, items) => (
+        <React.Fragment key={index}>
+          {group}
+          {index < items.length - 1 && <MenuBarDivider />}
+        </React.Fragment>
+      ));
+  }, [bold, italic, strike, link, code]);
+
   return (
     <BubbleMenu
       editor={editor}
@@ -44,14 +70,7 @@ export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
         return true;
       }}
     >
-      <div className="gwe-menu-bar gwe-menu-bar-bubble">
-        <Bold />
-        <Italic />
-        <Strike />
-        <Code />
-        <MenuBarDivider />
-        <Link />
-      </div>
+      <div className="gwe-menu-bar gwe-menu-bar-bubble">{content}</div>
     </BubbleMenu>
   );
 };

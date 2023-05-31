@@ -16,13 +16,15 @@ export type BoldProps = {
 export const Bold: React.FC<BoldProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'bold'),
-    disabled: () => !editor.can().chain().focus().toggleBold().run(),
+    disabled: () =>
+      !editor.state.schema.marks.bold ||
+      !editor.can().chain().focus().toggleBold?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `加粗 (${command} + B)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleBold().run()}
+          onClick={() => editor?.chain().focus().toggleBold?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

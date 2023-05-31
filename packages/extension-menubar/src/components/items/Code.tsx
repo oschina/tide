@@ -16,13 +16,15 @@ export type CodeProps = {
 export const Code: React.FC<CodeProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'code'),
-    disabled: () => !editor.can().chain().focus().toggleCode().run(),
+    disabled: () =>
+      !editor.state.schema.marks.code ||
+      !editor.can().chain().focus().toggleCode?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `行内代码 (${command} + E)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleCode().run()}
+          onClick={() => editor?.chain().focus().toggleCode?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

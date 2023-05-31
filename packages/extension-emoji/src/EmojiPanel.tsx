@@ -241,7 +241,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
     if (props.command && typeof props.command === 'function') {
       props.command({ name: emoji.name } as any);
     } else {
-      editor?.commands.insertEmoji(emoji.name);
+      editor?.commands.insertEmoji?.(emoji.name);
     }
     props.onSelect?.(emoji);
     const nameList = saveEmojiToStorage(emoji);

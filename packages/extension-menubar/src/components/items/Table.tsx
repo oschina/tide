@@ -16,7 +16,9 @@ export type TableProps = {
 export const Table: React.FC<TableProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'table'),
-    disabled: () => !editor.can().chain().focus().insertTable().run(),
+    disabled: () =>
+      !editor.state.schema.nodes.table ||
+      !editor.can().chain().focus().insertTable?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>

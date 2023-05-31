@@ -16,13 +16,17 @@ export type LinkProps = {
 export const Link: React.FC<LinkProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'link'),
-    disabled: () => !editor.can().chain().focus().toggleMark('link').run(),
+    disabled: () =>
+      !editor.state.schema.marks.link ||
+      !editor.can().chain().focus().toggleMark('link').run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `链接 (${command} + K)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleLink({ href: '' }).run()}
+          onClick={() =>
+            editor?.chain().focus().toggleLink?.({ href: '' }).run()
+          }
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

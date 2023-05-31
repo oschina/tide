@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import Tippy from '@tippyjs/react';
-import { Level } from '@tiptap/extension-heading';
+import type { Level } from '@tiptap/extension-heading';
 import { IconCaretDown } from '@gitee/icons-react';
 import { isActive } from '@gitee/wysiwyg-editor-common';
 import { MenuBarItem } from '../MenuBarItem';
@@ -22,7 +22,8 @@ export const Heading: React.FC = () => {
       map[`heading${level}IsActive`] = () =>
         isActive(editor.state, 'heading', { level });
       map[`heading${level}Disabled`] = () =>
-        !editor.can().toggleHeading({ level });
+        !editor.state.schema.nodes.heading ||
+        !editor.can().toggleHeading?.({ level });
     });
     return map;
   });
@@ -52,7 +53,10 @@ export const Heading: React.FC = () => {
             <div className="gwe-dropdown-menu__content">
               <div
                 onClick={() => {
-                  if (!editor.can().chain().focus().setParagraph().run()) {
+                  if (
+                    statusMap?.paragraphIsDisabled ||
+                    !editor.can().chain().focus().setParagraph().run()
+                  ) {
                     return false;
                   }
                   editor.chain().focus().setParagraph().run();
@@ -77,6 +81,7 @@ export const Heading: React.FC = () => {
                   key={level}
                   onClick={() => {
                     if (
+                      statusMap?.[`heading${level}Disabled`] ||
                       !editor
                         .can()
                         .chain()

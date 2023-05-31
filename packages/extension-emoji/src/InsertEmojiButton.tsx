@@ -40,3 +40,5 @@ export const InsertEmojiButton = forwardRef<
     </Tippy>
   );
 });
+
+InsertEmojiButton.displayName = 'InsertEmojiButton';

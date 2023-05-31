@@ -14,13 +14,13 @@ export type RedoProps = {
 
 export const Redo: React.FC<RedoProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
-    disabled: () => !editor.can().chain().focus().redo().run(),
+    disabled: () => !editor.can().chain().focus().redo?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `重做 (${command} + Shift + Z)`}>
         <Button
-          onClick={() => editor.chain().focus().redo().run()}
+          onClick={() => editor.chain().focus().redo?.().run()}
           disabled={statusMap?.disabled}
         >
           <IconRedoBold />

@@ -20,13 +20,15 @@ export const BulletList: React.FC<BulletListProps> = ({
 }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'bulletList'),
-    disabled: () => !editor.can().chain().focus().toggleBulletList().run(),
+    disabled: () =>
+      !editor.state.schema.nodes.bulletList ||
+      !editor.can().chain().focus().toggleBulletList?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `无序列表 (${command} + Shift + 8)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleBulletList().run()}
+          onClick={() => editor?.chain().focus().toggleBulletList?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >
