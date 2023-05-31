@@ -43,10 +43,7 @@ import {
 } from '@gitee/wysiwyg-editor-extension-emoji';
 import { HorizontalRule } from '@gitee/wysiwyg-editor-extension-horizontal-rule';
 import { Markdown } from '@gitee/wysiwyg-editor-extension-markdown';
-import {
-  Uploader,
-  defaultImgUploader,
-} from '@gitee/wysiwyg-editor-extension-uploader';
+import { Uploader } from '@gitee/wysiwyg-editor-extension-uploader';
 import {
   Commands,
   HighPriorityKeymap,
@@ -66,16 +63,15 @@ export type EditorContentProps = {
   className?: string;
   style?: React.CSSProperties | undefined;
   defaultValue?: Content | undefined;
-  value?: Content | undefined;
   autoFocus?: boolean;
   readOnly?: boolean;
   readOnlyEmptyView?: React.ReactNode;
+  readOnlyAllowEditTaskCheckState?: boolean;
   children?: React.ReactNode;
   onChange?: (doc: JSONContent, editor: TEditor) => void;
   onFocus?: () => void;
   onBlur?: () => void;
   onReady?: (editor: TEditor) => void;
-  onImageUploading?: (isUploading: boolean) => void;
 };
 
 const EditorContent = forwardRef<TEditor, EditorContentProps>(
@@ -83,9 +79,11 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
     {
       className,
       style,
+      defaultValue,
       autoFocus = false,
       readOnly,
       readOnlyEmptyView,
+      readOnlyAllowEditTaskCheckState = false,
       children,
       onChange,
       onFocus,
@@ -195,7 +193,7 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
           ListItem,
           TaskList,
           TaskItem.configure({
-            onReadOnlyChecked: () => true,
+            onReadOnlyChecked: () => readOnlyAllowEditTaskCheckState,
           }),
           Table,
           TableRow,
@@ -228,6 +226,7 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
             copy: false,
           }),
         ],
+        content: defaultValue,
         autofocus: autoFocus,
         editable: !readOnly,
         editorProps: {
@@ -257,6 +256,9 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
             );
           }
           onReadyRef.current?.(e as TEditor);
+        },
+        onUpdate: ({ editor: e }) => {
+          onChangeRef.current?.(e.getJSON(), e as TEditor);
         },
         onFocus: () => {
           onFocusRef.current?.();

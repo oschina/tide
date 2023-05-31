@@ -66,7 +66,7 @@ importers:
       rollup-plugin-sourcemaps: 0.6.3_rollup@2.79.1
       rollup-plugin-typescript2: 0.34.1_k35zwyycrckt5xfsejji7kbwn4
       rollup-plugin-visualizer: 5.8.3_rollup@2.79.1
-      turbo: 1.9.9
+      turbo: 1.10.0
 
   apps/demo:
     specifiers:
@@ -343,6 +343,105 @@ importers:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
+      typescript: 4.9.3
+
+  packages/editor:
+    specifiers:
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
+      '@gitee/wysiwyg-editor-extension-bold': workspace:*
+      '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-code': workspace:*
+      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
+      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
+      '@gitee/wysiwyg-editor-extension-image': workspace:*
+      '@gitee/wysiwyg-editor-extension-indentation': workspace:*
+      '@gitee/wysiwyg-editor-extension-italic': workspace:*
+      '@gitee/wysiwyg-editor-extension-link': workspace:*
+      '@gitee/wysiwyg-editor-extension-list-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
+      '@gitee/wysiwyg-editor-extension-markdown': workspace:*
+      '@gitee/wysiwyg-editor-extension-mention': workspace:*
+      '@gitee/wysiwyg-editor-extension-menubar': workspace:*
+      '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-strike': workspace:*
+      '@gitee/wysiwyg-editor-extension-table': workspace:*
+      '@gitee/wysiwyg-editor-extension-task-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@tippyjs/react': ^4.2.6
+      '@tiptap/core': ^2.0.3
+      '@tiptap/extension-bubble-menu': ^2.0.3
+      '@tiptap/extension-document': ^2.0.3
+      '@tiptap/extension-dropcursor': ^2.0.3
+      '@tiptap/extension-gapcursor': ^2.0.3
+      '@tiptap/extension-hard-break': ^2.0.3
+      '@tiptap/extension-heading': ^2.0.3
+      '@tiptap/extension-history': ^2.0.3
+      '@tiptap/extension-paragraph': ^2.0.3
+      '@tiptap/extension-task-list': ^2.0.3
+      '@tiptap/extension-text': ^2.0.3
+      '@tiptap/extension-text-align': ^2.0.3
+      '@tiptap/pm': ^2.0.3
+      classnames: ^2.2.6
+      eslint-config-custom: workspace:*
+      highlight.js: ^11.7.0
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tippy.js: ^6.3.7
+      tsconfig: workspace:*
+      tslib: ^2.4.1
+      typescript: ^4.5.2
+    dependencies:
+      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/wysiwyg-editor-extension-blockquote': link:../extension-blockquote
+      '@gitee/wysiwyg-editor-extension-bold': link:../extension-bold
+      '@gitee/wysiwyg-editor-extension-bullet-list': link:../extension-bullet-list
+      '@gitee/wysiwyg-editor-extension-code': link:../extension-code
+      '@gitee/wysiwyg-editor-extension-code-block': link:../extension-code-block
+      '@gitee/wysiwyg-editor-extension-emoji': link:../extension-emoji
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../extension-horizontal-rule
+      '@gitee/wysiwyg-editor-extension-image': link:../extension-image
+      '@gitee/wysiwyg-editor-extension-indentation': link:../extension-indentation
+      '@gitee/wysiwyg-editor-extension-italic': link:../extension-italic
+      '@gitee/wysiwyg-editor-extension-link': link:../extension-link
+      '@gitee/wysiwyg-editor-extension-list-item': link:../extension-list-item
+      '@gitee/wysiwyg-editor-extension-lists-indentation': link:../extension-lists-indentation
+      '@gitee/wysiwyg-editor-extension-markdown': link:../extension-markdown
+      '@gitee/wysiwyg-editor-extension-mention': link:../extension-mention
+      '@gitee/wysiwyg-editor-extension-menubar': link:../extension-menubar
+      '@gitee/wysiwyg-editor-extension-ordered-list': link:../extension-ordered-list
+      '@gitee/wysiwyg-editor-extension-strike': link:../extension-strike
+      '@gitee/wysiwyg-editor-extension-table': link:../extension-table
+      '@gitee/wysiwyg-editor-extension-task-item': link:../extension-task-item
+      '@gitee/wysiwyg-editor-extension-uploader': link:../extension-uploader
+      '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
+      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+      '@tiptap/extension-bubble-menu': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-dropcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-gapcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-hard-break': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-heading': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-history': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-paragraph': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-task-list': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
+      classnames: 2.3.2
+      highlight.js: 11.7.0
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      tippy.js: 6.3.7
+    devDependencies:
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      tslib: 2.4.1
       typescript: 4.9.3
 
   packages/eslint-config-custom:
@@ -8290,65 +8389,65 @@ packages:
       yargs: 17.6.2
     dev: true
 
-  /turbo-darwin-64/1.9.9:
-    resolution: {integrity: sha512-UDGM9E21eCDzF5t1F4rzrjwWutcup33e7ZjNJcW/mJDPorazZzqXGKEPIy9kXwKhamUUXfC7668r6ZuA1WXF2Q==}
+  /turbo-darwin-64/1.10.0:
+    resolution: {integrity: sha512-N0aVGFtBgOKd7pIdUiKREwnDhNHRIvpMJbmUw04c1AqEoTiKAKT6iuzcCozO5N/gYMVr0hxrXgLal5OLYXtcsw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.9.9:
-    resolution: {integrity: sha512-VyfkXzTJpYLTAQ9krq2myyEq7RPObilpS04lgJ4OO1piq76RNmSpX9F/t9JCaY9Pj/4TL7i0d8PM7NGhwEA5Ag==}
+  /turbo-darwin-arm64/1.10.0:
+    resolution: {integrity: sha512-boXzhaHTS5MsTMv48I/JmYp9/fYplXk5nACUDrqV6nD1hzO5PMn5wNg75ATbpkaMaeuD+hjuobeSxn1p4vpqQg==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.9.9:
-    resolution: {integrity: sha512-Fu1MY29Odg8dHOqXcpIIGC3T63XLOGgnGfbobXMKdrC7JQDvtJv8TUCYciRsyknZYjyyKK1z6zKuYIiDjf3KeQ==}
+  /turbo-linux-64/1.10.0:
+    resolution: {integrity: sha512-crKQuS1jrp4vp+Th6EmUqqmAlvYNnzGmwWMLeckmYILrV7zAddu87eJu4hB7V6uV+W1qHZUTw8WXa1w1+8boBw==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.9.9:
-    resolution: {integrity: sha512-50LI8NafPuJxdnMCBeDdzgyt1cgjQG7FwkyY336v4e95WJPUVjrHdrKH6jYXhOUyrv9+jCJxwX1Yrg02t5yJ1g==}
+  /turbo-linux-arm64/1.10.0:
+    resolution: {integrity: sha512-Y2fhWe0xepLjl7doIvsJK7mp2h8E+OF6qJsUHRgxFeRWQWi1I6clD2aEQeykHK8Tp+qp8pKFMocj32nFBvuCcg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.9.9:
-    resolution: {integrity: sha512-9IsTReoLmQl1IRsy3WExe2j2RKWXQyXujfJ4fXF+jp08KxjVF4/tYP2CIRJx/A7UP/7keBta27bZqzAjsmbSTA==}
+  /turbo-windows-64/1.10.0:
+    resolution: {integrity: sha512-uh8rEqH6teaHysEMjinwWBqyNwv4IvgSAwbq/OphP8jObstTYHoR+gFPo8RQUSTaBYy4QVszgi5eO5YLvEQqNA==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.9.9:
-    resolution: {integrity: sha512-CUu4hpeQo68JjDr0V0ygTQRLbS+/sNfdqEVV+Xz9136vpKn2WMQLAuUBVZV0Sp0S/7i+zGnplskT0fED+W46wQ==}
+  /turbo-windows-arm64/1.10.0:
+    resolution: {integrity: sha512-JaVj3iM7qyRD6xYGZLL/Gs4mQKfM1zL0f91AwHZLNkk1CrJ6i5kO4ZjhKkwXSpVOTNKW3sX0Q7dExXj85Vv7UQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.9.9:
-    resolution: {integrity: sha512-+ZS66LOT7ahKHxh6XrIdcmf2Yk9mNpAbPEj4iF2cs0cAeaDU3xLVPZFF0HbSho89Uxwhx7b5HBgPbdcjQTwQkg==}
+  /turbo/1.10.0:
+    resolution: {integrity: sha512-GWxoL2zJduiNaEHz78o74l2jCQEeuUZ3MdpMPz0SpZOvt3nimpvQPNxiyfbqt3U9/V5G375PWKYSbXkVnIbQcA==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.9.9
-      turbo-darwin-arm64: 1.9.9
-      turbo-linux-64: 1.9.9
-      turbo-linux-arm64: 1.9.9
-      turbo-windows-64: 1.9.9
-      turbo-windows-arm64: 1.9.9
+      turbo-darwin-64: 1.10.0
+      turbo-darwin-arm64: 1.10.0
+      turbo-linux-64: 1.10.0
+      turbo-linux-arm64: 1.10.0
+      turbo-windows-64: 1.10.0
+      turbo-windows-arm64: 1.10.0
     dev: true
 
   /type-check/0.4.0:
