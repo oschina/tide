@@ -23,6 +23,10 @@ export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
     return show && editor.isEditable;
   }, [editor]);
 
+  if (!editor.state.schema.nodes.image) {
+    return null;
+  }
+
   return (
     <SelectionBubbleMenu
       pluginKey="imageBubbleMenu"

@@ -19,13 +19,15 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
 }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'codeBlock'),
-    disabled: () => !editor.can().chain().focus().toggleCodeBlock().run(),
+    disabled: () =>
+      !editor.state.schema.nodes.codeBlock ||
+      !editor.can().chain().focus().toggleCodeBlock?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || '代码块'}>
         <Button
-          onClick={() => editor?.chain().focus().toggleCodeBlock().run()}
+          onClick={() => editor?.chain().focus().toggleCodeBlock?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

@@ -49,6 +49,10 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
     }
   }, [editor]);
 
+  if (!editor.state.schema.marks.link) {
+    return null;
+  }
+
   return (
     <SelectionBubbleMenu
       pluginKey="linkBubbleMenu"

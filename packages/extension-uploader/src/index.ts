@@ -48,19 +48,28 @@ export const Uploader = Extension.create<UploaderOptions>({
             }
 
             // code block 不允许插入图片
-            const predicate = (node) =>
-              node.type === view.state.schema.nodes.codeBlock;
-            const codeBlock = findParentNode(predicate)(view.state.selection);
-            if (codeBlock) {
-              return;
+            if (view.state.schema.nodes.codeBlock) {
+              const predicate = (node) =>
+                node.type === view.state.schema.nodes.codeBlock;
+              const codeBlock = findParentNode(predicate)(view.state.selection);
+              if (codeBlock) {
+                return;
+              }
             }
 
             // 图片
-            const files = getImageFileList(event.clipboardData.files);
-            if (files.length > 0) {
-              const pos = view.state.selection.from;
-              handleUploadImages(view, pos, files, this.options.image.uploader);
-              return true;
+            if (view.state.schema.nodes.image) {
+              const files = getImageFileList(event.clipboardData.files);
+              if (files.length > 0) {
+                const pos = view.state.selection.from;
+                handleUploadImages(
+                  view,
+                  pos,
+                  files,
+                  this.options.image.uploader
+                );
+                return true;
+              }
             }
 
             // 其他...
@@ -82,19 +91,21 @@ export const Uploader = Extension.create<UploaderOptions>({
             }
 
             // 图片
-            const files = getImageFileList(event.dataTransfer.files);
-            if (files.length > 0) {
-              const coordinates = view.posAtCoords({
-                left: event.clientX,
-                top: event.clientY,
-              });
-              handleUploadImages(
-                view,
-                coordinates.pos,
-                files,
-                this.options.image.uploader
-              );
-              return true;
+            if (view.state.schema.nodes.image) {
+              const files = getImageFileList(event.dataTransfer.files);
+              if (files.length > 0) {
+                const coordinates = view.posAtCoords({
+                  left: event.clientX,
+                  top: event.clientY,
+                });
+                handleUploadImages(
+                  view,
+                  coordinates.pos,
+                  files,
+                  this.options.image.uploader
+                );
+                return true;
+              }
             }
 
             // 其他...

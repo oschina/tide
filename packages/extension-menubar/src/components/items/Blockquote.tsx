@@ -20,13 +20,15 @@ export const Blockquote: React.FC<BlockquoteProps> = ({
 }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'blockquote'),
-    disabled: () => !editor.can().chain().focus().toggleBlockquote().run(),
+    disabled: () =>
+      !editor.state.schema.nodes.blockquote ||
+      !editor.can().chain().focus().toggleBlockquote?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `引用 (${command} + Shift + >)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleBlockquote().run()}
+          onClick={() => editor?.chain().focus().toggleBlockquote?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

@@ -97,6 +97,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     [editor]
   );
 
+  if (!editor.state.schema.nodes.table) {
+    return null;
+  }
+
   const tippyOptions: BubbleMenuProps['tippyOptions'] = {
     interactive: true,
     placement: 'top',
@@ -138,8 +142,8 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
   };
 
   const selectedCellsCount = selectedCells?.length || 0;
-  const canSplitCell = editor.can().splitCell();
-  const canMergeCells = editor.can().mergeCells();
+  const canSplitCell = editor.can().splitCell?.();
+  const canMergeCells = editor.can().mergeCells?.();
 
   const divider = <span className="gwe-menu-bar__divider" />;
 

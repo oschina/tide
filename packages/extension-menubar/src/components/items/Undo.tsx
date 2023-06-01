@@ -14,7 +14,7 @@ export type UndoProps = {
 
 export const Undo: React.FC<UndoProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
-    disabled: () => !editor.can().chain().focus().undo().run(),
+    disabled: () => !editor.can().chain().focus().undo?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>

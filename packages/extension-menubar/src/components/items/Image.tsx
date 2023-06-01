@@ -16,7 +16,9 @@ export type ImageProps = {
 export const Image: React.FC<ImageProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'image'),
-    disabled: () => !editor.can().chain().focus().uploadImage([]).run(),
+    disabled: () =>
+      !editor.state.schema.nodes.image ||
+      !editor.can().chain().focus().uploadImage?.([]).run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>

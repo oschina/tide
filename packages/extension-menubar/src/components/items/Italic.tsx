@@ -16,13 +16,15 @@ export type ItalicProps = {
 export const Italic: React.FC<ItalicProps> = ({ className, style, title }) => {
   const { editor, statusMap } = useStatusMap(() => ({
     isActive: () => isActive(editor.state, 'italic'),
-    disabled: () => !editor.can().chain().focus().toggleItalic().run(),
+    disabled: () =>
+      !editor.state.schema.marks.italic ||
+      !editor.can().chain().focus().toggleItalic?.().run(),
   }));
   return (
     <MenuBarItem className={className} style={style}>
       <Tooltip text={title || `斜体 (${command} + I)`}>
         <Button
-          onClick={() => editor?.chain().focus().toggleItalic().run()}
+          onClick={() => editor?.chain().focus().toggleItalic?.().run()}
           isActive={statusMap?.isActive}
           disabled={statusMap?.disabled}
         >

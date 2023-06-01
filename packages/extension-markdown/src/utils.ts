@@ -2,7 +2,10 @@ import { EditorState } from '@tiptap/pm/state';
 import { isMarkActive, isNodeActive } from '@tiptap/core';
 
 export const isInCode = (state: EditorState): boolean => {
-  return isNodeActive(state, 'codeBlock') || isMarkActive(state, 'code');
+  return (
+    (state.schema.nodes.codeBlock && isNodeActive(state, 'codeBlock')) ||
+    (state.schema.marks.code && isMarkActive(state, 'code'))
+  );
 };
 
 export const isMarkdown = (text: string): boolean => {

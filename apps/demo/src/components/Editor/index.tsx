@@ -1,4 +1,9 @@
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  useMemo,
+  useState,
+} from 'react';
 import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import {
@@ -44,6 +49,7 @@ export type EditorRenderProps = Omit<
   menuClassName?: string;
   menuStyle?: React.CSSProperties;
   menuEnableUndoRedo?: boolean;
+  menuEnableFullscreen?: boolean;
   readOnlyShowMenu?: boolean;
   contentClassName?: string;
   contentStyle?: React.CSSProperties;
@@ -57,6 +63,7 @@ export const WysiwygEditor = forwardRef<Editor, EditorRenderProps>(
       menuClassName,
       menuStyle,
       menuEnableUndoRedo = true,
+      menuEnableFullscreen = true,
       readOnlyShowMenu = false,
       contentClassName,
       contentStyle,
@@ -70,6 +77,71 @@ export const WysiwygEditor = forwardRef<Editor, EditorRenderProps>(
     useImperativeHandle(ref, () => editor as Editor, [editor]);
 
     console.log('WysiwygEditor', editor);
+
+    const menuItems = useMemo(() => {
+      if (!editor) {
+        return null;
+      }
+      const {
+        heading,
+        bulletList,
+        orderedList,
+        taskList,
+        image,
+        table,
+        codeBlock,
+        blockquote,
+        horizontalRule,
+        emoji,
+      } = editor.state.schema.nodes;
+      const { bold, italic, strike, link, code } = editor.state.schema.marks;
+      return [
+        [
+          menuEnableUndoRedo && <Undo key="undo" />,
+          menuEnableUndoRedo && <Redo key="redo" />,
+        ],
+        [
+          heading && <Heading key="heading" />,
+          bold && <Bold key="bold" />,
+          italic && <Italic key="italic" />,
+          strike && <Strike key="strike" />,
+          code && <Code key="code" />,
+        ],
+        [
+          bulletList && <BulletList key="bulletList" />,
+          orderedList && <OrderedList key="orderedList" />,
+          taskList && <TaskList key="taskList" />,
+        ],
+        [
+          link && <Link key="link" />,
+          image && <Image key="image" />,
+          table && <Table key="table" />,
+          codeBlock && <CodeBlock key="codeBlock" />,
+        ],
+        [
+          blockquote && <Blockquote key="blockquote" />,
+          horizontalRule && <HorizontalRule key="horizontalRule" />,
+          emoji && <Emoji key="emoji" />,
+        ],
+        [
+          menuEnableFullscreen && (
+            <Fullscreen
+              key="fullscreen"
+              fullscreen={fullscreen}
+              onFullscreenChange={setFullscreen}
+            />
+          ),
+        ],
+      ]
+        .map((group) => group.filter(Boolean))
+        .filter((group) => group.length > 0)
+        .map((group, index, items) => (
+          <React.Fragment key={index}>
+            {group}
+            {index < items.length - 1 && <MenuBarDivider />}
+          </React.Fragment>
+        ));
+    }, [editor, menuEnableUndoRedo, menuEnableFullscreen]);
 
     const content = (
       <div
@@ -88,36 +160,7 @@ export const WysiwygEditor = forwardRef<Editor, EditorRenderProps>(
               })}
               style={menuStyle}
             >
-              {menuEnableUndoRedo && (
-                <>
-                  <Undo />
-                  <Redo />
-                  <MenuBarDivider />
-                </>
-              )}
-              <Heading />
-              <Bold />
-              <Italic />
-              <Strike />
-              <Code />
-              <MenuBarDivider />
-              <BulletList />
-              <OrderedList />
-              <TaskList />
-              <MenuBarDivider />
-              <Link />
-              <Image />
-              <Table />
-              <CodeBlock />
-              <MenuBarDivider />
-              <Blockquote />
-              <HorizontalRule />
-              <Emoji />
-              <MenuBarDivider />
-              <Fullscreen
-                fullscreen={fullscreen}
-                onFullscreenChange={setFullscreen}
-              />
+              {menuItems}
             </MenuBar>
           )}
           <EditorContent
@@ -126,10 +169,14 @@ export const WysiwygEditor = forwardRef<Editor, EditorRenderProps>(
             ref={setEditor}
             {...editorContentProps}
           >
-            {editor && <LinkBubbleMenu editor={editor} />}
-            {editor && <TableCellBubbleMenu editor={editor} />}
-            {editor && <ImageBubbleMenu editor={editor} />}
-            {editor && <TextBubbleMenu editor={editor} />}
+            {editor && (
+              <>
+                <LinkBubbleMenu editor={editor} />
+                <TableCellBubbleMenu editor={editor} />
+                <ImageBubbleMenu editor={editor} />
+                <TextBubbleMenu editor={editor} />
+              </>
+            )}
           </EditorContent>
         </MenuBarContextProvider>
       </div>
