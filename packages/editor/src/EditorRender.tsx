@@ -1,6 +1,7 @@
 import React, {
   forwardRef,
   useCallback,
+  useEffect,
   useImperativeHandle,
   useMemo,
   useState,
@@ -34,15 +35,10 @@ import {
   Undo,
 } from '@gitee/wysiwyg-editor-extension-menubar';
 import type { Editor } from '@gitee/wysiwyg-editor-react';
-import EditorContent, { EditorContentProps } from './EditorContent';
+import { EditorContent, EditorContentProps } from './EditorContent';
 import './EditorRender.less';
 
-export type EditorRenderProps = Omit<
-  EditorContentProps,
-  'className' | 'style'
-> & {
-  className?: string;
-  style?: React.CSSProperties | undefined;
+export type EditorRenderProps = EditorContentProps & {
   menuClassName?: string;
   menuStyle?: React.CSSProperties;
   menuEnableUndoRedo?: boolean;
@@ -54,7 +50,9 @@ export type EditorRenderProps = Omit<
   onFullscreenChange?: (fullscreen: boolean) => void;
 };
 
-export const EditorRender = forwardRef<Editor, EditorRenderProps>(
+export const EditorRender: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<EditorRenderProps> & React.RefAttributes<Editor>
+> = forwardRef<Editor, EditorRenderProps>(
   (
     {
       className,
@@ -148,7 +146,13 @@ export const EditorRender = forwardRef<Editor, EditorRenderProps>(
             {index < items.length - 1 && <MenuBarDivider />}
           </React.Fragment>
         ));
-    }, [editor, menuEnableUndoRedo, menuEnableFullscreen]);
+    }, [editor, menuEnableUndoRedo, menuEnableFullscreen, fullscreen]);
+
+    useEffect(() => {
+      if (editorContentProps.autoFocus) {
+        editor?.commands.focus(editorContentProps.autoFocus);
+      }
+    }, [fullscreen, editorContentProps.autoFocus]);
 
     return (
       <div

@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react';
 import type { Plugin } from '@tiptap/pm/state';
-import type { JSONContent, Extensions } from '@tiptap/core';
+import type { JSONContent, Extensions, FocusPosition } from '@tiptap/core';
 import { Document } from '@tiptap/extension-document';
 import { Paragraph, ParagraphOptions } from '@tiptap/extension-paragraph';
 import { Text } from '@tiptap/extension-text';
@@ -88,7 +88,7 @@ import {
 } from '@gitee/wysiwyg-editor-common';
 import {
   Content,
-  Editor as TEditor,
+  Editor,
   EditorOptions,
   EditorContent as TEditorContent,
   useEditor,
@@ -138,15 +138,14 @@ export type EditorContentProps = {
 
   defaultValue?: Content | undefined;
 
-  autoFocus?: boolean;
+  autoFocus?: FocusPosition;
   readOnly?: boolean;
   readOnlyEmptyView?: React.ReactNode;
-  readOnlyAllowEditTaskCheckState?: boolean;
 
   children?: React.ReactNode;
 
-  onReady?: (editor: TEditor) => void;
-  onChange?: (doc: JSONContent, editor: TEditor) => void;
+  onReady?: (editor: Editor) => void;
+  onChange?: (doc: JSONContent, editor: Editor) => void;
   onFocus?: EditorOptions['onFocus'];
   onBlur?: EditorOptions['onBlur'];
 
@@ -154,22 +153,23 @@ export type EditorContentProps = {
   extensionOptions?: Partial<ExtensionOptions>;
 };
 
-const EditorContent = forwardRef<TEditor, EditorContentProps>(
+export const EditorContent: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<EditorContentProps> & React.RefAttributes<Editor>
+> = forwardRef<Editor, EditorContentProps>(
   (
     {
       className,
       style,
       defaultValue,
-      autoFocus = false,
+      autoFocus,
       readOnly,
       readOnlyEmptyView,
-      readOnlyAllowEditTaskCheckState = false,
       children,
       onChange,
       onFocus,
       onBlur,
       onReady,
-      editorOptions,
+      editorOptions = {} as EditorOptions,
       extensionOptions = {} as ExtensionOptions,
     },
     ref
@@ -213,12 +213,7 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
       }
 
       if (extensionOptions.textAlign !== false) {
-        exts.push(
-          TextAlign.configure({
-            types: ['heading', 'paragraph'],
-            ...extensionOptions.textAlign,
-          })
-        );
+        exts.push(TextAlign.configure(extensionOptions.textAlign));
       }
 
       if (extensionOptions.bold !== false) {
@@ -287,12 +282,7 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
 
       if (extensionOptions.taskList !== false) {
         exts.push(TaskList.configure(extensionOptions.taskList));
-        exts.push(
-          TaskItem.configure({
-            onReadOnlyChecked: () => readOnlyAllowEditTaskCheckState,
-            ...extensionOptions.taskItem,
-          })
-        );
+        exts.push(TaskItem.configure(extensionOptions.taskItem));
       }
 
       if (
@@ -310,7 +300,7 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
 
       if (extensionOptions.image !== false) {
         // uploader extension is required
-        if (extensionOptions.uploader) {
+        if (extensionOptions.uploader !== false) {
           exts.push(Image.configure(extensionOptions.image));
           tableCellContent.push('image');
         } else {
@@ -372,10 +362,12 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
       return exts;
     }, [extensionOptions]);
 
+    const { extensions = [], ...otherEditorOptions } = editorOptions;
+
     const editor = useEditor(
-      TEditor,
+      Editor,
       {
-        extensions: [...coreExtensions, ...(editorOptions?.extensions || [])],
+        extensions: [...coreExtensions, ...extensions],
         content: defaultValue,
         autofocus: autoFocus,
         editable: !readOnly,
@@ -405,18 +397,18 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
               })
             );
           }
-          onReadyRef.current?.(e as TEditor);
+          onReadyRef.current?.(e as Editor);
         },
         onUpdate: ({ editor: e }) => {
-          onChangeRef.current?.(e.getJSON(), e as TEditor);
+          onChangeRef.current?.(e.getJSON(), e as Editor);
         },
-        onFocus: () => {
-          onFocusRef.current?.();
+        onFocus: (props) => {
+          onFocusRef.current?.(props);
         },
-        onBlur: () => {
-          onBlurRef.current?.();
+        onBlur: (props) => {
+          onBlurRef.current?.(props);
         },
-        ...editorOptions,
+        ...otherEditorOptions,
       },
       []
     );
@@ -447,5 +439,3 @@ const EditorContent = forwardRef<TEditor, EditorContentProps>(
 );
 
 EditorContent.displayName = 'EditorContent';
-
-export default EditorContent;
