@@ -1,3 +1,4 @@
+import React from 'react';
 import { mergeAttributes } from '@tiptap/core';
 import { PluginKey } from '@tiptap/pm/state';
 import {

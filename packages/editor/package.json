@@ -49,9 +49,7 @@
     "@tiptap/extension-task-list": "^2.0.3",
     "@tiptap/extension-text": "^2.0.3",
     "@tiptap/extension-text-align": "^2.0.3",
-    "classnames": "^2.2.6",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "@tiptap/core": "^2.0.3",
@@ -61,8 +59,12 @@
     "eslint-config-custom": "workspace:*",
     "rollup-plugin-copy": "^3.4.0",
     "tsconfig": "workspace:*",
-    "tslib": "^2.4.1",
-    "typescript": "^4.5.2"
+    "tslib": "^2.5.3",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "sideEffects": false
 }

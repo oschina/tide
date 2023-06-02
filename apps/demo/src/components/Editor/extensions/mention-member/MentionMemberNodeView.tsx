@@ -4,7 +4,7 @@ import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
 import styles from './MentionMemberNodeView.module.less';
 
 const MemberAvatar: React.FC = () => {
-  return <img src="" alt="" />;
+  return <img src="https://gitee.com/assets/no_portrait.png" alt="" />;
 };
 
 export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
@@ -36,7 +36,7 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
       {editor.isEditable ? (
         <span className={styles.mention}>{content}</span>
       ) : (
-        <a className={styles.mention} href={node.attrs.url} target="_blank">
+        <a className={styles.mention} href={node.attrs.url} target="_blank" rel="noreferrer">
           {content}
         </a>
       )}

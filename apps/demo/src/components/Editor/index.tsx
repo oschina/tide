@@ -1,188 +1,93 @@
-import React, {
-  forwardRef,
-  useImperativeHandle,
-  useMemo,
-  useState,
-} from 'react';
-import { createPortal } from 'react-dom';
-import classNames from 'classnames';
-import {
-  Blockquote,
-  Bold,
-  BulletList,
-  Code,
-  CodeBlock,
-  Emoji,
-  Fullscreen,
-  Heading,
-  HorizontalRule,
-  Image,
-  Italic,
-  Link,
-  MenuBar,
-  MenuBarContextProvider,
-  MenuBarDivider,
-  OrderedList,
-  Redo,
-  Strike,
-  Table,
-  TaskList,
-  TextBubbleMenu,
-  Undo,
-} from '@gitee/wysiwyg-editor-extension-menubar';
-import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
-import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
-import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
-import type { Editor } from '@gitee/wysiwyg-editor-react';
-import EditorContent, { EditorContentProps } from './EditorContent';
-import './index.less';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import AwesomeDebouncePromise from 'awesome-debounce-promise';
+import { TextAlign } from '@tiptap/extension-text-align';
+import { Editor, EditorRender, EditorRenderProps } from '@gitee/wysiwyg-editor';
+import { MentionMember } from './extensions/mention-member';
+import { ajaxImgUploader } from './utils';
+import '@gitee/wysiwyg-editor/dist/style.css';
+import 'highlight.js/styles/default.css';
 
-const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>
-  createPortal(children, document.body);
+export type WysiwygEditorProps = Omit<
+  EditorRenderProps,
+  'editorOptions' | 'extensionOptions'
+>;
 
-export type EditorRenderProps = Omit<
-  EditorContentProps,
-  'className' | 'style'
-> & {
-  className?: string;
-  style?: React.CSSProperties | undefined;
-  menuClassName?: string;
-  menuStyle?: React.CSSProperties;
-  menuEnableUndoRedo?: boolean;
-  menuEnableFullscreen?: boolean;
-  readOnlyShowMenu?: boolean;
-  contentClassName?: string;
-  contentStyle?: React.CSSProperties;
-};
-
-export const WysiwygEditor = forwardRef<Editor, EditorRenderProps>(
-  (
-    {
-      className,
-      style,
-      menuClassName,
-      menuStyle,
-      menuEnableUndoRedo = true,
-      menuEnableFullscreen = true,
-      readOnlyShowMenu = false,
-      contentClassName,
-      contentStyle,
-      ...editorContentProps
-    },
-    ref
-  ) => {
+export const WysiwygEditor = forwardRef<Editor, WysiwygEditorProps>(
+  ({ ...props }, ref) => {
     const [editor, setEditor] = useState<Editor | null>(null);
-    const [fullscreen, setFullscreen] = useState(false);
 
     useImperativeHandle(ref, () => editor as Editor, [editor]);
 
-    console.log('WysiwygEditor', editor);
-
-    const menuItems = useMemo(() => {
-      if (!editor) {
-        return null;
-      }
-      const {
-        heading,
-        bulletList,
-        orderedList,
-        taskList,
-        image,
-        table,
-        codeBlock,
-        blockquote,
-        horizontalRule,
-        emoji,
-      } = editor.state.schema.nodes;
-      const { bold, italic, strike, link, code } = editor.state.schema.marks;
+    const mockFetchMemberMention = (query: string) => {
       return [
-        [
-          menuEnableUndoRedo && <Undo key="undo" />,
-          menuEnableUndoRedo && <Redo key="redo" />,
-        ],
-        [
-          heading && <Heading key="heading" />,
-          bold && <Bold key="bold" />,
-          italic && <Italic key="italic" />,
-          strike && <Strike key="strike" />,
-          code && <Code key="code" />,
-        ],
-        [
-          bulletList && <BulletList key="bulletList" />,
-          orderedList && <OrderedList key="orderedList" />,
-          taskList && <TaskList key="taskList" />,
-        ],
-        [
-          link && <Link key="link" />,
-          image && <Image key="image" />,
-          table && <Table key="table" />,
-          codeBlock && <CodeBlock key="codeBlock" />,
-        ],
-        [
-          blockquote && <Blockquote key="blockquote" />,
-          horizontalRule && <HorizontalRule key="horizontalRule" />,
-          emoji && <Emoji key="emoji" />,
-        ],
-        [
-          menuEnableFullscreen && (
-            <Fullscreen
-              key="fullscreen"
-              fullscreen={fullscreen}
-              onFullscreenChange={setFullscreen}
-            />
-          ),
-        ],
+        'Gitee',
+        'OSCHINA',
+        '开源中国',
+        '马建仓',
+        'Tiptap',
+        'Google',
+        'Apple',
+        'Microsoft',
       ]
-        .map((group) => group.filter(Boolean))
-        .filter((group) => group.length > 0)
-        .map((group, index, items) => (
-          <React.Fragment key={index}>
-            {group}
-            {index < items.length - 1 && <MenuBarDivider />}
-          </React.Fragment>
-        ));
-    }, [editor, menuEnableUndoRedo, menuEnableFullscreen]);
+        .map((label, index) => ({
+          id: `${index + 1}`,
+          label,
+          desc: label.toLowerCase(),
+          attrs: {
+            name: label,
+            username: label.toLowerCase(),
+            url: `/members/${label.toLowerCase()}`,
+          },
+        }))
+        .filter((item) =>
+          item.label.toLowerCase().startsWith(query.toLowerCase())
+        )
+        .slice(0, 5);
+    };
 
-    const content = (
-      <div
-        className={classNames(
-          'gwe-editor',
-          { 'gwe-editor--fullscreen': fullscreen },
-          className
-        )}
-        style={style}
-      >
-        <MenuBarContextProvider editor={editor as unknown as Editor}>
-          {editor && !(editorContentProps?.readOnly && !readOnlyShowMenu) && (
-            <MenuBar
-              className={classNames(menuClassName, {
-                disabled: readOnlyShowMenu,
-              })}
-              style={menuStyle}
-            >
-              {menuItems}
-            </MenuBar>
-          )}
-          <EditorContent
-            className={contentClassName}
-            style={contentStyle}
-            ref={setEditor}
-            {...editorContentProps}
-          >
-            {editor && (
-              <>
-                <LinkBubbleMenu editor={editor} />
-                <TableCellBubbleMenu editor={editor} />
-                <ImageBubbleMenu editor={editor} />
-                <TextBubbleMenu editor={editor} />
-              </>
-            )}
-          </EditorContent>
-        </MenuBarContextProvider>
-      </div>
+    const mockFetchMemberMentionDebounced = AwesomeDebouncePromise(
+      mockFetchMemberMention,
+      300,
+      {
+        onlyResolvesLast: false,
+      }
     );
 
-    return fullscreen ? <Portal>{content}</Portal> : content;
+    const extensionOptions: EditorRenderProps['extensionOptions'] = {
+      textAlign: false,
+      taskItem: {
+        onReadOnlyChecked: () => true,
+      },
+      uploader: {
+        image: {
+          uploader: ajaxImgUploader,
+        },
+      },
+    };
+
+    const editorOptions: EditorRenderProps['editorOptions'] = {
+      extensions: [
+        TextAlign.extend({
+          addKeyboardShortcuts: () => ({}),
+        }).configure({
+          types: ['heading', 'paragraph'],
+        }),
+        MentionMember.configure({
+          suggestion: {
+            items: ({ query }) => mockFetchMemberMentionDebounced(query),
+          },
+        }),
+      ],
+    };
+
+    return (
+      <EditorRender
+        ref={setEditor}
+        editorOptions={editorOptions}
+        extensionOptions={extensionOptions}
+        {...props}
+      />
+    );
   }
 );
 

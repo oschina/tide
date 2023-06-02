@@ -10,7 +10,14 @@ const MentionListItemRender: React.FC<{ item: MentionMemberItemDataType }> = ({
   return (
     <>
       <span>{item.label}</span>
-      <span>{item.desc}</span>
+      <span
+        style={{
+          marginLeft: 16,
+          color: '#b0b0b0',
+        }}
+      >
+        {item.desc}
+      </span>
     </>
   );
 };
