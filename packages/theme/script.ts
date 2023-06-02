@@ -7,7 +7,7 @@ import less from 'less';
 
 const pkgPath = path.resolve(__dirname, '..');
 const distDir = path.resolve(__dirname, './dist');
-const matchDir = `${pkgPath}/*`;
+const matchDir = `${pkgPath}/(extension-*|theme)`;
 
 let lessFiles = [];
 
@@ -67,22 +67,41 @@ async function generateBundledFile() {
 }
 
 /**
+ * 生成 extensions.less
+ */
+async function generateExtensionsFile() {
+  const fileNames = lessFiles
+    .map((f) => path.basename(f))
+    .filter((f) => f !== 'variable.less');
+
+  const content = fileNames.reduce((acc, cur) => {
+    return acc + `@import "./${cur}";` + '\r\n';
+  }, '');
+
+  await fsx.outputFile(`${distDir}/extensions.less`, content);
+}
+
+/**
  * 编译出 css
  */
 async function compile() {
-  const lessContent = await fs.readFile(`${distDir}/bundled.less`, {
-    encoding: 'utf-8',
-  });
-  const code = await less.render(lessContent, {
-    paths: [distDir],
-  });
-  await fsx.outputFile(`${distDir}/bundled.css`, code.css);
+  const compileFiles = ['bundled', 'variable'];
+  for (const filename of compileFiles) {
+    const lessContent = await fs.readFile(`${distDir}/${filename}.less`, {
+      encoding: 'utf-8',
+    });
+    const code = await less.render(lessContent, {
+      paths: [distDir],
+    });
+    await fsx.outputFile(`${distDir}/${filename}.css`, code.css);
+  }
 }
 
 async function buildLess() {
   await findAndCopyLessFiles();
   await replaceImport();
   await generateBundledFile();
+  await generateExtensionsFile();
   await compile();
 }
 
