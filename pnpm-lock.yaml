@@ -72,6 +72,7 @@ importers:
     specifiers:
       '@gitee/wysiwyg-editor': workspace:*
       '@gitee/wysiwyg-editor-extension-mention': workspace:*
+      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
       '@tiptap/core': ^2.0.3
@@ -103,6 +104,7 @@ importers:
     dependencies:
       '@gitee/wysiwyg-editor': link:../../packages/editor
       '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
+      '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
       '@gitee/wysiwyg-editor-react': link:../../packages/react
       '@gitee/wysiwyg-editor-theme': link:../../packages/theme
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
