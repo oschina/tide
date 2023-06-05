@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { Editor } from '@tiptap/core';
+import type { Editor } from '@gitee/wysiwyg-editor';
 import HeaderBar from './components/HeaderBar';
 import InspectPanel from './components/InspectPanel';
 import { WysiwygEditor } from './components/Editor';

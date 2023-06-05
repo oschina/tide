@@ -1,16 +1,16 @@
 import { UploaderFunc } from '@gitee/wysiwyg-editor-extension-uploader';
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export const ajaxImgUploader: UploaderFunc = async (file, progressCallBack) => {
-  const config = {
+  const config: AxiosRequestConfig = {
     headers: { 'content-type': 'multipart/form-data' },
-    onUploadProgress: (event: any) => {
-      progressCallBack(Math.round((event.loaded * 100) / event.total));
+    onUploadProgress: (event) => {
+      progressCallBack(Math.round((event.loaded * 100) / (event.total || 0)));
       console.log(
         `Current progress:`,
-        Math.round((event.loaded * 100) / event.total)
+        Math.round((event.loaded * 100) / (event.total || 0))
       );
     },
   };

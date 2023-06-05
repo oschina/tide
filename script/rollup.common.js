@@ -64,7 +64,14 @@ export const autoExternal = (packageNames) => {
 };
 
 export const createRollupConfig = (opts) => {
-  const { input, pkg, projectPath, external, tsconfigPath } = opts || {};
+  const {
+    input,
+    pkg,
+    projectPath,
+    external,
+    tsconfigPath,
+    plugins = [],
+  } = opts || {};
 
   if (pkg && projectPath) {
     const outputs = [
@@ -98,7 +105,7 @@ export const createRollupConfig = (opts) => {
       return {
         ...o,
         external: external ? external : defaultExternals,
-        plugins: getPlugins({ projectPath, tsconfigPath }),
+        plugins: [...getPlugins({ projectPath, tsconfigPath }), ...plugins],
       };
     });
   }

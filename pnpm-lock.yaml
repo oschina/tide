@@ -61,51 +61,21 @@ importers:
       rollup: 2.79.1
       rollup-plugin-auto-external: 2.0.0_rollup@2.79.1
       rollup-plugin-delete: 2.0.0
-      rollup-plugin-dts: 4.2.3_k35zwyycrckt5xfsejji7kbwn4
+      rollup-plugin-dts: 4.2.3_zptcx3kz3uwp66hzhyyt545weq
       rollup-plugin-postcss: 4.0.2_postcss@8.4.20
       rollup-plugin-sourcemaps: 0.6.3_rollup@2.79.1
-      rollup-plugin-typescript2: 0.34.1_k35zwyycrckt5xfsejji7kbwn4
+      rollup-plugin-typescript2: 0.34.1_zptcx3kz3uwp66hzhyyt545weq
       rollup-plugin-visualizer: 5.8.3_rollup@2.79.1
-      turbo: 1.9.9
+      turbo: 1.10.1
 
   apps/demo:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
-      '@gitee/wysiwyg-editor-extension-bold': workspace:*
-      '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
-      '@gitee/wysiwyg-editor-extension-code': workspace:*
-      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
-      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
-      '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
-      '@gitee/wysiwyg-editor-extension-image': workspace:*
-      '@gitee/wysiwyg-editor-extension-indentation': workspace:*
-      '@gitee/wysiwyg-editor-extension-italic': workspace:*
-      '@gitee/wysiwyg-editor-extension-link': workspace:*
-      '@gitee/wysiwyg-editor-extension-list-item': workspace:*
-      '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
-      '@gitee/wysiwyg-editor-extension-markdown': workspace:*
+      '@gitee/wysiwyg-editor': workspace:*
       '@gitee/wysiwyg-editor-extension-mention': workspace:*
-      '@gitee/wysiwyg-editor-extension-menubar': workspace:*
-      '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
-      '@gitee/wysiwyg-editor-extension-strike': workspace:*
-      '@gitee/wysiwyg-editor-extension-table': workspace:*
-      '@gitee/wysiwyg-editor-extension-task-item': workspace:*
       '@gitee/wysiwyg-editor-extension-uploader': workspace:*
       '@gitee/wysiwyg-editor-react': workspace:*
       '@gitee/wysiwyg-editor-theme': workspace:*
-      '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
-      '@tiptap/extension-bubble-menu': ^2.0.3
-      '@tiptap/extension-document': ^2.0.3
-      '@tiptap/extension-dropcursor': ^2.0.3
-      '@tiptap/extension-gapcursor': ^2.0.3
-      '@tiptap/extension-hard-break': ^2.0.3
-      '@tiptap/extension-heading': ^2.0.3
-      '@tiptap/extension-history': ^2.0.3
-      '@tiptap/extension-paragraph': ^2.0.3
-      '@tiptap/extension-task-list': ^2.0.3
-      '@tiptap/extension-text': ^2.0.3
       '@tiptap/extension-text-align': ^2.0.3
       '@tiptap/pm': ^2.0.3
       '@types/lodash': ^4.14.191
@@ -128,47 +98,16 @@ importers:
       prosemirror-dev-tools: ^4.0.0
       react: ^16.14.0
       react-dom: ^16.14.0
-      tippy.js: ^6.3.7
       tsconfig: workspace:*
-      typescript: ^4.9.3
+      typescript: ^4.9.5
       vite: ^4.0.0
     dependencies:
-      '@gitee/wysiwyg-editor-common': link:../../packages/common
-      '@gitee/wysiwyg-editor-extension-blockquote': link:../../packages/extension-blockquote
-      '@gitee/wysiwyg-editor-extension-bold': link:../../packages/extension-bold
-      '@gitee/wysiwyg-editor-extension-bullet-list': link:../../packages/extension-bullet-list
-      '@gitee/wysiwyg-editor-extension-code': link:../../packages/extension-code
-      '@gitee/wysiwyg-editor-extension-code-block': link:../../packages/extension-code-block
-      '@gitee/wysiwyg-editor-extension-emoji': link:../../packages/extension-emoji
-      '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../../packages/extension-horizontal-rule
-      '@gitee/wysiwyg-editor-extension-image': link:../../packages/extension-image
-      '@gitee/wysiwyg-editor-extension-indentation': link:../../packages/extension-indentation
-      '@gitee/wysiwyg-editor-extension-italic': link:../../packages/extension-italic
-      '@gitee/wysiwyg-editor-extension-link': link:../../packages/extension-link
-      '@gitee/wysiwyg-editor-extension-list-item': link:../../packages/extension-list-item
-      '@gitee/wysiwyg-editor-extension-lists-indentation': link:../../packages/extension-lists-indentation
-      '@gitee/wysiwyg-editor-extension-markdown': link:../../packages/extension-markdown
+      '@gitee/wysiwyg-editor': link:../../packages/editor
       '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
-      '@gitee/wysiwyg-editor-extension-menubar': link:../../packages/extension-menubar
-      '@gitee/wysiwyg-editor-extension-ordered-list': link:../../packages/extension-ordered-list
-      '@gitee/wysiwyg-editor-extension-strike': link:../../packages/extension-strike
-      '@gitee/wysiwyg-editor-extension-table': link:../../packages/extension-table
-      '@gitee/wysiwyg-editor-extension-task-item': link:../../packages/extension-task-item
       '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
       '@gitee/wysiwyg-editor-react': link:../../packages/react
       '@gitee/wysiwyg-editor-theme': link:../../packages/theme
-      '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
-      '@tiptap/extension-bubble-menu': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-dropcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-gapcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-hard-break': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-heading': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-history': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-paragraph': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-task-list': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
       '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       awesome-debounce-promise: 2.1.0
@@ -180,7 +119,6 @@ importers:
       lz-string: 1.4.4
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      tippy.js: 6.3.7
     devDependencies:
       '@types/lodash': 4.14.191
       '@types/prosemirror-dev-tools': 3.0.3
@@ -194,7 +132,7 @@ importers:
       less: 4.1.3
       prosemirror-dev-tools: 4.0.0_s3vg5vpqctxa4hm5avlltdtt2q
       tsconfig: link:../../packages/tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
       vite: 4.0.1_less@4.1.3
 
   apps/legacy:
@@ -258,8 +196,8 @@ importers:
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.9.3
+      tslib: ^2.5.3
+      typescript: ^4.9.5
       vite: ^4.0.0
     dependencies:
       '@gitee/wysiwyg-editor-common': link:../../packages/common
@@ -322,8 +260,8 @@ importers:
       less: 4.1.3
       prosemirror-dev-tools: 4.0.0_s3vg5vpqctxa4hm5avlltdtt2q
       tsconfig: link:../../packages/tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
       vite: 4.0.1_less@4.1.3
 
   packages/common:
@@ -333,7 +271,7 @@ importers:
       '@tiptap/pm': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
       zeed-dom: ^0.10.4
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
@@ -343,7 +281,104 @@ importers:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
+
+  packages/editor:
+    specifiers:
+      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
+      '@gitee/wysiwyg-editor-extension-bold': workspace:*
+      '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-code': workspace:*
+      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
+      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
+      '@gitee/wysiwyg-editor-extension-image': workspace:*
+      '@gitee/wysiwyg-editor-extension-indentation': workspace:*
+      '@gitee/wysiwyg-editor-extension-italic': workspace:*
+      '@gitee/wysiwyg-editor-extension-link': workspace:*
+      '@gitee/wysiwyg-editor-extension-list-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
+      '@gitee/wysiwyg-editor-extension-markdown': workspace:*
+      '@gitee/wysiwyg-editor-extension-mention': workspace:*
+      '@gitee/wysiwyg-editor-extension-menubar': workspace:*
+      '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
+      '@gitee/wysiwyg-editor-extension-strike': workspace:*
+      '@gitee/wysiwyg-editor-extension-table': workspace:*
+      '@gitee/wysiwyg-editor-extension-task-item': workspace:*
+      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
+      '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@tiptap/core': ^2.0.3
+      '@tiptap/extension-document': ^2.0.3
+      '@tiptap/extension-dropcursor': ^2.0.3
+      '@tiptap/extension-gapcursor': ^2.0.3
+      '@tiptap/extension-hard-break': ^2.0.3
+      '@tiptap/extension-heading': ^2.0.3
+      '@tiptap/extension-history': ^2.0.3
+      '@tiptap/extension-paragraph': ^2.0.3
+      '@tiptap/extension-task-list': ^2.0.3
+      '@tiptap/extension-text': ^2.0.3
+      '@tiptap/extension-text-align': ^2.0.3
+      '@tiptap/pm': ^2.0.3
+      '@types/react': ^16.14.0
+      '@types/react-dom': ^16.9.14
+      classnames: ^2.2.6
+      eslint-config-custom: workspace:*
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      rollup-plugin-copy: ^3.4.0
+      tsconfig: workspace:*
+      tslib: ^2.5.3
+      typescript: ^4.9.5
+    dependencies:
+      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/wysiwyg-editor-extension-blockquote': link:../extension-blockquote
+      '@gitee/wysiwyg-editor-extension-bold': link:../extension-bold
+      '@gitee/wysiwyg-editor-extension-bullet-list': link:../extension-bullet-list
+      '@gitee/wysiwyg-editor-extension-code': link:../extension-code
+      '@gitee/wysiwyg-editor-extension-code-block': link:../extension-code-block
+      '@gitee/wysiwyg-editor-extension-emoji': link:../extension-emoji
+      '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../extension-horizontal-rule
+      '@gitee/wysiwyg-editor-extension-image': link:../extension-image
+      '@gitee/wysiwyg-editor-extension-indentation': link:../extension-indentation
+      '@gitee/wysiwyg-editor-extension-italic': link:../extension-italic
+      '@gitee/wysiwyg-editor-extension-link': link:../extension-link
+      '@gitee/wysiwyg-editor-extension-list-item': link:../extension-list-item
+      '@gitee/wysiwyg-editor-extension-lists-indentation': link:../extension-lists-indentation
+      '@gitee/wysiwyg-editor-extension-markdown': link:../extension-markdown
+      '@gitee/wysiwyg-editor-extension-mention': link:../extension-mention
+      '@gitee/wysiwyg-editor-extension-menubar': link:../extension-menubar
+      '@gitee/wysiwyg-editor-extension-ordered-list': link:../extension-ordered-list
+      '@gitee/wysiwyg-editor-extension-strike': link:../extension-strike
+      '@gitee/wysiwyg-editor-extension-table': link:../extension-table
+      '@gitee/wysiwyg-editor-extension-task-item': link:../extension-task-item
+      '@gitee/wysiwyg-editor-extension-uploader': link:../extension-uploader
+      '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-dropcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-gapcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-hard-break': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-heading': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-history': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-paragraph': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-task-list': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
+      classnames: 2.3.2
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+    devDependencies:
+      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
+      '@types/react': 16.14.34
+      '@types/react-dom': 16.9.17
+      eslint-config-custom: link:../eslint-config-custom
+      rollup-plugin-copy: 3.4.0
+      tsconfig: link:../tsconfig
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/eslint-config-custom:
     specifiers:
@@ -352,8 +387,8 @@ importers:
       eslint-config-prettier: ^8.5.0
       eslint-plugin-react: ^7.32.2
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.44.0_e2lvjb2eg2mgv3h5oqf6kw3to4
-      '@typescript-eslint/parser': 5.44.0_77fvizpdb3y4icyeo2mf4eo7em
+      '@typescript-eslint/eslint-plugin': 5.44.0_wn2lldm33jszzpptq7r22sqksi
+      '@typescript-eslint/parser': 5.44.0_jofidmxrjzhj7l6vknpw5ecvfe
       eslint-config-prettier: 8.5.0_eslint@7.32.0
       eslint-plugin-react: 7.32.2_eslint@7.32.0
 
@@ -365,7 +400,7 @@ importers:
       '@tiptap/extension-blockquote': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
@@ -374,7 +409,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-bold:
     specifiers:
@@ -383,7 +418,7 @@ importers:
       '@tiptap/extension-bold': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -391,7 +426,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-bubble-menu:
     specifiers:
@@ -403,7 +438,7 @@ importers:
       lodash: ^4.17.21
       tippy.js: ^6.3.7
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -414,7 +449,7 @@ importers:
       '@types/lodash': 4.14.191
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-bullet-list:
     specifiers:
@@ -424,7 +459,7 @@ importers:
       '@tiptap/extension-bullet-list': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
@@ -433,7 +468,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-code:
     specifiers:
@@ -442,7 +477,7 @@ importers:
       '@tiptap/extension-code': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -450,7 +485,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-code-block:
     specifiers:
@@ -472,7 +507,7 @@ importers:
       react: ^16.14.0
       react-dom: ^16.14.0
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
@@ -493,7 +528,7 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-emoji:
     specifiers:
@@ -516,8 +551,8 @@ importers:
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
@@ -539,8 +574,8 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/extension-horizontal-rule:
     specifiers:
@@ -549,7 +584,7 @@ importers:
       '@tiptap/extension-horizontal-rule': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -557,7 +592,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-image:
     specifiers:
@@ -577,8 +612,8 @@ importers:
       lodash-es: ^4.17.21
       react: ^16.14.0
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
@@ -597,8 +632,8 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/extension-indentation:
     specifiers:
@@ -607,7 +642,7 @@ importers:
       '@tiptap/pm': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -615,7 +650,7 @@ importers:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-italic:
     specifiers:
@@ -624,7 +659,7 @@ importers:
       '@tiptap/extension-italic': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -632,7 +667,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-link:
     specifiers:
@@ -649,8 +684,8 @@ importers:
       react: ^16.14.0
       react-dom: ^16.14.0
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
@@ -666,8 +701,8 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/extension-list-item:
     specifiers:
@@ -675,14 +710,14 @@ importers:
       '@tiptap/extension-list-item': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/extension-list-item': 2.0.3_@tiptap+core@2.0.3
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-lists-indentation:
     specifiers:
@@ -691,7 +726,7 @@ importers:
       '@tiptap/pm': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -699,7 +734,7 @@ importers:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-markdown:
     specifiers:
@@ -709,7 +744,7 @@ importers:
       eslint-config-custom: workspace:*
       tiptap-markdown: ^0.7.2
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -718,7 +753,7 @@ importers:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-mention:
     specifiers:
@@ -734,8 +769,8 @@ importers:
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-react': link:../react
@@ -750,8 +785,8 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/extension-menubar:
     specifiers:
@@ -776,8 +811,8 @@ importers:
       react: ^16.14.0
       react-dom: ^16.14.0
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
@@ -801,8 +836,8 @@ importers:
       '@types/react-dom': 16.9.17
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/extension-ordered-list:
     specifiers:
@@ -812,7 +847,7 @@ importers:
       '@tiptap/extension-ordered-list': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
@@ -821,7 +856,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-strike:
     specifiers:
@@ -830,7 +865,7 @@ importers:
       '@tiptap/extension-strike': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -838,7 +873,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-table:
     specifiers:
@@ -860,7 +895,7 @@ importers:
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
@@ -881,7 +916,7 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-task-item:
     specifiers:
@@ -891,7 +926,7 @@ importers:
       '@tiptap/pm': ^2.0.3
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      typescript: ^4.5.2
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
@@ -900,7 +935,7 @@ importers:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      typescript: 4.9.3
+      typescript: 4.9.5
 
   packages/extension-uploader:
     specifiers:
@@ -912,8 +947,8 @@ importers:
       browser-fs-access: ^0.31.1
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-common': link:../common
@@ -924,8 +959,8 @@ importers:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/react:
     specifiers:
@@ -940,11 +975,13 @@ importers:
       react-dom: ^16.14.0
       tippy.js: ^6.3.7
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
     devDependencies:
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
@@ -952,11 +989,9 @@ importers:
       '@types/react': 16.14.34
       '@types/react-dom': 18.0.11
       eslint-config-custom: link:../eslint-config-custom
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
       tsconfig: link:../tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
   packages/theme:
     specifiers:
@@ -1001,8 +1036,8 @@ importers:
       lodash-es: ^4.17.21
       react: ^16.14.0
       tsconfig: workspace:*
-      tslib: ^2.4.1
-      typescript: ^4.5.2
+      tslib: ^2.5.3
+      typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
@@ -1023,8 +1058,8 @@ importers:
       '@types/react': 16.14.34
       eslint-config-custom: link:../../packages/eslint-config-custom
       tsconfig: link:../../packages/tsconfig
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
 
 packages:
 
@@ -3709,11 +3744,17 @@ packages:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
+  /@types/fs-extra/8.1.2:
+    resolution: {integrity: sha512-SvSrYXfWSc7R4eqnOzbQF4TZmfpNSM9FrSWLU3EUnWBuyZqNBOrv1B1JA3byUDPUl9z4Ab3jeZG2eDdySlgNMg==}
+    dependencies:
+      '@types/node': 18.13.0
+    dev: true
+
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.11.15
+      '@types/node': 18.13.0
     dev: true
 
   /@types/hast/2.3.4:
@@ -3844,7 +3885,7 @@ packages:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
 
-  /@typescript-eslint/eslint-plugin/5.44.0_e2lvjb2eg2mgv3h5oqf6kw3to4:
+  /@typescript-eslint/eslint-plugin/5.44.0_wn2lldm33jszzpptq7r22sqksi:
     resolution: {integrity: sha512-j5ULd7FmmekcyWeArx+i8x7sdRHzAtXTkmDPthE4amxZOWKFK7bomoJ4r7PJ8K7PoMzD16U8MmuZFAonr1ERvw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3855,23 +3896,23 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.44.0_77fvizpdb3y4icyeo2mf4eo7em
+      '@typescript-eslint/parser': 5.44.0_jofidmxrjzhj7l6vknpw5ecvfe
       '@typescript-eslint/scope-manager': 5.44.0
-      '@typescript-eslint/type-utils': 5.44.0_77fvizpdb3y4icyeo2mf4eo7em
-      '@typescript-eslint/utils': 5.44.0_77fvizpdb3y4icyeo2mf4eo7em
+      '@typescript-eslint/type-utils': 5.44.0_jofidmxrjzhj7l6vknpw5ecvfe
+      '@typescript-eslint/utils': 5.44.0_jofidmxrjzhj7l6vknpw5ecvfe
       debug: 4.3.4
       eslint: 7.32.0
       ignore: 5.2.0
       natural-compare-lite: 1.4.0
       regexpp: 3.2.0
       semver: 7.3.8
-      tsutils: 3.21.0_typescript@4.9.3
-      typescript: 4.9.3
+      tsutils: 3.21.0_typescript@4.9.5
+      typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@typescript-eslint/parser/5.44.0_77fvizpdb3y4icyeo2mf4eo7em:
+  /@typescript-eslint/parser/5.44.0_jofidmxrjzhj7l6vknpw5ecvfe:
     resolution: {integrity: sha512-H7LCqbZnKqkkgQHaKLGC6KUjt3pjJDx8ETDqmwncyb6PuoigYajyAwBGz08VU/l86dZWZgI4zm5k2VaKqayYyA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3883,10 +3924,10 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': 5.44.0
       '@typescript-eslint/types': 5.44.0
-      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.3
+      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.5
       debug: 4.3.4
       eslint: 7.32.0
-      typescript: 4.9.3
+      typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3899,7 +3940,7 @@ packages:
       '@typescript-eslint/visitor-keys': 5.44.0
     dev: false
 
-  /@typescript-eslint/type-utils/5.44.0_77fvizpdb3y4icyeo2mf4eo7em:
+  /@typescript-eslint/type-utils/5.44.0_jofidmxrjzhj7l6vknpw5ecvfe:
     resolution: {integrity: sha512-A1u0Yo5wZxkXPQ7/noGkRhV4J9opcymcr31XQtOzcc5nO/IHN2E2TPMECKWYpM3e6olWEM63fq/BaL1wEYnt/w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3909,12 +3950,12 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.3
-      '@typescript-eslint/utils': 5.44.0_77fvizpdb3y4icyeo2mf4eo7em
+      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.5
+      '@typescript-eslint/utils': 5.44.0_jofidmxrjzhj7l6vknpw5ecvfe
       debug: 4.3.4
       eslint: 7.32.0
-      tsutils: 3.21.0_typescript@4.9.3
-      typescript: 4.9.3
+      tsutils: 3.21.0_typescript@4.9.5
+      typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3924,7 +3965,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: false
 
-  /@typescript-eslint/typescript-estree/5.44.0_typescript@4.9.3:
+  /@typescript-eslint/typescript-estree/5.44.0_typescript@4.9.5:
     resolution: {integrity: sha512-M6Jr+RM7M5zeRj2maSfsZK2660HKAJawv4Ud0xT+yauyvgrsHu276VtXlKDFnEmhG+nVEd0fYZNXGoAgxwDWJw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3939,13 +3980,13 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.8
-      tsutils: 3.21.0_typescript@4.9.3
-      typescript: 4.9.3
+      tsutils: 3.21.0_typescript@4.9.5
+      typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@typescript-eslint/utils/5.44.0_77fvizpdb3y4icyeo2mf4eo7em:
+  /@typescript-eslint/utils/5.44.0_jofidmxrjzhj7l6vknpw5ecvfe:
     resolution: {integrity: sha512-fMzA8LLQ189gaBjS0MZszw5HBdZgVwxVFShCO3QN+ws3GlPkcy9YuS3U4wkT6su0w+Byjq3mS3uamy9HE4Yfjw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3955,7 +3996,7 @@ packages:
       '@types/semver': 7.3.13
       '@typescript-eslint/scope-manager': 5.44.0
       '@typescript-eslint/types': 5.44.0
-      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.3
+      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.5
       eslint: 7.32.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@7.32.0
@@ -4029,7 +4070,7 @@ packages:
       react: 16.14.0
       resize-observer-polyfill: 1.5.1
       screenfull: 5.2.0
-      tslib: 2.4.1
+      tslib: 2.5.3
     dev: false
 
   /ajv/6.12.6:
@@ -4473,6 +4514,10 @@ packages:
 
   /colord/2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
+    dev: true
+
+  /colorette/1.4.0:
+    resolution: {integrity: sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g==}
     dev: true
 
   /colorette/2.0.19:
@@ -5502,6 +5547,20 @@ packages:
     dependencies:
       define-properties: 1.1.4
 
+  /globby/10.0.1:
+    resolution: {integrity: sha512-sSs4inE1FB2YQiymcmTv6NWENryABjUNPeWhOvmn4SjtKybglsyPZxFB3U1/+L1bYi0rNZDqCLlHyLYDl1Pq5A==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@types/glob': 7.2.0
+      array-union: 2.1.0
+      dir-glob: 3.0.1
+      fast-glob: 3.2.12
+      glob: 7.2.3
+      ignore: 5.2.0
+      merge2: 1.4.1
+      slash: 3.0.0
+    dev: true
+
   /globby/10.0.2:
     resolution: {integrity: sha512-7dUi7RvCoT/xast/o/dLN53oqND4yk0nsHkhRgn9w65C4PofCLOoJ39iSOg+qVDdWQPIEj+eszMHQ+aLVwwQSg==}
     engines: {node: '>=8'}
@@ -5841,6 +5900,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       isobject: 3.0.1
+
+  /is-plain-object/3.0.1:
+    resolution: {integrity: sha512-Xnpx182SBMrr/aBik8y+GuR4U1L9FqMSojwDQwPMmxyC6bvEqly9UBCxhauBF5vNh2gwWJNX6oDV7O+OM4z34g==}
+    engines: {node: '>=0.10.0'}
+    dev: true
 
   /is-reference/1.2.1:
     resolution: {integrity: sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==}
@@ -7689,6 +7753,17 @@ packages:
       semver: 5.7.1
     dev: true
 
+  /rollup-plugin-copy/3.4.0:
+    resolution: {integrity: sha512-rGUmYYsYsceRJRqLVlE9FivJMxJ7X6jDlP79fmFkL8sJs7VVMSVyA2yfyL+PGyO/vJs4A87hwhgVfz61njI+uQ==}
+    engines: {node: '>=8.3'}
+    dependencies:
+      '@types/fs-extra': 8.1.2
+      colorette: 1.4.0
+      fs-extra: 8.1.0
+      globby: 10.0.1
+      is-plain-object: 3.0.1
+    dev: true
+
   /rollup-plugin-delete/2.0.0:
     resolution: {integrity: sha512-/VpLMtDy+8wwRlDANuYmDa9ss/knGsAgrDhM+tEwB1npHwNu4DYNmDfUL55csse/GHs9Q+SMT/rw9uiaZ3pnzA==}
     engines: {node: '>=10'}
@@ -7696,7 +7771,7 @@ packages:
       del: 5.1.0
     dev: true
 
-  /rollup-plugin-dts/4.2.3_k35zwyycrckt5xfsejji7kbwn4:
+  /rollup-plugin-dts/4.2.3_zptcx3kz3uwp66hzhyyt545weq:
     resolution: {integrity: sha512-jlcpItqM2efqfIiKzDB/IKOS9E9fDvbkJSGw5GtK/PqPGS9eC3R3JKyw2VvpTktZA+TNgJRMu1NTv244aTUzzQ==}
     engines: {node: '>=v12.22.12'}
     peerDependencies:
@@ -7705,7 +7780,7 @@ packages:
     dependencies:
       magic-string: 0.26.7
       rollup: 2.79.1
-      typescript: 4.9.3
+      typescript: 4.9.5
     optionalDependencies:
       '@babel/code-frame': 7.18.6
     dev: true
@@ -7749,7 +7824,7 @@ packages:
       source-map-resolve: 0.6.0
     dev: true
 
-  /rollup-plugin-typescript2/0.34.1_k35zwyycrckt5xfsejji7kbwn4:
+  /rollup-plugin-typescript2/0.34.1_zptcx3kz3uwp66hzhyyt545weq:
     resolution: {integrity: sha512-P4cHLtGikESmqi1CA+tdMDUv8WbQV48mzPYt77TSTOPJpERyZ9TXdDgjSDix8Fkqce6soYz3+fa4lrC93IEkcw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -7760,8 +7835,8 @@ packages:
       fs-extra: 10.1.0
       rollup: 2.79.1
       semver: 7.3.8
-      tslib: 2.4.1
-      typescript: 4.9.3
+      tslib: 2.5.3
+      typescript: 4.9.5
     dev: true
 
   /rollup-plugin-visualizer/5.8.3_rollup@2.79.1:
@@ -7813,7 +7888,7 @@ packages:
   /rxjs/7.8.0:
     resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.5.3
     dev: true
 
   /safe-buffer/5.1.2:
@@ -8254,15 +8329,19 @@ packages:
 
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
+    dev: true
 
-  /tsutils/3.21.0_typescript@4.9.3:
+  /tslib/2.5.3:
+    resolution: {integrity: sha512-mSxlJJwl3BMEQCUNnxXBU9jP4JBktcEGhURcPR6VQVlnP0FdDEsIaz0C35dXNGLyRfrATNofF0F5p2KPxQgB+w==}
+
+  /tsutils/3.21.0_typescript@4.9.5:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: 1.14.1
-      typescript: 4.9.3
+      typescript: 4.9.5
     dev: false
 
   /tsx/3.12.3:
@@ -8290,65 +8369,65 @@ packages:
       yargs: 17.6.2
     dev: true
 
-  /turbo-darwin-64/1.9.9:
-    resolution: {integrity: sha512-UDGM9E21eCDzF5t1F4rzrjwWutcup33e7ZjNJcW/mJDPorazZzqXGKEPIy9kXwKhamUUXfC7668r6ZuA1WXF2Q==}
+  /turbo-darwin-64/1.10.1:
+    resolution: {integrity: sha512-isLLoPuAOMNsYovOq9BhuQOZWQuU13zYsW988KkkaA4OJqOn7qwa9V/KBYCJL8uVQqtG+/Y42J37lO8RJjyXuA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.9.9:
-    resolution: {integrity: sha512-VyfkXzTJpYLTAQ9krq2myyEq7RPObilpS04lgJ4OO1piq76RNmSpX9F/t9JCaY9Pj/4TL7i0d8PM7NGhwEA5Ag==}
+  /turbo-darwin-arm64/1.10.1:
+    resolution: {integrity: sha512-x1nloPR10fLElNCv17BKr0kCx/O5gse/UXAcVscMZH2tvRUtXrdBmut62uw2YU3J9hli2fszYjUWXkulVpQvFA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.9.9:
-    resolution: {integrity: sha512-Fu1MY29Odg8dHOqXcpIIGC3T63XLOGgnGfbobXMKdrC7JQDvtJv8TUCYciRsyknZYjyyKK1z6zKuYIiDjf3KeQ==}
+  /turbo-linux-64/1.10.1:
+    resolution: {integrity: sha512-abV+ODCeOlz0503OZlHhPWdy3VwJZc1jObf1VQj7uQM+JqJ/kXbMyqJIMQVz+m7QJUFdferYPRxGhYT/NbYK7Q==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.9.9:
-    resolution: {integrity: sha512-50LI8NafPuJxdnMCBeDdzgyt1cgjQG7FwkyY336v4e95WJPUVjrHdrKH6jYXhOUyrv9+jCJxwX1Yrg02t5yJ1g==}
+  /turbo-linux-arm64/1.10.1:
+    resolution: {integrity: sha512-zRC3nZbHQ63tofOmbuySzEn1ROISWTkemYYr1L98rpmT5aVa0kERlGiYcfDwZh3cBso/Ylg/wxexRAaPzcCJYQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.9.9:
-    resolution: {integrity: sha512-9IsTReoLmQl1IRsy3WExe2j2RKWXQyXujfJ4fXF+jp08KxjVF4/tYP2CIRJx/A7UP/7keBta27bZqzAjsmbSTA==}
+  /turbo-windows-64/1.10.1:
+    resolution: {integrity: sha512-Irqz8IU+o7Q/5V44qatZBTunk+FQAOII1hZTsEU54ah62f9Y297K6/LSp+yncmVQOZlFVccXb6MDqcETExIQtA==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.9.9:
-    resolution: {integrity: sha512-CUu4hpeQo68JjDr0V0ygTQRLbS+/sNfdqEVV+Xz9136vpKn2WMQLAuUBVZV0Sp0S/7i+zGnplskT0fED+W46wQ==}
+  /turbo-windows-arm64/1.10.1:
+    resolution: {integrity: sha512-124IT15d2gyjC+NEn11pHOaVFvZDRHpxfF+LDUzV7YxfNIfV0mGkR3R/IyVXtQHOgqOdtQTbC4y411sm31+SEw==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.9.9:
-    resolution: {integrity: sha512-+ZS66LOT7ahKHxh6XrIdcmf2Yk9mNpAbPEj4iF2cs0cAeaDU3xLVPZFF0HbSho89Uxwhx7b5HBgPbdcjQTwQkg==}
+  /turbo/1.10.1:
+    resolution: {integrity: sha512-wq0YeSv6P/eEDXOL42jkMUr+T4z34dM8mdHu5u6C6OOAq8JuLJ72F/v4EVR1JmY8icyTkFz10ICLV0haUUYhbQ==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.9.9
-      turbo-darwin-arm64: 1.9.9
-      turbo-linux-64: 1.9.9
-      turbo-linux-arm64: 1.9.9
-      turbo-windows-64: 1.9.9
-      turbo-windows-arm64: 1.9.9
+      turbo-darwin-64: 1.10.1
+      turbo-darwin-arm64: 1.10.1
+      turbo-linux-64: 1.10.1
+      turbo-linux-arm64: 1.10.1
+      turbo-windows-64: 1.10.1
+      turbo-windows-arm64: 1.10.1
     dev: true
 
   /type-check/0.4.0:
@@ -8396,8 +8475,8 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: true
 
-  /typescript/4.9.3:
-    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
 

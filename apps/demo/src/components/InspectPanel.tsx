@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Editor, EditorEvents } from '@tiptap/core';
+import { Editor, EditorEvents } from '@gitee/wysiwyg-editor';
 import throttle from 'lodash/throttle';
 
 const InspectPanel = ({ editor }: { editor: Editor | null }) => {
@@ -75,9 +75,6 @@ const InspectPanel = ({ editor }: { editor: Editor | null }) => {
         ref={textareaRef}
         className={tab === 'json' ? 'json' : 'html'}
         onChange={(e) => {
-          // 当图片数据量 base64 字符太大时会卡顿
-          // todo sync editor
-          console.log('--------onChange----', e.target.value);
           if (tab === 'json') {
             try {
               editor?.commands.setContent(JSON.parse(e.target.value));
