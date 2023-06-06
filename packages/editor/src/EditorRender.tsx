@@ -38,7 +38,12 @@ import type { Editor } from '@gitee/wysiwyg-editor-react';
 import { EditorContent, EditorContentProps } from './EditorContent';
 import './EditorRender.less';
 
-export type EditorRenderProps = EditorContentProps & {
+export type EditorRenderProps = Omit<
+  EditorContentProps,
+  'className' | 'style' | 'children'
+> & {
+  className?: string;
+  style?: React.CSSProperties;
   menuClassName?: string;
   menuStyle?: React.CSSProperties;
   menuEnableUndoRedo?: boolean;

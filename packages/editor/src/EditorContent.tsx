@@ -134,9 +134,9 @@ export type ExtensionOptions = {
 
 export type EditorContentProps = {
   className?: string;
-  style?: React.CSSProperties | undefined;
+  style?: React.CSSProperties;
 
-  defaultValue?: Content | undefined;
+  defaultValue?: Content;
 
   autoFocus?: FocusPosition;
   readOnly?: boolean;
