@@ -1,5 +1,19 @@
 # @gitee/tide-extension-image
 
+## 0.2.0-alpha.0
+
+### Minor Changes
+
+- Bump the version to 0.2.0-alpha.0
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide-common@0.2.0-alpha.0
+  - @gitee/tide-extension-bubble-menu@0.2.0-alpha.0
+  - @gitee/tide-react@0.2.0-alpha.0
+  - @gitee/tide-theme@0.2.0-alpha.0
+
 ## 0.1.0-alpha.18
 
 ### Minor Changes

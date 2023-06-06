@@ -33,7 +33,8 @@
     "@gitee/tide-theme": "0.1.0-alpha.0",
     "@gitee/tide-extension-indentation": "0.1.0-alpha.7",
     "@gitee/tide-legacy": "0.1.0-alpha.10",
-    "@gitee/tide-presets-mentions": "0.0.1"
+    "@gitee/tide-presets-mentions": "0.0.1",
+    "@gitee/tide": "0.1.0-alpha.18"
   },
   "changesets": [
     "bright-crabs-look",
@@ -51,6 +52,7 @@
     "late-flowers-dress",
     "light-rice-try",
     "nasty-pillows-breathe",
+    "pink-bees-carry",
     "rare-forks-rule",
     "real-trainers-turn",
     "tame-beds-attend",
