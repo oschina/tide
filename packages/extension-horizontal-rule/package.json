@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-extension-horizontal-rule",
+  "name": "@gitee/tide-extension-horizontal-rule",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

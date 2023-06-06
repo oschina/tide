@@ -1,4 +1,4 @@
-import { MentionItemDataType } from '@gitee/wysiwyg-editor-extension-mention';
+import { MentionItemDataType } from '@gitee/tide-extension-mention';
 
 export interface IssueType {
   id: number;

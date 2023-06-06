@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-react",
+  "name": "@gitee/tide-react",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
+    "@gitee/tide-extension-bubble-menu": "workspace:*",
     "tippy.js": "^6.3.7",
     "@babel/runtime-corejs3": "^7.21.0"
   },

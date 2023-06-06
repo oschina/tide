@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-bubble-menu
+# @gitee/tide-extension-bubble-menu
 
 ## 0.1.0-alpha.18
 
@@ -88,7 +88,7 @@
 
 ### Minor Changes
 
-- Refactor @gitee/wysiwyg-editor-extension-bubble-menu.
+- Refactor @gitee/tide-extension-bubble-menu.
 
 ## 0.1.0-alpha.4
 
@@ -99,7 +99,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @gitee/wysiwyg-editor-react@0.1.0-alpha.4
+  - @gitee/tide-react@0.1.0-alpha.4
 
 ## 0.1.0-alpha.3
 
@@ -110,7 +110,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @gitee/wysiwyg-editor-react@0.1.0-alpha.3
+  - @gitee/tide-react@0.1.0-alpha.3
 
 ## 0.1.0-alpha.2
 
@@ -121,7 +121,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @gitee/wysiwyg-editor-react@0.1.0-alpha.2
+  - @gitee/tide-react@0.1.0-alpha.2
 
 ## 0.1.0-alpha.1
 
@@ -132,7 +132,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @gitee/wysiwyg-editor-react@0.1.0-alpha.1
+  - @gitee/tide-react@0.1.0-alpha.1
 
 ## 0.1.0-alpha.0
 
@@ -143,4 +143,4 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @gitee/wysiwyg-editor-react@0.1.0-alpha.0
+  - @gitee/tide-react@0.1.0-alpha.0

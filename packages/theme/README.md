@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-theme
+# @gitee/tide-theme
 
 ## 介绍
 

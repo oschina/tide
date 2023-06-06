@@ -2,8 +2,8 @@ import React, { useCallback, useRef, useState } from 'react';
 import Tippy from '@tippyjs/react';
 import { PluginKey } from '@tiptap/pm/state';
 import { Editor, posToDOMRect } from '@tiptap/core';
-import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
-import type { BubbleMenuProps } from '@gitee/wysiwyg-editor-react';
+import { BubbleMenu } from '@gitee/tide-react';
+import type { BubbleMenuProps } from '@gitee/tide-react';
 import {
   IconAlignCenterBold,
   IconAlignRightBold,

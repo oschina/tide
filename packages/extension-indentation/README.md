@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-indentation
+# @gitee/tide-extension-indentation
 
 ## 介绍
 

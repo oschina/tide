@@ -8,8 +8,8 @@ import {
   MentionList,
   MentionListProps,
   MentionOptions,
-} from '@gitee/wysiwyg-editor-extension-mention';
-import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
+} from '@gitee/tide-extension-mention';
+import { ReactNodeViewRenderer } from '@gitee/tide-react';
 import { MentionMemberNodeView } from './NodeView';
 import { MentionListItemRender } from './ItemRender';
 import { MentionMemberAttributes, MentionMemberItemDataType } from './types';

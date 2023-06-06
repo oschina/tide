@@ -5,7 +5,7 @@ import {
   MentionPullRequestAttributes,
   MentionMemberAttributes,
   MentionIssueAttributes,
-} from '@gitee/wysiwyg-editor-presets-mentions';
+} from '@gitee/tide-presets-mentions';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 

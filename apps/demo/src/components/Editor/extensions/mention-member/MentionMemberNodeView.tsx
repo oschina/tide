@@ -1,6 +1,6 @@
 import React from 'react';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
-import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
+import { NodeViewWrapper } from '@gitee/tide-react';
 import styles from './MentionMemberNodeView.module.less';
 
 const MemberAvatar: React.FC = () => {
@@ -36,7 +36,12 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
       {editor.isEditable ? (
         <span className={styles.mention}>{content}</span>
       ) : (
-        <a className={styles.mention} href={node.attrs.url} target="_blank" rel="noreferrer">
+        <a
+          className={styles.mention}
+          href={node.attrs.url}
+          target="_blank"
+          rel="noreferrer"
+        >
           {content}
         </a>
       )}

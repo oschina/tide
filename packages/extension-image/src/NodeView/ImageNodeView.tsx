@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import classNames from 'classnames';
 import type { NodeViewProps } from '@tiptap/core';
 import { NodeSelection } from '@tiptap/pm/state';
-import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
+import { NodeViewWrapper } from '@gitee/tide-react';
 import { useResize } from './resize';
 
 import './ImageNodeView.less';

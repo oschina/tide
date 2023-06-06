@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-emoji
+# @gitee/tide-extension-emoji
 
 ## 介绍
 

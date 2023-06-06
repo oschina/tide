@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-uploader
+# @gitee/tide-extension-uploader
 
 ## 介绍
 

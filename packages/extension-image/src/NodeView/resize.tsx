@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import type { Editor } from '@tiptap/core';
-import { selectionCellInfo } from '@gitee/wysiwyg-editor-common';
+import { selectionCellInfo } from '@gitee/tide-common';
 import { throttle } from 'lodash-es';
 
 export const useResize = (

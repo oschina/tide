@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-extension-menubar",
+  "name": "@gitee/tide-extension-menubar",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,12 +15,12 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-common": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-emoji": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-table": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
-    "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@gitee/wysiwyg-editor-theme": "workspace:*",
+    "@gitee/tide-common": "workspace:*",
+    "@gitee/tide-extension-emoji": "workspace:*",
+    "@gitee/tide-extension-table": "workspace:*",
+    "@gitee/tide-extension-uploader": "workspace:*",
+    "@gitee/tide-react": "workspace:*",
+    "@gitee/tide-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@babel/runtime-corejs3": "^7.21.0",
     "classnames": "^2.2.6",

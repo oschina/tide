@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-bold
+# @gitee/tide-extension-bold
 
 ## 介绍
 

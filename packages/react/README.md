@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-react
+# @gitee/tide-react
 
 ## 介绍
 

@@ -1,11 +1,11 @@
-# wysiwyg-editor
+# tide
 
 基于 tiptap 的所见即所得编辑器
 
 ## 开发
 
 ```shell
-cd wysiwyg-editor
+cd tide
 
 # 安装依赖
 pnpm i

@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-presets-mentions",
+  "name": "@gitee/tide-presets-mentions",
   "version": "0.1.0-alpha.3",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.21.0",
-    "@gitee/wysiwyg-editor-common": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-bubble-menu": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-mention": "workspace:*",
-    "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@gitee/wysiwyg-editor-theme": "workspace:*",
+    "@gitee/tide-common": "workspace:*",
+    "@gitee/tide-extension-bubble-menu": "workspace:*",
+    "@gitee/tide-extension-mention": "workspace:*",
+    "@gitee/tide-react": "workspace:*",
+    "@gitee/tide-theme": "workspace:*",
     "@gitee/icons-react": "^0.1.38",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/extension-image": "^2.0.3",

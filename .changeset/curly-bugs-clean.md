@@ -1,30 +1,30 @@
 ---
-'@gitee/wysiwyg-editor-common': minor
-'@gitee/wysiwyg-editor-editor': minor
-'@gitee/wysiwyg-editor-extension-blockquote': minor
-'@gitee/wysiwyg-editor-extension-bold': minor
-'@gitee/wysiwyg-editor-extension-bubble-menu': minor
-'@gitee/wysiwyg-editor-extension-bullet-list': minor
-'@gitee/wysiwyg-editor-extension-code': minor
-'@gitee/wysiwyg-editor-extension-code-block': minor
-'@gitee/wysiwyg-editor-extension-emoji': minor
-'@gitee/wysiwyg-editor-extension-horizontal-rule': minor
-'@gitee/wysiwyg-editor-extension-image': minor
-'@gitee/wysiwyg-editor-extension-italic': minor
-'@gitee/wysiwyg-editor-extension-link': minor
-'@gitee/wysiwyg-editor-extension-list-item': minor
-'@gitee/wysiwyg-editor-extension-lists-indentation': minor
-'@gitee/wysiwyg-editor-extension-markdown': minor
-'@gitee/wysiwyg-editor-extension-mention': minor
-'@gitee/wysiwyg-editor-extension-menubar': minor
-'@gitee/wysiwyg-editor-extension-ordered-list': minor
-'@gitee/wysiwyg-editor-extension-strike': minor
-'@gitee/wysiwyg-editor-extension-table': minor
-'@gitee/wysiwyg-editor-extension-task-item': minor
-'@gitee/wysiwyg-editor-extension-uploader': minor
-'@gitee/wysiwyg-editor-markdown': minor
-'@gitee/wysiwyg-editor-react': minor
-'@gitee/wysiwyg-editor-theme': minor
+'@gitee/tide-common': minor
+'@gitee/tide-editor': minor
+'@gitee/tide-extension-blockquote': minor
+'@gitee/tide-extension-bold': minor
+'@gitee/tide-extension-bubble-menu': minor
+'@gitee/tide-extension-bullet-list': minor
+'@gitee/tide-extension-code': minor
+'@gitee/tide-extension-code-block': minor
+'@gitee/tide-extension-emoji': minor
+'@gitee/tide-extension-horizontal-rule': minor
+'@gitee/tide-extension-image': minor
+'@gitee/tide-extension-italic': minor
+'@gitee/tide-extension-link': minor
+'@gitee/tide-extension-list-item': minor
+'@gitee/tide-extension-lists-indentation': minor
+'@gitee/tide-extension-markdown': minor
+'@gitee/tide-extension-mention': minor
+'@gitee/tide-extension-menubar': minor
+'@gitee/tide-extension-ordered-list': minor
+'@gitee/tide-extension-strike': minor
+'@gitee/tide-extension-table': minor
+'@gitee/tide-extension-task-item': minor
+'@gitee/tide-extension-uploader': minor
+'@gitee/tide-markdown': minor
+'@gitee/tide-react': minor
+'@gitee/tide-theme': minor
 ---
 
 Fix mention, emoji, link bugs.

@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-table
+# @gitee/tide-extension-table
 
 ## 介绍
 

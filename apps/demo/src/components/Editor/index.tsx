@@ -1,18 +1,18 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import { TextAlign } from '@tiptap/extension-text-align';
-import { Editor, EditorRender, EditorRenderProps } from '@gitee/wysiwyg-editor';
+import { Editor, EditorRender, EditorRenderProps } from '@gitee/tide';
 import { MentionMember } from './extensions/mention-member';
 import { ajaxImgUploader } from './utils';
-import '@gitee/wysiwyg-editor/dist/style.css';
+import '@gitee/tide/dist/style.css';
 import 'highlight.js/styles/default.css';
 
-export type WysiwygEditorProps = Omit<
+export type TideEditorProps = Omit<
   EditorRenderProps,
   'editorOptions' | 'extensionOptions'
 >;
 
-export const WysiwygEditor = forwardRef<Editor, WysiwygEditorProps>(
+export const TideEditor = forwardRef<Editor, TideEditorProps>(
   ({ ...props }, ref) => {
     const [editor, setEditor] = useState<Editor | null>(null);
 
@@ -91,4 +91,4 @@ export const WysiwygEditor = forwardRef<Editor, WysiwygEditorProps>(
   }
 );
 
-WysiwygEditor.displayName = 'WysiwygEditor';
+TideEditor.displayName = 'TideEditor';

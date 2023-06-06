@@ -1,4 +1,4 @@
-import { isWindows } from '@gitee/wysiwyg-editor-common';
+import { isWindows } from '@gitee/tide-common';
 
 export const command = isWindows() ? 'Ctrl' : '⌘';
 

@@ -1,4 +1,4 @@
-import { UploaderFunc } from '@gitee/wysiwyg-editor-extension-uploader';
+import { UploaderFunc } from '@gitee/tide-extension-uploader';
 import axios, { AxiosRequestConfig } from 'axios';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

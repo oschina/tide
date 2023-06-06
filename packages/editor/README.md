@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor
+# @gitee/tide
 
 ## 介绍
 
@@ -7,18 +7,18 @@
 ## 安装
 
 ```bash
-npm install --save @gitee/wysiwyg-editor highlight.js
+npm install --save @gitee/tide highlight.js
 # or
-yarn add @gitee/wysiwyg-editor highlight.js
+yarn add @gitee/tide highlight.js
 # or
-pnpm add @gitee/wysiwyg-editor highlight.js
+pnpm add @gitee/tide highlight.js
 ```
 
 ## 使用
 
 ```tsx
-import { EditorRender, JSONContent } from '@gitee/wysiwyg-editor';
-import '@gitee/wysiwyg-editor/dist/style.css';
+import { EditorRender, JSONContent } from '@gitee/tide';
+import '@gitee/tide/dist/style.css';
 import 'highlight.js/styles/default.css';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 }
 ```
 
-如需自定义样式，可参考 `@gitee/wysiwyg-editor-theme/dist/variable.less` 中的 CSS Variables 进行覆盖。
+如需自定义样式，可参考 `@gitee/tide-theme/dist/variable.less` 中的 CSS Variables 进行覆盖。
 
 ## 属性
 

@@ -70,11 +70,11 @@ importers:
 
   apps/demo:
     specifiers:
-      '@gitee/wysiwyg-editor': workspace:*
-      '@gitee/wysiwyg-editor-extension-mention': workspace:*
-      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide': workspace:*
+      '@gitee/tide-extension-mention': workspace:*
+      '@gitee/tide-extension-uploader': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-text-align': ^2.0.3
       '@tiptap/pm': ^2.0.3
@@ -102,11 +102,11 @@ importers:
       typescript: ^4.9.5
       vite: ^4.0.0
     dependencies:
-      '@gitee/wysiwyg-editor': link:../../packages/editor
-      '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
-      '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
-      '@gitee/wysiwyg-editor-react': link:../../packages/react
-      '@gitee/wysiwyg-editor-theme': link:../../packages/theme
+      '@gitee/tide': link:../../packages/editor
+      '@gitee/tide-extension-mention': link:../../packages/extension-mention
+      '@gitee/tide-extension-uploader': link:../../packages/extension-uploader
+      '@gitee/tide-react': link:../../packages/react
+      '@gitee/tide-theme': link:../../packages/theme
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
@@ -137,31 +137,31 @@ importers:
 
   apps/legacy:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
-      '@gitee/wysiwyg-editor-extension-bold': workspace:*
-      '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
-      '@gitee/wysiwyg-editor-extension-code': workspace:*
-      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
-      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
-      '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
-      '@gitee/wysiwyg-editor-extension-image': workspace:*
-      '@gitee/wysiwyg-editor-extension-indentation': workspace:*
-      '@gitee/wysiwyg-editor-extension-italic': workspace:*
-      '@gitee/wysiwyg-editor-extension-link': workspace:*
-      '@gitee/wysiwyg-editor-extension-list-item': workspace:*
-      '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
-      '@gitee/wysiwyg-editor-extension-markdown': workspace:*
-      '@gitee/wysiwyg-editor-extension-mention': workspace:*
-      '@gitee/wysiwyg-editor-extension-menubar': workspace:*
-      '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
-      '@gitee/wysiwyg-editor-extension-strike': workspace:*
-      '@gitee/wysiwyg-editor-extension-table': workspace:*
-      '@gitee/wysiwyg-editor-extension-task-item': workspace:*
-      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
-      '@gitee/wysiwyg-editor-presets-mentions': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-extension-blockquote': workspace:*
+      '@gitee/tide-extension-bold': workspace:*
+      '@gitee/tide-extension-bullet-list': workspace:*
+      '@gitee/tide-extension-code': workspace:*
+      '@gitee/tide-extension-code-block': workspace:*
+      '@gitee/tide-extension-emoji': workspace:*
+      '@gitee/tide-extension-horizontal-rule': workspace:*
+      '@gitee/tide-extension-image': workspace:*
+      '@gitee/tide-extension-indentation': workspace:*
+      '@gitee/tide-extension-italic': workspace:*
+      '@gitee/tide-extension-link': workspace:*
+      '@gitee/tide-extension-list-item': workspace:*
+      '@gitee/tide-extension-lists-indentation': workspace:*
+      '@gitee/tide-extension-markdown': workspace:*
+      '@gitee/tide-extension-mention': workspace:*
+      '@gitee/tide-extension-menubar': workspace:*
+      '@gitee/tide-extension-ordered-list': workspace:*
+      '@gitee/tide-extension-strike': workspace:*
+      '@gitee/tide-extension-table': workspace:*
+      '@gitee/tide-extension-task-item': workspace:*
+      '@gitee/tide-extension-uploader': workspace:*
+      '@gitee/tide-presets-mentions': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-bubble-menu': ^2.0.3
@@ -200,31 +200,31 @@ importers:
       typescript: ^4.9.5
       vite: ^4.0.0
     dependencies:
-      '@gitee/wysiwyg-editor-common': link:../../packages/common
-      '@gitee/wysiwyg-editor-extension-blockquote': link:../../packages/extension-blockquote
-      '@gitee/wysiwyg-editor-extension-bold': link:../../packages/extension-bold
-      '@gitee/wysiwyg-editor-extension-bullet-list': link:../../packages/extension-bullet-list
-      '@gitee/wysiwyg-editor-extension-code': link:../../packages/extension-code
-      '@gitee/wysiwyg-editor-extension-code-block': link:../../packages/extension-code-block
-      '@gitee/wysiwyg-editor-extension-emoji': link:../../packages/extension-emoji
-      '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../../packages/extension-horizontal-rule
-      '@gitee/wysiwyg-editor-extension-image': link:../../packages/extension-image
-      '@gitee/wysiwyg-editor-extension-indentation': link:../../packages/extension-indentation
-      '@gitee/wysiwyg-editor-extension-italic': link:../../packages/extension-italic
-      '@gitee/wysiwyg-editor-extension-link': link:../../packages/extension-link
-      '@gitee/wysiwyg-editor-extension-list-item': link:../../packages/extension-list-item
-      '@gitee/wysiwyg-editor-extension-lists-indentation': link:../../packages/extension-lists-indentation
-      '@gitee/wysiwyg-editor-extension-markdown': link:../../packages/extension-markdown
-      '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
-      '@gitee/wysiwyg-editor-extension-menubar': link:../../packages/extension-menubar
-      '@gitee/wysiwyg-editor-extension-ordered-list': link:../../packages/extension-ordered-list
-      '@gitee/wysiwyg-editor-extension-strike': link:../../packages/extension-strike
-      '@gitee/wysiwyg-editor-extension-table': link:../../packages/extension-table
-      '@gitee/wysiwyg-editor-extension-task-item': link:../../packages/extension-task-item
-      '@gitee/wysiwyg-editor-extension-uploader': link:../../packages/extension-uploader
-      '@gitee/wysiwyg-editor-presets-mentions': link:../../presets/mentions
-      '@gitee/wysiwyg-editor-react': link:../../packages/react
-      '@gitee/wysiwyg-editor-theme': link:../../packages/theme
+      '@gitee/tide-common': link:../../packages/common
+      '@gitee/tide-extension-blockquote': link:../../packages/extension-blockquote
+      '@gitee/tide-extension-bold': link:../../packages/extension-bold
+      '@gitee/tide-extension-bullet-list': link:../../packages/extension-bullet-list
+      '@gitee/tide-extension-code': link:../../packages/extension-code
+      '@gitee/tide-extension-code-block': link:../../packages/extension-code-block
+      '@gitee/tide-extension-emoji': link:../../packages/extension-emoji
+      '@gitee/tide-extension-horizontal-rule': link:../../packages/extension-horizontal-rule
+      '@gitee/tide-extension-image': link:../../packages/extension-image
+      '@gitee/tide-extension-indentation': link:../../packages/extension-indentation
+      '@gitee/tide-extension-italic': link:../../packages/extension-italic
+      '@gitee/tide-extension-link': link:../../packages/extension-link
+      '@gitee/tide-extension-list-item': link:../../packages/extension-list-item
+      '@gitee/tide-extension-lists-indentation': link:../../packages/extension-lists-indentation
+      '@gitee/tide-extension-markdown': link:../../packages/extension-markdown
+      '@gitee/tide-extension-mention': link:../../packages/extension-mention
+      '@gitee/tide-extension-menubar': link:../../packages/extension-menubar
+      '@gitee/tide-extension-ordered-list': link:../../packages/extension-ordered-list
+      '@gitee/tide-extension-strike': link:../../packages/extension-strike
+      '@gitee/tide-extension-table': link:../../packages/extension-table
+      '@gitee/tide-extension-task-item': link:../../packages/extension-task-item
+      '@gitee/tide-extension-uploader': link:../../packages/extension-uploader
+      '@gitee/tide-presets-mentions': link:../../presets/mentions
+      '@gitee/tide-react': link:../../packages/react
+      '@gitee/tide-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-bubble-menu': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
@@ -285,30 +285,30 @@ importers:
 
   packages/editor:
     specifiers:
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-extension-blockquote': workspace:*
-      '@gitee/wysiwyg-editor-extension-bold': workspace:*
-      '@gitee/wysiwyg-editor-extension-bullet-list': workspace:*
-      '@gitee/wysiwyg-editor-extension-code': workspace:*
-      '@gitee/wysiwyg-editor-extension-code-block': workspace:*
-      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
-      '@gitee/wysiwyg-editor-extension-horizontal-rule': workspace:*
-      '@gitee/wysiwyg-editor-extension-image': workspace:*
-      '@gitee/wysiwyg-editor-extension-indentation': workspace:*
-      '@gitee/wysiwyg-editor-extension-italic': workspace:*
-      '@gitee/wysiwyg-editor-extension-link': workspace:*
-      '@gitee/wysiwyg-editor-extension-list-item': workspace:*
-      '@gitee/wysiwyg-editor-extension-lists-indentation': workspace:*
-      '@gitee/wysiwyg-editor-extension-markdown': workspace:*
-      '@gitee/wysiwyg-editor-extension-mention': workspace:*
-      '@gitee/wysiwyg-editor-extension-menubar': workspace:*
-      '@gitee/wysiwyg-editor-extension-ordered-list': workspace:*
-      '@gitee/wysiwyg-editor-extension-strike': workspace:*
-      '@gitee/wysiwyg-editor-extension-table': workspace:*
-      '@gitee/wysiwyg-editor-extension-task-item': workspace:*
-      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-extension-blockquote': workspace:*
+      '@gitee/tide-extension-bold': workspace:*
+      '@gitee/tide-extension-bullet-list': workspace:*
+      '@gitee/tide-extension-code': workspace:*
+      '@gitee/tide-extension-code-block': workspace:*
+      '@gitee/tide-extension-emoji': workspace:*
+      '@gitee/tide-extension-horizontal-rule': workspace:*
+      '@gitee/tide-extension-image': workspace:*
+      '@gitee/tide-extension-indentation': workspace:*
+      '@gitee/tide-extension-italic': workspace:*
+      '@gitee/tide-extension-link': workspace:*
+      '@gitee/tide-extension-list-item': workspace:*
+      '@gitee/tide-extension-lists-indentation': workspace:*
+      '@gitee/tide-extension-markdown': workspace:*
+      '@gitee/tide-extension-mention': workspace:*
+      '@gitee/tide-extension-menubar': workspace:*
+      '@gitee/tide-extension-ordered-list': workspace:*
+      '@gitee/tide-extension-strike': workspace:*
+      '@gitee/tide-extension-table': workspace:*
+      '@gitee/tide-extension-task-item': workspace:*
+      '@gitee/tide-extension-uploader': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-document': ^2.0.3
       '@tiptap/extension-dropcursor': ^2.0.3
@@ -332,30 +332,30 @@ importers:
       tslib: ^2.5.3
       typescript: ^4.9.5
     dependencies:
-      '@gitee/wysiwyg-editor-common': link:../common
-      '@gitee/wysiwyg-editor-extension-blockquote': link:../extension-blockquote
-      '@gitee/wysiwyg-editor-extension-bold': link:../extension-bold
-      '@gitee/wysiwyg-editor-extension-bullet-list': link:../extension-bullet-list
-      '@gitee/wysiwyg-editor-extension-code': link:../extension-code
-      '@gitee/wysiwyg-editor-extension-code-block': link:../extension-code-block
-      '@gitee/wysiwyg-editor-extension-emoji': link:../extension-emoji
-      '@gitee/wysiwyg-editor-extension-horizontal-rule': link:../extension-horizontal-rule
-      '@gitee/wysiwyg-editor-extension-image': link:../extension-image
-      '@gitee/wysiwyg-editor-extension-indentation': link:../extension-indentation
-      '@gitee/wysiwyg-editor-extension-italic': link:../extension-italic
-      '@gitee/wysiwyg-editor-extension-link': link:../extension-link
-      '@gitee/wysiwyg-editor-extension-list-item': link:../extension-list-item
-      '@gitee/wysiwyg-editor-extension-lists-indentation': link:../extension-lists-indentation
-      '@gitee/wysiwyg-editor-extension-markdown': link:../extension-markdown
-      '@gitee/wysiwyg-editor-extension-mention': link:../extension-mention
-      '@gitee/wysiwyg-editor-extension-menubar': link:../extension-menubar
-      '@gitee/wysiwyg-editor-extension-ordered-list': link:../extension-ordered-list
-      '@gitee/wysiwyg-editor-extension-strike': link:../extension-strike
-      '@gitee/wysiwyg-editor-extension-table': link:../extension-table
-      '@gitee/wysiwyg-editor-extension-task-item': link:../extension-task-item
-      '@gitee/wysiwyg-editor-extension-uploader': link:../extension-uploader
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-common': link:../common
+      '@gitee/tide-extension-blockquote': link:../extension-blockquote
+      '@gitee/tide-extension-bold': link:../extension-bold
+      '@gitee/tide-extension-bullet-list': link:../extension-bullet-list
+      '@gitee/tide-extension-code': link:../extension-code
+      '@gitee/tide-extension-code-block': link:../extension-code-block
+      '@gitee/tide-extension-emoji': link:../extension-emoji
+      '@gitee/tide-extension-horizontal-rule': link:../extension-horizontal-rule
+      '@gitee/tide-extension-image': link:../extension-image
+      '@gitee/tide-extension-indentation': link:../extension-indentation
+      '@gitee/tide-extension-italic': link:../extension-italic
+      '@gitee/tide-extension-link': link:../extension-link
+      '@gitee/tide-extension-list-item': link:../extension-list-item
+      '@gitee/tide-extension-lists-indentation': link:../extension-lists-indentation
+      '@gitee/tide-extension-markdown': link:../extension-markdown
+      '@gitee/tide-extension-mention': link:../extension-mention
+      '@gitee/tide-extension-menubar': link:../extension-menubar
+      '@gitee/tide-extension-ordered-list': link:../extension-ordered-list
+      '@gitee/tide-extension-strike': link:../extension-strike
+      '@gitee/tide-extension-table': link:../extension-table
+      '@gitee/tide-extension-task-item': link:../extension-task-item
+      '@gitee/tide-extension-uploader': link:../extension-uploader
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
       '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
       '@tiptap/extension-dropcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
       '@tiptap/extension-gapcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
@@ -395,7 +395,7 @@ importers:
   packages/extension-blockquote:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.18
+      '@gitee/tide-common': workspace:^0.1.0-alpha.18
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-blockquote': ^2.0.3
       eslint-config-custom: workspace:*
@@ -403,7 +403,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/tide-common': link:../common
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-blockquote': 2.0.3_@tiptap+core@2.0.3
     devDependencies:
@@ -454,7 +454,7 @@ importers:
   packages/extension-bullet-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.18
+      '@gitee/tide-common': workspace:^0.1.0-alpha.18
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-bullet-list': ^2.0.3
       eslint-config-custom: workspace:*
@@ -462,7 +462,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/tide-common': link:../common
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-bullet-list': 2.0.3_@tiptap+core@2.0.3
     devDependencies:
@@ -491,9 +491,9 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-code-block': ^2.0.3
@@ -511,9 +511,9 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/wysiwyg-editor-common': link:../common
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-common': link:../common
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-code-block': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
@@ -534,9 +534,9 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
-      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-extension-bubble-menu': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
       '@tiptap/pm': ^2.0.3
@@ -556,9 +556,9 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-extension-bubble-menu': link:../extension-bubble-menu
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/suggestion': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
@@ -598,10 +598,10 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-extension-bubble-menu': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-image': ^2.0.3
@@ -617,10 +617,10 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/wysiwyg-editor-common': link:../common
-      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-common': link:../common
+      '@gitee/tide-extension-bubble-menu': link:../extension-bubble-menu
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-image': 2.0.3_@tiptap+core@2.0.3
@@ -673,9 +673,9 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-link': ^2.0.3
       '@tiptap/pm': ^2.0.3
@@ -689,9 +689,9 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/wysiwyg-editor-common': link:../common
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-common': link:../common
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-link': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
       react: 16.14.0
@@ -758,7 +758,7 @@ importers:
   packages/extension-mention:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-react': workspace:*
+      '@gitee/tide-react': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-mention': ^2.0.3
       '@tiptap/suggestion': ^2.0.3
@@ -773,7 +773,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/wysiwyg-editor-react': link:../react
+      '@gitee/tide-react': link:../react
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-mention': 2.0.3_3ru56bgkt4nmw5toeguys2oofq
       '@tiptap/suggestion': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
@@ -792,12 +792,12 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-extension-emoji': workspace:*
-      '@gitee/wysiwyg-editor-extension-table': workspace:*
-      '@gitee/wysiwyg-editor-extension-uploader': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-extension-emoji': workspace:*
+      '@gitee/tide-extension-table': workspace:*
+      '@gitee/tide-extension-uploader': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-heading': ^2.0.3
@@ -816,12 +816,12 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/wysiwyg-editor-common': link:../common
-      '@gitee/wysiwyg-editor-extension-emoji': link:../extension-emoji
-      '@gitee/wysiwyg-editor-extension-table': link:../extension-table
-      '@gitee/wysiwyg-editor-extension-uploader': link:../extension-uploader
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-common': link:../common
+      '@gitee/tide-extension-emoji': link:../extension-emoji
+      '@gitee/tide-extension-table': link:../extension-table
+      '@gitee/tide-extension-uploader': link:../extension-uploader
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-heading': 2.0.3_@tiptap+core@2.0.3
@@ -842,7 +842,7 @@ importers:
   packages/extension-ordered-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:^0.1.0-alpha.18
+      '@gitee/tide-common': workspace:^0.1.0-alpha.18
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-ordered-list': ^2.0.3
       eslint-config-custom: workspace:*
@@ -850,7 +850,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/tide-common': link:../common
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-ordered-list': 2.0.3_@tiptap+core@2.0.3
     devDependencies:
@@ -879,8 +879,8 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-table': ^2.0.3
@@ -899,8 +899,8 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/wysiwyg-editor-react': link:../react
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-table': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
@@ -921,7 +921,7 @@ importers:
   packages/extension-task-item:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:*
+      '@gitee/tide-common': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/pm': ^2.0.3
       eslint-config-custom: workspace:*
@@ -929,7 +929,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/wysiwyg-editor-common': link:../common
+      '@gitee/tide-common': link:../common
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
     devDependencies:
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
@@ -940,8 +940,8 @@ importers:
   packages/extension-uploader:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/pm': ^2.0.3
       browser-fs-access: ^0.31.1
@@ -951,8 +951,8 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/wysiwyg-editor-common': link:../common
-      '@gitee/wysiwyg-editor-theme': link:../theme
+      '@gitee/tide-common': link:../common
+      '@gitee/tide-theme': link:../theme
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       browser-fs-access: 0.31.1
     devDependencies:
@@ -965,7 +965,7 @@ importers:
   packages/react:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
+      '@gitee/tide-extension-bubble-menu': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/pm': ^2.0.3
       '@types/react': ^16.14.0
@@ -979,7 +979,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../extension-bubble-menu
+      '@gitee/tide-extension-bubble-menu': link:../extension-bubble-menu
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
@@ -1020,11 +1020,11 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.38
-      '@gitee/wysiwyg-editor-common': workspace:*
-      '@gitee/wysiwyg-editor-extension-bubble-menu': workspace:*
-      '@gitee/wysiwyg-editor-extension-mention': workspace:*
-      '@gitee/wysiwyg-editor-react': workspace:*
-      '@gitee/wysiwyg-editor-theme': workspace:*
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-extension-bubble-menu': workspace:*
+      '@gitee/tide-extension-mention': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-image': ^2.0.3
@@ -1041,11 +1041,11 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/wysiwyg-editor-common': link:../../packages/common
-      '@gitee/wysiwyg-editor-extension-bubble-menu': link:../../packages/extension-bubble-menu
-      '@gitee/wysiwyg-editor-extension-mention': link:../../packages/extension-mention
-      '@gitee/wysiwyg-editor-react': link:../../packages/react
-      '@gitee/wysiwyg-editor-theme': link:../../packages/theme
+      '@gitee/tide-common': link:../../packages/common
+      '@gitee/tide-extension-bubble-menu': link:../../packages/extension-bubble-menu
+      '@gitee/tide-extension-mention': link:../../packages/extension-mention
+      '@gitee/tide-react': link:../../packages/react
+      '@gitee/tide-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-image': 2.0.3_@tiptap+core@2.0.3

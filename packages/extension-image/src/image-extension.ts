@@ -3,7 +3,7 @@ import {
   ImageOptions as TImageOptions,
 } from '@tiptap/extension-image';
 import { mergeAttributes, nodeInputRule } from '@tiptap/core';
-import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
+import { ReactNodeViewRenderer } from '@gitee/tide-react';
 import ImageNodeView from './NodeView/ImageNodeView';
 
 declare module '@tiptap/core' {

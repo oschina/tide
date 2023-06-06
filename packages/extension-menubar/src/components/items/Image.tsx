@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconImageBold } from '@gitee/icons-react';
-import { isActive } from '@gitee/wysiwyg-editor-common';
-import { selectImageUpload } from '@gitee/wysiwyg-editor-extension-uploader';
+import { isActive } from '@gitee/tide-common';
+import { selectImageUpload } from '@gitee/tide-extension-uploader';
 import { MenuBarItem } from '../MenuBarItem';
 import { useStatusMap } from '../../MenuBarContext';
 import { Tooltip } from '../Tooltip';

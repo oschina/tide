@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-bubble-menu
+# @gitee/tide-extension-bubble-menu
 
 ## 介绍
 

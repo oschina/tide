@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-extension-blockquote",
+  "name": "@gitee/tide-extension-blockquote",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.21.0",
-    "@gitee/wysiwyg-editor-common": "workspace:^0.1.0-alpha.18",
+    "@gitee/tide-common": "workspace:^0.1.0-alpha.18",
     "@tiptap/extension-blockquote": "^2.0.3"
   },
   "devDependencies": {

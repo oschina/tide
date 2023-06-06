@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-bullet-list
+# @gitee/tide-extension-bullet-list
 
 ## 介绍
 

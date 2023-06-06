@@ -16,7 +16,7 @@ const getPkgName = (path) => {
 const alias = [
   {
     // for less import
-    find: `~@gitee/wysiwyg-editor-theme`,
+    find: `~@gitee/tide-theme`,
     replacement: resolve(`../../packages/theme`),
   },
   ...fg
@@ -35,7 +35,7 @@ const alias = [
 // // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
-    base: mode === 'production' ? '/wysiwyg-editor' : '/',
+    base: mode === 'production' ? '/tide' : '/',
     define: {
       __BUILD_TIME__: JSON.stringify(format(new Date(), 'yyyy-MM-dd HH:mm:ss')),
     },

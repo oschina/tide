@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-link
+# @gitee/tide-extension-link
 
 ## 介绍
 

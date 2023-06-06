@@ -3,7 +3,7 @@ import {
   Link as TLink,
   LinkOptions as TLinkOptions,
 } from '@tiptap/extension-link';
-import { isActive } from '@gitee/wysiwyg-editor-common';
+import { isActive } from '@gitee/tide-common';
 import { showLinkEditPopup } from './menu/LinkEditPopup';
 
 export const inputRegex = /(?:^|\s)\[(.+?)]\((.+?)\)\s$/;

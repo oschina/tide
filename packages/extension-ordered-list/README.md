@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-ordered-list
+# @gitee/tide-extension-ordered-list
 
 ## 介绍
 

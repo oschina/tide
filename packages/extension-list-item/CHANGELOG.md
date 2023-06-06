@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-list-item
+# @gitee/tide-extension-list-item
 
 ## 0.1.0-alpha.18
 
@@ -88,7 +88,7 @@
 
 ### Minor Changes
 
-- Refactor @gitee/wysiwyg-editor-extension-bubble-menu.
+- Refactor @gitee/tide-extension-bubble-menu.
 
 ## 0.1.0-alpha.4
 

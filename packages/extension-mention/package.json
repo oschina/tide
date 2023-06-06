@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-extension-mention",
+  "name": "@gitee/tide-extension-mention",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-react": "workspace:*",
+    "@gitee/tide-react": "workspace:*",
     "@tiptap/extension-mention": "^2.0.3",
     "@tiptap/suggestion": "^2.0.3",
     "@babel/runtime-corejs3": "^7.21.0",

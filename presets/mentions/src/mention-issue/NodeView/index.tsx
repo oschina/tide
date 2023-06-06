@@ -1,6 +1,6 @@
 import React from 'react';
 import { mergeAttributes, NodeViewProps } from '@tiptap/core';
-import { NodeViewWrapper } from '@gitee/wysiwyg-editor-react';
+import { NodeViewWrapper } from '@gitee/tide-react';
 import Loading from '../../components/Loading';
 import IssueIcons from '../Icons';
 import { EntityType, useRemoteData } from '../../contexts';

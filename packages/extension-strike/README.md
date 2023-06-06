@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-strike
+# @gitee/tide-extension-strike
 
 ## 介绍
 

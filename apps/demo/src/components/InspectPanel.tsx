@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Editor, EditorEvents } from '@gitee/wysiwyg-editor';
+import { Editor, EditorEvents } from '@gitee/tide';
 import throttle from 'lodash/throttle';
 
 const InspectPanel = ({ editor }: { editor: Editor | null }) => {

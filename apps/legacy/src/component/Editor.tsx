@@ -11,12 +11,12 @@ import {
   Editor as TEditor,
   EditorContent,
   useEditor,
-} from '@gitee/wysiwyg-editor-react';
+} from '@gitee/tide-react';
 import { ExtensionsOpts, getExtensions } from './extensions';
 import {
   EditorRemoteDataProvider,
   BulkFetcherRequestFunc,
-} from '@gitee/wysiwyg-editor-presets-mentions';
+} from '@gitee/tide-presets-mentions';
 
 export type EditorContentProps = {
   className?: string;

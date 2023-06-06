@@ -7,7 +7,7 @@ import { Editor, EditorEvents } from '@tiptap/core';
 
 import './index.less';
 
-const localStorageKey = 'wysiwyg-editor-history';
+const localStorageKey = 'tide-history';
 
 const HeaderBar = ({
   editor,

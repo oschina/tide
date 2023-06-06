@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-extension-bubble-menu",
+  "name": "@gitee/tide-extension-bubble-menu",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

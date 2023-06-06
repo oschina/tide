@@ -1,9 +1,6 @@
 import { Node as ProseMirrorNode } from '@tiptap/pm/model';
 import { mergeAttributes, Node, getNodeType, PasteRule } from '@tiptap/core';
-import {
-  wrapInListInputRule,
-  wrappingInputRule,
-} from '@gitee/wysiwyg-editor-common';
+import { wrapInListInputRule, wrappingInputRule } from '@gitee/tide-common';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {

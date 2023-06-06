@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-mention
+# @gitee/tide-extension-mention
 
 ## 介绍
 

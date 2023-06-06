@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-code-block
+# @gitee/tide-extension-code-block
 
 ## 介绍
 

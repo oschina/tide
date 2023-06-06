@@ -7,8 +7,8 @@ import {
   posToDOMRect,
   Range,
 } from '@tiptap/core';
-import { isActive } from '@gitee/wysiwyg-editor-common';
-import { ReactRenderer, showBubbleMenu } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/tide-common';
+import { ReactRenderer, showBubbleMenu } from '@gitee/tide-react';
 import './LinkEditPopup.less';
 
 export type LinkEditPopupProps = {

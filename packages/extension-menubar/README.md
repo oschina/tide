@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-menubar
+# @gitee/tide-extension-menubar
 
 ## 介绍
 

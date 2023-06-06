@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-italic
+# @gitee/tide-extension-italic
 
 ## 介绍
 

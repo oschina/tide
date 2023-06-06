@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-indentation
+# @gitee/tide-extension-indentation
 
 ## 0.1.0-alpha.18
 

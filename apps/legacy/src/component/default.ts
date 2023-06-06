@@ -1,4 +1,4 @@
-import { UploaderFunc } from '@gitee/wysiwyg-editor-extension-uploader';
+import { UploaderFunc } from '@gitee/tide-extension-uploader';
 
 export const mockMention = (query: string) => {
   return Promise.resolve([]);

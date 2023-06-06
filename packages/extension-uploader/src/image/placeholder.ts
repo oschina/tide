@@ -1,7 +1,7 @@
 import { Plugin } from '@tiptap/pm/state';
 import { Decoration, DecorationSet, EditorView } from '@tiptap/pm/view';
 import { UploaderFunc } from '../types';
-import { selectionCellInfo } from '@gitee/wysiwyg-editor-common';
+import { selectionCellInfo } from '@gitee/tide-common';
 
 import './placeholder.less';
 

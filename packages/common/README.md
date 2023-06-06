@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-common
+# @gitee/tide-common
 
 ## 介绍
 

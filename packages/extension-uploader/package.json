@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-extension-uploader",
+  "name": "@gitee/tide-extension-uploader",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,8 +15,8 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-theme": "workspace:*",
-    "@gitee/wysiwyg-editor-common": "workspace:*",
+    "@gitee/tide-theme": "workspace:*",
+    "@gitee/tide-common": "workspace:*",
     "browser-fs-access": "^0.31.1",
     "@babel/runtime-corejs3": "^7.21.0"
   },

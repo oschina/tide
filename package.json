@@ -3,11 +3,11 @@
   "scripts": {
     "build": "turbo run build --filter=!./apps/*",
     "build:app_demo": "pnpm --filter demo build",
-    "build:app_legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy build",
+    "build:app_legacy": "pnpm --filter @gitee/tide-legacy build",
     "build:nocache": "pnpm clear && turbo run build --force --filter=!./apps/*",
     "clear": "turbo run clear --force",
     "dev:demo": "pnpm --filter demo dev",
-    "dev:legacy": "pnpm --filter @gitee/wysiwyg-editor-legacy dev",
+    "dev:legacy": "pnpm --filter @gitee/tide-legacy dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "lint-staged": "lint-staged",

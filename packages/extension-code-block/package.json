@@ -1,5 +1,5 @@
 {
-  "name": "@gitee/wysiwyg-editor-extension-code-block",
+  "name": "@gitee/tide-extension-code-block",
   "version": "0.1.0-alpha.18",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,9 +15,9 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor-common": "workspace:*",
-    "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@gitee/wysiwyg-editor-theme": "workspace:*",
+    "@gitee/tide-common": "workspace:*",
+    "@gitee/tide-react": "workspace:*",
+    "@gitee/tide-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/extension-code-block": "^2.0.3",
     "@tiptap/extension-code-block-lowlight": "^2.0.3",

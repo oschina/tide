@@ -25,11 +25,11 @@ import {
   TaskList,
   TextBubbleMenu,
   Undo,
-} from '@gitee/wysiwyg-editor-extension-menubar';
-import { LinkBubbleMenu } from '@gitee/wysiwyg-editor-extension-link';
-import { TableCellBubbleMenu } from '@gitee/wysiwyg-editor-extension-table';
-import { ImageBubbleMenu } from '@gitee/wysiwyg-editor-extension-image';
-import type { Editor } from '@gitee/wysiwyg-editor-react';
+} from '@gitee/tide-extension-menubar';
+import { LinkBubbleMenu } from '@gitee/tide-extension-link';
+import { TableCellBubbleMenu } from '@gitee/tide-extension-table';
+import { ImageBubbleMenu } from '@gitee/tide-extension-image';
+import type { Editor } from '@gitee/tide-react';
 import EditorContent, { EditorContentProps } from './Editor';
 
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) =>

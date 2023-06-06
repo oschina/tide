@@ -11,11 +11,11 @@
     "lint": "TIMING=1 eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@gitee/wysiwyg-editor": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-mention": "workspace:*",
-    "@gitee/wysiwyg-editor-extension-uploader": "workspace:*",
-    "@gitee/wysiwyg-editor-react": "workspace:*",
-    "@gitee/wysiwyg-editor-theme": "workspace:*",
+    "@gitee/tide": "workspace:*",
+    "@gitee/tide-extension-mention": "workspace:*",
+    "@gitee/tide-extension-uploader": "workspace:*",
+    "@gitee/tide-react": "workspace:*",
+    "@gitee/tide-theme": "workspace:*",
     "@tiptap/core": "^2.0.3",
     "@tiptap/extension-text-align": "^2.0.3",
     "@tiptap/pm": "^2.0.3",

@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-markdown
+# @gitee/tide-extension-markdown
 
 ## 0.1.0-alpha.18
 
@@ -88,7 +88,7 @@
 
 ### Minor Changes
 
-- Refactor @gitee/wysiwyg-editor-extension-bubble-menu.
+- Refactor @gitee/tide-extension-bubble-menu.
 
 ## 0.1.0-alpha.4
 
@@ -123,4 +123,4 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @gitee/wysiwyg-editor-markdown@0.1.0-alpha.0
+  - @gitee/tide-markdown@0.1.0-alpha.0

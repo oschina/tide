@@ -1,7 +1,7 @@
 import {
   BubbleMenuPlugin,
   BubbleMenuPluginProps,
-} from '@gitee/wysiwyg-editor-extension-bubble-menu';
+} from '@gitee/tide-extension-bubble-menu';
 import React, { useEffect, useState } from 'react';
 
 type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>;

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Editor, isTextSelection } from '@tiptap/core';
-import { isActive } from '@gitee/wysiwyg-editor-common';
-import { BubbleMenu } from '@gitee/wysiwyg-editor-react';
+import { isActive } from '@gitee/tide-common';
+import { BubbleMenu } from '@gitee/tide-react';
 import { Bold, Code, Italic, Link, Strike, MenuBarDivider } from './components';
 
 export type TextBubbleMenuProps = {

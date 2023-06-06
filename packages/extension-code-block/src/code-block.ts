@@ -4,8 +4,8 @@ import {
 } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight/lib/all';
 import { TextSelection } from '@tiptap/pm/state';
-import { isActive, textblockTypeInputRule } from '@gitee/wysiwyg-editor-common';
-import { ReactNodeViewRenderer } from '@gitee/wysiwyg-editor-react';
+import { isActive, textblockTypeInputRule } from '@gitee/tide-common';
+import { ReactNodeViewRenderer } from '@gitee/tide-react';
 import { CodeBlockNodeView } from './CodeBlockNodeView';
 import { getSelectedLineRange } from './utils';
 import { getLanguageByValueOrAlias } from './languages';

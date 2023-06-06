@@ -1,4 +1,4 @@
-# @gitee/wysiwyg-editor-extension-blockquote
+# @gitee/tide-extension-blockquote
 
 ## 介绍
 

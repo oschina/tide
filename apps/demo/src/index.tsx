@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import type { Editor } from '@gitee/wysiwyg-editor';
+import type { Editor } from '@gitee/tide';
 import HeaderBar from './components/HeaderBar';
 import InspectPanel from './components/InspectPanel';
-import { WysiwygEditor } from './components/Editor';
+import { TideEditor } from './components/Editor';
 
 import './index.less';
 
@@ -26,7 +26,7 @@ function App() {
       </div>
       <div className="demo-main">
         <div className="demo-editor-wrapper">
-          <WysiwygEditor ref={setEditor} readOnly={!editable} />
+          <TideEditor ref={setEditor} readOnly={!editable} />
         </div>
         <div className="demo-inspect">
           <InspectPanel editor={editor} />
