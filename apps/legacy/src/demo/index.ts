@@ -1,7 +1,7 @@
-import { createEditor } from './index';
-import { fetchMention } from './test/fetchMetion';
-import { defaultContent, sleep } from './test/demo_mock';
-import specifyResources from './test/specify_resources.json';
+import { createEditor } from '../editor';
+
+import { fetchMention, defaultContent, sleep } from './mock';
+import specifyResources from './mock_specify_resources.json';
 
 let defaultVal = undefined;
 try {
@@ -20,7 +20,8 @@ createEditor({
   options: {
     readOnly: false,
     defaultValue: defaultVal,
-    onReady: () => {
+    onReady: (e) => {
+      console.log(e);
       console.log('onReady');
     },
     onFocus: () => {
@@ -29,8 +30,8 @@ createEditor({
     onBlur: () => {
       console.log('onBlur');
     },
-    onChange: (e) => {
-      localStorage.setItem('legacy-demo', JSON.stringify(e.getJSON()));
+    onChange: (e, editor) => {
+      localStorage.setItem('legacy-demo', JSON.stringify(e));
     },
     onFullscreenChange: (bool) => {
       console.log('----onFullscreenChange-----', bool);

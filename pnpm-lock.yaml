@@ -139,44 +139,15 @@ importers:
 
   apps/legacy:
     specifiers:
-      '@gitee/tide-common': workspace:*
-      '@gitee/tide-extension-blockquote': workspace:*
-      '@gitee/tide-extension-bold': workspace:*
-      '@gitee/tide-extension-bullet-list': workspace:*
-      '@gitee/tide-extension-code': workspace:*
-      '@gitee/tide-extension-code-block': workspace:*
-      '@gitee/tide-extension-emoji': workspace:*
-      '@gitee/tide-extension-horizontal-rule': workspace:*
+      '@gitee/tide': workspace:*
       '@gitee/tide-extension-image': workspace:*
-      '@gitee/tide-extension-indentation': workspace:*
-      '@gitee/tide-extension-italic': workspace:*
-      '@gitee/tide-extension-link': workspace:*
-      '@gitee/tide-extension-list-item': workspace:*
-      '@gitee/tide-extension-lists-indentation': workspace:*
-      '@gitee/tide-extension-markdown': workspace:*
       '@gitee/tide-extension-mention': workspace:*
-      '@gitee/tide-extension-menubar': workspace:*
-      '@gitee/tide-extension-ordered-list': workspace:*
-      '@gitee/tide-extension-strike': workspace:*
-      '@gitee/tide-extension-table': workspace:*
-      '@gitee/tide-extension-task-item': workspace:*
       '@gitee/tide-extension-uploader': workspace:*
       '@gitee/tide-presets-mentions': workspace:*
       '@gitee/tide-react': workspace:*
       '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
-      '@tiptap/extension-bubble-menu': ^2.0.3
-      '@tiptap/extension-document': ^2.0.3
-      '@tiptap/extension-dropcursor': ^2.0.3
-      '@tiptap/extension-gapcursor': ^2.0.3
-      '@tiptap/extension-hard-break': ^2.0.3
-      '@tiptap/extension-heading': ^2.0.3
-      '@tiptap/extension-history': ^2.0.3
-      '@tiptap/extension-paragraph': ^2.0.3
-      '@tiptap/extension-task-list': ^2.0.3
-      '@tiptap/extension-text': ^2.0.3
-      '@tiptap/extension-text-align': ^2.0.3
       '@tiptap/pm': ^2.0.3
       '@types/lodash': ^4.14.191
       '@types/prosemirror-dev-tools': ^3.0.3
@@ -202,44 +173,15 @@ importers:
       typescript: ^4.9.5
       vite: ^4.0.0
     dependencies:
-      '@gitee/tide-common': link:../../packages/common
-      '@gitee/tide-extension-blockquote': link:../../packages/extension-blockquote
-      '@gitee/tide-extension-bold': link:../../packages/extension-bold
-      '@gitee/tide-extension-bullet-list': link:../../packages/extension-bullet-list
-      '@gitee/tide-extension-code': link:../../packages/extension-code
-      '@gitee/tide-extension-code-block': link:../../packages/extension-code-block
-      '@gitee/tide-extension-emoji': link:../../packages/extension-emoji
-      '@gitee/tide-extension-horizontal-rule': link:../../packages/extension-horizontal-rule
+      '@gitee/tide': link:../../packages/editor
       '@gitee/tide-extension-image': link:../../packages/extension-image
-      '@gitee/tide-extension-indentation': link:../../packages/extension-indentation
-      '@gitee/tide-extension-italic': link:../../packages/extension-italic
-      '@gitee/tide-extension-link': link:../../packages/extension-link
-      '@gitee/tide-extension-list-item': link:../../packages/extension-list-item
-      '@gitee/tide-extension-lists-indentation': link:../../packages/extension-lists-indentation
-      '@gitee/tide-extension-markdown': link:../../packages/extension-markdown
       '@gitee/tide-extension-mention': link:../../packages/extension-mention
-      '@gitee/tide-extension-menubar': link:../../packages/extension-menubar
-      '@gitee/tide-extension-ordered-list': link:../../packages/extension-ordered-list
-      '@gitee/tide-extension-strike': link:../../packages/extension-strike
-      '@gitee/tide-extension-table': link:../../packages/extension-table
-      '@gitee/tide-extension-task-item': link:../../packages/extension-task-item
       '@gitee/tide-extension-uploader': link:../../packages/extension-uploader
       '@gitee/tide-presets-mentions': link:../../presets/mentions
       '@gitee/tide-react': link:../../packages/react
       '@gitee/tide-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
-      '@tiptap/extension-bubble-menu': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-dropcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-gapcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-hard-break': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-heading': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-history': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-paragraph': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-task-list': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
       '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
       ahooks: 3.7.6_react@16.14.0
       classnames: 2.3.2

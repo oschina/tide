@@ -53,5 +53,9 @@
     "rollup-plugin-visualizer": "^5.8.3",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0"
+  "packageManager": "pnpm@7.15.0",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  }
 }

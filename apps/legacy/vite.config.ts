@@ -14,17 +14,14 @@ const getPkgName = (path) => {
 };
 
 const alias = [
-  {
-    // for less import
-    find: `~@gitee/tide-theme`,
-    replacement: resolve(`../../packages/theme`),
-  },
+  // for less import
+  { find: /^~/, replacement: '' },
   ...fg
     .sync(['../../packages/*', '../../presets/*'], { onlyDirectories: true })
     .map((path) => getPkgName(path))
     .map(({ name, path }) => {
       return {
-        find: name,
+        find: new RegExp(`${name}$`),
         replacement: resolve(`${path}/src/index.ts`),
       };
     }),
@@ -34,14 +31,15 @@ const alias = [
 
 // // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  const prod = mode === 'production';
   return {
-    base: mode === 'production' ? '/tide' : '/',
+    base: prod ? '/tide' : '/',
     define: {
       __BUILD_TIME__: JSON.stringify(format(new Date(), 'yyyy-MM-dd HH:mm:ss')),
     },
     plugins: [react()],
     resolve: {
-      alias,
+      alias: prod ? [] : alias,
     },
     // css: {
     //   modules: {
