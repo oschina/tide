@@ -1,0 +1,73 @@
+{
+  "name": "@gitee/tide-starter-kit",
+  "version": "0.0.1-alpha.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "lint": "TIMING=1 eslint \"**/*.ts\"",
+    "clear": "rm -rf dist"
+  },
+  "dependencies": {
+    "@gitee/tide-common": "workspace:*",
+    "@gitee/tide-extension-bubble-menu": "workspace:*",
+    "@gitee/tide-extension-blockquote": "workspace:*",
+    "@gitee/tide-extension-bold": "workspace:*",
+    "@gitee/tide-extension-bullet-list": "workspace:*",
+    "@gitee/tide-extension-code": "workspace:*",
+    "@gitee/tide-extension-code-block": "workspace:*",
+    "@gitee/tide-extension-emoji": "workspace:*",
+    "@gitee/tide-extension-horizontal-rule": "workspace:*",
+    "@gitee/tide-extension-image": "workspace:*",
+    "@gitee/tide-extension-indentation": "workspace:*",
+    "@gitee/tide-extension-italic": "workspace:*",
+    "@gitee/tide-extension-link": "workspace:*",
+    "@gitee/tide-extension-list-item": "workspace:*",
+    "@gitee/tide-extension-lists-indentation": "workspace:*",
+    "@gitee/tide-extension-markdown": "workspace:*",
+    "@gitee/tide-extension-mention": "workspace:*",
+    "@gitee/tide-extension-menubar": "workspace:*",
+    "@gitee/tide-extension-ordered-list": "workspace:*",
+    "@gitee/tide-extension-strike": "workspace:*",
+    "@gitee/tide-extension-table": "workspace:*",
+    "@gitee/tide-extension-task-item": "workspace:*",
+    "@gitee/tide-extension-uploader": "workspace:*",
+    "@gitee/tide-react": "workspace:*",
+    "@gitee/tide-theme": "workspace:*",
+    "@tiptap/extension-document": "^2.0.3",
+    "@tiptap/extension-dropcursor": "^2.0.3",
+    "@tiptap/extension-gapcursor": "^2.0.3",
+    "@tiptap/extension-hard-break": "^2.0.3",
+    "@tiptap/extension-heading": "^2.0.3",
+    "@tiptap/extension-history": "^2.0.3",
+    "@tiptap/extension-paragraph": "^2.0.3",
+    "@tiptap/extension-task-list": "^2.0.3",
+    "@tiptap/extension-text": "^2.0.3",
+    "@tiptap/extension-text-align": "^2.0.3",
+    "tippy.js": "^6.3.7",
+    "@babel/runtime-corejs3": "^7.21.0"
+  },
+  "devDependencies": {
+    "@tiptap/core": "^2.0.3",
+    "@tiptap/pm": "^2.0.3",
+    "@types/react": "^16.14.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tslib": "^2.5.3",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.3",
+    "@tiptap/pm": "^2.0.3",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "sideEffects": false
+}

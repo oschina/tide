@@ -14,6 +14,7 @@
     "@gitee/tide": "workspace:*",
     "@gitee/tide-extension-mention": "workspace:*",
     "@gitee/tide-extension-uploader": "workspace:*",
+    "@gitee/tide-starter-kit": "workspace:*",
     "@gitee/tide-react": "workspace:*",
     "@gitee/tide-theme": "workspace:*",
     "@tiptap/core": "^2.0.3",
