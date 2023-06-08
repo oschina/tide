@@ -15,7 +15,6 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/tide-extension-bubble-menu": "workspace:*",
     "@gitee/tide-react": "workspace:*",
     "@gitee/tide-theme": "workspace:*",
     "@tippyjs/react": "^4.2.6",
