@@ -3,7 +3,6 @@ import React, {
   forwardRef,
   useEffect,
   useImperativeHandle,
-  useMemo,
   useRef,
 } from 'react';
 import type { Plugin } from '@tiptap/pm/state';
