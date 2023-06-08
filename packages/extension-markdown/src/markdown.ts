@@ -1,12 +1,7 @@
-import { PluginKey } from '@tiptap/pm/state';
 import { Node } from '@tiptap/pm/model';
 import { Markdown as TiptapMarkdown } from 'tiptap-markdown';
 import { MarkdownClipboardCopy } from './clipboardCopy';
 import { MarkdownClipboardPaste } from './clipboardPaste';
-
-export const ClipboardMarkdownHandlerPluginKey = new PluginKey(
-  'clipboardMarkdownHandler'
-);
 
 export type MarkdownOptions = {
   html?: boolean;

@@ -6,7 +6,7 @@ import {
 } from '@tiptap/core';
 import { EditorState, Plugin, PluginKey, PluginView } from '@tiptap/pm/state';
 import { EditorView } from '@tiptap/pm/view';
-import tippy, { Instance, Props, sticky } from 'tippy.js';
+import tippy, { Instance, Props } from 'tippy.js';
 
 export interface BubbleMenuPluginProps {
   pluginKey: PluginKey | string;
@@ -153,8 +153,6 @@ export class BubbleMenuView implements PluginView {
     }
 
     this.tippy = tippy(editorElement, {
-      plugins: [sticky],
-      sticky: true,
       duration: 0,
       getReferenceClientRect: null,
       content: this.element,
