@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/tide-extension-bubble-menu": "workspace:*",
+    "@tiptap/extension-bubble-menu": "^2.0.3",
     "tippy.js": "^6.3.7",
     "@babel/runtime-corejs3": "^7.21.0"
   },

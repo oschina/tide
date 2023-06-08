@@ -5,6 +5,7 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
+import { sticky } from 'tippy.js';
 import type { Props as TippyOptions } from 'tippy.js';
 import type { PluginKey } from '@tiptap/pm/state';
 import type { MarkType } from '@tiptap/pm/model';
@@ -40,6 +41,8 @@ export const SelectionBubbleMenu: React.FC<SelectionBubbleMenuProps> = ({
   ...props
 }) => {
   const tippyOptions: BubbleMenuProps['tippyOptions'] = {
+    plugins: [sticky],
+    sticky: true,
     interactive: true,
     placement: placement || 'top',
     arrow: false,

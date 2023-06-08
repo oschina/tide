@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { sticky } from 'tippy.js';
 import { Editor, isTextSelection } from '@tiptap/core';
 import { isActive } from '@gitee/tide-common';
 import { BubbleMenu } from '@gitee/tide-react';
@@ -38,7 +39,12 @@ export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
   return (
     <BubbleMenu
       editor={editor}
-      tippyOptions={{ duration: 100, appendTo: () => editor.options.element }}
+      tippyOptions={{
+        plugins: [sticky],
+        sticky: true,
+        duration: 100,
+        appendTo: () => editor.options.element,
+      }}
       shouldShow={({ editor, view, state, from, to }) => {
         const { doc, selection } = state;
         const { empty } = selection;
