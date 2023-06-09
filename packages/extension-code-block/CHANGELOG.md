@@ -1,5 +1,9 @@
 # @gitee/tide-extension-code-block
 
+## 0.2.0-alpha.1
+
+**Note:** Version bump only for package @gitee/tide-extension-code-block
+
 ## 0.2.0-alpha.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @gitee/tide-extension-table
 
+## 0.2.0-alpha.1
+
+### Minor Changes
+
+- Remove @gitee/tide-extension-bubble-menu
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide-react@0.2.0-alpha.1
+  - @gitee/tide-theme@0.2.0-alpha.1
+
 ## 0.2.0-alpha.0
 
 ### Minor Changes

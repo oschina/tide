@@ -395,7 +395,7 @@ importers:
   packages/extension-blockquote:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/tide-common': workspace:^0.2.0-alpha.0
+      '@gitee/tide-common': workspace:^0.2.0-alpha.1
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-blockquote': ^2.0.3
       eslint-config-custom: workspace:*
@@ -428,33 +428,10 @@ importers:
       tsconfig: link:../tsconfig
       typescript: 4.9.5
 
-  packages/extension-bubble-menu:
-    specifiers:
-      '@babel/runtime-corejs3': ^7.21.0
-      '@tiptap/core': ^2.0.3
-      '@tiptap/pm': ^2.0.3
-      '@types/lodash': ^4.14.191
-      eslint-config-custom: workspace:*
-      lodash: ^4.17.21
-      tippy.js: ^6.3.7
-      tsconfig: workspace:*
-      typescript: ^4.9.5
-    dependencies:
-      '@babel/runtime-corejs3': 7.21.0
-      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
-      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
-      lodash: 4.17.21
-      tippy.js: 6.3.7
-    devDependencies:
-      '@types/lodash': 4.14.191
-      eslint-config-custom: link:../eslint-config-custom
-      tsconfig: link:../tsconfig
-      typescript: 4.9.5
-
   packages/extension-bullet-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/tide-common': workspace:^0.2.0-alpha.0
+      '@gitee/tide-common': workspace:^0.2.0-alpha.1
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-bullet-list': ^2.0.3
       eslint-config-custom: workspace:*
@@ -840,7 +817,7 @@ importers:
   packages/extension-ordered-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/tide-common': workspace:^0.2.0-alpha.0
+      '@gitee/tide-common': workspace:^0.2.0-alpha.1
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-ordered-list': ^2.0.3
       eslint-config-custom: workspace:*

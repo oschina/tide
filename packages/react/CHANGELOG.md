@@ -1,5 +1,11 @@
 # @gitee/tide-react
 
+## 0.2.0-alpha.1
+
+### Minor Changes
+
+- Remove @gitee/tide-extension-bubble-menu
+
 ## 0.2.0-alpha.0
 
 ### Minor Changes
