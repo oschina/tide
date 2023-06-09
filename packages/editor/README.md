@@ -17,6 +17,7 @@ pnpm add @gitee/tide highlight.js
 ## 使用
 
 ```tsx
+import React, { useState } from 'react';
 import { EditorRender, JSONContent } from '@gitee/tide';
 import '@gitee/tide/dist/style.css';
 import 'highlight.js/styles/default.css';
@@ -52,10 +53,42 @@ function App() {
 | onBlur               | 失焦时的回调函数         | `EditorOptions['onBlur']`                                | -       |
 | onFullscreenChange   | 全屏状态变更时的回调函数 | `(fullscreen: boolean) => void`                          | -       |
 | editorOptions        | 编辑器选项               | `EditorOptions`                                          | -       |
-| extensionOptions     | 扩展选项                 | `ExtensionOptions`                                       | -       |
 | className            | 容器自定义 `className`   | `string`                                                 | -       |
 | style                | 容器自定义 `style`       | `CSSProperties`                                          | -       |
 | menuClassName        | 菜单栏自定义 `className` | `string`                                                 | -       |
 | menuStyle            | 菜单栏自定义 `style`     | `CSSProperties`                                          | -       |
 | contentClassName     | 内容区自定义 `className` | `string`                                                 | -       |
 | contentStyle         | 内容区自定义 `style`     | `CSSProperties`                                          | -       |
+
+## 默认开启 starter-kit，如需配置 starter-kit 插件，示例如下
+
+```tsx
+import React, { useState } from 'react';
+import { EditorRender, JSONContent } from '@gitee/tide';
+import { StarterKit } from '@gitee/tide-starter-kit';
+
+import '@gitee/tide/dist/style.css';
+import 'highlight.js/styles/default.css';
+
+function App() {
+  const [value, setValue] = useState<JSONContent | null>(null);
+
+  return (
+    <EditorRender
+      defaultValue="# Hello World"
+      onChange={(doc) => setValue(doc)}
+      editorOptions={{
+        extensions: [
+          StarterKit.configure({
+            uploader: {
+              image: {
+                uploader: YoursImgUploader,
+              },
+            },
+          }),
+        ],
+      }}
+    />
+  );
+}
+```

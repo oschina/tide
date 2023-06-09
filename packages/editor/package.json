@@ -15,7 +15,6 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/tide-common": "workspace:*",
     "@gitee/tide-extension-image": "workspace:*",
     "@gitee/tide-extension-link": "workspace:*",
     "@gitee/tide-extension-table": "workspace:*",

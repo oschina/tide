@@ -287,7 +287,6 @@ importers:
 
   packages/editor:
     specifiers:
-      '@gitee/tide-common': workspace:*
       '@gitee/tide-extension-image': workspace:*
       '@gitee/tide-extension-link': workspace:*
       '@gitee/tide-extension-menubar': workspace:*
@@ -308,7 +307,6 @@ importers:
       tslib: ^2.5.3
       typescript: ^4.9.5
     dependencies:
-      '@gitee/tide-common': link:../common
       '@gitee/tide-extension-image': link:../extension-image
       '@gitee/tide-extension-link': link:../extension-link
       '@gitee/tide-extension-menubar': link:../extension-menubar
@@ -374,29 +372,6 @@ importers:
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-bold': 2.0.3_@tiptap+core@2.0.3
     devDependencies:
-      eslint-config-custom: link:../eslint-config-custom
-      tsconfig: link:../tsconfig
-      typescript: 4.9.5
-
-  packages/extension-bubble-menu:
-    specifiers:
-      '@babel/runtime-corejs3': ^7.21.0
-      '@tiptap/core': ^2.0.3
-      '@tiptap/pm': ^2.0.3
-      '@types/lodash': ^4.14.191
-      eslint-config-custom: workspace:*
-      lodash: ^4.17.21
-      tippy.js: ^6.3.7
-      tsconfig: workspace:*
-      typescript: ^4.9.5
-    dependencies:
-      '@babel/runtime-corejs3': 7.21.0
-      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
-      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
-      lodash: 4.17.21
-      tippy.js: 6.3.7
-    devDependencies:
-      '@types/lodash': 4.14.191
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.5
@@ -947,7 +922,6 @@ importers:
       '@gitee/tide-common': workspace:*
       '@gitee/tide-extension-blockquote': workspace:*
       '@gitee/tide-extension-bold': workspace:*
-      '@gitee/tide-extension-bubble-menu': workspace:*
       '@gitee/tide-extension-bullet-list': workspace:*
       '@gitee/tide-extension-code': workspace:*
       '@gitee/tide-extension-code-block': workspace:*
@@ -995,7 +969,6 @@ importers:
       '@gitee/tide-common': link:../common
       '@gitee/tide-extension-blockquote': link:../extension-blockquote
       '@gitee/tide-extension-bold': link:../extension-bold
-      '@gitee/tide-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/tide-extension-bullet-list': link:../extension-bullet-list
       '@gitee/tide-extension-code': link:../extension-code
       '@gitee/tide-extension-code-block': link:../extension-code-block

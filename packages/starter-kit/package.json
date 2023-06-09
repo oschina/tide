@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@gitee/tide-common": "workspace:*",
-    "@gitee/tide-extension-bubble-menu": "workspace:*",
     "@gitee/tide-extension-blockquote": "workspace:*",
     "@gitee/tide-extension-bold": "workspace:*",
     "@gitee/tide-extension-bullet-list": "workspace:*",
