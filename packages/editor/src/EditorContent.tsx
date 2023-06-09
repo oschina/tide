@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, {
+  DependencyList,
   forwardRef,
   useEffect,
   useImperativeHandle,
@@ -34,6 +35,7 @@ export type EditorContentProps = {
   onBlur?: EditorOptions['onBlur'];
 
   editorOptions?: Partial<EditorOptions>;
+  deps?: DependencyList;
 };
 
 export const EditorContent: React.ForwardRefExoticComponent<
@@ -53,6 +55,7 @@ export const EditorContent: React.ForwardRefExoticComponent<
       onBlur,
       onReady,
       editorOptions = {} as EditorOptions,
+      deps = [],
     },
     ref
   ) => {
@@ -113,7 +116,7 @@ export const EditorContent: React.ForwardRefExoticComponent<
         },
         ...otherEditorOptions,
       },
-      []
+      deps
     );
 
     useEffect(() => {
