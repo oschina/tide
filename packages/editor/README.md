@@ -60,7 +60,7 @@ function App() {
 | contentClassName     | 内容区自定义 `className` | `string`                                                 | -       |
 | contentStyle         | 内容区自定义 `style`     | `CSSProperties`                                          | -       |
 
-## 默认开启 starter-kit，如需配置 starter-kit 插件，示例如下
+## 配置 starter-kit 插件
 
 ```tsx
 import React, { useState } from 'react';
