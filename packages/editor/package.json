@@ -22,6 +22,9 @@
     "@gitee/tide-extension-menubar": "workspace:*",
     "@gitee/tide-react": "workspace:*",
     "@gitee/tide-theme": "workspace:*",
+    "@tiptap/extension-document": "^2.0.3",
+    "@tiptap/extension-paragraph": "^2.0.3",
+    "@tiptap/extension-text": "^2.0.3",
     "classnames": "^2.2.6"
   },
   "devDependencies": {

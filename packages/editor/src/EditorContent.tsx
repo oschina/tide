@@ -6,6 +6,9 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
+import { Document } from '@tiptap/extension-document';
+import { Paragraph } from '@tiptap/extension-paragraph';
+import { Text } from '@tiptap/extension-text';
 import type { Plugin } from '@tiptap/pm/state';
 import type { JSONContent, FocusPosition } from '@tiptap/core';
 import {
@@ -68,7 +71,8 @@ export const EditorContent: React.ForwardRefExoticComponent<
     const onReadyRef = useRef(onReady);
     onReadyRef.current = onReady;
 
-    const { extensions = [], ...otherEditorOptions } = editorOptions;
+    const { extensions = [Document, Paragraph, Text], ...otherEditorOptions } =
+      editorOptions;
 
     const editor = useEditor(
       Editor,

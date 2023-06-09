@@ -295,6 +295,9 @@ importers:
       '@gitee/tide-react': workspace:*
       '@gitee/tide-theme': workspace:*
       '@tiptap/core': ^2.0.3
+      '@tiptap/extension-document': ^2.0.3
+      '@tiptap/extension-paragraph': ^2.0.3
+      '@tiptap/extension-text': ^2.0.3
       '@tiptap/pm': ^2.0.3
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
@@ -314,6 +317,9 @@ importers:
       '@gitee/tide-extension-uploader': link:../extension-uploader
       '@gitee/tide-react': link:../react
       '@gitee/tide-theme': link:../theme
+      '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-paragraph': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
       classnames: 2.3.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
