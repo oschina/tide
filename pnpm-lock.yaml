@@ -74,6 +74,7 @@ importers:
       '@gitee/tide-extension-mention': workspace:*
       '@gitee/tide-extension-uploader': workspace:*
       '@gitee/tide-react': workspace:*
+      '@gitee/tide-starter-kit': workspace:*
       '@gitee/tide-theme': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-text-align': ^2.0.3
@@ -106,6 +107,7 @@ importers:
       '@gitee/tide-extension-mention': link:../../packages/extension-mention
       '@gitee/tide-extension-uploader': link:../../packages/extension-uploader
       '@gitee/tide-react': link:../../packages/react
+      '@gitee/tide-starter-kit': link:../../packages/starter-kit
       '@gitee/tide-theme': link:../../packages/theme
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
       '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
@@ -285,41 +287,17 @@ importers:
 
   packages/editor:
     specifiers:
-      '@gitee/tide-common': workspace:*
-      '@gitee/tide-extension-blockquote': workspace:*
-      '@gitee/tide-extension-bold': workspace:*
-      '@gitee/tide-extension-bullet-list': workspace:*
-      '@gitee/tide-extension-code': workspace:*
-      '@gitee/tide-extension-code-block': workspace:*
-      '@gitee/tide-extension-emoji': workspace:*
-      '@gitee/tide-extension-horizontal-rule': workspace:*
       '@gitee/tide-extension-image': workspace:*
-      '@gitee/tide-extension-indentation': workspace:*
-      '@gitee/tide-extension-italic': workspace:*
       '@gitee/tide-extension-link': workspace:*
-      '@gitee/tide-extension-list-item': workspace:*
-      '@gitee/tide-extension-lists-indentation': workspace:*
-      '@gitee/tide-extension-markdown': workspace:*
-      '@gitee/tide-extension-mention': workspace:*
       '@gitee/tide-extension-menubar': workspace:*
-      '@gitee/tide-extension-ordered-list': workspace:*
-      '@gitee/tide-extension-strike': workspace:*
       '@gitee/tide-extension-table': workspace:*
-      '@gitee/tide-extension-task-item': workspace:*
       '@gitee/tide-extension-uploader': workspace:*
       '@gitee/tide-react': workspace:*
       '@gitee/tide-theme': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-document': ^2.0.3
-      '@tiptap/extension-dropcursor': ^2.0.3
-      '@tiptap/extension-gapcursor': ^2.0.3
-      '@tiptap/extension-hard-break': ^2.0.3
-      '@tiptap/extension-heading': ^2.0.3
-      '@tiptap/extension-history': ^2.0.3
       '@tiptap/extension-paragraph': ^2.0.3
-      '@tiptap/extension-task-list': ^2.0.3
       '@tiptap/extension-text': ^2.0.3
-      '@tiptap/extension-text-align': ^2.0.3
       '@tiptap/pm': ^2.0.3
       '@types/react': ^16.14.0
       '@types/react-dom': ^16.9.14
@@ -332,40 +310,16 @@ importers:
       tslib: ^2.5.3
       typescript: ^4.9.5
     dependencies:
-      '@gitee/tide-common': link:../common
-      '@gitee/tide-extension-blockquote': link:../extension-blockquote
-      '@gitee/tide-extension-bold': link:../extension-bold
-      '@gitee/tide-extension-bullet-list': link:../extension-bullet-list
-      '@gitee/tide-extension-code': link:../extension-code
-      '@gitee/tide-extension-code-block': link:../extension-code-block
-      '@gitee/tide-extension-emoji': link:../extension-emoji
-      '@gitee/tide-extension-horizontal-rule': link:../extension-horizontal-rule
       '@gitee/tide-extension-image': link:../extension-image
-      '@gitee/tide-extension-indentation': link:../extension-indentation
-      '@gitee/tide-extension-italic': link:../extension-italic
       '@gitee/tide-extension-link': link:../extension-link
-      '@gitee/tide-extension-list-item': link:../extension-list-item
-      '@gitee/tide-extension-lists-indentation': link:../extension-lists-indentation
-      '@gitee/tide-extension-markdown': link:../extension-markdown
-      '@gitee/tide-extension-mention': link:../extension-mention
       '@gitee/tide-extension-menubar': link:../extension-menubar
-      '@gitee/tide-extension-ordered-list': link:../extension-ordered-list
-      '@gitee/tide-extension-strike': link:../extension-strike
       '@gitee/tide-extension-table': link:../extension-table
-      '@gitee/tide-extension-task-item': link:../extension-task-item
       '@gitee/tide-extension-uploader': link:../extension-uploader
       '@gitee/tide-react': link:../react
       '@gitee/tide-theme': link:../theme
       '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-dropcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-gapcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
-      '@tiptap/extension-hard-break': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-heading': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-history': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
       '@tiptap/extension-paragraph': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-task-list': 2.0.3_@tiptap+core@2.0.3
       '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
-      '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
       classnames: 2.3.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -955,6 +909,103 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@tiptap/extension-bubble-menu': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      tippy.js: 6.3.7
+    devDependencies:
+      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
+      '@types/react': 16.14.34
+      '@types/react-dom': 18.0.11
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      tslib: 2.5.3
+      typescript: 4.9.5
+
+  packages/starter-kit:
+    specifiers:
+      '@babel/runtime-corejs3': ^7.21.0
+      '@gitee/tide-common': workspace:*
+      '@gitee/tide-extension-blockquote': workspace:*
+      '@gitee/tide-extension-bold': workspace:*
+      '@gitee/tide-extension-bullet-list': workspace:*
+      '@gitee/tide-extension-code': workspace:*
+      '@gitee/tide-extension-code-block': workspace:*
+      '@gitee/tide-extension-emoji': workspace:*
+      '@gitee/tide-extension-horizontal-rule': workspace:*
+      '@gitee/tide-extension-image': workspace:*
+      '@gitee/tide-extension-indentation': workspace:*
+      '@gitee/tide-extension-italic': workspace:*
+      '@gitee/tide-extension-link': workspace:*
+      '@gitee/tide-extension-list-item': workspace:*
+      '@gitee/tide-extension-lists-indentation': workspace:*
+      '@gitee/tide-extension-markdown': workspace:*
+      '@gitee/tide-extension-mention': workspace:*
+      '@gitee/tide-extension-menubar': workspace:*
+      '@gitee/tide-extension-ordered-list': workspace:*
+      '@gitee/tide-extension-strike': workspace:*
+      '@gitee/tide-extension-table': workspace:*
+      '@gitee/tide-extension-task-item': workspace:*
+      '@gitee/tide-extension-uploader': workspace:*
+      '@gitee/tide-react': workspace:*
+      '@gitee/tide-theme': workspace:*
+      '@tiptap/core': ^2.0.3
+      '@tiptap/extension-document': ^2.0.3
+      '@tiptap/extension-dropcursor': ^2.0.3
+      '@tiptap/extension-gapcursor': ^2.0.3
+      '@tiptap/extension-hard-break': ^2.0.3
+      '@tiptap/extension-heading': ^2.0.3
+      '@tiptap/extension-history': ^2.0.3
+      '@tiptap/extension-paragraph': ^2.0.3
+      '@tiptap/extension-task-list': ^2.0.3
+      '@tiptap/extension-text': ^2.0.3
+      '@tiptap/extension-text-align': ^2.0.3
+      '@tiptap/pm': ^2.0.3
+      '@types/react': ^16.14.0
+      '@types/react-dom': ^18.0.0
+      eslint-config-custom: workspace:*
+      react: ^16.14.0
+      react-dom: ^16.14.0
+      tippy.js: ^6.3.7
+      tsconfig: workspace:*
+      tslib: ^2.5.3
+      typescript: ^4.9.5
+    dependencies:
+      '@babel/runtime-corejs3': 7.21.0
+      '@gitee/tide-common': link:../common
+      '@gitee/tide-extension-blockquote': link:../extension-blockquote
+      '@gitee/tide-extension-bold': link:../extension-bold
+      '@gitee/tide-extension-bullet-list': link:../extension-bullet-list
+      '@gitee/tide-extension-code': link:../extension-code
+      '@gitee/tide-extension-code-block': link:../extension-code-block
+      '@gitee/tide-extension-emoji': link:../extension-emoji
+      '@gitee/tide-extension-horizontal-rule': link:../extension-horizontal-rule
+      '@gitee/tide-extension-image': link:../extension-image
+      '@gitee/tide-extension-indentation': link:../extension-indentation
+      '@gitee/tide-extension-italic': link:../extension-italic
+      '@gitee/tide-extension-link': link:../extension-link
+      '@gitee/tide-extension-list-item': link:../extension-list-item
+      '@gitee/tide-extension-lists-indentation': link:../extension-lists-indentation
+      '@gitee/tide-extension-markdown': link:../extension-markdown
+      '@gitee/tide-extension-mention': link:../extension-mention
+      '@gitee/tide-extension-menubar': link:../extension-menubar
+      '@gitee/tide-extension-ordered-list': link:../extension-ordered-list
+      '@gitee/tide-extension-strike': link:../extension-strike
+      '@gitee/tide-extension-table': link:../extension-table
+      '@gitee/tide-extension-task-item': link:../extension-task-item
+      '@gitee/tide-extension-uploader': link:../extension-uploader
+      '@gitee/tide-react': link:../react
+      '@gitee/tide-theme': link:../theme
+      '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-dropcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-gapcursor': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-hard-break': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-heading': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-history': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+      '@tiptap/extension-paragraph': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-task-list': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
+      '@tiptap/extension-text-align': 2.0.3_@tiptap+core@2.0.3
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
