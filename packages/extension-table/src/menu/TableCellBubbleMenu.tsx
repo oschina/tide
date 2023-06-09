@@ -1,4 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
+import { sticky } from 'tippy.js';
 import Tippy from '@tippyjs/react';
 import { PluginKey } from '@tiptap/pm/state';
 import { Editor, posToDOMRect } from '@tiptap/core';
@@ -102,6 +103,8 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
   }
 
   const tippyOptions: BubbleMenuProps['tippyOptions'] = {
+    plugins: [sticky],
+    sticky: true,
     interactive: true,
     placement: 'top',
     offset: () => {

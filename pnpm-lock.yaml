@@ -484,7 +484,6 @@ importers:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
-      '@gitee/tide-extension-bubble-menu': workspace:*
       '@gitee/tide-react': workspace:*
       '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
@@ -506,7 +505,6 @@ importers:
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
-      '@gitee/tide-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/tide-react': link:../react
       '@gitee/tide-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
@@ -549,7 +547,6 @@ importers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.37
       '@gitee/tide-common': workspace:*
-      '@gitee/tide-extension-bubble-menu': workspace:*
       '@gitee/tide-react': workspace:*
       '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
@@ -568,7 +565,6 @@ importers:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/tide-common': link:../common
-      '@gitee/tide-extension-bubble-menu': link:../extension-bubble-menu
       '@gitee/tide-react': link:../react
       '@gitee/tide-theme': link:../theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
@@ -760,6 +756,7 @@ importers:
       lodash-es: ^4.17.21
       react: ^16.14.0
       react-dom: ^16.14.0
+      tippy.js: ^6.3.7
       tsconfig: workspace:*
       tslib: ^2.5.3
       typescript: ^4.9.5
@@ -780,6 +777,7 @@ importers:
       lodash-es: 4.17.21
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
+      tippy.js: 6.3.7
     devDependencies:
       '@types/lodash': 4.14.191
       '@types/react': 16.14.34
@@ -915,8 +913,8 @@ importers:
   packages/react:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/tide-extension-bubble-menu': workspace:*
       '@tiptap/core': ^2.0.3
+      '@tiptap/extension-bubble-menu': ^2.0.3
       '@tiptap/pm': ^2.0.3
       '@types/react': ^16.14.0
       '@types/react-dom': ^18.0.0
@@ -929,7 +927,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@babel/runtime-corejs3': 7.21.0
-      '@gitee/tide-extension-bubble-menu': link:../extension-bubble-menu
+      '@tiptap/extension-bubble-menu': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       tippy.js: 6.3.7
@@ -1070,7 +1068,6 @@ importers:
       '@babel/runtime-corejs3': ^7.21.0
       '@gitee/icons-react': ^0.1.38
       '@gitee/tide-common': workspace:*
-      '@gitee/tide-extension-bubble-menu': workspace:*
       '@gitee/tide-extension-mention': workspace:*
       '@gitee/tide-react': workspace:*
       '@gitee/tide-theme': workspace:*
@@ -1091,7 +1088,6 @@ importers:
       '@babel/runtime-corejs3': 7.21.0
       '@gitee/icons-react': 0.1.39_react@16.14.0
       '@gitee/tide-common': link:../../packages/common
-      '@gitee/tide-extension-bubble-menu': link:../../packages/extension-bubble-menu
       '@gitee/tide-extension-mention': link:../../packages/extension-mention
       '@gitee/tide-react': link:../../packages/react
       '@gitee/tide-theme': link:../../packages/theme
