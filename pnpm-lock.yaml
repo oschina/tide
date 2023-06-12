@@ -145,6 +145,7 @@ importers:
       '@gitee/tide-extension-uploader': workspace:*
       '@gitee/tide-presets-mentions': workspace:*
       '@gitee/tide-react': workspace:*
+      '@gitee/tide-starter-kit': workspace:*
       '@gitee/tide-theme': workspace:*
       '@tippyjs/react': ^4.2.6
       '@tiptap/core': ^2.0.3
@@ -179,6 +180,7 @@ importers:
       '@gitee/tide-extension-uploader': link:../../packages/extension-uploader
       '@gitee/tide-presets-mentions': link:../../presets/mentions
       '@gitee/tide-react': link:../../packages/react
+      '@gitee/tide-starter-kit': link:../../packages/starter-kit
       '@gitee/tide-theme': link:../../packages/theme
       '@tippyjs/react': 4.2.6_wcqkhtmu7mswc6yz4uyexck3ty
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3

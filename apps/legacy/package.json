@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/types/lib.d.ts",
   "files": [
     "dist"
   ],
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@gitee/tide": "workspace:*",
+    "@gitee/tide-starter-kit": "workspace:*",
     "@gitee/tide-extension-image": "workspace:*",
     "@gitee/tide-extension-mention": "workspace:*",
     "@gitee/tide-extension-uploader": "workspace:*",

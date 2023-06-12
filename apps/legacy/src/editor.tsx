@@ -1,6 +1,7 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Editor, EditorRender, EditorRenderProps } from '@gitee/tide';
+import { StarterKit } from '@gitee/tide-starter-kit';
 import { LegacyExtOpts } from './type';
 
 import {
@@ -9,7 +10,7 @@ import {
   MentionIssue,
   MentionPullRequest,
 } from '@gitee/tide-presets-mentions';
-import { pulls, issues, members } from './utils/mentionLink';
+import { pulls, issues, members } from './mentionLink';
 
 import '@gitee/tide/dist/style.css';
 import '@gitee/tide-presets-mentions/dist/style.css';
@@ -24,34 +25,35 @@ const TideEditor = forwardRef<Editor, TideEditorProps>(({ ...props }, ref) => {
 
   useImperativeHandle(ref, () => editor as Editor, [editor]);
 
-  const extensionOptions: EditorRenderProps['extensionOptions'] = {
-    taskItem: {
-      onReadOnlyChecked: () => true,
-    },
-    uploader: {
-      image: {
-        uploader: props.imageUpload,
-      },
-    },
-  };
+  const { imageUpload, fetchResources, mention, ...restProps } = props;
 
   const editorOptions: EditorRenderProps['editorOptions'] = {
     extensions: [
+      StarterKit.configure({
+        taskItem: {
+          onReadOnlyChecked: () => true,
+        },
+        uploader: {
+          image: {
+            uploader: imageUpload,
+          },
+        },
+      }),
       MentionMember.configure({
         suggestion: {
-          items: ({ query }) => props.mention.fetchMentionMember(query),
+          items: ({ query }) => mention.fetchMentionMember(query),
         },
         getLink: members.getLink,
       }),
       MentionIssue.configure({
         suggestion: {
-          items: ({ query }) => props.mention.fetchMentionIssue(query),
+          items: ({ query }) => mention.fetchMentionIssue(query),
         },
         getLink: issues.getLink,
       }),
       MentionPullRequest.configure({
         suggestion: {
-          items: ({ query }) => props.mention.fetchMentionPR(query),
+          items: ({ query }) => mention.fetchMentionPR(query),
         },
         getLink: pulls.getLink,
       }),
@@ -59,12 +61,11 @@ const TideEditor = forwardRef<Editor, TideEditorProps>(({ ...props }, ref) => {
   };
 
   return (
-    <EditorRemoteDataProvider fetchResources={props.fetchResources}>
+    <EditorRemoteDataProvider fetchResources={fetchResources}>
       <EditorRender
         ref={setEditor}
         editorOptions={editorOptions}
-        extensionOptions={extensionOptions}
-        {...props}
+        {...restProps}
       />
     </EditorRemoteDataProvider>
   );
