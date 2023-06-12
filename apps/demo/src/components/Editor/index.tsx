@@ -1,5 +1,10 @@
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
-import { Editor, EditorRender, EditorRenderProps } from '@gitee/tide';
+import React, { forwardRef, useImperativeHandle } from 'react';
+import {
+  Editor,
+  EditorRender,
+  EditorRenderProps,
+  useEditor,
+} from '@gitee/tide';
 import { StarterKit } from '@gitee/tide-starter-kit';
 import { TextAlign } from '@tiptap/extension-text-align';
 import { MentionMember } from './extensions/mention-member';
@@ -8,15 +13,11 @@ import { mockFetchMemberMentionDebounced, mockImgUploader } from './utils';
 import '@gitee/tide/dist/style.css';
 import 'highlight.js/styles/default.css';
 
-export type TideEditorProps = Omit<EditorRenderProps, 'editorOptions'>;
+export type TideEditorProps = Omit<EditorRenderProps, 'editor'>;
 
 export const TideEditor = forwardRef<Editor, TideEditorProps>(
   ({ ...props }, ref) => {
-    const [editor, setEditor] = useState<Editor | null>(null);
-
-    useImperativeHandle(ref, () => editor as Editor, [editor]);
-
-    const editorOptions: EditorRenderProps['editorOptions'] = {
+    const editor = useEditor({
       extensions: [
         StarterKit.configure({
           textAlign: false,
@@ -40,11 +41,11 @@ export const TideEditor = forwardRef<Editor, TideEditorProps>(
           },
         }),
       ],
-    };
+    });
 
-    return (
-      <EditorRender ref={setEditor} editorOptions={editorOptions} {...props} />
-    );
+    useImperativeHandle(ref, () => editor as Editor, [editor]);
+
+    return <EditorRender editor={editor} {...props} />;
   }
 );
 

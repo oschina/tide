@@ -1,6 +1,11 @@
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import ReactDOM from 'react-dom';
-import { Editor, EditorRender, EditorRenderProps } from '@gitee/tide';
+import {
+  Editor,
+  EditorRender,
+  EditorRenderProps,
+  useEditor,
+} from '@gitee/tide';
 import { StarterKit } from '@gitee/tide-starter-kit';
 import { LegacyExtOpts } from './type';
 
@@ -17,17 +22,12 @@ import '@gitee/tide-presets-mentions/dist/style.css';
 
 import 'highlight.js/styles/default.css';
 
-export type TideEditorProps = Omit<EditorRenderProps, 'extensionOptions'> &
-  LegacyExtOpts;
+export type TideEditorProps = Omit<EditorRenderProps, 'editor'> & LegacyExtOpts;
 
 const TideEditor = forwardRef<Editor, TideEditorProps>(({ ...props }, ref) => {
-  const [editor, setEditor] = useState<Editor | null>(null);
-
-  useImperativeHandle(ref, () => editor as Editor, [editor]);
-
   const { imageUpload, fetchResources, mention, ...restProps } = props;
 
-  const editorOptions: EditorRenderProps['editorOptions'] = {
+  const editor = useEditor({
     extensions: [
       StarterKit.configure({
         taskItem: {
@@ -58,15 +58,13 @@ const TideEditor = forwardRef<Editor, TideEditorProps>(({ ...props }, ref) => {
         getLink: pulls.getLink,
       }),
     ],
-  };
+  });
+
+  useImperativeHandle(ref, () => editor as Editor, [editor]);
 
   return (
     <EditorRemoteDataProvider fetchResources={fetchResources}>
-      <EditorRender
-        ref={setEditor}
-        editorOptions={editorOptions}
-        {...restProps}
-      />
+      <EditorRender editor={editor} {...restProps} />
     </EditorRemoteDataProvider>
   );
 });

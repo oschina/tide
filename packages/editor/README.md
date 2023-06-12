@@ -20,18 +20,20 @@ pnpm add @gitee/tide
 
 ```tsx
 import React, { useState } from 'react';
-import { EditorRender, JSONContent } from '@gitee/tide';
+import { EditorRender, useEditor } from '@gitee/tide';
 
 import '@gitee/tide/dist/style.css';
 
 function App() {
-  const [value, setValue] = useState<JSONContent | null>(null);
-  return (
-    <EditorRender
-      defaultValue="# Hello World"
-      onChange={(doc) => setValue(doc)}
-    />
-  );
+  const editor = useEditor({
+    content: 'Hello World!',
+    onChange: (doc) => console.log('onChange', doc),
+  });
+
+  // Update editor content
+  // editor.setContent('Changed content');
+
+  return <EditorRender editor={editor} />;
 }
 ```
 
@@ -79,23 +81,22 @@ pnpm add @gitee/tide-starter-kit highlight.js
 
 ```tsx
 import React, { useState } from 'react';
-import { EditorRender, JSONContent } from '@gitee/tide';
+import { EditorRender, useEditor } from '@gitee/tide';
 import { StarterKit } from '@gitee/tide-starter-kit';
 
 import '@gitee/tide/dist/style.css';
 import 'highlight.js/styles/default.css';
 
 function App() {
-  const [value, setValue] = useState<JSONContent | null>(null);
+  const editor = useEditor({
+    extensions: [StarterKit],
+    content: '# Hello World!',
+    onChange: (doc) => console.log('onChange', doc),
+  });
 
-  return (
-    <EditorRender
-      defaultValue="# Hello World"
-      onChange={(doc) => setValue(doc)}
-      editorOptions={{
-        extensions: [StarterKit],
-      }}
-    />
-  );
+  // Update editor content
+  // editor.setContent('Changed content');
+
+  return <EditorRender editor={editor} />;
 }
 ```
