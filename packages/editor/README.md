@@ -21,8 +21,8 @@ pnpm add @gitee/tide highlight.js
 ```tsx
 import React, { useState } from 'react';
 import { EditorRender, JSONContent } from '@gitee/tide';
+
 import '@gitee/tide/dist/style.css';
-import 'highlight.js/styles/default.css';
 
 function App() {
   const [value, setValue] = useState<JSONContent | null>(null);

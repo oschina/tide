@@ -34,6 +34,7 @@ pnpm add @gitee/tide-extension-code-block highlight.js
 import React, { useState } from 'react';
 import { EditorRender, JSONContent } from '@gitee/tide';
 import { CodeBlock } from '@gitee/tide-extension-code-block';
+
 import '@gitee/tide/dist/style.css';
 import 'highlight.js/styles/default.css';
 

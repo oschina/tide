@@ -1,5 +1,22 @@
 # @gitee/tide
 
+## 0.2.0-alpha.2
+
+### Minor Changes
+
+- Add @gitee/tide-starter-kit extension
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide-extension-image@0.2.0-alpha.2
+  - @gitee/tide-extension-link@0.2.0-alpha.2
+  - @gitee/tide-extension-menubar@0.2.0-alpha.2
+  - @gitee/tide-extension-table@0.2.0-alpha.2
+  - @gitee/tide-extension-uploader@0.2.0-alpha.2
+  - @gitee/tide-react@0.2.0-alpha.2
+  - @gitee/tide-theme@0.2.0-alpha.2
+
 ## 0.2.0-alpha.1
 
 **Note:** Version bump only for package @gitee/tide
