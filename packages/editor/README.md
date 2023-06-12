@@ -7,11 +7,11 @@
 ## 安装
 
 ```bash
-npm install --save @gitee/tide highlight.js
+npm install --save @gitee/tide
 # or
-yarn add @gitee/tide highlight.js
+yarn add @gitee/tide
 # or
-pnpm add @gitee/tide highlight.js
+pnpm add @gitee/tide
 ```
 
 ## 使用
@@ -65,6 +65,18 @@ function App() {
 
 ## 配置 starter-kit 插件
 
+### 安装
+
+```bash
+npm install --save @gitee/tide-starter-kit highlight.js
+# or
+yarn add @gitee/tide-starter-kit highlight.js
+# or
+pnpm add @gitee/tide-starter-kit highlight.js
+```
+
+### 使用
+
 ```tsx
 import React, { useState } from 'react';
 import { EditorRender, JSONContent } from '@gitee/tide';
@@ -81,15 +93,7 @@ function App() {
       defaultValue="# Hello World"
       onChange={(doc) => setValue(doc)}
       editorOptions={{
-        extensions: [
-          StarterKit.configure({
-            uploader: {
-              image: {
-                uploader: YoursImgUploader,
-              },
-            },
-          }),
-        ],
+        extensions: [StarterKit],
       }}
     />
   );
