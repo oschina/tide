@@ -5,7 +5,7 @@ import {
   isNodeSelection,
   posToDOMRect,
 } from '@tiptap/core';
-import tippy, { Instance, Props as TippyOptions } from 'tippy.js';
+import tippy, { Instance, Props as TippyOptions, sticky } from 'tippy.js';
 import type { MarkType } from '@tiptap/pm/model';
 import type { ReactRenderer } from './ReactRenderer';
 
@@ -45,6 +45,8 @@ export const showBubbleMenu = ({
   const component = componentRender(tippyRef);
 
   tippyRef.instance = tippy(editor.options.element, {
+    plugins: [sticky],
+    sticky: true,
     appendTo: () => editor.options.element,
     getReferenceClientRect: () => {
       const { state, view } = editor;

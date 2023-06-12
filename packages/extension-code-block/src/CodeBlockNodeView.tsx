@@ -19,6 +19,8 @@ import './CodeBlockNodeView.less';
 
 const softWrapLocalStorageKey = 'gwe-codeblock-soft-wrap';
 
+const CODE_BLOCK_DROPDOWN_MAX_HEIGHT = 245;
+
 export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
   editor,
   node,
@@ -86,10 +88,34 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
             onClickOutside={() => setDropdownVisible(false)}
             visible={dropdownVisible}
             onHidden={() => setSearch('')}
+            onShow={(instance) => {
+              const contentEl = instance.popper?.querySelector(
+                '.gwe-dropdown-menu__content'
+              ) as HTMLDivElement;
+              const editorRect =
+                editor.options.element?.getBoundingClientRect();
+              const referenceRect = instance.reference?.getBoundingClientRect();
+              if (contentEl && editorRect && referenceRect) {
+                const top = referenceRect.top - editorRect.top;
+                const bottom = editorRect.bottom - referenceRect.bottom;
+                const dropdownMaxHeight = Math.max(top, bottom) - 24;
+                if (dropdownMaxHeight < CODE_BLOCK_DROPDOWN_MAX_HEIGHT) {
+                  contentEl.style.maxHeight = `${dropdownMaxHeight}px`;
+                  instance.setProps({
+                    placement: top > bottom ? 'top-start' : 'bottom-start',
+                  });
+                }
+              }
+            }}
             offset={[0, 4]}
             content={
               <div className="gwe-dropdown-menu gwe-code-block__dropdown">
-                <div className="gwe-dropdown-menu__content">
+                <div
+                  className="gwe-dropdown-menu__content"
+                  style={{
+                    maxHeight: CODE_BLOCK_DROPDOWN_MAX_HEIGHT,
+                  }}
+                >
                   <div className="gwe-code-block__dropdown-search">
                     <div className="gwe-code-block__dropdown-input">
                       <input
