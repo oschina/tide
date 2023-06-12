@@ -133,7 +133,12 @@ export const StarterKit = Extension.create<StarterKitOptions>({
     }
 
     if (this.options.textAlign !== false) {
-      extensions.push(TextAlign.configure(this.options.textAlign));
+      extensions.push(
+        TextAlign.configure({
+          types: ['heading', 'paragraph'],
+          ...this.options.textAlign,
+        })
+      );
     }
 
     if (this.options.bold !== false) {
