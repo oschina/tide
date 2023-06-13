@@ -1,9 +1,14 @@
 export type {
-  EditorOptions,
-  Extensions,
   Content,
   HTMLContent,
   JSONContent,
+  Extension,
+  Extensions,
+  ExtensionConfig,
+  Command,
+  Commands,
+  NodeView,
+  NodeViewProps,
+  NodeConfig,
+  MarkConfig,
 } from '@tiptap/core';
-
-export type { Editor } from '@gitee/tide-react';

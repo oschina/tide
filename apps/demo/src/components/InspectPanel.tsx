@@ -1,33 +1,36 @@
 import React, { useEffect } from 'react';
-import { Editor, EditorEvents } from '@gitee/tide';
+import { TideEditor, EditorEvents } from '@gitee/tide';
 import throttle from 'lodash/throttle';
 
-const InspectPanel = ({ editor }: { editor: Editor | null }) => {
+const InspectPanel = ({ editor }: { editor: TideEditor | null }) => {
   const [tab, setTab] = React.useState<'html' | 'json' | 'markdown'>('json');
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    const updateHandle = throttle(({ editor }: EditorEvents['update']) => {
-      if (!editor || !textareaRef.current) return;
+    const updateHandle = throttle((props: EditorEvents['update']) => {
+      if (!props.editor || !textareaRef.current) return;
 
       switch (tab) {
         case 'json':
-          textareaRef.current.value = JSON.stringify(editor.getJSON(), null, 2);
+          textareaRef.current.value = JSON.stringify(
+            props.editor.getJSON(),
+            null,
+            2
+          );
           break;
         case 'html':
-          textareaRef.current.value = editor.getHTML();
+          textareaRef.current.value = props.editor.getHTML();
           break;
         case 'markdown':
-          textareaRef.current.value =
-            editor.storage.markdown?.getMarkdown?.() || '';
+          textareaRef.current.value = props.editor.getMarkdown();
           break;
         default:
       }
     }, 500);
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    updateHandle({ editor });
+    if (editor) {
+      updateHandle({ editor, transaction: editor.state.tr });
+    }
 
     editor?.on('update', updateHandle);
     return () => {
@@ -75,14 +78,13 @@ const InspectPanel = ({ editor }: { editor: Editor | null }) => {
         ref={textareaRef}
         className={tab === 'json' ? 'json' : 'html'}
         onChange={(e) => {
-          if (tab === 'json') {
-            try {
-              editor?.commands.setContent(JSON.parse(e.target.value));
-            } catch (error) {
-              console.log(error);
-            }
-          } else {
-            editor?.commands.setContent(e.target.value);
+          if (!editor) return;
+          try {
+            editor.setContent(
+              tab === 'json' ? JSON.parse(e.target.value) : e.target.value
+            );
+          } catch (error) {
+            console.log(error);
           }
         }}
       />

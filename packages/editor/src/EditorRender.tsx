@@ -133,9 +133,9 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
   }, [editor]);
 
   useEffect(() => {
-    const updateHandle = ({ editor }: EditorEvents['update']) => {
-      setReadOnly(editor.isReadOnly);
-      setFullscreen(editor.fullscreen);
+    const updateHandle = (props: EditorEvents['update']) => {
+      setReadOnly(props.editor.isReadOnly);
+      setFullscreen(props.editor.fullscreen);
     };
     editor?.on('update', updateHandle);
     return () => {

@@ -3,18 +3,20 @@ import lz from 'lz-string';
 import copy from 'copy-to-clipboard';
 import applyDevTools from 'prosemirror-dev-tools';
 import throttle from 'lodash/throttle';
-import { Editor, EditorEvents } from '@tiptap/core';
+import { TideEditor, EditorEvents } from '@gitee/tide';
 
 import './index.less';
 
 const localStorageKey = 'tide-history';
 
-const HeaderBar = ({ editor }: { editor: Editor | null }) => {
+const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
   const [theme, setTheme] = useState('');
   const [editable, setEditable] = useState<boolean>(!!editor?.isEditable);
 
   const handleClickShareLink = () => {
-    const jsonContent = editor?.getJSON();
+    if (!editor) return;
+
+    const jsonContent = editor.getJSON();
     const url = new URL(window.location.href);
     url.searchParams.set('type', 'json');
     url.searchParams.set(
@@ -34,6 +36,8 @@ const HeaderBar = ({ editor }: { editor: Editor | null }) => {
   };
 
   useEffect(() => {
+    if (!editor) return;
+
     // 尝试从 url 回填编辑器数据
     const url = new URL(window.location.href);
     const urlVal = url.searchParams.get('value');
@@ -41,7 +45,7 @@ const HeaderBar = ({ editor }: { editor: Editor | null }) => {
       const maybeJson = lz.decompressFromEncodedURIComponent(urlVal);
       try {
         const json = JSON.parse(maybeJson);
-        editor?.commands.setContent(json || '');
+        editor.setContent(json || '');
       } catch (e) {
         console.error('url value json parse error:', e);
       }
@@ -53,7 +57,7 @@ const HeaderBar = ({ editor }: { editor: Editor | null }) => {
     if (history) {
       try {
         const json = JSON.parse(history);
-        editor?.commands.setContent(json || '');
+        editor.setContent(json || '');
       } catch (e) {
         console.error('localStorage value json parse error:', e);
       }
@@ -63,12 +67,12 @@ const HeaderBar = ({ editor }: { editor: Editor | null }) => {
   useEffect(() => {
     // 存本地
     const updateSaveToLocalHandle = throttle(
-      ({ editor }: EditorEvents['update']) => {
-        if (!editor) return;
+      (props: EditorEvents['update']) => {
+        if (!props.editor) return;
         try {
           localStorage.setItem(
             localStorageKey,
-            JSON.stringify(editor.getJSON())
+            JSON.stringify(props.editor.getJSON())
           );
         } catch (e) {
           console.log('localStorage setItem error:', e);
@@ -97,8 +101,9 @@ const HeaderBar = ({ editor }: { editor: Editor | null }) => {
             name="editable"
             checked={editable}
             onChange={(e) => {
+              if (!editor) return;
               setEditable(e.target.checked);
-              editor?.setEditable(e.target.checked);
+              editor.setEditable(e.target.checked);
             }}
           />
           editable
@@ -134,9 +139,10 @@ const HeaderBar = ({ editor }: { editor: Editor | null }) => {
         <button
           className="btn-clear"
           onClick={() => {
+            if (!editor) return;
             history.pushState(null, '', window.location.pathname);
             localStorage.removeItem(localStorageKey);
-            editor?.commands.setContent('');
+            editor.setContent('');
           }}
         >
           清空

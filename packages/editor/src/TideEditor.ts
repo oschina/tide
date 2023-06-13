@@ -7,6 +7,16 @@ import { Document } from '@tiptap/extension-document';
 import { Paragraph } from '@tiptap/extension-paragraph';
 import { Text } from '@tiptap/extension-text';
 
+type StringKeyOf<T> = Extract<keyof T, string>;
+type CallbackType<
+  T extends Record<string, any>,
+  EventName extends StringKeyOf<T>
+> = T[EventName] extends any[] ? T[EventName] : [T[EventName]];
+type CallbackFunction<
+  T extends Record<string, any>,
+  EventName extends StringKeyOf<T>
+> = (...props: CallbackType<T, EventName>) => any;
+
 export interface EditorEvents {
   beforeCreate: { editor: TideEditor };
   create: { editor: TideEditor };
@@ -146,5 +156,26 @@ export class TideEditor extends Editor {
 
   public get isReadOnly(): boolean {
     return !this.isEditable;
+  }
+
+  public on<EventName extends StringKeyOf<EditorEvents>>(
+    event: EventName,
+    fn: CallbackFunction<EditorEvents, EventName>
+  ): this {
+    return super.on(event, fn);
+  }
+
+  protected emit<EventName extends StringKeyOf<EditorEvents>>(
+    event: EventName,
+    ...args: CallbackType<EditorEvents, EventName>
+  ): this {
+    return super.emit(event, ...args);
+  }
+
+  public off<EventName extends StringKeyOf<EditorEvents>>(
+    event: EventName,
+    fn?: CallbackFunction<EditorEvents, EventName>
+  ): this {
+    return super.off(event, fn);
   }
 }
