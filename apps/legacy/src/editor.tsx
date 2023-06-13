@@ -65,7 +65,7 @@ const LegacyTideEditor = forwardRef<TideEditor, LegacyTideEditorProps>(
       ],
     });
 
-    useImperativeHandle(ref, () => editor, [editor]);
+    useImperativeHandle(ref, () => editor as TideEditor, [editor]);
 
     return (
       <EditorRemoteDataProvider fetchResources={fetchResources}>
