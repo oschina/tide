@@ -26,5 +26,10 @@
   "peerDependencies": {
     "@tiptap/core": "^2.0.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/oschina/tide",
+    "directory": "packages/extension-strike"
+  },
   "sideEffects": false
 }

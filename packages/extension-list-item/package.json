@@ -23,5 +23,10 @@
     "tsconfig": "workspace:*",
     "typescript": "^4.9.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/oschina/tide",
+    "directory": "packages/extension-list-item"
+  },
   "sideEffects": false
 }

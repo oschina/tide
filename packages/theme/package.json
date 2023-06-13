@@ -23,5 +23,10 @@
     "less": "^4.1.3",
     "tsconfig": "workspace:*"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/oschina/tide",
+    "directory": "packages/theme"
+  },
   "sideEffects": false
 }
