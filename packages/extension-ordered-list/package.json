@@ -1,6 +1,6 @@
 {
   "name": "@gitee/tide-extension-ordered-list",
-  "version": "0.2.0-alpha.5",
+  "version": "0.2.0-alpha.6",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
@@ -15,7 +15,7 @@
     "clear": "rm -rf dist"
   },
   "dependencies": {
-    "@gitee/tide-common": "workspace:^0.2.0-alpha.5",
+    "@gitee/tide-common": "workspace:^0.2.0-alpha.6",
     "@tiptap/extension-ordered-list": "^2.0.3",
     "@babel/runtime-corejs3": "^7.21.0"
   },

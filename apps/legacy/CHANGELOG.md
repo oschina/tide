@@ -1,5 +1,9 @@
 # @gitee/tide-legacy
 
+## 0.2.0-alpha.6
+
+Fix @gitee/tide-legacy type error
+
 ## 0.2.0-alpha.5
 
 **Note:** Version bump only for package @gitee/tide-legacy

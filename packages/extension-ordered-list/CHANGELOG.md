@@ -1,5 +1,9 @@
 # @gitee/tide-extension-ordered-list
 
+## 0.2.0-alpha.6
+
+**Note:** Version bump only for package @gitee/tide-extension-ordered-list
+
 ## 0.2.0-alpha.5
 
 **Note:** Version bump only for package @gitee/tide-extension-ordered-list
