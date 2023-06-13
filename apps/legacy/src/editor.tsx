@@ -1,9 +1,9 @@
 import React, { forwardRef, useImperativeHandle } from 'react';
 import ReactDOM from 'react-dom';
 import {
-  Editor,
+  TideEditor,
   EditorRender,
-  EditorRenderProps,
+  TideEditorOptions,
   useEditor,
 } from '@gitee/tide';
 import { StarterKit } from '@gitee/tide-starter-kit';
@@ -22,59 +22,65 @@ import '@gitee/tide-presets-mentions/dist/style.css';
 
 import 'highlight.js/styles/default.css';
 
-export type TideEditorProps = Omit<EditorRenderProps, 'editor'> & LegacyExtOpts;
+export type LegacyTideEditorProps = Partial<
+  Omit<TideEditorOptions, 'extensions'>
+> &
+  LegacyExtOpts;
 
-const TideEditor = forwardRef<Editor, TideEditorProps>(({ ...props }, ref) => {
-  const { imageUpload, fetchResources, mention, ...restProps } = props;
+const LegacyTideEditor = forwardRef<TideEditor, LegacyTideEditorProps>(
+  ({ ...props }, ref) => {
+    const { imageUpload, fetchResources, mention, ...restProps } = props;
 
-  const editor = useEditor({
-    extensions: [
-      StarterKit.configure({
-        taskItem: {
-          onReadOnlyChecked: () => true,
-        },
-        uploader: {
-          image: {
-            uploader: imageUpload,
+    const editor = useEditor({
+      ...restProps,
+      extensions: [
+        StarterKit.configure({
+          taskItem: {
+            onReadOnlyChecked: () => true,
           },
-        },
-      }),
-      MentionMember.configure({
-        suggestion: {
-          items: ({ query }) => mention.fetchMentionMember(query),
-        },
-        getLink: members.getLink,
-      }),
-      MentionIssue.configure({
-        suggestion: {
-          items: ({ query }) => mention.fetchMentionIssue(query),
-        },
-        getLink: issues.getLink,
-      }),
-      MentionPullRequest.configure({
-        suggestion: {
-          items: ({ query }) => mention.fetchMentionPR(query),
-        },
-        getLink: pulls.getLink,
-      }),
-    ],
-  });
+          uploader: {
+            image: {
+              uploader: imageUpload,
+            },
+          },
+        }),
+        MentionMember.configure({
+          suggestion: {
+            items: ({ query }) => mention.fetchMentionMember(query),
+          },
+          getLink: members.getLink,
+        }),
+        MentionIssue.configure({
+          suggestion: {
+            items: ({ query }) => mention.fetchMentionIssue(query),
+          },
+          getLink: issues.getLink,
+        }),
+        MentionPullRequest.configure({
+          suggestion: {
+            items: ({ query }) => mention.fetchMentionPR(query),
+          },
+          getLink: pulls.getLink,
+        }),
+      ],
+    });
 
-  useImperativeHandle(ref, () => editor as Editor, [editor]);
+    useImperativeHandle(ref, () => editor, [editor]);
 
-  return (
-    <EditorRemoteDataProvider fetchResources={fetchResources}>
-      <EditorRender editor={editor} {...restProps} />
-    </EditorRemoteDataProvider>
-  );
-});
+    return (
+      <EditorRemoteDataProvider fetchResources={fetchResources}>
+        <EditorRender editor={editor} />
+      </EditorRemoteDataProvider>
+    );
+  }
+);
 
-TideEditor.displayName = 'TideEditor';
+LegacyTideEditor.displayName = 'TideEditor';
 
 export const createEditor = (props: {
   el: HTMLElement;
-  options: TideEditorProps;
+  options: LegacyTideEditorProps;
 }): void => {
   const { el, options } = props;
-  ReactDOM.render(<TideEditor {...options} />, el);
+  ReactDOM.render(<LegacyTideEditor {...options} />, el);
 };

@@ -18,11 +18,10 @@ try {
 createEditor({
   el: document.getElementById('app')!,
   options: {
-    readOnly: false,
-    defaultValue: defaultVal,
+    editable: true,
+    content: defaultVal,
     onReady: (e) => {
-      console.log(e);
-      console.log('onReady');
+      console.log('onReady', e);
     },
     onFocus: () => {
       console.log('onFocus');
