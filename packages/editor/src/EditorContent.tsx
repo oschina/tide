@@ -5,7 +5,7 @@ import type { TideEditor } from './TideEditor';
 import './EditorContent.less';
 
 export type EditorContentProps = {
-  editor: TideEditor;
+  editor: TideEditor | null;
   className?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;

@@ -32,7 +32,7 @@ import type { TideEditor, EditorEvents } from './TideEditor';
 import './EditorRender.less';
 
 export type EditorRenderProps = {
-  editor: TideEditor;
+  editor: TideEditor | null;
   className?: string;
   style?: React.CSSProperties;
   menuClassName?: string;
