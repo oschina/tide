@@ -1,5 +1,9 @@
 # @gitee/tide-extension-markdown
 
+## 0.2.0-alpha.4
+
+**Note:** Version bump only for package @gitee/tide-extension-markdown
+
 ## 0.2.0-alpha.3
 
 **Note:** Version bump only for package @gitee/tide-extension-markdown

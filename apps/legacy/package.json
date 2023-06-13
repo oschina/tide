@@ -1,6 +1,6 @@
 {
   "name": "@gitee/tide-legacy",
-  "version": "0.2.0-alpha.3",
+  "version": "0.2.0-alpha.4",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

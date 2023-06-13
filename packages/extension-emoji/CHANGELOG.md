@@ -1,5 +1,9 @@
 # @gitee/tide-extension-emoji
 
+## 0.2.0-alpha.4
+
+Fix EmojiPanel containerRef null error
+
 ## 0.2.0-alpha.3
 
 **Note:** Version bump only for package @gitee/tide-extension-emoji

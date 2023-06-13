@@ -1,5 +1,21 @@
 # @gitee/tide
 
+## 0.2.0-alpha.4
+
+### Minor Changes
+
+- Fix emoji panel error, useEditor types, add repository to package.json
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide-extension-image@0.2.0-alpha.4
+  - @gitee/tide-extension-link@0.2.0-alpha.4
+  - @gitee/tide-extension-menubar@0.2.0-alpha.4
+  - @gitee/tide-extension-table@0.2.0-alpha.4
+  - @gitee/tide-react@0.2.0-alpha.4
+  - @gitee/tide-theme@0.2.0-alpha.4
+
 ## 0.2.0-alpha.3
 
 ### Minor Changes
