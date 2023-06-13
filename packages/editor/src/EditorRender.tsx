@@ -50,7 +50,7 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
   contentClassName,
   contentStyle,
 }) => {
-  const [readOnly, setReadOnly] = useState(!!editor?.isReadOnly);
+  const [editable, setEditable] = useState(!!editor?.isEditable);
   const [fullscreen, setFullscreen] = useState(!!editor?.fullscreen);
 
   const menuItems = useMemo(() => {
@@ -128,13 +128,13 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
 
   useEffect(() => {
     if (!editor) return;
-    setReadOnly(editor.isReadOnly);
+    setEditable(editor.isEditable);
     setFullscreen(editor.fullscreen);
   }, [editor]);
 
   useEffect(() => {
     const updateHandle = (props: EditorEvents['update']) => {
-      setReadOnly(props.editor.isReadOnly);
+      setEditable(props.editor.isEditable);
       setFullscreen(props.editor.fullscreen);
     };
     editor?.on('update', updateHandle);
@@ -157,7 +157,7 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
       style={style}
     >
       <MenuBarContextProvider editor={editor}>
-        {(!readOnly || editor.readOnlyShowMenu) && (
+        {(editable || editor.readOnlyShowMenu) && (
           <MenuBar
             className={classNames(menuClassName, {
               disabled: editor.readOnlyShowMenu,

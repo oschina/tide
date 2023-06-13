@@ -249,6 +249,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
   };
 
   const scrollToGroup = (group: string) => {
+    if (!contentElRef.current) return null;
     const el: HTMLDivElement = document.querySelector(
       `[data-group="${group}"]`
     );
@@ -258,11 +259,13 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
   };
 
   const scrollToTop = () => {
+    if (!contentElRef.current) return null;
     contentElRef.current.scrollTop = 0;
   };
 
   const scrollToEmoji = (group: string, name: string) => {
-    const el: HTMLDivElement = contentElRef.current?.querySelector(
+    if (!contentElRef.current) return null;
+    const el: HTMLDivElement = contentElRef.current.querySelector(
       `[data-group="${group}"] [data-name="${name}"]`
     );
     if (el) {
@@ -284,6 +287,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
   };
 
   const getActiveGroupName = () => {
+    if (!contentElRef.current) return null;
     const contentElTop = contentElRef.current.getBoundingClientRect().top;
     const groupEls: NodeListOf<HTMLDivElement> =
       document.querySelectorAll('[data-group]');
@@ -306,9 +310,9 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
     const onScroll = throttle(() => {
       setActiveGroup(getActiveGroupName());
     }, 100);
-    contentElRef.current.addEventListener('scroll', onScroll);
+    contentElRef.current?.addEventListener('scroll', onScroll);
     return () => {
-      contentElRef.current.removeEventListener('scroll', onScroll);
+      contentElRef.current?.removeEventListener('scroll', onScroll);
     };
   }, []);
 
