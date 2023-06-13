@@ -1,5 +1,9 @@
 # @gitee/tide
 
+## 0.2.0-alpha.5
+
+Fix EditorRender, EditorContent editor prop allow null
+
 ## 0.2.0-alpha.4
 
 ### Minor Changes
