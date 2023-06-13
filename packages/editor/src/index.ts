@@ -13,5 +13,5 @@ export * from './types';
 export const useEditor: (
   options: Partial<TideEditorOptions>,
   deps?: DependencyList
-) => TideEditor = (options, deps) =>
+) => TideEditor | null = (options, deps) =>
   useEditorOriginal<TideEditor, TideEditorOptions>(TideEditor, options, deps);
