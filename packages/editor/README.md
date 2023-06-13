@@ -7,26 +7,27 @@
 ## 安装
 
 ```bash
-npm install --save @gitee/tide
+npm install --save @gitee/tide @gitee/tide-starter-kit highlight.js
 # or
-yarn add @gitee/tide
+yarn add @gitee/tide @gitee/tide-starter-kit highlight.js
 # or
-pnpm add @gitee/tide
+pnpm add @gitee/tide @gitee/tide-starter-kit highlight.js
 ```
 
 ## 使用
 
-> 默认只包含基础编辑功能，更多丰富功能请安装使用 @gitee/tide-starter-kit
-
 ```tsx
 import React, { useState } from 'react';
 import { EditorRender, useEditor } from '@gitee/tide';
+import { StarterKit } from '@gitee/tide-starter-kit';
 
 import '@gitee/tide/dist/style.css';
+import 'highlight.js/styles/default.css';
 
 function App() {
   const editor = useEditor({
-    content: 'Hello World!',
+    extensions: [StarterKit],
+    content: '# Hello World!',
     onChange: (doc) => console.log('onChange', doc),
   });
 
@@ -69,39 +70,3 @@ function App() {
 | menuStyle        | 菜单栏自定义 `style`     | `CSSProperties` | -      |
 | contentClassName | 内容区自定义 `className` | `string`        | -      |
 | contentStyle     | 内容区自定义 `style`     | `CSSProperties` | -      |
-
-## 配置 starter-kit 插件
-
-### 安装
-
-```bash
-npm install --save @gitee/tide-starter-kit highlight.js
-# or
-yarn add @gitee/tide-starter-kit highlight.js
-# or
-pnpm add @gitee/tide-starter-kit highlight.js
-```
-
-### 使用
-
-```tsx
-import React, { useState } from 'react';
-import { EditorRender, useEditor } from '@gitee/tide';
-import { StarterKit } from '@gitee/tide-starter-kit';
-
-import '@gitee/tide/dist/style.css';
-import 'highlight.js/styles/default.css';
-
-function App() {
-  const editor = useEditor({
-    extensions: [StarterKit],
-    content: '# Hello World!',
-    onChange: (doc) => console.log('onChange', doc),
-  });
-
-  // Update editor content
-  // editor.setContent('Changed content');
-
-  return <EditorRender editor={editor} />;
-}
-```
