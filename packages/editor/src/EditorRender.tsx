@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { LinkBubbleMenu } from '@gitee/tide-extension-link';
 import { TableCellBubbleMenu } from '@gitee/tide-extension-table';
 import { ImageBubbleMenu } from '@gitee/tide-extension-image';
@@ -28,7 +28,7 @@ import {
   Undo,
 } from '@gitee/tide-extension-menubar';
 import { EditorContent } from './EditorContent';
-import type { TideEditor } from './TideEditor';
+import type { TideEditor, EditorEvents } from './TideEditor';
 import './EditorRender.less';
 
 export type EditorRenderProps = {
@@ -50,6 +50,9 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
   contentClassName,
   contentStyle,
 }) => {
+  const [readOnly, setReadOnly] = useState(!!editor?.isReadOnly);
+  const [fullscreen, setFullscreen] = useState(!!editor?.fullscreen);
+
   const menuItems = useMemo(() => {
     if (!editor) {
       return null;
@@ -99,8 +102,11 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
         editor.menuEnableFullscreen && (
           <Fullscreen
             key="fullscreen"
-            fullscreen={editor.fullscreen}
-            onFullscreenChange={(f) => editor.setFullscreen(f)}
+            fullscreen={fullscreen}
+            onFullscreenChange={(newFullscreen) => {
+              setFullscreen(newFullscreen);
+              editor.setFullscreen(newFullscreen);
+            }}
           />
         ),
       ],
@@ -117,8 +123,25 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
     editor,
     editor?.menuEnableUndoRedo,
     editor?.menuEnableFullscreen,
-    editor?.fullscreen,
+    fullscreen,
   ]);
+
+  useEffect(() => {
+    if (!editor) return;
+    setReadOnly(editor.isReadOnly);
+    setFullscreen(editor.fullscreen);
+  }, [editor]);
+
+  useEffect(() => {
+    const updateHandle = ({ editor }: EditorEvents['update']) => {
+      setReadOnly(editor.isReadOnly);
+      setFullscreen(editor.fullscreen);
+    };
+    editor?.on('update', updateHandle);
+    return () => {
+      editor?.off('update', updateHandle);
+    };
+  }, [editor]);
 
   if (!editor) {
     return null;
@@ -128,13 +151,13 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
     <div
       className={classNames(
         'gwe-editor',
-        { 'gwe-editor--fullscreen': !!editor?.fullscreen },
+        { 'gwe-editor--fullscreen': fullscreen },
         className
       )}
       style={style}
     >
       <MenuBarContextProvider editor={editor}>
-        {!(editor.readOnly && !editor.readOnlyShowMenu) && (
+        {(!readOnly || editor.readOnlyShowMenu) && (
           <MenuBar
             className={classNames(menuClassName, {
               disabled: editor.readOnlyShowMenu,

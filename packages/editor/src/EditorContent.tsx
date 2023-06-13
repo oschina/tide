@@ -19,7 +19,7 @@ export const EditorContent: React.FC<EditorContentProps> = ({
 }) => {
   const fullClassName = classNames('gwe-content', className);
 
-  if (editor && editor.isEmpty && !editor.isEditable) {
+  if (editor && editor.isEmpty && editor.isReadOnly) {
     return (
       <div className={fullClassName} style={style}>
         {editor.readOnlyEmptyView || null}

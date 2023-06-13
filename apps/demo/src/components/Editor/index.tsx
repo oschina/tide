@@ -18,6 +18,7 @@ export type TideEditorProps = Omit<EditorRenderProps, 'editor'>;
 export const TideEditor = forwardRef<Editor, TideEditorProps>(
   ({ ...props }, ref) => {
     const editor = useEditor({
+      autofocus: true,
       extensions: [
         StarterKit.configure({
           textAlign: false,
@@ -41,6 +42,11 @@ export const TideEditor = forwardRef<Editor, TideEditorProps>(
           },
         }),
       ],
+      readOnlyEmptyView: (
+        <div style={{ padding: 20, textAlign: 'center' }}>
+          <p>暂无内容（只读模式）</p>
+        </div>
+      ),
     });
 
     useImperativeHandle(ref, () => editor as Editor, [editor]);

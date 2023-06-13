@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import type { Editor } from '@gitee/tide';
 import HeaderBar from './components/HeaderBar';
@@ -11,20 +11,11 @@ console.log('BUILD_TIME：', __BUILD_TIME__);
 
 function App() {
   const [editor, setEditor] = useState<Editor | null>(null);
-  const [editable, setEditable] = useState(true);
-
-  useEffect(() => {
-    editor?.setEditable(editable);
-  }, [editable]);
 
   return (
     <div className="demo">
       <div className="demo-header">
-        <HeaderBar
-          editor={editor}
-          editable={editable}
-          onEditableChange={setEditable}
-        />
+        <HeaderBar editor={editor} />
       </div>
       <div className="demo-main">
         <div className="demo-editor-wrapper">

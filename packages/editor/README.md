@@ -39,31 +39,36 @@ function App() {
 
 如需自定义样式，可参考 `@gitee/tide-theme/dist/variable.less` 中的 CSS Variables 进行覆盖。
 
-## 属性
+## 配置
 
-| 属性                 | 说明                     | 类型                                                     | 默认值  |
+### useEditor Options
+
+| 配置                 | 说明                     | 类型                                                     | 默认值  |
 | -------------------- | ------------------------ | -------------------------------------------------------- | ------- |
-| defaultValue         | 默认值                   | `HTMLContent \| JSONContent \| JSONContent[] \| null`    | -       |
-| autoFocus            | 是否自动聚焦             | `'start' \| 'end' \| 'all' \| number \| boolean \| null` | `false` |
-| fullscreen           | 是否全屏                 | `boolean`                                                | `false` |
-| readOnly             | 是否只读                 | `boolean`                                                | `false` |
+| content              | 内容                     | `HTMLContent \| JSONContent \| JSONContent[] \| null`    | -       |
+| autofocus            | 是否自动聚焦             | `'start' \| 'end' \| 'all' \| number \| boolean \| null` | `false` |
+| editable             | 是否允许编辑             | `boolean`                                                | `true`  |
+| fullscreen           | 是否全屏模式             | `boolean`                                                | `false` |
 | readOnlyEmptyView    | 只读模式下无内容时的视图 | `ReactNode`                                              | `null`  |
 | readOnlyShowMenu     | 只读模式下是否显示菜单栏 | `boolean`                                                | `false` |
 | menuEnableUndoRedo   | 菜单栏是否启用撤销重做   | `boolean`                                                | `true`  |
 | menuEnableFullscreen | 菜单栏是否启用全屏       | `boolean`                                                | `true`  |
-| onReady              | 初始化完成后的回调函数   | `(editor: Editor) => void`                               | -       |
-| onChange             | 内容变更时的回调函数     | `(doc: JSONContent, editor: Editor) => void`             | -       |
-| onFocus              | 聚焦时的回调函数         | `EditorOptions['onFocus']`                               | -       |
-| onBlur               | 失焦时的回调函数         | `EditorOptions['onBlur']`                                | -       |
 | onFullscreenChange   | 全屏状态变更时的回调函数 | `(fullscreen: boolean) => void`                          | -       |
-| editorOptions        | 编辑器选项               | `EditorOptions`                                          | -       |
-| className            | 容器自定义 `className`   | `string`                                                 | -       |
-| style                | 容器自定义 `style`       | `CSSProperties`                                          | -       |
-| menuClassName        | 菜单栏自定义 `className` | `string`                                                 | -       |
-| menuStyle            | 菜单栏自定义 `style`     | `CSSProperties`                                          | -       |
-| contentClassName     | 内容区自定义 `className` | `string`                                                 | -       |
-| contentStyle         | 内容区自定义 `style`     | `CSSProperties`                                          | -       |
-| deps                 | 控制编辑器重渲染         | `React.DependencyList`                                   | []      |
+| onReady              | 初始化完成后的回调函数   | `(editor: TideEditor) => void`                           | -       |
+| onChange             | 内容变更时的回调函数     | `(doc: JSONContent, editor: TideEditor) => void`         | -       |
+
+更多配置可参考 `TideEditorOptions` 接口定义。
+
+### EditorRenderProps
+
+| 属性             | 说明                     | 类型            | 默认值 |
+| ---------------- | ------------------------ | --------------- | ------ |
+| className        | 容器自定义 `className`   | `string`        | -      |
+| style            | 容器自定义 `style`       | `CSSProperties` | -      |
+| menuClassName    | 菜单栏自定义 `className` | `string`        | -      |
+| menuStyle        | 菜单栏自定义 `style`     | `CSSProperties` | -      |
+| contentClassName | 内容区自定义 `className` | `string`        | -      |
+| contentStyle     | 内容区自定义 `style`     | `CSSProperties` | -      |
 
 ## 配置 starter-kit 插件
 

@@ -9,16 +9,10 @@ import './index.less';
 
 const localStorageKey = 'tide-history';
 
-const HeaderBar = ({
-  editor,
-  editable,
-  onEditableChange,
-}: {
-  editor: Editor | null;
-  editable: boolean;
-  onEditableChange: (v: boolean) => void;
-}) => {
+const HeaderBar = ({ editor }: { editor: Editor | null }) => {
   const [theme, setTheme] = useState('');
+  const [editable, setEditable] = useState<boolean>(!!editor?.isEditable);
+
   const handleClickShareLink = () => {
     const jsonContent = editor?.getJSON();
     const url = new URL(window.location.href);
@@ -89,6 +83,11 @@ const HeaderBar = ({
     };
   }, [editor]);
 
+  useEffect(() => {
+    if (!editor) return;
+    setEditable(editor.isEditable);
+  }, [editor]);
+
   return (
     <div className={'demo-header-bar'}>
       <div className={'demo-header-bar-left'}>
@@ -98,7 +97,8 @@ const HeaderBar = ({
             name="editable"
             checked={editable}
             onChange={(e) => {
-              onEditableChange(e.target.checked);
+              setEditable(e.target.checked);
+              editor?.setEditable(e.target.checked);
             }}
           />
           editable
