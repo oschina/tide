@@ -52,7 +52,7 @@ const IssueIcons = ({
   const issueIcon = iconMap[category || 'feature'];
 
   return (
-    <span className={cls('gwe-issue-type-icon', className)}>
+    <span className={cls('tide-issue-type-icon', className)}>
       <img src={issueIcon.src} alt={issueIcon.title} title={issueIcon.title} />
     </span>
   );

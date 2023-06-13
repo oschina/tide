@@ -22,7 +22,7 @@ export const TableGrid: React.FC<TableGridProps> = ({
   }
   return (
     <div
-      className="gwe-editor-table-grid"
+      className="tide-editor-table-grid"
       onMouseLeave={() => {
         setSelectedRows(0);
         setSelectedColumns(0);
@@ -31,12 +31,12 @@ export const TableGrid: React.FC<TableGridProps> = ({
       onClick={() => onClick?.(selectedRows, selectedColumns)}
     >
       {Array.from({ length: rows }, (_, i) => (
-        <div key={`row-${i}`} className="gwe-editor-table-grid__row">
+        <div key={`row-${i}`} className="tide-editor-table-grid__row">
           {Array.from({ length: columns }, (_, j) => (
             <div
               key={`cell-${i}-${j}`}
-              className={classNames('gwe-editor-table-grid__cell', {
-                ['gwe-editor-table-grid__cell--selected']:
+              className={classNames('tide-editor-table-grid__cell', {
+                ['tide-editor-table-grid__cell--selected']:
                   i + 1 <= selectedRows && j + 1 <= selectedColumns,
               })}
               onMouseOver={() => {

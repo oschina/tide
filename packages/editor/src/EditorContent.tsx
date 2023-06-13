@@ -17,7 +17,7 @@ export const EditorContent: React.FC<EditorContentProps> = ({
   style,
   children,
 }) => {
-  const fullClassName = classNames('gwe-content', className);
+  const fullClassName = classNames('tide-content', className);
 
   if (editor && editor.isEmpty && editor.isReadOnly) {
     return (

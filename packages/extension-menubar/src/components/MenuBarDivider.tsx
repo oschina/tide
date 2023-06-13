@@ -8,5 +8,5 @@ export type MenuBarDividerProps = {
 export const MenuBarDivider: React.FC<MenuBarDividerProps> = ({
   className,
 }) => {
-  return <span className={classNames('gwe-menu-bar__divider', className)} />;
+  return <span className={classNames('tide-menu-bar__divider', className)} />;
 };

@@ -10,19 +10,19 @@ import './ImageNodeView.less';
 const resizeBtn = [
   {
     position: 'top-left',
-    className: 'gwe-image__view-resize-btn-top-left',
+    className: 'tide-image__view-resize-btn-top-left',
   },
   {
     position: 'top-right',
-    className: 'gwe-image__view-resize-btn-top-right',
+    className: 'tide-image__view-resize-btn-top-right',
   },
   {
     position: 'bottom-right',
-    className: 'gwe-image__view-resize-btn-bottom-right',
+    className: 'tide-image__view-resize-btn-bottom-right',
   },
   {
     position: 'bottom-left',
-    className: 'gwe-image__view-resize-btn-bottom-left',
+    className: 'tide-image__view-resize-btn-bottom-left',
   },
 ];
 
@@ -62,24 +62,24 @@ const ImageNodeView: React.FC<NodeViewProps> = ({
   return (
     <NodeViewWrapper
       data-drag-handle
-      className={classNames(node.attrs.className, 'gwe-image', {
-        'gwe-image__align-left': node.attrs.align === 'left',
-        'gwe-image__align-center': node.attrs.align === 'center',
-        'gwe-image__align-right': node.attrs.align === 'right',
+      className={classNames(node.attrs.className, 'tide-image', {
+        'tide-image__align-left': node.attrs.align === 'left',
+        'tide-image__align-center': node.attrs.align === 'center',
+        'tide-image__align-right': node.attrs.align === 'right',
       })}
     >
       <div
-        className={classNames('gwe-image__view', {
-          'gwe-image__view-hover': isEditable,
+        className={classNames('tide-image__view', {
+          'tide-image__view-hover': isEditable,
         })}
       >
-        <div className={classNames('gwe-image__view-resize')}>
+        <div className={classNames('tide-image__view-resize')}>
           {resizeBtn.map((item) => {
             return (
               <div
                 key={item.position}
                 className={classNames(
-                  'gwe-image__view-resize-btn',
+                  'tide-image__view-resize-btn',
                   item.className
                 )}
                 onMouseDown={(e) => {

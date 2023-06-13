@@ -1,31 +1,31 @@
 // 浅色主题
 
 @_theme-color: #2c7ef8;
-@theme-color: var(--gwe-theme-color, @_theme-color); // 主题色
+@theme-color: var(--tide-theme-color, @_theme-color); // 主题色
 
 @_theme-bg-color: rgba(44, 126, 248, 0.1);
-@theme-bg-color: var(--gwe-theme-bg-color, @_theme-bg-color); // 浅色背景主题色 (透明度10%)
+@theme-bg-color: var(--tide-theme-bg-color, @_theme-bg-color); // 浅色背景主题色 (透明度10%)
 
 @_background-color: #fff;
-@background-color: var(--gwe-background-color, @_background-color); // 背景色
+@background-color: var(--tide-background-color, @_background-color); // 背景色
 
 @_background-hover-color: #f5f6f8;
-@background-hover-color: var(--gwe-background-hover-color, @_background-hover-color); // 背景色 hover
+@background-hover-color: var(--tide-background-hover-color, @_background-hover-color); // 背景色 hover
 
 @_light-bg-color: #f5f6f8;
-@light-bg-color: var(--gwe-light-bg-color, @_light-bg-color);
+@light-bg-color: var(--tide-light-bg-color, @_light-bg-color);
 
 @_gray-color: #c1c7d0;
-@gray-color: var(--gwe-gray-color, @_gray-color);
+@gray-color: var(--tide-gray-color, @_gray-color);
 
 @_border-color: #dadee3;
-@border-color: var(--gwe-border-color, @_border-color);
+@border-color: var(--tide-border-color, @_border-color);
 
 @_text-color: #2e405e;
-@text-color: var(--gwe-text-color, @_text-color);
+@text-color: var(--tide-text-color, @_text-color);
 
 @_text-muted-color: #909aaa;
-@text-muted-color: var(--gwe-text-muted-color, @_text-muted-color);
+@text-muted-color: var(--tide-text-muted-color, @_text-muted-color);
 
 @text-font-mono: 'Roboto Mono', 'Andale Mono', Consolas, 'Courier New',
   monospace;
@@ -40,46 +40,46 @@
 // 菜单按钮样式
 @_menu-btn-active-color: @theme-color;
 @_menu-btn-active-bg-color: @theme-bg-color;
-@menu-btn-active-color: var(--gwe-menu-btn-active-color, @_menu-btn-active-color);
-@menu-btn-active-bg-color: var(--gwe-menu-btn-active-bg-color, @_menu-btn-active-bg-color);
+@menu-btn-active-color: var(--tide-menu-btn-active-color, @_menu-btn-active-color);
+@menu-btn-active-bg-color: var(--tide-menu-btn-active-bg-color, @_menu-btn-active-bg-color);
 
 // Popup 样式
 @_popup-bg-color: @_background-color;
 @_popup-shadow-color: 0px 4px 8px -2px rgba(9, 30, 66, 0.25),
   0px 0px 1px 0px rgba(9, 30, 66, 0.31);
-@popup-bg-color: var(--gwe-popup-bg-color, @_popup-bg-color);
-@popup-shadow-color: var(--gwe-popup-shadow-color, @_popup-shadow-color);
+@popup-bg-color: var(--tide-popup-bg-color, @_popup-bg-color);
+@popup-shadow-color: var(--tide-popup-shadow-color, @_popup-shadow-color);
 
 // 下拉菜单样式
 @_select-hover-color: @text-color;
 @_select-hover-bg-color: #f5f6f8;
-@select-hover-color: var(--gwe-select-hover-color, @_select-hover-color);
-@select-hover-bg-color: var(--gwe-select-hover-bg-color, @_select-hover-bg-color);
+@select-hover-color: var(--tide-select-hover-color, @_select-hover-color);
+@select-hover-bg-color: var(--tide-select-hover-bg-color, @_select-hover-bg-color);
 @_select-active-color: @theme-color;
 @_select-active-bg-color: @theme-bg-color;
-@select-active-color: var(--gwe-select-active-color, @_select-active-color);
-@select-active-bg-color: var(--gwe-select-active-bg-color, @_select-active-bg-color);
+@select-active-color: var(--tide-select-active-color, @_select-active-color);
+@select-active-bg-color: var(--tide-select-active-bg-color, @_select-active-bg-color);
 
 @_emoji-menu-active-color: @_text-color;
 @_emoji-menu-active-bg-color: #f5f6f8;
-@emoji-menu-active-color: var(--gwe-emoji-menu-active-color, @_emoji-menu-active-color);
-@emoji-menu-active-bg-color: var(--gwe-emoji-menu-active-bg-color, @_emoji-menu-active-bg-color);
+@emoji-menu-active-color: var(--tide-emoji-menu-active-color, @_emoji-menu-active-color);
+@emoji-menu-active-bg-color: var(--tide-emoji-menu-active-bg-color, @_emoji-menu-active-bg-color);
 
 @_table-bar-bg-color: #F5F6F8;
 @_table-grid-bg-color: #F5F6F8;
 @_table-grid-active-bg-color: @theme-bg-color;
 @_table-grid-active-border-color: @theme-color;
 
-@table-bar-bg-color: var(--gwe-table-bar-bg-color, @_table-bar-bg-color);
-@table-grid-bg-color: var(--gwe-table-grid-bg-color, @_table-grid-bg-color);
-@table-grid-active-bg-color: var(--gwe-table-grid-active-bg-color, @_table-grid-active-bg-color);
-@table-grid-active-border-color: var(--gwe-table-grid-active-border-color, @_table-grid-active-border-color);
+@table-bar-bg-color: var(--tide-table-bar-bg-color, @_table-bar-bg-color);
+@table-grid-bg-color: var(--tide-table-grid-bg-color, @_table-grid-bg-color);
+@table-grid-active-bg-color: var(--tide-table-grid-active-bg-color, @_table-grid-active-bg-color);
+@table-grid-active-border-color: var(--tide-table-grid-active-border-color, @_table-grid-active-border-color);
 
 @_tooltip-bg-color: #404040;
-@tooltip-bg-color: var(--gwe-tooltip-bg-color, @_tooltip-bg-color);
+@tooltip-bg-color: var(--tide-tooltip-bg-color, @_tooltip-bg-color);
 
 @_code-text-color: #444;
-@code-text-color: var(--gwe-code-text-color, @_code-text-color);
+@code-text-color: var(--tide-code-text-color, @_code-text-color);
 
 /**
  * 暗黑主题
@@ -122,33 +122,33 @@
 
 :root,
 :root .theme-blue {
-  --gwe-theme-color: #2c7ef8;
-  --gwe-theme-color-rgb: 44, 126, 248;
-  --gwe-theme-bg-color: rgba(44, 126, 248, 0.1);
+  --tide-theme-color: #2c7ef8;
+  --tide-theme-color-rgb: 44, 126, 248;
+  --tide-theme-bg-color: rgba(44, 126, 248, 0.1);
 }
 
 :root .theme-purple {
-  --gwe-theme-color: #6554c0;
-  --gwe-theme-color-rgb: 101, 84, 192;
-  --gwe-theme-bg-color: rgba(101, 84, 192, 0.1);
+  --tide-theme-color: #6554c0;
+  --tide-theme-color-rgb: 101, 84, 192;
+  --tide-theme-bg-color: rgba(101, 84, 192, 0.1);
 }
 
 :root .theme-green {
-  --gwe-theme-color: #36b37e;
-  --gwe-theme-color-rgb: 54, 179, 126;
-  --gwe-theme-bg-color: rgba(54, 179, 126, 0.1);
+  --tide-theme-color: #36b37e;
+  --tide-theme-color-rgb: 54, 179, 126;
+  --tide-theme-bg-color: rgba(54, 179, 126, 0.1);
 }
 
 :root .theme-orange {
-  --gwe-theme-color: #ff8118;
-  --gwe-theme-color-rgb: 255, 129, 24;
-  --gwe-theme-bg-color: rgba(255, 129, 24, 0.1);
+  --tide-theme-color: #ff8118;
+  --tide-theme-color-rgb: 255, 129, 24;
+  --tide-theme-bg-color: rgba(255, 129, 24, 0.1);
 }
 
 :root .theme-pink {
-  --gwe-theme-color: #b25578;
-  --gwe-theme-color-rgb: 178, 85, 120;
-  --gwe-theme-bg-color: rgba(178, 85, 120, 0.1);
+  --tide-theme-color: #b25578;
+  --tide-theme-color-rgb: 178, 85, 120;
+  --tide-theme-bg-color: rgba(178, 85, 120, 0.1);
 }
 
 :root .theme-blue,
@@ -156,75 +156,75 @@
 :root .theme-orange,
 :root .theme-pink,
 :root .theme-purple {
-  --gwe-background-color: @_background-color;
-  --gwe-background-hover-color: @_background-hover-color;
+  --tide-background-color: @_background-color;
+  --tide-background-hover-color: @_background-hover-color;
 
-  --gwe-light-bg-color: @_light-bg-color;
-  --gwe-gray-color: @_gray-color;
+  --tide-light-bg-color: @_light-bg-color;
+  --tide-gray-color: @_gray-color;
 
-  --gwe-border-color: @_border-color;
-  --gwe-text-color: @_text-color;
-  --gwe-text-muted-color: @_text-muted-color;
+  --tide-border-color: @_border-color;
+  --tide-text-color: @_text-color;
+  --tide-text-muted-color: @_text-muted-color;
 
-  --gwe-menu-btn-active-color: @_menu-btn-active-color;
-  --gwe-menu-btn-active-bg-color: @_menu-btn-active-bg-color;
+  --tide-menu-btn-active-color: @_menu-btn-active-color;
+  --tide-menu-btn-active-bg-color: @_menu-btn-active-bg-color;
 
-  --gwe-popup-bg-color: @_popup-bg-color;
-  --gwe-popup-shadow-color: @_popup-shadow-color;
+  --tide-popup-bg-color: @_popup-bg-color;
+  --tide-popup-shadow-color: @_popup-shadow-color;
 
   --gew-select-hover-color: @_select-hover-color;
-  --gwe-select-hover-bg-color: @_select-hover-bg-color;
-  --gwe-select-active-color: @_select-active-color;
-  --gwe-select-active-bg-color: @_select-active-bg-color;
+  --tide-select-hover-bg-color: @_select-hover-bg-color;
+  --tide-select-active-color: @_select-active-color;
+  --tide-select-active-bg-color: @_select-active-bg-color;
 
-  --gwe-emoji-menu-active-color: @_emoji-menu-active-color;
-  --gwe-emoji-menu-active-bg-color: @_emoji-menu-active-bg-color;
+  --tide-emoji-menu-active-color: @_emoji-menu-active-color;
+  --tide-emoji-menu-active-bg-color: @_emoji-menu-active-bg-color;
 
-  --gwe-table-bar-bg-color: @_table-bar-bg-color;
-  --gwe-table-grid-bg-color: @_table-grid-bg-color;
-  --gwe-table-grid-active-bg-color: @_table-grid-active-bg-color;
-  --gwe-table-grid-active-border-color: @_table-grid-active-border-color;
+  --tide-table-bar-bg-color: @_table-bar-bg-color;
+  --tide-table-grid-bg-color: @_table-grid-bg-color;
+  --tide-table-grid-active-bg-color: @_table-grid-active-bg-color;
+  --tide-table-grid-active-border-color: @_table-grid-active-border-color;
 
-  --gwe-tooltip-bg-color: @_tooltip-bg-color;
+  --tide-tooltip-bg-color: @_tooltip-bg-color;
 
-  --gwe-code-text-color: @_code-text-color;
+  --tide-code-text-color: @_code-text-color;
 }
 
 :root .theme-dark {
-  --gwe-theme-color: #165fcf;
-  --gwe-theme-color-rgb: 22, 95, 207;
-  --gwe-theme-bg-color: rgba(22, 95, 207, 0.2);
+  --tide-theme-color: #165fcf;
+  --tide-theme-color-rgb: 22, 95, 207;
+  --tide-theme-bg-color: rgba(22, 95, 207, 0.2);
 
-  --gwe-background-color: @dark-background-color;
-  --gwe-background-hover-color: @dark-background-hover-color;
+  --tide-background-color: @dark-background-color;
+  --tide-background-hover-color: @dark-background-hover-color;
 
-  --gwe-light-bg-color: @dark-light-bg-color;
-  --gwe-gray-color: @dark-gray-color;
+  --tide-light-bg-color: @dark-light-bg-color;
+  --tide-gray-color: @dark-gray-color;
 
-  --gwe-border-color: @dark-border-color;
-  --gwe-text-color: @dark-text-color;
-  --gwe-text-muted-color: @dark-text-muted-color;
+  --tide-border-color: @dark-border-color;
+  --tide-text-color: @dark-text-color;
+  --tide-text-muted-color: @dark-text-muted-color;
 
-  --gwe-menu-btn-active-color: @dark-menu-btn-active-color;
-  --gwe-menu-btn-active-bg-color: @dark-menu-btn-active-bg-color;
+  --tide-menu-btn-active-color: @dark-menu-btn-active-color;
+  --tide-menu-btn-active-bg-color: @dark-menu-btn-active-bg-color;
 
-  --gwe-popup-bg-color: @dark-popup-bg-color;
-  --gwe-popup-shadow-color: @dark-popup-shadow-color;
+  --tide-popup-bg-color: @dark-popup-bg-color;
+  --tide-popup-shadow-color: @dark-popup-shadow-color;
 
   --gew-select-hover-color: @dark-select-hover-color;
-  --gwe-select-hover-bg-color: @dark-select-hover-bg-color;
-  --gwe-select-active-color: @dark-select-active-color;
-  --gwe-select-active-bg-color: @dark-select-active-bg-color;
+  --tide-select-hover-bg-color: @dark-select-hover-bg-color;
+  --tide-select-active-color: @dark-select-active-color;
+  --tide-select-active-bg-color: @dark-select-active-bg-color;
 
-  --gwe-emoji-menu-active-color: @dark-emoji-menu-active-color;
-  --gwe-emoji-menu-active-bg-color: @dark-emoji-menu-active-bg-color;
+  --tide-emoji-menu-active-color: @dark-emoji-menu-active-color;
+  --tide-emoji-menu-active-bg-color: @dark-emoji-menu-active-bg-color;
 
-  --gwe-table-bar-bg-color: @dark-table-bar-bg-color;
-  --gwe-table-grid-bg-color: @dark-table-grid-bg-color;
-  --gwe-table-grid-active-bg-color: @dark-table-grid-active-bg-color;
-  --gwe-table-grid-active-border-color: @dark-table-grid-active-border-color;
+  --tide-table-bar-bg-color: @dark-table-bar-bg-color;
+  --tide-table-grid-bg-color: @dark-table-grid-bg-color;
+  --tide-table-grid-active-bg-color: @dark-table-grid-active-bg-color;
+  --tide-table-grid-active-border-color: @dark-table-grid-active-border-color;
 
-  --gwe-tooltip-bg-color: @dark-tooltip-bg-color;
+  --tide-tooltip-bg-color: @dark-tooltip-bg-color;
 
-  --gwe-code-text-color: @dark-code-text-color;
+  --tide-code-text-color: @dark-code-text-color;
 }

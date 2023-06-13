@@ -49,8 +49,8 @@ export const Heading: React.FC = () => {
         onClickOutside={() => setHeadVisible(false)}
         visible={headVisible}
         content={
-          <div className="gwe-dropdown-menu">
-            <div className="gwe-dropdown-menu__content">
+          <div className="tide-dropdown-menu">
+            <div className="tide-dropdown-menu__content">
               <div
                 onClick={() => {
                   if (
@@ -62,16 +62,16 @@ export const Heading: React.FC = () => {
                   editor.chain().focus().setParagraph().run();
                   setHeadVisible(false);
                 }}
-                className={classNames('gwe-dropdown-menu__item', {
-                  'gwe-dropdown-menu__item--active':
+                className={classNames('tide-dropdown-menu__item', {
+                  'tide-dropdown-menu__item--active':
                     statusMap?.paragraphIsActive,
-                  'gwe-dropdown-menu__item--disabled':
+                  'tide-dropdown-menu__item--disabled':
                     statusMap?.paragraphIsDisabled,
                 })}
               >
-                <div className={classNames('gwe-menu-head-row')}>
+                <div className={classNames('tide-menu-head-row')}>
                   <span>正文</span>
-                  <span className={`gwe-menu-head-row__span`}>
+                  <span className={`tide-menu-head-row__span`}>
                     {`${command} + ${option} + 0`}
                   </span>
                 </div>
@@ -94,18 +94,20 @@ export const Heading: React.FC = () => {
                     editor.chain().focus().toggleHeading({ level }).run();
                     setHeadVisible(false);
                   }}
-                  className={classNames('gwe-dropdown-menu__item', {
-                    'gwe-dropdown-menu__item--active':
+                  className={classNames('tide-dropdown-menu__item', {
+                    'tide-dropdown-menu__item--active':
                       statusMap?.[`heading${level}IsActive`],
-                    'gwe-dropdown-menu__item--disabled':
+                    'tide-dropdown-menu__item--disabled':
                       statusMap?.[`heading${level}Disabled`],
                   })}
                 >
-                  <div className={classNames('gwe-menu-head-row')}>
-                    <span className={`gwe-menu-head-row__title--level${level}`}>
+                  <div className={classNames('tide-menu-head-row')}>
+                    <span
+                      className={`tide-menu-head-row__title--level${level}`}
+                    >
                       标题 {level}
                     </span>
-                    <span className={`gwe-menu-head-row__span`}>
+                    <span className={`tide-menu-head-row__span`}>
                       {`${command} + ${option} + ${level}`}
                     </span>
                   </div>
@@ -116,13 +118,13 @@ export const Heading: React.FC = () => {
         }
       >
         <div
-          className={'gwe-dropdown-trigger'}
+          className={'tide-dropdown-trigger'}
           onClick={() => setHeadVisible(!headVisible)}
         >
-          <span className={'gwe-dropdown-trigger__head-text'}>
+          <span className={'tide-dropdown-trigger__head-text'}>
             {getHeadingText()}
           </span>
-          <IconCaretDown className={'gwe-dropdown-trigger__head-icon'} />
+          <IconCaretDown className={'tide-dropdown-trigger__head-icon'} />
         </div>
       </Tippy>
     </MenuBarItem>

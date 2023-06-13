@@ -148,20 +148,20 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
   const canSplitCell = editor.can().splitCell?.();
   const canMergeCells = editor.can().mergeCells?.();
 
-  const divider = <span className="gwe-menu-bar__divider" />;
+  const divider = <span className="tide-menu-bar__divider" />;
 
   const mergeOrSplitItems = ((selectedCellsCount > 1 && canMergeCells) ||
     canSplitCell) && (
     <Tippy
       interactive
       content={
-        <div className={'gwe-menu-bar__tooltip'}>
+        <div className={'tide-menu-bar__tooltip'}>
           {canSplitCell ? '拆分' : '合并'}
         </div>
       }
     >
       <button
-        className="gwe-menu-bar__btn gwe-menu-bar__item"
+        className="tide-menu-bar__btn tide-menu-bar__item"
         onClick={() => editor.commands.mergeOrSplit()}
       >
         {canSplitCell ? <IconCellSplitBold /> : <IconCellMergeBold />}
@@ -173,10 +173,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     <>
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>居左</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>居左</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => (editor.commands as any).unsetTextAlign?.()}
         >
           <IconAlignLeftBold />
@@ -184,10 +184,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       </Tippy>
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>居中</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>居中</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => (editor.commands as any).setTextAlign?.('center')}
         >
           <IconAlignCenterBold />
@@ -195,10 +195,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       </Tippy>
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>居右</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>居右</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => (editor.commands as any).setTextAlign?.('right')}
         >
           <IconAlignRightBold />
@@ -212,10 +212,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     deleteButton = (
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>删除表格</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>删除表格</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => editor.commands.deleteTable()}
         >
           <IconTrashBold />
@@ -226,10 +226,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     deleteButton = (
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>删除行</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>删除行</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => editor.commands.deleteRow()}
         >
           <IconTrashBold />
@@ -240,10 +240,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     deleteButton = (
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>删除列</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>删除列</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => editor.commands.deleteColumn()}
         >
           <IconTrashBold />
@@ -256,10 +256,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
     <>
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>复制</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>复制</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => document.execCommand('copy')}
         >
           <IconCopyBold />
@@ -267,10 +267,10 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       </Tippy>
       <Tippy
         interactive
-        content={<div className={'gwe-menu-bar__tooltip'}>剪切</div>}
+        content={<div className={'tide-menu-bar__tooltip'}>剪切</div>}
       >
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={() => {
             document.execCommand('cut');
             editor.commands.deleteTable();
@@ -291,7 +291,7 @@ export const TableCellBubbleMenu: React.FC<TableCellBubbleMenuProps> = ({
       tippyOptions={tippyOptions}
       updateDelay={0}
     >
-      <div className="gwe-menu-bar gwe-menu-bar-bubble">
+      <div className="tide-menu-bar tide-menu-bar-bubble">
         {selectedState.tableSelected ? (
           <>
             {copyAndCutItems}

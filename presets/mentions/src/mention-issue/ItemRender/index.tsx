@@ -12,14 +12,14 @@ export const MentionIssueItemRender: React.FC<{
   const category = item.attrs.issue_type?.category as IssueCategory;
 
   return (
-    <div className="gwe-mention-issue__pop-item">
-      <span className="gwe-mention-issue__pop-item-icon">
+    <div className="tide-mention-issue__pop-item">
+      <span className="tide-mention-issue__pop-item-icon">
         <Icons category={category} />
       </span>
-      <span className="gwe-mention-issue__pop-item-id">
+      <span className="tide-mention-issue__pop-item-id">
         #{item.attrs.ident}
       </span>
-      <span className="gwe-mention-issue__pop-item-title">
+      <span className="tide-mention-issue__pop-item-title">
         {item.attrs.title}
       </span>
     </div>

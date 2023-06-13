@@ -1,6 +1,6 @@
 @import (reference) '~@gitee/tide-theme/dist/variable.less';
 
-.gwe-menu-bar {
+.tide-menu-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -21,7 +21,7 @@
       margin-left: 8px;
     }
 
-    .gwe-dropdown-trigger {
+    .tide-dropdown-trigger {
       height: 24px;
       padding: 0 4px;
       border-radius: 4px;
@@ -33,7 +33,7 @@
   }
 
   &.disabled {
-    .gwe-menu-bar__item {
+    .tide-menu-bar__item {
       opacity: 0.25;
       pointer-events: none;
     }
@@ -115,7 +115,7 @@
   }
 }
 
-.gwe-dropdown-menu {
+.tide-dropdown-menu {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -139,7 +139,7 @@
     cursor: pointer;
     transition: all 0.2s;
 
-    &:hover:not(.gwe-dropdown-menu__item--active):not(.gwe-dropdown-menu__item--disabled) {
+    &:hover:not(.tide-dropdown-menu__item--active):not(.tide-dropdown-menu__item--disabled) {
       background-color: @select-hover-bg-color;
       color: @select-hover-color;
     }
@@ -156,7 +156,7 @@
   }
 }
 
-.gwe-dropdown-trigger {
+.tide-dropdown-trigger {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -173,15 +173,15 @@
   }
 }
 
-.gwe-items-between {
+.tide-items-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.gwe-menu-head-row {
+.tide-menu-head-row {
   width: 208px;
-  &:extend(.gwe-items-between);
+  &:extend(.tide-items-between);
 
   &__title {
     &--level1 {
@@ -227,7 +227,7 @@
   }
 }
 
-.gwe-menu-bar.gwe-menu-bar-bubble {
+.tide-menu-bar.tide-menu-bar-bubble {
   padding: 7px 11px;
   border: 1px solid @border-color;
   border-radius: 4px;
@@ -235,7 +235,7 @@
   box-shadow: 0px 4px 8px -2px rgba(9, 30, 66, 0.25);
 }
 
-.gwe-menu-bar-bubble__link {
+.tide-menu-bar-bubble__link {
   font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;

@@ -81,17 +81,17 @@ export const MentionList = forwardRef(
     }));
 
     return (
-      <div className="gwe-dropdown-menu">
-        <div className="gwe-dropdown-menu__content">
+      <div className="tide-dropdown-menu">
+        <div className="tide-dropdown-menu__content">
           {props.items.length ? (
             props.items.map((item, index) => (
               <div
                 key={item.id || index}
                 className={classNames(
-                  'gwe-dropdown-menu__item',
-                  'gwe-items-between',
+                  'tide-dropdown-menu__item',
+                  'tide-items-between',
                   {
-                    'gwe-dropdown-menu__item--active': index === selectedIndex,
+                    'tide-dropdown-menu__item--active': index === selectedIndex,
                   }
                 )}
                 onClick={() => selectItem(index)}
@@ -101,7 +101,7 @@ export const MentionList = forwardRef(
               </div>
             ))
           ) : (
-            <div className="gwe-dropdown-menu__item">
+            <div className="tide-dropdown-menu__item">
               {props.emptyRender?.() || '没有结果'}
             </div>
           )}

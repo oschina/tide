@@ -150,8 +150,8 @@ export const EditorRender: React.FC<EditorRenderProps> = ({
   return (
     <div
       className={classNames(
-        'gwe-editor',
-        { 'gwe-editor--fullscreen': fullscreen },
+        'tide-editor',
+        { 'tide-editor--fullscreen': fullscreen },
         className
       )}
       style={style}

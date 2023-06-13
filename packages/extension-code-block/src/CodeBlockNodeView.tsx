@@ -17,7 +17,7 @@ import {
 } from './languages';
 import './CodeBlockNodeView.less';
 
-const softWrapLocalStorageKey = 'gwe-codeblock-soft-wrap';
+const softWrapLocalStorageKey = 'tide-codeblock-soft-wrap';
 
 const CODE_BLOCK_DROPDOWN_MAX_HEIGHT = 245;
 
@@ -70,13 +70,14 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
 
   return (
     <NodeViewWrapper
-      className={classNames(node.attrs.className, 'gwe-code-block')}
+      className={classNames(node.attrs.className, 'tide-code-block')}
       onMouseEnter={() => setToolbarVisible(true)}
       onMouseLeave={() => setToolbarVisible(false)}
     >
       <div
-        className={classNames('gwe-code-block__toolbar', {
-          'gwe-code-block__toolbar--visible': toolbarVisible || dropdownVisible,
+        className={classNames('tide-code-block__toolbar', {
+          'tide-code-block__toolbar--visible':
+            toolbarVisible || dropdownVisible,
         })}
         contentEditable={false}
       >
@@ -90,7 +91,7 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
             onHidden={() => setSearch('')}
             onShow={(instance) => {
               const contentEl = instance.popper?.querySelector(
-                '.gwe-dropdown-menu__content'
+                '.tide-dropdown-menu__content'
               ) as HTMLDivElement;
               const editorRect =
                 editor.options.element?.getBoundingClientRect();
@@ -109,15 +110,15 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
             }}
             offset={[0, 4]}
             content={
-              <div className="gwe-dropdown-menu gwe-code-block__dropdown">
+              <div className="tide-dropdown-menu tide-code-block__dropdown">
                 <div
-                  className="gwe-dropdown-menu__content"
+                  className="tide-dropdown-menu__content"
                   style={{
                     maxHeight: CODE_BLOCK_DROPDOWN_MAX_HEIGHT,
                   }}
                 >
-                  <div className="gwe-code-block__dropdown-search">
-                    <div className="gwe-code-block__dropdown-input">
+                  <div className="tide-code-block__dropdown-search">
+                    <div className="tide-code-block__dropdown-input">
                       <input
                         ref={inputRef}
                         type="text"
@@ -128,12 +129,12 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
                       <IconSearch />
                     </div>
                   </div>
-                  <div className="gwe-code-block__dropdown-list">
+                  <div className="tide-code-block__dropdown-list">
                     {searchedLanguages.map((lang) => (
                       <div
                         key={lang.value}
-                        className={classNames('gwe-dropdown-menu__item', {
-                          'gwe-dropdown-menu__item--active':
+                        className={classNames('tide-dropdown-menu__item', {
+                          'tide-dropdown-menu__item--active':
                             selectedValue === lang.value,
                         })}
                         onClick={() => {
@@ -151,7 +152,7 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
             }
           >
             <div
-              className="gwe-dropdown-trigger gwe-code-block__dropdown-trigger"
+              className="tide-dropdown-trigger tide-code-block__dropdown-trigger"
               onClick={handleOpen}
             >
               <span>{selectedLanguageItem?.name || selectedValue}</span>
@@ -163,9 +164,9 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
         )}
         <button
           className={classNames(
-            'gwe-code-block__soft-wrap gwe-code-block__button',
+            'tide-code-block__soft-wrap tide-code-block__button',
             {
-              'gwe-code-block__button--active': softWrap,
+              'tide-code-block__button--active': softWrap,
             }
           )}
           onClick={() =>
@@ -182,14 +183,14 @@ export const CodeBlockNodeView: React.FC<NodeViewProps> = ({
           自动换行
         </button>
         <button
-          className="gwe-code-block__button"
+          className="tide-code-block__button"
           onClick={() => copy($container?.current?.innerText as string)}
         >
           <IconCopyBold />
           复制
         </button>
       </div>
-      <div className="gwe-code-block__content">
+      <div className="tide-code-block__content">
         <pre
           className={classNames('hljs', {
             'soft-wrap': softWrap,

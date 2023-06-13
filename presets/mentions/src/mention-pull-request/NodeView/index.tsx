@@ -32,16 +32,16 @@ export const MentionPullRequestNodeView: React.FC<NodeViewProps> = ({
       {...props}
     >
       <a
-        className="gwe-mention-pull-request"
+        className="tide-mention-pull-request"
         href={url}
         target={editor.isEditable ? '_blank' : undefined}
         rel="noreferrer"
         title={node.attrs.title}
       >
-        <span className="gwe-mention-pull-request__icon">
+        <span className="tide-mention-pull-request__icon">
           {loading ? <Loading /> : <StateIcon state={pull?.state} />}
         </span>
-        <span className="gwe-mention-pull-request__title">{title}</span>
+        <span className="tide-mention-pull-request__title">{title}</span>
       </a>
     </NodeViewWrapper>
   );

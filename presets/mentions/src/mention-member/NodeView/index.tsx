@@ -35,15 +35,15 @@ export const MentionMemberNodeView: React.FC<NodeViewProps> = ({
       {...props}
     >
       <a
-        className="gwe-mention-member__item"
+        className="tide-mention-member__item"
         href={url}
         target="_blank"
         rel="noreferrer"
       >
-        <span className="gwe-mention-member__avatar">
+        <span className="tide-mention-member__avatar">
           {loading ? <Loading /> : <Avatar src={avatar} username={name} />}
         </span>
-        <span className="gwe-mention-member__name">{name}</span>
+        <span className="tide-mention-member__name">{name}</span>
       </a>
     </NodeViewWrapper>
   );

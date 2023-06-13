@@ -51,13 +51,13 @@ export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
         },
       }}
     >
-      <div className="gwe-menu-bar gwe-menu-bar-bubble">
+      <div className="tide-menu-bar tide-menu-bar-bubble">
         <Tippy
           interactive
-          content={<div className={'gwe-menu-bar__tooltip'}>居左</div>}
+          content={<div className={'tide-menu-bar__tooltip'}>居左</div>}
         >
           <button
-            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            className="tide-menu-bar__btn tide-menu-bar__item"
             onClick={() => {
               editor.chain().updateImageAttr({ align: 'left' }).run();
             }}
@@ -67,10 +67,10 @@ export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
         </Tippy>
         <Tippy
           interactive
-          content={<div className={'gwe-menu-bar__tooltip'}>居中</div>}
+          content={<div className={'tide-menu-bar__tooltip'}>居中</div>}
         >
           <button
-            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            className="tide-menu-bar__btn tide-menu-bar__item"
             onClick={() => {
               editor.chain().updateImageAttr({ align: 'center' }).run();
             }}
@@ -80,10 +80,10 @@ export const ImageBubbleMenu: React.FC<ImageBubbleMenuProps> = ({ editor }) => {
         </Tippy>
         <Tippy
           interactive
-          content={<div className={'gwe-menu-bar__tooltip'}>居右</div>}
+          content={<div className={'tide-menu-bar__tooltip'}>居右</div>}
         >
           <button
-            className="gwe-menu-bar__btn gwe-menu-bar__item"
+            className="tide-menu-bar__btn tide-menu-bar__item"
             onClick={() => {
               editor.chain().updateImageAttr({ align: 'right' }).run();
             }}

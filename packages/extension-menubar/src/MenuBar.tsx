@@ -14,7 +14,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({
   style,
   children,
 }) => (
-  <div className={classNames('gwe-menu-bar', className)} style={style}>
+  <div className={classNames('tide-menu-bar', className)} style={style}>
     {children}
   </div>
 );

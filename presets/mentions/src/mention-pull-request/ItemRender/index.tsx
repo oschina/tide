@@ -12,15 +12,15 @@ const MentionPullRequestItemRender: React.FC<{
   const state = item.attrs.state;
 
   return (
-    <div className="gwe-mention-pull-request__pop-item">
+    <div className="tide-mention-pull-request__pop-item">
       <StateIcon
-        className="gwe-mention-pull-request__pop-item-icon"
+        className="tide-mention-pull-request__pop-item-icon"
         state={state}
       />
-      <span className="gwe-mention-pull-request__pop-item-id">
+      <span className="tide-mention-pull-request__pop-item-id">
         !{item.attrs.iid}
       </span>
-      <span className="gwe-mention-pull-request__pop-item-title">
+      <span className="tide-mention-pull-request__pop-item-title">
         {item.attrs.title}
       </span>
     </div>

@@ -21,16 +21,16 @@ export const InsertTableButton = forwardRef<
   return (
     <Tippy
       content={
-        <div className="gwe-editor-popup gwe-insert-table-popup">
-          <div className="gwe-insert-table-popup__header">
+        <div className="tide-editor-popup tide-insert-table-popup">
+          <div className="tide-insert-table-popup__header">
             <span>插入表格</span>
-            <span className="gwe-insert-table-popup__size">
+            <span className="tide-insert-table-popup__size">
               {size.rows > 0 &&
                 size.columns > 0 &&
                 `${size.columns} x ${size.rows}`}
             </span>
           </div>
-          <hr className="gwe-insert-table-popup__divider" />
+          <hr className="tide-insert-table-popup__divider" />
           <TableGrid
             rows={5}
             columns={5}

@@ -32,7 +32,7 @@ type EmojiIndexMapType = Record<
 
 type EmojiGroupNameIndexMapType = Record<string, number>;
 
-const localStorageKey = 'gwe-recent-emojis';
+const localStorageKey = 'tide-recent-emojis';
 
 const EMOJI_COUNT_PER_ROW = 12;
 
@@ -104,8 +104,8 @@ const Emoji = memo(
   ({ emojiStorage, emoji, active, group, onClick, onHover }: EmojiProps) => {
     return (
       <span
-        className={classNames('gwe-emoji-panel__emoji', {
-          'gwe-emoji-panel__emoji--active': active,
+        className={classNames('tide-emoji-panel__emoji', {
+          'tide-emoji-panel__emoji--active': active,
         })}
         title={emoji.name}
         data-group={group}
@@ -147,11 +147,11 @@ const EmojiGroup = memo(
     onHover,
   }: EmojiGroupProps) => {
     return (
-      <div className="gwe-emoji-panel__group" data-group={group.group}>
+      <div className="tide-emoji-panel__group" data-group={group.group}>
         {group.title && (
-          <div className="gwe-emoji-panel__group-title">{group.title}</div>
+          <div className="tide-emoji-panel__group-title">{group.title}</div>
         )}
-        <div className="gwe-emoji-panel__group-content">
+        <div className="tide-emoji-panel__group-content">
           {emojis.map((emoji) => (
             <Emoji
               key={`${group.group}-${emoji.name}`}
@@ -490,12 +490,15 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
   }));
 
   return (
-    <div className="gwe-editor-popup gwe-emoji-panel" onKeyDown={handleKeyDown}>
-      <div className="gwe-emoji-panel__input-wrap">
+    <div
+      className="tide-editor-popup tide-emoji-panel"
+      onKeyDown={handleKeyDown}
+    >
+      <div className="tide-emoji-panel__input-wrap">
         <IconSearch />
         <input
           ref={inputRef}
-          className="gwe-emoji-panel__input"
+          className="tide-emoji-panel__input"
           type="text"
           placeholder="请输入关键字"
           value={search}
@@ -505,7 +508,7 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
           }}
         />
       </div>
-      <div ref={contentElRef} className="gwe-emoji-panel__content">
+      <div ref={contentElRef} className="tide-emoji-panel__content">
         {search ? (
           <EmojiGroup
             key={`emoji-group-search`}
@@ -532,12 +535,12 @@ const EmojiPanel = forwardRef<EmojiPanelRef, EmojiPanelProps>((props, ref) => {
           ))
         )}
       </div>
-      <div className="gwe-emoji-panel__menu">
+      <div className="tide-emoji-panel__menu">
         {displayGroups.map((group) => (
           <button
             key={`tab-group-${group.group}`}
-            className={classNames('gwe-emoji-panel__menu-btn', {
-              'gwe-emoji-panel__menu-btn--active': activeGroup === group.group,
+            className={classNames('tide-emoji-panel__menu-btn', {
+              'tide-emoji-panel__menu-btn--active': activeGroup === group.group,
             })}
             onClick={() => {
               setSearch('');

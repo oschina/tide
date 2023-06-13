@@ -1,6 +1,6 @@
 @import (reference) '~@gitee/tide-theme/dist/variable.less';
 
-.gwe-editor {
+.tide-editor {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,11 +20,11 @@
     height: 100%;
     border: 0;
 
-    > .gwe-menu-bar {
+    > .tide-menu-bar {
       justify-content: center;
     }
 
-    .gwe-content {
+    .tide-content {
       .ProseMirror {
         max-width: 864px;
         margin: 0 auto;
@@ -33,7 +33,7 @@
     }
   }
 
-  .gwe-content {
+  .tide-content {
     flex: 1;
     min-height: 0;
     overflow-x: hidden;
@@ -46,7 +46,7 @@
     }
   }
 
-  .gwe-editor-popup {
+  .tide-editor-popup {
     position: relative;
     overflow: hidden;
     background-color: @popup-bg-color;

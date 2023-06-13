@@ -62,20 +62,20 @@ export const LinkBubbleMenu: React.FC<LinkBubbleMenuProps> = ({ editor }) => {
       referenceMarkType={LinkExtension.name}
       placement="bottom-start"
     >
-      <div ref={containerRef} className="gwe-menu-bar gwe-menu-bar-bubble">
-        <span className="gwe-menu-bar-bubble__link">
+      <div ref={containerRef} className="tide-menu-bar tide-menu-bar-bubble">
+        <span className="tide-menu-bar-bubble__link">
           <a href={href} target={target} rel="noopener noreferrer nofollow">
             {href}
           </a>
         </span>
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={openLinkEditPopup}
         >
           <IconPenBold />
         </button>
         <button
-          className="gwe-menu-bar__btn gwe-menu-bar__item"
+          className="tide-menu-bar__btn tide-menu-bar__item"
           onClick={unsetLink}
         >
           <IconChainSlashBold />

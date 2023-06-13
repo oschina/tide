@@ -22,8 +22,8 @@ const Avatar = ({
     !src.endsWith(matchFlag)
   ) {
     return (
-      <span className={cls('gwe-member-avatar', className)}>
-        <img className="gwe-member-avatar__img" src={src} alt="" />
+      <span className={cls('tide-member-avatar', className)}>
+        <img className="tide-member-avatar__img" src={src} alt="" />
       </span>
     );
   }
@@ -32,10 +32,10 @@ const Avatar = ({
   const backgroundColor = getTextAvatarColor(username);
   return (
     <span
-      className={cls('gwe-member-avatar', className)}
+      className={cls('tide-member-avatar', className)}
       style={{ backgroundColor }}
     >
-      <span className="gwe-member-avatar__text">{showLetter}</span>
+      <span className="tide-member-avatar__text">{showLetter}</span>
     </span>
   );
 };

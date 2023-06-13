@@ -14,7 +14,9 @@ export const Tooltip: React.FC<TooltipProps> = ({
   return (
     <Tippy
       interactive
-      content={content || <div className={'gwe-menu-bar__tooltip'}>{text}</div>}
+      content={
+        content || <div className={'tide-menu-bar__tooltip'}>{text}</div>
+      }
       {...props}
     >
       {children}

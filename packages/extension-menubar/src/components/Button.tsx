@@ -15,9 +15,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         onClick={onClick}
         disabled={disabled}
-        className={classNames('gwe-menu-bar__btn', {
-          'gwe-menu-bar__btn--active': isActive,
-          'gwe-menu-bar__btn--disabled': disabled,
+        className={classNames('tide-menu-bar__btn', {
+          'tide-menu-bar__btn--active': isActive,
+          'tide-menu-bar__btn--disabled': disabled,
         })}
       >
         {children}
@@ -25,3 +25,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
+
+Button.displayName = 'Button';

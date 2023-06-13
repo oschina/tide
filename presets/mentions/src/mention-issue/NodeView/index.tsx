@@ -34,18 +34,21 @@ export const MentionIssueNodeView: React.FC<NodeViewProps> = ({
       {...props}
     >
       <a
-        className="gwe-mention-issue"
+        className="tide-mention-issue"
         href={url}
         target={editor.isEditable ? '_blank' : undefined}
         rel="noreferrer"
         title={node.attrs.title}
       >
         {loading ? (
-          <Loading className="gwe-mention-issue__icon" />
+          <Loading className="tide-mention-issue__icon" />
         ) : (
-          <IssueIcons className="gwe-mention-issue__icon" category={category} />
+          <IssueIcons
+            className="tide-mention-issue__icon"
+            category={category}
+          />
         )}
-        <span className={'gwe-mention-issue__title'}>{title}</span>
+        <span className={'tide-mention-issue__title'}>{title}</span>
       </a>
     </NodeViewWrapper>
   );

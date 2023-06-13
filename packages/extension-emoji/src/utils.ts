@@ -82,7 +82,7 @@ export const getEmojisByNameList = (
 };
 
 export const saveEmojiToStorage = (emoji: EmojiItem) => {
-  const localStorageKey = 'gwe-recent-emojis';
+  const localStorageKey = 'tide-recent-emojis';
   try {
     const historyEmojis = localStorage.getItem(localStorageKey);
     let nameList = [];

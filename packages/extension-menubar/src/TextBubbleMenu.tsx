@@ -76,7 +76,7 @@ export const TextBubbleMenu: React.FC<TextBubbleMenuProps> = ({ editor }) => {
         return true;
       }}
     >
-      <div className="gwe-menu-bar gwe-menu-bar-bubble">{content}</div>
+      <div className="tide-menu-bar tide-menu-bar-bubble">{content}</div>
     </BubbleMenu>
   );
 };

@@ -13,7 +13,10 @@ export const MenuBarItem: React.FC<MenuBarItemProps> = ({
   children,
 }) => {
   return (
-    <span className={classNames('gwe-menu-bar__item', className)} style={style}>
+    <span
+      className={classNames('tide-menu-bar__item', className)}
+      style={style}
+    >
       {children}
     </span>
   );

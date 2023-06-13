@@ -50,20 +50,20 @@ export const LinkEditPopup: React.FC<LinkEditPopupProps> = ({
   }, []);
 
   return (
-    <div className="gwe-editor-popup gwe-link-popup">
-      <div className="gwe-link-popup__row">
-        <label className="gwe-link-popup__label">文本</label>
+    <div className="tide-editor-popup tide-link-popup">
+      <div className="tide-link-popup__row">
+        <label className="tide-link-popup__label">文本</label>
         <input
-          className="gwe-link-popup__input"
+          className="tide-link-popup__input"
           ref={textInputRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
       </div>
-      <div className="gwe-link-popup__row">
-        <label className="gwe-link-popup__label">链接</label>
+      <div className="tide-link-popup__row">
+        <label className="tide-link-popup__label">链接</label>
         <input
-          className="gwe-link-popup__input"
+          className="tide-link-popup__input"
           ref={hrefInputRef}
           value={href}
           onChange={(e) => setHref(e.target.value)}
@@ -74,16 +74,16 @@ export const LinkEditPopup: React.FC<LinkEditPopupProps> = ({
           }}
         />
       </div>
-      <div className="gwe-link-popup__btn-group">
+      <div className="tide-link-popup__btn-group">
         <button
-          className="gwe-link-popup__button gwe-link-popup__button--basic"
+          className="tide-link-popup__button tide-link-popup__button--basic"
           style={{ marginLeft: 8 }}
           onClick={onCancel}
         >
           取消
         </button>
         <button
-          className="gwe-link-popup__button gwe-link-popup__button--primary"
+          className="tide-link-popup__button tide-link-popup__button--primary"
           onClick={handleConfirm}
           disabled={!href}
         >

@@ -103,14 +103,14 @@ export const ImagePlaceholderPlugin = new Plugin({
 
       if (action.add) {
         const template = document.createElement('template');
-        template.innerHTML = `<div class='gwe-uploader__img'>
-          <div class='gwe-uploader__img-placeholder' style='width: ${action.add.width}px;'>
+        template.innerHTML = `<div class='tide-uploader__img'>
+          <div class='tide-uploader__img-placeholder' style='width: ${action.add.width}px;'>
             <img src='${action.add.src}' alt='upload placeholder' />
-            <div class='gwe-uploader__img-progress-wrap'> 
-              <span class='gwe-uploader__img-progress'>
-                <span class='gwe-uploader__img-progress-inner' style='width: 10%;'></span>
+            <div class='tide-uploader__img-progress-wrap'> 
+              <span class='tide-uploader__img-progress'>
+                <span class='tide-uploader__img-progress-inner' style='width: 10%;'></span>
               </span>
-              <span class='gwe-uploader__img-progress-text'>0%</span>
+              <span class='tide-uploader__img-progress-text'>0%</span>
             </div>
           </div>
         </div>`;
@@ -131,14 +131,14 @@ export const ImagePlaceholderPlugin = new Plugin({
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         const el = dec.type.toDOM.querySelector(
-          '.gwe-uploader__img-progress-inner'
+          '.tide-uploader__img-progress-inner'
         );
         el.style.width = action.progress.progress + '%';
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         const text = dec.type.toDOM.querySelector(
-          '.gwe-uploader__img-progress-text'
+          '.tide-uploader__img-progress-text'
         );
         text.innerHTML = action.progress.progress + '%';
       } else if (action.remove) {
