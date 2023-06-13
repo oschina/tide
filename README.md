@@ -1,35 +1,25 @@
-# tide
+![tide logo](./docs/images/tide.jpg)
 
-基于 tiptap 的所见即所得编辑器
+# Tide 🪼
 
-## 开发
+基于 [Tiptap](https://tiptap.dev/introduction) 开发的 React 富文本编辑器，支持 Markdown 快捷语法。
 
-```shell
-cd tide
+## 在线演示
 
-# 安装依赖
-pnpm i
+https://oschina.gitee.io/tide
 
-# 构建 packages
-pnpm build
+## 示例代码
 
-# 运行 demo 方便开发
-pnpm demo
-```
+- [基本](./packages/editor/README.md)
+- [复杂](./apps/demo)
+- [真实项目](./apps/legacy)
 
-## 构建
+## 贡献
 
-## 发布
+- 提交 Bug 请使用 [Issues](https://gitee.com/oschina/tide/issues)
+- 贡献代码请使用 [Pull Request](https://gitee.com/oschina/tide/pulls)，创建 Pull Request 前请先阅读 [CONTRIBUTING.md](./docs/CONTRIBUTING.md)
 
-## 部署 pages
+## 感谢
 
-```shell
-# 设置一次就行，使用 git worktree 将分支挂载为子目录：
-git checkout -b demo-pages origin/demo-pages
-git checkout master
-git worktree add apps/demo/dist demo-pages
-
-# 以后直接 构建部署
-pnpm build:app_demo
-pnpm pages
-```
+- [Tiptap](https://github.com/ueberdosis/tiptap)
+- [ProseMirror](https://github.com/ProseMirror/prosemirror)
