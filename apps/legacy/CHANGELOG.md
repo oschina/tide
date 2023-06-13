@@ -1,5 +1,23 @@
 # @gitee/tide-legacy
 
+## 0.2.0-alpha.3
+
+### Minor Changes
+
+- Refactor @gitee/tide, use TideEditor class and useEditor hook
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide@0.2.0-alpha.3
+  - @gitee/tide-extension-image@0.2.0-alpha.3
+  - @gitee/tide-extension-mention@0.2.0-alpha.3
+  - @gitee/tide-extension-uploader@0.2.0-alpha.3
+  - @gitee/tide-react@0.2.0-alpha.3
+  - @gitee/tide-starter-kit@0.2.0-alpha.3
+  - @gitee/tide-theme@0.2.0-alpha.3
+  - @gitee/tide-presets-mentions@0.2.0-alpha.3
+
 ## 0.2.0-alpha.2
 
 **Note:** Version bump only for package @gitee/tide-legacy

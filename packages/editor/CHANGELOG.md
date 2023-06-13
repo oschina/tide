@@ -1,5 +1,21 @@
 # @gitee/tide
 
+## 0.2.0-alpha.3
+
+### Minor Changes
+
+- Refactor @gitee/tide, use TideEditor class and useEditor hook
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide-extension-image@0.2.0-alpha.3
+  - @gitee/tide-extension-link@0.2.0-alpha.3
+  - @gitee/tide-extension-menubar@0.2.0-alpha.3
+  - @gitee/tide-extension-table@0.2.0-alpha.3
+  - @gitee/tide-react@0.2.0-alpha.3
+  - @gitee/tide-theme@0.2.0-alpha.3
+
 ## 0.2.0-alpha.2
 
 ### Minor Changes

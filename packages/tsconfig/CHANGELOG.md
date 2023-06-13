@@ -1,5 +1,9 @@
 # tsconfig
 
+## 0.2.0-alpha.3
+
+**Note:** Version bump only for package tsconfig
+
 ## 0.2.0-alpha.2
 
 **Note:** Version bump only for package tsconfig
