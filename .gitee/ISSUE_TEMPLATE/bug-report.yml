@@ -3,7 +3,7 @@ description: Bug 反馈
 title: "[Bug]: "
 labels: ["bug"]
 assignees:
-  - normalcoder
+  - bluishoul
 body:
   - type: checkboxes
     attributes:
