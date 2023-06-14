@@ -3,7 +3,9 @@
 ## 开发
 
 ```shell
-cd wysiwyg-editor
+git clone https://gitee.com/oschina/tide.git
+
+cd tide
 
 # 安装依赖
 pnpm i
@@ -12,7 +14,7 @@ pnpm i
 pnpm build
 
 # 运行 demo 方便开发
-pnpm demo
+pnpm dev:demo
 ```
 
 ## 部署 pages

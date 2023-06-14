@@ -1,0 +1,38 @@
+.demo-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.demo-header-bar-left {
+  display: flex;
+  align-items: center;
+}
+.demo-header-bar-left .link-repository {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: black;
+}
+.demo-header-bar-left .link-repository img {
+  margin-right: 8px;
+}
+.demo-header-bar-right {
+  display: flex;
+  align-items: center;
+}
+.demo-header-bar-right .select-theme,
+.demo-header-bar-right .btn-dev-tool,
+.demo-header-bar-right .btn-clear,
+.demo-header-bar-right .btn-share,
+.demo-header-bar-right .env-tag {
+  margin-left: 10px;
+}
+.demo-header-bar-right label {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.demo-header-bar-right .env-tag {
+  font-size: 12px;
+}

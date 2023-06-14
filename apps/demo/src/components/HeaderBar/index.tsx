@@ -4,6 +4,7 @@ import copy from 'copy-to-clipboard';
 import applyDevTools from 'prosemirror-dev-tools';
 import throttle from 'lodash/throttle';
 import { TideEditor, EditorEvents } from '@gitee/tide';
+import icon from '../../../favicon.svg';
 
 import './index.less';
 
@@ -95,7 +96,13 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
   return (
     <div className={'demo-header-bar'}>
       <div className={'demo-header-bar-left'}>
-        <label className="">
+        <a href="https://gitee.com/oschina/tide" className="link-repository">
+          <img src={icon} />
+          @gitee/tide
+        </a>
+      </div>
+      <div className={'demo-header-bar-right'}>
+        <label>
           <input
             type="checkbox"
             name="editable"
@@ -108,9 +115,8 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
           />
           editable
         </label>
-      </div>
-      <div className={'demo-header-bar-right'}>
         <select
+          className="select-theme"
           onChange={(e) => {
             const val = e.target.value;
             const classList = document.body.classList;

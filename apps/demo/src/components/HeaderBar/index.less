@@ -8,28 +8,35 @@
 .demo-header-bar-left {
   display: flex;
   align-items: center;
+
+  .link-repository {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: black;
+
+    img {
+      margin-right: 8px;
+    }
+  }
 }
 
 .demo-header-bar-right {
   display: flex;
   align-items: center;
 
-  .btn-dev-tool {
+  .select-theme, .btn-dev-tool, .btn-clear, .btn-share, .env-tag {
     margin-left: 10px;
   }
 
-  .btn-clear {
-    margin-left: 10px;
-  }
-
-
-  .btn-share {
-    margin-left: 10px;
+  label {
+    display: flex;
+    align-items: center;
+    line-height: 1;
   }
 
   .env-tag {
     font-size: 12px;
-    margin-left: 10px;
   }
 }
 
