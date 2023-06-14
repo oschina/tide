@@ -10,6 +10,8 @@ import './index.less';
 
 const localStorageKey = 'tide-history';
 
+const isProd = import.meta.env.MODE === 'production';
+
 const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
   const [theme, setTheme] = useState('');
   const [readOnly, setReadOnly] = useState<boolean>(!!editor?.isReadOnly);
@@ -39,18 +41,20 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
   useEffect(() => {
     if (!editor) return;
 
-    // 尝试从 url 回填编辑器数据
-    const url = new URL(window.location.href);
-    const urlVal = url.searchParams.get('value');
-    if (urlVal) {
-      const maybeJson = lz.decompressFromEncodedURIComponent(urlVal);
-      try {
-        const json = JSON.parse(maybeJson);
-        editor.setContent(json || '');
-      } catch (e) {
-        console.error('url value json parse error:', e);
+    if (!isProd) {
+      // 尝试从 url 回填编辑器数据
+      const url = new URL(window.location.href);
+      const urlVal = url.searchParams.get('value');
+      if (urlVal) {
+        const maybeJson = lz.decompressFromEncodedURIComponent(urlVal);
+        try {
+          const json = JSON.parse(maybeJson);
+          editor.setContent(json || '');
+        } catch (e) {
+          console.error('url value json parse error:', e);
+        }
+        return;
       }
-      return;
     }
 
     // 尝试从 本地存储中恢复
@@ -92,8 +96,6 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
     if (!editor) return;
     setReadOnly(editor.isReadOnly);
   }, [editor]);
-
-  const isProd = import.meta.env.MODE === 'production';
 
   return (
     <div className={'demo-header-bar'}>
@@ -151,11 +153,11 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
         >
           清空
         </button>
-        <button className="btn-share" onClick={handleClickShareLink}>
-          分享
-        </button>
         {!isProd && (
           <>
+            <button className="btn-share" onClick={handleClickShareLink}>
+              分享
+            </button>
             <button
               className="btn-dev-tool"
               onClick={() => {
