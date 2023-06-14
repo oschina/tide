@@ -1,52 +1,50 @@
-![tide logo](./docs/images/tide.jpg)
-
 # [Tide 🪼](https://gitee.com/oschina/tide)
 
-开箱即用、扩展性强、支持 Markdown 语法、基础功能完善的 React 富文本编辑器。
+Tide is a React-based rich text editor with out-of-the-box functionality, strong extensibility, and comprehensive support for Markdown syntax.
 
-## 在线演示
+## Online Demo
 
 https://oschina.gitee.io/tide
 
 ![](./docs/images/tide-screenshot.jpg)
 
-## 示例代码
+## Example Code
 
-- [基本](./packages/editor/README.md)
-- [复杂](./apps/demo)
-- [真实项目](./apps/legacy)
+- [Basic Usage](./packages/editor/README.md)
+- [Advanced Usage](./apps/demo)
+- [Real-world Usage](./apps/legacy)
 
-## 特性
+## Features
 
-- 基于 JSON 格式存储
-- 支持 Markdown 快捷语法
-  - 标题
-  - 引用
-  - 代码块
-  - 表格
-  - 超链接
-  - 图片
-  - 分割线
-  - 粗体、斜体、删除线
-  - 无序列表、有序列表、任务列表
-- 支持粘贴 Markdown 文本
-- 支持功能增强的 Table 表格
-- 支持粘贴、拖拽图片
-- 支持 Emoji 表情选择
-- 内建菜单栏
-- 支持多主题
+- JSON-based storage format
+- Supports Markdown shortcut syntax
+  - Headings
+  - Quotes
+  - Code blocks
+  - Tables
+  - Hyperlinks
+  - Images
+  - Separators
+  - Bold, italic, strikethrough
+  - Unordered lists, ordered lists, task lists
+- Supports pasting Markdown text
+- Supports enhanced Table functionality
+- Supports pasting and dragging images
+- Supports Emoji selection
+- Built-in menu bar
+- Supports multiple themes
 
-## 贡献
+## Contributing
 
-- 提交 Bug 请使用 [Issues](https://gitee.com/oschina/tide/issues)
-- 贡献代码请使用 [Pull Request](https://gitee.com/oschina/tide/pulls)，创建 Pull Request 前请先阅读 [CONTRIBUTING.md](./docs/CONTRIBUTING.md)
+- For bug reports, please use [Issues](https://gitee.com/oschina/tide/issues)
+- For code contribution, please use [Pull Request](https://gitee.com/oschina/tide/pulls). Before creating a pull request, please read [CONTRIBUTING.md](./docs/CONTRIBUTING.md)
 
-## 谁在使用
+## Who's Using Tide
 
-- [Gitee 企业版](https://e.gitee.com)
-- [Gitee 社区版](https://gitee.com)
+- [Gitee Enterprise Edition](https://e.gitee.com)
+- [Gitee Community Edition](https://gitee.com)
 
-## 感谢
+## Credits
 
 - [Tiptap](https://github.com/ueberdosis/tiptap)
 - [ProseMirror](https://github.com/ProseMirror/prosemirror)
