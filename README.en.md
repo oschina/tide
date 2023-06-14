@@ -42,7 +42,7 @@ https://oschina.gitee.io/tide
 ## Who's Using Tide
 
 - [Gitee Enterprise Edition](https://e.gitee.com)
-- [Gitee Community Edition](Gitee - 企业级 DevOps 研发效能平台)
+- [Gitee Community Edition](https://gitee.com)
 
 ## Credits
 
