@@ -1,6 +1,6 @@
 ![tide logo](./docs/images/tide.jpg)
 
-# Tide 🪼
+# [Tide 🪼](https://gitee.com/oschina/tide)
 
 开箱即用、扩展性强、支持 Markdown 语法、基础功能完善的 React 富文本编辑器。
 
