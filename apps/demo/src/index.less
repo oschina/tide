@@ -8,6 +8,7 @@ body {
 }
 
 body {
+  color-scheme: light;
   color: @text-color;
   background: #f5f6f8;
   text-rendering: optimizeLegibility;
@@ -16,6 +17,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: Roboto, PingFang SC, Noto Sans SC, Microsoft YaHei UI,
     Microsoft YaHei, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+body.theme-dark {
+  color-scheme: dark;
+  background: @dark-background-color;
+
+  @import (less) 'highlight.js/styles/a11y-dark.css';
 }
 
 a {
@@ -66,9 +74,9 @@ a:active {
   &-inspect {
     width: 50%;
     min-width: 0;
-    border: 1px solid #dadee3;
+    border: 1px solid @border-color;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: @background-color;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -80,8 +88,8 @@ a:active {
     flex-direction: column;
 
     .tab {
-      padding: 8px;
-      border-bottom: 1px solid #dadee3;
+      padding: 10px 8px;
+      border-bottom: 1px solid @border-color;
     }
 
     textarea {
@@ -94,6 +102,8 @@ a:active {
       line-height: 1.3;
       word-break: keep-all;
       outline: none;
+      color: @text-color;
+      background: none;
     }
 
     .json {

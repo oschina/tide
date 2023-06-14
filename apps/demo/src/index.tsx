@@ -12,7 +12,7 @@ import {
 } from './components/Editor/utils';
 
 import '@gitee/tide/dist/style.css';
-import 'highlight.js/styles/default.css';
+import 'highlight.js/styles/a11y-light.css';
 import './index.less';
 
 console.log('BUILD_TIME：', __BUILD_TIME__);
