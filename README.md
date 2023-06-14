@@ -18,6 +18,7 @@ https://oschina.gitee.io/tide
 
 ## 特性
 
+- 基于 JSON 格式存储
 - 支持 Markdown 快捷语法
   - 标题
   - 引用
