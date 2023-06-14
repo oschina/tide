@@ -2,7 +2,7 @@
 
 # Tide 🪼
 
-基于 [Tiptap](https://tiptap.dev/introduction) 开发的 React 富文本编辑器，支持 Markdown 快捷语法。
+开箱即用、扩展性强、支持 Markdown 语法、基础功能完善的 React 富文本编辑器。
 
 ## 在线演示
 
