@@ -6,7 +6,10 @@ import { TextAlign } from '@tiptap/extension-text-align';
 import HeaderBar from './components/HeaderBar';
 import InspectPanel from './components/InspectPanel';
 import { MentionMember } from './components/Editor/extensions/mention-member';
-import { mockFetchMemberMentionDebounced } from './components/Editor/utils';
+import {
+  mockFetchMemberMentionDebounced,
+  mockImgUploader,
+} from './components/Editor/utils';
 
 import '@gitee/tide/dist/style.css';
 import 'highlight.js/styles/a11y-light.css';
@@ -22,6 +25,11 @@ function App() {
         textAlign: false,
         taskItem: {
           onReadOnlyChecked: () => true,
+        },
+        uploader: {
+          image: {
+            uploader: mockImgUploader,
+          },
         },
       }),
       TextAlign.extend({
