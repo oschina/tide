@@ -12,7 +12,7 @@ const localStorageKey = 'tide-history';
 
 const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
   const [theme, setTheme] = useState('');
-  const [editable, setEditable] = useState<boolean>(!!editor?.isEditable);
+  const [readOnly, setReadOnly] = useState<boolean>(!!editor?.isReadOnly);
 
   const handleClickShareLink = () => {
     if (!editor) return;
@@ -90,8 +90,10 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
 
   useEffect(() => {
     if (!editor) return;
-    setEditable(editor.isEditable);
+    setReadOnly(editor.isReadOnly);
   }, [editor]);
+
+  const isProd = import.meta.env.MODE === 'production';
 
   return (
     <div className={'demo-header-bar'}>
@@ -102,46 +104,42 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
         </a>
       </div>
       <div className={'demo-header-bar-right'}>
-        <label>
+        <label className="mr-2">
           <input
             type="checkbox"
             name="editable"
-            checked={editable}
+            checked={readOnly}
             onChange={(e) => {
               if (!editor) return;
-              setEditable(e.target.checked);
-              editor.setEditable(e.target.checked);
+              setReadOnly(e.target.checked);
+              editor.setEditable(!e.target.checked);
             }}
           />
-          editable
+          只读
         </label>
-        <select
-          className="select-theme"
-          onChange={(e) => {
-            const val = e.target.value;
-            const classList = document.body.classList;
-            if (classList.contains(theme)) {
-              classList.replace(theme, val);
-            } else {
-              classList.add(val);
-            }
-            setTheme(val);
-          }}
-        >
-          <option value="theme-blue">蓝色</option>
-          <option value="theme-purple">紫色</option>
-          <option value="theme-green">绿色</option>
-          <option value="theme-pink">梅红</option>
-          <option value="theme-dark">暗黑</option>
-        </select>
-        <button
-          className="btn-dev-tool"
-          onClick={() => {
-            if (editor) applyDevTools(editor.view);
-          }}
-        >
-          DevTool
-        </button>
+        <span className="select-theme">
+          <label>
+            主题：
+            <select
+              onChange={(e) => {
+                const val = e.target.value;
+                const classList = document.body.classList;
+                if (classList.contains(theme)) {
+                  classList.replace(theme, val);
+                } else {
+                  classList.add(val);
+                }
+                setTheme(val);
+              }}
+            >
+              <option value="theme-blue">蓝色</option>
+              <option value="theme-purple">紫色</option>
+              <option value="theme-green">绿色</option>
+              <option value="theme-pink">梅红</option>
+              <option value="theme-dark">暗黑</option>
+            </select>
+          </label>
+        </span>
         <button
           className="btn-clear"
           onClick={() => {
@@ -154,9 +152,23 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
           清空
         </button>
         <button className="btn-share" onClick={handleClickShareLink}>
-          分享链接
+          分享
         </button>
-        <div className="env-tag">{import.meta.env.MODE}</div>
+        {!isProd && (
+          <>
+            <button
+              className="btn-dev-tool"
+              onClick={() => {
+                if (editor) applyDevTools(editor.view);
+              }}
+            >
+              DevTool
+            </button>
+            <div className="env-tag">
+              {import.meta.env.MODE === 'production' ? 'PROD' : 'DEV'}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

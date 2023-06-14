@@ -38,42 +38,48 @@ const InspectPanel = ({ editor }: { editor: TideEditor | null }) => {
     };
   }, [editor, tab]);
 
+  const isProd = import.meta.env.MODE === 'production';
+
   return (
     <div className="inspect-panel">
       <div className="tab">
-        <label>
-          <input
-            type="radio"
-            name="tab"
-            value="json"
-            checked={tab === 'json'}
-            onChange={() => setTab('json')}
-          />
-          json
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="tab"
-            value="html"
-            checked={tab === 'html'}
-            onChange={() => setTab('html')}
-          />
-          html
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="tab"
-            value="markdown"
-            checked={tab === 'markdown'}
-            onChange={() => setTab('markdown')}
-          />
-          markdown
-        </label>
+        {isProd ? (
+          <span>输出：</span>
+        ) : (
+          <>
+            <label className="mr-2">
+              <input
+                type="radio"
+                name="tab"
+                value="json"
+                checked={tab === 'json'}
+                onChange={() => setTab('json')}
+              />
+              JSON
+            </label>
+            <label className="mr-2">
+              <input
+                type="radio"
+                name="tab"
+                value="html"
+                checked={tab === 'html'}
+                onChange={() => setTab('html')}
+              />
+              HTML
+            </label>
+            <label className="mr-2">
+              <input
+                type="radio"
+                name="tab"
+                value="markdown"
+                checked={tab === 'markdown'}
+                onChange={() => setTab('markdown')}
+              />
+              Markdown
+            </label>
+          </>
+        )}
       </div>
-
       <textarea
         ref={textareaRef}
         className={tab === 'json' ? 'json' : 'html'}
