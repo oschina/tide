@@ -1,24 +1,24 @@
 # @gitee/tide-extension-code-block
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「代码块」功能，一般用于输入多行代码。
+This extension enables you to add fenced code blocks in the editor, which is generally used to input multiple lines of code.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-code-block-lowlight` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-code-block-lowlight`:
 
-- 代码高亮
-- 语言选择
-- 自动换行
-- 复制代码
-- 选中多个段落文本后，可合并转换为一个代码块
-- 在代码块内，可选中多行，通过 <kbd>Tab</kbd> 快捷键缩进
-- 输入规则：输入 <code>\`\`\`</code>、`···`、`~~~`、`～～～` 且在后面输入空格或回车时，自动创建代码块。也可以在输入时指定语言，例如 <code>\`\`\`js</code> 将创建对应语言的代码块。
+- Code highlighting
+- Language selection
+- Automatic line wrapping
+- Copy code
+- Merge multiple selected paragraphs into one code block
+- Indent multiple lines by pressing the <kbd>Tab</kbd> key within a code block
+- Input rule: Automatically creates a code block when <code>\`\`\`</code>, `···`, `~~~`, or `～～～` is typed and <kbd>Space</kbd> or <kbd>Enter</kbd> is entered after it. You can also specify the language when typing, for example, <code>\`\`\`js</code> will create a code block for the corresponding language.
 
-## 使用
+## Usage
 
-本扩展使用 `highlight.js` 作为代码高亮库，因此需要安装 `highlight.js`，并引入其样式文件。
+This extension uses `highlight.js` as the code highlighting library, so you need to install `highlight.js` and import its style file.
 
 ```bash
 npm install --save @gitee/tide-extension-code-block highlight.js
@@ -28,7 +28,7 @@ yarn add @gitee/tide-extension-code-block highlight.js
 pnpm add @gitee/tide-extension-code-block highlight.js
 ```
 
-在编辑器中启用本扩展：
+Enable this extension in the editor:
 
 ```tsx
 import React, { useState } from 'react';

@@ -1,11 +1,11 @@
 # @gitee/tide-extension-bold
 
-## 介绍
+## Introduction
 
-本扩展可为文本添加**粗体**效果。
+Use this extension to render text in **bold**.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-bold` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-bold`:
 
-- 输入规则：输入 `**text**` 或 `__text__` 且在后面输入 **空格** 时，自动转换为粗体文本
+- Input rule: Automatically converts `**text**` or `__text__` to bold text when <kbd>Space</kbd> is entered after it.

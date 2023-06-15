@@ -1,5 +1,5 @@
 # @gitee/tide-starter-kit
 
-## 介绍
+## Introduction
 
-StarterKit 扩展的集合。默认开启基础插件.
+A collection of StarterKit extensions. The basic extensions are enabled by default.

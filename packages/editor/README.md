@@ -1,10 +1,10 @@
 # @gitee/tide
 
-## 介绍
+## Introduction
 
-本包提供了 React 易于使用的编辑器组件。
+This package provides an easy-to-use editor component for React.
 
-## 安装
+## Installation
 
 ```bash
 npm install --save @gitee/tide @gitee/tide-starter-kit highlight.js
@@ -14,7 +14,7 @@ yarn add @gitee/tide @gitee/tide-starter-kit highlight.js
 pnpm add @gitee/tide @gitee/tide-starter-kit highlight.js
 ```
 
-## 使用
+## Usage
 
 ```tsx
 import React, { useState } from 'react';
@@ -38,35 +38,35 @@ function App() {
 }
 ```
 
-如需自定义样式，可参考 `@gitee/tide-theme/dist/variable.less` 中的 CSS Variables 进行覆盖。
+To customize the styles, you can refer to the CSS variables in `@gitee/tide-theme/dist/variable.less`.
 
-## 配置
+## Configuration
 
 ### useEditor Options
 
-| 配置                 | 说明                     | 类型                                                     | 默认值  |
-| -------------------- | ------------------------ | -------------------------------------------------------- | ------- |
-| content              | 内容                     | `HTMLContent \| JSONContent \| JSONContent[] \| null`    | -       |
-| autofocus            | 是否自动聚焦             | `'start' \| 'end' \| 'all' \| number \| boolean \| null` | `false` |
-| editable             | 是否允许编辑             | `boolean`                                                | `true`  |
-| fullscreen           | 是否全屏模式             | `boolean`                                                | `false` |
-| readOnlyEmptyView    | 只读模式下无内容时的视图 | `ReactNode`                                              | `null`  |
-| readOnlyShowMenu     | 只读模式下是否显示菜单栏 | `boolean`                                                | `false` |
-| menuEnableUndoRedo   | 菜单栏是否启用撤销重做   | `boolean`                                                | `true`  |
-| menuEnableFullscreen | 菜单栏是否启用全屏       | `boolean`                                                | `true`  |
-| onFullscreenChange   | 全屏状态变更时的回调函数 | `(fullscreen: boolean) => void`                          | -       |
-| onReady              | 初始化完成后的回调函数   | `(editor: TideEditor) => void`                           | -       |
-| onChange             | 内容变更时的回调函数     | `(doc: JSONContent, editor: TideEditor) => void`         | -       |
+| Option               | Description                                         | Type                                                     | Default |
+| -------------------- | --------------------------------------------------- | -------------------------------------------------------- | ------- |
+| content              | The content of the editor                           | `HTMLContent \| JSONContent \| JSONContent[] \| null`    | -       |
+| autofocus            | Whether to focus automatically                      | `'start' \| 'end' \| 'all' \| number \| boolean \| null` | `false` |
+| editable             | Whether to allow editing                            | `boolean`                                                | `true`  |
+| fullscreen           | Whether to enable full-screen mode                  | `boolean`                                                | `false` |
+| readOnlyEmptyView    | The view when there is no content in read-only mode | `ReactNode`                                              | `null`  |
+| readOnlyShowMenu     | Whether to show the menu bar in read-only mode      | `boolean`                                                | `false` |
+| menuEnableUndoRedo   | Whether to enable undo/redo in the menu bar         | `boolean`                                                | `true`  |
+| menuEnableFullscreen | Whether to enable full-screen mode in the menu bar  | `boolean`                                                | `true`  |
+| onFullscreenChange   | Callback function when full-screen mode changes     | `(fullscreen: boolean) => void`                          | -       |
+| onReady              | Callback function after initialization is complete  | `(editor: TideEditor) => void`                           | -       |
+| onChange             | Callback function when content changes              | `(doc: JSONContent, editor: TideEditor) => void`         | -       |
 
-更多配置可参考 `TideEditorOptions` 接口定义。
+More options can be found in the interface definition of `TideEditorOptions`.
 
 ### EditorRenderProps
 
-| 属性             | 说明                     | 类型            | 默认值 |
-| ---------------- | ------------------------ | --------------- | ------ |
-| className        | 容器自定义 `className`   | `string`        | -      |
-| style            | 容器自定义 `style`       | `CSSProperties` | -      |
-| menuClassName    | 菜单栏自定义 `className` | `string`        | -      |
-| menuStyle        | 菜单栏自定义 `style`     | `CSSProperties` | -      |
-| contentClassName | 内容区自定义 `className` | `string`        | -      |
-| contentStyle     | 内容区自定义 `style`     | `CSSProperties` | -      |
+| Property         | Description                             | Type            | Default |
+| ---------------- | --------------------------------------- | --------------- | ------- |
+| className        | Custom `className` for the container    | `string`        | -       |
+| style            | Custom `style` for the container        | `CSSProperties` | -       |
+| menuClassName    | Custom `className` for the menu bar     | `string`        | -       |
+| menuStyle        | Custom `style` for the menu bar         | `CSSProperties` | -       |
+| contentClassName | Custom `className` for the content area | `string`        | -       |
+| contentStyle     | Custom `style` for the content area     | `CSSProperties` | -       |

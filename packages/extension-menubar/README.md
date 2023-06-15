@@ -1,12 +1,12 @@
 # @gitee/tide-extension-menubar
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「菜单」功能，包括工具栏和气泡菜单。
+This extension enables the menu for the editor, including a toolbar and a bubble menu.
 
-## 功能
+## Features
 
-- 提供工具栏组件
-- 提供常用功能的菜单按钮
-- 提供自定义菜单按钮组件
-- 提供文本气泡菜单组件（加粗、斜体、删除线、链接）
+- Provides a toolbar component
+- Provides menu buttons for common functions
+- Provides a custom menu button component
+- Provides a text bubble menu component (bold, italic, strikethrough, link)

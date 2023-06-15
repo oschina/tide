@@ -1,18 +1,18 @@
 # @gitee/tide-extension-table
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「表格」功能。
+This extension enables you to use tables in the editor.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-table` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-table`:
 
-- 支持调整单元格列宽大小
-- 支持插入或删除表格行、列
-- 支持合并或拆分单元格
-- 支持单元格内居左、居中、居右对齐
-- 输入规则：输入 `||` 或 `｜｜`（两个竖线或以上，每多一个竖线表示多一列）快速创建表格
-- 快捷键：
-  - <kbd>←</kbd>、<kbd>→</kbd>、<kbd>↑</kbd>、<kbd>↓</kbd> 在表格内移动单元格光标
-  - <kbd>Ctrl/Command</kbd> + <kbd>A</kbd> 选中光标所在单元格的内容，再按一次选中所在单元格，再按一次选中整个表格
+- Supports adjusting column width of cells
+- Supports inserting or deleting table rows and columns
+- Supports merging or splitting cells
+- Supports aligning cell content to left, center, or right
+- Input rule: Quickly creates a table by typing `||` or `｜｜` (two or more vertical bars, each additional vertical bar represents one more column)
+- Keyboard shortcuts:
+  - <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd> Move the cell cursor within the table
+  - <kbd>Ctrl/Command</kbd> + <kbd>A</kbd> Selects the content of the cell where the cursor is located. Press it again to select the entire cell. Press it again to select the entire table.

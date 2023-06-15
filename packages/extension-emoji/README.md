@@ -1,13 +1,13 @@
 # @gitee/tide-extension-emoji
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「Emoji」功能，可以在文本中插入表情。
+This extension renders emojis as an inline node.
 
-## 功能
+## Features
 
-- 提供表情面板：表情搜索、分类筛选、最近使用记录，支持键盘操作
-- 支持使用 `:smile:` 语法输入表情
-- 支持使用表情符号输入表情（如 `<3`）
-- 支持使用图片渲染设备不支持的 Emoji 表情
-- 支持自定义 Emoji 表情
+- Provides an emoji panel: emoji search, category filtering, recently used records, and supports keyboard operations
+- Supports using `:smile:` syntax to input emojis
+- Supports using emoji symbols to input emojis (such as `<3`)
+- Supports using images to render emojis that are not supported by the device
+- Supports custom emojis

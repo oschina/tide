@@ -1,12 +1,12 @@
 # @gitee/tide-extension-code
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「行内代码」功能（类似于 HTML 标签 `<code>`）。
+This extension enables you to use the inline code (similar to the HTML tag `<code>`) in the editor.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-code` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-code`:
 
-- 输入规则：输入 <code>\`code\`</code> 或 `·code·` 且在后面输入 **空格** 时，自动转换为行内代码
-- 快捷键：当「行内代码」位于行首时，在它的左侧按下 <kbd>←</kbd> 可退出行内代码。
+- Input rule: Automatically converts <code>\`code\`</code> or `·code·` to inline code when <kbd>Space</kbd> is entered after it.
+- Shortcut: Press <kbd>←</kbd> to exit inline code when the cursor is at the beginning of a line of inline code.

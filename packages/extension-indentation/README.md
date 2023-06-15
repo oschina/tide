@@ -1,11 +1,11 @@
 # @gitee/tide-extension-indentation
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器的 `node` 节点启用缩进功能，例如段落、标题。
+This extension enables indentation for nodes in the editor, such as paragraphs and headings.
 
-## 功能
+## Features
 
-- 为指定类型的 `node` 增加缩进功能（默认为段落、标题）
-- 支持限制最小、最大层级
-- 快捷键支持：通过 <kbd>Tab</kbd> 增加缩进，通过 <kbd>Shift</kbd> + <kbd>Tab</kbd> 或 <kbd>Backspace</kbd> 减少缩进
+- Adds indentation for specified types of `node` (default is paragraph and heading)
+- Supports limiting the minimum and maximum levels of indentation
+- Shortcut support: Increase indentation by <kbd>Tab</kbd>, decrease indentation by <kbd>Shift</kbd> + <kbd>Tab</kbd> or <kbd>Backspace</kbd>

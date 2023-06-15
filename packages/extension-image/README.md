@@ -1,11 +1,11 @@
 # @gitee/tide-extension-image
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「图片」功能，可以插入图片块，支持缩放、对齐。
+This extension enables to render image in the editor, which allows you to insert image blocks and supports scaling and alignment.
 
-## 功能
+## Features
 
-- 支持使用 Markdown 语法 `![图片替代文本](图片地址 "图片标题")` 或 `![图片替代文本](图片地址)` 插入图片
-- 支持对图片进行缩放操作
-- 支持图片居左、居中、居右对齐
+- Supports using Markdown syntax `![alt text](image url "image title")` or `![alt text](image url)` to insert images
+- Supports scaling images
+- Supports left, center, and right alignment of images

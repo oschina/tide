@@ -1,10 +1,10 @@
 # @gitee/tide-extension-lists-indentation
 
-## 介绍
+## Introduction
 
-本扩展用于为列表（有序列表、无序列表、任务列表）的列表项添加层级信息、列表符号类型。
+This extension is used to add indentation meta and list symbol type to list items in ordered lists, bullet lists, and task lists.
 
-## 功能
+## Features
 
-- 为列表项增加 `data-list-indent-level` 属性，用于表示列表项的层级信息
-- 为列表项增加 `data-list-style-type` 属性，用于表示列表项的列表符号类型（实现不同层级的列表项使用不同的列表符号类型）
+- Adds the `data-list-indent-level` attribute to list items to indicate their indentation information
+- Adds the `data-list-style-type` attribute to list items to indicate their list symbol type (to implement different list symbol types for list items at different levels)

@@ -1,11 +1,11 @@
 # @gitee/tide-extension-italic
 
-## 介绍
+## Introduction
 
-本扩展可为文本添加*斜体*效果。
+Use this extension to render text in _italic_.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-italic` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-italic`:
 
-- 输入规则：输入 `*text*` 或 `_text_` 且在后面输入 **空格** 时，自动转换为斜体文本
+- Input rule: Automatically converts `*text*` or `_text_` to italic text when <kbd>空格</kbd> is entered after it.

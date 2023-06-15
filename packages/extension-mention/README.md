@@ -1,12 +1,12 @@
 # @gitee/tide-extension-mention
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「提及」功能，一般用于实现 `@user` 提及用户。
+This extension enables you to use the mention for the editor, which is generally used to implement user mentions like `@user`.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-mention` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-mention`:
 
-- 提供提及列表通用组件 `MentionList`
-- 提供工具方法快速创建 `SuggestionOptions` 配置
+- Provides a universal `MentionList` component for the mention list
+- Provides a utility method for quickly creating `SuggestionOptions` configuration.

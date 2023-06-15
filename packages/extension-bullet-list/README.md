@@ -1,13 +1,13 @@
 # @gitee/tide-extension-bullet-list
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「无序列表」功能（类似于 HTML 标签 `<ul>`）。
+This extension enables you to use bullet lists (similar to the HTML tag `<ul>`) in the editor.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-bullet-list` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-bullet-list`:
 
-- 输入规则：在行首输入 `- ` 或 `* ` 快速创建无序列表
-- 若在创建无序列表项的前、后位置存在无序列表，将自动合并为一个无序列表
-- 在 有序列表、任务列表 内，通过在 列表项 开头输入符合上述输入规则的内容，快速转换为 无序列表
+- Input rule: Quickly create bullet list by typing `- ` or `* ` at the beginning of a line
+- If there is a bullet list before or after the created bullet list item, it will be automatically merged into one bullet list
+- Within ordered lists and task lists, typing the above input rules at the beginning of a list item will quickly convert it to a bullet list

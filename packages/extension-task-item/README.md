@@ -1,15 +1,15 @@
-# @gitee/tide-extension-task-item
+# @gitee# @gitee/tide-extension-task-item
 
-## 介绍
+## Introduction
 
-本扩展用于渲染「任务列表」功能的列表项，有一个复选框表示选中状态，依赖 任务列表 扩展。
+This extension is used to render the list items for task lists, which has a checkbox to indicate the selection status and depends on the task list extension.
 
-## 功能
+## Features
 
-本扩展参考 `@tiptap/extension-task-item` 重新实现了如下内容：
+This extension re-implements the following features based on `@tiptap/extension-task-item`:
 
-- 允许在只读模式下修改选中状态
-- 输入规则：在行首输入 `[ ] `、`[x] `、`【 】 `、`【x】 ` 快速创建任务列表
-- 粘贴规则：粘贴 `[ ] 文字` 或 `[x] 文字` 格式的内容，自动转换为任务列表项
-- 若在创建任务列表项的前、后位置存在任务列表，将自动合并为一个任务列表
-- 在 无序列表、有序列表 内，通过在 列表项 开头输入符合上述输入规则的内容，快速转换为 任务列表
+- Allows modifying the selection status in read-only mode
+- Input rule: Quickly creates a task list by typing `[ ] `, `[x] `, `【 】 `, or `【x】 ` at the beginning of a line
+- Paste rule: Automatically converts content in the format of `[ ] text` or `[x] text` to a task list item when pasted
+- If there is a task list before or after creating a task list item, it will automatically merge into one task list
+- In a bullet list or ordered list, you can quickly convert it to a task list by typing content that meets the above input rules at the beginning of a list item.

@@ -1,13 +1,13 @@
 # @gitee/tide-extension-blockquote
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「块引用」功能（类似于 HTML 标签 `<blockquote>`），一般用于引用其他来源的内容或注释。
+This extension enables you to use the blockquote (similar to the HTML tag `<blockquote>`) in the editor, which is generally used to quote content or comments from other sources.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-blockquote` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-blockquote`:
 
-- 快捷键：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>.</kbd> 插入或取消块引用
-- 输入规则：在行首输入 `> ` 或 `》 ` 快速创建块引用
-- 粘贴规则：粘贴 `> 引文` 格式的内容，自动转换为块引用
+- Shortcut: <kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>.</kbd> to insert or cancel blockquote
+- Input rule: Quickly create blockquote by typing `> ` or `》 ` at the beginning of a line
+- Paste rule: Automatically converts content in the format of `> quote` to blockquote when pasted

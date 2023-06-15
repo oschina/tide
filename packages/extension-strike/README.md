@@ -1,11 +1,11 @@
 # @gitee/tide-extension-strike
 
-## 介绍
+## Introduction
 
-本扩展可为文本添加~~删除线~~效果。
+Use this extension to render ~~strikethrough text~~.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-strike` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-strike`:
 
-- 输入规则：输入 `~~text~~` 或 `～～text～～` 且在后面输入 **空格** 时，自动转换为删除线文本
+- Input rule: Automatically converts `~~text~~` or `～～text～～` to strikethrough text when <kbd>Space</kbd> is entered after it.

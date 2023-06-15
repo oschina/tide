@@ -1,13 +1,13 @@
 # @gitee/tide-extension-ordered-list
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「有序列表」功能（类似于 HTML 标签 `<ol>`）。
+This extension enables you to use ordered lists (similar to the HTML tag `<ol>`) in the editor.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-ordered-list` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-ordered-list`:
 
-- 输入规则：在行首输入 `1. `、`1) ` 或 `1） `（可以是任意数字）快速创建有序列表
-- 若在创建有序列表项的前、后位置存在有序列表，将自动合并为一个有序列表
-- 在 无序列表、任务列表 内，通过在 列表项 开头输入符合上述输入规则的内容，快速转换为 有序列表
+- Input rule: Quickly creates an ordered list by typing `1. `, `1) `, or `1） ` (can be any number) at the beginning of a line
+- If there is an ordered list before or after creating an ordered list item, it will automatically merge into one ordered list
+- In a bullet list or task list, you can quickly convert it to an ordered list by typing content that meets the above input rules at the beginning of a list item.

@@ -1,13 +1,13 @@
 # @gitee/tide-extension-link
 
-## 介绍
+## Introduction
 
-本扩展可为编辑器启用「链接」功能（类似于 HTML 标签 `<a>`），提供添加、修改、删除链接的界面。
+This extension enables to render link (similar to the HTML tag `<a>`) in the editor, providing an interface for adding, modifying, and deleting links.
 
-## 功能
+## Features
 
-本扩展基于 `@tiptap/extension-link` 修改了如下内容：
+This extension modifies the following features based on `@tiptap/extension-link`:
 
-- 提供添加、修改、删除链接的界面
-- 支持使用 Markdown 语法 `[链接文本](链接地址)` 插入链接
-- 支持使用快捷键 <kbd>Ctrl/Command</kbd> + <kbd>K</kbd> 插入或移除链接
+- Provides an interface for adding, modifying, and deleting links
+- Supports using Markdown syntax `[link text](link URL)` to insert links
+- Supports using shortcut <kbd>Ctrl/Command</kbd> + <kbd>K</kbd> to insert or remove links
