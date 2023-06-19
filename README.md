@@ -34,6 +34,51 @@ https://oschina.gitee.io/tide
 - Built-in menu bar
 - Supports multiple themes
 
+## Directories
+
+```
+.
+├── apps
+│   ├── demo                      # Demo project deployed on Pages, URL: https://oschina.gitee.io/tide
+│   └── legacy                    # Real-world project used by Gitee Community Edition,
+│                                 # package name is @gitee/tide-legacy
+├── presets                       # Presets with UI and configuration for @, #, ! mention functionality,
+│                                 # mainly used by @gitee/tide-legacy
+├── docs                          # Documentation (to be completed), including contribution guidelines
+├── packages                      # Directory for organizing monorepo packages
+│   ├── editor                    # Out-of-the-box editor base package, package name is @gitee/tide
+│   ├── starter-kit               # Integrates commonly used extension packages with the @gitee/tide package
+│   │                             # to provide an out-of-the-box experience
+│   ├── common                    # Common utility classes, etc.
+│   ├── react                     # React wrapper for the editor, facilitating usage in React projects
+│   ├── extension-*               # Packages starting with extension- that provide
+│   │                             # extension functionality for the editor
+│   ├── tsconfig                  # Unified tsconfig configuration
+│   └── eslint-config-custom      # Unified eslint configuration
+└── scripts                       # Scripts to simplify the development process, etc.
+```
+
+## Build and Run
+
+Tide uses [turborepo](https://turbo.build/repo) to manage the compilation and distribution of multiple npm packages and [pnpm](https://pnpm.io) to manage local dependencies.
+
+```shell
+git clone https://gitee.com/oschina/tide.git
+
+cd tide
+
+# Install dependencies
+pnpm i
+
+# Build packages
+pnpm build
+
+# Run the demo for development, it will automatically open the browser
+pnpm dev:demo --open
+```
+
+> Due to the complex dependency relationships in the monorepo, local builds are not currently supported for use through `npm link`, `yarn link`, and `pnpm link --global`.
+
 ## Contributing
 
 - For bug reports, please use [Issues](https://gitee.com/oschina/tide/issues)
