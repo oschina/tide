@@ -1,0 +1,42 @@
+name: 功能/特性建议
+description: 向 Tide 提出一个功能/特性建议
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: checkboxes
+    attributes:
+      label: 是否已存在相同的 Issue？
+      description: 请搜索以查看此功能建议是否已存在。
+      options:
+        - label: 我搜索了[现有的 Issue](https://gitee.com/oschina/tide/issues)，确认没有相同的 Issue
+          required: true
+  - type: textarea
+    id: scene
+    attributes:
+      label: 功能场景
+      description: 清晰并简洁地描述你遇到了什么问题，例如，当我...时，我总是感到困扰。
+    validations:
+      required: false
+  - type: textarea
+    id: solution
+    attributes:
+      label: 解决方案
+      description: |
+        清晰并简洁地描述你希望 Tide 能够做什么。可以考虑附上一些展示你想象的内容，如：`图片` / `视频` / `代码示例`
+        
+        如果这个是非要由 Tide 直接提供的能力，比如可以通过扩展或插件的方式提供，也许你考虑开发和发布这样的拓展包而不是提交 Issue。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 你考虑过哪些替代方案？
+      description: 清晰并简洁地描述你考虑过的任何替代解决方案或功能。
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: 意向参与贡献
+      options:
+        - label: 我有意向参与具体功能的开发实现并将代码贡献回到上游社区
+          required: false
