@@ -2,6 +2,10 @@
 
 Tide is a React-based rich text editor with out-of-the-box functionality, strong extensibility, and comprehensive support for Markdown syntax.
 
+[![Version](https://img.shields.io/npm/v/@gitee/tide.svg?label=version)](https://www.npmjs.com/package/@gitee/tide)
+[![Downloads](https://img.shields.io/npm/dm/@gitee/tide.svg)](https://npmcharts.com/compare/@gitee/tide?minimal=true)
+[![License](https://img.shields.io/npm/l/@gitee/tide.svg)](https://www.npmjs.com/package/@gitee/tide)
+
 ## Online Demo
 
 https://oschina.gitee.io/tide

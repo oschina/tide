@@ -4,6 +4,10 @@
 
 开箱即用、扩展性强、支持 Markdown 语法、基础功能完善的 React 富文本编辑器。
 
+[![Version](https://img.shields.io/npm/v/@gitee/tide.svg?label=version)](https://www.npmjs.com/package/@gitee/tide)
+[![Downloads](https://img.shields.io/npm/dm/@gitee/tide.svg)](https://npmcharts.com/compare/@gitee/tide?minimal=true)
+[![License](https://img.shields.io/npm/l/@gitee/tide.svg)](https://www.npmjs.com/package/@gitee/tide)
+
 ## 在线演示
 
 https://oschina.gitee.io/tide
