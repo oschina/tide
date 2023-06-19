@@ -6,6 +6,8 @@
 
 ## 安装
 
+> 如果你不希望启用代码块的语法高亮功能，可以不安装 `highlight.js`。
+
 ```bash
 npm install --save @gitee/tide @gitee/tide-starter-kit highlight.js
 # or

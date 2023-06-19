@@ -6,6 +6,8 @@ This package provides an easy-to-use editor component for React.
 
 ## Installation
 
+> If you do not want to enable syntax highlighting for code blocks, you can choose not to install `highlight.js`.
+
 ```bash
 npm install --save @gitee/tide @gitee/tide-starter-kit highlight.js
 # or

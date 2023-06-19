@@ -42,13 +42,13 @@ https://oschina.gitee.io/tide
 .
 ├── apps
 │   ├── demo                      # 演示项目，部署在 Pages 上，地址：https://oschina.gitee.io/tide
-│   └── legacy                    # 真实项目，Gitee 社区版正在使用该包 @gitee/tide-legacy
+│   └── legacy                    # 真实项目，Gitee 社区版正在使用，包名为 @gitee/tide-legacy
 ├── presets                       # 提供 @、#、! 引用（mention）功能的预知 UI 和配置，
 │                                 # 主要 @gitee/tide-legacy 在使用
 ├── docs                          # 文档（待完善），包括：如何贡献
 ├── packages                      # 组织 monorepo 的包目录
-│   ├── editor                    # 开箱即用的编辑器基础包
-│   ├── starter-kit               # 将常用的扩张包集成在一起，配合 editor 包使用，提供开箱即用体验
+│   ├── editor                    # 开箱即用的编辑器基础包，包名为 @gitee/tide
+│   ├── starter-kit               # 将常用的扩展包集成在一起，配合 @gitee/tide 包使用，提供开箱即用体验
 │   ├── common                    # 常用的工具类等
 │   ├── react                     # 提供编辑器的 React 封装，便于在 React 项目中使用
 │   ├── extension-*               # extension- 开头的包，提供编辑器的扩展功能
