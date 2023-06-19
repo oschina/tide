@@ -291,7 +291,7 @@ importers:
   packages/extension-blockquote:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/tide-common': workspace:^0.2.0-alpha.6
+      '@gitee/tide-common': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-blockquote': ^2.0.3
       eslint-config-custom: workspace:*
@@ -327,7 +327,7 @@ importers:
   packages/extension-bullet-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/tide-common': workspace:^0.2.0-alpha.6
+      '@gitee/tide-common': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-bullet-list': ^2.0.3
       eslint-config-custom: workspace:*
@@ -725,7 +725,7 @@ importers:
   packages/extension-ordered-list:
     specifiers:
       '@babel/runtime-corejs3': ^7.21.0
-      '@gitee/tide-common': workspace:^0.2.0-alpha.6
+      '@gitee/tide-common': workspace:*
       '@tiptap/core': ^2.0.3
       '@tiptap/extension-ordered-list': ^2.0.3
       eslint-config-custom: workspace:*

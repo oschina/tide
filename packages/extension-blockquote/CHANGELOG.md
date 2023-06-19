@@ -1,5 +1,16 @@
 # @gitee/tide-extension-blockquote
 
+## 0.2.0-beta.0
+
+### Minor Changes
+
+- Bump the version to 0.2.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide-common@0.2.0-beta.0
+
 ## 0.2.0-alpha.6
 
 **Note:** Version bump only for package @gitee/tide-extension-blockquote

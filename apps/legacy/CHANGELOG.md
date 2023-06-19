@@ -1,5 +1,23 @@
 # @gitee/tide-legacy
 
+## 0.2.0-beta.0
+
+### Minor Changes
+
+- Bump the version to 0.2.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide@0.2.0-beta.0
+  - @gitee/tide-extension-image@0.2.0-beta.0
+  - @gitee/tide-extension-mention@0.2.0-beta.0
+  - @gitee/tide-extension-uploader@0.2.0-beta.0
+  - @gitee/tide-react@0.2.0-beta.0
+  - @gitee/tide-starter-kit@0.2.0-beta.0
+  - @gitee/tide-theme@0.2.0-beta.0
+  - @gitee/tide-presets-mentions@0.2.0-beta.0
+
 ## 0.2.0-alpha.6
 
 Fix @gitee/tide-legacy type error
