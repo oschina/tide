@@ -12,7 +12,7 @@ https://oschina.gitee.io/tide
 
 ## 示例代码
 
-- [基本](./packages/editor/README.md)
+- [基本](./packages/editor/README.zh-CN.md)
 - [复杂](./apps/demo)
 - [真实项目](./apps/legacy)
 
