@@ -104,6 +104,22 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
           <img src={icon} />
           @gitee/tide
         </a>
+        <a
+          href="https://gitee.com/oschina/tide/stargazers"
+          className="ml-2"
+          style={{ display: 'flex' }}
+        >
+          <img
+            src="https://gitee.com/oschina/tide/badge/star.svg?theme=white"
+            alt="star"
+            className="dark-hide"
+          />
+          <img
+            src="https://gitee.com/oschina/tide/badge/star.svg?theme=dark"
+            alt="star"
+            className="light-hide"
+          />
+        </a>
       </div>
       <div className={'demo-header-bar-right'}>
         <label className="mr-2">

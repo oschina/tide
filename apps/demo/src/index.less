@@ -23,7 +23,17 @@ body.theme-dark {
   color-scheme: dark;
   background: @dark-background-color;
 
+  .dark-hide {
+    display: none;
+  }
+
   @import (less) 'highlight.js/styles/a11y-dark.css';
+}
+
+body:not(.theme-dark) {
+  .light-hide {
+    display: none;
+  }
 }
 
 a {
@@ -72,6 +82,7 @@ a:active {
   }
 
   &-inspect {
+    position: relative;
     width: 50%;
     min-width: 0;
     border: 1px solid @border-color;
@@ -118,6 +129,10 @@ a:active {
       white-space: pre-wrap;
     }
   }
+}
+
+.ml-2 {
+  margin-left: 8px;
 }
 
 .mr-2 {

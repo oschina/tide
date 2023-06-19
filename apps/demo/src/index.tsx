@@ -61,6 +61,15 @@ function App() {
         </div>
         <div className="demo-inspect">
           <InspectPanel editor={editor} />
+          <a
+            href="https://gitee.com/oschina/tide"
+            style={{ position: 'absolute', top: 0, right: 0 }}
+          >
+            <img
+              src="https://gitee.com/oschina/tide/widgets/widget_1.svg"
+              alt="Fork me on Gitee"
+            />
+          </a>
         </div>
       </div>
     </div>
