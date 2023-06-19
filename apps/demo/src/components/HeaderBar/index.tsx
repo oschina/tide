@@ -13,7 +13,7 @@ const localStorageKey = 'tide-history';
 const isProd = import.meta.env.MODE === 'production';
 
 const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
-  const [theme, setTheme] = useState('');
+  const [theme, setTheme] = useState('theme-blue');
   const [readOnly, setReadOnly] = useState<boolean>(!!editor?.isReadOnly);
 
   const handleClickShareLink = () => {
@@ -97,11 +97,35 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
     setReadOnly(editor.isReadOnly);
   }, [editor]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handler = () =>
+      setTheme(mediaQuery.matches ? 'theme-dark' : 'theme-blue');
+    handler();
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+
+  useEffect(() => {
+    const classList = document.body.classList;
+    // remove theme-*
+    for (let i = 0; i < classList.length; i++) {
+      const name = classList[i];
+      if (name.startsWith('theme-')) {
+        classList.remove(name);
+      }
+    }
+    // add theme
+    if (theme) {
+      classList.add(theme);
+    }
+  }, [theme]);
+
   return (
     <div className={'demo-header-bar'}>
       <div className={'demo-header-bar-left'}>
         <a href="https://gitee.com/oschina/tide" className="link-repository">
-          <img src={icon} />
+          <img src={icon} alt="@gitee/tide" />
           @gitee/tide
         </a>
         <a
@@ -141,12 +165,6 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
             <select
               onChange={(e) => {
                 const val = e.target.value;
-                const classList = document.body.classList;
-                if (classList.contains(theme)) {
-                  classList.replace(theme, val);
-                } else {
-                  classList.add(val);
-                }
                 setTheme(val);
               }}
             >
