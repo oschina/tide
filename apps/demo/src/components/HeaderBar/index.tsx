@@ -162,12 +162,7 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
         <span className="select-theme">
           <label>
             主题：
-            <select
-              onChange={(e) => {
-                const val = e.target.value;
-                setTheme(val);
-              }}
-            >
+            <select value={theme} onChange={(e) => setTheme(e.target.value)}>
               <option value="theme-blue">蓝色</option>
               <option value="theme-purple">紫色</option>
               <option value="theme-green">绿色</option>
