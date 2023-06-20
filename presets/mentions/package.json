@@ -20,7 +20,7 @@
     "@gitee/tide-extension-mention": "workspace:*",
     "@gitee/tide-react": "workspace:*",
     "@gitee/tide-theme": "workspace:*",
-    "@gitee/icons-react": "^0.1.38",
+    "@gitee/icons-react": "^0.1.49",
     "@tippyjs/react": "^4.2.6",
     "@tiptap/extension-image": "^2.0.3",
     "classnames": "^2.2.6",
@@ -28,18 +28,22 @@
     "ahooks": "v3.7.6"
   },
   "devDependencies": {
+    "@gitee/icons-react": "^0.1.49",
+    "@tiptap/core": "^2.0.3",
     "@tiptap/pm": "^2.0.3",
     "@types/react": "^16.14.0",
     "@types/react-dom": "^16.9.19",
     "eslint-config-custom": "workspace:*",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "tsconfig": "workspace:*",
     "tslib": "^2.5.3",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@gitee/icons-react": "^0.1.37",
-    "@tiptap/core": "^2.0.3",
-    "@tiptap/pm": "^2.0.3",
+    "@gitee/icons-react": "^0.1.49",
+    "@tiptap/core": "^2.0.0",
+    "@tiptap/pm": "^2.0.0",
     "react": "^16.14.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.14.0 || ^17.0.0 || ^18.0.0"
   },

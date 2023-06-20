@@ -20,12 +20,13 @@
     "@babel/runtime-corejs3": "^7.21.0"
   },
   "devDependencies": {
+    "@tiptap/core": "^2.0.3",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@tiptap/core": "^2.0.3"
+    "@tiptap/core": "^2.0.0"
   },
   "repository": {
     "type": "git",
