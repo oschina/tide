@@ -1,31 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import MonacoEditor from '@monaco-editor/react';
 import { TideEditor, EditorEvents } from '@gitee/tide';
 import throttle from 'lodash/throttle';
+import { Theme, useTheme } from '../../contexts/ThemeContext';
+import './userWorker';
 
 const InspectPanel = ({ editor }: { editor: TideEditor | null }) => {
-  const [tab, setTab] = React.useState<'html' | 'json' | 'markdown'>('json');
-  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+  const { theme } = useTheme();
+  const [tab, setTab] = useState<'html' | 'json' | 'markdown'>('json');
+  const [monacoEditorContent, setMonacoEditorContent] = useState('');
 
   useEffect(() => {
     const updateHandle = throttle((props: EditorEvents['update']) => {
-      if (!props.editor || !textareaRef.current) return;
-
+      if (!props.editor) return;
+      let content = '';
       switch (tab) {
         case 'json':
-          textareaRef.current.value = JSON.stringify(
-            props.editor.getJSON(),
-            null,
-            2
-          );
+          content = JSON.stringify(props.editor.getJSON(), null, 2);
           break;
         case 'html':
-          textareaRef.current.value = props.editor.getHTML();
+          content = props.editor.getHTML();
           break;
         case 'markdown':
-          textareaRef.current.value = props.editor.getMarkdown();
+          content = props.editor.getMarkdown();
           break;
         default:
       }
+      setMonacoEditorContent(content);
     }, 500);
 
     if (editor) {
@@ -80,20 +81,27 @@ const InspectPanel = ({ editor }: { editor: TideEditor | null }) => {
           </>
         )}
       </div>
-      <textarea
-        ref={textareaRef}
-        className={tab === 'json' ? 'json' : 'html'}
-        onChange={(e) => {
-          if (!editor) return;
-          try {
-            editor.setContent(
-              tab === 'json' ? JSON.parse(e.target.value) : e.target.value
-            );
-          } catch (error) {
-            console.log(error);
-          }
-        }}
-      />
+      <div className="content">
+        <MonacoEditor
+          defaultLanguage={tab}
+          language={tab}
+          theme={theme === Theme.Dark ? 'vs-dark' : 'light'}
+          value={monacoEditorContent}
+          onChange={(newValue) => {
+            if (!editor) return;
+            try {
+              editor.setContent(
+                tab === 'json' ? JSON.parse(newValue || '') : newValue
+              );
+            } catch (error) {
+              console.log(error);
+            }
+          }}
+          options={{
+            wordWrap: 'on',
+          }}
+        />
+      </div>
     </div>
   );
 };

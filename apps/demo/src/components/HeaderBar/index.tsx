@@ -4,6 +4,7 @@ import copy from 'copy-to-clipboard';
 import applyDevTools from 'prosemirror-dev-tools';
 import throttle from 'lodash/throttle';
 import { TideEditor, EditorEvents } from '@gitee/tide';
+import { Theme, useTheme } from '../../contexts/ThemeContext';
 import icon from '../../../favicon.svg';
 
 import './index.less';
@@ -13,7 +14,7 @@ const localStorageKey = 'tide-history';
 const isProd = import.meta.env.MODE === 'production';
 
 const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
-  const [theme, setTheme] = useState('theme-blue');
+  const { theme, setTheme } = useTheme();
   const [readOnly, setReadOnly] = useState<boolean>(!!editor?.isReadOnly);
 
   const handleClickShareLink = () => {
@@ -97,30 +98,6 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
     setReadOnly(editor.isReadOnly);
   }, [editor]);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handler = () =>
-      setTheme(mediaQuery.matches ? 'theme-dark' : 'theme-blue');
-    handler();
-    mediaQuery.addEventListener('change', handler);
-    return () => mediaQuery.removeEventListener('change', handler);
-  }, []);
-
-  useEffect(() => {
-    const classList = document.body.classList;
-    // remove theme-*
-    for (let i = 0; i < classList.length; i++) {
-      const name = classList[i];
-      if (name.startsWith('theme-')) {
-        classList.remove(name);
-      }
-    }
-    // add theme
-    if (theme) {
-      classList.add(theme);
-    }
-  }, [theme]);
-
   return (
     <div className={'demo-header-bar'}>
       <div className={'demo-header-bar-left'}>
@@ -130,6 +107,8 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
         </a>
         <a
           href="https://gitee.com/oschina/tide/stargazers"
+          target="_blank"
+          rel="noreferrer"
           className="ml-2"
           style={{ display: 'flex' }}
         >
@@ -162,12 +141,15 @@ const HeaderBar = ({ editor }: { editor: TideEditor | null }) => {
         <span className="select-theme">
           <label>
             主题：
-            <select value={theme} onChange={(e) => setTheme(e.target.value)}>
-              <option value="theme-blue">蓝色</option>
-              <option value="theme-purple">紫色</option>
-              <option value="theme-green">绿色</option>
-              <option value="theme-pink">梅红</option>
-              <option value="theme-dark">暗黑</option>
+            <select
+              value={theme}
+              onChange={(e) => setTheme(e.target.value as Theme)}
+            >
+              <option value={Theme.Blue}>蓝色</option>
+              <option value={Theme.Purple}>紫色</option>
+              <option value={Theme.Green}>绿色</option>
+              <option value={Theme.Pink}>梅红</option>
+              <option value={Theme.Dark}>暗黑</option>
             </select>
           </label>
         </span>
