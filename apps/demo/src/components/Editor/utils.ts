@@ -22,16 +22,7 @@ export const mockImgUploader: UploaderFunc = async (file, progressCallBack) => {
 };
 
 export const mockFetchMemberMention = (query: string) => {
-  return [
-    'Gitee',
-    'OSCHINA',
-    '开源中国',
-    '马建仓',
-    'Tiptap',
-    'Google',
-    'Apple',
-    'Microsoft',
-  ]
+  return ['Tide', 'Tiptap', 'ProseMirror']
     .map((label, index) => ({
       id: `${index + 1}`,
       label,
