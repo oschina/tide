@@ -1,6 +1,6 @@
 {
   "mode": "pre",
-  "tag": "alpha",
+  "tag": "beta",
   "initialVersions": {
     "demo": "0.0.0",
     "@gitee/tide-common": "0.0.0",
@@ -56,6 +56,7 @@
     "light-rice-try",
     "nasty-pillows-breathe",
     "neat-jokes-draw",
+    "olive-roses-study",
     "pink-bees-carry",
     "rare-forks-rule",
     "rare-kings-sit",

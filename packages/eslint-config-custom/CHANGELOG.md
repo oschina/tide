@@ -1,5 +1,9 @@
 # eslint-config-custom
 
+## 0.2.0-beta.1
+
+**Note:** Version bump only for package eslint-config-custom
+
 ## 0.2.0-beta.0
 
 ### Minor Changes

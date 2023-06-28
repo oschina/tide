@@ -1,5 +1,9 @@
 # @gitee/tide-extension-uploader
 
+## 0.2.0-beta.1
+
+**Note:** Version bump only for package @gitee/tide-extension-uploader
+
 ## 0.2.0-beta.0
 
 ### Minor Changes

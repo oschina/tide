@@ -1,5 +1,21 @@
 # @gitee/tide
 
+## 0.2.0-beta.1
+
+### Minor Changes
+
+- Export EditorLayout, EditorMenu, EditorContent components
+
+### Patch Changes
+
+- Updated dependencies
+  - @gitee/tide-extension-image@0.2.0-beta.1
+  - @gitee/tide-extension-link@0.2.0-beta.1
+  - @gitee/tide-extension-menubar@0.2.0-beta.1
+  - @gitee/tide-extension-table@0.2.0-beta.1
+  - @gitee/tide-react@0.2.0-beta.1
+  - @gitee/tide-theme@0.2.0-beta.1
+
 ## 0.2.0-beta.0
 
 ### Minor Changes
