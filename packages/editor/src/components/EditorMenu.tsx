@@ -27,9 +27,10 @@ import type { TideEditor } from '../TideEditor';
 
 export const EditorMenu: React.FC<{
   editor: TideEditor | null;
+  disabledMenu?: boolean;
   menuClassName?: string;
   menuStyle?: React.CSSProperties;
-}> = ({ editor, menuClassName, menuStyle }) => {
+}> = ({ editor, disabledMenu = false, menuClassName, menuStyle }) => {
   const { fullscreen, editable } = useEditorContext();
   const menuItems = useMemo(() => {
     if (!editor) {
@@ -111,7 +112,7 @@ export const EditorMenu: React.FC<{
   return (
     <MenuBar
       className={classNames(menuClassName, {
-        disabled: editor.readOnlyShowMenu,
+        disabled: editor.readOnlyShowMenu || disabledMenu,
       })}
       style={menuStyle}
     >
