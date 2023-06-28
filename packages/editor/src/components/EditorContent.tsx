@@ -1,34 +1,35 @@
 import classNames from 'classnames';
 import React from 'react';
 import { EditorContent as TEditorContent } from '@gitee/tide-react';
-import type { TideEditor } from './TideEditor';
+import type { TideEditor } from '../TideEditor';
+
 import './EditorContent.less';
 
 export type EditorContentProps = {
   editor: TideEditor | null;
-  className?: string;
-  style?: React.CSSProperties;
+  contentClassName?: string;
+  contentStyle?: React.CSSProperties;
   children?: React.ReactNode;
 };
 
 export const EditorContent: React.FC<EditorContentProps> = ({
   editor,
-  className,
-  style,
+  contentClassName,
+  contentStyle,
   children,
 }) => {
-  const fullClassName = classNames('tide-content', className);
+  const cls = classNames('tide-content', contentClassName);
 
   if (editor && editor.isEmpty && editor.isReadOnly) {
     return (
-      <div className={fullClassName} style={style}>
+      <div className={cls} style={contentStyle}>
         {editor.readOnlyEmptyView || null}
       </div>
     );
   }
 
   return (
-    <TEditorContent className={fullClassName} style={style} editor={editor}>
+    <TEditorContent className={cls} style={contentStyle} editor={editor}>
       {children}
     </TEditorContent>
   );

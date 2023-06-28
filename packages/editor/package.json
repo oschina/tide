@@ -24,6 +24,7 @@
     "@tiptap/extension-document": "^2.0.3",
     "@tiptap/extension-paragraph": "^2.0.3",
     "@tiptap/extension-text": "^2.0.3",
+    "@babel/runtime-corejs3": "^7.21.0",
     "classnames": "^2.2.6"
   },
   "devDependencies": {

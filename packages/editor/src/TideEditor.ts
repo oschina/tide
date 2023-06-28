@@ -135,10 +135,10 @@ export class TideEditor extends Editor {
   public setFullscreen(fullscreen: boolean) {
     this.fullscreen = fullscreen;
     this.onFullscreenChange?.(fullscreen, this);
+    this.emit('update', { editor: this, transaction: this.state.tr });
+
     if (fullscreen) {
       this.commands.focus(this.options.autofocus);
-    } else {
-      this.emit('update', { editor: this, transaction: this.state.tr });
     }
   }
 
